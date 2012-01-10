@@ -1,0 +1,269 @@
+{% extends 'html/instructions_base.html' %}
+{% load i18n %}
+{% block answering_links %}
+<h3 style="margin-bottom: -20px;">
+<strong>{% trans 'Kyselyyn vastaaminen' %}</strong>
+</h3>
+<ul>
+    <li>
+        <a href="#et">{% trans 'eteneminen' %}</a>
+    </li>
+</ul>
+{% endblock answering_links %}
+{% block drawing_links %}
+<h3 style="margin-bottom: -20px;">
+<strong>{% trans 'Kohteiden merkitseminen kartalle' %}</strong>
+</h3>
+<ul>
+    <li>
+        <a href="#kotamupime">{% trans 'kodin tai muun pisteen merkitseminen' %}</a>
+    </li>
+    <li>
+        <a href="#repika">{% trans 'reitin piirtäminen kartalle' %}</a>
+    </li>
+    <li>
+        <a href="#kosimutapo">{% trans 'kohteen siirtäminen, muuttaminen tai poistaminen' %}</a>
+    </li>
+</ul>
+{% endblock drawing_links %}
+{% block answering %}
+<tr>
+    <td>
+    <h2>
+    <a name="et">{% trans 'Kyselyssä eteneminen' %}</a>
+    </h2>
+    </td>
+    <td/>
+</tr>
+<tr>
+    <td>
+    <p class="">
+        {% blocktrans %}
+        Siirry seuraavaan kysymykseen
+        <strong>Jatka</strong>-painikkeella. Voit siirtyä takaisinpäin
+        kyselyssä korjaamaan jo antamiasi vastauksia
+        <strong>Edellinen</strong>-painikkeella tai yläpalkin navigaatiopalkin kautta.
+        {% endblocktrans %}
+    </p>
+    <p class="">
+        {% blocktrans %}
+        Kun pääset kyselyn loppuun, etkä enää halua muuttaa vastauksiasi, voit poistua kyselystä
+        sulkemalla selaimen.
+        {% endblocktrans %}
+    </p>
+    </td>
+    <td>
+    <img src="{{ STATIC_URL }}img/help/eteneminen.gif" alt="jatka- ja edellinen-painikkeet" width="212" height="80" />
+    </td>
+</tr>
+{% endblock answering %}
+{% block locating %}
+    <tr>
+        <td colspan="2">
+        <p class="">
+            {% blocktrans %}
+            Kyselyssä merkitään kartalle pisteitä tai viivoja (reittejä). Toimintopainikkeen kuvake
+            kertoo, minkälainen kohde on tarkoitus paikantaa.
+            Esimerkiksi koti merkitään kartalle pisteenä ja kulkureitit piirretään viivoina.
+            {% endblocktrans %}
+        </p>
+        <p class="observe">
+            <img src="{{ STATIC_URL }}img/help/koti_tyokalu.png" alt="Koti" width="265" height="53" />
+            <br />
+            <img src="{{ STATIC_URL }}img/help/tarkeaReitti_tyokalu.png" alt="Reitti" width="265" height="53" />
+            <br />
+            {% trans 'Kuva yllä: Esimerkit piste- ja viivatyökaluista.' %}
+        </p>
+        </td>
+    </tr>
+{% endblock locating %}
+{% block point_drawing %}
+<tr>
+    <td>
+    <h2>
+    <a name="kotamupime">{% trans 'Kodin tai muun pisteen merkitseminen kartalle' %}</a>
+    </h2>
+    </td>
+    <td/>
+</tr>
+    <tr>
+        <td>
+        <p class="">
+            {% blocktrans %}
+            Koti merkitään kartalle pisteenä. Muita pistemäisiä kohteita ovat esimerkiksi työ- tai
+            opiskelupaikka ja asiointipaikka.
+            {% endblocktrans %}
+        </p>
+        <p class="">
+            <strong>{% trans 'Esimerkki pisteen merkitsemisestä kartalle: Kodin merkitseminen' %}</strong>
+        </p>
+        <ol>
+            <li>
+                {% trans 'Etsi aluksi kartalta kotisi sijainti.' %}
+            </li>
+            <li>
+                <strong>{% trans 'Valitse Koti-työkalu' %}</strong> {% trans 'klikkaamalla sitä hiirellä.' %}
+                <br />
+                <img src="{{ STATIC_URL }}img/help/koti_tyokalu.png" alt="Koti" width="265" height="53" />
+                <br />
+                {% trans 'Klikatessasi Koti-työkalu aktivoituu ja sen ulkoasu muuttuu:' %}
+                <br />
+                <img src="{{ STATIC_URL }}img/help/koti_tyokalu_aktivoitu.png" alt="Koti valittuna" width="265" height="53" />
+            </li>
+            <li>
+                <strong>{% trans 'Klikkaa karttaa kodin kohdalla.' %}</strong> {% trans 'Koti sijoitetaan osoittamaasi kohtaan.' %}
+            </li>
+            <li>
+                {% blocktrans %}
+                <strong>Vahvista kodin sijainti</strong> avautuvassa ikkunassa klikkaamalla painiketta
+                "Kyllä, tallenna kohde".
+                Mikäli koti meni väärään paikkaan, voit poistaa sen klikkaamalla "Ei, poista kohde".
+                Voit myös siirtää kotia jälkeenpäin, jos huomaat sen olevan väärässä paikassa (kts.
+                {% endblocktrans %}
+                <a href="#kosimutapo">{% trans 'kohteen siirto-ohje' %}</a>).
+            </li>
+        </ol>
+        </td>
+        <td/>
+    </tr>
+{% endblock point_drawing %}
+{% block area_drawing %}
+
+{% endblock area_drawing %}
+{% block moving_target %}
+
+{% endblock moving_target %}
+
+{% block evaluation %}
+
+<tr>
+    <td>
+    <h2>
+    <a name="evalua">{% trans 'Asuinalueiden arviointi' %}</a>
+    </h2>
+    </td>
+    <td/>
+</tr>
+<tr>
+    <td>
+    <p>
+        {% blocktrans %}
+        Uudet asuinalueet ja täydennysrakentamiskohteet on merkitty kartalle sinisin monikulmioin
+        ja varustettu talo-merkinnällä. Klikkaamalla aluetta saat näkyviin lisätietoikkunan,
+        jossa on perustietoja alueista, sekä painikkeen "Arvioi aluetta". Painiketta klikkaamalla
+        aukeaa ponnahdusikkuna kysymyksineen. Vasemman reunan "Näytä kaikki"-painikkeesta
+        kartta zoomautuu niin, että kaikki arvioitavat alueet näkyvät näytöllä yhtä aikaa.
+        {% endblocktrans %}
+    </p>
+    </td>
+    <td/>
+</tr>
+{% endblock evaluation %}
+
+{% block researchers %}
+<tr>
+    <td>
+    <h2>
+    <a name="kytojatu">{% trans 'Kyselyn toteuttaja ja tutkijat' %}</a>
+    </h2>
+    </td>
+    <td/>
+</tr>
+<tr>
+    <td>
+    <p>
+        {% blocktrans %}
+        Tutkimus on 
+        {% endblocktrans %}
+    </p>
+    <p >
+        {% blocktrans %}
+        
+        {% endblocktrans %}
+    </p>
+    <p>
+        {% blocktrans %}
+        
+        {% endblocktrans %}
+    </p>
+    </td>
+    <td/>
+</tr>
+{% endblock researchers %}
+
+{% block prizes %}
+<tr>
+    <td>
+    <h2>
+    <a name="palkinnot">{% trans 'Arvonnan palkinnot' %}</a>
+    </h2>
+    </td>
+    <td/>
+</tr>
+<tr>
+    <td>
+    <p class="">
+   </p>
+    </td>
+</tr>
+{% endblock prizes %}
+
+
+{% block privacy_protection %}
+<tr>
+    <td>
+    <h2>
+    <a name="ti">{% trans 'Tietosuoja' %}</a>
+    </h2>
+    </td>
+    <td/>
+</tr>
+<tr>
+    <td>
+    <p class="">
+        {% blocktrans %}
+       {% endblocktrans %}
+    </p>
+    <p class="">
+        {% blocktrans %}
+        Tutkimuksessa ei käsitellä henkilötietolain piiriin kuuluvia tietoja (kuten osoitteita, nimiä
+        tai henkilötunnuksia). Tutkimuksesta on kuitenkin laadittu
+        Tietosuojavaltuutetun ohjeiden mukainen tieteellisen tutkimuksen rekisteriseloste.
+        {% endblocktrans %}
+    </p>
+    <p class="">
+        {% blocktrans %}
+        Tutkimusaineiston tietoja käsitellään ryhmittäin, ei yksilötasolla. Tuloksia ryhmitellään esim.
+        sukupuolen, ikäryhmän ja asuinpaikan perustella ja niissä
+        käsitellään ryhmien antamia keskimääräisiä vastauksia, kuten keskimääräistä matkaa tärkeisiin
+        paikkoihin tai kulkutapoja töihin.
+        Julkaistavista tuloksista on mahdotonta jäljittää yksittäisten ihmisten tai yksittäisessä
+        rakennuksessa asuvien ihmisten vastauksia.
+        {% endblocktrans %}
+    </p>
+    </td>
+    <td/>
+</tr>
+{% endblock privacy_protection %}
+{% block registry %}
+<tr>
+    <td>
+        <h2>
+            <a name="re">
+                {% trans 'Rekisteriseloste' %}
+            </a>
+        </h2>
+        </td>
+    <td/>
+</tr>
+<tr>
+    <td>
+    <p class="">
+        {% trans 'Tutkimuksen rekisteriseloste' %}
+        <a href="">{% trans '(pdf-tiedosto).' %}</a>
+    </p>
+    </td>
+</tr>
+{% endblock registry %}
+
+

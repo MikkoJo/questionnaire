@@ -1,0 +1,14 @@
+{% extends 'example/html/kkolmio_info.html' %}
+{% load i18n %}
+{% spaceless %}
+{% block save_close_button %}
+    <div class='button saveLong' onclick='submitsubmitAreaFormForm(\"info\");map.infoWindow.hide()'>
+        <span class='saveText'>{% trans 'Tallenna arvio' %}</span>
+    </div>
+{% endblock save_close_button %}
+{% block remove_button %}
+    <p style='margin:0;'>
+        <span style='color:#36A8D5;text-decoration:underline;' onclick='map.infoWindow.hide()'>{% trans 'Poista arvio' %}</span>
+    </p>
+{% endblock remove_button %}
+{% endspaceless %}

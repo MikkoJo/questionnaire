@@ -1,0 +1,124 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <h1>{% trans 'Liikkuminen elinympäristössä' %}</h1>
+    <p>
+        <b>
+            {% trans 'Merkitse kartalle sellaiset paikat, joissa käyt usein' %}
+        </b>
+    </p>
+    <p>{% trans 'Käytä karttaa samaan tapaan kuin aikaisemmin.' %}</p>
+    <table>
+        <tr id="miniHelp" onclick="toggleHelp();">
+            <td id="expandButton" class="closedhelp"/>
+            <td>{% trans 'Etsitkö ohjetta...' %}</td>
+        </tr>
+    </table>
+    <ul class="instructionlinks" style="display: none;">
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kali" onclick="window.open('{% url main_html file_name='instructions' %}#kali'); return false;">{% trans 'miten kartalla liikutaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'kuinka merkitä kohde kartalle' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'miten korjataan kohde, joka meni väärään paikkaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}" onclick="window.open('{% url main_html file_name='instructions' %}'); return false;">{% trans 'Näytä kaikki ohjeet' %}</a>
+        </li>
+    </ul>
+    <hr />
+    <div id="removegraphicsbutton" onclick="togglegraphicsbutton()">
+        <span id="hidebutton">{% trans 'Piilota omat kohteet' %}</span>
+        <span class="tyhja" id="showbutton">{% trans 'Näytä omat kohteet' %}</span>
+    </div>
+    <form id="moveEnvForm" name="moveEnvForm">
+        <table class="buttons">
+            <tr>
+                <td class="moveEnvTd">
+                    {% trans 'Työ, opiskelu, päivähoito' %}
+                    <ul>
+                        <li>{% trans 'Työpaikka' %}</li>
+                        <li>{% trans 'Lapsen päivähoitopaikka' %}</li>
+                        <li>{% trans 'Koulu' %}</li>
+                        <li>{% trans 'Opiskelupaikka' %}</li>
+                        <li>{% trans 'Työhön liittyvä asiointipaikka' %}</li>
+                    </ul>
+                </td>
+                <td class="topAlign">
+                    <button type="button" class="imagebutton" id="work" name="work"></button>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd">
+                    {% trans 'Ostospaikka' %}
+                    <ul>
+                        <li>{% trans 'Lähikauppa' %}</li>
+                        <li>{% trans 'Super- tai hypermarket' %}</li>
+                        <li>{% trans 'Kauppakeskus tai tavaratalo' %}</li>
+                        <li>{% trans 'Erikoiskauppa' %}</li>
+                        <li>{% trans 'Tori' %}</li>
+                    </ul>
+                </td>
+                <td class="topAlign">
+                    <button type="button" class="imagebutton" id="shop" name="shop"></button>
+                    <div id=""></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd">
+                    {% trans 'Asiointi' %}
+                    <ul>
+                        <li>{% trans 'Pankki, posti tai virasto' %}</li>
+                        <li>{% trans 'Terveyspalvelut' %}</li>
+                        <li>{% trans 'Muu palvelu, esim. kampaaja tai parturi' %}</li>
+                    </ul>
+                </td>
+                <td class="topAlign">
+                    <button type="button" class="imagebutton" id="business" name="business"></button>
+                    <div id=""></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd">
+                    {% trans 'Liikunta ja ulkoilu' %}
+                    <ul>
+                        <li>{% trans 'Ulkoilupaikka' %}</li>
+                        <li>{% trans 'Liikuntapaikka' %}</li>
+                        <li>{% trans 'Leikkipuisto' %}</li>
+                    </ul>
+                </td>
+                <td class="topAlign">
+                    <button type="button" class="imagebutton" id="exercise" name="exercise"></button>
+                    <div id=""></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd">
+                    {% trans 'Vapaa-aika' %}
+                    <ul>
+                        <li>{% trans 'Vierailupaikka (ystävät, sukulaiset)' %}</li>
+                        <li>{% trans 'Ravintola, kahvila' %}</li>
+                        <li>{% trans 'Kirjasto' %}</li>
+                        <li>{% trans 'Kirkko, seurakuntatoiminta' %}</li>
+                        <li>{% trans 'Kesämökki, vapaa-ajan asunto' %}</li>
+                        <li>{% trans 'Työväenopisto tms.' %}</li>
+                        <li>{% trans 'Muu vapaa-ajan paikka' %}</li>
+                    </ul>
+                </td>
+                <td class="topAlign">
+                    <button type="button" class="imagebutton" id="freetime" name="freetime"></button>
+                    <div id=""></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd">{% trans 'Muu paikka' %}</td>
+                <td class="topAlign">
+                    <button type="button" class="imagebutton" id="otherplace" name="otherplace"></button>
+                    <div id=""></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock formarea %}

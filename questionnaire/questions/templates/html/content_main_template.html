@@ -1,0 +1,34 @@
+{% load i18n %}
+<div class="formArea">
+    {% block formarea %}
+    {% endblock formarea %}
+</div>
+<div class="buttonArea newButtonArea">
+    {% block buttonarea %}
+    <!--<div class="previous">
+        <span class="buttontext">{% trans 'Previous' %}</span>
+    </div>-->
+    <div class="buttonBackgroundRight prev">
+        <div class="buttonBackgroundContent">
+            <div class="buttonBackwardOuter previous">
+                <span class="buttonBackwardInner">
+                    {% trans 'previous' %} 
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="buttonBackgroundRight">
+        <div class="buttonBackgroundContent">
+            <div class="buttonForwardOuter next">
+                <span class="buttonForwardInner">
+                    {% trans 'next' %} 
+                </span>
+            </div>
+        </div>
+    </div>
+<!--    <div class="next">
+        <span class="buttontext">{% trans 'Save' %}</span>
+    </div>
+-->
+    {% endblock buttonarea %}
+</div>

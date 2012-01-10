@@ -1,0 +1,5 @@
+span#hidetext, span#showtext {
+padding-bottom: 0px;
+position: relative;
+top: -5px;
+}

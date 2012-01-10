@@ -1,0 +1,15 @@
+/* Google logo and copyright */
+div#map_googlemaps > div > div:first-child + div {
+    bottom: 58px !important;
+    left: 20px !important;
+}
+div#map_googlemaps > div > div:first-child + div + div {
+    bottom: 60px !important;
+    right: 20px !important;
+
+}
+.softgis_mymap_ja #maanmittausCopy {
+    left: 100px;
+    bottom: 5px;
+    width: 180px;
+}

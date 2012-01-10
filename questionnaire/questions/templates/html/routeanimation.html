@@ -1,0 +1,19 @@
+{% load i18n %}
+<div class="subwindowTop">	<div>
+        <h2>
+{% trans 'Reitin piirtäminen' %}
+</h2>
+        <p class="centeredText">
+            <strong>
+{% trans 'Näin piirrät reitin:' %}
+</strong>
+            <br />
+            <br />
+            <img src="{{ STATIC_URL }}img/animation/reitin_piirto_animaatio_fi.gif" alt="{% trans 'Reitin piirto' %}" width="496" height="400" />
+        </p>
+    </div>
+</div><div class="subwindowBottom">
+    <div id="closeSub" class="exit subAnim" onclick="closesubwindow();">
+        <span>{% trans 'Sulje ikkuna' %}</span>
+    </div>
+</div>

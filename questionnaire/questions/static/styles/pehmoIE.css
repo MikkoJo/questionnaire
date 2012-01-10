@@ -1,0 +1,16 @@
+#buttonstart {
+padding-left: 0px;
+}
+p.karttanakyma {
+line-height: 1.2;
+}
+
+.infowindow .right .sprite {
+    width: 680px !important;
+}
+span#hidetext, span#showtext {
+top: -3px;
+}
+.softgis_children div#header {
+    text-align: left;
+}

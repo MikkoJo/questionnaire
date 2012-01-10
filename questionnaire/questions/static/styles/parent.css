@@ -1,0 +1,67 @@
+div#content {
+    position: relative;
+    /*top: 60px;*/
+}
+
+.softgis_children div#progressBar {
+    top: 0px;
+    left: 160px;
+}
+body, html {
+    height: 100%;
+}
+body {
+    overflow: auto;
+
+}
+div#mainStack {
+    /*top: 60px;*/
+    height: 100%;
+    /*margin: 0px 70px;*/
+}
+
+.centeredRadio {
+    font-size: 12px;
+}
+tr.centeredRadio td {
+    padding: 0 4px 0 4px;
+}
+div.mainContent {
+    height: 100%;
+    /*width: 700px;*/
+}
+span.smaller {
+    font-size: 12px;
+    font-style: italic;
+}
+
+td.question {
+    font-size: 13px;
+}
+
+.cPane {
+    margin: 0px 70px;
+}
+
+tr.centeredRadio td {
+    padding: 2px 4px;
+}
+
+table.bgTable tbody tr td label {
+    margin-left: 5px;
+}
+
+.shortTextBox .dijitTextBox {
+    font-size: 12px;
+}
+
+.shortTextBox .dijitTextBox .dijitInputInner {
+    padding: 0 1px !important;
+}
+
+.shortTextBox .dijitTextBox .dijitInputField {
+    padding: 0 2px;
+}
+
+
+

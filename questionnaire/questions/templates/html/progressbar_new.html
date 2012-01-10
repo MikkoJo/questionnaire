@@ -1,0 +1,43 @@
+{% load i18n %}
+{% block progressbar %}
+            <div id="headerPadding"></div>
+            <!--<div id="progressCircle" style="background: transparent url('../static/img/badge/Badge_0_0.png') no-repeat 0 0;" class="badgeState_0"></div>-->
+            <div id="progressCircle" style="background-position:0 0;"></div>
+            <div id="progressBar" class="" style="clear: both;">
+                <div class="progressBarRight journey progressBar first">
+                    <div class="progressBarContent progressBar">
+                        <div class="sectionOuter">
+                            <span class="sectionInner">
+                                {% trans 'journeys' %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="progressBarRight places progressBar">
+                    <div class="progressBarContent progressBar">
+                        <div class="sectionOuter">
+                            <span class="sectionInner">
+                                {% trans 'places' %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="progressBarRight activities progressBar">
+                    <div class="progressBarContent progressBar">
+                        <div class="sectionOuter">
+                            <span class="sectionInner">
+                                {% trans 'activities' %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="progressBarRight wellbeing progressBar">
+                    <div class="progressBarContent progressBar">
+                        <div class="sectionOuter">
+                            <span class="sectionInner">
+                                {% trans 'well-being' %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+{% endblock progressbar %}

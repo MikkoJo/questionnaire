@@ -1,0 +1,883 @@
+<!DOCTYPE html >
+{% load i18n %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE|slice:":2" }}" lang="{{ LANGUAGE_CODE|slice:":2" }}">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <title>{% trans 'PehmoGIS ohjeet' %}</title>
+        <style type="text/css">
+
+            <!--
+            body {
+            /*overflow: hidden;*/
+            font-family:"Trebuchet MS", Arial, sans-serif;
+            padding: 0px;
+            margin:0px;
+            }
+
+            h1 {
+            color:#86c954;
+            font-size:120%;
+            /*text-transform: capitalize;*/
+            }
+
+            h2 {
+            padding-top:10px;
+            color: #3B8CC5;
+            font-size: 100%;
+            /*text-transform: capitalize;*/
+            }
+
+            h3 {
+            font-size: 80%;
+            }
+
+            p {
+            font-size: 80%;
+            }
+
+            li {
+            font-size: 80%;
+            }
+
+            td {
+            vertical-align: top;
+            }
+
+            .links {
+            position: fixed;
+            padding: 10px;
+            padding-top:10px;
+            left: 0px;
+            height: 100%;
+            width: 200px;
+            border-right: 1px dashed black;
+            }
+
+            .content {
+            position: absolute;
+            padding: 0px;
+            margin:0px;
+            padding-top:10px;
+            padding-bottom:0px;
+            left: 230px;
+            /*height: 100%;*/
+            overflow: auto;
+            max-width: 1100px;
+            }
+
+            .observe {
+            margin-left: 40px;
+            color: gray;
+            font-weight: bold;
+            }
+
+            .animationtext {
+            /*text-align: center;*/
+            }
+            .links li {
+            list-style-type: square;
+            margin-left: -15px;
+            }
+            -->
+</style>
+        <!--[if lt IE 7]>
+        <style type="text/css">
+        .links {
+        position: absolute;
+        }
+        </style>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="links">
+        {% block answering_links %}
+            <h3 style="margin-bottom: -20px;">
+            <strong>{% trans 'Kyselyyn vastaaminen' %}</strong>
+            </h3>
+            <ul>
+                <li>
+                    <a href="#et">{% trans 'eteneminen' %}</a>
+                </li>
+                <li>
+                    <a href="#ke">{% trans 'keskeyttäminen' %}</a>
+                </li>
+            </ul>
+        {% endblock answering_links %}
+            <h3 style="margin-bottom: -20px;">
+            <strong>{% trans 'Kartan käyttö' %}</strong>
+            </h3>
+            <ul>
+                <li>
+                    <a href="#kali">{% trans 'kartalla liikkuminen' %}</a>
+                </li>
+                <li>
+                    <a href="#kalajalo">{% trans 'kartan lähennys ja loitonnus' %}</a>
+                </li>
+                <li>
+                    <a href="#naka">{% trans 'navigointikartan käyttö' %}</a>
+                </li>
+                <li>
+                    <a href="#kamekopi">{% trans 'kartalle merkittyjen kohteiden piilottaminen' %}</a>
+                </li>
+            </ul>
+            {% block drawing_links %}
+            <h3 style="margin-bottom: -20px;">
+            <strong>{% trans 'Kohteiden merkitseminen kartalle' %}</strong>
+            </h3>
+            <ul>
+                <li>
+                    <a href="#kotamupime">{% trans 'kodin tai muun pisteen merkitseminen' %}</a>
+                </li>
+                <li>
+                    <a href="#repika">{% trans 'reitin piirtäminen kartalle' %}</a>
+                </li>
+                <li>
+                    <a href="#alpika">{% trans 'alueen piirtäminen kartalle' %}</a>
+                </li>
+                <li>
+                    <a href="#kosimutapo">{% trans 'kohteen siirtäminen, muuttaminen tai poistaminen' %}</a>
+                </li>
+            </ul>
+            {% endblock drawing_links %}
+            <h3 style="margin-bottom: -20px;">
+            <strong>{% trans 'Apua ongelmatilanteisiin' %}</strong>
+            </h3>
+            <ul>
+                <li>
+                    <a href="#seas">{% trans 'selaimet ja asetukset' %}</a>
+                </li>
+            </ul>
+            {% block info_for_research %}
+            <h3 style="margin-bottom: -20px;">
+            <strong>{% trans 'Tietoa PehmoGIS-tutkimuksesta' %}</strong>
+            </h3>
+            <ul>
+                <li>
+                    <a href="#kytojatu">{% trans 'kyselyn toteuttaja ja tutkijat' %}</a>
+                </li>
+                <li>
+                    <a href="#palkinnot">{% trans 'Palkinnot' %}</a>
+                </li>
+                <li>
+                    <a href="#ti">{% trans 'tietosuoja' %}</a>
+                </li>
+                <li>
+                    <a href="#re">{% trans 'rekisteriseloste' %}</a>
+                </li>
+            </ul>
+            {% endblock info_for_research %}
+        </div>
+        <div class="content">
+            <table>
+                <tr>
+                    <th colspan="2">
+                    <h1>{% trans 'PehmoGIS-ohjeet' %}</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <h1>{% trans 'Kyselyyn vastaaminen' %}</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <p class="">
+                        {% blocktrans %}
+                        Kyselyyn vastaaminen vie aikaa 20 minuutista ylöspäin riippuen vastaustyylistäsi. Toivomme sinun
+                        vastaavan
+                        <strong>kaikkiin kysymyksiin</strong>
+                        ja karttasivuilla
+                        <strong>erityisesti tärkeänä pitämiisi asioihin</strong>.	Kysely etenee
+                        vaiheittain, ja antamasi tiedot tallentuvat sitä mukaa, kun etenet kyselyssä.
+                        {% endblocktrans %}
+                    </p>
+                    </td>
+                </tr>
+                {% block answering %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="et">{% trans 'Kyselyssä eteneminen' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        Siirry seuraavaan kysymykseen
+                        <strong>Jatka</strong>-painikkeella. Voit siirtyä takaisinpäin
+                        kyselyssä korjaamaan jo antamiasi vastauksia
+                        <strong>Edellinen</strong>-painikkeella tai yläpalkin navigaatiopalkin kautta.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Kun pääset kyselyn loppuun, etkä enää halua muuttaa vastauksiasi, voit poistua kyselystä
+                        sulkemalla selaimen. Jos et ehdi vastata kaikkiin kysymyksiin
+                        yhdellä kertaa, voit keskeyttää kyselyyn vastaamisen ja palata myöhemmin täydentämään
+                        vastauksiasi (kts. ohje
+                        {% endblocktrans %}
+                        <a href="#ke">{% trans 'kyselyn keskeyttämisestä' %}</a>).
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ STATIC_URL }}img/help/eteneminen.gif" alt="jatka- ja edellinen-painikkeet" width="212" height="80" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="ke">{% trans 'Kyselyn keskeyttäminen' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        Voit jatkaa kyselyä myöhemmin keskeyttämällä vastaamisen Keskeytä-painikkeesta, joka löytyy
+                        näkymän oikeasta yläreunasta (kts. kuva oikealla).
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Keskeyttäessäsi kyselyn sinun tulee antaa toimiva sähköpostiosoite. Saat ohjeet ja linkin
+                        antamaasi sähköpostiosoitteeseen. Linkki on henkilökohtainen ja
+                        sitä kautta voit muuttaa omia vastauksiasi tai jatkaa kyselyn täyttämistä.
+                        {% endblocktrans %}
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ STATIC_URL }}img/help/keskeyta.jpg" alt="Keskeytä-painike" width="220" height="80" />
+                    </td>
+                </tr>
+                {% endblock answering %}
+                <tr>
+                    <td colspan="2">
+                    <h1>{% trans 'Kartan käyttö' %}</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kali">{% trans 'Kartalla liikkuminen' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        Kartalla liikutaan nuolipainikkeiden (kuva oikealla) avulla. Tee näin: klikkaa haluamaasi
+                        suuntaan osoittavaa nuolta hiirellä. Kartta liikkuu yhden
+                        pykälän valitsemaasi suuntaan.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Voit liikkua kartalla myös
+                        <a href="#naka">navigointikartan</a> avulla tai siirtämällä karttaa
+                        hiirellä raahaamalla.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Tee näin raahataksesi karttaa hiirellä: klikkaa hiiren painike alas missä tahansa kohtaa kartan
+                        päällä. Pidä painike pohjassa ja siirrä hiirtä haluamaasi
+                        suuntaan. Kartta liikkuu hiiren mukana.
+                        {% endblocktrans %}
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ STATIC_URL }}img/help/nuolipainikkeet.jpg" alt="Nuolipainikkeet" width="90" height="270" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kalajalo">{% trans 'Kartan lähennys ja loitonnus' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        Kartan lähentämiseen ja loitontamiseen (zoomaamiseen) on kaksi tapaa. Karttaa voi lähentää ja
+                        loitontaa
+                        <strong>zoomauspalkin </strong>tai
+                        <strong>hiiren vierityspainikkeen avulla</strong>.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Zoomauspalkin avulla karttaa voi lähentää klikkaamalla plus-painiketta (+) ja loitontaa
+                        klikkaamalla miinus-painiketta.
+                        Näkymää voi säätää myös suoraan raahaamalla palkin osoitinta ylöspäin tai alaspäin.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Jos hiiressäsi on niin sanottu vierityspainike (tai "rulla") voit zoomata myös sen
+                        avulla. Kartta zoomaa lähemmäksi,
+                        kun vierität rullaa eteenpäin ja taaksepäin, kun vierität rullaa taaksepäin.
+                        {% endblocktrans %}
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ STATIC_URL }}img/help/zoomauspalkki.jpg" alt="Lähennys ja loitonnus" width="90" height="270" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="naka">{% trans 'Navigointikartan käyttö' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        Näkymän oikeasta ylänurkasta löytyy navigointikartta eli pienoiskokoinen kartta, josta näkyy
+                        näkymän sijainti suhteessa koko kaupunkiin.
+                        Navigointikartan avulla voi myös liikkua kartalla.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Näin liikut kartalla navigointikartan avulla: tartu hiirellä kartalla näkyvään siniseen neliöön
+                        ja raahaa sitä hiirellä haluamaasi suuntaan.
+                        {% endblocktrans %}
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ STATIC_URL }}img/help/navikartta.jpg" alt="Navigointikartta" width="220" height="220" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kamekopi">{% trans 'Kartalle merkittyjen kohteiden piilottaminen' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        Kartalle päällekkäin merkityt kohteet peittävät helposti pohjakartan. Voit halutessasi
+                        piilottaa kartalle merkitsemäsi kohteet
+                        <strong>Piilota omat
+                        merkinnät</strong> -painikkeen avulla. Painike löytyy toimintopainikkeen yläpuolelta, kuten
+                        viereisessä kuvassa on esitetty.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Kun olet piilottanut omat merkintäsi kartalta, painikkeessa lukee "Näytä omat merkinnät".
+                        Saat siis merkintäsi uudelleen näkyviin klikkaamalla painiketta uudemman kerran.
+                        {% endblocktrans %}
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ STATIC_URL }}img/help/piilota_omat.jpg" alt="Omien kohteiden piilottaminen" width="215" height="140" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <h1>{% trans 'Kohteiden merkitseminen kartalle' %}</h1>
+                    </td>
+                </tr>
+                {% block locating %}
+                <tr>
+                    <td colspan="2">
+                    <p class="">
+                        {% blocktrans %}
+                        Kyselyssä merkitään kartalle pisteitä, alueita tai viivoja (reittejä). Toimintopainikkeen kuvake
+                        kertoo, minkälainen kohde on tarkoitus paikantaa.
+                        Esimerkiksi koti merkitään kartalle pisteenä, kulkureitit piirretään viivoina ja naapurusto alueena.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="observe">
+                        <img src="{{ STATIC_URL }}img/help/koti_tyokalu.png" alt="Koti" width="265" height="53" />
+                        <br />
+                        <img src="{{ STATIC_URL }}img/help/tarkeaReitti_tyokalu.png" alt="Reitti" width="265" height="53" />
+                        <br />
+                        <img src="{{ STATIC_URL }}img/help/omaAlue_tyokalu.png" alt="Naapurusto" width="265" height="53" />
+                        <br />
+                        {% trans 'Kuva yllä: Esimerkit piste-, viiva- ja aluetyökaluista.' %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Elinympäristön arviointi -osiossa voit merkitä kartalle sekä pisteitä että alueita. Valitse piste-
+                        tai aluetyökalu sen mukaan, minkälainen kohteesi on.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="observe">
+                        <img src="{{ STATIC_URL }}img/help/fyysinen_piste.png" alt="Piste" width="50" height="20" />
+                        <img src="{{ STATIC_URL }}img/help/fyysinen_alue.png" alt="Alue" width="50" height="20" />
+                        <br />
+                        {% trans 'Kuva yllä: Elinympäristön arviointi -osiossa sinun tulee valita joko piste- tai aluetyökalu.' %}
+                    </p>
+                    </td>
+                </tr>
+                {% endblock locating %}
+                {% block point_drawing %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kotamupime">{% trans 'Kodin tai muun pisteen merkitseminen kartalle' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        Koti merkitään kartalle pisteenä. Muita pistemäisiä kohteita ovat esimerkiksi työ- tai
+                        opiskelupaikka, peruspalvelut ja onnen paikka.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        <strong>{% trans 'Esimerkki pisteen merkitsemisestä kartalle: Kodin merkitseminen' %}</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            {% trans 'Etsi aluksi kartalta kotisi sijainti.' %}
+                        </li>
+                        <li>
+                            <strong>{% trans 'Valitse Koti-työkalu' %}</strong> {% trans 'klikkaamalla sitä hiirellä.' %}
+                            <br />
+                            <img src="{{ STATIC_URL }}img/help/koti_tyokalu.png" alt="Koti" width="265" height="53" />
+                            <br />
+                            {% trans 'Klikatessasi Koti-työkalu aktivoituu ja sen ulkoasu muuttuu:' %}
+                            <br />
+                            <img src="{{ STATIC_URL }}img/help/koti_tyokalu_aktivoitu.png" alt="Koti valittuna" width="265" height="53" />
+                        </li>
+                        <li>
+                            <strong>{% trans 'Klikkaa karttaa kodin kohdalla.' %}</strong> {% trans 'Koti sijoitetaan osoittamaasi kohtaan.' %}
+                        </li>
+                        <li>
+                            {% blocktrans %}
+                            <strong>Vahvista kodin sijainti</strong> avautuvassa ikkunassa klikkaamalla painiketta
+                            "Kyllä, tallenna kohde".
+                            Mikäli koti meni väärään paikkaan, voit poistaa sen klikkaamalla "Ei, poista kohde".
+                            Voit myös siirtää kotia jälkeenpäin, jos huomaat sen olevan väärässä paikassa (kts.
+                            {% endblocktrans %}
+                            <a href="#kosimutapo">{% trans 'kohteen siirto-ohje' %}</a>).
+                        </li>
+                    </ol>
+                    </td>
+                    <td/>
+                </tr>
+                {% endblock point_drawing %}
+                {% block route_drawing %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="repika">{% trans 'Reitin piirtäminen kartalle' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        Reitti (tai viiva) piirretään kartalle hiirellä klikkailemalla. Aloita piirto reitin
+                        jommastakummasta päästä.
+                        Kun reitti on valmis, lopeta piirto hiiren kaksoisklikkauksella.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        <strong>{% trans 'Esimerkki reitin piirtämisestä: Tärkeän kulkureitin merkitseminen' %}</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            {% trans 'Etsi haluamasi paikka kartalta.' %}
+                        </li>
+                        <li>
+                            {% trans 'Valitse' %}
+                            <strong>{% trans 'Tärkeä reitti -työkalu' %}</strong>.
+                        </li>
+                        <li>
+                            {% blocktrans %}
+                            Aloita reitin piirto
+                            <strong>klikkaamalla karttaa reitin alkupään kohdalla</strong>. Jatka
+                            reitin piirtämistä klikkailemalla karttaa reittiä seuraillen.
+                            {% endblocktrans %}
+                        </li>
+                        <li>
+                            <strong>{% trans 'Lopeta piirto hiiren kaksoisklikkauksella.' %}</strong>
+                        </li>
+                        <li>
+                            {% trans 'Kerro reitistä haluamasi asiat ja tallenna reitti.' %}
+                        </li>
+                    </ol>
+                    <p class="observe">
+                        {% blocktrans %}
+                        Huom! Jos reittisi jatkuu näkymän ulkopuolelle, voit siirtää karttaa viemällä hiirtä kartan
+                        reunan yli (Firefox-selain) tai
+                        kartan siirtonuolia klikkailemalla (mm. Internet Explorer).
+                        {% endblocktrans %}
+                    </p>
+                    <p class="animationtext">
+                        {% trans 'Reitin piirtäminen kartalla vaihe vaiheelta:' %}
+                    </p>
+                    <p class="style2">
+                        <img src="{{ STATIC_URL }}img/help/reitin_piirto_animaatio.gif" alt="Reitin piirto" width="496" height="400" />
+                    </p>
+                    </td>
+                    <td/>
+                </tr>
+                {% endblock route_drawing %}
+                {% block area_drawing %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="alpika">{% trans 'Alueen piirtäminen kartalle' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        Alue merkitään kartalle piirtämällä sen reunaviiva hiirellä klikkailemalla. Aloita piirto
+                        klikkaamalla karttaa jossain alueen kulmapisteessä.
+                        Jatka piirtämistä klikkailemalla kartalle reunaviiva piste pisteeltä. Kun alue on valmis,
+                        lopeta piirto hiiren kaksoisklikkauksella.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        <strong>{% trans 'Esimerkki alueen piirtämisestä: Oma alueen merkitseminen' %}</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            {% trans 'Etsi haluamasi paikka kartalta.' %}
+                        </li>
+                        <li>
+                            {% trans 'Valitse' %}
+                            <strong>{% trans 'Oma alue -työkalu' %}</strong>.
+                        </li>
+                        <li>
+                            {% blocktrans %}
+                            Aloita alueen piirto klikkaamalla karttaa jossain alueen kulmapisteessä.
+                            Jatka alueen piirtämistä klikkailemalla karttaa reunaviivaa seuraillen piste pisteeltä.
+                            {% endblocktrans %}
+                        </li>
+                        <li>
+                            <strong>{% trans 'Lopeta piirto hiiren kaksoisklikkauksella.' %}</strong>
+                        </li>
+                    </ol>
+                    <p class="observe">
+                        {% blocktrans %}
+                        Huom! Jos alueesi jatkuu näkymän ulkopuolelle, voit siirtää karttaa viemällä hiirtä kartan
+                        reunan yli (Firefox-selain)
+                        tai kartan siirtonuolia klikkailemalla (mm. Internet Explorer).
+                        {% endblocktrans %}
+                    </p>
+                    <p class="animationtext">
+                        {% trans 'Alueen piirtäminen kartalla vaihe vaiheelta:' %}
+                    </p>
+                    <p class="style2">
+                        <img src="{{ STATIC_URL }}img/help/alueen_piirto_animaatio.gif" alt="Alueen piirtäminen kartalle" width="496" height="400" />
+                    </p>
+                    </td>
+                    <td/>
+                </tr>
+                {% endblock area_drawing %}
+                {% block moving_target %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kosimutapo">{% trans 'Kohteen siirtäminen, muuttaminen tai poistaminen' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        Voit muuttaa kartalle merkitsemiäsi kohteita valitsemalla kohteen kartalta klikkaamalla. Voit
+                        siirtää kohteen toiseen paikkaan tai muuttaa sen sisältöä
+                        (esimerkiksi kohteesta kirjoittamaasi kuvausta). Kotia lukuun ottamatta voit myös poistaa
+                        kaikkia merkitsemiäsi kohteita kartalta.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        <strong>{% trans 'Esimerkki kohteen muuttamisesta: Kodin siirtäminen oikeaan paikkaan' %}</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            {% blocktrans %}
+                            <strong>Valitse kartalle merkitsemäsi Koti-piste</strong> klikkaamalla kartalla näkyvää
+                            pistettä hiirellä. Näkymään avautuu ikkuna,
+                            jossa on kaksi painiketta: Muuta kohteen paikkaa ja Sulje ikkuna.
+                            {% endblocktrans %}
+                        </li>
+                        <li>
+                            {% blocktrans %}
+                            Valitse
+                            <strong>Muuta kohteen paikkaa</strong>. Nyt voit merkitä kodin kartalle oikeaan
+                            paikkaan klikkaamalla karttaa.
+                            {% endblocktrans %}
+                        </li>
+                        <li>
+                            {% blocktrans %}
+                            <strong>Tallenna</strong> Kodin uusi sijainti klikkamalla tallennuspainiketta. Vanha
+                            merkintä poistuu, kun tallennat kohteen.
+                            {% endblocktrans %}
+                        </li>
+                    </ol>
+                    </td>
+                    <td>
+                    <img src="{{ STATIC_URL }}img/help/kohteen_siirto.jpg" alt="Siirtäminen" width="220" height="220" />
+                    </td>
+                </tr>
+                {% endblock moving_target %}
+                {% block evaluation %}
+
+                {% endblock evaluation %}
+                <tr>
+                    <td colspan="2">
+                    <h1>{% trans 'Apua ongelmatilanteisiin' %}</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="seas">{% trans 'Selaimet ja asetukset' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        Kysely toimii parhaiten Firefox 3 -selaimella. Muita selaimia, joilla kysely on testattu ja
+                        todettu toimivan hyvin ovat IE7, Google Chrome, Opera ja Firefox 2.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        <strong>{% trans 'JavaScript ja evästeet on sallittava' %}</strong>
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        PehmoGIS-kysely käyttää JavaScript-kieltä, joten selaimesi tulee sallia sen suorittaminen.
+                        Samoin tulee sallia evästeiden käyttö.
+                        Evästeet ovat pieniä kiintolevylle tai muistiin tallettuvia tekstitiedostoja, joiden avulla
+                        voidaan tallettaa tietoa selaamistasi sivustoista.
+                        Evästeiden avulla ei voida käynnistää ohjelmia eikä välittää viruksia koneeseesi.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        <strong>{% trans 'Näin muutat selaimen asetukset' %}</strong>
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Tässä ohjeita yleisimpien www-selainten asetusten muuttamisesta siten, että PehmoGIS-kysely
+                        toimii.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        <strong>{% trans 'Firefox 2.0 ja 3.0 ja uudemmat:' %}</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            {% blocktrans %}
+                            Valitse valikosta Työkalut &gt; Asetukset. Valitse Asetukset-ikkunassa Sisältö kohta ja
+                            valitse kohta "Salli JavaScript"
+                            (Firefox 3.0: "Salli JavaScript -komentosarjat").
+                            {% endblocktrans %}
+                        </li>
+                        <li>
+                            {% blocktrans %}
+                            Valitse sitten Asetukset ikkunassa Tietosuoja-sivu. Evästeet-otsikon alta valitse kohta
+                            "Sivustot voivat asettaa evästeitä".
+                            Hyväksy muutokset painamalla OK.
+                            {% endblocktrans %}
+                        </li>
+                    </ol>
+                    <p class="">
+                        <strong>{% trans 'Internet Explorer 6.x:' %}</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            {% trans 'Valitse valikosta Työkalut (Tools) &gt; Internet-asetukset (Internet Options).' %}
+                        </li>
+                        <li>
+                            {% blocktrans %}
+                            Valitse Asetus-ikkunasta Tietosuoja (Security) -välilehti. Aseta tietosuojatasoksi
+                            (Security Level) Normaali
+                            (Medium tai Medium-low) liukuvalitsinta siirtämällä.
+                            {% endblocktrans %}
+                        </li>
+                    </ol>
+                    <p class="">
+                        <strong>{% trans 'Internet Explorer 7.0 ja uudemmat:' %}</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            {% trans 'Valitse valikosta Työkalut (Tools) &gt; Internet-asetukset (Internet Options).' %}
+                        </li>
+                        <li>
+                            {% blocktrans %}
+                            Valitse Internet asetukset -ikkunassa Suojaus (Security) -välilehti. Aseta Vyöhykkeen
+                            suojaustaso kohtaan Keskitaso tai Keskivahva.
+                            Voit käyttää myös Mukautettua tasoa (Custom Level). Varmista silloin, että ainakin
+                            seuraavat kohdat ovat valittuina
+                            "Scripting/Active Scripting/Enable".
+                            {% endblocktrans %}
+                        </li>
+                    </ol>
+                    <p class="">
+                        <strong>{% trans 'Opera:' %}</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            {% trans 'Valitse valikkoriviltä Tiedosto ja Asetukset...' %}
+                        </li>
+                        <li>
+                            {% trans 'Valitse uuden ikkunan vasemmasta laidasta kohta Verkko ja sieltä alakohta Yksityisyys.' %}
+                        </li>
+                        <li>
+                            {% trans 'Valitse Evästeet - kohdasta Ota evästeet käyttöön. Hyväksy asetukset valitsemalla OK.' %}
+                        </li>
+                    </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <h1>{% trans 'Tietoa PehmoGIS-tutkimuksesta' %}</h1>
+                    </td>
+                </tr>
+                {% block researchers %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kytojatu">{% trans 'Kyselyn toteuttaja ja tutkijat' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        {% endblocktrans %}
+                    </p>
+                    </td>
+                    <td/>
+                </tr>
+                {% endblock researchers %}
+                {% block prizes %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="palkinnot">{% trans 'Arvonnan palkinnot' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% trans 'Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaneiden kesken arvotaan:' %}
+                        <ul>
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+                            <li>
+                            </li>
+                        </ul>
+                    </p>
+                    </td>
+                </tr>
+                {% endblock prizes %}
+                {% block privacy_protection %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="ti">{% trans 'Tietosuoja' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% blocktrans %}
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Tutkimuksessa ei käsitellä henkilötietolain piiriin kuuluvia tietoja (kuten osoitteita, nimiä
+                        tai henkilötunnuksia). Tutkimuksesta on kuitenkin laadittu
+                        Tietosuojavaltuutetun ohjeiden mukainen tieteellisen tutkimuksen rekisteriseloste.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Tutkimusaineiston tietoja käsitellään ryhmittäin, ei yksilötasolla. Tuloksia ryhmitellään esim.
+                        sukupuolen, ikäryhmän ja asuinpaikan perustella ja niissä
+                        käsitellään ryhmien antamia keskimääräisiä vastauksia, kuten keskimääräistä matkaa tärkeisiin
+                        paikkoihin tai kulkutapoja töihin.
+                        Julkaistavista tuloksista on mahdotonta jäljittää yksittäisten ihmisten tai yksittäisessä
+                        rakennuksessa asuvien ihmisten vastauksia.
+                        {% endblocktrans %}
+                    </p>
+                    <p class="">
+                        {% blocktrans %}
+                        Kysymykset hyvinvoinnista tai sosioekonomisesta asemasta eivät ole tutkimuksen aiheita
+                        sinällään, vaan niitä käsitellään ainoastaan kytkettynä tutkimuksen
+                        varsinaiseen teemaan, eli elinympäristön kokemuksiin, ja tietoihin yhdyskunnan rakenteellisista
+                        piirteistä.
+                        {% endblocktrans %}
+                    </p>
+                    </td>
+                    <td/>
+                </tr>
+                {% endblock privacy_protection %}
+                {% block registry %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="re">{% trans 'Rekisteriseloste' %}</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        {% trans 'Tutkimuksen rekisteriseloste' %}
+                        <a href="">{% trans '(pdf-tiedosto).' %}s</a>
+                    </p>
+                    </td>
+                </tr>
+                {% endblock registry %}
+            </table>
+        </div>
+    </body>
+</html>

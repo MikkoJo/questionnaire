@@ -1,0 +1,70 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+	<h1>{% trans 'Elinympäristön arviointi' %}</h1>
+    <p>
+        <b>
+            {% blocktrans %}
+                Arvioi elinympäristöäsi neljältä eri kannalta. Merkitse karttaan, missä paikoissa on
+                mielestäsi myönteinen tai kielteinen piirre.
+            {% endblocktrans %}
+        </b>
+    </p>
+    <p>{% trans 'Tee näin:' %}</p>
+    <ol>
+        <li>{% trans 'Valitse haluamasi myönteinen tai kielteinen työkalu' %}.</li>
+        <li>{% trans 'Merkitse paikka kartalle' %}.</li>
+        <li>{% trans 'Valitse avautuvasta ikkunasta haluamasi ominaisuudet'%}.</li>
+        <li>{% trans 'Tallenna kohde' %}.</li>
+    </ol>
+
+    <table>
+        <tr id="miniHelp" onclick="toggleHelp();">
+            <td id="expandButton" class="closedhelp"/>
+            <td>{% trans 'Etsitkö ohjetta...' %}</td>
+        </tr>
+    </table>
+    <ul class="instructionlinks" style="display: none;">
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kali" onclick="window.open('{% url main_html file_name='instructions' %}#kali'); return false;">{% trans 'miten kartalla liikutaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kotamupime" onclick="window.open('{% url main_html file_name='instructions' %}#kotamupime'); return false;">{% trans 'kuinka merkitä kohde kartalle' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'miten korjataan kohde, joka meni väärään paikkaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}" onclick="window.open('instructions.html'); return false;">{% trans 'Näytä kaikki ohjeet' %}</a>
+        </li>
+    </ul>
+	<hr />
+    <div id="removegraphicsbutton" onclick="togglegraphicsbutton()">
+        <span id="hidebutton">{% trans 'Piilota omat kohteet' %}</span>
+        <span class="tyhja" id="showbutton">{% trans 'Näytä omat kohteet' %}</span>
+    </div>
+	<form id="ownevaluationForm">
+		<fieldset>
+            <table class="elinYmp">
+                {% for text, plus, minus in values %}
+                    <tr>
+            			<td colspan="3">{{ text }}</td>
+    				</tr>
+    				<tr>
+					   <td class="padding">&nbsp;</td>
+					   <td class="elinYmpTD">
+					       <div id="{{ plus }}">
+					           <span>plus</span>
+				           </div>
+				       </td>
+					   <td class="elinYmpTD">
+					       <div id="{{ minus }}">
+					           <span>minus</span>
+				           </div>
+			           </td>
+				    </tr>
+			    {% endfor %}
+            </table>
+        </fieldset>
+	</form>
+{% endblock formarea %}

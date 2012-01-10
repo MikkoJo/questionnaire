@@ -1,0 +1,90 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+<form id="owncommentsForm" name="owncommentsForm" >
+    <h1>{% trans 'Omia kommentteja' %}</h1>
+    <p>
+        {% trans 'Jos haluat, voit vielä tähän kommentoida kyselyä tai kertoa jotain, joka jäi sanomatta' %}.
+    </p>
+    <p class="centeredText">
+        <textarea id="feedbacktext" rows="7" cols="70" name="feedbacktext"></textarea>
+    </p>
+</form>
+<form id="contactForm" name="contactForm" class="no_submit">
+    <h2>{% trans 'Arvonta' %}</h2>
+    <p>
+        {% blocktrans %}
+            Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaneiden kesken arvotaan
+            Kino Myyrin sarjalippuja. Jos haluat osallistua arvontaan,
+            jätä tähän yhteystietosi. Yhteystiedot eivät tallennu samaan kantaan muiden vastauksiesi kanssa,
+            joten niiden yhdistäminen vastauksiisi ei ole mahdollista.
+        {% endblocktrans %}
+    </p>
+    <table class="infotable">
+        <tr>
+            <td>{% trans 'Nimi' %}:</td>
+            <td>
+            <input type="text" name="name" id="name" />
+            </td>
+        </tr>
+        <tr>
+            <td>{% trans 'Sähköpostiosoite' %}:</td>
+            <td>
+            <input type="text" name="email" id="email" />
+            </td>
+        </tr>
+        <tr>
+            <td>{% trans 'Puhelinnumero' %}:</td>
+            <td>
+            <input type="text" name="phonenumber" id="phonenumber" />
+            </td>
+        </tr>
+{% comment %}
+        <tr>
+            <td>{% trans 'Katuosoite' %}:</td>
+            <td>
+                <input type="text" name="streetaddress" id="streetaddress" />
+            </td>
+        </tr>
+        <tr>
+            <td>{% trans 'Postinumero' %}:</td>
+            <td>
+                <input type="text" name="zipcode" id="zipcode" />
+            </td>
+        </tr>
+        <tr>
+            <td>{% trans 'Kaupunki' %}:</td>
+            <td>
+                <input type="text" name="city" id="city" />
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" name="sendresults" value="furtherstudy" id="furtherstudy" onclick="emailcheck()" />
+                <label for="furtherstudy">
+                    {% trans 'Olen kiinnostunut osallistumaan mahdolliseen jatkotutkimukseen' %}.
+                    {% trans 'Minulle voi lähettää siihen kutsun sähköpostilla' %}.
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" name="sendresults" value="interview" id="interview" onclick="emailcheck()" />
+                <label for="interview">
+                    {% trans 'Minuun saa ottaa yhteyttä sähköpostilla mahdollisen henkilökohtaisen tutkimushaastattelun sopimiseksi' %}.
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" name="sendresults" value="moreinfo" id="moreinfo" onclick="emailcheck()" />
+                <label for="moreinfo">
+                    {% trans 'Haluan sähköpostiini tietoa tutkimuksen tuloksista niiden valmistuttua' %}.
+                </label>
+            </td>
+        </tr>
+        {% endcomment %}
+    </table>
+</form>
+{% endblock formarea %}

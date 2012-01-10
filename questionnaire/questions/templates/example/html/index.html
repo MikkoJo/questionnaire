@@ -1,0 +1,162 @@
+<!DOCTYPE html >
+{% load i18n %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE|slice:":2" }}" lang="{{ LANGUAGE_CODE|slice:":2" }}">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" >
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />-->
+        <title>{{ site_name }}</title>
+        <!--<title>{% trans 'PehmoGIS - Elinympäristö'%}</title>-->
+        <link rel="stylesheet" type="text/css" href="https://serverapi.arcgisonline.com/jsapi/arcgis/2.6/js/dojo/dijit/themes/tundra/tundra.css" />
+        <link rel="stylesheet" title="pehmogis" type="text/css" href="{{ STATIC_URL }}styles/pehmo.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/kkolmio.css" />
+        <!--[if lte IE 8]>
+            <style type="text/css">
+                @import url({{ STATIC_URL }}styles/pehmoIE8.css);
+            </style>
+        <![endif]-->
+        <!--[if lt IE 8]>
+            <style type="text/css">
+                @import url({{ STATIC_URL }}styles/pehmoIE.css);
+            </style>
+        <![endif]-->
+        <!--[if lt IE 7]>
+            <style type="text/css">
+                @import url({{ STATIC_URL }}styles/pehmoIE6.css);
+            </style>
+        <![endif]-->
+        <script type="text/javascript">
+            <!--
+            var djConfig = {
+                parseOnLoad: true,
+                isDebug: {{ DEBUG|lower }},
+                locale: '{{ LANGUAGE_CODE|slice:":2" }}'
+            };
+            -->
+        </script>
+     </head>
+    <body class="tundra kkolmio_{{ LANGUAGE_CODE|slice:":2" }}" onunload="/*submitForm();endQuestionary();*/">
+        <script type="text/javascript">
+            <!--
+                document.body.style.cursor = "wait";
+            -->
+        </script>
+        <div id="header">
+            <div id="logo"></div>
+            <div id="help" style="visibility: hidden;" onclick="window.open('{% url main_html file_name='instructions' %}'); return false;">
+                <span class="headertext">{% trans 'Ohje' %}</span>
+            </div>
+            <!--
+            <div id="save" onclick="createsubwindow('quit');">
+                <span class="headertext">{% trans 'Keskeytä' %}</span>
+            </div>
+            -->
+            {% include 'html/progressbar.html' %}
+            {% comment %}
+            <div id="progressBar">
+                <table class="progressBar" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="barLeft">&nbsp;&nbsp;&nbsp;</td>
+                        <td class="section barUnvisited background">{% trans 'Taustatiedot' %}</td>
+                        <td class="section barUnvisited envmovement">{% trans 'Liikkuminen elinympäristössä' %}</td>
+                        <td class="section barUnvisited routes">{% trans 'Reittiehdotukset' %}</td>
+                        <td class="section barUnvisited envevaluation">{% trans 'Elinympäristön arviointi' %}</td>
+                        <td class="section barUnvisited feedback">{% trans 'Palaute' %}</td>
+                        <td class="barRight">&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+            {% endcomment %}
+            <div id="language">
+                <p>
+                    {% if LANGUAGE_CODE == 'fi' %}
+                        <a href="{% url set_language %}?lang=en&amp;next={% url main %}">In English</a>
+                    {% else %}
+                        <a href="{% url set_language %}?lang=fi&amp;next={% url main %}">Suomeksi</a>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <div id="bigContent">{% include 'html/wait.html' %}</div>
+        <div id="smallContent"></div>
+        <div id="subsurround"></div>
+        <div id="subwindow"></div>
+        <div id="ov" class="open">
+            <div id="ovcont">
+                <div id="ovbackground"></div>
+                <div id="ovmap">
+                    <div id="ovtransparent"></div>
+                    <div id="ovfocus"></div>
+                </div>
+                <div id="ovbutton" onclick="toggleovwin();">
+                    <span id="hidetext">{% trans 'Piilota navigaatiokartta' %}</span>
+                    <span class="tyhja" id="showtext">{% trans 'Näytä navigaatiokartta' %}</span>
+                </div>
+            </div>
+        </div>
+        <div id="noMap"></div>
+        <div id="tooltip" style="height:0px; width:0px; border-width:0px"></div>
+        <div id="map">
+            <div id="panTop" class="myPanDiv"></div>
+            <div id="panLeft" class="myPanDiv"></div>
+            <div id="panDown" class="myPanDiv"></div>
+            <div id="panRight" class="myPanDiv"></div>
+            <div id="navigation">
+                <div id="pan_arrows">
+                    <div id="pan_up" class="fixedPan panUp" onclick="map.panUp();"></div>
+                    <div id="pan_right" class="fixedPan panRight" onclick="map.panRight();"></div>
+                    <div id="pan_down" class="fixedPan panDown" onclick="map.panDown();"></div>
+                    <div id="pan_left" class="fixedPan panLeft" onclick="map.panLeft();"></div>
+                    <div id="pan_upperRight" class="fixedPan panUpperRight" onclick="map.panUpperRight();"></div>
+                    <div id="pan_lowerRight" class="fixedPan panLowerRight" onclick="map.panLowerRight();"></div>
+                    <div id="pan_upperLeft" class="fixedPan panUpperLeft" onclick="map.panUpperLeft();"></div>
+                    <div id="pan_lowerLeft" class="fixedPan panLowerLeft" onclick="map.panLowerLeft();"></div>
+                </div>
+                <div id="zoom">
+                    <div id="zoomin"></div>
+                    <div id="zoom_slider"></div>
+                    <div id="zoom_rule"></div>
+                    <div id="zoomout"></div>
+                </div>
+                {% comment %}
+                <div id="karttaNakyma" class="aktiivinenkartta" onclick="satellite(false);">
+                    <p class="karttanakyma">{% trans 'Kartta' %}</p>
+                </div>
+                <div id="ilmakuvaNakyma" class="karttanakyma" onclick="satellite(true);">
+                    <p class="karttanakyma">{% trans 'Ilmakuva' %}</p>
+                </div>
+                {% endcomment %}
+            </div>
+        </div>
+        <div class="symbols">
+            <div id="mapSymbols" onclick="showBoxAnim();" style="display:none;"></div>
+        </div>
+        <div id="maanmittausCopy"></div>
+        <div id="footer"></div>
+        <div id="dummy"></div>
+        <script type="text/javascript" src="https://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.6"></script>
+
+        <!--<script type="text/javascript" src="{% url main_js file_name='pehmogis_json' %}"></script>-->
+
+        <!-- new files -->
+        <script type="text/javascript" src="{% url common file_name='quest_default' file_type='js' %}"></script>
+        <script type="text/javascript" src="{% url main_js file_name='quest_spec' %}"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/quest.js"></script>
+        <script type="text/javascript" src="{% url main_js file_name='quest_extra' %}"></script>
+
+        <!-- old files -->
+        <script type="text/javascript" src="{% url common file_name='overview' file_type='js' %}"></script>
+        <!--<script type="text/javascript" src="{% url common file_name='Kysely' file_type='js' %}"></script>-->
+        <script type="text/javascript" src="{% url common file_name='myPan' file_type='js' %}"></script>
+        <script type="text/javascript" src="{% url common file_name='mySlider' file_type='js' %}"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="{% url api_javascript %}?lib=jquery"></script>
+        <script type="text/javascript">
+            <!--
+            dojo.addOnLoad(init);
+            -->
+        </script>
+        
+    </body>
+</html>

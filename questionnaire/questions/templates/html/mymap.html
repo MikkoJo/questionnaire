@@ -1,0 +1,68 @@
+<!DOCTYPE html >
+{% load i18n %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE|slice:":2" }}" lang="{{ LANGUAGE_CODE|slice:":2" }}">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" >
+
+        <title>{% trans 'PehmoGIS - Oma kartta'%}</title>
+        <link rel="stylesheet" type="text/css" href="https://serverapi.arcgisonline.com/jsapi/arcgis/2.6/js/dojo/dijit/themes/tundra/tundra.css" />
+        <link rel="stylesheet" title="pehmogis" type="text/css" href="{{ STATIC_URL }}styles/pehmo.css" />
+        <link rel="stylesheet" title="pehmogis" type="text/css" href="{{ STATIC_URL }}styles/mymap.css" />
+        <!--[if lt IE 8]>
+        <style type="text/css">
+        @import url({{ MEDIA_URL }}styles/pehmoIE.css);
+        </style>
+        <![endif]-->
+        <!-- For IE6 and 5.5 -->
+        <!--[if lt IE 7]>
+        <style type="text/css">
+        @import url({{ MEDIA_URL }}styles/pehmoIE6.css);
+        </style>
+        <![endif]-->
+        <script type="text/javascript">
+        <!--
+            var djConfig = {
+                baseUrl: './', 
+                modulePaths: {
+                    'agsjs': '{{ STATIC_URL }}js/agsjs'
+                },
+                parseOnLoad: true,
+                isDebug: {{ DEBUG|lower }},
+                locale: '{{ LANGUAGE_CODE|slice:":2" }}'
+                };
+        -->
+        </script>
+        <script type="text/javascript" src="https://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.6"></script>
+        <script type="text/javascript" src="{% url common file_name='quest_default' file_type='js' %}"></script>
+        <script type="text/javascript" src="{% url main_js file_name='quest_spec' %}"></script>
+<!--        <script type="text/javascript" src="{% url main_js file_name='pehmogis_json' %}"></script>-->
+        <script type="text/javascript" src="{% url common file_name='mymap' file_type='js' %}"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="{% url api_javascript %}"></script>
+        <script type="text/javascript">
+            dojo.addOnLoad(function() {init();});
+        </script>
+    </head>
+    <body class="tundra softgis_mymap_{{ LANGUAGE_CODE|lower }}">
+        <div id="header" class="myMap">
+            <div id="logo">
+            </div>
+            <div id="myMap">
+                <p style="font-size: larger;">
+                    <b>
+                    <i>{% trans 'Minun karttani' %}</i>
+                    </b>
+                </p>
+            </div>
+            <div class="extrabutton close" id="closeButton">
+                <span class="buttontext">{% trans 'Poistu' %}</span>
+            </div>
+        </div>
+        <div id="map" style="width: 100%; height: 100%">
+        </div>
+        <div id="maanmittausCopy"></div>
+
+    </body>
+</html>

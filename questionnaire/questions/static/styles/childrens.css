@@ -1,0 +1,106 @@
+.softgis_children.softgis_fi h1, .softgis_children.softgis_fi h2 {
+    color: #2b9c40;
+}
+.softgis_children.softgis_en h1, .softgis_children.softgis_en h2 {
+    color: #3850A2;
+}
+.softgis_children.softgis_ja h1, .softgis_children.softgis_ja h2 {
+    color: #DD5F28;
+}
+
+
+.softgis_children.softgis_fi div#logo {
+    background-image: url("../img/childrens_logo_fi.png");
+}
+
+.softgis_children.softgis_en div#logo, .softgis_children.softgis_en-us div#logo {
+background-image: url("../img/childrens_logo_en.png");
+}
+
+.softgis_children.softgis_ja div#logo {
+background-image: url("../img/childrens_logo_en.png");
+}
+
+.countryChoose {
+    overflow: auto;
+}
+.softgis_children .frontPage {
+    height: 714px;
+    width: 1000px;
+    background-image: url("../img/background_map_off_1000x714.jpg");
+    margin: 0 auto;
+}
+
+.softgis_children .frontPage img {
+    border: none;
+}
+.softgis_children div#noMap {
+    background-image: url("../img/map_overlay.png");
+}
+.softgis_children div.mainpageBox {
+    margin: 0 0 0 100px;
+}
+
+.softgis_children div.mainpageBoxBottom {
+    margin: 0 0 0 100px;
+}
+
+.softgis_children form#emails{
+    /*margin-left: 100px;*/
+    margin-top: 10px;
+}
+.softgis_children div.buttonstart {
+    left: 0px;
+    right: 0px;
+    margin: 20px 0 0 100px;
+}
+
+.softgis_children p.firstpagebutton {
+    left: 0px;
+    margin-left: 100px;
+    width: 220px !important;
+}
+
+.softgis_children .infoCheck {
+    vertical-align: top;
+}
+
+.empty_background {
+    background: transparent !important;
+}
+
+.softgis_children.softgis_fi .newButtonArea .previous .buttonBackwardInner {
+    padding: 9px 4px 9px 23px;
+}
+
+.softgis_children.softgis_fi .newButtonArea .next .buttonForwardInner {
+    padding: 9px 13px 9px 27px;
+}
+
+/* Google logo and copyright */
+div#map_googlemaps > div > div:first-child + div {
+    bottom: 58px !important;
+    left: 20px !important;
+}
+div#map_googlemaps > div > div:first-child + div + div {
+    bottom: 60px !important;
+    right: 20px !important;
+
+}
+.softgis_children.softgis_ja #maanmittausCopy {
+    left: 100px;
+    bottom: 5px;
+    width: 180px;
+}
+div.saveLong {
+    background-image: url("../img/buttons/close.png");
+}
+.infowindow form#info div#stack1.dijitStackContainer div#cp2.dijitContentPane div#page2 div.button {
+    float: right;
+    margin-left: 0px;
+    margin-top: 1px;
+    left: 0px;
+}
+.claro .dijitComboBoxMenu .dijitMenuItem {
+    font-size: 13px;
+}

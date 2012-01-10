@@ -1,0 +1,47 @@
+.new_place .deactive {
+    background-image: url("../img/buttons/happiness.png");
+    background-position: 0 2px;
+}
+.new_place .active {
+    background-image: url("../img/buttons/happiness.png");
+    background-position: 0 -51px;
+}
+.new_place .disabled {
+    background-image: url("../img/buttons/happiness.png");
+    background-position: 0 -104px;
+}
+
+.new_place_area_at_kk .deactive {
+    background-image: url("../img/buttons/happiness.png");
+    background-position: 0 2px;
+}
+.new_place_area_at_kk .active {
+    background-image: url("../img/buttons/happiness.png");
+    background-position: 0 -51px;
+}
+.new_place_area_at_kk .disabled {
+    background-image: url("../img/buttons/happiness.png");
+    background-position: 0 -104px;
+}
+
+div.firstpagepic {
+    background-image: url("../img/kkolmio_etusivu.jpg");
+    background-position: 260px 0;
+    height: 460px;
+}
+
+.kkolmio_en .buttonArea .close {
+    background-image: url("../img/buttons/emptyBlue117x42.png");
+    width: 117px;
+    height: 42px;
+}
+
+.kkolmio_en .buttonArea .close span {
+    font-size: 14px;
+    top: 0px;
+}
+
+.kkolmio_en #help {
+    width: 81px;
+}
+

@@ -1,0 +1,17 @@
+{% load i18n %}
+<div class="subwindowTop">
+    <div>
+        <h2>{% trans 'Kartan käyttö' %}</h2>
+        <p class="centeredText">
+            <strong>{% trans 'Näin käytät karttaa:' %}</strong>
+            <br />
+            <br />
+            <img src="{{ STATIC_URL }}img/animation/kartan_kaytto_fi.gif" alt="{% trans 'Kartan käyttö' %}" width="496" height="400" />
+        </p>
+    </div>
+</div>
+<div class="subwindowBottom">
+    <div id="closeSub" class="exit subAnim" onclick="closesubwindow();">
+        <span>{% trans 'Sulje ikkuna' %}</span>
+    </div>
+</div>

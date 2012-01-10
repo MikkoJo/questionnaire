@@ -1,0 +1,15 @@
+{% load i18n %}
+<div class="formArea">
+    {% block formarea %}
+    {% endblock formarea %}
+</div>
+<div class="buttonArea">
+    {% block buttonarea %}
+    <div class="previous">
+        <span class="buttontext">{% trans 'Edellinen' %}</span>
+    </div>
+    <div class="next">
+        <span class="buttontext">{% trans 'Seuraava' %}</span>
+    </div>
+    {% endblock buttonarea %}
+</div>

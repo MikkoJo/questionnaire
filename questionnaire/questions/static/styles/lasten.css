@@ -1,0 +1,459 @@
+h1 {
+color:#86c954;
+/*background: transparent;*/
+}
+
+h2 {
+color:#86c954;
+}
+
+A {
+	color: #3B8CC5;
+}
+
+A:link 	{
+	color: #3B8CC5;
+}
+
+table.progressBar {
+color:#339933;
+}
+
+td.barLeft{
+background: transparent url("../img/progressbar/naviBgDoneLeft.gif") no-repeat scroll top left;
+color:#339933;
+}
+
+td.barVisited1{
+background: transparent url("../img/progressbar/navibarVisited1.png") repeat-x scroll top right;
+color:#339933;
+}
+
+td.barVisited{
+background: transparent url("../img/progressbar/navibarVisited.png") repeat-x scroll top right;
+color:#339933;
+}
+
+td.barActive{
+background: transparent url("../img/progressbar/navibarAct.png") repeat-x scroll top right;
+color:#ffffff;
+}
+
+td.barUnvisited{
+background: transparent url("../img/progressbar/naviBgUndone.gif") repeat-x scroll top right;
+color:#339933;
+}
+
+td.barRight{
+background: transparent url("../img/progressbar/naviBgUndoneRight.gif") no-repeat scroll top right;
+color:#339933;
+}
+/*
+#help {
+background-image:url("../img/ohje_kysymys.png");
+}
+
+#save {
+background-image:url("../img/keskeyta.png");
+}
+*/
+div#logo {
+background-image: url("../img/lasten_pehmo_logo.png");
+width: 191px;
+height: 42px;
+}
+
+#keskitaKoulu {
+position: absolute;
+left: 7px;
+bottom: 10px;
+height: 32px;
+width: 69px;
+z-index: 99;
+cursor: pointer;
+}
+
+div.mainBottom {
+color:#5e933b;
+}
+div.mainTop {
+/*width:700px;*/
+width:680px;
+margin:0px;
+padding:10px;
+padding-left:20px;
+padding-right:20px;
+}
+
+div.mainTextArea{
+width:720px;
+background-image: url(../img/lbg.png);
+background-repeat: no-repeat;
+}
+
+div.firstpagepic {
+width: 720px;
+height: 100%;
+background-image: url("../img/lapsettausta.png");
+background-position: 62px 15px;
+}
+
+p.firstpagecode {
+	width: 240px !important;
+	text-align: right;
+}
+.buttonstart {
+	left: 0px;
+	right: 0px;
+}
+
+div.mainTextArea p, div.mainTextArea h3 {
+width:500px;
+}
+
+div.mainpageBox {
+z-index:21;
+width:186px;
+background: url("../img/infoBoxTop.png") no-repeat;
+font-size: 11px;
+color:#505050;
+}
+
+div.mainpageBoxBottom {
+background:url("../img/infoBoxBottom.png") no-repeat bottom left;
+width:230px;
+}
+
+div.mainBottom {
+width:710px;
+background: url("../img/lapsettaustapohja.png") no-repeat bottom left;
+}
+img.buttonStart {
+padding-bottom: 0px;
+padding-left: 25px;
+}
+
+/*
+Flashin tyylit
+*/
+#owlholder {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	display: none;
+	/*
+	left: 50%;
+	top: 40px;
+	margin-left: 100px;*/
+	z-index: 99;
+	outline: none;
+}
+#flashcontent {
+	outline: none;
+}
+
+#startFlash {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	top: 47px;
+	left: 180px;
+	z-index: 20;
+	float: right;
+}
+
+form#tunnusF {
+	position:relative;
+	z-index:21;
+	left: 5px;
+}
+.dj_ie form#tunnusF {
+	top: -28px;
+	left: 0px;
+}
+
+input#tunnus {
+position: relative; 
+top: 7px;
+}
+
+label#tunnuslabel {
+position: relative; 
+top: 4px;
+}
+
+/* Imagebuttons */
+.vapaalla {
+width: 60px;
+height: 20px;
+}
+.vapaalla .deactive {
+background-image: url("../img/vapaalla.png");
+background-position: 0px 0px;
+}
+.vapaalla .active {
+background-image: url("../img/vapaalla.png");
+background-position: 0px -21px;
+}
+.vapaalla .disabled {
+background-image: url("../img/pieni_lasten_disable.png");
+background-position: 1px 0px;
+}
+
+.vapaallaalue {
+width: 50px;
+height: 20px;
+}
+.vapaallaalue .deactive {
+background-image: url("../img/vapaalla.png");
+background-position: -50px 0px;
+}
+.vapaallaalue .active {
+background-image: url("../img/vapaalla.png");
+background-position: -50px -20px;
+}
+.vapaallaalue .disabled {
+background-image: url("../img/pieni_lasten_disable.png");
+background-position: -50px 0px;
+}
+
+.teen {
+width: 60px;
+height: 20px;
+}
+.teen .deactive {
+background-image: url("../img/teen.png");
+background-position: 0px 0px;
+}
+.teen .active {
+background-image: url("../img/teen.png");
+background-position: 0px -21px;
+}
+.teen .disabled {
+background-image: url("../img/pieni_lasten_disable.png");
+background-position: 1px 0px;
+}
+
+.teenalue {
+width: 50px;
+height: 20px;
+}
+.teenalue .deactive {
+background-image: url("../img/teen.png");
+background-position: -50px 1px;
+}
+.teenalue .active {
+background-image: url("../img/teen.png");
+background-position: -50px -20px;
+}
+.teenalue .disabled {
+background-image: url("../img/pieni_lasten_disable.png");
+background-position: -50px 0px;
+}
+
+.tuntuu {
+width: 60px;
+height: 20px;
+}
+.tuntuu .deactive {
+background-image: url("../img/tuntuu.png");
+background-position: 0px 0px;
+}
+.tuntuu .active {
+background-image: url("../img/tuntuu.png");
+background-position: 0px -21px;
+}
+.tuntuu .disabled {
+background-image: url("../img/pieni_lasten_disable.png");
+background-position: 1px 0px;
+}
+
+.tuntuualue {
+width: 50px;
+height: 20px;
+}
+.tuntuualue .deactive {
+background-image: url("../img/tuntuu.png");
+background-position: -50px 1px;
+}
+.tuntuualue .active {
+background-image: url("../img/tuntuu.png");
+background-position: -50px -20px;
+}
+.tuntuualue .disabled {
+background-image: url("../img/pieni_lasten_disable.png");
+background-position: -50px 0px;
+}
+
+
+.yhdessa {
+width: 60px;
+height: 20px;
+}
+.yhdessa .deactive {
+background-image: url("../img/yhdessa.png");
+background-position: 0px 0px;
+}
+.yhdessa .active {
+background-image: url("../img/yhdessa.png");
+background-position: 0px -21px;
+}
+.yhdessa .disabled {
+background-image: url("../img/pieni_lasten_disable.png");
+background-position: 1px 0px;
+}
+
+.yhdessaalue {
+width: 50px;
+height: 20px;
+}
+.yhdessaalue .deactive {
+background-image: url("../img/yhdessa.png");
+background-position: -50px 1px;
+}
+.yhdessaalue .active {
+background-image: url("../img/yhdessa.png");
+background-position: -50px -20px;
+}
+.yhdessaalue .disabled {
+background-image: url("../img/pieni_lasten_disable.png");
+background-position: -50px 0px;
+}
+
+/*koulu*/
+.koulu {
+display: none;
+}
+
+/*koti*/
+.koti .deactive {
+background-image: url("../img/koti.png");
+background-position: 0px 2px;
+}
+.koti .active {
+background-image: url("../img/koti.png");
+background-position: 0px -51px;
+}
+.koti .disabled {
+background-image: url("../img/koti.png");
+background-position: 0px -104px;
+}
+/*koulumatka*/
+#koulumatka {
+background-image: url("../img/tarkeareitti.png");
+}
+.koulumatka .deactive {
+background-position: 0px 2px;
+}
+.koulumatka .active {
+background-position: -0px -51px;
+}
+.koulumatka .disabled {
+background-position: 0px -104px;
+}
+/*Kävellen*/
+.kavellen .deactive {
+background-image: url("../img/kavellen.png");
+background-position: 0px 2px;
+}
+.kavellen .active {
+background-image: url("../img/kavellen.png");
+background-position: 0px -51px;
+}
+.kavellen .disabled {
+background-image: url("../img/kavellen.png");
+background-position: 0px -104px;
+}
+/*Pyörällä*/
+.pyoralla .deactive {
+background-image: url("../img/pyoralla.png");
+background-position: 0px 2px;
+}
+.pyoralla .active {
+background-image: url("../img/pyoralla.png");
+background-position: 0px -51px;
+}
+.pyoralla .disabled {
+background-image: url("../img/pyoralla.png");
+background-position: 0px -104px;
+}
+/*Julkisilla*/
+.julkisilla .deactive {
+background-image: url("../img/julkisilla.png");
+background-position: 0px 2px;
+}
+.julkisilla .active {
+background-image: url("../img/julkisilla.png");
+background-position: 0px -51px;
+}
+.julkisilla .disabled {
+background-image: url("../img/julkisilla.png");
+background-position: 0px -104px;
+}
+
+td.haaralinkki {
+width: 100px;
+height: 72px;
+padding-right: 7px;
+padding-left: 7px;
+font-size: 14px;
+font-weight: bold;
+font-family: Arial;
+text-align: center;
+color: white;
+cursor: pointer;
+background-repeat: no-repeat;
+}
+
+td.visited {
+color: #828282;
+}
+
+td.mitaTeenHelsingissa {
+	background: url("../img/haara1.png") no-repeat 0px -72px;
+}
+td.mitaTeenHelsingissa:hover {
+	background-position: 0px 0px;
+}
+td.miltaHelsinkiTuntuu {
+	background: url("../img/haara4.png") no-repeat 0px -72px;
+}
+td.miltaHelsinkiTuntuu:hover {
+	background-position: 0px 0px;
+}
+td.yksinYhdessaHelsingissa {
+	background: url("../img/haara3.png") no-repeat 0px -72px;
+}
+td.yksinYhdessaHelsingissa:hover {
+	background-position: 0px 0px;
+}
+td.vapaallaHelsingissa {
+	background: url("../img/haara2.png") no-repeat 0px -72px;
+}
+td.vapaallaHelsingissa:hover {
+	background-position: 0px 0px;
+}
+
+table.smallButtons {
+	width: 100%
+}
+span.image {
+	font-size: 10px;
+/*	margin-left: 4px;*/
+	position: relative;
+	top: 3px;
+/*	padding-left: 4px;
+	padding-top: 1px;*/
+	margin-left: 0px;
+	left:10px;
+}
+
+span.big {
+	font-size: 13px;
+	margin-left: 70px;
+	margin-top: 17px;
+/*	padding-left: 70px;
+	padding-top: 35px;*/
+}
+
+

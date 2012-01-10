@@ -1,0 +1,436 @@
+/* For IE6*/
+html, body {
+	height: 100%;
+	width: 100%;
+	overflow: visible;
+	}
+
+#bigContent h2 {
+position: relative;
+}
+
+table tr td{
+font-size:90%;
+}
+
+div#header {
+position: absolute;
+overflow: hidden;
+}
+
+div#progressBar {
+margin: 0 auto 0;
+}
+
+table.progressBar {
+font-size: medium;
+}
+
+td.barVisited1{
+background: transparent url("../img/progressbar/navibarVisited150.gif") repeat-x scroll top right;
+}
+
+td.barVisited{
+background: transparent url("../img/progressbar/navibarVisited50.png") repeat-x scroll top right;
+}
+
+td.barActive{
+background: transparent url("../img/progressbar/navibarAct50.gif") repeat-x scroll top right;
+}
+
+
+#help {
+background-image:url("../img/ohje.gif");
+}
+
+#save {
+background-image:url("../img/keskeyta.gif");
+}
+
+#logo {
+background-image: url("../img/tammisalologo.gif");
+}
+
+div#noMap {
+position: absolute;
+filter: alpha(opacity = 70);
+}
+
+div#navigation {
+background: transparent no-repeat url("../img/navigaatio_tausta.gif");
+}
+
+div.subwindowTop {
+background: url("../img/subwindowBg.gif") no-repeat top left;
+}
+
+div.subwindowBottom {
+background: url("../img/subwindowBgBottom.gif") no-repeat bottom left;
+}
+div#subsurround {
+filter: alpha(opacity = 80);
+}
+
+.subwindowBottom .closeSubwindow {
+background-image: url("../img/palaakyselyyn.gif");
+}
+
+.subwindowBottom .exit  {
+background-image: url("../img/emptyBlue117x42.gif");
+}
+
+.buttonArea .palaa {
+background-image: url("../img/palaakyselyyn.gif");
+}
+
+.buttonArea .valmis {
+
+background-image: url("../img/omakartta.gif");
+}
+
+div#map {
+position: absolute;
+z-index: 20;
+}
+
+
+div#smallContent {
+/*height: expression( this.scrollHeight > 650 ? "652px" : "auto" );*/
+height: 500px;
+top: 74px;
+}
+
+div#bigContent {
+/*height: expression( this.scrollHeight > 650 ? "652px" : "auto" );*/
+height: 500px;
+top: 74px;
+}
+
+div#mapSymbols {
+position:absolute;
+z-index: 54;
+background: url("../img/mapsymbolsClosed.gif") no-repeat;
+}
+
+/*overview map css*/
+div#ovcont {
+background-image: url("../img/ovmaptausta.gif");
+}
+
+
+div#ovmap {
+/*right: 7px;
+bottom: 7px;*/
+width: 196px;
+height: 196px;
+}
+
+
+
+div#ovbackground {
+
+right: 7px;
+bottom: 7px;
+
+}
+
+div#ovfocus {
+filter: alpha(opacity = 40);
+top: 10px;
+}
+
+div#ovbutton {
+overflow: hidden;
+background: url("../img/buttons/ovbutton125.gif");
+}
+
+
+div.mainTextArea{
+/*width:700px;*/
+width:680px;
+padding-right:20px;
+background:url("../img/mainBgImg.gif") no-repeat;
+}
+
+
+div.mainTextArea p{
+font-size:80%;
+}
+
+div.mainpageBox {
+background: url("../img/infoBoxTop.gif") no-repeat;
+}
+
+div.mainpageBoxBottom {
+background:url("../img/infoBoxBottom.gif") no-repeat bottom left;
+}
+
+div.mainBottom {
+background: url("../img/mainBgBottom.gif") no-repeat bottom left;
+}
+
+div#bigContent div.formArea{
+/*height: expression( this.scrollHeight > 500 ? "502px" : "auto" );*/ /* sets max-height for IE */
+/*height: 425px;*/
+background: url("../img/lomakeBg.gif") no-repeat top left;
+}
+
+div#smallContent div.formArea{
+/*height: expression( this.scrollHeight > 540 ? "542px" : "auto" );*/ /* sets max-height for IE */
+/*height: 425px;*/
+background: url("../img/lomakeBgSmall.gif") no-repeat top left;
+padding-right: 10px;
+padding-left: 10px;
+}
+
+div#bigContent div.buttonArea {
+background: url("../img/lomakeBgBottom.gif") no-repeat bottom left;
+}
+
+div#smallContent div.buttonArea{
+background: url("../img/lomakeBgBottomSmall.gif") no-repeat bottom left;
+}
+
+.symbols .open {
+background:url("../img/mapsymbolsOpen.gif") !important;
+}
+
+.symbols .closed {
+background:url("../img/mapsymbolsClosed.gif");
+}
+
+div.fixedPan {
+background-image:url("../img/pan-sprite.gif");
+}
+
+.map .container .fixedPan {
+background-image:url("../img/fixed-pan-sprite.gif") !important; 
+}
+/*
+.map .container .panLowerRight { 
+bottom: 65px !important;
+}
+
+.map .container .panLowerLeft { 
+bottom: 55px !important;
+}
+
+.map .container .panDown { 
+bottom: 45px !important;
+}
+*/
+#zoom_slider {
+
+height: 159px !important;
+
+}
+
+
+td.bigSlider {
+/*position: static;*/
+position: relative;
+
+}
+
+table.sliderContainer {
+
+width: 100%;
+}
+#bigContent .dijitSliderDecrementIconH, #bigContent .dijitSliderIncrementIconH {
+/*	background-position-y: 2px !important;*/
+}
+.ohjeKiinni {
+	background: white url("../img/plus.gif") scroll left center no-repeat;
+	padding-left: 20px;
+}
+.ohjeAuki {
+	background: white url("../img/minus.gif") scroll left center no-repeat !important;
+}
+
+/*Maanmittauslaitos Copyright karttakuvan vasemmassa alareunassa*/
+#maanmittausCopy {
+background: transparent url("../img/copyright.gif") no-repeat;
+/*background: transparent;
+
+font-size: 90%;*/
+}
+div#removegraphicsbutton {
+background-image: url("../img/buttons/hideshowgraph.gif");
+}
+
+.hidegraph {
+background-position: 0px 0px;
+}
+.showgraph {
+background-position: 0px -18px;
+}
+/*
+div#removegraphicsbutton:hover {
+background-image: url("../img/hideshowgraphd.png");
+}
+*/
+/*
+Remove graphics button css
+*/
+div.removegraphicsbutton {
+position: absolute;
+left: 50%;
+margin-left: -76px;
+background-image: url("../img/buttons/hideshowgraph.gif");
+height: 20px;
+}
+
+div.removegraphicsbutton:hover {
+/*background-image: url("../img/poista_pain.png");*/
+}
+
+/*
+pikaohje nappi
+*/
+#expandButton {
+cursor: help;
+}
+
+.infowindow .sprite {
+background-image:url("../img/infowindow.gif") !important;
+}
+
+/*ImageButton pics and classes*/
+/*classtypes*/
+/*Diffent backgrounds for IE6 */
+
+/*default button*/
+div.point .deactive {
+background-image: url("../img/buttons/pointorange.gif");
+}
+div.point .active {
+background-image: url("../img/buttons/pointorange.gif");
+}
+div.point .disabled {
+background-image: url("../img/buttons/pointdisabled.gif");
+}
+
+/*Jatka ja seuraav napit*/
+.buttonArea .edellinen {
+background-image: url("../img/nuoli.gif");
+}
+.buttonArea .seuraava {
+background-image: url("../img/buttons/jatkanappi.gif");
+}
+
+div.changePosition {
+	background-image: url("../img/muuta.gif");
+}
+
+/*image buttons*/
+/*happiness*/
+.happiness .deactive {
+background-image: url("../img/buttons/happiness.gif");
+}
+.happiness .active {
+background-image: url("../img/buttons/happiness.gif");
+}
+.happiness .disabled {
+background-image: url("../img/buttons/happiness.gif");
+}
+/*pleasant route*/
+.pleasantroute .deactive {
+background-image: url("../img/buttons/miellyttavareitti.gif");
+background-position: 0px 2px;
+}
+.pleasantroute .active {
+background-image: url("../img/buttons/miellyttavareitti.gif");
+background-position: 0px -51px;
+}
+.pleasantroute .disabled {
+background-image: url("../img/buttons/miellyttavareitti.gif");
+background-position: 0px -104px;
+}
+/*unpleasant route*/
+.unpleasantroute .deactive {
+background-image: url("../img/buttons/epamiellyttavareitti.gif");
+background-position: 0px 2px;
+}
+.unpleasantroute .active {
+background-image: url("../img/buttons/epamiellyttavareitti.gif");
+background-position: 0px -51px;
+}
+.unpleasantroute .disabled {
+background-image: url("../img/buttons/epamiellyttavareitti.gif");
+background-position: 0px -104px;
+}
+/*missingroute*/
+.missingroute .deactive {
+background-image: url("../img/buttons/uusireitti.gif");
+background-position: 0px 2px;
+}
+.missingroute .active {
+background-image: url("../img/buttons/uusireitti.gif");
+background-position: 0px -51px;
+}
+.missingroute .disabled {
+background-image: url("../img/buttons/uusireitti.gif");
+background-position: 0px -104px;
+}
+/*smallroute*/
+div.smallroute .deactive {
+background-image: url("../img/buttons/route.gif");
+}
+div.smallroute .active {
+background-image: url("../img/buttons/route.gif");
+}
+div.smallroute .disabled {
+background-image: url("../img/buttons/disabledroute.gif");
+}
+/*small green point*/
+div.pointgreen .deactive {
+background-image: url("../img/buttons/pointgreen.gif");
+}
+div.pointgreen .active {
+background-image: url("../img/buttons/pointgreen.gif");
+}
+div.pointgreen .disabled {
+background-image: url("../img/buttons/pointdisabled.gif");
+}
+/*meeting place*/
+div.meetingplace .deactive {
+background-image: url("../img/buttons/meetingplace.gif");
+}
+div.meetingplace .active {
+background-image: url("../img/buttons/meetingplace.gif");
+}
+div.meetingplace .disabled {
+background-image: url("../img/buttons/disabled.gif");
+}
+/*tunnelma*/
+div.atmosphere .deactive {
+background-image: url("../img/buttons/atmosphere.gif");
+}
+div.atmosphere .active {
+background-image: url("../img/buttons/atmosphere.gif");
+}
+div.atmosphere .disabled {
+background-image: url("../img/buttons/pointdisabled.gif");
+}
+/*risut*/
+div.feedback .deactive {
+background-image: url("../img/buttons/pointred.gif");
+}
+div.feedback .active {
+background-image: url("../img/buttons/pointred.gif");
+}
+div.feedback .disabled {
+background-image: url("../img/buttons/pointdisabled.gif");
+}
+
+div.saveLong {
+	background-image: url("../img/buttons/savegraphic.gif");
+}
+
+div.changePosition {
+	background-image: url("../img/buttons/change.gif");
+}
+
+div.saveShort {
+	background-image: url("../img/buttons/close.gif");
+}
