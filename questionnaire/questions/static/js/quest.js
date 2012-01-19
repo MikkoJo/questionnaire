@@ -2497,8 +2497,8 @@ function createPage(pageName, pagearray, e) {
         quitdiv.style.visibility = "hidden";
         helpdiv.style.visibility = "hidden";
         noMap.style.visibility = "visible";
-        map.disableMapNavigation();
-        overviewMapHide();
+//        map.disableMapNavigation();
+//        overviewMapHide();
         //content for the page
         cont = big;
 
@@ -3081,33 +3081,37 @@ function init() {
                             "pagearray": "pages"},
                             {"expires": -1});
 
-    map = new esri.Map("map", {"slider": false,
-                               "nav": true,
-                               "showInfoWindowOnClick": false,
-                               "logo": false,
-                               "displayGraphicsOnPan": questionnaire.displayGraphicsOnPan,
-                               "extent": new esri.geometry.Extent(questionnaire.initial_extent)
-                              });
+    // map = new esri.Map("map", {"slider": false,
+                               // "nav": true,
+                               // "showInfoWindowOnClick": false,
+                               // "logo": false,
+                               // "displayGraphicsOnPan": questionnaire.displayGraphicsOnPan,
+                               // "extent": new esri.geometry.Extent(questionnaire.initial_extent)
+                              // });
+    map = new OpenLayers.Map('map', {projection: new OpenLayers.Projection("EPSG:3857")});                        
 
     //add event handlers for map
     console.log("hear");
     //tiledmap service layer with eigth zoom levels
-    try {
-        tiledMapServiceLayer = new esri.layers.ArcGISTiledMapServiceLayer(MAPSERVICE_URL);
-    }
-    catch(err){
-        console.log(dojo.toJson(err));
-    }
+    //try {
+    //    tiledMapServiceLayer = new esri.layers.ArcGISTiledMapServiceLayer(MAPSERVICE_URL);
+    //}
+    //catch(err){
+    //    console.log(dojo.toJson(err));
+    //}
+    var gMapDef = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
+    var gMapSat = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
+                                                            numZoomLevels: 22});
     // Get and set copyrigh text
     //var copyText = tiledMapServiceLayer.copyright;
     //dojo.byId('maanmittausCopy').innerHTML = copyText;
     //image service layer for the sattelite view and 8 zoom levels
-    try {
-        imageServiceLayer = new esri.layers.ArcGISTiledMapServiceLayer(SATELLITE_MAPSERVICE_URL);
-    }
-    catch(errr){
-        console.log(dojo.toJson(errr));
-    }
+    //try {
+    //    imageServiceLayer = new esri.layers.ArcGISTiledMapServiceLayer(SATELLITE_MAPSERVICE_URL);
+    //}
+    //catch(errr){
+    //    console.log(dojo.toJson(errr));
+    //}
     //Service points as dynamic layer THIS WAS FOR palvelupehmogis
     /*try {
         servicesLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://pehmogis.tkk.fi/ArcGIS/rest/services/palvelut/MapServer");
@@ -3118,7 +3122,7 @@ function init() {
 
     //the overview map layer
     try {
-        ovlayer = new esri.layers.ArcGISTiledMapServiceLayer(OVERVIEWMAP_URL);
+      //  ovlayer = new esri.layers.ArcGISTiledMapServiceLayer(OVERVIEWMAP_URL);
     }
     catch(er){
         console.log(dojo.toJson(er));
@@ -3136,7 +3140,7 @@ function init() {
         //console.log(l);
         map.addLayer(l);
         //Create zoomslider, default is in wrong div. Do it here to get number of levels
-        if (zoomSlider === null && tiledMapServiceLayer.scales !== undefined) {
+        /*if (zoomSlider === null && tiledMapServiceLayer.scales !== undefined) {
             // Get number of levels in tiledMapServiceLayer
             var numOfLevels = tiledMapServiceLayer.scales.length;
             //var numOfLevels = 8;
@@ -3174,28 +3178,36 @@ function init() {
         }
         if(questionnaire.useGMap === true && typeof window.addGmapLayer === 'function') {
             addGmapLayer();
-        }
+        }*/
     };
 
     //to work around IE resource caching issues. Have to check for each layer
-    if (tiledMapServiceLayer.loaded) {
-        loadHandler(tiledMapServiceLayer);
-    }
-    else {
-        dojo.connect(tiledMapServiceLayer, "onLoad", loadHandler);
-    }
-    if (imageServiceLayer.loaded) {
-        loadHandler(imageServiceLayer);
-    }
-    else {
-        dojo.connect(imageServiceLayer, "onLoad", loadHandler);
-    }
-    if (ovlayer.loaded && tiledMapServiceLayer.loaded) {
-        createOverview(map, ovlayer);
-    }
-    else {
-        dojo.connect(ovlayer, "onLoad", dojo.hitch(null, createOverview, map, ovlayer));
-      }
+    //if (tiledMapServiceLayer.loaded) {
+    //    loadHandler(tiledMapServiceLayer);
+    //}
+    //else {
+    //    dojo.connect(tiledMapServiceLayer, "onLoad", loadHandler);
+    //}
+    var aliasproj = new OpenLayers.Projection("EPSG:3857");
+    gMapDef.projection = gMapDef.projection = aliasproj;
+    map.addLayers([gMapDef, gMapSat]);
+    map.setCenter(new OpenLayers.LonLat(2766225.683368, 8540628.690266), 15)
+    /*map.setCenter(new OpenLayers.LonLat(24.85311883, 60.6296573).transform(
+        new OpenLayers.Projection("EPSG:4326"),
+        map.getProjectionObject()
+    ), 5);*/
+//    if (imageServiceLayer.loaded) {
+//        loadHandler(imageServiceLayer);
+//    }
+//    else {
+//        dojo.connect(imageServiceLayer, "onLoad", loadHandler);
+//    }
+//    if (ovlayer.loaded && tiledMapServiceLayer.loaded) {
+//        createOverview(map, ovlayer);
+//    }
+//    else {
+//        dojo.connect(ovlayer, "onLoad", dojo.hitch(null, createOverview, map, ovlayer));
+//      }
     //this was for palvelupehmogis
         /*if (servicesLayer.loaded) {
         loadHandler(servicesLayer);
@@ -3205,7 +3217,7 @@ function init() {
     }*/
 
     //satellite image layer
-    imageServiceLayer.hide();
+    //imageServiceLayer.hide();
 
     //zoomslider (moved to loadhandler, handles different map levels)
 //	var zoomSlider = new myVerticalSlider({"maximum": 7, "minimum": 0, "intermediateChanges": true, "discreteValues": 8},
@@ -3231,7 +3243,7 @@ function init() {
     esri.config.defaults.map.panRate = 50;
 
     //Change PAN FACTOR for navigation arrows
-    map._FIXED_PAN_FACTOR = 0.3;
+    //map._FIXED_PAN_FACTOR = 0.3;
 
     // More IE resource caching issues.
     if(map.loaded) {
