@@ -115,7 +115,7 @@ def random_content(request, file_name, file_type='html'):
         for key in val:
             random.shuffle(val[key])
 
-    info_heights = VALUES['info_heights']
+    info_heights = VALUES.get('info_heights')
 
     site_name = Site.objects.get(id=settings.SITE_ID).name
 
@@ -206,10 +206,10 @@ def set_language(request):
             if hasattr(request, 'session'):
                 request.session['django_language'] = lang_code
                 request.session['started'] = 'True'
-            
+
             response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)
             response.set_cookie('started', 'True')
-            
+
     return response
 
 def send_email_to_parent(request):
@@ -379,11 +379,11 @@ def end_parent_questionnaire(request):
 
     if is_parent != "True":
         return HttpResponseForbidden('{"error_msg": "The request has to be made by an signed in user"}')
-    
+
     parent_user = ParentEmail.objects.get(parent__exact = request.user)
     parent_user.answered = True
     parent_user.save()
-    
+
     logout(request)
     return render_to_response("html/thank_you.html",
                               context_instance=RequestContext(request))

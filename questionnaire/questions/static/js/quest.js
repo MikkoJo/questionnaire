@@ -4,7 +4,7 @@
   overviewMapHide, alert, applicationName, createTwoPageInfo, MAPSERVICE_URL, OVERVIEWMAP_URL,
   SATELLITE_MAPSERVICE_URL, myVerticalSlider, createOverview, enableMyPan, remove_graphic,
   ImageButton, ButtonPool, setTimeout, clearTimeout, addSchools, addGmapLayer, getCookie,
-  CSRF_Cookie_Name, gnt
+  CSRF_Cookie_Name, gnt, OpenLayers
 */
 
 //required packages
@@ -1469,7 +1469,7 @@ function create_widgets(node_id) {
         if(no_submitform_element.name !== undefined) {
             json_def.name = no_submitform_element.name;
         }
-        
+
         json_def["class"] = "no_submit";
         var ef = new dijit.form.Form(json_def,
                                    no_submitform_element);
@@ -2450,8 +2450,8 @@ function createPage(pageName, pagearray, e) {
         quitdiv.style.visibility = "visible";
         helpdiv.style.visibility = "visible";
         noMap.style.visibility = "hidden";
-        map.enableMapNavigation();
-        map.showPanArrows();
+        //map.enableMapNavigation();
+        //map.showPanArrows();
         overviewMapShow();
         setCursor("map_layers", "url('" + questionnaire.openhand_cursor_url + "')");
         //content for the page
@@ -2476,7 +2476,7 @@ function createPage(pageName, pagearray, e) {
         quitdiv.style.visibility = "visible";
         helpdiv.style.visibility = "visible";
         noMap.style.visibility = "visible";
-        map.disableMapNavigation();
+        //map.disableMapNavigation();
         overviewMapHide();
         //content for the page
         cont = big;
@@ -2498,7 +2498,7 @@ function createPage(pageName, pagearray, e) {
         helpdiv.style.visibility = "hidden";
         noMap.style.visibility = "visible";
 //        map.disableMapNavigation();
-//        overviewMapHide();
+        overviewMapHide();
         //content for the page
         cont = big;
 
@@ -2670,7 +2670,7 @@ function destroyInfo(event) {
                             chh[j].destroy(true);
                         }
                     ch[i].destroy(true);
-                    
+
                 }
                 st.destroy(true);
                 infoForm.destroy(true);
@@ -2822,7 +2822,7 @@ function createInfo(event) {
                             chh[j].destroy(true);
                         }
                     ch[i].destroy(true);
-                    
+
                 }
                 st.destroy(true);
                 infoForm.destroy(true);
@@ -2830,7 +2830,7 @@ function createInfo(event) {
             else {
                 infoForm.destroyRecursive(true);
             }
-            
+
         }
         else {
             infoForm.destroyRecursive(true);
@@ -3050,6 +3050,7 @@ function endQuestionary() {
 var imageServiceLayer;
 var ovlayer;
 var servicesLayer;
+var gMapDef, gMapSat;
 
 //init creates the map
 function init() {
@@ -3088,7 +3089,8 @@ function init() {
                                // "displayGraphicsOnPan": questionnaire.displayGraphicsOnPan,
                                // "extent": new esri.geometry.Extent(questionnaire.initial_extent)
                               // });
-    map = new OpenLayers.Map('map', {projection: new OpenLayers.Projection("EPSG:3857")});                        
+    map = new OpenLayers.Map('map', {projection: new OpenLayers.Projection("EPSG:3857"),
+                                     controls: []});
 
     //add event handlers for map
     console.log("hear");
@@ -3099,9 +3101,13 @@ function init() {
     //catch(err){
     //    console.log(dojo.toJson(err));
     //}
-    var gMapDef = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
-    var gMapSat = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
+    gMapDef = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
+    gMapSat = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
                                                             numZoomLevels: 22});
+    map.addControls([new OpenLayers.Control.OverviewMap({'div': dojo.byId("ovcont"),
+                                                         'size': new OpenLayers.Size(190,190)}),
+                                 new OpenLayers.Control.Navigation({}),
+                                 new OpenLayers.Control.PanZoomBar()]);
     // Get and set copyrigh text
     //var copyText = tiledMapServiceLayer.copyright;
     //dojo.byId('maanmittausCopy').innerHTML = copyText;
@@ -3189,7 +3195,7 @@ function init() {
     //    dojo.connect(tiledMapServiceLayer, "onLoad", loadHandler);
     //}
     var aliasproj = new OpenLayers.Projection("EPSG:3857");
-    gMapDef.projection = gMapDef.projection = aliasproj;
+    gMapDef.projection = gMapSat.projection = aliasproj;
     map.addLayers([gMapDef, gMapSat]);
     map.setCenter(new OpenLayers.LonLat(2766225.683368, 8540628.690266), 15)
     /*map.setCenter(new OpenLayers.LonLat(24.85311883, 60.6296573).transform(
@@ -3336,15 +3342,19 @@ function satellite(bool) {
             //dojo.byId("ilmakuvaNakyma").src = "./img/ilmakuva_nappi_aktiivinen.png";
             dojo.byId("karttaNakyma").className = "karttanakyma";
             dojo.byId("ilmakuvaNakyma").className = "aktiivinenkartta";
-            tiledMapServiceLayer.hide();
-            imageServiceLayer.show();
+//            tiledMapServiceLayer.hide();
+//            imageServiceLayer.show();
+            gMapDef.setVisibility(false);
+            gMapSat.setVisibility(true);
         } else {
             //dojo.byId("karttaNakyma").src = "./img/kartta_nappi_aktiivinen.png";
             //dojo.byId("ilmakuvaNakyma").src = "./img/ilmakuva_nappi.png";
             dojo.byId("karttaNakyma").className = "aktiivinenkartta";
             dojo.byId("ilmakuvaNakyma").className = "karttanakyma";
-            imageServiceLayer.hide();
-            tiledMapServiceLayer.show();
+//            imageServiceLayer.hide();
+//            tiledMapServiceLayer.show();
+            gMapDef.setVisibility(true);
+            gMapSat.setVisibility(false);
         }
 }
 

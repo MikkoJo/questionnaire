@@ -84,11 +84,11 @@
         <div id="subwindow"></div>
         <div id="ov" class="open">
             <div id="ovcont">
-                <div id="ovbackground"></div>
+                <!--<div id="ovbackground"></div>
                 <div id="ovmap">
                     <div id="ovtransparent"></div>
                     <div id="ovfocus"></div>
-                </div>
+                </div>-->
                 <div id="ovbutton" onclick="toggleovwin();">
                     <span id="hidetext">{% trans 'Piilota navigaatiokartta' %}</span>
                     <span class="tyhja" id="showtext">{% trans 'Näytä navigaatiokartta' %}</span>
@@ -103,7 +103,7 @@
             <div id="panDown" class="myPanDiv"></div>
             <div id="panRight" class="myPanDiv"></div>
             <div id="navigation">
-                <div id="pan_arrows">
+            <!--    <div id="pan_arrows">
                     <div id="pan_up" class="fixedPan panUp" onclick="map.panUp();"></div>
                     <div id="pan_right" class="fixedPan panRight" onclick="map.panRight();"></div>
                     <div id="pan_down" class="fixedPan panDown" onclick="map.panDown();"></div>
@@ -118,15 +118,13 @@
                     <div id="zoom_slider"></div>
                     <div id="zoom_rule"></div>
                     <div id="zoomout"></div>
-                </div>
-                {% comment %}
+                </div>-->
                 <div id="karttaNakyma" class="aktiivinenkartta" onclick="satellite(false);">
                     <p class="karttanakyma">{% trans 'Kartta' %}</p>
                 </div>
                 <div id="ilmakuvaNakyma" class="karttanakyma" onclick="satellite(true);">
                     <p class="karttanakyma">{% trans 'Ilmakuva' %}</p>
                 </div>
-                {% endcomment %}
             </div>
         </div>
         <div class="symbols">
@@ -159,6 +157,6 @@
             dojo.addOnLoad(init);
             -->
         </script>
-        
+
     </body>
 </html>

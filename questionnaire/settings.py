@@ -20,13 +20,13 @@ DATABASES = {
         'USER': 'sample_user',                      # Not used with sqlite3.
         'PASSWORD': 'sample',                  # Not used with sqlite3.
         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5433',                      # Set to empty string for default. Not used with sqlite3.
+        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
-POSTGIS_SQL_PATH = '/usr/share/postgresql/8.4/contrib'
+POSTGIS_SQL_PATH = '/usr/share/postgresql/9.1/contrib'
 POSTGIS_TEMPLATE = getattr(settings_local, "POSTGIS_TEMPLATE", 'template_postgis')
-POSTGIS_VERSION = ('1.5.2', 1, 5, 2)
+POSTGIS_VERSION = ('1.5.3', 1, 5, 2)
 
 
 # Local time zone for this installation. Choices can be found here:
