@@ -3093,7 +3093,7 @@ button.finish {
     font-size: 90%;
     font-variant: small-caps;
     position: static !important;
-    
+
 
 }
 .newButtonArea .previous.buttonBackwardOuter:hover {
@@ -3148,4 +3148,27 @@ button.finish {
 
 .infotable tr.desc td:first-child {
     width: 270px;
+}
+/* Styles for OpenLayers controls*/
+.olControlPanZoomBar {
+    left: auto !important;
+    right: 48px !important;
+    top: 4px !important;
+}
+.olControlOverviewMapElement {
+    background-color: #BBBBBB !important;
+    border-radius: 1em !important;
+    padding: 10px 10px 10px 10px !important;
+}
+div#ovcont {
+    background-image: none;
+}
+div#navigation {
+    background-image: none;
+}
+div#map .olLayerGoogleV3.olLayerGooglePoweredBy {
+    bottom: 75px !important;
+}
+div#map .olLayerGoogleV3.olLayerGoogleCopyright {
+    bottom: 60px !important;
 }
