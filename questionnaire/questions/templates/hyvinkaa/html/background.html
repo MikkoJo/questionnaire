@@ -1,0 +1,144 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <form id="background" name="background">
+        <h1>{% trans 'Taustatiedot' %}</h1>
+        <table cellpadding="4" border="0">
+            <tr>
+                <td>
+                <label for="age">{% trans 'Ikä:' %}</label>
+                </td>
+                <td class="shortTextBox">
+                    <input type="number" id="age" name="age"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">{% trans 'Sukupuoli:' %}</label></td>
+                <td>
+                    <input type="radio" name="gender" id="man" value="man" />
+                    <label for="man">{% trans 'Mies' %}</label>
+                    <input type="radio" name="gender" id="woman" value="woman" />
+                    <label for="woman">{% trans 'Nainen' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="family">{% trans 'Kotitaloustyyppi:' %}</label></td>
+                <td>
+                    <select id="family" name="family">
+                        <option value="NULL" selected="selected"></option>
+                        <option value="oneperson">{% trans 'yksin asuva' %}</option>
+                        <option value="couplewithoutchildren">{% trans 'pariskunta' %}</option>
+                        <option value="couplewithchildren">{% trans 'yhden vanhemman lapsiperhe' %}</option>
+                        <option value="parentwithchildren">{% trans 'kahden vanhemman lapsiperhe' %}</option>
+                        <option value="otherFam">{% trans 'muu' %}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr id="otherFamilyRow" class="tyhja">
+                <td>&nbsp;</td>
+                <td>
+                    <label for="otherFamily">{% trans 'mikä?' %}</label>
+                    <input type="text" id="otherFamily" name="otherFamily" disabled="disabled" />
+                </td>
+            </tr>
+            <tr id="birthyearsRow" class="tyhja">
+                <td>
+                    <label for="birthyears">{% trans 'Mitkä ovat taloudessanne asuvien lasten syntymävuodet?' %}</label>
+                </td>
+                <td>
+                    <input type="text" id="birthyears" name="birthyears" disabled="disabled" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="occupation">{% trans 'Oletko tällä hetkellä päätoimisesti' %}:</label></td>
+                <td>
+                    <select id="occupation" name="occupation">
+                        <option value="NULL" selected="selected"></option>
+                        <option value="working">{% trans 'ansiotyössä' %}</option>
+                        <option value="jobless">{% trans 'työtön' %} </option>
+                        <option value="student">{% trans 'opiskelija tai koululainen' %} </option>
+                        <option value="retired">{% trans 'eläkkeellä' %} </option>
+                        <option value="homeparent">{% trans 'kotiäiti tai -isä tai vanhempainvapaalla' %} </option>
+                        <option value="otherOcc">{% trans 'muu tilanne' %} </option>
+                    </select>
+                </td>
+            </tr>
+            <tr id="otherOccupationRow" class="tyhja">
+                <td>&nbsp;</td>
+                <td>
+                    <label for="otherOccupation">{% trans 'mikä?' %}</label>
+                    <input type="text" id="otherOccupation" name="otherOccupation" disabled="disabled"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="howmanycars">{% trans 'Montako autoa kotitaloudessasi on?' %}</label>
+                </td>
+                <td class="shortTextBox">
+                    <input type="number" id="howmanycars" name="howmanycars" min="0" max="20" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">{% trans 'Onko sinulla henkilöauton ajamiseen oikeuttavaa ajokorttia?' %}</label></td>
+                <td>
+                    <input type="radio" name="driverL" id="yesDL" value="yesDl" />
+                    <label for="yesDL">{% trans 'kyllä' %}</label>
+                    <input type="radio" name="driverL" id="noDL" value="noDl" />
+                    <label for="noDL">{% trans 'ei' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top"><label for="">{% trans 'Mikä on asumismuotosi?' %}</label></td>
+                <td style="width:50%;" class="topAlign">
+                    <input type="radio" name="residenttype" id="own" value="own" />
+                    <label for="own">{% trans 'omistusasunto' %}</label>
+                    <br/>
+                    <input type="radio" name="residenttype" id="rent" value="rent" />
+                    <label for="rent">{% trans 'vuokra-asunto' %}</label>
+                    <br/>
+                    <input type="radio" name="residenttype" id="rightofresidence" value="rightofresidence" />
+                    <label for="rightofresidence">{% trans 'asumisoikeusasunto' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="resarea">{% trans 'Minkä kunnan alueella asut?' %}</label>
+                </td>
+                <td>
+                    <select id="resarea" name="resarea">
+                        <option value="NULL" selected="selected"></option>
+                        <option value="helsinki">{% trans 'Helsinki' %}</option>
+                        <option value="espoo">{% trans 'Espoo' %}</option>
+                        <option value="vantaa">{% trans 'Vantaa' %}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="childEnv">{% trans 'Minkätyyppisessä ympäristössä lapsuuden merkittävin kasvuympäristösi sijaitsi?' %}</label>
+                </td>
+                <td>
+                    <select id="childEnv" name="childEnv">
+                        <option value="NULL" selected="selected"></option>
+                        <option value="center">{% trans 'kaupungin ydinkeskustassa tai sen läheisyydessä' %}</option>
+                        <option value="suburb">{% trans 'pientalovaltaisessa esikaupungissa' %}</option>
+                        <option value="suburbBlocks">{% trans 'kerrostalovaltaisessa esikaupungissa' %}</option>
+                        <option value="town">{% trans 'maaseututaajamassa' %}</option>
+                        <option value="village">{% trans 'kylässä maaseudulla' %}</option>
+                        <option value="sparse">{% trans 'haja-asutusalueella' %}</option>
+                        <option value="overseas">{% trans 'ulkomailla' %}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">{% trans 'Oletko harkitsemassa asuinpaikan tai asuinalueen vaihtoa lähitulevaisuudessa?' %}</label></td>
+                <td>
+                    <input type="radio" name="Cons_moving" id="Cons_moving_1" value="yes" />
+                    <label for="Cons_moving_1">{% trans 'kyllä' %}</label>
+                    <input type="radio" name="Cons_moving" id="Cons_moving_2" value="no" />
+                    <label for="Cons_moving_2">{% trans 'ei' %}</label>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock formarea %}

@@ -1,0 +1,39 @@
+{% extends 'example/html/move_env_info.html' %}
+{% load i18n %}
+{% block what_kind_place %}
+{% spaceless %}
+    <tr>
+        <td>
+            <b>{% trans 'Mikä paikka on kyseessä' %}?</b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_1' value='outdoor' />
+            <label for='me1_1'>${type1}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_2' value='exercise' />
+            <label for='me1_2'>${type2}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_3' value='playground' />
+            <label for='me1_3'>${type3}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me_other' value='other' />
+            <label for='me_other'>${type4}</label>
+            <span id='otherSpan' class='tyhja'>
+                <label for='other_text'>, {% trans 'mikä' %}?</label>
+                <input type='text' name='otherexer' id='other_text' disabled='disabled' />
+            </span>
+        </td>
+    </tr>
+{% endspaceless %}
+{% endblock what_kind_place %}

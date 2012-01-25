@@ -1,0 +1,13 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+<form id="visionsForm" name="visionsForm" >
+    <h1>{% trans 'Visioni sanoin' %}</h1>
+    <p>
+        {% trans 'Jos haluat, voit vielä kirjoittaa ajatuksiasi ja ideoitasi alueen suunnittelusta tai antaa palautetta tästä kyselystä.' %}.
+    </p>
+    <p class="centeredText">
+        <textarea id="feedbacktext" rows="7" cols="70" name="feedbacktext"></textarea>
+    </p>
+</form>
+{% endblock formarea %}

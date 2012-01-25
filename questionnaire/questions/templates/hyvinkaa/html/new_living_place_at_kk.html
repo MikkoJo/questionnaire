@@ -1,0 +1,19 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <h1>{% trans 'Kuninkaankolmion uusien kortteleiden ja asuinaluiden kiinnostavuus' %}</h1>
+    <p>
+        <b>
+            {% blocktrans %}
+                Kuninkaankolmion alueelle rakennetaan lähivuosina ja -vuosikymmeninä uusia
+                asuinkortteleita ja asuinalueita. Kartalle on merkitty sinisellä alueet,
+                joista saat lisätietoa klikkaamalla aluetta kartalla. Samasta lisätietoikkunasta
+                pääset myös arvioimaan kyseistä aluetta klikkaamalla painiketta.
+            {% endblocktrans %}
+        </b>
+    </p>
+    <hr />
+    <form id="newKK" name="newKK">
+        <button type="button" class="dojobutton" id="show_kk">{% trans 'näytä kaikki' %}</button>
+    </form>
+{% endblock formarea %}

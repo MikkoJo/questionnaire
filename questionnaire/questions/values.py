@@ -37,4 +37,14 @@ VALUES = {
              (_(u'Ympäristön ulkoinen ilme'),
                     'appearanceSum')
              ],
+        'weights':
+            [(_(u'Ympäristön tunnelma'),
+                    'atmosphereSum'),
+             (_(u'Ympäristön toimintamahdollisuudet'),
+                    'functionalSum'),
+             (_(u'Sosiaalinen ilmapiiri'),
+                    'socialSum'),
+             (_(u'Ympäristön ulkoinen ilme'),
+                    'appearanceSum')
+             ],
   }

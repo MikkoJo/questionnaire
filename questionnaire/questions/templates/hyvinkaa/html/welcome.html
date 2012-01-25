@@ -1,0 +1,57 @@
+{% load i18n %}
+<div class="mainTextArea">
+    <div class="firstpagepic">
+        <!--#-->
+    </div>
+    <h2 class="firstpagecontent">{% trans 'Miten haluaisin vanhan ratapihan muuttuvan?' %}?</h2>
+    <p class="firstpagecontent">
+        {% blocktrans %}
+        Tämän karttapohjaisen kyselyn avulla voit vaikuttaa Hangonratapihan suunnitteluun. Ratapiha on tarkoitus
+        muuttaa kerrostalovaltaiseksi asuntoalueeksi, jolla myös ympäristön asukkaat voivat viihtyä ja jonka
+        kautta voi helposti kävellä ja pyöräillä eri suuntiin. Osallistumalla kyselyyn voit kertoa sinulle
+        tärkeistä asioista ja kehittämiskohteista alueella ja sen ympäristössä. Millaista uutta asumista
+        Hyvinkään keskustaan tarvitaan? Mitä muita toimintoja alueella voisi olla? Miltä alueen tulisi näyttää?
+        {% endblocktrans %}
+    </p>
+    <div class="mainpageBox firstpagecontent">
+        {% url main_html file_name='instructions' as help_url%}
+        {% blocktrans %}
+            Vastausaikaa on helmikuun 20. päivään saakka. Vastaukset otetaan huomioon valmisteltaessa alueen
+            suunnittelusta käytävää arkkitehtuurikilpailua. Arkkitehtuurikilpailua käydään huhtikuun puolivälistä
+            syyskuun loppuun ja tulokset julkistetaan vuoden vaihteessa. Syksyllä voit osallistua tulosten
+            arviointiin antamalla palautetta kilpailuehdotuksista.
+        {% endblocktrans %}
+        {% comment %}
+            <img src="{{ STATIC_URL }}img/blank.gif" class="welcomeHelp" alt="ohje" height="14" width="14" onclick="window.open('{{ help_url }}'); return false;"/>{% trans '-merkkiä.' %}
+        {% endcomment %}
+    </div>
+    <div class="mainpageBoxBottom firstpagecontent">
+        <!--#-->
+    </div>
+<!--    <p class="centeredtext firstpagecontent" style="text-align: center;">
+        Osallistu kyselyyn:
+    </p>
+-->
+    <div class="next buttonstart firstpagecontent">
+        <p class="buttontext firstpagecontent">
+            {% trans 'Aloita' %}
+        </p>
+    </div>
+    <p class="centeredtext firstpagecontent firstpagebutton">
+        {% trans 'Jos haluat tutustua kyselyyn osallistumatta tutkimukseen' %},<br />
+        <a class="testUserLink firstpagebutton" onclick="startAsTestUser();">{% trans 'paina tästä' %}</a>
+    </p>
+<!--        <br />
+    </p>
+    <p class="centeredtext firstpagecontent firstpagebutton" style="text-align: center;">
+        <a class="testUserLink firstpagebutton next" onclick="startAsTestUser();">{% trans 'paina tästä' %}</a>
+    /p>-->
+</div>
+<div class="mainBottom firstpagecontent">
+    {% blocktrans %}
+        Lisätietoja alueen suunnittelusta ja arkkitehtuurikilpailusta antavat kaavoituspäällikkö Anne Jarva (040-155 4220)
+        ja kaava-arkkitehti Mika Ahonen (040-155 4274)
+    {% endblocktrans %}
+    <a href="{% url main_html file_name='instructions' %}#kytojatu" onclick="window.open(this.href); return false;">{% trans 'Lisätietoa tutkimuksesta' %}</a>.
+
+</div>

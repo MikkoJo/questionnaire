@@ -1,0 +1,32 @@
+{% load i18n %}
+{% block form %}
+{% spaceless %}
+<form id='info'>
+    <table>
+        {% for name, text in vals %}
+        <tr>
+            <td class='infoCheck'>
+                <input type='checkbox' id='{{ name }}' />
+            </td>
+            <td>
+                <label for='{{ name }}'>{{ text }}</label>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td class='infoCheck'>
+                <input type='checkbox' id='other' />
+            </td>
+            <td>
+                <label for='other'>{% trans 'muu asia' %}, {% trans 'mikä' %}?</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+                <input type='text' name='whatText' id='whatText' class='infoTextBox' />
+            </td>
+        </tr>
+    </table>
+</form>    
+{% endspaceless %}
+{% endblock form %}
