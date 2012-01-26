@@ -4,7 +4,7 @@
   overviewMapHide, alert, applicationName, createTwoPageInfo, MAPSERVICE_URL, OVERVIEWMAP_URL,
   SATELLITE_MAPSERVICE_URL, myVerticalSlider, createOverview, enableMyPan, remove_graphic,
   ImageButton, ButtonPool, setTimeout, clearTimeout, addSchools, addGmapLayer, getCookie,
-  CSRF_Cookie_Name, gnt, OpenLayers
+  CSRF_Cookie_Name, gnt, OpenLayers, $
 */
 
 //required packages
@@ -34,7 +34,7 @@ dojo.require("dojo.cookie");
 
 
 /* GLOBAL VARIABLES */
-//map is the esri map created for the site
+//map is the OpenLayers map created for the site
 var map;
 //tb is the toolbar needed for drawing on the map
 var tb;
@@ -1474,6 +1474,19 @@ function create_widgets(node_id) {
         var ef = new dijit.form.Form(json_def,
                                    no_submitform_element);
     }
+    
+    /* Create jquery drawButtons
+     */
+    //draw buttons to activate drawing functionality
+    $("#" + node_id).find("button[type='button'].drawbutton.point").drawButton({
+        control: "pointcontrol"
+        });
+    $("#" + node_id).find("button[type='button'].drawbutton.route").drawButton({
+        control: "routecontrol"
+        });
+    $("#" + node_id).find("button[type='button'].drawbutton.area").drawButton({
+        control: "areacontrol"
+        });
     /*
     //create the radiobuttons
     for(i = 0; i < radio_elements.length; i++) {
@@ -2418,6 +2431,7 @@ function createPage(pageName, pagearray, e) {
     var big = dojo.byId("bigContent");
     var small = dojo.byId("smallContent");
     var mapSymbols = dojo.byId("mapSymbols");
+    var layerToggle = dojo.byId("layerToggle");
     var navigation = dojo.byId("navigation");
     var langdiv = dojo.byId("language");
     var quitdiv = dojo.byId("save");
@@ -2445,7 +2459,7 @@ function createPage(pageName, pagearray, e) {
         big.innerHTML = "";
         small.style.visibility = "visible";
         mapSymbols.style.visibility = "visible";
-        navigation.style.visibility = "visible";
+        navigation.style.visibility = layerToggle.style.visibility = "visible";
         langdiv.style.visibility = "hidden";
         quitdiv.style.visibility = "visible";
         helpdiv.style.visibility = "visible";
@@ -2471,7 +2485,7 @@ function createPage(pageName, pagearray, e) {
         small.style.visibility = "hidden";
         small.innerHTML = "";
         mapSymbols.style.visibility = "hidden";
-        navigation.style.visibility = "hidden";
+        navigation.style.visibility = layerToggle.style.visibility = "hidden";
         langdiv.style.visibility = "hidden";
         quitdiv.style.visibility = "visible";
         helpdiv.style.visibility = "visible";
@@ -2492,7 +2506,7 @@ function createPage(pageName, pagearray, e) {
         small.style.visibility = "hidden";
         small.innerHTML = "";
         mapSymbols.style.visibility = "hidden";
-        navigation.style.visibility = "hidden";
+        navigation.style.visibility = layerToggle.style.visibility = "hidden";
         langdiv.style.visibility = "visible";
         quitdiv.style.visibility = "hidden";
         helpdiv.style.visibility = "hidden";
@@ -2930,15 +2944,128 @@ function createInfo(event) {
     // return questionnaire.pages[number].createPageFunction;
 // }
 
+
+
+var popup; //only one popup at the time
+
+/*
+popup save feature event handler
+*/
+function save_handler(evt) {
+    console.log("save handler");
+    console.log(evt);
+    console.log(evt.data[0]);
+    //get the form data
+    console.log($('form[name=popupform].active').serializeArray());
+    var popup_values = $('form[name=popupform].active').serializeArray();
+    $('form[name=popupform]').removeClass('active');
+    var new_attributes = {};
+    console.log(popup_values);
+    for(var val in popup_values) {
+        console.log(val);
+        new_attributes[popup_values[val]['name']] =
+            popup_values[val]['value'];
+    }
+    console.log(new_attributes);
+    evt.data[0].attributes = new_attributes;
+    //save the geojson
+    var gf = new OpenLayers.Format.GeoJSON();
+    console.log(gf);
+    var geojson = gf.write(evt.data[0]);
+    console.log(geojson);
+    map.removePopup(popup);
+    popup = undefined;
+    
+    //unselect the button
+    $(".drawbutton.ui-state-active")
+        .drawButton( 'deactivate' );
+}
+
+/*
+popup remove feature event handler
+*/
+function remove_handler(evt) {
+    console.log("remove handler");
+    console.log(evt);
+    console.log(evt.data[0]);
+    evt.data[0].layer.removeFeatures([evt.data[0]]);
+    map.removePopup(popup);
+    popup = undefined;
+    
+    //unselect the button
+    $(".drawbutton.ui-state-active")
+        .drawButton( 'deactivate' );
+}
+
+/*
+confirm and save the feature
+*/
+function feature_added(evt) {
+    console.log(evt);
+    
+    //get the right lonlat for the popup position
+    var lonlat;
+    if( evt.geometry.id.contains( "Point" ) ) {
+        lonlat = new OpenLayers.LonLat(
+                        evt.geometry.x,
+                        evt.geometry.y);
+    } else if ( evt.geometry.id.contains( "LineString" ) ) {
+        lonlat = evt.geometry
+            .components[evt.geometry.components.length - 1]
+            .bounds.getCenterLonLat();
+    } else if ( evt.geometry.id.contains( "Polygon" ) ) {
+        lonlat = evt.geometry.bounds.getCenterLonLat();
+    }
+    
+    
+    //get the active button name = infowindow name
+    var infowindow_name = $('button.ui-state-active').attr('name');
+    var default_infocontent = " default info content ";
+    
+    //get the right content for the popup
+    if( infowindow_name !== undefined ) {
+        infocontent = $('#' + infowindow_name).html();
+    }
+    if(infocontent === null) {
+        infocontent = default_infocontent;
+    }
+    
+    
+    //remove old popup if existing
+    if(popup !== undefined) {
+        map.removePopup(popup);
+        popup = undefined;
+    }
+    //create popup and put it on the map
+//    popup = new OpenLayers.Popup.FramedCloud(
+    popup = new OpenLayers.Popup.FramedCloud(
+                    evt.id,
+                    lonlat,
+                    null,
+                    infocontent,
+                    null,
+                    false);
+
+    map.addPopup(popup);
+    //add a class to the form to recognize it as active
+    $('div[id="' + evt.id + '"] form[name="popupform"]').addClass('active');
+    
+    //connect the event to the infowindow buttons
+    $('div[id="' + evt.id + '"] .save_feature').click([evt],
+                                                      save_handler);
+    $('div[id="' + evt.id + '"] .remove_feature').click([evt],
+                                                        remove_handler);
+}
+
 /*
 This function activates the draw function; is called from init()
 */
 
 function initDraw(map) {
     console.log("initDraw");
-    tb = new esri.toolbars.Draw(map);
+//    tb = new esri.toolbars.Draw(map);
     //disable navigation (has to be done on the onload esri event to work
-    map.hideZoomSlider();
+//    map.hideZoomSlider();
     //map.hidePanArrows();
 }
 
@@ -3051,7 +3178,10 @@ var imageServiceLayer;
 var ovlayer;
 var servicesLayer;
 var gMapDef, gMapSat;
-
+var pointLayer,
+    routeLayer,
+    areaLayer;
+    
 //init creates the map
 function init() {
     console.log("init");
@@ -3090,6 +3220,11 @@ function init() {
                                // "extent": new esri.geometry.Extent(questionnaire.initial_extent)
                               // });
     map = new OpenLayers.Map('map', {projection: new OpenLayers.Projection("EPSG:3857"),
+                                     maxExtent: new OpenLayers.Bounds(-37532.28,
+                                                                       8312664.808,
+                                                                       6194837.250,
+                                                                       10758649.712),
+                                     maxResolution: 4891,
                                      controls: []});
 
     //add event handlers for map
@@ -3104,10 +3239,14 @@ function init() {
     gMapDef = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
     gMapSat = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
                                                             numZoomLevels: 22});
+    pointLayer = new OpenLayers.Layer.Vector("Point Layer");
+    routeLayer = new OpenLayers.Layer.Vector("Route Layer");
+    areaLayer = new OpenLayers.Layer.Vector("Area Layer");
+    
     map.addControls([new OpenLayers.Control.OverviewMap({'div': dojo.byId("ovcont"),
                                                          'size': new OpenLayers.Size(190,190)}),
                                  new OpenLayers.Control.Navigation({}),
-                                 new OpenLayers.Control.PanZoomBar()]);
+                                 new OpenLayers.Control.PanZoomBar({id: 'navigation'})]);
     // Get and set copyrigh text
     //var copyText = tiledMapServiceLayer.copyright;
     //dojo.byId('maanmittausCopy').innerHTML = copyText;
@@ -3196,8 +3335,23 @@ function init() {
     //}
     var aliasproj = new OpenLayers.Projection("EPSG:3857");
     gMapDef.projection = gMapSat.projection = aliasproj;
-    map.addLayers([gMapDef, gMapSat]);
-    map.setCenter(new OpenLayers.LonLat(2766225.683368, 8540628.690266), 15)
+    map.addLayers([gMapDef, gMapSat, pointLayer, routeLayer, areaLayer]);
+    map.setCenter(new OpenLayers.LonLat(2766225.683368, 8540628.690266), 15);
+
+    var pointcontrol = new OpenLayers.Control.DrawFeature(pointLayer,
+                                OpenLayers.Handler.Point,
+                                {'id': 'pointcontrol',
+                                'featureAdded': feature_added});
+    var routecontrol = new OpenLayers.Control.DrawFeature(routeLayer,
+                                OpenLayers.Handler.Path,
+                                {'id': 'routecontrol',
+                                'featureAdded': feature_added})
+    var areacontrol = new OpenLayers.Control.DrawFeature(areaLayer,
+                                OpenLayers.Handler.Polygon,
+                                {'id': 'areacontrol',
+                                'featureAdded': feature_added})
+    
+    map.addControls([pointcontrol, routecontrol, areacontrol ]);
     /*map.setCenter(new OpenLayers.LonLat(24.85311883, 60.6296573).transform(
         new OpenLayers.Projection("EPSG:4326"),
         map.getProjectionObject()
@@ -3245,19 +3399,19 @@ function init() {
 //	}, dojo.byId("zoom_rule"));
 
     //configure esri default values
-    esri.config.defaults.map.panDuration = 700;
-    esri.config.defaults.map.panRate = 50;
+ //   esri.config.defaults.map.panDuration = 700;
+ //   esri.config.defaults.map.panRate = 50;
 
     //Change PAN FACTOR for navigation arrows
     //map._FIXED_PAN_FACTOR = 0.3;
 
     // More IE resource caching issues.
-    if(map.loaded) {
-        createListeners();
-    }
-    else {
-        dojo.connect(map, "onLoad", createListeners);
-    }
+//    if(map.loaded) {
+//        createListeners();
+//    }
+//    else {
+//        dojo.connect(map, "onLoad", createListeners);
+//    }
 
     //dojo.connect(map, "onUnload", endQuestionary);
     // Enable Pan onmouseOut
@@ -3269,6 +3423,7 @@ function init() {
     // Set max height for content buggy so removed for the moment
     // not buggy anymore
     setContentMaxHeight();
+    dojo.connect(window, "onresize", "setContentMaxHeight");
 
 
     //Keep current page in cookie

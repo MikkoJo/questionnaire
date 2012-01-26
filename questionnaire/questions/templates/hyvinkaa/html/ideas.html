@@ -37,13 +37,14 @@
         <table class="buttons">
             <tr>
                 <td class="moveEnvTd">
-                    {% trans 'Uutta asuntorakentamista' %}
                     <ul>
                         <li>{% trans 'Millainen asuinrakentaminen sopisi alueelle?' %}</li>
                     </ul>
                 </td>
                 <td class="topAlign">
-                    <button type="button" class="imagebutton" id="work" name="work"></button>
+                    <button type="button" class="drawbutton point" id="res_build" name="ideas">
+                        {% trans 'Uutta asuntorakentamista' %}
+                    </button>
                 </td>
             </tr>
             <tr>
@@ -55,7 +56,7 @@
                     </ul>
                 </td>
                 <td class="topAlign">
-                    <button type="button" class="imagebutton" id="shop" name="shop"></button>
+                    <button type="button" class="drawbutton point" id="ser_build" name="ideas"></button>
                     <div id=""></div>
                 </td>
             </tr>
@@ -68,7 +69,7 @@
                     </ul>
                 </td>
                 <td class="topAlign">
-                    <button type="button" class="imagebutton" id="business" name="business"></button>
+                    <button type="button" class="drawbutton route" id="new_walking_route" name="ideas"></button>
                     <div id=""></div>
                 </td>
             </tr>
@@ -80,7 +81,7 @@
                     </ul>
                 </td>
                 <td class="topAlign">
-                    <button type="button" class="imagebutton" id="exercise" name="exercise"></button>
+                    <button type="button" class="drawbutton route" id="new_transport_route" name="ideas"></button>
                     <div id=""></div>
                 </td>
             </tr>
@@ -92,7 +93,7 @@
                     </ul>
                 </td>
                 <td class="topAlign">
-                    <button type="button" class="imagebutton" id="freetime" name="freetime"></button>
+                    <button type="button" class="drawbutton area" id="new_recreation_area" name="ideas"></button>
                     <div id=""></div>
                 </td>
             </tr>
@@ -104,7 +105,7 @@
                     </ul>
                 </td>
                 <td class="topAlign">
-                    <button type="button" class="imagebutton" id="" name="freetime"></button>
+                    <button type="button" class="drawbutton point" id="preserve_place" name="ideas"></button>
                     <div id=""></div>
                 </td>
             </tr>
@@ -116,7 +117,7 @@
                     </ul>
                 </td>
                 <td class="topAlign">
-                    <button type="button" class="imagebutton" id="" name="freetime"></button>
+                    <button type="button" class="drawbutton point" id="improve_place" name="ideas"></button>
                     <div id=""></div>
                 </td>
             </tr>
@@ -128,10 +129,23 @@
                     </ul>
                 </td>
                 <td class="topAlign">
-                    <button type="button" class="imagebutton" id="otherplace" name="otherplace"></button>
+                    <button type="button" class="drawbutton point" id="otherplace" name="ideas"></button>
                     <div id=""></div>
                 </td>
             </tr>
         </table>
     </form>
+<!-- infowindows with id's put here so that translations work -->
+<div id="ideas" class="popup" style="visibility: hidden;">
+    <p>{% trans "Kerro lisää:" %}:</p>
+    <form name="popupform" action="#">
+        <textarea name="comment" cols="24" rows="5" ></textarea><br />
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+    </form>
+</div>
 {% endblock formarea %}

@@ -4,7 +4,9 @@ from settings import *
 
 SITE_ID = 8
 
-LANGUAGE_CODE = 'fi-FI'
+LANGUAGE_CODE = 'fi-fi'
+
+LANGUAGES = (('fi', 'finnish'),)
 
 DATABASES = {
     'default': {

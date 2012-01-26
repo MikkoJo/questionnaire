@@ -322,7 +322,7 @@ background-image: url("../img/harmlapi.png");
 cursor: auto;
 }
 
-
+/*
 div#navigation {
 background: transparent no-repeat url("../img/navigaatio_tausta.png");
 color: black;
@@ -333,7 +333,7 @@ width: 82px;
 height: 414px;
 z-index: 42;
 }
-
+*/
 /*
 Override tundra for sliders
 */
@@ -3156,19 +3156,29 @@ button.finish {
     top: 4px !important;
 }
 .olControlOverviewMapElement {
-    background-color: #BBBBBB !important;
+    background-color: rgb(187, 187, 187) !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
     border-radius: 1em !important;
     padding: 10px 10px 10px 10px !important;
 }
 div#ovcont {
     background-image: none;
 }
-div#navigation {
-    background-image: none;
+#layerToggle {
+    position: absolute;
+    right: 80px;
+    top: 420px;
+    z-index: 1003;
 }
+/*div#navigation {
+    background-image: none;
+}*/
 div#map .olLayerGoogleV3.olLayerGooglePoweredBy {
     bottom: 75px !important;
 }
 div#map .olLayerGoogleV3.olLayerGoogleCopyright {
     bottom: 60px !important;
+}
+div#ovcont .olLayerGoogleV3 {
+    visibility: hidden;
 }

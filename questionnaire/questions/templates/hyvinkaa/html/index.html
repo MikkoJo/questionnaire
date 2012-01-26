@@ -10,7 +10,8 @@
         <!--<title>{% trans 'PehmoGIS - Elinympäristö'%}</title>-->
         <link rel="stylesheet" type="text/css" href="https://serverapi.arcgisonline.com/jsapi/arcgis/2.6/js/dojo/dijit/themes/tundra/tundra.css" />
         <link rel="stylesheet" type="text/css" href="https://softgis.org.aalto.fi/OpenLayers/theme/default/google.css" />
-       <link rel="stylesheet" title="pehmogis" type="text/css" href="{{ STATIC_URL }}styles/pehmo.css" />
+        <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" title="pehmogis" type="text/css" href="{{ STATIC_URL }}styles/pehmo.css" />
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/kkolmio.css" />
         <!--[if lte IE 8]>
             <style type="text/css">
@@ -67,11 +68,20 @@
             </div>
             <div id="language">
                 <p>
+                    {% for lang in LANGUAGES %}
+                        {% ifnotequal LANGUAGE_CODE lang.0 %}
+                        <a href="{% url set_language %}?lang={{ lang.0 }}&amp;next={% url main %}">
+                            {% trans "in" %} {{ lang.1 }}
+                        </a>
+                        {% endifnotequal %}
+                    {% endfor %}
+                    {% comment %}
                     {% if LANGUAGE_CODE == 'fi' %}
                         <a href="{% url set_language %}?lang=en&amp;next={% url main %}">In English</a>
                     {% else %}
                         <a href="{% url set_language %}?lang=fi&amp;next={% url main %}">Suomeksi</a>
                     {% endif %}
+                    {% endcomment %}
                 </p>
             </div>
         </div>
@@ -99,7 +109,7 @@
             <div id="panLeft" class="myPanDiv"></div>
             <div id="panDown" class="myPanDiv"></div>
             <div id="panRight" class="myPanDiv"></div>
-            <div id="navigation">
+            <div id="layerToggle">
             <!--    <div id="pan_arrows">
                     <div id="pan_up" class="fixedPan panUp" onclick="map.panUp();"></div>
                     <div id="pan_right" class="fixedPan panRight" onclick="map.panRight();"></div>
@@ -133,12 +143,15 @@
         <script type="text/javascript" src="https://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.6"></script>
         <script type="text/javascript" src="https://maps.google.com/maps/api/js?v=3.7&amp;sensor=false"></script>
         <script type="text/javascript" src="https://softgis.org.aalto.fi/OpenLayers/OpenLayers.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 
         <!--<script type="text/javascript" src="{% url main_js file_name='pehmogis_json' %}"></script>-->
 
         <!-- new files -->
         <script type="text/javascript" src="{% url common file_name='quest_default' file_type='js' %}"></script>
         <script type="text/javascript" src="{% url main_js file_name='quest_spec' %}"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.ui.drawbutton.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/quest.js"></script>
         <script type="text/javascript" src="{% url main_js file_name='quest_extra' %}"></script>
 
@@ -147,7 +160,6 @@
         <!--<script type="text/javascript" src="{% url common file_name='Kysely' file_type='js' %}"></script>-->
         <script type="text/javascript" src="{% url common file_name='myPan' file_type='js' %}"></script>
         <script type="text/javascript" src="{% url common file_name='mySlider' file_type='js' %}"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
         <script type="text/javascript" src="{% url api_javascript %}?lib=jquery"></script>
         <script type="text/javascript">
             <!--

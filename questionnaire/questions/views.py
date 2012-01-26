@@ -51,7 +51,7 @@ def main(request, file_name='index', file_type="html"):
 
     site_name = Site.objects.get(id=settings.SITE_ID).name
     values = ()
-
+    
     if hasattr(request, 'session'):
         try:
             #print(request.session['started'])
