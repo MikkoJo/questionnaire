@@ -666,10 +666,11 @@ questionnaire.special_widgets = {
 questionnaire.feature_defaults = {
     "pearl_p": {
         "max": 1,
-        "style": "point_orange"
+        "style": "point_lightorange"
     },
     "res_build": {
         "style": "point_green",
+        "icon-secondary": "green-icon",
         "header": "{% trans 'Asuinrakennus' %}"
     },
     "ser_build": {

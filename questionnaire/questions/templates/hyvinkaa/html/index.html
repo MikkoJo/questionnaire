@@ -184,5 +184,20 @@
         </button>
     </form>
 </div>
+<div id="pearl" class="popup" style="visibility: hidden;">
+    <h1>{% trans 'Hyvinkään helmi'%}</h1>
+    <form name="popupform" action="#" >
+    <label for="what">{% trans 'Mikä?' %}</label>
+    <input type="text" name="what" id="what" />
+    <p>{% trans "Voit halutessasi kertoa lisää paikasta tai alueesta." %}:</p>
+        <textarea name="comment" cols="24" rows="5" ></textarea><br />
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+    </form>
+</div>
     </body>
 </html>

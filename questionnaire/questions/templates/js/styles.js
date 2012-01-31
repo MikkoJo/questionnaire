@@ -26,11 +26,11 @@ var point_style = new OpenLayers.Style(
                     filter: new OpenLayers.Filter.Comparison({
                         type: OpenLayers.Filter.Comparison.EQUAL_TO,
                         property: "style", // the "foo" feature attribute
-                        value: "point_orange"
+                        value: "point_lightorange"
                     }),
                     // if a feature matches the above filter, use this symbolizer
                     symbolizer: {
-                        externalGraphic: "{{ STATIC_URL }}img/placemarks/pointorange.png"
+                        externalGraphic: "{{ STATIC_URL }}img/placemarks/pointlightorange.png"
                     }
                 }),
                 new OpenLayers.Rule({

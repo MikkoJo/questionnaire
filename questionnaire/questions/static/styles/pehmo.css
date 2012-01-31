@@ -3182,3 +3182,20 @@ div#map .olLayerGoogleV3.olLayerGoogleCopyright {
 div#ovcont .olLayerGoogleV3 {
     visibility: hidden;
 }
+
+button.pearl {
+    background-color: transparent;
+    background-image: url("../img/buttons/happiness.png");
+    background-position: 0 2px;
+    border: medium none;
+    height: 53px;
+    width: 260px;
+}
+button.pearl.ui-state-active {
+    background-position: 0px -51px;
+}
+.green-icon {
+    background-image: url("../img/placemarks/pointgreen.png");
+    height: 36px;
+    width: 23px;
+}
