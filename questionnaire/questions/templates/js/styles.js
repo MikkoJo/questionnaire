@@ -7,7 +7,13 @@ var point_style = new OpenLayers.Style(
         // all other symbolizers in rules will extend this one
         {
             fillColor:  "#ffffff",
+            fillOpacity: 0.2,
+            pointerEvents: "visiblePainted",
+            cursor: "pointer",
+            strokeColor: "blue",
+            strokeOpacity: 0.4,
             pointRadius: 3,
+            graphicOpacity: 1,
             graphicWidth: 23,
             graphicHeight: 36,
             graphicYOffset: -36 // shift graphic up 28 pixels
@@ -76,6 +82,9 @@ var point_style = new OpenLayers.Style(
                     symbolizer: {
                         externalGraphic: "{{ STATIC_URL }}img/placemarks/pointbrown.png"
                     }
+                }),
+                new OpenLayers.Rule({
+                    elseFilter: true
                 })
            ]
         }
@@ -85,7 +94,14 @@ var route_style = new OpenLayers.Style(
         // the first argument is a base symbolizer
         // all other symbolizers in rules will extend this one
         {
-            strokeWidth: 2
+            fillColor:  "#ffffff",
+            fillOpacity: 0.2,
+            strokeWidth: 2,
+            strokeColor: "blue",
+            strokeOpacity: 0.4,
+            pointRadius: 3,
+            pointerEvents: "visiblePainted",
+            cursor: "pointer"
         },
         // the second argument will include all rules
         {
@@ -99,7 +115,8 @@ var route_style = new OpenLayers.Style(
                     }),
                     // if a feature matches the above filter, use this symbolizer
                     symbolizer: {
-                        strokeColor: "#00ff00"
+                        strokeColor: "#00ff00",
+                        strokeOpacity: 1
                     }
                 }),
                 new OpenLayers.Rule({
@@ -111,8 +128,12 @@ var route_style = new OpenLayers.Style(
                     }),
                     // if a feature matches the above filter, use this symbolizer
                     symbolizer: {
-                        strokeColor: "#0000ff"
+                        strokeColor: "#0000ff",
+                        strokeOpacity: 1
                     }
+                }),
+                new OpenLayers.Rule({
+                    elseFilter: true
                 })
            ]
         }
@@ -121,7 +142,14 @@ var area_style = new OpenLayers.Style(
         // the first argument is a base symbolizer
         // all other symbolizers in rules will extend this one
         {
-            strokeWidth: 2
+            strokeWidth: 2,
+            pointRadius: 3,
+            pointerEvents: "visiblePainted",
+            cursor: "pointer",
+            strokeColor: "blue",
+            strokeOpacity: 0.4,
+            fillColor:  "#ffffff",
+            fillOpacity: 0.2
         },
         // the second argument will include all rules
         {
@@ -131,14 +159,18 @@ var area_style = new OpenLayers.Style(
                     filter: new OpenLayers.Filter.Comparison({
                         type: OpenLayers.Filter.Comparison.EQUAL_TO,
                         property: "style", // the "foo" feature attribute
-                        value: "route_green"
+                        value: "area_yellow"
                     }),
                     // if a feature matches the above filter, use this symbolizer
                     symbolizer: {
                         strokeColor: "#ffd700",
+                        strokeOpacity: 1,
                         fillColor:  "#ffd700",
-                        fillOpacity: 0.5
+                        fillOpacity: 0.4
                     }
+                }),
+                new OpenLayers.Rule({
+                    elseFilter: true
                 })
            ]
         }

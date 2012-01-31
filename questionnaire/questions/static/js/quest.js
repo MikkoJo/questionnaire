@@ -3104,6 +3104,8 @@ function feature_added(evt) {
         evt.attributes = OpenLayers.Util.extend(evt.attributes, questionnaire.feature_defaults[value_name]);
         evt.attributes.valuename = value_name;
     }
+    //Update symbol
+    evt.layer.redraw();
 
     //get the active button name = infowindow name
     var infowindow_name = $('button.ui-state-active').attr('name');
@@ -3462,20 +3464,13 @@ function init() {
     //}
     var aliasproj = new OpenLayers.Projection("EPSG:3857");
     gMapDef.projection = gMapSat.projection = aliasproj;
-    map.addLayers([gMapDef, gMapSat, pointLayer, routeLayer, areaLayer]);
+    map.addLayers([gMapDef, gMapSat, areaLayer, routeLayer, pointLayer]);
     map.setCenter(new OpenLayers.LonLat(2766225.683368, 8540628.690266), 15);
 
     var pointcontrol = new OpenLayers.Control.DrawFeature(pointLayer,
                                 OpenLayers.Handler.Point,
                                 {'id': 'pointcontrol',
-                                'featureAdded': feature_added,
-                                'handlerOptions': {'create': function (g,f) {
-                                    var value_name = $('button.ui-state-active').attr('id');
-                                    if (value_name !== undefined) {
-                                        f.attributes = OpenLayers.Util.extend(f.attributes, questionnaire.feature_defaults[value_name]);
-                                    }
-
-                                }}});
+                                'featureAdded': feature_added});
     var routecontrol = new OpenLayers.Control.DrawFeature(routeLayer,
                                 OpenLayers.Handler.Path,
                                 {'id': 'routecontrol',

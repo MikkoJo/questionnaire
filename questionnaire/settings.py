@@ -25,7 +25,7 @@ DATABASES = {
 }
 
 POSTGIS_SQL_PATH = '/usr/share/postgresql/9.1/contrib'
-POSTGIS_TEMPLATE = getattr(settings_local, "POSTGIS_TEMPLATE", 'template_postgis')
+POSTGIS_TEMPLATE = getattr(settings_local, "POSTGIS_TEMPLATE", 'postgis_template')
 POSTGIS_VERSION = ('1.5.3', 1, 5, 2)
 
 
