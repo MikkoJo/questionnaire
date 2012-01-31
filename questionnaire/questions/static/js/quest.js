@@ -418,6 +418,70 @@ function create_feature_callback(response_data) {
 //    activeGraphic.id = response_data.response.id;
 
 }
+function create_ol_feature_callback(response_data) {
+
+    if(djConfig.isDebug) {
+        console.log("save_graphic_callback: " + dojo.toJson(response_data));
+    }
+    // If update return. At this moment we do not change geometries, only properties
+    if(response_data.search) {
+        if(response_data.search(/Feature with id [0-9]+ was updated/) !== -1) {
+            return;
+        }
+    }
+    var valName = response_data.properties.valuename,
+        respGeom = response_data.geometry,
+        i,
+        k;
+/*
+    // Go through questionnaire.graphics to find correct graphic and add id to it
+    for(i = 0; i < questionnaire.graphics[valName].length; i++) {
+        if(questionnaire.graphics[valName][i].geometry.type === "point" &&
+            questionnaire.graphics[valName][i].geometry.x === respGeom.coordinates[0] &&
+            questionnaire.graphics[valName][i].geometry.y === respGeom.coordinates[1]) {
+
+            questionnaire.graphics[valName][i].id = response_data.id;
+            questionnaire.features[response_data.id] = response_data;
+            break;
+
+        } else if (questionnaire.graphics[valName][i].geometry.type === "polyline" &&
+                    dojo.toJson(questionnaire.graphics[valName][i].geometry.paths) === dojo.toJson([respGeom.coordinates])) {
+
+            questionnaire.graphics[valName][i].id = response_data.id;
+            questionnaire.features[response_data.id] = response_data;
+            break;
+        } else if (questionnaire.graphics[valName][i].geometry.type === "polygon" &&
+                    dojo.toJson(questionnaire.graphics[valName][i].geometry.rings) === dojo.toJson(respGeom.coordinates)) {
+
+            questionnaire.graphics[valName][i].id = response_data.id;
+            questionnaire.features[response_data.id] = response_data;
+            break;
+        }
+    }
+    //Add graphicId to the questionnaire.values
+    for(k = 0; k < questionnaire.values[valName].length; k++) {
+        if(questionnaire.values[valName][k].geom.type === "point" &&
+            questionnaire.values[valName][k].geom.x === respGeom.coordinates[0] &&
+            questionnaire.values[valName][k].geom.y === respGeom.coordinates[1]) {
+
+            questionnaire.values[valName][k].graphicId = response_data.id;
+            break;
+
+        } else if (questionnaire.values[valName][k].geom.type === "polyline" &&
+                    dojo.toJson(questionnaire.graphics[valName][k].geometry.paths) === dojo.toJson([respGeom.coordinates])) {
+
+            questionnaire.values[valName][k].graphicId = response_data.id;
+            break;
+        } else if (questionnaire.values[valName][k].geom.type === "polygon" &&
+                    dojo.toJson(questionnaire.graphics[valName][k].geometry.rings) === dojo.toJson(respGeom.coordinates)) {
+
+            questionnaire.values[valName][k].graphicId = response_data.id;
+            break;
+        }
+    }*/
+//    activeGraphic.id = response_data.response.id;
+
+}
 
 
 
@@ -1087,7 +1151,7 @@ function submitForm(e) { /* PROBLEM: Creates unnecessary undefined values for im
         //we save the infotemplate, symbol, geometry and attributes
         var gr = {};
         /* We dont use graphics*/
-        var grname;
+  /*      var grname;
         for (grname in questionnaire.graphics) {
             if(grname !== null) {
                 gr[grname] = [];
@@ -1098,14 +1162,15 @@ function submitForm(e) { /* PROBLEM: Creates unnecessary undefined values for im
                 }
             }
         }
+        */
         //the same with the extent
-        var ext = {};
-        if (map.extent !== null) {
-            ext.xmax = map.extent.xmax;
-            ext.xmin = map.extent.xmin;
-            ext.ymax = map.extent.ymax;
-            ext.ymin = map.extent.ymin;
-        }
+//        var ext = {};
+//        if (map.extent !== null) {
+//            ext.xmax = map.extent.xmax;
+//            ext.xmin = map.extent.xmin;
+//            ext.ymax = map.extent.ymax;
+//            ext.ymin = map.extent.ymin;
+//        }
 
         //save_profile_values(questionnaire.profileValues);
         gnt.opensocial_people.update_person("@me", questionnaire.profileValues);
@@ -1474,7 +1539,7 @@ function create_widgets(node_id) {
         var ef = new dijit.form.Form(json_def,
                                    no_submitform_element);
     }
-    
+
     /* Create jquery drawButtons
      */
     //draw buttons to activate drawing functionality
@@ -2835,7 +2900,7 @@ function createInfo(event) {
                         for (var j = 0; j < chh.length; j++) {
                             chh[j].destroy(true);
                         }
-                    ch[i].destroy(true);
+                    ch[k].destroy(true);
 
                 }
                 st.destroy(true);
@@ -2951,47 +3016,61 @@ var popup; //only one popup at the time
 /*
 popup save feature event handler
 */
-function save_handler(evt) {
+function save_feature_handler(evt) {
     console.log("save handler");
     console.log(evt);
     console.log(evt.data[0]);
     //get the form data
-    console.log($('form[name=popupform].active').serializeArray());
-    var popup_values = $('form[name=popupform].active').serializeArray();
+    var popup_values = getValues(infoForm);
+
+    //console.log($('form[name=popupform].active').serializeArray());
+    //var popup_values = $('form[name=popupform].active').serializeArray();
     $('form[name=popupform]').removeClass('active');
-    var new_attributes = {};
+    //var new_attributes = {};
     console.log(popup_values);
-    for(var val in popup_values) {
-        console.log(val);
-        new_attributes[popup_values[val]['name']] =
-            popup_values[val]['value'];
-    }
-    console.log(new_attributes);
-    evt.data[0].attributes = new_attributes;
+//    for(var val in popup_values) {
+//        console.log(val);
+//       new_attributes[popup_values[val]['name']] =
+//            popup_values[val]['value'];
+//    }
+//    console.log(new_attributes);
+    evt.data[0].attributes = OpenLayers.Util.extend(evt.data[0].attributes, popup_values);
     //save the geojson
     var gf = new OpenLayers.Format.GeoJSON();
     console.log(gf);
-    var geojson = gf.write(evt.data[0]);
-    console.log(geojson);
+    var geojson_feature_string = gf.write(evt.data[0]);
+    console.log(geojson_feature_string);
     map.removePopup(popup);
     popup = undefined;
-    
+
     //unselect the button
     $(".drawbutton.ui-state-active")
         .drawButton( 'deactivate' );
+
+    // TODO The actual saving of the feature through the API
+    // API expects the data to be geojson object not a string that is returned from GeoJSON.write
+    var sto = new OpenLayers.Format.JSON();
+    var geojson_feature = sto.read(geojson_feature_string);
+    if(evt.data[0].fid === undefined || evt.data[0].fid === null) {
+        gnt.geo.create_feature(geojson_feature, create_ol_feature_callback);
+    }
+    else {
+        gnt.geo.update_feature(geojson_feature);
+    }
+
 }
 
 /*
 popup remove feature event handler
 */
-function remove_handler(evt) {
+function remove_feature_handler(evt) {
     console.log("remove handler");
     console.log(evt);
     console.log(evt.data[0]);
     evt.data[0].layer.removeFeatures([evt.data[0]]);
     map.removePopup(popup);
     popup = undefined;
-    
+
     //unselect the button
     $(".drawbutton.ui-state-active")
         .drawButton( 'deactivate' );
@@ -3002,9 +3081,9 @@ confirm and save the feature
 */
 function feature_added(evt) {
     console.log(evt);
-    
+
     //get the right lonlat for the popup position
-    var lonlat;
+    var lonlat, infocontent;
     if( evt.geometry.id.contains( "Point" ) ) {
         lonlat = new OpenLayers.LonLat(
                         evt.geometry.x,
@@ -3016,12 +3095,20 @@ function feature_added(evt) {
     } else if ( evt.geometry.id.contains( "Polygon" ) ) {
         lonlat = evt.geometry.bounds.getCenterLonLat();
     }
-    
-    
+
+    //TODO Add default attributevalues for the feature
+    // something similar as imagebutton.graphicattr
+    //get the active button id = valuename
+    var value_name = $('button.ui-state-active').attr('id');
+    if (value_name !== undefined) {
+        evt.attributes = OpenLayers.Util.extend(evt.attributes, questionnaire.feature_defaults[value_name]);
+        evt.attributes.valuename = value_name;
+    }
+
     //get the active button name = infowindow name
     var infowindow_name = $('button.ui-state-active').attr('name');
     var default_infocontent = " default info content ";
-    
+
     //get the right content for the popup
     if( infowindow_name !== undefined ) {
         infocontent = $('#' + infowindow_name).html();
@@ -3029,8 +3116,8 @@ function feature_added(evt) {
     if(infocontent === null) {
         infocontent = default_infocontent;
     }
-    
-    
+    infocontent = OpenLayers.String.format(infocontent, evt.attributes);
+    //var parsed_content = create_widgets('popupContent');
     //remove old popup if existing
     if(popup !== undefined) {
         map.removePopup(popup);
@@ -3047,14 +3134,48 @@ function feature_added(evt) {
                     false);
 
     map.addPopup(popup);
+    //destroy previous form and its input objects
+    if(infoForm !== undefined && infoForm !== null) {
+        // For some reason IE7 hangs in infinite loop (something to with stackcontainer)
+        if(dojo.isIE === 7) {
+            var st = dijit.byId("stack1");
+            if(st !== undefined) {
+                console.log("st");
+                //st.destroyDescendants(true);
+                st.destroy(true);
+                var ch = st.getChildren();
+                for (var k = 0; k < ch.length; k++) {
+                    var chh = ch[k].getChildren();
+                        for (var j = 0; j < chh.length; j++) {
+                            chh[j].destroy(true);
+                        }
+                    ch[k].destroy(true);
+
+                }
+                st.destroy(true);
+                infoForm.destroy(true);
+            }
+            else {
+                infoForm.destroyRecursive(true);
+            }
+
+        }
+        else {
+            infoForm.destroyRecursive(true);
+        }
+        infoForm = undefined;
+    }
+
+    infoForm = create_widgets(evt.id + '_contentDiv');
+    //remove old popup if existing
     //add a class to the form to recognize it as active
     $('div[id="' + evt.id + '"] form[name="popupform"]').addClass('active');
-    
+
     //connect the event to the infowindow buttons
     $('div[id="' + evt.id + '"] .save_feature').click([evt],
-                                                      save_handler);
+                                                      save_feature_handler);
     $('div[id="' + evt.id + '"] .remove_feature').click([evt],
-                                                        remove_handler);
+                                                        remove_feature_handler);
 }
 
 /*
@@ -3181,7 +3302,7 @@ var gMapDef, gMapSat;
 var pointLayer,
     routeLayer,
     areaLayer;
-    
+
 //init creates the map
 function init() {
     console.log("init");
@@ -3239,10 +3360,16 @@ function init() {
     gMapDef = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
     gMapSat = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
                                                             numZoomLevels: 22});
-    pointLayer = new OpenLayers.Layer.Vector("Point Layer");
-    routeLayer = new OpenLayers.Layer.Vector("Route Layer");
-    areaLayer = new OpenLayers.Layer.Vector("Area Layer");
-    
+    pointLayer = new OpenLayers.Layer.Vector("Point Layer", {
+                                styleMap: new OpenLayers.StyleMap(point_style)
+                        });
+    routeLayer = new OpenLayers.Layer.Vector("Route Layer", {
+                                styleMap: new OpenLayers.StyleMap(route_style)
+                        });
+    areaLayer = new OpenLayers.Layer.Vector("Area Layer", {
+                                styleMap: new OpenLayers.StyleMap(area_style)
+                        });
+
     map.addControls([new OpenLayers.Control.OverviewMap({'div': dojo.byId("ovcont"),
                                                          'size': new OpenLayers.Size(190,190)}),
                                  new OpenLayers.Control.Navigation({}),
@@ -3266,12 +3393,12 @@ function init() {
     }*/
 
     //the overview map layer
-    try {
+    //try {
       //  ovlayer = new esri.layers.ArcGISTiledMapServiceLayer(OVERVIEWMAP_URL);
-    }
-    catch(er){
-        console.log(dojo.toJson(er));
-    }
+    //}
+    //catch(er){
+    //    console.log(dojo.toJson(er));
+    //}
     //TEST
     if(dojo.cookie("pehmogis") !== undefined) {
         console.log(dojo.fromJson(dojo.cookie("pehmogis")));
@@ -3341,16 +3468,23 @@ function init() {
     var pointcontrol = new OpenLayers.Control.DrawFeature(pointLayer,
                                 OpenLayers.Handler.Point,
                                 {'id': 'pointcontrol',
-                                'featureAdded': feature_added});
+                                'featureAdded': feature_added,
+                                'handlerOptions': {'create': function (g,f) {
+                                    var value_name = $('button.ui-state-active').attr('id');
+                                    if (value_name !== undefined) {
+                                        f.attributes = OpenLayers.Util.extend(f.attributes, questionnaire.feature_defaults[value_name]);
+                                    }
+
+                                }}});
     var routecontrol = new OpenLayers.Control.DrawFeature(routeLayer,
                                 OpenLayers.Handler.Path,
                                 {'id': 'routecontrol',
-                                'featureAdded': feature_added})
+                                'featureAdded': feature_added});
     var areacontrol = new OpenLayers.Control.DrawFeature(areaLayer,
                                 OpenLayers.Handler.Polygon,
                                 {'id': 'areacontrol',
-                                'featureAdded': feature_added})
-    
+                                'featureAdded': feature_added});
+
     map.addControls([pointcontrol, routecontrol, areacontrol ]);
     /*map.setCenter(new OpenLayers.LonLat(24.85311883, 60.6296573).transform(
         new OpenLayers.Projection("EPSG:4326"),
@@ -3445,7 +3579,7 @@ function init() {
 
     //pool for imagebuttons
     pool = new ButtonPool();
-
+/*
     if(djConfig.locale === 'fi' || djConfig.locale === 'fi-FI') {
     // Create custom localization to esri.toolbars.draw, esri haven't localized(fi-FI) these strings jsapi2.3
         var tooltiplocale = {
@@ -3465,7 +3599,7 @@ function init() {
                     }
                 };
         dojo.mixin(esri.bundle.toolbars, tooltiplocale.toolbars);
-    }
+    }*/
     //check the available height and se the small and big content max height accordingly
     /*
     th = screen.availHeight - 100;

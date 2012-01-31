@@ -135,17 +135,5 @@
             </tr>
         </table>
     </form>
-<!-- infowindows with id's put here so that translations work -->
-<div id="ideas" class="popup" style="visibility: hidden;">
-    <p>{% trans "Kerro lisää:" %}:</p>
-    <form name="popupform" action="#">
-        <textarea name="comment" cols="24" rows="5" ></textarea><br />
-        <button type="button" class="save_feature">
-            {% trans "Tallenna kohde" %}
-        </button>
-        <button type="button" class="remove_feature">
-            {% trans "Poista kohde" %}
-        </button>
-    </form>
-</div>
+
 {% endblock formarea %}

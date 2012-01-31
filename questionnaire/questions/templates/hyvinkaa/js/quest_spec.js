@@ -662,3 +662,43 @@ questionnaire.special_widgets = {
         }
     }
 };
+
+questionnaire.feature_defaults = {
+    "pearl_p": {
+        "max": 1,
+        "style": "point_orange"
+    },
+    "res_build": {
+        "style": "point_green",
+        "header": "{% trans 'Asuinrakennus' %}"
+    },
+    "ser_build": {
+        "style": "point_blue",
+        "header": "{% trans 'Palvelurakennus' %}"
+    },
+    "new_walking_route": {
+        "style": "route_green",
+        "header": "{% trans 'Kävely- tai pyöräilyreitti' %}"
+    },
+    "new_transport_route": {
+        "style": "route_blue",
+        "header": "{% trans 'Bussireitti' %}"
+    },
+    "new_recreation_area": {
+        "style": "area_yellow",
+        "header": "{% trans 'Virkistysalue' %}"
+    },
+    "preserve_place": {
+        "style": "point_cyan",
+        "header": "{% trans 'Säilytettävä paikka' %}"
+    },
+    "improve_place": {
+        "style": "point_yellow",
+        "header": "{% trans 'Kohennettava paikka' %}"
+    },
+    "otherplace": {
+        "style": "point_brown",
+        "header": "{% trans 'Muu paikka' %}"
+    },
+
+}

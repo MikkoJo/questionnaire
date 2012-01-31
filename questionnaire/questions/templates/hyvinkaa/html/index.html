@@ -44,6 +44,9 @@
                 document.body.style.cursor = "wait";
             -->
         </script>
+        <!--
+            {% csrf_token %}
+        -->
         <div id="header">
             <div id="logo"></div>
             <div id="help" style="visibility: hidden;" onclick="window.open('{% url main_html file_name='instructions' %}'); return false;">
@@ -151,6 +154,7 @@
         <!-- new files -->
         <script type="text/javascript" src="{% url common file_name='quest_default' file_type='js' %}"></script>
         <script type="text/javascript" src="{% url main_js file_name='quest_spec' %}"></script>
+        <script type="text/javascript" src="{% url common file_name='styles' file_type='js' %}"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.ui.drawbutton.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/quest.js"></script>
         <script type="text/javascript" src="{% url main_js file_name='quest_extra' %}"></script>
@@ -166,6 +170,19 @@
             dojo.addOnLoad(init);
             -->
         </script>
-
+<!-- infowindows with id's put here so that translations work -->
+<div id="ideas" class="popup" style="visibility: hidden;">
+    <h1>${header}</h1>
+    <p>{% trans "Kerro lisää:" %}:</p>
+    <form name="popupform" action="#" >
+        <textarea name="comment" cols="24" rows="5" ></textarea><br />
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+    </form>
+</div>
     </body>
 </html>
