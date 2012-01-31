@@ -1543,15 +1543,57 @@ function create_widgets(node_id) {
     /* Create jquery drawButtons
      */
     //draw buttons to activate drawing functionality
-    $("#" + node_id).find("button[type='button'].drawbutton.point").drawButton({
-        control: "pointcontrol"
-        });
-    $("#" + node_id).find("button[type='button'].drawbutton.route").drawButton({
-        control: "routecontrol"
-        });
-    $("#" + node_id).find("button[type='button'].drawbutton.area").drawButton({
-        control: "areacontrol"
-        });
+   $("#" + node_id).find("button[type='button'].drawbutton.point").each(function() {
+       var options = {control: "pointcontrol"};
+       if(questionnaire.feature_defaults[$(this).attr('id')] !== undefined) {
+            if(questionnaire.feature_defaults[$(this).attr('id')].classes !== undefined) {
+                options.classes = questionnaire.feature_defaults[$(this).attr('id')].classes;
+            }
+            if(questionnaire.feature_defaults[$(this).attr('id')].icons !== undefined) {
+                options.icons = questionnaire.feature_defaults[$(this).attr('id')].icons;
+            }
+        }
+        $(this).drawButton(options);
+
+   });
+   $("#" + node_id).find("button[type='button'].drawbutton.route").each(function() {
+       var options = {control: "routecontrol"};
+       if(questionnaire.feature_defaults[$(this).attr('id')] !== undefined) {
+            if(questionnaire.feature_defaults[$(this).attr('id')].classes !== undefined) {
+                options.classes = questionnaire.feature_defaults[$(this).attr('id')].classes;
+            }
+            if(questionnaire.feature_defaults[$(this).attr('id')].icons !== undefined) {
+                options.icons = questionnaire.feature_defaults[$(this).attr('id')].icons;
+            }
+        }
+        $(this).drawButton(options);
+
+   });
+   $("#" + node_id).find("button[type='button'].drawbutton.area").each(function() {
+       var options = {control: "areacontrol"};
+       if(questionnaire.feature_defaults[$(this).attr('id')] !== undefined) {
+            if(questionnaire.feature_defaults[$(this).attr('id')].classes !== undefined) {
+                options.classes = questionnaire.feature_defaults[$(this).attr('id')].classes;
+            }
+            if(questionnaire.feature_defaults[$(this).attr('id')].icons !== undefined) {
+                options.icons = questionnaire.feature_defaults[$(this).attr('id')].icons;
+            }
+        }
+        $(this).drawButton(options);
+
+   });
+        
+        
+    
+//    $("#" + node_id).find("button[type='button'].drawbutton.point").drawButton({
+//        control: "pointcontrol"
+//        });
+    // $("#" + node_id).find("button[type='button'].drawbutton.route").drawButton({
+        // control: "routecontrol"
+        // });
+    // $("#" + node_id).find("button[type='button'].drawbutton.area").drawButton({
+        // control: "areacontrol"
+        // });
     /*
     //create the radiobuttons
     for(i = 0; i < radio_elements.length; i++) {

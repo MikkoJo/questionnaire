@@ -96,6 +96,11 @@ background-image: url("../img/pehmogis_kkolmio_logo.png");
 width: 173px;
 }
 
+.hyvinkaa_fi #logo, .hyvinkaa_en #logo {
+background-image: url("../img/hyvinkaa_logo.png");
+width: 173px;
+}
+
 div#fcg_logo {
 background-image: url("../img/FCG-logo.png");
 position: absolute;
@@ -3194,8 +3199,65 @@ button.pearl {
 button.pearl.ui-state-active {
     background-position: 0px -51px;
 }
+button.small.drawbutton {
+    width: 220px;
+}
+button.small .ui-button-text{
+    font-size: 13px;
+    padding: 1px 2.1em 1px 1em;
+    line-height: 15px;
+}
+button.small.ui-state-active {
+    border: 1px solid #009900;
+}
+button.small .ui-icon {
+    height: 18px;
+    width: 12px;
+}
 .green-icon {
-    background-image: url("../img/placemarks/pointgreen.png");
-    height: 36px;
-    width: 23px;
+    background-image: url("../img/placemarks/small_green.png") !important;
+}
+.blue-icon {
+    background-image: url("../img/placemarks/small_blue.png") !important;
+}
+.cyan-icon {
+    background-image: url("../img/placemarks/small_cyan.png") !important;
+}
+.yellow-icon {
+    background-image: url("../img/placemarks/small_yellow.png") !important;
+}
+.brown-icon {
+    background-image: url("../img/placemarks/small_brown.png") !important;
+}
+.green_route-icon {
+    background-image: url("../img/placemarks/small_route_green.png") !important;
+}
+.blue_route-icon {
+    background-image: url("../img/placemarks/small_route_blue.png") !important;
+}
+.yellow_area-icon {
+    background-image: url("../img/placemarks/small_area_yellow.png") !important;
+}
+#mapitaCopy {
+    bottom: 3px;
+    color: black;
+    font-size: 13px;
+    height: 15px;
+    position: absolute;
+    right: 90px;
+    width: 180px;
+    z-index: 54;
+}
+#mapitaLogo {
+    bottom: 3px;
+    height: 28px;
+    position: absolute;
+    right: 10px;
+    width: 92px;
+    z-index: 54;
+    background: transparent url("../img/mapita_logo.png") no-repeat scroll;
+}
+
+td.bigSlider {
+    width: 70%;
 }

@@ -36,99 +36,79 @@
     <form id="ideasForm" name="ideasForm">
         <table class="buttons">
             <tr>
-                <td class="moveEnvTd">
-                    {% trans 'Uutta asuntorakentamista' %}
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="res_build" name="ideas">{% trans 'Uutta asuntorakentamista' %}</button>
+                    
                     <ul>
                         <li>{% trans 'Millainen asuinrakentaminen sopisi alueelle?' %}</li>
                     </ul>
                 </td>
-                <td class="topAlign">
-                    <button type="button" class="drawbutton point" id="res_build" name="ideas"></button>
-                </td>
+                
             </tr>
             <tr>
-                <td class="moveEnvTd">
-                    {% trans 'Uutta palvelurakentamista' %}
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="ser_build" name="ideas">{% trans 'Uutta palvelurakentamista' %}</button>
+                    
                     <ul>
                         <li>{% trans 'Minne alueella tarvittaisiin palveluita?' %}</li>
                         <li>{% trans 'Mitä palveluita toivoisit?' %}</li>
                     </ul>
                 </td>
-                <td class="topAlign">
-                    <button type="button" class="drawbutton point" id="ser_build" name="ideas"></button>
-                </td>
+                
             </tr>
             <tr>
-                <td class="moveEnvTd">
-                    {% trans 'Uusi kävely- tai pyöräilyreitti' %}
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton route" id="new_walking_route" name="ideas">{% trans 'Uusi kävely- tai pyöräilyreitti' %}</button>
+                    
                     <ul>
                         <li>{% trans 'Millaisia reittejä toivot alueelle? ' %}</li>
                         <li>{% trans 'Miten reitit voisivat yhdistyä alueen ulkopuolella sijaitseviin paikkoihin?' %}</li>
                     </ul>
                 </td>
-                <td class="topAlign">
-                    <button type="button" class="drawbutton route" id="new_walking_route" name="ideas"></button>
-                    <div id=""></div>
-                </td>
             </tr>
             <tr>
-                <td class="moveEnvTd">
-                    {% trans 'Uusi bussireitti' %}
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton route" id="new_transport_route" name="ideas">{% trans 'Uusi bussireitti' %}</button>
+                    
                     <ul>
                         <li>{% trans 'Tuleeko jokin bussireiteistä linjata toisin?' %}</li>
                     </ul>
                 </td>
-                <td class="topAlign">
-                    <button type="button" class="drawbutton route" id="new_transport_route" name="ideas"></button>
-                    <div id=""></div>
-                </td>
             </tr>
             <tr>
-                <td class="moveEnvTd">
-                    {% trans 'Uusi virkistysalue' %}
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton area" id="new_recreation_area" name="ideas">{% trans 'Uusi virkistysalue' %}</button>
+                    
                     <ul>
                         <li>{% trans 'Mitkä paikat alueella tulisi säilyttää tai muuttaa virkistysalueiksi?' %}</li>
                     </ul>
                 </td>
-                <td class="topAlign">
-                    <button type="button" class="drawbutton area" id="new_recreation_area" name="ideas"></button>
-                    <div id=""></div>
-                </td>
             </tr>
             <tr>
-                <td class="moveEnvTd">
-                    {% trans 'Säilytettävä paikka' %}
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="preserve_place" name="ideas">{% trans 'Säilytettävä paikka' %}</button>
+                    
                     <ul>
                         <li>{% trans 'Onko suunnittelualueella paikkoja, joihin ei saisi kajota?' %}</li>
                     </ul>
                 </td>
-                <td class="topAlign">
-                    <button type="button" class="drawbutton point" id="preserve_place" name="ideas"></button>
-                    <div id=""></div>
-                </td>
             </tr>
             <tr>
-                <td class="moveEnvTd">
-                    {% trans 'Kohennettava paikka' %}
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="improve_place" name="ideas">{% trans 'Kohennettava paikka' %}</button>
+                    
                     <ul>
                         <li>{% trans 'Onko alueella tai sen lähellä paikkoja, joita tulisi erityisesti kohentaa?' %}</li>
                     </ul>
                 </td>
-                <td class="topAlign">
-                    <button type="button" class="drawbutton point" id="improve_place" name="ideas"></button>
-                    <div id=""></div>
-                </td>
             </tr>
             <tr>
-                <td class="moveEnvTd">
-                    {% trans 'Muu idea' %}
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="otherplace" name="ideas">{% trans 'Muu idea' %}</button>
+                    
                     <ul>
                         <li>{% trans 'Mitä muuta toivoisit alueelle?' %}</li>
                     </ul>
-                </td>
-                <td class="topAlign">
-                    <button type="button" class="drawbutton point" id="otherplace" name="ideas"></button>
-                    <div id=""></div>
                 </td>
             </tr>
         </table>

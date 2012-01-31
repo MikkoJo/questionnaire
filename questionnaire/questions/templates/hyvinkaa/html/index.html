@@ -38,7 +38,7 @@
             -->
         </script>
      </head>
-    <body class="tundra kkolmio_{{ LANGUAGE_CODE|slice:":2" }}" onunload="/*submitForm();endQuestionary();*/">
+    <body class="tundra hyvinkaa_{{ LANGUAGE_CODE|slice:":2" }}" onunload="/*submitForm();endQuestionary();*/">
         <script type="text/javascript">
             <!--
                 document.body.style.cursor = "wait";
@@ -140,7 +140,8 @@
         <div class="symbols">
             <div id="mapSymbols" onclick="showBoxAnim();" style="display:none;"></div>
         </div>
-        <div id="maanmittausCopy"></div>
+        <div id="mapitaCopy">{% trans 'Copyright &copy; Mapita Oy 2012' %}</div>
+        <div id="mapitaLogo"></div>
         <div id="footer"></div>
         <div id="dummy"></div>
         <script type="text/javascript" src="https://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.6"></script>
@@ -173,7 +174,7 @@
 <!-- infowindows with id's put here so that translations work -->
 <div id="ideas" class="popup" style="visibility: hidden;">
     <h1>${header}</h1>
-    <p>{% trans "Kerro lisää:" %}:</p>
+    <p>{% trans "Kerro lisää:" %}</p>
     <form name="popupform" action="#" >
         <textarea name="comment" cols="24" rows="5" ></textarea><br />
         <button type="button" class="save_feature">

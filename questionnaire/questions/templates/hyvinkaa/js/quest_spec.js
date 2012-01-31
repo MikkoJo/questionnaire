@@ -670,35 +670,50 @@ questionnaire.feature_defaults = {
     },
     "res_build": {
         "style": "point_green",
-        "icon-secondary": "green-icon",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "green-icon"},
         "header": "{% trans 'Asuinrakennus' %}"
     },
     "ser_build": {
         "style": "point_blue",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "blue-icon"},
         "header": "{% trans 'Palvelurakennus' %}"
     },
     "new_walking_route": {
         "style": "route_green",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "green_route-icon"},
         "header": "{% trans 'Kävely- tai pyöräilyreitti' %}"
     },
     "new_transport_route": {
         "style": "route_blue",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "blue_route-icon"},
         "header": "{% trans 'Bussireitti' %}"
     },
     "new_recreation_area": {
         "style": "area_yellow",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "yellow_area-icon"},
         "header": "{% trans 'Virkistysalue' %}"
     },
     "preserve_place": {
         "style": "point_cyan",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "cyan-icon"},
         "header": "{% trans 'Säilytettävä paikka' %}"
     },
     "improve_place": {
         "style": "point_yellow",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "yellow-icon"},
         "header": "{% trans 'Kohennettava paikka' %}"
     },
     "otherplace": {
         "style": "point_brown",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "brown-icon"},
         "header": "{% trans 'Muu paikka' %}"
     },
 
