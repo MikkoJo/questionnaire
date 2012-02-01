@@ -119,6 +119,26 @@ function fireonchange(element) {
 
 }
 
+/* Overview map container functionality */
+function toggleovwin() {
+    var anim = dojox.fx.toggleClass("ov", "open" );
+    dojo.connect(anim, "onEnd", function() {
+                    dojo.toggleClass(dojo.byId("hidetext"), "tyhja");
+                    dojo.toggleClass(dojo.byId("showtext"), "tyhja");
+                    });
+    anim.play();
+}
+function overviewMapShow(){
+    var divi = dojo.byId("ovcont");
+    divi.style.visibility = "visible";
+}
+
+function overviewMapHide(){
+
+    var divi = dojo.byId("ovcont");
+    divi.style.visibility = "hidden";
+}
+
 var infoWindowHandler = function (evt) {
     if(djConfig.isDebug) {
         console.debug("map.graphics, onClick");
@@ -4914,17 +4934,17 @@ if(this.active && !this.active.disabledIB) {
 /*
 simple dijit for showing value of horizontalslider
 */
-dojo.declare("SliderValue", [dijit._Widget, dijit._Templated],
-{
-"templateString": "<div class =\"sliderValue\">${value}</div>",
-"sliderNode": "",
-"value": "50",
-"_setValueAttr": function(nval) {
-this.value = Math.floor(nval);
-var tn = this.sliderNode + "Value";
-dojo.byId(tn).innerHTML = this.value + "%";
-}
-});
+//dojo.declare("SliderValue", [dijit._Widget, dijit._Templated],
+//{
+//"templateString": "<div class =\"sliderValue\">${value}</div>",
+//"sliderNode": "",
+//"value": "50",
+//"_setValueAttr": function(nval) {
+//this.value = Math.floor(nval);
+//var tn = this.sliderNode + "Value";
+//dojo.byId(tn).innerHTML = this.value + "%";
+//}
+//});
 
 function showBoxAnim() {
 var mapSymbo = document.getElementById("mapSymbols");
