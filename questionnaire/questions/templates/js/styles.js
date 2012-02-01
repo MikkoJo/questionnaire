@@ -166,7 +166,7 @@ var area_style = new OpenLayers.Style(
                         strokeColor: "#ffd700",
                         strokeOpacity: 1,
                         fillColor:  "#ffd700",
-                        fillOpacity: 0.4
+                        fillOpacity: 0.3
                     }
                 }),
                 new OpenLayers.Rule({

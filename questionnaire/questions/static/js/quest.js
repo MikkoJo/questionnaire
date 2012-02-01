@@ -8,11 +8,11 @@
 */
 
 //required packages
-dojo.require("esri.map");
-dojo.require("esri.dijit.InfoWindow");
+//dojo.require("esri.map");
+//dojo.require("esri.dijit.InfoWindow");
 //dojo.require("esri.geometry.Geometry");
 //dojo.require("esri.layers.agstiled");
-dojo.require("esri.toolbars.draw");
+//dojo.require("esri.toolbars.draw");
 //dojo.require("dijit.dijit");
 //dojo.require("dojo.parser");
 //dojo.require("dojo.html");
@@ -188,13 +188,55 @@ function loadTemplates(fileName) {
 
 }
 
+function add_popup_to_feature(evt) {
+
+    var default_infocontent = " default info content ",
+        feature = evt.feature,
+        infowindow_name,
+        popupcontent;
+
+    //save name to feature.attributes, we need it when we fetch features from server
+    if(feature.attributes.info_name !== undefined && feature.attributes.info_name !== null) {
+        infowindow_name = feature.attributes.info_name;
+    }
+
+    //get the right content for the popup
+    if( infowindow_name !== undefined ) {
+        popupcontent = $('#' + infowindow_name).html();
+    }
+    if(popupcontent === null) {
+        popupcontent = default_infocontent;
+    }
+    popupcontent = OpenLayers.String.format(popupcontent, feature.attributes);
+
+    feature.lonlat = get_popup_lonlat(feature.geometry);
+    feature.popupClass = OpenLayers.Popup.FramedCloud;
+    feature.data = {
+        popupSize: null,
+        popupContentHTML: popupcontent
+    };
+    //var parsed_content = create_widgets('popupContent');
+    //create popup and put it on the map
+    feature.popup = new OpenLayers.Popup.FramedCloud(
+                    feature.id,
+                    feature.lonlat,
+                    feature.data.popupSize,
+                    feature.data.popupContentHTML,
+                    null,
+                    false);
+    console.log("created popup");
+
+}
+
 //Callback functions for api functions
 function get_features_callback(response_data) {
 
     //var response = response_data.response;
  //   var response = response_data;
     //TESTING
-    pointLayer.events.register("featureadded", undefined, function(evt) {});
+    pointLayer.events.register("featureadded", undefined, add_popup_to_feature);
+    routeLayer.events.register("featureadded", undefined, add_popup_to_feature);
+    areaLayer.events.register("featureadded", undefined, add_popup_to_feature);
     // Copied from the API
     if(djConfig.isDebug) {
         console.log("get_features_callback: " + dojo.toJson(response_data));
@@ -203,10 +245,10 @@ function get_features_callback(response_data) {
         point_array = [],
         linestring_array = [],
         polygon_array = [];
-        
+
     gjf = new OpenLayers.Format.GeoJSON();
     features = gjf.read(response_data);
-    
+
     // create arrays for different geometry types from the features array
     for(i = 0; i < features.length; i++) {
         if(features[i].geometry instanceof OpenLayers.Geometry.Point) {
@@ -218,11 +260,15 @@ function get_features_callback(response_data) {
         else if(features[i].geometry instanceof OpenLayers.Geometry.Polygon) {
             polygon_array.push(features[i]);
         }
-    } 
-    
+    }
+
     pointLayer.addFeatures(point_array);
     routeLayer.addFeatures(linestring_array);
     areaLayer.addFeatures(polygon_array);
+
+    pointLayer.events.unregister("featureadded", undefined, add_popup_to_feature);
+    routeLayer.events.unregister("featureadded", undefined, add_popup_to_feature);
+    areaLayer.events.unregister("featureadded", undefined, add_popup_to_feature);
 
 /*    var spatialReference = new esri.SpatialReference({"wkid": response.crs.properties.code});
     var i;
@@ -1628,9 +1674,9 @@ function create_widgets(node_id) {
         $(this).drawButton(options);
 
    });
-        
-        
-    
+
+
+
 //    $("#" + node_id).find("button[type='button'].drawbutton.point").drawButton({
 //        control: "pointcontrol"
 //        });
@@ -3212,15 +3258,15 @@ Expects there to be a feature.popup created
 that can be called.
 */
 function show_popup_for_feature(feature) {
-    
+
     if ( feature.popup !== undefined && feature.popup !== null) {
-    
+
         //remove old popup if existing
         if(popup !== undefined) {
             map.removePopup(popup);
             popup = undefined;
         }
-    
+
         //create popup and put it on the map
         popup = feature.popup;
         map.addPopup(popup);
@@ -3240,7 +3286,7 @@ function show_popup_for_feature(feature) {
                                 chh[j].destroy(true);
                             }
                         ch[k].destroy(true);
-    
+
                     }
                     st.destroy(true);
                     infoForm.destroy(true);
@@ -3248,36 +3294,36 @@ function show_popup_for_feature(feature) {
                 else {
                     infoForm.destroyRecursive(true);
                 }
-    
+
             }
             else {
                 infoForm.destroyRecursive(true);
             }
             infoForm = undefined;
         }
-    
+
         infoForm = create_widgets(feature.id + '_contentDiv');
-        
+
         // Set values for form
         console.log("geojson_feature: " + feature.attributes);
-        setValues(infoForm, feature.attributes);        
+        setValues(infoForm, feature.attributes);
         //add a class to the form to recognize it as active
         $('div[id="' + feature.id + '"] form[name="popupform"]').addClass('active');
-        
+
         // add values to the form the values are connected but the form element name
         // and the name value in the feature attributes
         console.log($('div[id="' + feature.id + '"] form[name="popupform"]'));
-        
-        
+
+
         //connect the event to the infowindow buttons
         $('div[id="' + feature.id + '"] .save_feature').click([feature],
                                                       save_feature_handler);
         $('div[id="' + feature.id + '"] .remove_feature').click([feature],
                                                         remove_feature_handler);
         return true;
-        
+
     } else {
-    
+
         return false;
     }
 }
@@ -3290,7 +3336,7 @@ values from the feature attributes.
 function on_feature_select_handler(evt) {
     console.log("on_feature_select_handler");
     console.log(evt);
-    
+
     show_popup_for_feature(evt);
 }
 
@@ -3301,7 +3347,7 @@ where it closes the popup.
 function on_feature_unselect_handler(evt) {
     console.log("on_feature_unselect_handler");
     console.log(evt);
-    
+
     //remove popup from map
     if(popup !== undefined && popup !== null) {
         map.removePopup(popup);
@@ -3335,6 +3381,9 @@ function feature_added(evt) {
     var infowindow_name = $('button.ui-state-active').attr('name');
     var default_infocontent = " default info content ";
 
+    //save name to feature.attributes, we need it when we fetch features from server
+    evt.attributes.info_name = infowindow_name;
+
     //get the right content for the popup
     if( infowindow_name !== undefined ) {
         popupcontent = $('#' + infowindow_name).html();
@@ -3365,7 +3414,7 @@ function feature_added(evt) {
     $(".drawbutton.ui-state-active")
         .drawButton( 'deactivate' );
     show_popup_for_feature(evt);
- 
+
 }
 
 /*
