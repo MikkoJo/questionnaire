@@ -1,6 +1,6 @@
-dojo.require("esri.map");
-dojo.require("esri.geometry");
-dojo.require("dojo.dnd.Moveable");
+//dojo.require("esri.map");
+//dojo.require("esri.geometry");
+//dojo.require("dojo.dnd.Moveable");
 
 var ovmap;
 //var map;
@@ -37,7 +37,7 @@ function pos(top, right, bottom, left) {
                 node.style.top =  temp + "px";
                 gtop = temp;
             }
-            
+
             if (left > 0 && left < psize - width) {
                 node.style.left = left + "px";
                 gleft = left;
@@ -65,7 +65,7 @@ function pos(top, right, bottom, left) {
                 node.style.height = height + "px";
                 gbottom = bottom;
             }
-            else 
+            else
                 if (bottom <= 0) {
                     node.style.bottom = psize - top + "px";
                     gbottom = 0;
@@ -87,7 +87,7 @@ function pos(top, right, bottom, left) {
                 node.style.right =  temp + "px";
                 gright = temp;
             }
-            
+
             if(bottom > 0 && bottom < psize - height) {
                 node.style.bottom = bottom + "px";
                 gbottom = bottom;
@@ -106,12 +106,12 @@ function updatepos() {
         var aheight = screen.availHeight;
         var relw = aheight/awidth;
         var height = 60;
-        
+
         gtop = Math.round(height);
         gbottom = Math.round(height);
         gleft = Math.round(relw*height);
         gright = Math.round(relw*height);
-        
+
         pos(gtop, gright, gbottom, gleft);
 }
 
@@ -168,7 +168,7 @@ function endMove(event) {
         var tpoints = new esri.geometry.Point(startx,starty);
         tpointe = ovmap.toMap(tpointe);
         tpoints = ovmap.toMap(tpoints);
-        
+
         var center = map.extent.getCenter();
         center = center.offset(tpointe.x - tpoints.x, tpointe.y - tpoints.y);
         map.centerAt(center);
@@ -205,13 +205,13 @@ function moveDiv(event) {
 //overview pmap with 1 zoom level and a suitable LOD
 function createOverview(m, ovlayer) {
         ovmap = new esri.Map("ovmap", {"slider": false, "nav": false, "logo": false});
-        
+
         ovmap.addLayer(ovlayer);
         ovmap.disableMapNavigation();
         ovmap.disableScrollWheelZoom();
         //change the extent for ovmap
         ovpan(map.extent);
-        
+
         zoomevnt = dojo.connect(map, "onZoomEnd", ovzoom);
         panevent = dojo.connect(map, "onPanEnd", ovpan);
         updatepos();
@@ -226,7 +226,7 @@ function createOverview(m, ovlayer) {
         dojo.connect(dojo.byId("ovtransparent"), "onmouseout", endMove);
         dojo.connect(dojo.byId("ovtransparent"),"onmousemove",moveDiv);
         dojo.byId("ovfocus").style.cursor = "url({{ STATIC_URL }}img/cursors/openhand.cur), auto";
-        
+
         // TAMMISALO SPECIAL
         toggleovwin();
         //TAMMISALO SPECIAL END

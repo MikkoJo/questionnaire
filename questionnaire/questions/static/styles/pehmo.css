@@ -3239,7 +3239,7 @@ button.small .ui-icon {
     background-image: url("../img/placemarks/small_area_yellow.png") !important;
 }
 #mapitaCopy {
-    bottom: 3px;
+    bottom: 60px;
     color: black;
     font-size: 13px;
     height: 15px;
@@ -3249,7 +3249,7 @@ button.small .ui-icon {
     z-index: 54;
 }
 #mapitaLogo {
-    bottom: 3px;
+    bottom: 60px;
     height: 28px;
     position: absolute;
     right: 10px;

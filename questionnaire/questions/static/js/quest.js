@@ -13,8 +13,10 @@
 //dojo.require("esri.geometry.Geometry");
 //dojo.require("esri.layers.agstiled");
 //dojo.require("esri.toolbars.draw");
-//dojo.require("dijit.dijit");
-//dojo.require("dojo.parser");
+dojo.require("dijit.dijit");
+//dojo.require("dijit.form");
+dojo.require("dojo.parser");
+//dojo.require("dojo.create");
 //dojo.require("dojo.html");
 //dojo.require("dijit.form.VerticalRule");
 dojo.require("dijit.form.HorizontalSlider");
@@ -3646,10 +3648,10 @@ function init() {
 
     //add the layers to the map
     //create layer load handler
-    var zoomSlider = null;
-    var loadHandler = function(l) {
+    //var zoomSlider = null;
+    //var loadHandler = function(l) {
         //console.log(l);
-        map.addLayer(l);
+    //    map.addLayer(l);
         //Create zoomslider, default is in wrong div. Do it here to get number of levels
         /*if (zoomSlider === null && tiledMapServiceLayer.scales !== undefined) {
             // Get number of levels in tiledMapServiceLayer
@@ -3690,7 +3692,7 @@ function init() {
         if(questionnaire.useGMap === true && typeof window.addGmapLayer === 'function') {
             addGmapLayer();
         }*/
-    };
+    //};
 
     //to work around IE resource caching issues. Have to check for each layer
     //if (tiledMapServiceLayer.loaded) {
@@ -4143,6 +4145,7 @@ function setdeactive(ibnode) {
 /*
 ImageButton class which does everything for pointing out an polygon or point on a map and submiting as a form element
 */
+function initialize_imagebutton() {
 dojo.declare("ImageButton", dijit.form._FormValueWidget,
 {
     "baseClass": "ImageButton",
@@ -4861,7 +4864,7 @@ This function removes the given value from the values
         }
     }
 });
-
+}
 
 /*
 button pool class

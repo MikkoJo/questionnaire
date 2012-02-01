@@ -2,7 +2,7 @@
   save_profile_values, getValues, setValues, console, infoForm, gnt
 
  */
-dojo.require("esri.layers.FeatureLayer");
+//dojo.require("esri.layers.FeatureLayer");
 dojo.require("dijit.layout.StackContainer");
 dojo.require("dijit.layout.ContentPane");
 
@@ -124,7 +124,7 @@ function addAreaLayer() {
     var symbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID,
                     new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
                     new dojo.Color([0,0,255]), 2),new dojo.Color([0,255,0,0]));
-                    
+
     var renderer = new esri.renderer.SimpleRenderer(symbol);
     featureLayer.setRenderer(renderer);
     var clickHandler = function(l) {
@@ -203,10 +203,10 @@ function createTwoPageInfo() {
             });
     }
 }
-function submitAreaForm(formId, removeValues /* boolean */) { 
+function submitAreaForm(formId, removeValues /* boolean */) {
     console.log("submitAreaForm");
     var areaForm = dijit.byId(formId);
-    
+
     if (areaForm !== undefined && areaForm !== null) {
         var values = getValues(areaForm);
         if(removeValues === true) {
@@ -214,7 +214,7 @@ function submitAreaForm(formId, removeValues /* boolean */) {
         }
         questionnaire.values[areaForm.name] = values;
         questionnaire.profileValues[areaForm.name] = values;
-    
+
         if(questionnaire.values.testUser !== true) { //only if user is not testuser
             //save_profile_values(questionnaire.profileValues);
             gnt.opensocial_people.update_person("@me", questionnaire.profileValues);

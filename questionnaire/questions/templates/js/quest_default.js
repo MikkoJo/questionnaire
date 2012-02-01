@@ -2,7 +2,7 @@
 /*global dojo, djConfig
  */
 //dojo.require("dojox.validate.regexp");
-dojo.require("dojox.validate");
+//dojo.require("dojox.validate");
 
 
 //define all the part names here
