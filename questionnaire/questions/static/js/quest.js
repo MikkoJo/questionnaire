@@ -2485,6 +2485,10 @@ function createPage(pageName, pagearray, e) {
     // if form not valid do nothing
     if(isValid === false) {return false;}
 
+    //unselect the drawbuttons
+    $(".drawbutton.ui-state-active")
+        .drawButton( 'deactivate' );
+
     //deactivate all imagebuttons
     if(pool !== undefined) {
         pool.deactivateAll();
