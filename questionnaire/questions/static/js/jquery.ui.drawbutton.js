@@ -37,7 +37,7 @@ active_class: the class to use when a button is activated
                         .appendTo( this.element.empty() )
                         .html( label )
                         .text();
-                        
+
 
                 if ( this.options.icons.primary ) {
                         this.element.prepend( "<span class='ui-button-icon-primary ui-icon " + this.options.icons.primary + "'></span>" );
@@ -46,9 +46,22 @@ active_class: the class to use when a button is activated
                 if ( this.options.icons.secondary ) {
                         this.element.append( "<span class='ui-button-icon-secondary ui-icon " + this.options.icons.secondary + "'></span>" );
                 }
+                // check if button should be disabled
+                var drawcontrol_id = this.options['drawcontrol'];
+                var drawcontrol = map.getControl(drawcontrol_id);
+                var valuename = this.element.attr('id');
+                var features = drawcontrol.layer.getFeaturesByAttribute('valuename', valuename);
+                if(features.length > 0) {
+                    if(features[0].attributes.max !== undefined &&
+                                features.length >= features[0].attributes.max) {
+                        //disable the button, there might be a better way
+                        this.element.addClass( this.options['disable_class'] );
+                        this.element.attr( 'disabled', 'disabled');
+                    }
+                }
                 return this;
             },
-            
+
             toggle_active: function(evt) {
                 var active_cls = $(this).drawButton('option', 'active_class');
                 if($(this).hasClass( active_cls )) {
