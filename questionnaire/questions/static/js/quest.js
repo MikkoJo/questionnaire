@@ -3221,7 +3221,6 @@ function save_feature_handler(evt) {
     evt.data[0].attributes = OpenLayers.Util.extend(evt.data[0].attributes, popup_values);
     //save the geojson
     var gf = new OpenLayers.Format.GeoJSON();
-    console.log(gf);
     var geojson_feature_string = gf.write(evt.data[0]);
     console.log(geojson_feature_string);
     if(popup !== undefined && popup !== null) {
@@ -3236,15 +3235,16 @@ function save_feature_handler(evt) {
 //        .drawButton( 'deactivate' );
     // TODO The actual saving of the feature through the API
     // API expects the data to be geojson object not a string that is returned from GeoJSON.write
-    var sto = new OpenLayers.Format.JSON();
-    var geojson_feature = sto.read(geojson_feature_string);
-    if(evt.data[0].fid === undefined || evt.data[0].fid === null) {
-        gnt.geo.create_feature(geojson_feature, create_ol_feature_callback);
+    if(!questionnaire.values.testUser) {
+        var sto = new OpenLayers.Format.JSON();
+        var geojson_feature = sto.read(geojson_feature_string);
+        if(evt.data[0].fid === undefined || evt.data[0].fid === null) {
+            gnt.geo.create_feature(geojson_feature, create_ol_feature_callback);
+        }
+        else {
+            gnt.geo.update_feature(geojson_feature);
+        }
     }
-    else {
-        gnt.geo.update_feature(geojson_feature);
-    }
-
 }
 
 /*
