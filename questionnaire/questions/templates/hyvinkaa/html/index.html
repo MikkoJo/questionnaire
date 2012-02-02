@@ -35,7 +35,12 @@
             var djConfig = {
                 parseOnLoad: true,
                 isDebug: {{ DEBUG|lower }},
-                locale: '{{ LANGUAGE_CODE|slice:":2" }}'
+                locale: '{{ LANGUAGE_CODE|slice:":2" }}',
+		modulePaths: {
+			"dojo": "https://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dojo",
+    			"dijit": "https://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dijit",
+		    	"dojox": "https://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dojox" 
+		}
             };
             -->
         </script>
