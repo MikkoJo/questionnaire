@@ -1419,6 +1419,7 @@ outline: none;
 cursor: pointer;
 overflow:hidden;
 }
+/*
 .deactive {
 width: 100%;
 height: 100%;
@@ -1437,7 +1438,7 @@ height: 100%;
 background-repeat: no-repeat;
 outline: none;
 }
-
+*/
 /*classtypes*/
 div.positive {
 width: 104px;

@@ -3221,7 +3221,6 @@ function save_feature_handler(evt) {
     evt.data[0].attributes = OpenLayers.Util.extend(evt.data[0].attributes, popup_values);
     //save the geojson
     var gf = new OpenLayers.Format.GeoJSON();
-    console.log(gf);
     var geojson_feature_string = gf.write(evt.data[0]);
     console.log(geojson_feature_string);
     if(popup !== undefined && popup !== null) {
@@ -3230,21 +3229,22 @@ function save_feature_handler(evt) {
     }
     // unselect the feature. There should be only one selectControl
     map.getControl("selectcontrol").unselect(evt.data[0]);
-    //unselect the button
-    $(".drawbutton.ui-state-active")
-        .drawButton( 'deactivate' );
 
+    //unselect the button
+//    $(".drawbutton.ui-state-active")
+//        .drawButton( 'deactivate' );
     // TODO The actual saving of the feature through the API
     // API expects the data to be geojson object not a string that is returned from GeoJSON.write
-    var sto = new OpenLayers.Format.JSON();
-    var geojson_feature = sto.read(geojson_feature_string);
-    if(evt.data[0].fid === undefined || evt.data[0].fid === null) {
-        gnt.geo.create_feature(geojson_feature, create_ol_feature_callback);
+    if(!questionnaire.values.testUser) {
+        var sto = new OpenLayers.Format.JSON();
+        var geojson_feature = sto.read(geojson_feature_string);
+        if(evt.data[0].fid === undefined || evt.data[0].fid === null) {
+            gnt.geo.create_feature(geojson_feature, create_ol_feature_callback);
+        }
+        else {
+            gnt.geo.update_feature(geojson_feature);
+        }
     }
-    else {
-        gnt.geo.update_feature(geojson_feature);
-    }
-
 }
 
 /*
@@ -3254,6 +3254,8 @@ function remove_feature_handler(evt) {
     console.log("remove handler");
     console.log(evt);
     console.log(evt.data[0]);
+
+    var eventLayer = evt.data[0].layer;
     evt.data[0].layer.removeFeatures([evt.data[0]]);
     if(popup !== undefined && popup !== null) {
         map.removePopup(popup);
@@ -3263,11 +3265,29 @@ function remove_feature_handler(evt) {
     var gf = new OpenLayers.Format.GeoJSON();
 //    console.log(gf);
     var geojson_feature_string = gf.write(evt.data[0]);
-    // API expects the data to be geojson object not a string that is returned from GeoJSON.write
-    var sto = new OpenLayers.Format.JSON();
-    var geojson_feature = sto.read(geojson_feature_string);
-    gnt.geo.delete_feature(geojson_feature);
+    //Check if feature is saved to the database,
+    // only features saved have fid property set
+    if(evt.data[0].fid !== null) {
+        // API expects the data to be geojson object not a string that is returned from GeoJSON.write
+        var sto = new OpenLayers.Format.JSON();
+        var geojson_feature = sto.read(geojson_feature_string);
+        gnt.geo.delete_feature(geojson_feature);
+    }
+    var activeButton = $("#" + evt.data[0].attributes.valuename);
+    console.log("activeButton remove_feature: ");
+    console.log(activeButton);
 
+    if(activeButton.length > 0) {
+        // Check if max number of features of this button is reached, if true disable button
+        if(evt.data[0].attributes.max !== undefined &&
+            eventLayer.getFeaturesByAttribute("valuename",
+                evt.data[0].attributes.valuename)
+                    .length < evt.data[0].attributes.max) {
+                            //disable the button
+                            activeButton.drawButton( 'enable' );
+
+        }
+    }
     //unselect the button
     $(".drawbutton.ui-state-active")
         .drawButton( 'deactivate' );
@@ -3432,9 +3452,22 @@ function feature_added(evt) {
     console.log("created popup");
     console.log(evt.lonlat);
     console.log(evt.popup);
+
+    var activeButton = $(".drawbutton.ui-state-active");
+
+    // Check if max number of features of this button is reached, if true disable button
+    if(evt.attributes.max !== undefined &&
+        evt.layer.getFeaturesByAttribute("valuename",
+            evt.attributes.valuename)
+                .length >= evt.attributes.max) {
+                        //disable the button
+                        activeButton.drawButton( 'disable' );
+
+    }
+
+
     //unselect the button
-    $(".drawbutton.ui-state-active")
-        .drawButton( 'deactivate' );
+    activeButton.drawButton( 'deactivate' );
     show_popup_for_feature(evt);
 
 }
@@ -3607,6 +3640,7 @@ function init() {
                                                                        6194837.250,
                                                                        10758649.712),
                                      maxResolution: 4891,
+                                     paddingForPopups: new OpenLayers.Bounds(330,70,15,15),
                                      controls: []});
 
     //add event handlers for map
