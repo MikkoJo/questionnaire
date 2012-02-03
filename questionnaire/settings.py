@@ -8,7 +8,8 @@ DEBUG = getattr(settings_local, 'DEBUG', False)
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('example', 'example.example@example.com'),
+    ('Mikko Johansson', 'mikko.johansson@mapita.fi'),
+    ('Kristoffer Snabb', 'kristoffer.snabb@mapita.fi'),
 )
 
 MANAGERS = ADMINS
@@ -145,10 +146,13 @@ STATIC_URL = getattr(settings_local, "STATIC_URL", '/static/')
 STATICFILES_DIRS = getattr(settings_local, "STATICFILES_DIRS", ('',))
 
 #email smtp configuration
-EMAIL_HOST = getattr(settings_local, 'EMAIL_HOST', 'smtp.example.com')
-EMAIL_HOST_USER = getattr(settings_local, 'EMAIL_HOST_USER', 'sample')
-EMAIL_FROM = getattr(settings_local, 'EMAIL_FROM', 'sample@example.com')
-DEFAULT_FROM_EMAIL = getattr(settings_local, 'DEFAULT_FROM_EMAIL', 'sample@example.com')
+EMAIL_HOST = getattr(settings_local, 'EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_HOST_USER = getattr(settings_local, 'EMAIL_HOST_USER', 'do_not_reply@mapita.fi')
+EMAIL_HOST_PASSWORD = getattr(settings_local, 'EMAIL_HOST_PASSWORD', 'va.reply1')
+EMAIL_PORT = getattr(settings_local, 'EMAIL_PORT', 587)
+EMAIL_USE_TLS = getattr(settings_local, 'EMAIL_USE_TLS', True)
+EMAIL_FROM = getattr(settings_local, 'EMAIL_FROM', 'do_not_reply@mapita.fi')
+DEFAULT_FROM_EMAIL = getattr(settings_local, 'DEFAULT_FROM_EMAIL', 'do_not_reply@mapita.fi')
 EMAIL_CONFIRMATION_DAYS = getattr(settings_local, 'EMAIL_CONFIRMATION_DAYS', 2)
 #EMAIL_BACKEND = getattr(settings_local, "EMAIL_BACKEND", 'django.core.mail.backends.smtp.EmailBackend')
 
