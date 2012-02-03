@@ -720,6 +720,6 @@ questionnaire.feature_defaults = {
         "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
         "icons": {"secondary": "brown-icon"},
         "header": "{% trans 'Muu paikka' %}"
-    },
+    }
 
 }

@@ -31,6 +31,7 @@
     <div class="extrabutton close">
         <span class="buttontext" id='exit'>{% trans 'Poistu kyselystä' %}</span>
     </div>
+    {% comment %}
     {% if user.is_authenticated %}
         <div id="finnished" class="next finnished">
             <span class="buttontext">
@@ -38,4 +39,5 @@
             </span>
         </div>
     {% endif %}
+    {% endcomment %}
 {% endblock buttonarea %}
