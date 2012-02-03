@@ -36,11 +36,11 @@
                 parseOnLoad: true,
                 isDebug: {{ DEBUG|lower }},
                 locale: '{{ LANGUAGE_CODE|slice:":2" }}',
-		modulePaths: {
-			"dojo": "https://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dojo",
-    			"dijit": "https://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dijit",
-		    	"dojox": "https://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dojox" 
-		}
+        modulePaths: {
+            "dojo": "https://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dojo",
+                "dijit": "https://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dijit",
+                "dojox": "https://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dojox" 
+        }
             };
             -->
         </script>
@@ -64,6 +64,9 @@
                 <span class="headertext">{% trans 'Keskeytä' %}</span>
             </div>
             -->
+            <div id="feedbackLink" onclick="createsubwindow('feedback');">
+                <span class="headertext">{% trans 'Anna palautetta' %}</span>
+            </div>
             <div id="progressBar">
                 <table class="progressBar" cellpadding="0" cellspacing="0">
                     <tr>
@@ -79,7 +82,7 @@
             <div id="language">
                 <p>
                     {% for lang in LANGUAGES %}
-                        {% ifnotequal LANGUAGE_CODE lang.0 %}
+                        {% ifnotequal LANGUAGE_CODE|slice:":2" lang.0 %}
                         <a href="{% url set_language %}?lang={{ lang.0 }}&amp;next={% url main %}">
                             {% trans "in" %} {{ lang.1 }}
                         </a>

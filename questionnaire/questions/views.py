@@ -24,6 +24,8 @@ from django.views.decorators.cache import never_cache
 
 from questions.models import Contact
 from questions.models import ParentEmail
+from questions.forms import FeedbackForm
+from questions.models import Feedback
 
 import random
 import hashlib
@@ -147,6 +149,42 @@ def common(request, file_name, file_type="js"):
                                                                'values': values
                                                                 }))
 
+def feedback(request):
+    
+    """
+This function handles the feedback form
+"""
+    if (request.method == 'GET'):
+        form = FeedbackForm()
+            
+        return render_to_response('html/feedback.html',
+                                {'form': form,
+                                 'DEBUG': DEBUG},
+                                context_instance=RequestContext(request))
+            
+    elif (request.method == 'POST'):
+        # This is an ajax post
+        form = FeedbackForm(json.loads(request.POST.keys()[0]))
+        
+        if form.is_valid():
+            
+            cleaned_data = form.cleaned_data
+            cleaned_data['content'] = "%s %s" % (cleaned_data['content'],
+                                                 request.META.get('HTTP_USER_AGENT',
+                                                                  'unknown'))
+            if request.user.is_authenticated():
+                cleaned_data['content'] = "%s %s" % (cleaned_data['content'],
+                                                     request.user.email)
+            
+            feedback_value = Feedback(content = cleaned_data['content'])
+            feedback_value.save()
+            
+            return render_to_response('html/thank_feedback.html',
+                                      {'DEBUG': DEBUG},
+                                      context_instance=RequestContext(request))
+        else:
+            return htt
+        
 def contact(request):
 
     if not request.user.is_authenticated():

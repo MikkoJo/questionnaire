@@ -299,6 +299,21 @@ padding-bottom: 7px;
 vertical-align: middle;
 text-decoration: underline;
 }
+
+#feedbackLink {
+position: absolute;
+right: 2%;
+top: 5px;
+width: 110px;
+height: 20px;
+vertical-align: middle;
+cursor: pointer;
+text-align: right;
+}
+#feedbackLink span.headertext {
+padding-right: 0px;
+}
+
 /*#save:hover, #help:hover {
 color: #66CCFF;
 text-decoration: underline;
@@ -409,6 +424,7 @@ opacity: 0.2;
 filter: alpha(opacity=80);*/
 height:100%;
 width: 100%;
+top: 0;
 z-index: 90; /*should be lower than subwindow*/
 }
 
@@ -652,7 +668,7 @@ width: 670px;
 /*height: 428px;*/
 height: 373px;
 bottom: 7px;
-background-image: url("../img/pehmoGIS_aloitus_uusi.jpg");
+/*background-image: url("../img/pehmoGIS_aloitus_uusi.jpg");*/
 background-repeat: no-repeat;
 background-color: transparent;
 z-index: 1;
@@ -1984,7 +2000,10 @@ height: 21px;
 width: 120px;
 cursor: pointer;
 }
-
+.subwindowBottom .previous.feedback {
+    background: none;
+}
+    
 .buttonArea .previous span {
 font-family: Helvetica;
 position: relative;
@@ -2041,6 +2060,9 @@ background-repeat: no-repeat;
 cursor: pointer;
 width: 120px;
 height: 39px;
+}
+.subwindowBottom .next.feedback {
+    background-image: url("../img/buttons/jatkanappi.png");
 }
 
 .buttonArea .next span {
@@ -2709,12 +2731,12 @@ background: transparent url("../img/progressbar/naviBgUndone50.gif") repeat-x sc
 td.barRight{
 background: transparent url("../img/progressbar/naviBgUndoneRight50.gif") no-repeat scroll top right;
 }
-
+/*
 div.firstpagepic {
 background-image: url("../img/kirkkojarvi_etusivu_med.jpg");
 background-position: 140px -10px;
 }
-
+*/
 div.buttonstart p {
 text-align: center;
 font-size: 16px;

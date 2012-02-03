@@ -5156,7 +5156,50 @@ function submitContact(formid) {
             return response;
         }
     });
+    }
+
 }
+function submitFeedback_callback(data) {
+    dojo.byId("subwindow").innerHTML = data.response;
+    setTimeout(function(){closesubwindow();}, 3500);
+}
+function submitFeedback(formid, callback_function) {
+
+    console.log('submitFeedback');
+    var contactForm = dijit.byId(formid);
+    //var elem = contact.elements;
+    var values = getValues(contactForm);
+
+    contactForm.destroyRecursive(true);
+
+    if(!questionnaire.values.testUser) {
+    dojo.xhrPost({
+            // The following URL must match that used to submit values.
+        "url": questionnaire.feedback_url,
+        "postData": encodeURIComponent(dojo.toJson(values)),
+        "sync": false,
+        "timeout": 60000, // Time in milliseconds
+        "preventCache": djConfig.isDebug,
+        "headers": {"Content-Type":"application/json",
+//                    "X-CSRFToken": getCookie( CSRF_Cookie_Name )},
+                    "X-CSRFToken": dojo.cookie( gnt.config.CSRF_cookie_name )},
+
+        // The LOAD function will be called on a successful response.
+        "load": function(response, ioArgs){
+            if(callback_function !== undefined) {
+                callback_function({"response": response,
+                                  "ioArgs": ioArgs});
+            }
+            return response;
+        },
+
+        // The ERROR function will be called in an error case.
+        "error": function(response, ioArgs){
+            console.error("HTTP status code: ", ioArgs.xhr.status);
+            return response;
+        }
+    });
+    }
 
 }
 
@@ -5207,6 +5250,7 @@ function parsesubwindow(page) {
     if(page.formObjects !== undefined) {
         subform = createWidgets(page.formObjects);
     }
+    subform = create_widgets("subwindow");
 
     //previous and next classes in subwindows should be defined in the JSON
     var nextbuttons = dojo.query(".next", "subwindow");
@@ -5233,8 +5277,7 @@ function createsubwindow(name) {
 
     //get the subwindow content
     var page = questionnaire.subwindows[name];
-    var subnode = dojo.byId("subwindow");
-    subnode.innerHTML = "";
+    dojo.byId("subwindow").innerHTML = "";
     var urlContent = page.content;
     console.log("get subwindow content");
     dojo.xhrGet( {
@@ -5258,35 +5301,7 @@ function createsubwindow(name) {
             parsesubwindow(page);
             console.log("subwindow parsed");
             setContentMaxHeight();
-            /*if(dojo.isIE !== 7 && dojo.isIE !== 8) {
-            //check the height for smallcontent and bigcontent according to client screen
-            aheight = screen.availHeight;
-            ofheight = subnode.offsetHeight;
-            rheight = aheight - 300;
-            //console.log("available " + aheight);
-            //console.log("offset " + ofheight);
-            //console.log("wanted " + rheight);
-            st = dojo.query(".subwindowTop");
-            //console.log("subwindowTop: ");
-            //console.log(st);
-
-            if(rheight < ofheight) {
-                //if no formarea found set the cont height
-                if(st.length === 0) {
-                    //console.log("set content height");
-                    //console.log(subnode);
-                    subnode.style.height = rheight + "px";
-                    subnode.style.overflow = "scroll";
-                    //console.log(subnode);
-                } else {
-                    rheight = rheight - 95;
-                    st[0].style.height = rheight + "px";
-                    st[0].style.overflow = "scroll";
-                }
-            }
-        }*/
-        console.log("subwindow height done");
-        return "";
+        return response;
     },
 
     // The ERROR function will be called in an error case.

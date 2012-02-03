@@ -526,6 +526,11 @@ questionnaire.subwindows = {
 "routeanimation": {
 "content": "{% url common file_type='html' file_name='routeanimation' %}"
 },
+"feedback": {
+    "content": "{% url feedback %}",
+    "next": function(e) {submitFeedback("feedback", submitFeedback_callback);}, //function to be called for onclick on the next button
+    "previous": function(e) {closesubwindow();}//function to be called for onclick on the previous button
+},
 "endQuestionnaire": {
     "content": "{% url main_html file_name='end_questionnaire' %}"
 }

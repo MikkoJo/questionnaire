@@ -28,6 +28,7 @@ var questionnaire = {
 "initial_extent": {}, // Initial extent of the questionnaire, defined in quest_spec.js
 "displayGraphicsOnPan": true,  // Map option to display graphics during pan
 "contactForm_url": "{% url contact %}", // Url to submit the contact form
+"feedback_url": "{% url feedback %}", // Url to submit general feedback
 "config": {"useGMap": false, "newNavigation": false}, // Configurable options
 "feature_defaults": {} // Default attributes for all features
 };
