@@ -1,4 +1,4 @@
-/*global dojo, dijit, dojox, esri, questionnaire, document, djConfig, console, get_features,
+/*global dojo, dijit, dojox, questionnaire, document, djConfig, console, get_features,
   get_profiles, event, window, save_profile_values, save_graphic, softgis, advanceBadge,
   enableSection, activateSection, myHorizontalSlider, nextButtonHover, overviewMapShow,
   overviewMapHide, alert, applicationName, createTwoPageInfo, MAPSERVICE_URL, OVERVIEWMAP_URL,
@@ -8,11 +8,6 @@
 */
 
 //required packages
-//dojo.require("esri.map");
-//dojo.require("esri.dijit.InfoWindow");
-//dojo.require("esri.geometry.Geometry");
-//dojo.require("esri.layers.agstiled");
-//dojo.require("esri.toolbars.draw");
 dojo.require("dijit.dijit");
 //dojo.require("dijit.form");
 dojo.require("dojo.parser");
@@ -39,23 +34,23 @@ dojo.require("dojo.cookie");
 //map is the OpenLayers map created for the site
 var map;
 //tb is the toolbar needed for drawing on the map
-var tb;
+//var tb;
 //form is needed to be able to distory the widgets in a page
 var form;
 //id for the user
 var id;
 //pool for the imageButtons
-var pool;
+//var pool;
 //if drawtoolbar is activated or not
-var tbactivated = false;
+//var tbactivated = false;
 //to remember which point in a polyline the user is drawing
-var edge = 0;
+//var edge = 0;
 //is changed to false when the previous values have been loaded from the database
 questionnaire.loaded = false;
 
 var activeGraphic;
 var lastClickEvent;
-var tiledMapServiceLayer;
+//var tiledMapServiceLayer;
 //var cookiesDeleted = false;
 //current page number
 var nr;
@@ -139,32 +134,32 @@ function overviewMapHide(){
     divi.style.visibility = "hidden";
 }
 
-var infoWindowHandler = function (evt) {
-    if(djConfig.isDebug) {
-        console.debug("map.graphics, onClick");
-    }
-    var g = evt.graphic,
-        mp = evt.mapPoint,
-        p,
-        evt_layer,
-        evt_it;
-    evt_layer = g.getLayer();
-    evt_it = g.infoTemplate || (evt_layer && evt_layer.infoTemplate);
-    if (evt_it && tbactivated === false) {
-        // This is for featureLayer, featureLayer graphics do not allways have graphic.id
-        // not fully tested, this is a quick fix
-        if(evt_layer.type === "Feature Layer") {
-                lastClickEvent = evt;
-                activeGraphic = g;
-        }
-        dojo.stopEvent(evt);
-        map.infoWindow.hide();
-        map.infoWindow.setTitle(g.getTitle());
-        map.infoWindow.setContent(g.getContent());
-        p = map.toScreen(mp);
-        map.infoWindow.show(p,map.getInfoWindowAnchor(p));
-    }
-};
+// var infoWindowHandler = function (evt) {
+    // if(djConfig.isDebug) {
+        // console.debug("map.graphics, onClick");
+    // }
+    // var g = evt.graphic,
+        // mp = evt.mapPoint,
+        // p,
+        // evt_layer,
+        // evt_it;
+    // evt_layer = g.getLayer();
+    // evt_it = g.infoTemplate || (evt_layer && evt_layer.infoTemplate);
+    // if (evt_it && tbactivated === false) {
+        // // This is for featureLayer, featureLayer graphics do not allways have graphic.id
+        // // not fully tested, this is a quick fix
+        // if(evt_layer.type === "Feature Layer") {
+                // lastClickEvent = evt;
+                // activeGraphic = g;
+        // }
+        // dojo.stopEvent(evt);
+        // map.infoWindow.hide();
+        // map.infoWindow.setTitle(g.getTitle());
+        // map.infoWindow.setContent(g.getContent());
+        // p = map.toScreen(mp);
+        // map.infoWindow.show(p,map.getInfoWindowAnchor(p));
+    // }
+// };
 
 
 // Load infotemplates from diffrent file
@@ -292,51 +287,6 @@ function get_features_callback(response_data) {
     routeLayer.events.unregister("featureadded", undefined, add_popup_to_feature);
     areaLayer.events.unregister("featureadded", undefined, add_popup_to_feature);
 
-/*    var spatialReference = new esri.SpatialReference({"wkid": response.crs.properties.code});
-    var i;
-    for(i = 0; i < response.features.length; i++) {
-        var geometry = response.features[i].geometry;
-        var properties = response.features[i].properties;
-        var id = response.features[i].id;
-        var graphic = new esri.Graphic({});
-
-        if(geometry.type === "Point") {
-            graphic.setGeometry(new esri.geometry.Point(geometry.coordinates).setSpatialReference(spatialReference));
-        } else if (geometry.type === "LineString") {
-            graphic.setGeometry(new esri.geometry.Polyline({"paths": [geometry.coordinates]}).setSpatialReference(spatialReference));
-        } else if(geometry.type === "Polygon") {
-            graphic.setGeometry(new esri.geometry.Polygon({"rings": geometry.coordinates}).setSpatialReference(spatialReference));
-        }
-        graphic.setAttributes(properties);
-
-        graphic.id = id;
-
-        // Make the logic of the questionnaire work
-        var ival = {};
-        var k;
-        for (k in properties) {
-
-            switch (k) {
-                case "node":
-                case "id":
-                case "category":
-                case "user_id":
-                case "valuename":
-                    break;
-                default:
-                    ival[k] = properties[k];
-                    break;
-            }
-        }
-        if(questionnaire.values[properties.valuename] === undefined || questionnaire.values[properties.valuename] === null) {
-            questionnaire.values[properties.valuename] = [];
-        }
-        questionnaire.values[properties.valuename].push({"ival": ival,
-                                          "geom": graphic.geometry,
-                                          "graphicId": id});
-        questionnaire.features[id] = response.features[i];
-
-    }*/
     // Now we can create a new page
     createPage(questionnaire.pages[1].name);
     // End of the copied content
@@ -547,53 +497,6 @@ function create_ol_feature_callback(response_data) {
             break;
         }
     }
-/*
-    // Go through questionnaire.graphics to find correct graphic and add id to it
-    for(i = 0; i < questionnaire.graphics[valName].length; i++) {
-        if(questionnaire.graphics[valName][i].geometry.type === "point" &&
-            questionnaire.graphics[valName][i].geometry.x === respGeom.coordinates[0] &&
-            questionnaire.graphics[valName][i].geometry.y === respGeom.coordinates[1]) {
-
-            questionnaire.graphics[valName][i].id = response_data.id;
-            questionnaire.features[response_data.id] = response_data;
-            break;
-
-        } else if (questionnaire.graphics[valName][i].geometry.type === "polyline" &&
-                    dojo.toJson(questionnaire.graphics[valName][i].geometry.paths) === dojo.toJson([respGeom.coordinates])) {
-
-            questionnaire.graphics[valName][i].id = response_data.id;
-            questionnaire.features[response_data.id] = response_data;
-            break;
-        } else if (questionnaire.graphics[valName][i].geometry.type === "polygon" &&
-                    dojo.toJson(questionnaire.graphics[valName][i].geometry.rings) === dojo.toJson(respGeom.coordinates)) {
-
-            questionnaire.graphics[valName][i].id = response_data.id;
-            questionnaire.features[response_data.id] = response_data;
-            break;
-        }
-    }
-    //Add graphicId to the questionnaire.values
-    for(k = 0; k < questionnaire.values[valName].length; k++) {
-        if(questionnaire.values[valName][k].geom.type === "point" &&
-            questionnaire.values[valName][k].geom.x === respGeom.coordinates[0] &&
-            questionnaire.values[valName][k].geom.y === respGeom.coordinates[1]) {
-
-            questionnaire.values[valName][k].graphicId = response_data.id;
-            break;
-
-        } else if (questionnaire.values[valName][k].geom.type === "polyline" &&
-                    dojo.toJson(questionnaire.graphics[valName][k].geometry.paths) === dojo.toJson([respGeom.coordinates])) {
-
-            questionnaire.values[valName][k].graphicId = response_data.id;
-            break;
-        } else if (questionnaire.values[valName][k].geom.type === "polygon" &&
-                    dojo.toJson(questionnaire.graphics[valName][k].geometry.rings) === dojo.toJson(respGeom.coordinates)) {
-
-            questionnaire.values[valName][k].graphicId = response_data.id;
-            break;
-        }
-    }*/
-//    activeGraphic.id = response_data.response.id;
 
 }
 
@@ -731,29 +634,18 @@ function centerResidenceArea(onlyFirst) {
             if (questionnaire.residencePlaces[i][searchText] !== null && questionnaire.residencePlaces[i][searchText] !== undefined) {
                 // Defined as an extent
                 if(questionnaire.residencePlaces[i][searchText].xmax !== undefined) {
-                    var residenceExtent = new esri.geometry.Extent(questionnaire.residencePlaces[i][searchText]);
-                    map.setExtent(residenceExtent);
+                    console.log("REMOVED, use point and zoomlevel");
                 } // Defined as point and level
-            else {
-                var residencePoint = new esri.geometry.Point(questionnaire.residencePlaces[i][searchText].coords);
-                map.centerAndZoom(residencePoint, questionnaire.residencePlaces[i][searchText].level);
-            }
+                else {
+                    var coords = questionnaire.residencePlaces[i][searchText].coords;
+                    var residencePoint = new OpenLayers.LonLat(coords.x, coord.y);
+                    map.setCenter(residencePoint, questionnaire.residencePlaces[i][searchText].level);
+                }
             questionnaire.residenceCentered = true;
             return true;
          }
      }
 
-/*	 for(var i = 0; i < questionnaire.residencePlaces.length; i++) {
-         if (questionnaire.residencePlaces[i].name === searchText) {
-             var placeXMin = questionnaire.residencePlaces[i].xMin;
-             var placeYMin = questionnaire.residencePlaces[i].yMin;
-             var placeXMax = questionnaire.residencePlaces[i].xMax;
-             var placeYMax = questionnaire.residencePlaces[i].yMax;
-             residenceExtent = new esri.geometry.Extent(placeXMin, placeYMin, placeXMax, placeYMax, 2393);
-             map.setExtent(residenceExtent);
-             return true;
-         }
-     }*/
      return false;
  }
 
@@ -869,7 +761,8 @@ function getMaxContentHeight() {
     return windowHeight - (headerHeight + footerHeight);
 }
 
-
+// This is not needed as OpenLayers does this automatically
+/*
 function setInfoWindowPosition(origPoint, h, w) {
     console.log("setInfoWindowPosition");
 
@@ -902,28 +795,15 @@ function setInfoWindowPosition(origPoint, h, w) {
     mapHeight = mapTop.y - mapBottom.y;
     mapScale = mapHeight / maxHeight;
 
-/*
-    console.log("origX: " + origPoint.x);
-    console.log("origY: " + origPoint.y);
-    console.log("indoWidth: " + infoWidth);
-    console.log("smallW: " + smallWidth);
-    console.log("maxWidth: " +maxWidth);
-    console.log("Info " + infoHeight);
-    console.log("maxHeight " + maxHeight);
-    console.log("anch: " + anchorPlace);
-    console.log("extent: " + map.extent.getHeight());
-    console.log("Scale: " + mapScale);
-    console.log("exjson: "  + map.extent);
-    console.log("mapBottom: " + mapBottom.y);
-    console.log("mapTop: " + mapTop.y);
-*/
+
+
 
     if(anchorPlace === "upperleft" || anchorPlace === "lowerleft") {
         if(origPoint.x  >= navBarLeft) {
             offsetAmountX = (origPoint.x - navBarLeft) * mapScale;
         }
         else if(origPoint.x - infoWidth <= smallWidth) {
-            offsetAmountX = (origPoint.x - infoWidth - smallWidth - /*margin*/5) * mapScale;
+            offsetAmountX = (origPoint.x - infoWidth - smallWidth - 5) * mapScale;
         }
     }
 
@@ -946,50 +826,8 @@ function setInfoWindowPosition(origPoint, h, w) {
     map.setExtent(map.extent.offset(offsetAmountX, offsetAmountY));
     return;
 }
-
+*/
 var smallHidden = false;
-function moveInfoWindow(origPoint, h, w) {
-    console.log("moveInfoWindow");
-
-    var WindowWidth = getWindowWidth();
-    var headerHeight = dojo.byId("header").offsetHeight;
-    var smallWidth = dojo.byId("smallContent").offsetLeft + dojo.byId("smallContent").offsetWidth;
-    var anchorPlace = map.getInfoWindowAnchor(origPoint);
-    // Infowindow height + anchor height + bottom height
-    var infoHeight = h + 44 + 10;
-    // Infowindow width + left width
-    var infoWidth = w + 15;
-    var newX;
-    var newY;
-
-    if(anchorPlace === "upperleft" || anchorPlace === "lowerleft") {
-        newX = (WindowWidth + infoWidth) / 2;
-        // Goes under smallContent
-        if(newX - infoWidth < smallWidth) {
-            dojo.byId('smallContent').style.visibility = 'hidden';
-            smallHidden = true;
-        }
-    }
-
-    else if(anchorPlace === "upperright" || anchorPlace === "lowerright") {
-        newX = (WindowWidth - infoWidth) / 2;
-        // Goes under smallContent
-        if(newX < smallWidth) {
-            dojo.byId('smallContent').style.visibility = 'hidden';
-            smallHidden = true;
-        }
-    }
-
-    if(anchorPlace === "upperright" || anchorPlace === "upperleft") {
-        newY = ((84 - headerHeight) + infoHeight);
-    }
-    else if(anchorPlace === "lowerright" || anchorPlace === "lowerleft") {
-        newY = (84 - headerHeight - 44 /*anchor height*/);
-    }
-    map.infoWindow.move(new esri.geometry.Point(newX, newY));
-    console.log("AnchorPlace: " + anchorPlace + "   newX: " + newX + "  newY: " + newY);
-    return;
-}
 
 function setContentMaxHeight(cont) {
     var maximumHeight;
@@ -1146,7 +984,7 @@ function getValues(form) {
         values = {};
     }
 
-    //FIX for getting normal input values from inside the form last checked esri 1.4
+    //FIX for getting normal input values from inside the form last checked dojo 1.5
     /*
     var elem = dojo.byId(form.id).elements;
     var vn;
@@ -1199,7 +1037,7 @@ function getValues(form) {
     // END FIX
     */
     // FIX above handles also this situation
-    //FIX for bug non valid json NaN, can be removed when dojo fix arrive last checked esri version 2.3
+    //FIX for bug non valid json NaN, can be removed when dojo fix arrive last checked dojo 1.6.1
     // Will be fixed in dojo1.7 ?
     for (valueName in values) {
         if(typeof values[valueName] === "number") {
@@ -2558,9 +2396,9 @@ function createPage(pageName, pagearray, e) {
         .drawButton( 'deactivate' );
 
     //deactivate all imagebuttons
-    if(pool !== undefined) {
-        pool.deactivateAll();
-    }
+    //if(pool !== undefined) {
+    //    pool.deactivateAll();
+    //}
 
     //destroy the form if created
     if(form) {
@@ -2569,10 +2407,10 @@ function createPage(pageName, pagearray, e) {
     }
 
     //deactivate drawing
-    if (tb) {
-        tbactivated = false;
-        tb.deactivate();
-    }
+//    if (tb) {
+//        tbactivated = false;
+//        tb.deactivate();
+//    }
 
     //empty all the pages
     dojo.byId("bigContent").innerHTML = "";
@@ -2955,213 +2793,202 @@ function setActiveGraphic(g) {
 }
 
 
-var alternateInfoWindow = false;
-function createInfo(event) {
-    console.log("createInfo");
-
-    //disable all navigation of map when infowindow is open
-    map.disableMapNavigation();
-
-    //Use alternate sprite if there is a lot of infowindow content
-    if(alternateInfoWindow === false && activeGraphic.attributes.alternateinfo === true) {
-            //map.infoWindow.hide();
-            console.log("change infowindow sprite");
-            //changeCssClass('.infowindow .sprite', 'background-image', 'url(../img/infowindow_noanchor.png)');
-            alternateInfoWindow = true;
-//		return;
-    }
-    else if(alternateInfoWindow === true && activeGraphic.attributes.alternateinfo === false) {
-            console.log("change infowindow sprite to original");
-            //changeCssClass('.infowindow .sprite', 'background-image', 'url(../img/infowindow.png)');
-            alternateInfoWindow = false;
-    }
-
-    //FIX dpi 120  for the last rows of the content
-    //var con = dojo.query(".content", "map_root")[0];
-    //con.style.paddingBottom = "40px";
-    //END FIX
-    var iwindow;
-    // If point is not inside residence area extent use secondary infotemplate
-        var i;
-
-        for(i = 0; i < questionnaire.residencePlaces.length; i++) {
-        if (questionnaire.residencePlaces[i][questionnaire.values.background.resarea] !== null &&
-                questionnaire.residencePlaces[i][questionnaire.values.background.resarea] !== undefined &&
-                activeGraphic.attributes.secondaryinfotype !== undefined) {
-
-                if (new esri.geometry.Extent(questionnaire.residencePlaces[i][questionnaire.values.background.resarea]).contains(activeGraphic.geometry) === false) {
-                    console.log("secondary infotemplate: " + activeGraphic.attributes.secondaryinfotype);
-                    iwindow = questionnaire.infoTemplates[activeGraphic.attributes.secondaryinfotype];
-                }
-            }
-    }
-
-    if(iwindow === undefined) {
-            iwindow = questionnaire.infoTemplates[activeGraphic.attributes.infotype];
-    }
-    // for feature layers
-    if(iwindow === undefined) {
-        iwindow = {};
-        iwindow.confirmWidth = 330;
-        iwindow.confirmHeight = 450;
-       }
-
-
-    /*var iwindow = questionnaire.infoTemplates[activeGraphic.attributes.infotype];*/
-
-    //problem with infowindow header, needs to resize the infowindow according
-    var head = "<h2>" + activeGraphic.attributes.header + "</h2>";
-    var offh = 0;
-    var iHeight;
-    var iWidth;
-    if(head.match("<br />") !== null) {
-            if(dojo.isIE) {
-                offh = 65;
-            } else {
-                offh = 30;
-            }
-    }
-
-    if (activeGraphic.attributes.confirmed) {
-        iWidth = iwindow.infoWidth;
-        iHeight = iwindow.infoHeight + offh;
-    } else {
-        iWidth = iwindow.confirmWidth;
-        iHeight = iwindow.confirmHeight + offh;
-    }
-
-    //Infowindow should not be heigher than content max height
-    if (iHeight > getMaxContentHeight() - 44/*anchor height*/) {
-        iHeight = getMaxContentHeight() -44;
-    }
-
-    map.infoWindow.resize(iWidth, iHeight);
-
-    // If title is more than one line bottom of the infowindow is not showing
-    // Not very elegant way to do it
-    // This works for font-size under 17px
-    // If font-size is larger then the height might be reduced unnecessarily
-    if(dojo.query("#map_infowindow .title")[0].clientHeight > 20) {
-        dojo.query("#map_infowindow .layout").style("height", dojo.query("#map_infowindow .layout").style("height") -20 + "px");
-    }
-
-    //destroy previous form and its input objects
-    if(infoForm !== undefined && infoForm !== null) {
-        // For some reason IE7 hangs in infinite loop (something to with stackcontainer)
-        if(dojo.isIE === 7) {
-            var st = dijit.byId("stack1");
-            if(st !== undefined) {
-                console.log("st");
-                //st.destroyDescendants(true);
-                st.destroy(true);
-                var ch = st.getChildren();
-                for (var k = 0; k < ch.length; k++) {
-                    var chh = ch[k].getChildren();
-                        for (var j = 0; j < chh.length; j++) {
-                            chh[j].destroy(true);
-                        }
-                    ch[k].destroy(true);
-
-                }
-                st.destroy(true);
-                infoForm.destroy(true);
-            }
-            else {
-                infoForm.destroyRecursive(true);
-            }
-
-        }
-        else {
-            infoForm.destroyRecursive(true);
-        }
-        infoForm = undefined;
-    }
-
-    infoForm = create_widgets("map_infowindow");
-    // Creates two page infowindow if id: stackCont found in infotemplate
-    // Function is defined in quest_spec.js
-    if(typeof window.createTwoPageInfo === 'function') {
-        createTwoPageInfo();
-    }
-    //if (iwindow.formObjects !== undefined) {
-            //infoForm = createWidgets(iwindow.formObjects);
-            //create_widgets("info");
-            //infoForm = dijit.byId("map_infowindow");
-    //}
-    // Scroll to the top of the infowindow
-    dojo.query("#map_infowindow .layout")[0].scrollTop = 0;
-    /* REMOVED for API
-    //make sure questionnaire.values for this infowindow is not undefined
-    if(questionnaire.values[activeGraphic.attributes.valuename] === undefined) {
-        questionnaire.values[activeGraphic.attributes.valuename] = [];
-    }
-    */
-    //set the values for the infoForm
-    if(infoForm !== undefined && questionnaire.values[activeGraphic.attributes.valuename] !== undefined) {
-            //console.log("infoform is not undefined");
-            //var k;
-            //var e;
-            //setValues(infoForm, questionnaire.features[activeGraphic.id].attributes);
-            // REMOVED not needed with API
-            for(i = 0; i < questionnaire.values[activeGraphic.attributes.valuename].length; i++) {
-                if(questionnaire.values[activeGraphic.attributes.valuename][i].geom.type === "point" &&
-                    questionnaire.values[activeGraphic.attributes.valuename][i].geom.x === activeGraphic.geometry.x &&
-                    questionnaire.values[activeGraphic.attributes.valuename][i].geom.y === activeGraphic.geometry.y) {
-
-                    setValues(infoForm, questionnaire.values[activeGraphic.attributes.valuename][i].ival);
-                    break;
-                } else if (questionnaire.values[activeGraphic.attributes.valuename][i].geom !== null &&
-                    activeGraphic.geometry.type === "polygon" &&
-                    questionnaire.values[activeGraphic.attributes.valuename][i].geom.rings === activeGraphic.geometry.rings) {
-
-                    setValues(infoForm, questionnaire.values[activeGraphic.attributes.valuename][i].ival);
-                    break;
-                } else if (questionnaire.values[activeGraphic.attributes.valuename][i].geom !== null &&
-                    activeGraphic.geometry.type === "polyline" &&
-                    questionnaire.values[activeGraphic.attributes.valuename][i].geom.paths === activeGraphic.geometry.paths) {
-
-                    setValues(infoForm, questionnaire.values[activeGraphic.attributes.valuename][i].ival);
-                    break;
-                }
-            }
-    }
-    var infoPoint;
-
-    // Get point for infowindow anchor
-    // Clicked on existing graphic
-    if (lastClickEvent !== undefined) {
-        infoPoint = lastClickEvent.screenPoint;
-        lastClickEvent = undefined;
-    }
-    // New graphic
-    else {
-        switch (activeGraphic.geometry.type) {
-            case "point":
-                infoPoint = map.toScreen(activeGraphic.geometry);
-                break;
-            case "polygon":
-                infoPoint = map.toScreen(activeGraphic.geometry.getExtent().getCenter());
-                break;
-            case "polyline":
-                var pl = activeGraphic.geometry.paths[0].length - 1;
-                infoPoint = map.toScreen(new esri.geometry.Point(activeGraphic.geometry.paths[0][pl][0], activeGraphic.geometry.paths[0][pl][1]));
-                break;
-        }
-    }
-    if (alternateInfoWindow === false) {
-    setInfoWindowPosition(infoPoint, iHeight, iWidth);
-}
-    else {
-        moveInfoWindow(infoPoint, iHeight, iWidth);
-    }
-    //setInfoWindowPosition(infoPoint, iHeight, iWidth, alternateInfoWindow);
-    // Set back original background sprite
-    //if(alternateInfoWindow === true) {
-    //	changeCssClass('.infowindow .sprite', 'background-image', 'url(../img/infowindow.png)');
-    //	alternateInfoWindow = false;
-    //}
-    createInfoHook();
-}
+// var alternateInfoWindow = false;
+// function createInfo(event) {
+    // console.log("createInfo");
+// 
+    // //disable all navigation of map when infowindow is open
+    // map.disableMapNavigation();
+// 
+    // //Use alternate sprite if there is a lot of infowindow content
+    // if(alternateInfoWindow === false && activeGraphic.attributes.alternateinfo === true) {
+            // //map.infoWindow.hide();
+            // console.log("change infowindow sprite");
+            // //changeCssClass('.infowindow .sprite', 'background-image', 'url(../img/infowindow_noanchor.png)');
+            // alternateInfoWindow = true;
+// //		return;
+    // }
+    // else if(alternateInfoWindow === true && activeGraphic.attributes.alternateinfo === false) {
+            // console.log("change infowindow sprite to original");
+            // //changeCssClass('.infowindow .sprite', 'background-image', 'url(../img/infowindow.png)');
+            // alternateInfoWindow = false;
+    // }
+// 
+    // //FIX dpi 120  for the last rows of the content
+    // //var con = dojo.query(".content", "map_root")[0];
+    // //con.style.paddingBottom = "40px";
+    // //END FIX
+    // var iwindow;
+    // // If point is not inside residence area extent use secondary infotemplate
+    // var i;
+// 
+// 
+    // if(iwindow === undefined) {
+            // iwindow = questionnaire.infoTemplates[activeGraphic.attributes.infotype];
+    // }
+    // // for feature layers
+    // if(iwindow === undefined) {
+        // iwindow = {};
+        // iwindow.confirmWidth = 330;
+        // iwindow.confirmHeight = 450;
+       // }
+// 
+// 
+    // /*var iwindow = questionnaire.infoTemplates[activeGraphic.attributes.infotype];*/
+// 
+    // //problem with infowindow header, needs to resize the infowindow according
+    // var head = "<h2>" + activeGraphic.attributes.header + "</h2>";
+    // var offh = 0;
+    // var iHeight;
+    // var iWidth;
+    // if(head.match("<br />") !== null) {
+            // if(dojo.isIE) {
+                // offh = 65;
+            // } else {
+                // offh = 30;
+            // }
+    // }
+// 
+    // if (activeGraphic.attributes.confirmed) {
+        // iWidth = iwindow.infoWidth;
+        // iHeight = iwindow.infoHeight + offh;
+    // } else {
+        // iWidth = iwindow.confirmWidth;
+        // iHeight = iwindow.confirmHeight + offh;
+    // }
+// 
+    // //Infowindow should not be heigher than content max height
+    // if (iHeight > getMaxContentHeight() - 44/*anchor height*/) {
+        // iHeight = getMaxContentHeight() -44;
+    // }
+// 
+    // map.infoWindow.resize(iWidth, iHeight);
+// 
+    // // If title is more than one line bottom of the infowindow is not showing
+    // // Not very elegant way to do it
+    // // This works for font-size under 17px
+    // // If font-size is larger then the height might be reduced unnecessarily
+    // if(dojo.query("#map_infowindow .title")[0].clientHeight > 20) {
+        // dojo.query("#map_infowindow .layout").style("height", dojo.query("#map_infowindow .layout").style("height") -20 + "px");
+    // }
+// 
+    // //destroy previous form and its input objects
+    // if(infoForm !== undefined && infoForm !== null) {
+        // // For some reason IE7 hangs in infinite loop (something to with stackcontainer)
+        // if(dojo.isIE === 7) {
+            // var st = dijit.byId("stack1");
+            // if(st !== undefined) {
+                // console.log("st");
+                // //st.destroyDescendants(true);
+                // st.destroy(true);
+                // var ch = st.getChildren();
+                // for (var k = 0; k < ch.length; k++) {
+                    // var chh = ch[k].getChildren();
+                        // for (var j = 0; j < chh.length; j++) {
+                            // chh[j].destroy(true);
+                        // }
+                    // ch[k].destroy(true);
+// 
+                // }
+                // st.destroy(true);
+                // infoForm.destroy(true);
+            // }
+            // else {
+                // infoForm.destroyRecursive(true);
+            // }
+// 
+        // }
+        // else {
+            // infoForm.destroyRecursive(true);
+        // }
+        // infoForm = undefined;
+    // }
+// 
+    // infoForm = create_widgets("map_infowindow");
+    // // Creates two page infowindow if id: stackCont found in infotemplate
+    // // Function is defined in quest_spec.js
+    // if(typeof window.createTwoPageInfo === 'function') {
+        // createTwoPageInfo();
+    // }
+    // //if (iwindow.formObjects !== undefined) {
+            // //infoForm = createWidgets(iwindow.formObjects);
+            // //create_widgets("info");
+            // //infoForm = dijit.byId("map_infowindow");
+    // //}
+    // // Scroll to the top of the infowindow
+    // dojo.query("#map_infowindow .layout")[0].scrollTop = 0;
+    // /* REMOVED for API
+    // //make sure questionnaire.values for this infowindow is not undefined
+    // if(questionnaire.values[activeGraphic.attributes.valuename] === undefined) {
+        // questionnaire.values[activeGraphic.attributes.valuename] = [];
+    // }
+    // */
+    // //set the values for the infoForm
+    // if(infoForm !== undefined && questionnaire.values[activeGraphic.attributes.valuename] !== undefined) {
+            // //console.log("infoform is not undefined");
+            // //var k;
+            // //var e;
+            // //setValues(infoForm, questionnaire.features[activeGraphic.id].attributes);
+            // // REMOVED not needed with API
+            // for(i = 0; i < questionnaire.values[activeGraphic.attributes.valuename].length; i++) {
+                // if(questionnaire.values[activeGraphic.attributes.valuename][i].geom.type === "point" &&
+                    // questionnaire.values[activeGraphic.attributes.valuename][i].geom.x === activeGraphic.geometry.x &&
+                    // questionnaire.values[activeGraphic.attributes.valuename][i].geom.y === activeGraphic.geometry.y) {
+// 
+                    // setValues(infoForm, questionnaire.values[activeGraphic.attributes.valuename][i].ival);
+                    // break;
+                // } else if (questionnaire.values[activeGraphic.attributes.valuename][i].geom !== null &&
+                    // activeGraphic.geometry.type === "polygon" &&
+                    // questionnaire.values[activeGraphic.attributes.valuename][i].geom.rings === activeGraphic.geometry.rings) {
+// 
+                    // setValues(infoForm, questionnaire.values[activeGraphic.attributes.valuename][i].ival);
+                    // break;
+                // } else if (questionnaire.values[activeGraphic.attributes.valuename][i].geom !== null &&
+                    // activeGraphic.geometry.type === "polyline" &&
+                    // questionnaire.values[activeGraphic.attributes.valuename][i].geom.paths === activeGraphic.geometry.paths) {
+// 
+                    // setValues(infoForm, questionnaire.values[activeGraphic.attributes.valuename][i].ival);
+                    // break;
+                // }
+            // }
+    // }
+    // var infoPoint;
+// 
+    // // Get point for infowindow anchor
+    // // Clicked on existing graphic
+    // if (lastClickEvent !== undefined) {
+        // infoPoint = lastClickEvent.screenPoint;
+        // lastClickEvent = undefined;
+    // }
+    // // New graphic
+    // else {
+        // switch (activeGraphic.geometry.type) {
+            // case "point":
+                // infoPoint = map.toScreen(activeGraphic.geometry);
+                // break;
+            // case "polygon":
+                // infoPoint = map.toScreen(activeGraphic.geometry.getExtent().getCenter());
+                // break;
+            // case "polyline":
+                // var pl = activeGraphic.geometry.paths[0].length - 1;
+                // infoPoint = map.toScreen(new esri.geometry.Point(activeGraphic.geometry.paths[0][pl][0], activeGraphic.geometry.paths[0][pl][1]));
+                // break;
+        // }
+    // }
+    // if (alternateInfoWindow === false) {
+    // setInfoWindowPosition(infoPoint, iHeight, iWidth);
+// }
+    // else {
+        // moveInfoWindow(infoPoint, iHeight, iWidth);
+    // }
+    // //setInfoWindowPosition(infoPoint, iHeight, iWidth, alternateInfoWindow);
+    // // Set back original background sprite
+    // //if(alternateInfoWindow === true) {
+    // //	changeCssClass('.infowindow .sprite', 'background-image', 'url(../img/infowindow.png)');
+    // //	alternateInfoWindow = false;
+    // //}
+    // createInfoHook();
+// }
 
 //returns the function to create the page with
 // function createPageNr(number) {
@@ -3627,13 +3454,6 @@ function init() {
                             "pagearray": "pages"},
                             {"expires": -1});
 
-    // map = new esri.Map("map", {"slider": false,
-                               // "nav": true,
-                               // "showInfoWindowOnClick": false,
-                               // "logo": false,
-                               // "displayGraphicsOnPan": questionnaire.displayGraphicsOnPan,
-                               // "extent": new esri.geometry.Extent(questionnaire.initial_extent)
-                              // });
     map = new OpenLayers.Map('map', {projection: new OpenLayers.Projection("EPSG:3857"),
                                      maxExtent: new OpenLayers.Bounds(-37532.28,
                                                                        8312664.808,
@@ -3643,15 +3463,7 @@ function init() {
                                      paddingForPopups: new OpenLayers.Bounds(330,70,15,15),
                                      controls: []});
 
-    //add event handlers for map
-    console.log("hear");
-    //tiledmap service layer with eigth zoom levels
-    //try {
-    //    tiledMapServiceLayer = new esri.layers.ArcGISTiledMapServiceLayer(MAPSERVICE_URL);
-    //}
-    //catch(err){
-    //    console.log(dojo.toJson(err));
-    //}
+
     gMapDef = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
     gMapSat = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
                                                             numZoomLevels: 22});
@@ -3669,92 +3481,12 @@ function init() {
                                                          'size': new OpenLayers.Size(190,190)}),
                                  new OpenLayers.Control.Navigation({}),
                                  new OpenLayers.Control.PanZoomBar({id: 'navigation'})]);
-    // Get and set copyrigh text
-    //var copyText = tiledMapServiceLayer.copyright;
-    //dojo.byId('maanmittausCopy').innerHTML = copyText;
-    //image service layer for the sattelite view and 8 zoom levels
-    //try {
-    //    imageServiceLayer = new esri.layers.ArcGISTiledMapServiceLayer(SATELLITE_MAPSERVICE_URL);
-    //}
-    //catch(errr){
-    //    console.log(dojo.toJson(errr));
-    //}
-    //Service points as dynamic layer THIS WAS FOR palvelupehmogis
-    /*try {
-        servicesLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://pehmogis.tkk.fi/ArcGIS/rest/services/palvelut/MapServer");
-    }
-    catch(derror){
-        console.log(dojo.toJson(derror));
-    }*/
-
-    //the overview map layer
-    //try {
-      //  ovlayer = new esri.layers.ArcGISTiledMapServiceLayer(OVERVIEWMAP_URL);
-    //}
-    //catch(er){
-    //    console.log(dojo.toJson(er));
-    //}
     //TEST
     if(dojo.cookie("pehmogis") !== undefined) {
         console.log(dojo.fromJson(dojo.cookie("pehmogis")));
         //map.setExtent(new esri.geometry.Extent(dojo.cookie("pehmogis")));
     }
 
-    //add the layers to the map
-    //create layer load handler
-    //var zoomSlider = null;
-    //var loadHandler = function(l) {
-        //console.log(l);
-    //    map.addLayer(l);
-        //Create zoomslider, default is in wrong div. Do it here to get number of levels
-        /*if (zoomSlider === null && tiledMapServiceLayer.scales !== undefined) {
-            // Get number of levels in tiledMapServiceLayer
-            var numOfLevels = tiledMapServiceLayer.scales.length;
-            //var numOfLevels = 8;
-            // Get current level
-            var curLevel = map.getLevel();
-
-            zoomSlider = new dijit.form.VerticalSlider({
-                maximum: (numOfLevels - 1),
-                minimum: 0,
-                intermediateChanges: true,
-                discreteValues: numOfLevels
-            }, dojo.byId("zoom_slider"));
-
-            zoomSlider.set('value', curLevel);
-            //add event listeners to zoom slider and map
-            dojo.connect(map, "onZoomEnd", function(extent, zoomFactor, anchor, level){
-                zoomSlider.set('value', level);
-            });
-            dojo.connect(zoomSlider, "onChange", function(newValue){
-                map.setLevel(newValue);
-            });
-
-            //create rule labels for zoom slider
-            var sliderRules = new dijit.form.VerticalRule({
-                count: numOfLevels
-            }, dojo.byId("zoom_rule"));
-            // Get and set copyrigh text from tiledMapServiceLayer.
-            //Done here because map has to be loaded first
-            var copyText = tiledMapServiceLayer.copyright;
-            dojo.byId('maanmittausCopy').innerHTML = copyText;
-
-            if(softgis.children !== undefined) {
-                addSchools();
-            }
-        }
-        if(questionnaire.useGMap === true && typeof window.addGmapLayer === 'function') {
-            addGmapLayer();
-        }*/
-    //};
-
-    //to work around IE resource caching issues. Have to check for each layer
-    //if (tiledMapServiceLayer.loaded) {
-    //    loadHandler(tiledMapServiceLayer);
-    //}
-    //else {
-    //    dojo.connect(tiledMapServiceLayer, "onLoad", loadHandler);
-    //}
     var aliasproj = new OpenLayers.Projection("EPSG:3857");
     gMapDef.projection = gMapSat.projection = aliasproj;
     map.addLayers([gMapDef, gMapSat, areaLayer, routeLayer, pointLayer]);
@@ -3791,68 +3523,6 @@ function init() {
     console.log(select_feature_control);
     map.addControl(select_feature_control);
     select_feature_control.activate();
-        /*map.setCenter(new OpenLayers.LonLat(24.85311883, 60.6296573).transform(
-        new OpenLayers.Projection("EPSG:4326"),
-        map.getProjectionObject()
-    ), 5);*/
-//    if (imageServiceLayer.loaded) {
-//        loadHandler(imageServiceLayer);
-//    }
-//    else {
-//        dojo.connect(imageServiceLayer, "onLoad", loadHandler);
-//    }
-//    if (ovlayer.loaded && tiledMapServiceLayer.loaded) {
-//        createOverview(map, ovlayer);
-//    }
-//    else {
-//        dojo.connect(ovlayer, "onLoad", dojo.hitch(null, createOverview, map, ovlayer));
-//      }
-    //this was for palvelupehmogis
-        /*if (servicesLayer.loaded) {
-        loadHandler(servicesLayer);
-    }
-    else {
-        dojo.connect(servicesLayer, "onLoad", loadHandler);
-    }*/
-
-    //satellite image layer
-    //imageServiceLayer.hide();
-
-    //zoomslider (moved to loadhandler, handles different map levels)
-//	var zoomSlider = new myVerticalSlider({"maximum": 7, "minimum": 0, "intermediateChanges": true, "discreteValues": 8},
-//														dojo.byId("zoom_slider"));
-
-//	zoomSlider.attr('value', 5);
-
-    //add event listeners to zoom slider and map
-//	dojo.connect(map, "onZoomEnd", function(extent, zoomFactor, anchor, level) {
-//		zoomSlider.attr('value', level);
-//	});
-//	dojo.connect(zoomSlider, "onChange", function(newValue) {
-//		map.setLevel(newValue);
-//	});
-//
-//	//create rule labels for zoom slider
-//	var sliderRules = new dijit.form.VerticalRule({
-//		count:8
-//	}, dojo.byId("zoom_rule"));
-
-    //configure esri default values
- //   esri.config.defaults.map.panDuration = 700;
- //   esri.config.defaults.map.panRate = 50;
-
-    //Change PAN FACTOR for navigation arrows
-    //map._FIXED_PAN_FACTOR = 0.3;
-
-    // More IE resource caching issues.
-//    if(map.loaded) {
-//        createListeners();
-//    }
-//    else {
-//        dojo.connect(map, "onLoad", createListeners);
-//    }
-
-    //dojo.connect(map, "onUnload", endQuestionary);
     // Enable Pan onmouseOut
     if (!dojo.isIE) {
         enableMyPan(); //DISABLE FOR NOW
@@ -3883,50 +3553,18 @@ function init() {
     }
 
     //pool for imagebuttons
-    pool = new ButtonPool();
-/*
-    if(djConfig.locale === 'fi' || djConfig.locale === 'fi-FI') {
-    // Create custom localization to esri.toolbars.draw, esri haven't localized(fi-FI) these strings jsapi2.3
-        var tooltiplocale = {
-                "toolbars": {
-                    "draw": {
-                        "addShape": "Click to add a shape",
-                        "finish": "Double-click to finish",
-                        "invalidsType": "Unsupported geometry type",
-                        "resume": "Napsauta karttaa jatkaaksesi piirtoa",
-                        "addPoint": "Lisää paikka napsauttamalla karttaa",
-                        "freehand": "Press down to start and let go to finish",
-                        "complete": "Lopeta piirto kaksoisklikkauksella",
-                        "start": "Aloita piirtäminen napsauttamalla karttaa",
-                        "addMultipoint": "Click to start adding points",
-                        "convertAntiClockwisePolygon": "Polygons drawn in anti-clockwise direction will be reversed to be clockwise."
-                        }
-                    }
-                };
-        dojo.mixin(esri.bundle.toolbars, tooltiplocale.toolbars);
-    }*/
-    //check the available height and se the small and big content max height accordingly
-    /*
-    th = screen.availHeight - 100;
-    dojo.byId("smallContent").style.maxHeight = th + "px";
-    dojo.byId("bigContent").style.maxHeight = th + "px";
-    */
+    //pool = new ButtonPool();
 
     //set an event for zoom to count a new maxheight(TODO)
 
     initHook();
     createPage(getPageName(nr, pagearray), pagearray);
 
-    // Start childrens navigationbar
-    //if(softgis.children !== undefined) {
-    //    dojo.addClass("progressBar", "hidden");
-    //    setUpNavigationBar();
-    //}
-
     //give the user impression that the program is doing something
     document.body.style.cursor = "default";
     //Defaults to satellite map
     satellite(true);
+    gMapDef.redraw();
 
 
 }
@@ -3938,24 +3576,21 @@ function satellite(bool) {
             //dojo.byId("ilmakuvaNakyma").src = "./img/ilmakuva_nappi_aktiivinen.png";
             dojo.byId("karttaNakyma").className = "karttanakyma";
             dojo.byId("ilmakuvaNakyma").className = "aktiivinenkartta";
-//            tiledMapServiceLayer.hide();
-//            imageServiceLayer.show();
-            gMapDef.setVisibility(false);
+            //gMapDef.setVisibility(false);
             gMapSat.setVisibility(true);
         } else {
             //dojo.byId("karttaNakyma").src = "./img/kartta_nappi_aktiivinen.png";
             //dojo.byId("ilmakuvaNakyma").src = "./img/ilmakuva_nappi.png";
             dojo.byId("karttaNakyma").className = "aktiivinenkartta";
             dojo.byId("ilmakuvaNakyma").className = "karttanakyma";
-//            imageServiceLayer.hide();
-//            tiledMapServiceLayer.show();
-            gMapDef.setVisibility(true);
+            //gMapDef.setVisibility(true);
             gMapSat.setVisibility(false);
         }
 }
 
 function center(place) {
-    console.log("center");
+    console.log("THIS IS NOT WORKING center");
+    //TODO convert this function to OpenLayers
     if (place === "koti") {
         if(questionnaire.values.koti === undefined || questionnaire.values.koti[0] === undefined) {
             alert(questionnaire.messages.not_located_home);
@@ -3967,7 +3602,7 @@ function center(place) {
 */
             return;
         } else {
-            map.centerAt(questionnaire.values.koti[0].geom);
+ //           map.centerAt(questionnaire.values.koti[0].geom);
         }
     }
     else if(place === "tyo") {
@@ -3975,7 +3610,7 @@ function center(place) {
             alert(questionnaire.messages.not_located_work);
             return;
         } else {
-            map.centerAt(questionnaire.values.tyo[0].geom);
+//            map.centerAt(questionnaire.values.tyo[0].geom);
         }
     }
     else if(place === "koulu") {
@@ -3984,15 +3619,9 @@ function center(place) {
             return;
         }
         else {
-            map.centerAt(questionnaire.values.koulu[0].geom);
+//            map.centerAt(questionnaire.values.koulu[0].geom);
         }
     }
-    else if(place === "tammisalo") {
-        map.setExtent(new esri.geometry.Extent(questionnaire.residencePlaces.tammisalo), false);
-    }
-    else if(place === "asuinalue") {
-        centerResidenceArea();
-}
 }
 
 /*
@@ -4201,726 +3830,717 @@ function setdeactive(ibnode) {
 /*
 ImageButton class which does everything for pointing out an polygon or point on a map and submiting as a form element
 */
-function initialize_imagebutton() {
-dojo.declare("ImageButton", dijit.form._FormValueWidget,
-{
-    "baseClass": "ImageButton",
-    "templateString": "<div class=\"imagebutton ${graphicAttr.id} ${classtype}\" dojoAttachEvent=\"onclick:_onButtonClick\">" +
-                        "<div class=\"deactive\" dojoAttachPoint=\"focusNode\">" +
-                        "<span class=\"image ${classtype}\" dojoAttachPoint=\"text\"></span>" +
-                        "</div></div>",
-
-    //draw event is used to control which event to connect and disconnect from the map drawing properties.(one per questionnaire should exist at the same time).
-    "drawEvent": null,
-    "polyhelpEvent": null,
-
-    "attributeMap": dojo.mixin(dojo.clone(dijit.form._FormValueWidget.prototype.attributeMap),
-                            {"buttontext":{"node": "text", "type": "innerHTML" }}),
-
-    "buttontext": "",
-    "pool": null, // Object
-    "clearedGraphics": null, // Object
-
-    "constructor": function() {
-    this.pool = pool;
-    },
-    "postCreate": function() {
-    // Make existing code to work. TODO: fix code
-        if(this.disableWith === "") {
-            this.disableWith = undefined;
-        }
-        // add necessary values to graphicAttr
-        if(this.confirmString === null || this.confirmString === undefined) {
-            this.confirmString = questionnaire.infoTemplates[this.graphicAttr.infotype].confirm; // Reference to infoTemplate
-            this.infoWindowString = questionnaire.infoTemplates[this.graphicAttr.infotype].info; // Reference to infoTemplate
-        }
-        //this.graphicAttr.name = this.name;
-        //this.graphicAttr.header = "<h2>" + this.graphicAttr.header + "</h2>";
-
-        //in all imagebuttons these are localized
-        this.set("buttontext", this.buttontext);
-        this.set("graphicAttr", dojo.mixin(this.graphicStrings, this.graphicAttr));
-    },
-
-    "_onClick": function(/*Event*/ e){
-    // summary: internal function to handle click actions
-    //this.redraw();
-    if(this.disabledIB || this.readOnly){
-            dojo.stopEvent(e); // needed for checkbox
-            return false;
-    }
-    this._clicked(e); // widget click actions
-    return this.onClick(e); // user click actions
-    },
-
-    "_onButtonClick": function(/*Event*/ e){
-/*	if (tb._graphic && tb._points.length > 1) {
-        e.mapPoint = tb._points.pop();
-        tb._onDblClickHandler(e);
-        dojo.stopEvent(e);
-//			tb.onDrawEnd(tb._graphic);
-
-    }*/
-    // summary: callback when the user mouse clicks the button portion
-    if(this._onClick(e) === false){ // returning nothing is same as true
-            //alert("stop event at _onButtonClick");
-            dojo.stopEvent(e);
-    } else if(this.type === "submit" && !this.focusNode.form){ // see if a nonform widget needs to be signalled
-            var node;
-            for(node = this.domNode; node.parentNode/*#5935*/; node=node.parentNode){
-                var widget=dijit.byNode(node);
-                if(widget && typeof widget._onSubmit === "function"){
-                    widget._onSubmit(e);
-                    break;
-                }
-            }
-    }
-    },
-
-    "onClick": function(/*Event*/ e){
-    if(this.pool) {
-            this.pool.click(this,e);
-    }
-    // summary: user callback for when button is clicked
-    //      if type="submit", return true to perform submit
-    return true;
-    },
-
-    "_clicked": function(/*Event*/ e){
-    // summary: internal replaceable function for when the button is clicked
-    },
-
-    //GRAPHICS HANDLING PART
-    /*
-    The draw function draw alls the graphics according to the values in questionnaire.values[this.valuename]
-    */
-    // this version draws graphics of ImageButton, not questionnaire.values[this.valuename]
-    "drawGraphics": function() {
-    //var infow = new esri.InfoTemplate(this.graphicAttr.header, this.infoWindowString);
-    var infow;
-    // If point is not inside residence area extent use secondary infotemplate
-    /*for(var i = 0; i < questionnaire.residencePlaces.length; i++) {
-        if (questionnaire.residencePlaces[i][questionnaire.values.background.resarea] !== null && questionnaire.residencePlaces[i][questionnaire.values.background.resarea] !== undefined) {
-            if (new esri.geometry.Extent(questionnaire.residencePlaces[i][questionnaire.values.background.resarea]).contains(geometry) === false) {
-                console.log("addgraphic: secondary infotemplate: ");
-                infow = new esri.InfoTemplate(this.graphicAttr.header, questionnaire.infoTemplates[this.graphicAttr.secondaryinfotype].info);
-            }
-        }
-    }*/
-    infow = new esri.InfoTemplate(this.graphicAttr.header, this.infoWindowString);
-
-    this.graphicAttr.confirmed = true;
-
-    var graphic;
-    var i;
-    //do nothing if there is no values
-    if(questionnaire.values[this.graphicAttr.valuename] === undefined) {
-        return;
-    }
-    //make sure the graphics array is created
-    if(questionnaire.graphics[this.graphicAttr.valuename] === undefined) {
-        questionnaire.graphics[this.graphicAttr.valuename] = [];
-    }
-    var poi;
-    var graphicId;
-    if(this.draw === "POINT") {
-        // the symbol is the same for all points drawn by this ImageButton
-            this.symbol =  new esri.symbol.PictureMarkerSymbol(this.placeMark, this.xsize, this.ysize);
-
-            //corrects the place of the symbol picture
-            this.symbol.setOffset(this.xoffset,this.yoffset);
-
-            for(i = 0; i < questionnaire.values[this.graphicAttr.valuename].length; i++) {
-                //test if the geometry is of type point
-                if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "point") {
-                    //create the new graphic
-                    graphic = new esri.Graphic({});
-                    //graphic.setGeometry(questionnaire.values[this.graphicAttr.valuename][i].geom);
-                    poi = new esri.geometry.Point(questionnaire.values[this.graphicAttr.valuename][i].geom);
-                    // Different infotemplate if point not in residence area
-                    var k;
-                    for(k = 0; k < questionnaire.residencePlaces.length; k++) {
-                        if (questionnaire.residencePlaces[k][questionnaire.values.background.resarea] !== null &&
-                            questionnaire.residencePlaces[k][questionnaire.values.background.resarea] !== undefined	&&
-                            this.graphicAttr.secondaryinfotype !== undefined) {
-                                if (new esri.geometry.Extent(questionnaire.residencePlaces[k][questionnaire.values.background.resarea]).contains(poi) === false) {
-                                    console.log("addgraphic: secondary infotemplate: ");
-                                    infow = new esri.InfoTemplate(this.graphicAttr.header, questionnaire.infoTemplates[this.graphicAttr.secondaryinfotype].info);
-                                }
-                        }
-                    }
-                    // check if graphic has grahicId and if found add it to the graphics
-                    graphicId = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
-                    if(graphicId !== undefined && graphicId !== null) {
-                        graphic.id = graphicId;
-                    }
-                    graphic.setGeometry(poi);
-                    graphic.setAttributes(this.graphicAttr);
-                    graphic.setInfoTemplate(infow);
-                    graphic.setSymbol(this.symbol);
-
-
-                    //add the graphic to the map
-                    questionnaire.graphics[this.graphicAttr.valuename].push(graphic);
-                    if(map.graphics !== undefined) {
-                        map.graphics.add(graphic);
-                    }
-                }
-            }
-
-/*
-        //FIX for esri svg image fill = none to fill = white
-        if(dojo.isFF) {
-            svgimages = document.getElementsByTagName("image");
-            for(i = 0; i < svgimages.length; i++) {
-                svgimages[i].setAttributeNS(null, "fill", "white");
-            }
-        }
-    */
-    } else if (this.draw === "POLYGON") {
-        //create the symbol
-        this.symbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID,
-                                                    new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
-                                                                                    new dojo.Color([this.graphicAttr.rgb[0]-40,this.graphicAttr.rgb[1]-40,this.graphicAttr.rgb[2]-40]),
-                                                                                    1),
-                                                    new dojo.Color([this.graphicAttr.rgb[0],
-                                                                    this.graphicAttr.rgb[1],
-                                                                    this.graphicAttr.rgb[2],
-                                                                    0.5]));
-
-
-        for(i = 0; i < questionnaire.values[this.graphicAttr.valuename].length; i++) {
-            //check that the geometry is of type polygon
-            if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "polygon") {
-                //create the new graphic
-                graphic = new esri.Graphic({});
-                var poly = new esri.geometry.Polygon(questionnaire.values[this.graphicAttr.valuename][i].geom);
-
-                // check if graphic has grahicId and if found add it to the graphics
-                graphicId = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
-                if(graphicId !== undefined && graphicId !== null) {
-                    graphic.id = graphicId;
-                }
-                graphic.setGeometry(poly);
-                graphic.setAttributes(this.graphicAttr);
-                graphic.setInfoTemplate(infow);
-                graphic.setSymbol(this.symbol);
-                //add the graphic to the map
-                questionnaire.graphics[this.graphicAttr.valuename].push(graphic);
-                if (map.graphics !== undefined) {
-                    map.graphics.add(graphic);
-
-                    //The POLYGON should always be in the back but still on top of previously drawn polygons
-                    movePolygonToTop(graphic.getDojoShape());
-                }
-            }
-        }
-    }
-    else if (this.draw === "POLYLINE") {
-        //create the symbol
-        this.symbol = new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
-                                                        new dojo.Color(this.graphicAttr.rgb),
-                                                        1);
-
-        //set the width of the line
-        this.symbol.setWidth(2);
-
-        for(i = 0; i < questionnaire.values[this.graphicAttr.valuename].length; i++) {
-            //check that the geometry is of type polygon
-            if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "polyline") {
-                //create the new graphic
-                graphic = new esri.Graphic({});
-                var polyl = new esri.geometry.Polyline(questionnaire.values[this.graphicAttr.valuename][i].geom);
-                // check if graphic has grahicId and if found add it to the graphics
-                graphicId = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
-                if(graphicId !== undefined && graphicId !== null) {
-                    graphic.id = graphicId;
-                }
-                graphic.setGeometry(polyl);
-                graphic.setAttributes(this.graphicAttr);
-                graphic.setInfoTemplate(infow);
-                graphic.setSymbol(this.symbol);
-                //add the graphic to the map
-                questionnaire.graphics[this.graphicAttr.valuename].push(graphic);
-                if(map.graphics !== undefined) {
-                    map.graphics.add(graphic);
-                }
-            }
-        }
-    }
-    },
-
-    /*
-    The clearGraphics function clears all graphics with the name this.graphicAttr.valuename,
-    */
-    "clearGraphics": function() {
-    //clearedGraphics = null;
-    if(questionnaire.graphics[this.graphicAttr.valuename] !== undefined) {
-            this.clearedGraphics = questionnaire.graphics[this.graphicAttr.valuename];
-            var graphic = questionnaire.graphics[this.graphicAttr.valuename].pop();
-            while(graphic !== undefined && map.graphics !== undefined) {
-                map.graphics.remove(graphic);
-                //clearedGraphics.push(graphics);
-                graphic = questionnaire.graphics[this.graphicAttr.valuename].pop();
-            }
-    }
-    },
-
-    /*
-    This function redraws all the graphics that is under this.graphicAttr.valuename in values
-    */
-    "redraw": function() {
-    this.clearGraphics();
-    this.drawGraphics();
-    //make the connected ImageButton draw its graphics too
-    if(this.disableWith !== undefined) {
-            try {
-                dijit.byId(this.disableWith).drawGraphics();
-            } catch(ex) {
-                //create the this.disableWith imagebutton and draw it´s graphics
-                // This works, we cannot remove disableWith graphics
-                var i;
-                if (this.clearedGraphics !== null) {
-                    for (i = 0; i < this.clearedGraphics.length; i++) {
-                        if (this.clearedGraphics[i].attributes.name === this.disableWith) {
-                            var tempIB = new ImageButton(questionnaire.imageButton[this.disableWith], null);
-                            tempIB.drawGraphics();
-                            tempIB.destroy();
-                            tempIB = undefined;
-                            break;
-                        }
-                    }
-                }
-                //var tempIB = new ImageButton(questionnaire.imageButton[this.disableWith], null);
-                //tempIB.drawGraphics();
-                //tempIB.destroy();
-                //tempIB = undefined;
-            }
-    }
-    },
-
-    /*
-    This function add a graphic to the map in this widgets style, a not confirmed graphic.
-    */
-    "addGraphic": function(geometry) {
-
-    //not confirmed graphics infowindow
-
-    var infow;
-
-    // If point is not inside residence area extent use secondary infotemplate
-        var i;
-    for(i = 0; i < questionnaire.residencePlaces.length; i++) {
-        if (questionnaire.residencePlaces[i][questionnaire.values.background.resarea] !== null &&
-        questionnaire.residencePlaces[i][questionnaire.values.background.resarea] !== undefined &&
-            this.graphicAttr.secondaryinfotype !== undefined) {
-                    if (new esri.geometry.Extent(questionnaire.residencePlaces[i][questionnaire.values.background.resarea]).contains(geometry) === false) {
-                        console.log("addgraphic: secondary infotemplate: ");
-                        infow = new esri.InfoTemplate(this.graphicAttr.header, questionnaire.infoTemplates[this.graphicAttr.secondaryinfotype].confirm);
-                    }
-        }
-    }
-    if (infow === undefined) {
-            infow = new esri.InfoTemplate(this.graphicAttr.header, this.confirmString);
-    }
-    //ITEST
-    this.graphicAttr.confirmed = false;
-    //TEST
-
-    if(this.draw === "POINT") {
-            // the symbol is the same for all points drawn by this ImageButton
-            this.symbol =  new esri.symbol.PictureMarkerSymbol(this.placeMark, this.xsize, this.ysize);
-
-            //corrects the place of the symbol picture
-            this.symbol.setOffset(this.xoffset,this.yoffset);
-    }
-    else if (this.draw === "MULTIPOINT") {
-            // the symbol is the same for all points drawn by this ImageButton
-            this.symbol =  new esri.symbol.PictureMarkerSymbol(this.placeMark, 23, 36);
-
-            //corrects the place of the symbol picture
-            this.symbol.setOffset(this.xoffset,this.yoffset);
-
-    }
-    else if (this.draw === "POLYGON") {
-            //create the symbol
-            if (this.graphicAttr.rgb !== undefined) {
-                this.symbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID,
-                                                        new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
-                                                                                        new dojo.Color([this.graphicAttr.rgb[0]-40,this.graphicAttr.rgb[1]-40,this.graphicAttr.rgb[2]-40]),
-                                                                                        2),
-                                                        new dojo.Color([this.graphicAttr.rgb[0],
-                                                                        this.graphicAttr.rgb[1],
-                                                                        this.graphicAttr.rgb[2],
-                                                                        0.4]));
-        } else {
-            this.symbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID,
-                                                            new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
-                                                                                            new dojo.Color([205,92,92]),
-                                                                                            1),
-                                                            new dojo.Color([200,92,92,0.5]));
-
-        }
-    }
-    else if (this.draw === "POLYLINE") {
-        //create the symbol
-        if (this.graphicAttr.rgb !== undefined) {
-            this.symbol = new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
-                                                            new dojo.Color(this.graphicAttr.rgb),
-                                                            1);
-        } else {
-            this.symbol = new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
-                                                            new dojo.Color([200,92,92]),
-                                                            1);
-
-        }
-        //set the width of the line
-        this.symbol.setWidth(2);
-    }
-
-
-    //create the new graphic
-    var graphic = new esri.Graphic({});
-    graphic.setGeometry(geometry);
-    graphic.setAttributes(this.graphicAttr);
-    graphic.setInfoTemplate(infow);
-    graphic.setSymbol(this.symbol);
-    //add the graphic to the map
-    if(questionnaire.graphics[this.graphicAttr.valuename] === undefined) {
-            questionnaire.graphics[this.graphicAttr.valuename] = [];
-    }
-    questionnaire.graphics[this.graphicAttr.valuename].push(graphic);
-    map.graphics.add(graphic);
-    this.unconfirmed = graphic;
-
-    //set global activeGraphic
-    setActiveGraphic(graphic);
-
-    /*
-    //FIX for esri svg image fill = none to fill = white
-    if(this.draw === "POINT" && dojo.isFF) {
-        svgimages = document.getElementsByTagName("image");
-        for(i = 0; i < svgimages.length; i++) {
-            svgimages[i].setAttributeNS(null, "fill", "white");
-        }
-    }
-    */
-    },
-
-//VALUE HANDLING PART
-/*
-This function replaces this.value with the value given. The value is in the form of an array [{ival:<infowindow value>,geom:<geometry>},...]
-*/
-"_setValueAttr": function(/*geometry that contains JSON description according to the esri rest api*/ value,/* not used but required parameter*/ priorityChange) {
-    if(value === undefined || value[0] === undefined) {
-        return;
-    }
-
-    this.inherited(arguments);
-    this.value = value;
-
-    if(this.value === "" || this.value === undefined || this.value === null) {
-        this.value = [];
-    } else {
-        this.redraw();
-    }
-
-    if(this.graphicAttr.max !== undefined && this.graphicAttr.max <= this.value.length) {
-        this.disable();
-    }
-    // REMOVED for API
-    questionnaire.values[this.graphicAttr.valuename] = this.value;
-},
-/*
-this function add one value to the array of values and drawGraphics the new value
-*/
-"_addValueAttr": function(/*geometry that contains JSON description according to the esri rest api*/ value,/* not used but required parameter*/ priorityChange) {
-
-    if(questionnaire.values[this.graphicAttr.valuename] === undefined) {
-        questionnaire.values[this.graphicAttr.valuename] = [];
-    }
-
-    questionnaire.values[this.graphicAttr.valuename].push({ival: null, geom: value});
-    this.value = questionnaire.values[this.graphicAttr.valuename];
-
-    if(this.graphicAttr.max !== undefined && this.graphicAttr.max <= this.value.length) {
-        this.disable();
-    }
-},
-/*
-This function removes the given value from the values
-*/
-"_removeValueAttr": function(/*geometry that contains JSON description according to the esri rest api*/ value,/* not used but required parameter*/ priorityChange) {
-    var i,
-        feature = {'type' : 'Feature'};
-    for(i=0;i<questionnaire.values[this.graphicAttr.valuename].length;i++) {
-        if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "point" &&
-            questionnaire.values[this.graphicAttr.valuename][i].geom.x === value.x &&
-            questionnaire.values[this.graphicAttr.valuename][i].geom.y === value.y) {
-
-            // remove the graphic from the database
-            if(questionnaire.values.testUser !== true) {
-                feature.id = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
-                gnt.geo.delete_feature(feature);
-//                remove_graphic(questionnaire.values[this.graphicAttr.valuename][i].graphicId);
-            }
-            questionnaire.values[this.graphicAttr.valuename].splice(i,1);
-            break;
-        } else if (questionnaire.values[this.graphicAttr.valuename][i].geom.type === "polyline" &&
-                    questionnaire.values[this.graphicAttr.valuename][i].geom.paths === value.paths) {
-            // remove the graphic from the database
-            if(questionnaire.values.testUser !== true) {
-                feature.id = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
-                gnt.geo.delete_feature(feature);
-//                remove_graphic(questionnaire.values[this.graphicAttr.valuename][i].graphicId);
-            }
-            questionnaire.values[this.graphicAttr.valuename].splice(i,1);
-            break;
-        } else if (questionnaire.values[this.graphicAttr.valuename][i].geom.type === "polygon" &&
-                    questionnaire.values[this.graphicAttr.valuename][i].geom.rings === value.rings) {
-            // remove the graphic from the database
-            if(questionnaire.values.testUser !== true) {
-                feature.id = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
-                gnt.geo.delete_feature(feature);
-//                remove_graphic(questionnaire.values[this.graphicAttr.valuename][i].graphicId);
-            }
-            questionnaire.values[this.graphicAttr.valuename].splice(i,1);
-            break;
-        }
-    }
-    this.value = questionnaire.values[this.graphicAttr.valuename];
-
-    if(this.graphicAttr.max !== undefined && this.graphicAttr.max > this.value.length) {
-        this.enable();
-    }
-},
-
-"_getValueAttr": function() {
-    if(this.value !== undefined) {
-        return this.value;
-    } else {
-        return null;
-    }
-},
-//WIDGET FUNCTIONALITY HANDLING PART
-"destroy": function() {
-    setCursor("map_layers", "");
-    //this.redraw();
-    this.inherited(arguments);
-},
-
-"activate": function(e) {
-    //hide any infowindow that is showing
-    // Hide infoWindow if necessary. This also destroys all widgets of the infoform.
-    // If not done here e.g. IE cannot destroy all the widgets, because infoForms DOM structure is changed
-    if(map.infoWindow.isShowing) {
-        map.infoWindow.hide();
-    }
-
-    map.disableDoubleClickZoom();
-
-    this.focusNode.className = "active";
-
-    //destroy tempButton in a proper way
-    if(tempButton !== undefined && tempButton !== this) {
-        if(dijit.byId(tempButton.id) === undefined) {
-            tempButton.destroy();
-        } else {
-            tempButton.redraw();
-        }
-        tempButton = undefined;
-    }
-
-    tempButton = this;
-
-    if(this.cursorImg !== undefined) {
-        setCursor("map_layers", "url(" + this.cursorImg + ")");
-        disableCursorChange();
-    }
-
-    if(this.draw === "POINT") {
-        tb.activate(esri.toolbars.Draw.POINT, {tooltipOffset: 26});
-        tbactivated = true;
-        this.drawEvent = dojo.connect(tb, "onDrawEnd", dojo.hitch(this, this.confirm));
-        return;
-        }
-    else if(this.draw === "POLYGON") {
-        tb.activate(esri.toolbars.Draw.POLYGON);
-        tbactivated = true;
-        this.drawEvent = dojo.connect(tb, "onDrawEnd", dojo.hitch(this, this.confirm));
-        return;
-        }
-    else if(this.draw === "POLYLINE") {
-        tb.activate(esri.toolbars.Draw.POLYLINE);
-        tbactivated = true;
-        /*//TOOLTIP
-        edge = 0;
-
-        showToolTip(tooltiphelp[djConfig.locale].firstedge,e.clientY,e.clientX,true);
-
-        this.polyhelpEvent = dojo.connect(map, "onClick", function(event) {
-                                                            //console.log(event);
-                                                            edge = edge + 1;
-                                                            if(edge === 1) {
-                                                                changeToolTipText(tooltiphelp[djConfig.locale].firstedge);
-                                                            } else if (edge == 2) {
-                                                                changeToolTipText(tooltiphelp[djConfig.locale].nextedge);
-                                                            }
-                                                        }
-                                                    );
-        //END TOOLTIP*/
-        this.drawEvent = dojo.connect(tb, "onDrawEnd",dojo.hitch(this,this.confirm));
-        return;
-        }
-    else if(this.draw === "MULTIPOINT") {
-        tb.activate(esri.toolbars.Draw.POINT);
-        tbactivated = true;
-        this.drawEvent = dojo.connect(tb, "onDrawEnd", dojo.hitch(this, this.confirm));
-        return;
-    }
-    else if(this.draw === "FREEHAND_POLYLINE") {
-        tb.activate(esri.toolbars.Draw.FREEHAND_POLYLINE);
-        tbactivated = true;
-        this.drawEvent = dojo.connect(tb, "onDrawEnd",dojo.hitch(this,this.confirm));
-        return;
-        }
-},
-
-"deactivate": function(e) {
-    //if the max amount of values are set the button should be disabled!!
-
-    if (tb._graphic && tb._points.length > 1) {
-        var el = {};
-        //el.mapPoint = tb._points.pop();
-        //tb._onDblClickHandler(el);
-//			alert("deactivate imagebutton");
-//			dojo.stopEvent(e);
-//			tb.onDrawEnd(tb._graphic);
-
-    }
-
-    if(this.graphicAttr.max !== undefined && this.graphicAttr.max <= this.value.length) {
-        this.disable();
-        return;
-    }
-
-    setCursor("map_layers", "");
-    enableCursorChange();
-    // ESRI has own tooltips
-    //hideToolTip();
-    // for tempButtons focusNode is undefined
-    if(this.focusNode !== undefined) {
-        this.focusNode.className = "deactive";
-    }
-    dojo.disconnect(this.drawEvent);
-    tbactivated = false;
-    tb.deactivate();
-
-    },
-
-"disable": function(e) {
-    setCursor("map_layers","");
-    enableCursorChange();
-
-    this.focusNode.className = "disabled";
-
-    this.disabledIB = true;
-    dojo.disconnect(this.drawEvent);
-    if(tb !== undefined) {
-        tbactivated = false;
-        tb.deactivate();
-    }
-    try {
-        if (this.disableWith !== undefined) {
-            var widget = dijit.byId(this.disableWith);
-            if (widget.disabledIB !== true) {
-                widget.disable();
-            }
-        }
-    } catch(ex) {
-    }
-},
-
-"enable": function(e) {
-    this.focusNode.className = "deactive";
-    this.disabledIB = false;
-    //dojo.disconnect(this.drawEvent);
-    //tb.deactivate();
-    if(this.disableWith !== undefined) {
-        try {
-            var widget = dijit.byId(this.disableWith);
-            if (widget.disabledIB !== false) {
-                widget.enable();
-            }
-        } catch(ex) {
-        }
-    }
-},
-
-    //INFOWINDOW HANDLING PART
-    "confirm": function(geometry) {
-        if(djConfig.isDebug) {
-            console.log("confirm for button called with geom: ");
-            console.log(geometry);
-        }
-    var p;
-    //console.log("confirm graphic: " + dojo.toJson(geometry));
-    //add to the map an unconfirmed graphic
-    this.addGraphic(geometry);
-
-    //set the content of the infowindow
-    map.infoWindow.setTitle(this.unconfirmed.getTitle());
-    map.infoWindow.setContent(this.unconfirmed.getContent());
-
-    //deactivate all imageButtons
-    this.deactivate();
-    this.pool.deactivateAll();
-
-    if(this.draw === "POINT" || this.draw === "MULTIPOINT") {
-
-            //pop up the infowindow
-            p = map.toScreen(geometry);
-            map.infoWindow.show(p,map.getInfoWindowAnchor(p));
-
-            return;
-        }
-    else if(this.draw === "POLYGON") {
-
-            //pop up the infowindow
-            p = map.toScreen(geometry.getExtent().getCenter());
-            map.infoWindow.show(p,map.getInfoWindowAnchor(p));
-
-            return;
-        }
-    else if(this.draw === "POLYLINE") {
-            //TEST
-            dojo.disconnect(this.polyhelpEvent);
-            //END TEST
-            //pop up the infowindow
-            var pl = geometry.paths[0].length - 1;
-            p = map.toScreen(new esri.geometry.Point(geometry.paths[0][pl][0], geometry.paths[0][pl][1]));
-            map.infoWindow.show(p,map.getInfoWindowAnchor(p));
-
-            return;
-        }
-    },
-
-    "confirmResult": function(bool) {
-    if(this.unconfirmed !== undefined && bool) {
-            if(this.replaceGraphic !== undefined) {
-                this._removeValueAttr(this.replaceGraphic.geometry);
-                this.replaceGraphic = undefined;
-            }
-            this._addValueAttr(this.unconfirmed.geometry);
-            this.redraw();
-            this.unconfirmed = undefined;
-    } else {
-            this.redraw();
-            this.unconfirmed = undefined;
-        }
-    }
-});
-}
+// function initialize_imagebutton() {
+// dojo.declare("ImageButton", dijit.form._FormValueWidget,
+// {
+    // "baseClass": "ImageButton",
+    // "templateString": "<div class=\"imagebutton ${graphicAttr.id} ${classtype}\" dojoAttachEvent=\"onclick:_onButtonClick\">" +
+                        // "<div class=\"deactive\" dojoAttachPoint=\"focusNode\">" +
+                        // "<span class=\"image ${classtype}\" dojoAttachPoint=\"text\"></span>" +
+                        // "</div></div>",
+// 
+    // //draw event is used to control which event to connect and disconnect from the map drawing properties.(one per questionnaire should exist at the same time).
+    // "drawEvent": null,
+    // "polyhelpEvent": null,
+// 
+    // "attributeMap": dojo.mixin(dojo.clone(dijit.form._FormValueWidget.prototype.attributeMap),
+                            // {"buttontext":{"node": "text", "type": "innerHTML" }}),
+// 
+    // "buttontext": "",
+    // "pool": null, // Object
+    // "clearedGraphics": null, // Object
+// 
+    // "constructor": function() {
+    // this.pool = pool;
+    // },
+    // "postCreate": function() {
+    // // Make existing code to work. TODO: fix code
+        // if(this.disableWith === "") {
+            // this.disableWith = undefined;
+        // }
+        // // add necessary values to graphicAttr
+        // if(this.confirmString === null || this.confirmString === undefined) {
+            // this.confirmString = questionnaire.infoTemplates[this.graphicAttr.infotype].confirm; // Reference to infoTemplate
+            // this.infoWindowString = questionnaire.infoTemplates[this.graphicAttr.infotype].info; // Reference to infoTemplate
+        // }
+        // //this.graphicAttr.name = this.name;
+        // //this.graphicAttr.header = "<h2>" + this.graphicAttr.header + "</h2>";
+// 
+        // //in all imagebuttons these are localized
+        // this.set("buttontext", this.buttontext);
+        // this.set("graphicAttr", dojo.mixin(this.graphicStrings, this.graphicAttr));
+    // },
+// 
+    // "_onClick": function(/*Event*/ e){
+    // // summary: internal function to handle click actions
+    // //this.redraw();
+    // if(this.disabledIB || this.readOnly){
+            // dojo.stopEvent(e); // needed for checkbox
+            // return false;
+    // }
+    // this._clicked(e); // widget click actions
+    // return this.onClick(e); // user click actions
+    // },
+// 
+    // "_onButtonClick": function(/*Event*/ e){
+// /*	if (tb._graphic && tb._points.length > 1) {
+        // e.mapPoint = tb._points.pop();
+        // tb._onDblClickHandler(e);
+        // dojo.stopEvent(e);
+// //			tb.onDrawEnd(tb._graphic);
+// 
+    // }*/
+    // // summary: callback when the user mouse clicks the button portion
+    // if(this._onClick(e) === false){ // returning nothing is same as true
+            // //alert("stop event at _onButtonClick");
+            // dojo.stopEvent(e);
+    // } else if(this.type === "submit" && !this.focusNode.form){ // see if a nonform widget needs to be signalled
+            // var node;
+            // for(node = this.domNode; node.parentNode/*#5935*/; node=node.parentNode){
+                // var widget=dijit.byNode(node);
+                // if(widget && typeof widget._onSubmit === "function"){
+                    // widget._onSubmit(e);
+                    // break;
+                // }
+            // }
+    // }
+    // },
+// 
+    // "onClick": function(/*Event*/ e){
+    // if(this.pool) {
+            // this.pool.click(this,e);
+    // }
+    // // summary: user callback for when button is clicked
+    // //      if type="submit", return true to perform submit
+    // return true;
+    // },
+// 
+    // "_clicked": function(/*Event*/ e){
+    // // summary: internal replaceable function for when the button is clicked
+    // },
+// 
+    // //GRAPHICS HANDLING PART
+    // /*
+    // The draw function draw alls the graphics according to the values in questionnaire.values[this.valuename]
+    // */
+    // // this version draws graphics of ImageButton, not questionnaire.values[this.valuename]
+    // "drawGraphics": function() {
+    // var infow;
+// 
+    // infow = new esri.InfoTemplate(this.graphicAttr.header, this.infoWindowString);
+// 
+    // this.graphicAttr.confirmed = true;
+// 
+    // var graphic;
+    // var i;
+    // //do nothing if there is no values
+    // if(questionnaire.values[this.graphicAttr.valuename] === undefined) {
+        // return;
+    // }
+    // //make sure the graphics array is created
+    // if(questionnaire.graphics[this.graphicAttr.valuename] === undefined) {
+        // questionnaire.graphics[this.graphicAttr.valuename] = [];
+    // }
+    // var poi;
+    // var graphicId;
+    // if(this.draw === "POINT") {
+        // // the symbol is the same for all points drawn by this ImageButton
+            // this.symbol =  new esri.symbol.PictureMarkerSymbol(this.placeMark, this.xsize, this.ysize);
+// 
+            // //corrects the place of the symbol picture
+            // this.symbol.setOffset(this.xoffset,this.yoffset);
+// 
+            // for(i = 0; i < questionnaire.values[this.graphicAttr.valuename].length; i++) {
+                // //test if the geometry is of type point
+                // if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "point") {
+                    // //create the new graphic
+                    // graphic = new esri.Graphic({});
+                    // //graphic.setGeometry(questionnaire.values[this.graphicAttr.valuename][i].geom);
+                    // poi = new esri.geometry.Point(questionnaire.values[this.graphicAttr.valuename][i].geom);
+                    // // Different infotemplate if point not in residence area
+                    // var k;
+                    // for(k = 0; k < questionnaire.residencePlaces.length; k++) {
+                        // if (questionnaire.residencePlaces[k][questionnaire.values.background.resarea] !== null &&
+                            // questionnaire.residencePlaces[k][questionnaire.values.background.resarea] !== undefined	&&
+                            // this.graphicAttr.secondaryinfotype !== undefined) {
+                                // if (new esri.geometry.Extent(questionnaire.residencePlaces[k][questionnaire.values.background.resarea]).contains(poi) === false) {
+                                    // console.log("addgraphic: secondary infotemplate: ");
+                                    // infow = new esri.InfoTemplate(this.graphicAttr.header, questionnaire.infoTemplates[this.graphicAttr.secondaryinfotype].info);
+                                // }
+                        // }
+                    // }
+                    // // check if graphic has grahicId and if found add it to the graphics
+                    // graphicId = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
+                    // if(graphicId !== undefined && graphicId !== null) {
+                        // graphic.id = graphicId;
+                    // }
+                    // graphic.setGeometry(poi);
+                    // graphic.setAttributes(this.graphicAttr);
+                    // graphic.setInfoTemplate(infow);
+                    // graphic.setSymbol(this.symbol);
+// 
+// 
+                    // //add the graphic to the map
+                    // questionnaire.graphics[this.graphicAttr.valuename].push(graphic);
+                    // if(map.graphics !== undefined) {
+                        // map.graphics.add(graphic);
+                    // }
+                // }
+            // }
+// 
+// /*
+        // //FIX for esri svg image fill = none to fill = white
+        // if(dojo.isFF) {
+            // svgimages = document.getElementsByTagName("image");
+            // for(i = 0; i < svgimages.length; i++) {
+                // svgimages[i].setAttributeNS(null, "fill", "white");
+            // }
+        // }
+    // */
+    // } else if (this.draw === "POLYGON") {
+        // //create the symbol
+        // this.symbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID,
+                                                    // new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
+                                                                                    // new dojo.Color([this.graphicAttr.rgb[0]-40,this.graphicAttr.rgb[1]-40,this.graphicAttr.rgb[2]-40]),
+                                                                                    // 1),
+                                                    // new dojo.Color([this.graphicAttr.rgb[0],
+                                                                    // this.graphicAttr.rgb[1],
+                                                                    // this.graphicAttr.rgb[2],
+                                                                    // 0.5]));
+// 
+// 
+        // for(i = 0; i < questionnaire.values[this.graphicAttr.valuename].length; i++) {
+            // //check that the geometry is of type polygon
+            // if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "polygon") {
+                // //create the new graphic
+                // graphic = new esri.Graphic({});
+                // var poly = new esri.geometry.Polygon(questionnaire.values[this.graphicAttr.valuename][i].geom);
+// 
+                // // check if graphic has grahicId and if found add it to the graphics
+                // graphicId = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
+                // if(graphicId !== undefined && graphicId !== null) {
+                    // graphic.id = graphicId;
+                // }
+                // graphic.setGeometry(poly);
+                // graphic.setAttributes(this.graphicAttr);
+                // graphic.setInfoTemplate(infow);
+                // graphic.setSymbol(this.symbol);
+                // //add the graphic to the map
+                // questionnaire.graphics[this.graphicAttr.valuename].push(graphic);
+                // if (map.graphics !== undefined) {
+                    // map.graphics.add(graphic);
+// 
+                    // //The POLYGON should always be in the back but still on top of previously drawn polygons
+                    // movePolygonToTop(graphic.getDojoShape());
+                // }
+            // }
+        // }
+    // }
+    // else if (this.draw === "POLYLINE") {
+        // //create the symbol
+        // this.symbol = new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
+                                                        // new dojo.Color(this.graphicAttr.rgb),
+                                                        // 1);
+// 
+        // //set the width of the line
+        // this.symbol.setWidth(2);
+// 
+        // for(i = 0; i < questionnaire.values[this.graphicAttr.valuename].length; i++) {
+            // //check that the geometry is of type polygon
+            // if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "polyline") {
+                // //create the new graphic
+                // graphic = new esri.Graphic({});
+                // var polyl = new esri.geometry.Polyline(questionnaire.values[this.graphicAttr.valuename][i].geom);
+                // // check if graphic has grahicId and if found add it to the graphics
+                // graphicId = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
+                // if(graphicId !== undefined && graphicId !== null) {
+                    // graphic.id = graphicId;
+                // }
+                // graphic.setGeometry(polyl);
+                // graphic.setAttributes(this.graphicAttr);
+                // graphic.setInfoTemplate(infow);
+                // graphic.setSymbol(this.symbol);
+                // //add the graphic to the map
+                // questionnaire.graphics[this.graphicAttr.valuename].push(graphic);
+                // if(map.graphics !== undefined) {
+                    // map.graphics.add(graphic);
+                // }
+            // }
+        // }
+    // }
+    // },
+// 
+    // /*
+    // The clearGraphics function clears all graphics with the name this.graphicAttr.valuename,
+    // */
+    // "clearGraphics": function() {
+    // //clearedGraphics = null;
+    // if(questionnaire.graphics[this.graphicAttr.valuename] !== undefined) {
+            // this.clearedGraphics = questionnaire.graphics[this.graphicAttr.valuename];
+            // var graphic = questionnaire.graphics[this.graphicAttr.valuename].pop();
+            // while(graphic !== undefined && map.graphics !== undefined) {
+                // map.graphics.remove(graphic);
+                // //clearedGraphics.push(graphics);
+                // graphic = questionnaire.graphics[this.graphicAttr.valuename].pop();
+            // }
+    // }
+    // },
+// 
+    // /*
+    // This function redraws all the graphics that is under this.graphicAttr.valuename in values
+    // */
+    // "redraw": function() {
+    // this.clearGraphics();
+    // this.drawGraphics();
+    // //make the connected ImageButton draw its graphics too
+    // if(this.disableWith !== undefined) {
+            // try {
+                // dijit.byId(this.disableWith).drawGraphics();
+            // } catch(ex) {
+                // //create the this.disableWith imagebutton and draw it´s graphics
+                // // This works, we cannot remove disableWith graphics
+                // var i;
+                // if (this.clearedGraphics !== null) {
+                    // for (i = 0; i < this.clearedGraphics.length; i++) {
+                        // if (this.clearedGraphics[i].attributes.name === this.disableWith) {
+                            // var tempIB = new ImageButton(questionnaire.imageButton[this.disableWith], null);
+                            // tempIB.drawGraphics();
+                            // tempIB.destroy();
+                            // tempIB = undefined;
+                            // break;
+                        // }
+                    // }
+                // }
+                // //var tempIB = new ImageButton(questionnaire.imageButton[this.disableWith], null);
+                // //tempIB.drawGraphics();
+                // //tempIB.destroy();
+                // //tempIB = undefined;
+            // }
+    // }
+    // },
+// 
+    // /*
+    // This function add a graphic to the map in this widgets style, a not confirmed graphic.
+    // */
+    // "addGraphic": function(geometry) {
+// 
+    // //not confirmed graphics infowindow
+// 
+    // var infow;
+// 
+    // // If point is not inside residence area extent use secondary infotemplate
+        // var i;
+    // for(i = 0; i < questionnaire.residencePlaces.length; i++) {
+        // if (questionnaire.residencePlaces[i][questionnaire.values.background.resarea] !== null &&
+        // questionnaire.residencePlaces[i][questionnaire.values.background.resarea] !== undefined &&
+            // this.graphicAttr.secondaryinfotype !== undefined) {
+                    // if (new esri.geometry.Extent(questionnaire.residencePlaces[i][questionnaire.values.background.resarea]).contains(geometry) === false) {
+                        // console.log("addgraphic: secondary infotemplate: ");
+                        // infow = new esri.InfoTemplate(this.graphicAttr.header, questionnaire.infoTemplates[this.graphicAttr.secondaryinfotype].confirm);
+                    // }
+        // }
+    // }
+    // if (infow === undefined) {
+            // infow = new esri.InfoTemplate(this.graphicAttr.header, this.confirmString);
+    // }
+    // //ITEST
+    // this.graphicAttr.confirmed = false;
+    // //TEST
+// 
+    // if(this.draw === "POINT") {
+            // // the symbol is the same for all points drawn by this ImageButton
+            // this.symbol =  new esri.symbol.PictureMarkerSymbol(this.placeMark, this.xsize, this.ysize);
+// 
+            // //corrects the place of the symbol picture
+            // this.symbol.setOffset(this.xoffset,this.yoffset);
+    // }
+    // else if (this.draw === "MULTIPOINT") {
+            // // the symbol is the same for all points drawn by this ImageButton
+            // this.symbol =  new esri.symbol.PictureMarkerSymbol(this.placeMark, 23, 36);
+// 
+            // //corrects the place of the symbol picture
+            // this.symbol.setOffset(this.xoffset,this.yoffset);
+// 
+    // }
+    // else if (this.draw === "POLYGON") {
+            // //create the symbol
+            // if (this.graphicAttr.rgb !== undefined) {
+                // this.symbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID,
+                                                        // new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
+                                                                                        // new dojo.Color([this.graphicAttr.rgb[0]-40,this.graphicAttr.rgb[1]-40,this.graphicAttr.rgb[2]-40]),
+                                                                                        // 2),
+                                                        // new dojo.Color([this.graphicAttr.rgb[0],
+                                                                        // this.graphicAttr.rgb[1],
+                                                                        // this.graphicAttr.rgb[2],
+                                                                        // 0.4]));
+        // } else {
+            // this.symbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID,
+                                                            // new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
+                                                                                            // new dojo.Color([205,92,92]),
+                                                                                            // 1),
+                                                            // new dojo.Color([200,92,92,0.5]));
+// 
+        // }
+    // }
+    // else if (this.draw === "POLYLINE") {
+        // //create the symbol
+        // if (this.graphicAttr.rgb !== undefined) {
+            // this.symbol = new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
+                                                            // new dojo.Color(this.graphicAttr.rgb),
+                                                            // 1);
+        // } else {
+            // this.symbol = new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
+                                                            // new dojo.Color([200,92,92]),
+                                                            // 1);
+// 
+        // }
+        // //set the width of the line
+        // this.symbol.setWidth(2);
+    // }
+// 
+// 
+    // //create the new graphic
+    // var graphic = new esri.Graphic({});
+    // graphic.setGeometry(geometry);
+    // graphic.setAttributes(this.graphicAttr);
+    // graphic.setInfoTemplate(infow);
+    // graphic.setSymbol(this.symbol);
+    // //add the graphic to the map
+    // if(questionnaire.graphics[this.graphicAttr.valuename] === undefined) {
+            // questionnaire.graphics[this.graphicAttr.valuename] = [];
+    // }
+    // questionnaire.graphics[this.graphicAttr.valuename].push(graphic);
+    // map.graphics.add(graphic);
+    // this.unconfirmed = graphic;
+// 
+    // //set global activeGraphic
+    // setActiveGraphic(graphic);
+// 
+    // /*
+    // //FIX for esri svg image fill = none to fill = white
+    // if(this.draw === "POINT" && dojo.isFF) {
+        // svgimages = document.getElementsByTagName("image");
+        // for(i = 0; i < svgimages.length; i++) {
+            // svgimages[i].setAttributeNS(null, "fill", "white");
+        // }
+    // }
+    // */
+    // },
+// 
+// //VALUE HANDLING PART
+// /*
+// This function replaces this.value with the value given. The value is in the form of an array [{ival:<infowindow value>,geom:<geometry>},...]
+// */
+// "_setValueAttr": function(/*geometry that contains JSON description according to the esri rest api*/ value,/* not used but required parameter*/ priorityChange) {
+    // if(value === undefined || value[0] === undefined) {
+        // return;
+    // }
+// 
+    // this.inherited(arguments);
+    // this.value = value;
+// 
+    // if(this.value === "" || this.value === undefined || this.value === null) {
+        // this.value = [];
+    // } else {
+        // this.redraw();
+    // }
+// 
+    // if(this.graphicAttr.max !== undefined && this.graphicAttr.max <= this.value.length) {
+        // this.disable();
+    // }
+    // // REMOVED for API
+    // questionnaire.values[this.graphicAttr.valuename] = this.value;
+// },
+// /*
+// this function add one value to the array of values and drawGraphics the new value
+// */
+// "_addValueAttr": function(/*geometry that contains JSON description according to the esri rest api*/ value,/* not used but required parameter*/ priorityChange) {
+// 
+    // if(questionnaire.values[this.graphicAttr.valuename] === undefined) {
+        // questionnaire.values[this.graphicAttr.valuename] = [];
+    // }
+// 
+    // questionnaire.values[this.graphicAttr.valuename].push({ival: null, geom: value});
+    // this.value = questionnaire.values[this.graphicAttr.valuename];
+// 
+    // if(this.graphicAttr.max !== undefined && this.graphicAttr.max <= this.value.length) {
+        // this.disable();
+    // }
+// },
+// /*
+// This function removes the given value from the values
+// */
+// "_removeValueAttr": function(/*geometry that contains JSON description according to the esri rest api*/ value,/* not used but required parameter*/ priorityChange) {
+    // var i,
+        // feature = {'type' : 'Feature'};
+    // for(i=0;i<questionnaire.values[this.graphicAttr.valuename].length;i++) {
+        // if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "point" &&
+            // questionnaire.values[this.graphicAttr.valuename][i].geom.x === value.x &&
+            // questionnaire.values[this.graphicAttr.valuename][i].geom.y === value.y) {
+// 
+            // // remove the graphic from the database
+            // if(questionnaire.values.testUser !== true) {
+                // feature.id = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
+                // gnt.geo.delete_feature(feature);
+// //                remove_graphic(questionnaire.values[this.graphicAttr.valuename][i].graphicId);
+            // }
+            // questionnaire.values[this.graphicAttr.valuename].splice(i,1);
+            // break;
+        // } else if (questionnaire.values[this.graphicAttr.valuename][i].geom.type === "polyline" &&
+                    // questionnaire.values[this.graphicAttr.valuename][i].geom.paths === value.paths) {
+            // // remove the graphic from the database
+            // if(questionnaire.values.testUser !== true) {
+                // feature.id = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
+                // gnt.geo.delete_feature(feature);
+// //                remove_graphic(questionnaire.values[this.graphicAttr.valuename][i].graphicId);
+            // }
+            // questionnaire.values[this.graphicAttr.valuename].splice(i,1);
+            // break;
+        // } else if (questionnaire.values[this.graphicAttr.valuename][i].geom.type === "polygon" &&
+                    // questionnaire.values[this.graphicAttr.valuename][i].geom.rings === value.rings) {
+            // // remove the graphic from the database
+            // if(questionnaire.values.testUser !== true) {
+                // feature.id = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
+                // gnt.geo.delete_feature(feature);
+// //                remove_graphic(questionnaire.values[this.graphicAttr.valuename][i].graphicId);
+            // }
+            // questionnaire.values[this.graphicAttr.valuename].splice(i,1);
+            // break;
+        // }
+    // }
+    // this.value = questionnaire.values[this.graphicAttr.valuename];
+// 
+    // if(this.graphicAttr.max !== undefined && this.graphicAttr.max > this.value.length) {
+        // this.enable();
+    // }
+// },
+// 
+// "_getValueAttr": function() {
+    // if(this.value !== undefined) {
+        // return this.value;
+    // } else {
+        // return null;
+    // }
+// },
+// //WIDGET FUNCTIONALITY HANDLING PART
+// "destroy": function() {
+    // setCursor("map_layers", "");
+    // //this.redraw();
+    // this.inherited(arguments);
+// },
+// 
+// "activate": function(e) {
+    // //hide any infowindow that is showing
+    // // Hide infoWindow if necessary. This also destroys all widgets of the infoform.
+    // // If not done here e.g. IE cannot destroy all the widgets, because infoForms DOM structure is changed
+    // if(map.infoWindow.isShowing) {
+        // map.infoWindow.hide();
+    // }
+// 
+    // map.disableDoubleClickZoom();
+// 
+    // this.focusNode.className = "active";
+// 
+    // //destroy tempButton in a proper way
+    // if(tempButton !== undefined && tempButton !== this) {
+        // if(dijit.byId(tempButton.id) === undefined) {
+            // tempButton.destroy();
+        // } else {
+            // tempButton.redraw();
+        // }
+        // tempButton = undefined;
+    // }
+// 
+    // tempButton = this;
+// 
+    // if(this.cursorImg !== undefined) {
+        // setCursor("map_layers", "url(" + this.cursorImg + ")");
+        // disableCursorChange();
+    // }
+// 
+    // if(this.draw === "POINT") {
+        // tb.activate(esri.toolbars.Draw.POINT, {tooltipOffset: 26});
+        // tbactivated = true;
+        // this.drawEvent = dojo.connect(tb, "onDrawEnd", dojo.hitch(this, this.confirm));
+        // return;
+        // }
+    // else if(this.draw === "POLYGON") {
+        // tb.activate(esri.toolbars.Draw.POLYGON);
+        // tbactivated = true;
+        // this.drawEvent = dojo.connect(tb, "onDrawEnd", dojo.hitch(this, this.confirm));
+        // return;
+        // }
+    // else if(this.draw === "POLYLINE") {
+        // tb.activate(esri.toolbars.Draw.POLYLINE);
+        // tbactivated = true;
+        // /*//TOOLTIP
+        // edge = 0;
+// 
+        // showToolTip(tooltiphelp[djConfig.locale].firstedge,e.clientY,e.clientX,true);
+// 
+        // this.polyhelpEvent = dojo.connect(map, "onClick", function(event) {
+                                                            // //console.log(event);
+                                                            // edge = edge + 1;
+                                                            // if(edge === 1) {
+                                                                // changeToolTipText(tooltiphelp[djConfig.locale].firstedge);
+                                                            // } else if (edge == 2) {
+                                                                // changeToolTipText(tooltiphelp[djConfig.locale].nextedge);
+                                                            // }
+                                                        // }
+                                                    // );
+        // //END TOOLTIP*/
+        // this.drawEvent = dojo.connect(tb, "onDrawEnd",dojo.hitch(this,this.confirm));
+        // return;
+        // }
+    // else if(this.draw === "MULTIPOINT") {
+        // tb.activate(esri.toolbars.Draw.POINT);
+        // tbactivated = true;
+        // this.drawEvent = dojo.connect(tb, "onDrawEnd", dojo.hitch(this, this.confirm));
+        // return;
+    // }
+    // else if(this.draw === "FREEHAND_POLYLINE") {
+        // tb.activate(esri.toolbars.Draw.FREEHAND_POLYLINE);
+        // tbactivated = true;
+        // this.drawEvent = dojo.connect(tb, "onDrawEnd",dojo.hitch(this,this.confirm));
+        // return;
+        // }
+// },
+// 
+// "deactivate": function(e) {
+    // //if the max amount of values are set the button should be disabled!!
+// 
+    // if (tb._graphic && tb._points.length > 1) {
+        // var el = {};
+        // //el.mapPoint = tb._points.pop();
+        // //tb._onDblClickHandler(el);
+// //			alert("deactivate imagebutton");
+// //			dojo.stopEvent(e);
+// //			tb.onDrawEnd(tb._graphic);
+// 
+    // }
+// 
+    // if(this.graphicAttr.max !== undefined && this.graphicAttr.max <= this.value.length) {
+        // this.disable();
+        // return;
+    // }
+// 
+    // setCursor("map_layers", "");
+    // enableCursorChange();
+    // // ESRI has own tooltips
+    // //hideToolTip();
+    // // for tempButtons focusNode is undefined
+    // if(this.focusNode !== undefined) {
+        // this.focusNode.className = "deactive";
+    // }
+    // dojo.disconnect(this.drawEvent);
+    // tbactivated = false;
+    // tb.deactivate();
+// 
+    // },
+// 
+// "disable": function(e) {
+    // setCursor("map_layers","");
+    // enableCursorChange();
+// 
+    // this.focusNode.className = "disabled";
+// 
+    // this.disabledIB = true;
+    // dojo.disconnect(this.drawEvent);
+    // if(tb !== undefined) {
+        // tbactivated = false;
+        // tb.deactivate();
+    // }
+    // try {
+        // if (this.disableWith !== undefined) {
+            // var widget = dijit.byId(this.disableWith);
+            // if (widget.disabledIB !== true) {
+                // widget.disable();
+            // }
+        // }
+    // } catch(ex) {
+    // }
+// },
+// 
+// "enable": function(e) {
+    // this.focusNode.className = "deactive";
+    // this.disabledIB = false;
+    // //dojo.disconnect(this.drawEvent);
+    // //tb.deactivate();
+    // if(this.disableWith !== undefined) {
+        // try {
+            // var widget = dijit.byId(this.disableWith);
+            // if (widget.disabledIB !== false) {
+                // widget.enable();
+            // }
+        // } catch(ex) {
+        // }
+    // }
+// },
+// 
+    // //INFOWINDOW HANDLING PART
+    // "confirm": function(geometry) {
+        // if(djConfig.isDebug) {
+            // console.log("confirm for button called with geom: ");
+            // console.log(geometry);
+        // }
+    // var p;
+    // //console.log("confirm graphic: " + dojo.toJson(geometry));
+    // //add to the map an unconfirmed graphic
+    // this.addGraphic(geometry);
+// 
+    // //set the content of the infowindow
+    // map.infoWindow.setTitle(this.unconfirmed.getTitle());
+    // map.infoWindow.setContent(this.unconfirmed.getContent());
+// 
+    // //deactivate all imageButtons
+    // this.deactivate();
+    // this.pool.deactivateAll();
+// 
+    // if(this.draw === "POINT" || this.draw === "MULTIPOINT") {
+// 
+            // //pop up the infowindow
+            // p = map.toScreen(geometry);
+            // map.infoWindow.show(p,map.getInfoWindowAnchor(p));
+// 
+            // return;
+        // }
+    // else if(this.draw === "POLYGON") {
+// 
+            // //pop up the infowindow
+            // p = map.toScreen(geometry.getExtent().getCenter());
+            // map.infoWindow.show(p,map.getInfoWindowAnchor(p));
+// 
+            // return;
+        // }
+    // else if(this.draw === "POLYLINE") {
+            // //TEST
+            // dojo.disconnect(this.polyhelpEvent);
+            // //END TEST
+            // //pop up the infowindow
+            // var pl = geometry.paths[0].length - 1;
+            // p = map.toScreen(new esri.geometry.Point(geometry.paths[0][pl][0], geometry.paths[0][pl][1]));
+            // map.infoWindow.show(p,map.getInfoWindowAnchor(p));
+// 
+            // return;
+        // }
+    // },
+// 
+    // "confirmResult": function(bool) {
+    // if(this.unconfirmed !== undefined && bool) {
+            // if(this.replaceGraphic !== undefined) {
+                // this._removeValueAttr(this.replaceGraphic.geometry);
+                // this.replaceGraphic = undefined;
+            // }
+            // this._addValueAttr(this.unconfirmed.geometry);
+            // this.redraw();
+            // this.unconfirmed = undefined;
+    // } else {
+            // this.redraw();
+            // this.unconfirmed = undefined;
+        // }
+    // }
+// });
+// }
 
 /*
 button pool class
@@ -4929,43 +4549,43 @@ this object takes care of buttons so that only one button at a time in the same 
 */
 
 
-dojo.declare("ButtonPool", null,
-{
-"active": null,
-
-"click": function(button,e) {
-if(null === button) {
-    return;
-}
-if(this.active === button) {
-    this.active.deactivate(e);
-    this.active = null;
-    return;
-}
-if (this.active) {
-    if(!this.active.disabledIB) {
-        this.active.deactivate(e);
-    }
-    this.active = button;
-    button.activate(e);
-    return;
-}
-if(!button.disabledIB) {
-    this.active = button;
-    button.activate(e);
-    return;
-}
-},
-
-"deactivateAll": function() {
-if(this.active && !this.active.disabledIB) {
-    this.active.deactivate();
-    this.active = null;
-    return;
-}
-}
-}
-);
+// dojo.declare("ButtonPool", null,
+// {
+// "active": null,
+// 
+// "click": function(button,e) {
+// if(null === button) {
+    // return;
+// }
+// if(this.active === button) {
+    // this.active.deactivate(e);
+    // this.active = null;
+    // return;
+// }
+// if (this.active) {
+    // if(!this.active.disabledIB) {
+        // this.active.deactivate(e);
+    // }
+    // this.active = button;
+    // button.activate(e);
+    // return;
+// }
+// if(!button.disabledIB) {
+    // this.active = button;
+    // button.activate(e);
+    // return;
+// }
+// },
+// 
+// "deactivateAll": function() {
+// if(this.active && !this.active.disabledIB) {
+    // this.active.deactivate();
+    // this.active = null;
+    // return;
+// }
+// }
+// }
+// );
 
 /*
 simple dijit for showing value of horizontalslider
@@ -5090,13 +4710,6 @@ for (g in questionnaire.graphics) {
     }
 }
 
-/*
-//FIX for esri svg image fill = none to fill = white
-svgimages = document.getElementsByTagName("image");
-for(i = 0; i < svgimages.length; i++) {
-    svgimages[i].setAttributeNS(null, "fill", "white");
-}
-*/
 }
 
 /*
