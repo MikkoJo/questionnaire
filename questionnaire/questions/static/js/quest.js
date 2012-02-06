@@ -20,7 +20,7 @@ dojo.require("dojo.parser");
 //dojo.require("dojo.html");
 //dojo.require("dijit.form.VerticalRule");
 dojo.require("dijit.form.HorizontalSlider");
-dojo.require("dijit.form.FilteringSelect");
+//dojo.require("dijit.form.FilteringSelect");
 dojo.require("dijit.form.Form");
 dojo.require("dojox.fx.style");
 dojo.require("dojo.cookie");
@@ -3925,6 +3925,8 @@ function init() {
 
     //give the user impression that the program is doing something
     document.body.style.cursor = "default";
+    //Defaults to satellite map
+    satellite(true);
 
 
 }
