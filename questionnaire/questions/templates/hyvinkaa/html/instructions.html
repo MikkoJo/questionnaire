@@ -228,8 +228,11 @@
     <td>
     <p class="">
         {% blocktrans %}
+        Tutkimuksessa ei käsitellä henkilötietolain piiriin kuuluvia tietoja (kuten osoitteita, nimiä
+        tai henkilötunnuksia).
        {% endblocktrans %}
     </p>
+{% comment %}
     <p class="">
         {% blocktrans %}
         Tutkimuksessa ei käsitellä henkilötietolain piiriin kuuluvia tietoja (kuten osoitteita, nimiä
@@ -247,11 +250,13 @@
         rakennuksessa asuvien ihmisten vastauksia.
         {% endblocktrans %}
     </p>
+{% endcomment %}
     </td>
     <td/>
 </tr>
 {% endblock privacy_protection %}
 {% block registry %}
+{% comment %}
 <tr>
     <td>
         <h2>
@@ -270,6 +275,7 @@
     </p>
     </td>
 </tr>
+{% endcomment %}
 {% endblock registry %}
 
 
