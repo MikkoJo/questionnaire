@@ -3285,3 +3285,9 @@ button.small .ui-icon {
 td.bigSlider {
     width: 70%;
 }
+
+/* FIX BUG with OpenLayers that shows popup with map data copyright */
+div.olLayerGooglePoweredBy
+{
+  display: none !important;
+}

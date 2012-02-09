@@ -3589,7 +3589,7 @@ function satellite(bool) {
 }
 
 function center(place) {
-    console.log("THIS IS NOT WORKING center");
+    console.log("THIS IS NOT WORKING: center");
     //TODO convert this function to OpenLayers
     if (place === "koti") {
         if(questionnaire.values.koti === undefined || questionnaire.values.koti[0] === undefined) {
