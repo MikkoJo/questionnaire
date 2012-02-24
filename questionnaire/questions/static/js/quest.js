@@ -966,6 +966,9 @@ function enableCursorChange() {
 
 function getValues(form) {
     console.log("getValues");
+    if(form === undefined) {
+        return {};
+    }
     var values, valueName, i;
     // Prevent values of the imagebuttons to be added to the form values.
     // If those are added the geometries are saved to the profilevalues.
@@ -1433,13 +1436,13 @@ function create_widgets(node_id) {
     var imagebutton_elements = dojo.query("button[type=button].imagebutton", node_id);
     var dojobutton_elements = dojo.query("button[type=button].dojobutton", node_id);
     var no_submitform_elements = dojo.query("form[class=no_submit]", node_id);
-    var select_elements = dojo.query("select", node_id);
     var range_elements = dojo.query("input[type=range]", node_id);
 /*    var radio_elements = dojo.query("input[type=radio]", node_id);
     var checkbox_elements = dojo.query("input[type=checkbox]", node_id);
     var text_elements = dojo.query("input[type=text]", node_id);
     var textarea_elements = dojo.query("textarea", node_id);
     var number_elements = dojo.query("input[type=number]", node_id);
+    var select_elements = dojo.query("select", node_id);
     var email_elements = dojo.query("input[type=email]", node_id);*/
     var i;
     var json_def;
@@ -1708,7 +1711,7 @@ function create_widgets(node_id) {
         var sta = new dijit.form.SimpleTextarea(json_def,
                                                textarea_element);
     }
-*/
+
     //create select (dijit filteringselect)
     for(i = 0; i < select_elements.length; i++) {
         json_def = {};
@@ -1735,7 +1738,7 @@ function create_widgets(node_id) {
 //        var fs = new dijit.form.Select(json_def,
 //                                                select_element);
     }
-
+*/
     //create range (slider) SliderRules and rulevalues not implemented yet
     for(i = 0; i < range_elements.length; i++) {
         json_def = {};
@@ -2081,6 +2084,9 @@ function createWidgets(formObjects) {
 
 function setValues(form, values) {
     console.log("setValues");
+    if(form === undefined) {
+        return;
+    }
     form.set('value',values);
     var e, k, vn;
     //FIX for input elements inside dojo form
