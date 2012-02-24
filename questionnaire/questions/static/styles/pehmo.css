@@ -96,6 +96,11 @@ background-image: url("../img/pehmogis_kkolmio_logo.png");
 width: 173px;
 }
 
+.hyvinkaa_fi #logo, .hyvinkaa_en #logo {
+background-image: url("../img/hyvinkaa_logo.png");
+width: 173px;
+}
+
 div#fcg_logo {
 background-image: url("../img/FCG-logo.png");
 position: absolute;
@@ -294,6 +299,21 @@ padding-bottom: 7px;
 vertical-align: middle;
 text-decoration: underline;
 }
+
+#feedbackLink {
+position: absolute;
+right: 2%;
+top: 5px;
+width: 110px;
+height: 20px;
+vertical-align: middle;
+cursor: pointer;
+text-align: right;
+}
+#feedbackLink span.headertext {
+padding-right: 0px;
+}
+
 /*#save:hover, #help:hover {
 color: #66CCFF;
 text-decoration: underline;
@@ -322,7 +342,7 @@ background-image: url("../img/harmlapi.png");
 cursor: auto;
 }
 
-
+/*
 div#navigation {
 background: transparent no-repeat url("../img/navigaatio_tausta.png");
 color: black;
@@ -333,7 +353,7 @@ width: 82px;
 height: 414px;
 z-index: 42;
 }
-
+*/
 /*
 Override tundra for sliders
 */
@@ -404,6 +424,7 @@ opacity: 0.2;
 filter: alpha(opacity=80);*/
 height:100%;
 width: 100%;
+top: 0;
 z-index: 90; /*should be lower than subwindow*/
 }
 
@@ -628,7 +649,7 @@ padding-left:20px;
 padding-right:20px;
 }
 
-div.mainTextArea{form_backgrounds
+div.mainTextArea {
 width:700px;
 /*background: url("../img/mainBgImg.png") no-repeat;*/
 background: url("../img/form_backgrounds.png") no-repeat -801px 0px;
@@ -645,9 +666,9 @@ div.firstpagepic {
 position: absolute;
 width: 670px;
 /*height: 428px;*/
-height: 373px;
+height: 452px;
 bottom: 7px;
-background-image: url("../img/pehmoGIS_aloitus_uusi.jpg");
+background-image: url("../img/hyvinkaa_front.jpg");
 background-repeat: no-repeat;
 background-color: transparent;
 z-index: 1;
@@ -1414,6 +1435,7 @@ outline: none;
 cursor: pointer;
 overflow:hidden;
 }
+/*
 .deactive {
 width: 100%;
 height: 100%;
@@ -1432,7 +1454,7 @@ height: 100%;
 background-repeat: no-repeat;
 outline: none;
 }
-
+*/
 /*classtypes*/
 div.positive {
 width: 104px;
@@ -1978,7 +2000,10 @@ height: 21px;
 width: 120px;
 cursor: pointer;
 }
-
+.subwindowBottom .previous.feedback {
+    background: none;
+}
+    
 .buttonArea .previous span {
 font-family: Helvetica;
 position: relative;
@@ -2035,6 +2060,9 @@ background-repeat: no-repeat;
 cursor: pointer;
 width: 120px;
 height: 39px;
+}
+.subwindowBottom .next.feedback {
+    background-image: url("../img/buttons/jatkanappi.png");
 }
 
 .buttonArea .next span {
@@ -2703,12 +2731,12 @@ background: transparent url("../img/progressbar/naviBgUndone50.gif") repeat-x sc
 td.barRight{
 background: transparent url("../img/progressbar/naviBgUndoneRight50.gif") no-repeat scroll top right;
 }
-
+/*
 div.firstpagepic {
 background-image: url("../img/kirkkojarvi_etusivu_med.jpg");
 background-position: 140px -10px;
 }
-
+*/
 div.buttonstart p {
 text-align: center;
 font-size: 16px;
@@ -3156,19 +3184,110 @@ button.finish {
     top: 4px !important;
 }
 .olControlOverviewMapElement {
-    background-color: #BBBBBB !important;
+    background: #BBBBBB !important;
+    background: rgba(0, 0, 0, 0.3) !important;
     border-radius: 1em !important;
     padding: 10px 10px 10px 10px !important;
 }
 div#ovcont {
     background-image: none;
 }
-div#navigation {
-    background-image: none;
+#layerToggle {
+    position: absolute;
+    right: 80px;
+    top: 420px;
+    z-index: 1003;
 }
+/*div#navigation {
+    background-image: none;
+}*/
 div#map .olLayerGoogleV3.olLayerGooglePoweredBy {
     bottom: 75px !important;
 }
 div#map .olLayerGoogleV3.olLayerGoogleCopyright {
     bottom: 60px !important;
+}
+div#ovcont .olLayerGoogleV3 {
+    visibility: hidden;
+}
+
+button.pearl {
+    background-color: transparent;
+    background-image: url("../img/buttons/happiness.png");
+    background-position: 0 2px;
+    border: medium none;
+    height: 53px;
+    width: 260px;
+}
+button.pearl.ui-state-active {
+    background-position: 0px -51px;
+}
+button.small.drawbutton {
+    width: 220px;
+}
+button.small .ui-button-text{
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    padding: 1px 2.1em 1px 1em;
+    line-height: 15px;
+}
+button.small.ui-state-active {
+    border: 1px solid #009900;
+}
+button.small .ui-icon {
+    height: 18px;
+    width: 12px;
+}
+.green-icon {
+    background-image: url("../img/placemarks/small_green.png") !important;
+}
+.blue-icon {
+    background-image: url("../img/placemarks/small_blue.png") !important;
+}
+.cyan-icon {
+    background-image: url("../img/placemarks/small_cyan.png") !important;
+}
+.yellow-icon {
+    background-image: url("../img/placemarks/small_yellow.png") !important;
+}
+.brown-icon {
+    background-image: url("../img/placemarks/small_brown.png") !important;
+}
+.green_route-icon {
+    background-image: url("../img/placemarks/small_route_green.png") !important;
+}
+.blue_route-icon {
+    background-image: url("../img/placemarks/small_route_blue.png") !important;
+}
+.yellow_area-icon {
+    background-image: url("../img/placemarks/small_area_yellow.png") !important;
+}
+#mapitaCopy {
+    bottom: 60px;
+    color: black;
+    font-size: 13px;
+    height: 15px;
+    position: absolute;
+    right: 90px;
+    width: 180px;
+    z-index: 54;
+}
+#mapitaLogo {
+    bottom: 60px;
+    height: 28px;
+    position: absolute;
+    right: 10px;
+    width: 92px;
+    z-index: 54;
+    background: transparent url("../img/mapita_logo.png") no-repeat scroll;
+}
+
+td.bigSlider {
+    width: 70%;
+}
+
+/* FIX BUG with OpenLayers that shows popup with map data copyright */
+div.olLayerGooglePoweredBy
+{
+  display: none !important;
 }
