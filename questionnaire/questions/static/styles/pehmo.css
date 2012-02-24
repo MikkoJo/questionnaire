@@ -1308,40 +1308,33 @@ z-index:54;
 font-size: 13px;
 }
 
-/* Pan divien tyylit*/
-div#panTop {
+/* BorderPan divien tyylit*/
+.borderPanDiv {
     background-color: transparent;
+    position: fixed;
+    z-index: 1004;
+}
+div#panTop {
     width: 100%;
     height: 20px;
-    position: fixed;
     top: 60px;
-    z-index: 21;
 }
  div#panLeft {
-    background-color: transparent;
     width: 20px;
     height: 100%;
-    position: fixed;
     left: 0px;
-    z-index: 21;
 }
  div#panDown {
-    background-color: transparent;
     width: 100%;
     height: 20px;
-    position: fixed;
     bottom: 0px;
-    z-index: 21;
 }
  div#panRight{
-    background-color: transparent;
     width: 20px;
     height: 100%;
-    position: fixed;
     right: 0px;
-    z-index: 21;
 }
-.dj_ie .myPanArrows, .dj_ie .myPanDiv {
+.dj_ie .myPanArrows/*, .dj_ie .myPanDiv*/ {
     display: none;
 /*	visibility: hidden;*/
 }
