@@ -45,7 +45,12 @@ urlpatterns = patterns('',
     url(r'^begin$',
         'questions.views.begin',
         name='begin'),
-
+                       
+    #this for sending feedback from the service
+    url(r'^feedback/',
+        'questions.views.feedback',
+        name='feedback'),
+                       
     #this is for contact information
     url(r'^contact$',
         'questions.views.contact',

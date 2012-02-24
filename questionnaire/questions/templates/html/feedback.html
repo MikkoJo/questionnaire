@@ -1,0 +1,20 @@
+{% load i18n %}
+<div class="subwindowTop">
+    <h1>{% trans "Palautetta" %}</h1>
+    <form name="feedback" id="feedback">
+    <p>
+        {% trans "Voit kirjoittaa palautetta palvelusta alla olevaan kenttään." %}
+    </p>
+        {{ form.content }}
+    <br />
+</form>
+</div>
+<div class="subwindowBottom">
+    <div id="closeSub" class="previous feedback">
+        <span>{% trans 'Sulje ikkuna' %}</span>
+    </div>
+    <div class="next feedback">
+        <span class="buttontext">{% trans 'Lähetä' %}</span>
+    </div>
+</div>
+</div>

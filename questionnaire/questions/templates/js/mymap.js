@@ -2,13 +2,13 @@
 /*global dojo, document, esri, alert, djConfig, console, questionnaire, softgis, addGmapLayer,
   MAPSERVICE_URL, get_features, esriConfig, dijit, confirm, logout, window, userid, gnt, questionnaire_logout
  */
-//{% load i18n %}  
+//{% load i18n %}
 
 
-dojo.require("esri.map");
-dojo.require("esri.layers.agstiled");
-dojo.require("esri.toolbars.draw");
-dojo.require("esri.dijit.InfoWindow");
+//dojo.require("esri.map");
+//dojo.require("esri.layers.agstiled");
+//dojo.require("esri.toolbars.draw");
+//dojo.require("esri.dijit.InfoWindow");
 dojo.require("dojo.parser");
 dojo.require("dojox.fx.style");
 dojo.require("dijit.Tooltip");
@@ -88,7 +88,7 @@ function movePolygonToTop(n) {
         if(p === null || p === undefined) {
             return;
         }
-        
+
         //attributes[0] = fill, it's none for routes and images (images don't work due svg bug, where fill is removed) FIXED: nodeName="image"
         for (i = 0; i < p.childNodes.length; i++) {
             if (p.childNodes[i] && (p.childNodes[i].attributes[0].nodeValue === "none" || p.childNodes[i].nodeName === "image") && !inserted) {
@@ -97,7 +97,7 @@ function movePolygonToTop(n) {
                 break;
             }
             //For IE which uses vml graphics
-            else 
+            else
                 if (p.childNodes[i] && p.childNodes[i].nodeName === "rect" && !inserted) {
                     n.rawNode.parentNode.insertBefore(n.rawNode, n.rawNode.parentNode.childNodes[i]);
                     inserted = true;
@@ -111,12 +111,12 @@ function movePolygonToTop(n) {
 function fixSVGbug() {
     var svgImages = document.getElementsByTagName("image"),
         i;
-        
+
     for(i = 0; i < svgImages.length; i++) {
 //		svgImages[i].setAttributeNS(null, "fill", "white");
         svgImages[i].removeAttribute("fill");
     }
-    
+
 }
 
 function setMapExtent(extent, graphics) {
@@ -145,13 +145,13 @@ function setMapExtent(extent, graphics) {
                 }
             }
         }
-        
-        
+
+
         //console.log(ext);
         if (ext !== undefined) {
             //esriConfig.defaults.map.panDuration = 1;
             //esriConfig.defaults.map.panRate = 1;
-            
+
             map.setExtent(ext, true);
             /*dojo.connect(map, "onResize", this, function(){
                 map.centerAt(oldCenter);
@@ -184,7 +184,7 @@ function get_features_callback(response_data) {
 
     var graphics = [];
     var response = response_data;
-    // Check for error 
+    // Check for error
     if(response.status !== undefined) {
         if(response.status !== 200) {
             alert("You are not authorized to view this map");
@@ -212,30 +212,30 @@ function get_features_callback(response_data) {
         //default values for ImageButton
         //this part can also be found when creating the Imagebutton for the page
         var ijson = questionnaire.imageButton[properties.node];
-        //default json 
+        //default json
         var defjson = clone(questionnaire.default_widgets.imagebutton);
         //the buttontext
         var defbuttontext = defjson.buttontext;
-        
+
         if(ijson.buttontext === undefined) {
             ijson.buttontext = defbuttontext;
         }
 
         //the graphic attributes
         var defgraphicattr = defjson.graphicAttr;
-        
+
         if(ijson.graphicAttr !== undefined) {
             defgraphicattr = dojo.mixin(defgraphicattr,ijson.graphicAttr);
         }
         ijson.graphicAttr = defgraphicattr;
         //the graphic strings
         var defgraphicstrings =  defjson.graphicStrings;
-        
+
         if(ijson.graphicStrings !== undefined) {
             defgraphicstrings = dojo.mixin(defgraphicstrings, ijson.graphicStrings);
         }
         ijson.graphicStrings = defgraphicstrings;
-        
+
         //combine them all together
         ijson = dojo.mixin(defjson,ijson);
         //default values code end
@@ -266,7 +266,7 @@ function get_features_callback(response_data) {
                             new dojo.Color([ijson.graphicAttr.rgb[0],
                                             ijson.graphicAttr.rgb[1],
                                             ijson.graphicAttr.rgb[2],
-                                            0.5]));             
+                                            0.5]));
 
         }
         graphic.setAttributes(dojo.mixin(ijson.graphicStrings,  properties));
@@ -285,7 +285,7 @@ function get_features_callback(response_data) {
         }*/
     }
 //    map.infoWindow.resize(200,150);
-    
+
     //setMapExtent(0, graphics);
     //add the layers to the map
     //create layer load handler
@@ -315,7 +315,7 @@ function get_features_callback(response_data) {
 }
 
 function getGraphics(/*userid,*/ extent) {
-    
+
     //console.log("getGraphics");
     dojo.xhrGet({
         // The following URL must match that used to test the server.
@@ -324,21 +324,21 @@ function getGraphics(/*userid,*/ extent) {
         timeout: 5000, // Time in milliseconds
         handleAs: "json",
         preventCache: true,
-        
+
         // The LOAD function will be called on a successful response.
         load: function(response, ioArgs){
                 //console.log(response);
                 userGraphics = response;
                 return response;
             },
-        
+
         // The ERROR function will be called in an error case.
         error: function(response, ioArgs){
             console.error("HTTP status code: ", ioArgs.xhr.status);
             return response;
         }
     });
-    
+
     var name;
     var i;
     var pituus;
@@ -355,7 +355,7 @@ function getGraphics(/*userid,*/ extent) {
     var symbWidth;
     var symbXoffset;
     var symbYoffset;
-    
+
     if(userGraphics !== null && userGraphics !== undefined) {
         for(name in userGraphics) {
             if (name !== null && name !== undefined) {
@@ -367,7 +367,7 @@ function getGraphics(/*userid,*/ extent) {
 
                     //graphic.setGeometry(questionary.values[this.graphicAttr.valuename][i].geom);
                     geom = esri.geometry.fromJson(userGraphics[name][i].geometry);
-                    gra.setGeometry(geom);					
+                    gra.setGeometry(geom);
                     gra.setAttributes(userGraphics[name][i].attributes);
                     if(userGraphics[name][i].attributes.shortheader !== null && userGraphics[name][i].attributes.shortheader !== undefined) {
                         gra.setInfoTemplate(infoTSH);
@@ -375,7 +375,7 @@ function getGraphics(/*userid,*/ extent) {
                     else {
                         gra.setInfoTemplate(infoTH);
                     }
-                    
+
                     if(userGraphics[name][i].symbol.type === "esriPMS") {
                         // Fixed atleast in esri jsapi 2.1
                         // json is missing width and height for picturemarkersymbols
@@ -396,13 +396,13 @@ function getGraphics(/*userid,*/ extent) {
                     }
                     //gra.setGeometry(geom);
                     gra.setSymbol(symb);
-                    
+
 
                     map.graphics.add(gra);
                     if (gra.geometry.type === "polygon") {
                         movePolygonToTop(gra.getDojoShape());
                     }
-                    
+
                 }
             }
         }
@@ -411,7 +411,7 @@ function getGraphics(/*userid,*/ extent) {
         }*/
     }
     map.infoWindow.resize(200,120);
-    
+
     setMapExtent(extent);
     //set the right extent for the map
 /*	if (extent === undefined || extent === 0) {
@@ -437,13 +437,13 @@ function getGraphics(/*userid,*/ extent) {
                 }
             }
         }
-        
-        
+
+
         //console.log(ext);
         if (ext !== undefined) {
             esriConfig.defaults.map.panDuration = 1;
             esriConfig.defaults.map.panRate = 1;
-            
+
             map.setExtent(ext);
             dojo.connect(map, "onResize", this, function(){
                 map.centerAt(oldCenter);
@@ -473,13 +473,13 @@ function getGraphics(/*userid,*/ extent) {
         graphicListener = dojo.connect(map.graphics, "onUpdate", fixSVGbug);
     }*/
     //See kysely.js
-    var drawListener = dojo.connect(map.graphics, "_draw", function(evt){ 
+    var drawListener = dojo.connect(map.graphics, "_draw", function(evt){
                         if (evt.geometry.type === "polygon") {
                             movePolygonToTop(evt.getDojoShape());
                         }
                         });
 }
-//init creates the map 
+//init creates the map
 function init() {
     //give the user impression that the program is doing something
 //	console.log(userid);
@@ -487,7 +487,7 @@ function init() {
     //get userid;
     //user = userid;
     //var ext;
-    map = new esri.Map("map", {"slider": true, 
+    map = new esri.Map("map", {"slider": true,
                                "nav": true,
                                "logo": false,
                                //"extent": new esri.geometry.Extent(questionnaire.initial_extent),
@@ -497,26 +497,26 @@ function init() {
     dojo.connect(map, "onResize", map.resize);
     dojo.connect(map, "onReposition", map.reposition);
     */
-    
+
     //tiledmap service layer with eight zoom levels
     tiledMapServiceLayer = new esri.layers.ArcGISTiledMapServiceLayer(MAPSERVICE_URL);
-    
+
     //get_features("?time__now=true", get_features_callback);
     gnt.geo.get_features("?time__now=true", get_features_callback);
     //configure esri default values
     esriConfig.defaults.map.panDuration = 700;
     esriConfig.defaults.map.panRate = 50;
-    
+
     //Change PAN FACTOR for navigation arrows
     map._FIXED_PAN_FACTOR = 0.3;
-    
+
     // Add tooltip to exit button
     var tt = new dijit.Tooltip({
         "connectId": ["closeButton"],
         "label": "{% trans 'Poistu omasta kartasta. Tämän jälkeen et voi enää katsoa vastauksiasi' %}",
         "showDelay": 100
     });
-    
+
     dojo.connect(dojo.byId("closeButton"), "onclick", function () {
         var test = confirm("{% trans 'Haluatko varmasti poistua kyselystä?' %}");
         //alert(test);
@@ -530,7 +530,7 @@ function init() {
     /*if (xmin !== undefined && xmin !== 0) {
         ext = new esri.geometry.Extent(xmin, ymin, xmax, ymax, 2393);
     }*/
-/*	
+/*
     //add the layers to the map
     //create layer load handler
     var loadHandler = function(l) {
@@ -546,11 +546,11 @@ function init() {
     }
 
     //map.setExtent(new esri.geometry.Extent(3393063.7213135,6680812.93433483,3396681.79244991,6683987.45909726,2393));
-    
+
     //configure esri default values
     esriConfig.defaults.map.panDuration = 700;
     esriConfig.defaults.map.panRate = 50;
-    
+
     //Change PAN FACTOR for navigation arrows
     map._FIXED_PAN_FACTOR = 0.3;
 
@@ -561,7 +561,7 @@ function init() {
     }
     else {
 //		dojo.connect(map, "onLoad", this, dojo.hitch(null, "getGraphics", userid, ext));
-        dojo.connect(map, "onLoad", this, dojo.hitch(null, "get_features", "?time__now=true", get_features_callback));		
+        dojo.connect(map, "onLoad", this, dojo.hitch(null, "get_features", "?time__now=true", get_features_callback));
     }*/
 }
 
@@ -571,7 +571,7 @@ function printMap(orien) {
     var ymin = oldCenter.ymin;
     var xmax = oldCenter.xmax;
     var ymax = oldCenter.ymax;
-    
+
     console.log(oldCenter);
     console.log(xmin);
     window.open('omakartta.asp?ui=' + user + '&xmi=' + xmin + '&ymi=' + ymin + '&xma=' + xmax + '&yma=' + ymax, 'height=400, width=600');

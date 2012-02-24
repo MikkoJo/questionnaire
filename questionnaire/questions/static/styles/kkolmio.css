@@ -23,13 +23,13 @@
     background-image: url("../img/buttons/happiness.png");
     background-position: 0 -104px;
 }
-
+/*
 div.firstpagepic {
     background-image: url("../img/kkolmio_etusivu.jpg");
     background-position: 260px 0;
     height: 460px;
 }
-
+*/
 .kkolmio_en .buttonArea .close {
     background-image: url("../img/buttons/emptyBlue117x42.png");
     width: 117px;
