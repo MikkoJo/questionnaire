@@ -2,7 +2,7 @@ import logging
 import os
 
 path = os.path.dirname(__file__)
-SITE_ID = 7
+SITE_ID = 8
 STATIC_ROOT = os.path.join(os.path.dirname(__file__), "questions/static")
 
 DEBUG = True
