@@ -133,6 +133,19 @@ var route_style = new OpenLayers.Style(
                     }
                 }),
                 new OpenLayers.Rule({
+                    // a rule contains an optional filter
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style", // the "foo" feature attribute
+                        value: "route_cyan"
+                    }),
+                    // if a feature matches the above filter, use this symbolizer
+                    symbolizer: {
+                        strokeColor: "#0000ff",
+                        strokeOpacity: 1
+                    }
+                }),
+                new OpenLayers.Rule({
                     elseFilter: true
                 })
            ]

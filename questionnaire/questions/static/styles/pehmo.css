@@ -649,7 +649,7 @@ padding-left:20px;
 padding-right:20px;
 }
 
-div.mainTextArea{form_backgrounds
+div.mainTextArea {
 width:700px;
 /*background: url("../img/mainBgImg.png") no-repeat;*/
 background: url("../img/form_backgrounds.png") no-repeat -801px 0px;
@@ -666,9 +666,9 @@ div.firstpagepic {
 position: absolute;
 width: 670px;
 /*height: 428px;*/
-height: 373px;
+height: 452px;
 bottom: 7px;
-/*background-image: url("../img/pehmoGIS_aloitus_uusi.jpg");*/
+background-image: url("../img/hyvinkaa_front.jpg");
 background-repeat: no-repeat;
 background-color: transparent;
 z-index: 1;
@@ -3284,4 +3284,10 @@ button.small .ui-icon {
 
 td.bigSlider {
     width: 70%;
+}
+
+/* FIX BUG with OpenLayers that shows popup with map data copyright */
+div.olLayerGooglePoweredBy
+{
+  display: none !important;
 }

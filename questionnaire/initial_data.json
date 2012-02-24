@@ -14,5 +14,13 @@
             "domain": "http://hyvinkaa.pehmogis.fi", 
             "name": "hyvinkaa"
         }
+    },
+    {
+        "pk": 9, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "http://kouvola.pehmogis.fi", 
+            "name": "kouvola"
+        }
     }
 ]

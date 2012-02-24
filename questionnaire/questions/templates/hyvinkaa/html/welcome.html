@@ -3,7 +3,7 @@
     <div class="firstpagepic">
         <!--#-->
     </div>
-    <h2 class="firstpagecontent">{% trans 'Miten haluaisin vanhan ratapihan muuttuvan?' %}</h2>
+    <h2 class="firstpagecontent">{% trans 'Miten haluaisin Hyvinkään vanhan Hangonratapihan muuttuvan?' %}</h2>
     <p class="firstpagecontent">
         {% blocktrans %}
         Tämän karttapohjaisen kyselyn avulla voit vaikuttaa Hangonratapihan suunnitteluun. Ratapiha on tarkoitus
@@ -41,17 +41,15 @@
         {% trans 'Jos haluat tutustua kyselyyn osallistumatta tutkimukseen' %},<br />
         <a class="testUserLink firstpagebutton" onclick="startAsTestUser();">{% trans 'paina tästä' %}</a>
     </p>
-<!--        <br />
+    <p class="centeredtext firstpagecontent firstpagebutton">
+        <a href="http://www.hyvinkaa.fi/Asuinymparisto_rakentaminen/Hangonratapiha-uudistuu/">{% trans 'Palaa Hangonratapiha uudistuu -sivulle' %}</a>
     </p>
-    <p class="centeredtext firstpagecontent firstpagebutton" style="text-align: center;">
-        <a class="testUserLink firstpagebutton next" onclick="startAsTestUser();">{% trans 'paina tästä' %}</a>
-    /p>-->
 </div>
 <div class="mainBottom firstpagecontent">
     {% blocktrans %}
         Lisätietoja alueen suunnittelusta ja arkkitehtuurikilpailusta antavat kaavoituspäällikkö Anne Jarva (040-155 4220)
         ja kaava-arkkitehti Mika Ahonen (040-155 4274)
     {% endblocktrans %}
-    <a href="{% url main_html file_name='instructions' %}#kytojatu" onclick="window.open(this.href); return false;">{% trans 'Lisätietoa tutkimuksesta' %}</a>.
+    <a href="{% url main_html file_name='instructions' %}#ti" onclick="window.open(this.href); return false;">{% trans 'Lisätietoa tutkimuksesta' %}</a>.
 
 </div>
