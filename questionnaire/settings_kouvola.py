@@ -8,6 +8,7 @@ LANGUAGE_CODE = 'fi-fi'
 
 LANGUAGES = (('fi', 'finnish'),)
 
+MEDIA_ROOT = '/home/mikko/.virtualenvs/geon_new/lib/python2.7/site-packages/gntimages-0.1-py2.7.egg/gntimages'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis', #gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
@@ -15,7 +16,7 @@ DATABASES = {
         'USER': 'pehmogis',                      # Not used with sqlite3.
         'PASSWORD': 'pehmogis',                  # Not used with sqlite3.
         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5433',                      # Set to empty string for default. Not used with sqlite3.
+        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 

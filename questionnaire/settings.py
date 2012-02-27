@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     #'user_profile',
     'geonition_client',
     'email_rest',
+    'gntimages',
 
     #questionnaires application
     'questions'

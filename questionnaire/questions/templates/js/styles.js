@@ -84,6 +84,16 @@ var point_style = new OpenLayers.Style(
                     }
                 }),
                 new OpenLayers.Rule({
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style",
+                        value: "point_purple"
+                    }),
+                    symbolizer: {
+                        externalGraphic: "/gntimages/needle?color=7408a1"
+                    }
+                }),
+                new OpenLayers.Rule({
                     elseFilter: true
                 })
            ]
