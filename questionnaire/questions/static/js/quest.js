@@ -966,6 +966,9 @@ function enableCursorChange() {
 
 function getValues(form) {
     console.log("getValues");
+    if(form === undefined) {
+        return {};
+    }
     var values, valueName, i;
     // Prevent values of the imagebuttons to be added to the form values.
     // If those are added the geometries are saved to the profilevalues.
@@ -1433,13 +1436,13 @@ function create_widgets(node_id) {
     var imagebutton_elements = dojo.query("button[type=button].imagebutton", node_id);
     var dojobutton_elements = dojo.query("button[type=button].dojobutton", node_id);
     var no_submitform_elements = dojo.query("form[class=no_submit]", node_id);
-    var select_elements = dojo.query("select", node_id);
     var range_elements = dojo.query("input[type=range]", node_id);
 /*    var radio_elements = dojo.query("input[type=radio]", node_id);
     var checkbox_elements = dojo.query("input[type=checkbox]", node_id);
     var text_elements = dojo.query("input[type=text]", node_id);
     var textarea_elements = dojo.query("textarea", node_id);
     var number_elements = dojo.query("input[type=number]", node_id);
+    var select_elements = dojo.query("select", node_id);
     var email_elements = dojo.query("input[type=email]", node_id);*/
     var i;
     var json_def;
@@ -1708,7 +1711,7 @@ function create_widgets(node_id) {
         var sta = new dijit.form.SimpleTextarea(json_def,
                                                textarea_element);
     }
-*/
+
     //create select (dijit filteringselect)
     for(i = 0; i < select_elements.length; i++) {
         json_def = {};
@@ -1735,7 +1738,7 @@ function create_widgets(node_id) {
 //        var fs = new dijit.form.Select(json_def,
 //                                                select_element);
     }
-
+*/
     //create range (slider) SliderRules and rulevalues not implemented yet
     for(i = 0; i < range_elements.length; i++) {
         json_def = {};
@@ -2081,6 +2084,9 @@ function createWidgets(formObjects) {
 
 function setValues(form, values) {
     console.log("setValues");
+    if(form === undefined) {
+        return;
+    }
     form.set('value',values);
     var e, k, vn;
     //FIX for input elements inside dojo form
@@ -3455,18 +3461,28 @@ function init() {
                             {"expires": -1});
 
     map = new OpenLayers.Map('map', {projection: new OpenLayers.Projection("EPSG:3857"),
-                                     maxExtent: new OpenLayers.Bounds(-37532.28,
-                                                                       8312664.808,
-                                                                       6194837.250,
-                                                                       10758649.712),
-                                     maxResolution: 4891,
+//                                     maxExtent: new OpenLayers.Bounds(-37532.28,
+//                                                                       8312664.808,
+//                                                                       6194837.250,
+//                                                                       10758649.712),
+//                                     maxResolution: 4891,
                                      paddingForPopups: new OpenLayers.Bounds(330,70,15,15),
                                      controls: []});
 
 
-    gMapDef = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
-    gMapSat = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
-                                                            numZoomLevels: 22});
+    
+//    gMapDef = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
+//    gMapSat = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
+//                                                            numZoomLevels: 22});
+    gMapDef = new OpenLayers.Layer.Bing({name: "Main",
+                                         type: "Road",
+                                         key: "AjB69asvfCy_FaIvDNBzCFc2eJdF7m7_bA7-M-xpJKctrxjmYQjqYX5DRCH0sd3J",
+                                         culture: "fi"});
+    gMapSat = new OpenLayers.Layer.Bing({name: "Satellite",
+                                         type: "AerialWithLabels",
+                                         key: "AjB69asvfCy_FaIvDNBzCFc2eJdF7m7_bA7-M-xpJKctrxjmYQjqYX5DRCH0sd3J",
+                                         culture: "fi"});
+
     pointLayer = new OpenLayers.Layer.Vector("Point Layer", {
                                 styleMap: new OpenLayers.StyleMap(point_style)
                         });
@@ -3477,8 +3493,13 @@ function init() {
                                 styleMap: new OpenLayers.StyleMap(area_style)
                         });
 
+    zoneLayer = new OpenLayers.Layer.Vector("Zone Layer", {
+                                styleMap: new OpenLayers.StyleMap(zone_style)
+                        });
+                        
     map.addControls([new OpenLayers.Control.OverviewMap({'div': dojo.byId("ovcont"),
                                                          'size': new OpenLayers.Size(190,190)}),
+                                 new OpenLayers.Control.Attribution(),
                                  new OpenLayers.Control.Navigation({}),
                                  new OpenLayers.Control.PanZoomBar({id: 'navigation'})]);
     //TEST
@@ -3489,7 +3510,7 @@ function init() {
 
     var aliasproj = new OpenLayers.Projection("EPSG:3857");
     gMapDef.projection = gMapSat.projection = aliasproj;
-    map.addLayers([gMapDef, gMapSat, areaLayer, routeLayer, pointLayer]);
+    map.addLayers([gMapDef, gMapSat, areaLayer, routeLayer, pointLayer, zoneLayer]);
     map.setCenter(new OpenLayers.LonLat(2766225.683368, 8540628.690266), 15);
 
     var pointcontrol = new OpenLayers.Control.DrawFeature(pointLayer,
@@ -3519,10 +3540,16 @@ function init() {
             hover: false,
             id: "selectcontrol"
             });
+            
     console.log("add control to layer");
     console.log(select_feature_control);
     map.addControl(select_feature_control);
     select_feature_control.activate();
+    
+    // Add zone borders
+    var geojson_format = new OpenLayers.Format.GeoJSON();
+    zoneLayer.addFeatures(geojson_format.read(questionnaire.zone_featurecollection));
+    
     // Enable Pan onmouseOut
     if (!dojo.isIE) {
         enableMyPan(); //DISABLE FOR NOW
@@ -3564,7 +3591,9 @@ function init() {
     document.body.style.cursor = "default";
     //Defaults to satellite map
     satellite(true);
-    gMapDef.redraw();
+    // Ugly way to zoom to kouvola keha
+    map.zoomToExtent(zoneLayer.getFeaturesByAttribute("Name", "keha")[0].geometry.getBounds(), true);
+    //gMapDef.redraw();
 
 
 }
@@ -3576,15 +3605,18 @@ function satellite(bool) {
             //dojo.byId("ilmakuvaNakyma").src = "./img/ilmakuva_nappi_aktiivinen.png";
             dojo.byId("karttaNakyma").className = "karttanakyma";
             dojo.byId("ilmakuvaNakyma").className = "aktiivinenkartta";
+            gMapDef.map.setBaseLayer(gMapSat);
             //gMapDef.setVisibility(false);
-            gMapSat.setVisibility(true);
+            //gMapSat.setVisibility(true);
         } else {
             //dojo.byId("karttaNakyma").src = "./img/kartta_nappi_aktiivinen.png";
             //dojo.byId("ilmakuvaNakyma").src = "./img/ilmakuva_nappi.png";
             dojo.byId("karttaNakyma").className = "aktiivinenkartta";
             dojo.byId("ilmakuvaNakyma").className = "karttanakyma";
-            //gMapDef.setVisibility(true);
-            gMapSat.setVisibility(false);
+            gMapDef.map.setBaseLayer(gMapDef);
+//            gMapDef.setVisibility(true);
+//            gMapSat.setVisibility(false);
+//            gMapDef.
         }
 }
 

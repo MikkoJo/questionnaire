@@ -2003,7 +2003,7 @@ cursor: pointer;
 .subwindowBottom .previous.feedback {
     background: none;
 }
-    
+
 .buttonArea .previous span {
 font-family: Helvetica;
 position: relative;
@@ -3253,6 +3253,9 @@ button.small .ui-icon {
 .brown-icon {
     background-image: url("../img/placemarks/small_brown.png") !important;
 }
+.purple-icon {
+    background-image: url("/gntimages/needle?color=7408a1&scale=0.5") !important;
+}
 .green_route-icon {
     background-image: url("../img/placemarks/small_route_green.png") !important;
 }
@@ -3270,7 +3273,7 @@ button.small .ui-icon {
     position: absolute;
     right: 90px;
     width: 180px;
-    z-index: 54;
+    z-index: 1001;
 }
 #mapitaLogo {
     bottom: 60px;
@@ -3278,7 +3281,7 @@ button.small .ui-icon {
     position: absolute;
     right: 10px;
     width: 92px;
-    z-index: 54;
+    z-index: 1001;
     background: transparent url("../img/mapita_logo.png") no-repeat scroll;
 }
 
@@ -3291,3 +3294,9 @@ div.olLayerGooglePoweredBy
 {
   display: none !important;
 }
+
+.olControlAttribution {
+    bottom: 60px;
+    left: 5px;
+    line-height: 11px;
+} 
