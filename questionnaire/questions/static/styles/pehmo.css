@@ -100,6 +100,10 @@ width: 173px;
 background-image: url("../img/hyvinkaa_logo.png");
 width: 173px;
 }
+.kouvola_fi #logo, .kouvola_en #logo {
+background-image: url("../img/kouvola_logo.png");
+width: 173px;
+}
 
 div#fcg_logo {
 background-image: url("../img/FCG-logo.png");
@@ -3185,7 +3189,7 @@ button.finish {
 }
 .olControlOverviewMapElement {
     background: #BBBBBB !important;
-    background: rgba(0, 0, 0, 0.3) !important;
+    background: rgba(100, 100, 100, 0.8) !important;
     border-radius: 1em !important;
     padding: 10px 10px 10px 10px !important;
 }
@@ -3296,7 +3300,7 @@ div.olLayerGooglePoweredBy
 }
 
 .olControlAttribution {
-    bottom: 60px;
+    bottom: 60px !important;
     left: 5px;
     line-height: 11px;
-} 
+}

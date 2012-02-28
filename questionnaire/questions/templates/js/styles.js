@@ -203,11 +203,9 @@ var zone_style = new OpenLayers.Style(
         // all other symbolizers in rules will extend this one
         {
             strokeWidth: 2,
-            pointRadius: 3,
             pointerEvents: "visiblePainted",
-            cursor: "pointer",
             strokeColor: "red",
-            strokeOpacity: 0.4,
+            strokeOpacity: 0.9,
             fillColor:  "#ffffff",
             fillOpacity: 0
         },
@@ -217,12 +215,12 @@ var zone_style = new OpenLayers.Style(
                     // a rule contains an optional filter
                     filter: new OpenLayers.Filter.Comparison({
                         type: OpenLayers.Filter.Comparison.EQUAL_TO,
-                        property: "name", // the "foo" feature attribute
-                        value: "keha"
+                        property: "Name", // the "foo" feature attribute
+                        value: "keskusta"
                     }),
                     // if a feature matches the above filter, use this symbolizer
                     symbolizer: {
-                        strokeColor: "#ffd700"
+                        strokeColor: "#a405ae"
                     }
                 }),
                 new OpenLayers.Rule({
