@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     #'user_profile',
     'geonition_client',
     'email_rest',
+    'data_processing',
 
     #questionnaires application
     'questions'
@@ -173,5 +174,6 @@ JAVASCRIPT_CLIENT_TEMPLATES = [#'softgis_profile.esri.js',
                                'softgis_email.jquery.js',
                                #'softgis_feature.esri.js',
                                'geonition_geojson.jquery.js',
-                               'opensocial_people.jquery.js'
+                               'opensocial_people.jquery.js',
+			       'data_processing.jquery.js'
                                ]
