@@ -198,3 +198,35 @@ var area_style = new OpenLayers.Style(
            ]
         }
     );
+var zone_style = new OpenLayers.Style(
+        // the first argument is a base symbolizer
+        // all other symbolizers in rules will extend this one
+        {
+            strokeWidth: 2,
+            pointRadius: 3,
+            pointerEvents: "visiblePainted",
+            cursor: "pointer",
+            strokeColor: "red",
+            strokeOpacity: 0.4,
+            fillColor:  "#ffffff",
+            fillOpacity: 0
+        },
+{
+            rules: [
+                new OpenLayers.Rule({
+                    // a rule contains an optional filter
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "name", // the "foo" feature attribute
+                        value: "keha"
+                    }),
+                    // if a feature matches the above filter, use this symbolizer
+                    symbolizer: {
+                        strokeColor: "#ffd700"
+                    }
+                }),
+                new OpenLayers.Rule({
+                    elseFilter: true
+                })
+           ]
+        }    );

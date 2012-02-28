@@ -23,7 +23,7 @@ urlpatterns = patterns('',
     (r'^gfeature/', include('geojson_rest.urls')),
     (r'^gemail/', include('email_rest.urls')),
     (r'^gopen_people/', include('opensocial_people.urls')),
-    (r'^gntimages/', include('gntimages.urls')),
+#    (r'^gntimages/', include('gntimages.urls')),
 
     #admin
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),

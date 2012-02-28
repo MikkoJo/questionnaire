@@ -3273,7 +3273,7 @@ button.small .ui-icon {
     position: absolute;
     right: 90px;
     width: 180px;
-    z-index: 54;
+    z-index: 1001;
 }
 #mapitaLogo {
     bottom: 60px;
@@ -3281,7 +3281,7 @@ button.small .ui-icon {
     position: absolute;
     right: 10px;
     width: 92px;
-    z-index: 54;
+    z-index: 1001;
     background: transparent url("../img/mapita_logo.png") no-repeat scroll;
 }
 
@@ -3294,3 +3294,9 @@ div.olLayerGooglePoweredBy
 {
   display: none !important;
 }
+
+.olControlAttribution {
+    bottom: 60px;
+    left: 5px;
+    line-height: 11px;
+} 
