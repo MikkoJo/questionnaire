@@ -3317,3 +3317,7 @@ div.olLayerGooglePoweredBy
     left: 5px;
     line-height: 11px;
 }
+
+.spacer {
+    margin-bottom:2px;
+}

@@ -2289,6 +2289,10 @@ function parse(page, domnode, pagearray) {
     if(questionnaire.newNavigation === true) {
         nextButtonHover();
     }
+    if(typeof(page.onLoad) === typeof(function(){})) {
+        console.log("page.onLoad");
+        page.onLoad();
+    }
 
 }
 
