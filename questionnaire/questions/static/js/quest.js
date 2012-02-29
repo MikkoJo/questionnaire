@@ -3590,9 +3590,9 @@ function init() {
     //give the user impression that the program is doing something
     document.body.style.cursor = "default";
     //Defaults to satellite map
-    satellite(true);
+    //satellite(true);
     // Ugly way to zoom to kouvola keha
-    map.zoomToExtent(zoneLayer.getFeaturesByAttribute("Name", "keha")[0].geometry.getBounds(), false);
+    map.zoomToExtent(zoneLayer.getFeaturesByAttribute("Name", "keha")[0].geometry.getBounds(), true);
     //gMapDef.redraw();
 
 
