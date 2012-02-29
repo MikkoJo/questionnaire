@@ -178,5 +178,5 @@ JAVASCRIPT_CLIENT_TEMPLATES = [#'softgis_profile.esri.js',
                                #'softgis_feature.esri.js',
                                'geonition_geojson.jquery.js',
                                'opensocial_people.jquery.js',
-			       'data_processing.jquery.js'
+                               'data_processing.jquery.js'
                                ]

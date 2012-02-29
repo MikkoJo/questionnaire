@@ -90,7 +90,7 @@ var point_style = new OpenLayers.Style(
                         value: "point_purple"
                     }),
                     symbolizer: {
-                        externalGraphic: "/gntimages/needle?color=7408a1"
+                        externalGraphic: "https://www.pehmogis.fi/gntimages/needle?color=7408a1"
                     }
                 }),
                 new OpenLayers.Rule({

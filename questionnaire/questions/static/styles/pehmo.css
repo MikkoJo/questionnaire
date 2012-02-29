@@ -3247,7 +3247,7 @@ button.small .ui-icon {
     width: 12px;
 }
 .lightorange-icon {
-    background-image: url("/gntimages/needle?color=f8bd0a&scale=0.55") !important;
+    background-image: url("https://www.pehmogis.fi/gntimages/needle?color=f8bd0a&scale=0.55") !important;
 }
 .green-icon {
     background-image: url("../img/placemarks/small_green.png") !important;
@@ -3265,7 +3265,7 @@ button.small .ui-icon {
     background-image: url("../img/placemarks/small_brown.png") !important;
 }
 .purple-icon {
-    background-image: url("/gntimages/needle?color=7408a1&scale=0.55") !important;
+    background-image: url("https://www.pehmogis.fi/gntimages/needle?color=7408a1&scale=0.55") !important;
 }
 .green_route-icon {
     background-image: url("../img/placemarks/small_route_green.png") !important;
@@ -3274,10 +3274,10 @@ button.small .ui-icon {
     background-image: url("../img/placemarks/small_route_blue.png") !important;
 }
 .cyan_route-icon {
-    background-image: url("/gntimages/route?color=48fbdc&scale=1") !important;
+    background-image: url("https://www.pehmogis.fi/gntimages/route?color=48fbdc&scale=1") !important;
 }
-.purple-icon {
-    background-image: url("/gntimages/route?color=7408a1&scale=1") !important;
+.purple_route-icon {
+    background-image: url("https://www.pehmogis.fi/gntimages/route?color=7408a1&scale=1") !important;
 }
 .yellow_area-icon {
     background-image: url("../img/placemarks/small_area_yellow.png") !important;
