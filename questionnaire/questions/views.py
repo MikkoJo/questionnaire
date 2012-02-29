@@ -209,7 +209,7 @@ def contact(request):
 
         name = values.get('name')
         email = values.get('email')
-        phone = values.get('phonenumber')
+        phone = values.get('phonenumber', "")
         sendresults = values.get('sendresults')
 
         contact_values = Contact(name = name,

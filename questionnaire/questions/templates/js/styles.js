@@ -151,7 +151,20 @@ var route_style = new OpenLayers.Style(
                     }),
                     // if a feature matches the above filter, use this symbolizer
                     symbolizer: {
-                        strokeColor: "#0000ff",
+                        strokeColor: "#48fbdc",
+                        strokeOpacity: 1
+                    }
+                }),
+                new OpenLayers.Rule({
+                    // a rule contains an optional filter
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style", // the "foo" feature attribute
+                        value: "route_purple"
+                    }),
+                    // if a feature matches the above filter, use this symbolizer
+                    symbolizer: {
+                        strokeColor: "#7408a1",
                         strokeOpacity: 1
                     }
                 }),

@@ -2802,10 +2802,10 @@ function setActiveGraphic(g) {
 // var alternateInfoWindow = false;
 // function createInfo(event) {
     // console.log("createInfo");
-// 
+//
     // //disable all navigation of map when infowindow is open
     // map.disableMapNavigation();
-// 
+//
     // //Use alternate sprite if there is a lot of infowindow content
     // if(alternateInfoWindow === false && activeGraphic.attributes.alternateinfo === true) {
             // //map.infoWindow.hide();
@@ -2819,7 +2819,7 @@ function setActiveGraphic(g) {
             // //changeCssClass('.infowindow .sprite', 'background-image', 'url(../img/infowindow.png)');
             // alternateInfoWindow = false;
     // }
-// 
+//
     // //FIX dpi 120  for the last rows of the content
     // //var con = dojo.query(".content", "map_root")[0];
     // //con.style.paddingBottom = "40px";
@@ -2827,8 +2827,8 @@ function setActiveGraphic(g) {
     // var iwindow;
     // // If point is not inside residence area extent use secondary infotemplate
     // var i;
-// 
-// 
+//
+//
     // if(iwindow === undefined) {
             // iwindow = questionnaire.infoTemplates[activeGraphic.attributes.infotype];
     // }
@@ -2838,10 +2838,10 @@ function setActiveGraphic(g) {
         // iwindow.confirmWidth = 330;
         // iwindow.confirmHeight = 450;
        // }
-// 
-// 
+//
+//
     // /*var iwindow = questionnaire.infoTemplates[activeGraphic.attributes.infotype];*/
-// 
+//
     // //problem with infowindow header, needs to resize the infowindow according
     // var head = "<h2>" + activeGraphic.attributes.header + "</h2>";
     // var offh = 0;
@@ -2854,7 +2854,7 @@ function setActiveGraphic(g) {
                 // offh = 30;
             // }
     // }
-// 
+//
     // if (activeGraphic.attributes.confirmed) {
         // iWidth = iwindow.infoWidth;
         // iHeight = iwindow.infoHeight + offh;
@@ -2862,14 +2862,14 @@ function setActiveGraphic(g) {
         // iWidth = iwindow.confirmWidth;
         // iHeight = iwindow.confirmHeight + offh;
     // }
-// 
+//
     // //Infowindow should not be heigher than content max height
     // if (iHeight > getMaxContentHeight() - 44/*anchor height*/) {
         // iHeight = getMaxContentHeight() -44;
     // }
-// 
+//
     // map.infoWindow.resize(iWidth, iHeight);
-// 
+//
     // // If title is more than one line bottom of the infowindow is not showing
     // // Not very elegant way to do it
     // // This works for font-size under 17px
@@ -2877,7 +2877,7 @@ function setActiveGraphic(g) {
     // if(dojo.query("#map_infowindow .title")[0].clientHeight > 20) {
         // dojo.query("#map_infowindow .layout").style("height", dojo.query("#map_infowindow .layout").style("height") -20 + "px");
     // }
-// 
+//
     // //destroy previous form and its input objects
     // if(infoForm !== undefined && infoForm !== null) {
         // // For some reason IE7 hangs in infinite loop (something to with stackcontainer)
@@ -2894,7 +2894,7 @@ function setActiveGraphic(g) {
                             // chh[j].destroy(true);
                         // }
                     // ch[k].destroy(true);
-// 
+//
                 // }
                 // st.destroy(true);
                 // infoForm.destroy(true);
@@ -2902,14 +2902,14 @@ function setActiveGraphic(g) {
             // else {
                 // infoForm.destroyRecursive(true);
             // }
-// 
+//
         // }
         // else {
             // infoForm.destroyRecursive(true);
         // }
         // infoForm = undefined;
     // }
-// 
+//
     // infoForm = create_widgets("map_infowindow");
     // // Creates two page infowindow if id: stackCont found in infotemplate
     // // Function is defined in quest_spec.js
@@ -2940,26 +2940,26 @@ function setActiveGraphic(g) {
                 // if(questionnaire.values[activeGraphic.attributes.valuename][i].geom.type === "point" &&
                     // questionnaire.values[activeGraphic.attributes.valuename][i].geom.x === activeGraphic.geometry.x &&
                     // questionnaire.values[activeGraphic.attributes.valuename][i].geom.y === activeGraphic.geometry.y) {
-// 
+//
                     // setValues(infoForm, questionnaire.values[activeGraphic.attributes.valuename][i].ival);
                     // break;
                 // } else if (questionnaire.values[activeGraphic.attributes.valuename][i].geom !== null &&
                     // activeGraphic.geometry.type === "polygon" &&
                     // questionnaire.values[activeGraphic.attributes.valuename][i].geom.rings === activeGraphic.geometry.rings) {
-// 
+//
                     // setValues(infoForm, questionnaire.values[activeGraphic.attributes.valuename][i].ival);
                     // break;
                 // } else if (questionnaire.values[activeGraphic.attributes.valuename][i].geom !== null &&
                     // activeGraphic.geometry.type === "polyline" &&
                     // questionnaire.values[activeGraphic.attributes.valuename][i].geom.paths === activeGraphic.geometry.paths) {
-// 
+//
                     // setValues(infoForm, questionnaire.values[activeGraphic.attributes.valuename][i].ival);
                     // break;
                 // }
             // }
     // }
     // var infoPoint;
-// 
+//
     // // Get point for infowindow anchor
     // // Clicked on existing graphic
     // if (lastClickEvent !== undefined) {
@@ -3470,7 +3470,7 @@ function init() {
                                      controls: []});
 
 
-    
+
 //    gMapDef = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
 //    gMapSat = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
 //                                                            numZoomLevels: 22});
@@ -3496,7 +3496,7 @@ function init() {
     zoneLayer = new OpenLayers.Layer.Vector("Zone Layer", {
                                 styleMap: new OpenLayers.StyleMap(zone_style)
                         });
-                        
+
     map.addControls([new OpenLayers.Control.OverviewMap({'div': dojo.byId("ovcont"),
                                                          'size': new OpenLayers.Size(190,190)}),
                                  new OpenLayers.Control.Attribution(),
@@ -3540,16 +3540,16 @@ function init() {
             hover: false,
             id: "selectcontrol"
             });
-            
+
     console.log("add control to layer");
     console.log(select_feature_control);
     map.addControl(select_feature_control);
     select_feature_control.activate();
-    
+
     // Add zone borders
     var geojson_format = new OpenLayers.Format.GeoJSON();
     zoneLayer.addFeatures(geojson_format.read(questionnaire.zone_featurecollection));
-    
+
     // Enable Pan onmouseOut
     if (!dojo.isIE) {
         enableMyPan(); //DISABLE FOR NOW
@@ -3592,7 +3592,7 @@ function init() {
     //Defaults to satellite map
     satellite(true);
     // Ugly way to zoom to kouvola keha
-    map.zoomToExtent(zoneLayer.getFeaturesByAttribute("Name", "keha")[0].geometry.getBounds(), true);
+    map.zoomToExtent(zoneLayer.getFeaturesByAttribute("Name", "keha")[0].geometry.getBounds(), false);
     //gMapDef.redraw();
 
 
@@ -3870,18 +3870,18 @@ ImageButton class which does everything for pointing out an polygon or point on 
                         // "<div class=\"deactive\" dojoAttachPoint=\"focusNode\">" +
                         // "<span class=\"image ${classtype}\" dojoAttachPoint=\"text\"></span>" +
                         // "</div></div>",
-// 
+//
     // //draw event is used to control which event to connect and disconnect from the map drawing properties.(one per questionnaire should exist at the same time).
     // "drawEvent": null,
     // "polyhelpEvent": null,
-// 
+//
     // "attributeMap": dojo.mixin(dojo.clone(dijit.form._FormValueWidget.prototype.attributeMap),
                             // {"buttontext":{"node": "text", "type": "innerHTML" }}),
-// 
+//
     // "buttontext": "",
     // "pool": null, // Object
     // "clearedGraphics": null, // Object
-// 
+//
     // "constructor": function() {
     // this.pool = pool;
     // },
@@ -3897,12 +3897,12 @@ ImageButton class which does everything for pointing out an polygon or point on 
         // }
         // //this.graphicAttr.name = this.name;
         // //this.graphicAttr.header = "<h2>" + this.graphicAttr.header + "</h2>";
-// 
+//
         // //in all imagebuttons these are localized
         // this.set("buttontext", this.buttontext);
         // this.set("graphicAttr", dojo.mixin(this.graphicStrings, this.graphicAttr));
     // },
-// 
+//
     // "_onClick": function(/*Event*/ e){
     // // summary: internal function to handle click actions
     // //this.redraw();
@@ -3913,14 +3913,14 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // this._clicked(e); // widget click actions
     // return this.onClick(e); // user click actions
     // },
-// 
+//
     // "_onButtonClick": function(/*Event*/ e){
 // /*	if (tb._graphic && tb._points.length > 1) {
         // e.mapPoint = tb._points.pop();
         // tb._onDblClickHandler(e);
         // dojo.stopEvent(e);
 // //			tb.onDrawEnd(tb._graphic);
-// 
+//
     // }*/
     // // summary: callback when the user mouse clicks the button portion
     // if(this._onClick(e) === false){ // returning nothing is same as true
@@ -3937,7 +3937,7 @@ ImageButton class which does everything for pointing out an polygon or point on 
             // }
     // }
     // },
-// 
+//
     // "onClick": function(/*Event*/ e){
     // if(this.pool) {
             // this.pool.click(this,e);
@@ -3946,11 +3946,11 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // //      if type="submit", return true to perform submit
     // return true;
     // },
-// 
+//
     // "_clicked": function(/*Event*/ e){
     // // summary: internal replaceable function for when the button is clicked
     // },
-// 
+//
     // //GRAPHICS HANDLING PART
     // /*
     // The draw function draw alls the graphics according to the values in questionnaire.values[this.valuename]
@@ -3958,11 +3958,11 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // // this version draws graphics of ImageButton, not questionnaire.values[this.valuename]
     // "drawGraphics": function() {
     // var infow;
-// 
+//
     // infow = new esri.InfoTemplate(this.graphicAttr.header, this.infoWindowString);
-// 
+//
     // this.graphicAttr.confirmed = true;
-// 
+//
     // var graphic;
     // var i;
     // //do nothing if there is no values
@@ -3978,10 +3978,10 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // if(this.draw === "POINT") {
         // // the symbol is the same for all points drawn by this ImageButton
             // this.symbol =  new esri.symbol.PictureMarkerSymbol(this.placeMark, this.xsize, this.ysize);
-// 
+//
             // //corrects the place of the symbol picture
             // this.symbol.setOffset(this.xoffset,this.yoffset);
-// 
+//
             // for(i = 0; i < questionnaire.values[this.graphicAttr.valuename].length; i++) {
                 // //test if the geometry is of type point
                 // if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "point") {
@@ -4010,8 +4010,8 @@ ImageButton class which does everything for pointing out an polygon or point on 
                     // graphic.setAttributes(this.graphicAttr);
                     // graphic.setInfoTemplate(infow);
                     // graphic.setSymbol(this.symbol);
-// 
-// 
+//
+//
                     // //add the graphic to the map
                     // questionnaire.graphics[this.graphicAttr.valuename].push(graphic);
                     // if(map.graphics !== undefined) {
@@ -4019,7 +4019,7 @@ ImageButton class which does everything for pointing out an polygon or point on 
                     // }
                 // }
             // }
-// 
+//
 // /*
         // //FIX for esri svg image fill = none to fill = white
         // if(dojo.isFF) {
@@ -4039,15 +4039,15 @@ ImageButton class which does everything for pointing out an polygon or point on 
                                                                     // this.graphicAttr.rgb[1],
                                                                     // this.graphicAttr.rgb[2],
                                                                     // 0.5]));
-// 
-// 
+//
+//
         // for(i = 0; i < questionnaire.values[this.graphicAttr.valuename].length; i++) {
             // //check that the geometry is of type polygon
             // if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "polygon") {
                 // //create the new graphic
                 // graphic = new esri.Graphic({});
                 // var poly = new esri.geometry.Polygon(questionnaire.values[this.graphicAttr.valuename][i].geom);
-// 
+//
                 // // check if graphic has grahicId and if found add it to the graphics
                 // graphicId = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
                 // if(graphicId !== undefined && graphicId !== null) {
@@ -4061,7 +4061,7 @@ ImageButton class which does everything for pointing out an polygon or point on 
                 // questionnaire.graphics[this.graphicAttr.valuename].push(graphic);
                 // if (map.graphics !== undefined) {
                     // map.graphics.add(graphic);
-// 
+//
                     // //The POLYGON should always be in the back but still on top of previously drawn polygons
                     // movePolygonToTop(graphic.getDojoShape());
                 // }
@@ -4073,10 +4073,10 @@ ImageButton class which does everything for pointing out an polygon or point on 
         // this.symbol = new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
                                                         // new dojo.Color(this.graphicAttr.rgb),
                                                         // 1);
-// 
+//
         // //set the width of the line
         // this.symbol.setWidth(2);
-// 
+//
         // for(i = 0; i < questionnaire.values[this.graphicAttr.valuename].length; i++) {
             // //check that the geometry is of type polygon
             // if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "polyline") {
@@ -4101,7 +4101,7 @@ ImageButton class which does everything for pointing out an polygon or point on 
         // }
     // }
     // },
-// 
+//
     // /*
     // The clearGraphics function clears all graphics with the name this.graphicAttr.valuename,
     // */
@@ -4117,7 +4117,7 @@ ImageButton class which does everything for pointing out an polygon or point on 
             // }
     // }
     // },
-// 
+//
     // /*
     // This function redraws all the graphics that is under this.graphicAttr.valuename in values
     // */
@@ -4150,16 +4150,16 @@ ImageButton class which does everything for pointing out an polygon or point on 
             // }
     // }
     // },
-// 
+//
     // /*
     // This function add a graphic to the map in this widgets style, a not confirmed graphic.
     // */
     // "addGraphic": function(geometry) {
-// 
+//
     // //not confirmed graphics infowindow
-// 
+//
     // var infow;
-// 
+//
     // // If point is not inside residence area extent use secondary infotemplate
         // var i;
     // for(i = 0; i < questionnaire.residencePlaces.length; i++) {
@@ -4178,21 +4178,21 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // //ITEST
     // this.graphicAttr.confirmed = false;
     // //TEST
-// 
+//
     // if(this.draw === "POINT") {
             // // the symbol is the same for all points drawn by this ImageButton
             // this.symbol =  new esri.symbol.PictureMarkerSymbol(this.placeMark, this.xsize, this.ysize);
-// 
+//
             // //corrects the place of the symbol picture
             // this.symbol.setOffset(this.xoffset,this.yoffset);
     // }
     // else if (this.draw === "MULTIPOINT") {
             // // the symbol is the same for all points drawn by this ImageButton
             // this.symbol =  new esri.symbol.PictureMarkerSymbol(this.placeMark, 23, 36);
-// 
+//
             // //corrects the place of the symbol picture
             // this.symbol.setOffset(this.xoffset,this.yoffset);
-// 
+//
     // }
     // else if (this.draw === "POLYGON") {
             // //create the symbol
@@ -4211,7 +4211,7 @@ ImageButton class which does everything for pointing out an polygon or point on 
                                                                                             // new dojo.Color([205,92,92]),
                                                                                             // 1),
                                                             // new dojo.Color([200,92,92,0.5]));
-// 
+//
         // }
     // }
     // else if (this.draw === "POLYLINE") {
@@ -4224,13 +4224,13 @@ ImageButton class which does everything for pointing out an polygon or point on 
             // this.symbol = new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID,
                                                             // new dojo.Color([200,92,92]),
                                                             // 1);
-// 
+//
         // }
         // //set the width of the line
         // this.symbol.setWidth(2);
     // }
-// 
-// 
+//
+//
     // //create the new graphic
     // var graphic = new esri.Graphic({});
     // graphic.setGeometry(geometry);
@@ -4244,10 +4244,10 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // questionnaire.graphics[this.graphicAttr.valuename].push(graphic);
     // map.graphics.add(graphic);
     // this.unconfirmed = graphic;
-// 
+//
     // //set global activeGraphic
     // setActiveGraphic(graphic);
-// 
+//
     // /*
     // //FIX for esri svg image fill = none to fill = white
     // if(this.draw === "POINT" && dojo.isFF) {
@@ -4258,7 +4258,7 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // }
     // */
     // },
-// 
+//
 // //VALUE HANDLING PART
 // /*
 // This function replaces this.value with the value given. The value is in the form of an array [{ival:<infowindow value>,geom:<geometry>},...]
@@ -4267,16 +4267,16 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // if(value === undefined || value[0] === undefined) {
         // return;
     // }
-// 
+//
     // this.inherited(arguments);
     // this.value = value;
-// 
+//
     // if(this.value === "" || this.value === undefined || this.value === null) {
         // this.value = [];
     // } else {
         // this.redraw();
     // }
-// 
+//
     // if(this.graphicAttr.max !== undefined && this.graphicAttr.max <= this.value.length) {
         // this.disable();
     // }
@@ -4287,14 +4287,14 @@ ImageButton class which does everything for pointing out an polygon or point on 
 // this function add one value to the array of values and drawGraphics the new value
 // */
 // "_addValueAttr": function(/*geometry that contains JSON description according to the esri rest api*/ value,/* not used but required parameter*/ priorityChange) {
-// 
+//
     // if(questionnaire.values[this.graphicAttr.valuename] === undefined) {
         // questionnaire.values[this.graphicAttr.valuename] = [];
     // }
-// 
+//
     // questionnaire.values[this.graphicAttr.valuename].push({ival: null, geom: value});
     // this.value = questionnaire.values[this.graphicAttr.valuename];
-// 
+//
     // if(this.graphicAttr.max !== undefined && this.graphicAttr.max <= this.value.length) {
         // this.disable();
     // }
@@ -4309,7 +4309,7 @@ ImageButton class which does everything for pointing out an polygon or point on 
         // if(questionnaire.values[this.graphicAttr.valuename][i].geom.type === "point" &&
             // questionnaire.values[this.graphicAttr.valuename][i].geom.x === value.x &&
             // questionnaire.values[this.graphicAttr.valuename][i].geom.y === value.y) {
-// 
+//
             // // remove the graphic from the database
             // if(questionnaire.values.testUser !== true) {
                 // feature.id = questionnaire.values[this.graphicAttr.valuename][i].graphicId;
@@ -4341,12 +4341,12 @@ ImageButton class which does everything for pointing out an polygon or point on 
         // }
     // }
     // this.value = questionnaire.values[this.graphicAttr.valuename];
-// 
+//
     // if(this.graphicAttr.max !== undefined && this.graphicAttr.max > this.value.length) {
         // this.enable();
     // }
 // },
-// 
+//
 // "_getValueAttr": function() {
     // if(this.value !== undefined) {
         // return this.value;
@@ -4360,7 +4360,7 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // //this.redraw();
     // this.inherited(arguments);
 // },
-// 
+//
 // "activate": function(e) {
     // //hide any infowindow that is showing
     // // Hide infoWindow if necessary. This also destroys all widgets of the infoform.
@@ -4368,11 +4368,11 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // if(map.infoWindow.isShowing) {
         // map.infoWindow.hide();
     // }
-// 
+//
     // map.disableDoubleClickZoom();
-// 
+//
     // this.focusNode.className = "active";
-// 
+//
     // //destroy tempButton in a proper way
     // if(tempButton !== undefined && tempButton !== this) {
         // if(dijit.byId(tempButton.id) === undefined) {
@@ -4382,14 +4382,14 @@ ImageButton class which does everything for pointing out an polygon or point on 
         // }
         // tempButton = undefined;
     // }
-// 
+//
     // tempButton = this;
-// 
+//
     // if(this.cursorImg !== undefined) {
         // setCursor("map_layers", "url(" + this.cursorImg + ")");
         // disableCursorChange();
     // }
-// 
+//
     // if(this.draw === "POINT") {
         // tb.activate(esri.toolbars.Draw.POINT, {tooltipOffset: 26});
         // tbactivated = true;
@@ -4407,9 +4407,9 @@ ImageButton class which does everything for pointing out an polygon or point on 
         // tbactivated = true;
         // /*//TOOLTIP
         // edge = 0;
-// 
+//
         // showToolTip(tooltiphelp[djConfig.locale].firstedge,e.clientY,e.clientX,true);
-// 
+//
         // this.polyhelpEvent = dojo.connect(map, "onClick", function(event) {
                                                             // //console.log(event);
                                                             // edge = edge + 1;
@@ -4437,10 +4437,10 @@ ImageButton class which does everything for pointing out an polygon or point on 
         // return;
         // }
 // },
-// 
+//
 // "deactivate": function(e) {
     // //if the max amount of values are set the button should be disabled!!
-// 
+//
     // if (tb._graphic && tb._points.length > 1) {
         // var el = {};
         // //el.mapPoint = tb._points.pop();
@@ -4448,14 +4448,14 @@ ImageButton class which does everything for pointing out an polygon or point on 
 // //			alert("deactivate imagebutton");
 // //			dojo.stopEvent(e);
 // //			tb.onDrawEnd(tb._graphic);
-// 
+//
     // }
-// 
+//
     // if(this.graphicAttr.max !== undefined && this.graphicAttr.max <= this.value.length) {
         // this.disable();
         // return;
     // }
-// 
+//
     // setCursor("map_layers", "");
     // enableCursorChange();
     // // ESRI has own tooltips
@@ -4467,15 +4467,15 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // dojo.disconnect(this.drawEvent);
     // tbactivated = false;
     // tb.deactivate();
-// 
+//
     // },
-// 
+//
 // "disable": function(e) {
     // setCursor("map_layers","");
     // enableCursorChange();
-// 
+//
     // this.focusNode.className = "disabled";
-// 
+//
     // this.disabledIB = true;
     // dojo.disconnect(this.drawEvent);
     // if(tb !== undefined) {
@@ -4492,7 +4492,7 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // } catch(ex) {
     // }
 // },
-// 
+//
 // "enable": function(e) {
     // this.focusNode.className = "deactive";
     // this.disabledIB = false;
@@ -4508,7 +4508,7 @@ ImageButton class which does everything for pointing out an polygon or point on 
         // }
     // }
 // },
-// 
+//
     // //INFOWINDOW HANDLING PART
     // "confirm": function(geometry) {
         // if(djConfig.isDebug) {
@@ -4519,29 +4519,29 @@ ImageButton class which does everything for pointing out an polygon or point on 
     // //console.log("confirm graphic: " + dojo.toJson(geometry));
     // //add to the map an unconfirmed graphic
     // this.addGraphic(geometry);
-// 
+//
     // //set the content of the infowindow
     // map.infoWindow.setTitle(this.unconfirmed.getTitle());
     // map.infoWindow.setContent(this.unconfirmed.getContent());
-// 
+//
     // //deactivate all imageButtons
     // this.deactivate();
     // this.pool.deactivateAll();
-// 
+//
     // if(this.draw === "POINT" || this.draw === "MULTIPOINT") {
-// 
+//
             // //pop up the infowindow
             // p = map.toScreen(geometry);
             // map.infoWindow.show(p,map.getInfoWindowAnchor(p));
-// 
+//
             // return;
         // }
     // else if(this.draw === "POLYGON") {
-// 
+//
             // //pop up the infowindow
             // p = map.toScreen(geometry.getExtent().getCenter());
             // map.infoWindow.show(p,map.getInfoWindowAnchor(p));
-// 
+//
             // return;
         // }
     // else if(this.draw === "POLYLINE") {
@@ -4552,11 +4552,11 @@ ImageButton class which does everything for pointing out an polygon or point on 
             // var pl = geometry.paths[0].length - 1;
             // p = map.toScreen(new esri.geometry.Point(geometry.paths[0][pl][0], geometry.paths[0][pl][1]));
             // map.infoWindow.show(p,map.getInfoWindowAnchor(p));
-// 
+//
             // return;
         // }
     // },
-// 
+//
     // "confirmResult": function(bool) {
     // if(this.unconfirmed !== undefined && bool) {
             // if(this.replaceGraphic !== undefined) {
@@ -4584,7 +4584,7 @@ this object takes care of buttons so that only one button at a time in the same 
 // dojo.declare("ButtonPool", null,
 // {
 // "active": null,
-// 
+//
 // "click": function(button,e) {
 // if(null === button) {
     // return;
@@ -4608,7 +4608,7 @@ this object takes care of buttons so that only one button at a time in the same 
     // return;
 // }
 // },
-// 
+//
 // "deactivateAll": function() {
 // if(this.active && !this.active.disabledIB) {
     // this.active.deactivate();
