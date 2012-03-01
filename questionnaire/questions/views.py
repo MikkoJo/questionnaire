@@ -188,7 +188,7 @@ This function handles the feedback form
                                       {'DEBUG': DEBUG},
                                       context_instance=RequestContext(request))
         else:
-            return htt
+            return HttpResponse
 
 def contact(request):
 
