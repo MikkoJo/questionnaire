@@ -150,13 +150,13 @@ STATIC_URL = getattr(settings_local, "STATIC_URL", '/static/')
 STATICFILES_DIRS = getattr(settings_local, "STATICFILES_DIRS", ('',))
 
 #email smtp configuration
-EMAIL_HOST = getattr(settings_local, 'EMAIL_HOST', 'smtp.gmail.com')
-EMAIL_HOST_USER = getattr(settings_local, 'EMAIL_HOST_USER', 'do_not_reply@mapita.fi')
-EMAIL_HOST_PASSWORD = getattr(settings_local, 'EMAIL_HOST_PASSWORD', 'va.reply1')
+EMAIL_HOST = getattr(settings_local, 'EMAIL_HOST', '')
+EMAIL_HOST_USER = getattr(settings_local, 'EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = getattr(settings_local, 'EMAIL_HOST_PASSWORD', '')
 EMAIL_PORT = getattr(settings_local, 'EMAIL_PORT', 587)
 EMAIL_USE_TLS = getattr(settings_local, 'EMAIL_USE_TLS', True)
-EMAIL_FROM = getattr(settings_local, 'EMAIL_FROM', 'do_not_reply@mapita.fi')
-DEFAULT_FROM_EMAIL = getattr(settings_local, 'DEFAULT_FROM_EMAIL', 'do_not_reply@mapita.fi')
+EMAIL_FROM = getattr(settings_local, 'EMAIL_FROM', '')
+DEFAULT_FROM_EMAIL = getattr(settings_local, 'DEFAULT_FROM_EMAIL', '')
 EMAIL_CONFIRMATION_DAYS = getattr(settings_local, 'EMAIL_CONFIRMATION_DAYS', 2)
 #EMAIL_BACKEND = getattr(settings_local, "EMAIL_BACKEND", 'django.core.mail.backends.smtp.EmailBackend')
 
