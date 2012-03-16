@@ -1,18 +1,12 @@
 /* TO show user complete map */
-/*global dojo, document, esri, alert, djConfig, console, questionnaire, softgis, addGmapLayer,
-  MAPSERVICE_URL, get_features, esriConfig, dijit, confirm, logout, window, userid, gnt, questionnaire_logout
+/*global dojo, document, alert, djConfig, console, questionnaire, softgis, addGmapLayer,
+  MAPSERVICE_URL, get_features, dijit, confirm, logout, window, userid, gnt, questionnaire_logout
  */
 //{% load i18n %}
 
-
-//dojo.require("esri.map");
-//dojo.require("esri.layers.agstiled");
-//dojo.require("esri.toolbars.draw");
-//dojo.require("esri.dijit.InfoWindow");
 dojo.require("dojo.parser");
 dojo.require("dojox.fx.style");
 dojo.require("dijit.Tooltip");
-dojo.require("agsjs.layers.GoogleMapsLayer");
 
 var userGraphics;
 var map;
