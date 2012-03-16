@@ -1137,8 +1137,8 @@ function section(pageNumber, pagesarray) {
                         //console.log("tempPageNum: " + tempPageNum + " pagesarray length " + pagesarray.length);
                     }
                     testLink = dojo.query("." + questionnaire.sections[b].section, "progressBar")[0];
-                    if(testLink.onclick === undefined || testLink.onclick === null) {
-                        testLink.onclick = "";
+                    if(testLink.onclicks === undefined || testLink.onclicks === null) {
+                        testLink.onclicks = "";
                         testLink.style.cursor = "pointer";
                         dojo.connect(testLink, "onclick", this, dojo.hitch(null, "createPage", pagesarray[tempPageNum].name, "pages"));
                     }
