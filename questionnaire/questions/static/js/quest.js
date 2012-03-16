@@ -2105,6 +2105,10 @@ function parse(page, domnode, pagearray) {
     if(questionnaire.newNavigation === true) {
         nextButtonHover();
     }
+    if(typeof(page.onLoad) === typeof(function(){})) {
+        console.log("page.onLoad");
+        page.onLoad();
+    }
 
 }
 
@@ -2615,7 +2619,6 @@ function setActiveGraphic(g) {
 }
 
 
-
 var popup; //only one popup at the time
 
 /*
@@ -2963,10 +2966,10 @@ function createListeners(){
     });
 
     // Override default infoWindow behaviour to enable to add graphic over an existing one.
-    dojo.connect(map.graphics, "onClick", infoWindowHandler);
+    //dojo.connect(map.graphics, "onClick", infoWindowHandler);
 
     //	ihd = dojo.connect(map.infoWindow, "onShow", createInfo);
-    isd = dojo.connect(map.infoWindow, "onHide", destroyInfo);
+    //isd = dojo.connect(map.infoWindow, "onHide", destroyInfo);
     //olmd = dojo.connect(map,"onMouseOut", function(e) {map.onMouseUp(e);dojo.stopEvent(e);});
 
     var timer;
@@ -3079,7 +3082,7 @@ function init() {
                                      controls: []});
 
 
-    
+
 //    gMapDef = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
 //    gMapSat = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
 //                                                            numZoomLevels: 22});
@@ -3105,7 +3108,7 @@ function init() {
     zoneLayer = new OpenLayers.Layer.Vector("Zone Layer", {
                                 styleMap: new OpenLayers.StyleMap(zone_style)
                         });
-                        
+
     map.addControls([new OpenLayers.Control.OverviewMap({'div': dojo.byId("ovcont"),
                                                          'size': new OpenLayers.Size(190,190)}),
                                  new OpenLayers.Control.Attribution(),
@@ -3144,16 +3147,16 @@ function init() {
             hover: false,
             id: "selectcontrol"
             });
-            
+
     console.log("add control to layer");
     console.log(select_feature_control);
     map.addControl(select_feature_control);
     select_feature_control.activate();
-    
+
     // Add zone borders
     var geojson_format = new OpenLayers.Format.GeoJSON();
     zoneLayer.addFeatures(geojson_format.read(questionnaire.zone_featurecollection));
-    
+
     // Enable Pan onmouseOut
     if (!dojo.isIE) {
         enableMyPan(); //DISABLE FOR NOW
@@ -3194,7 +3197,7 @@ function init() {
     //give the user impression that the program is doing something
     document.body.style.cursor = "default";
     //Defaults to satellite map
-    satellite(true);
+    //satellite(true);
     // Ugly way to zoom to kouvola keha
     map.zoomToExtent(zoneLayer.getFeaturesByAttribute("Name", "keha")[0].geometry.getBounds(), true);
     //gMapDef.redraw();
@@ -3453,7 +3456,6 @@ function removeGraphic(name, order) {
 function setdeactive(ibnode) {
     ibnode.className = "deactive";
 }
-
 
 
 function showBoxAnim() {

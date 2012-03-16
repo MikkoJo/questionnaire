@@ -48,6 +48,9 @@ LANGUAGE_CODE = 'en-US'
 
 SITE_ID = getattr(settings_local, "SITE_ID", 7)
 
+QUESTIONNAIRE_ENDED = False
+
+
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -130,7 +133,7 @@ INSTALLED_APPS = (
     #'user_profile',
     'geonition_client',
     'email_rest',
-#    'gntimages',
+    'data_processing',
 
     #questionnaires application
     'questions'
@@ -174,5 +177,6 @@ JAVASCRIPT_CLIENT_TEMPLATES = [#'softgis_profile.esri.js',
                                'softgis_email.jquery.js',
                                #'softgis_feature.esri.js',
                                'geonition_geojson.jquery.js',
-                               'opensocial_people.jquery.js'
+                               'opensocial_people.jquery.js',
+                               'data_processing.jquery.js'
                                ]

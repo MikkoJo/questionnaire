@@ -90,7 +90,7 @@ var point_style = new OpenLayers.Style(
                         value: "point_purple"
                     }),
                     symbolizer: {
-                        externalGraphic: "/gntimages/needle?color=7408a1"
+                        externalGraphic: "https://www.pehmogis.fi/gntimages/needle?color=7408a1"
                     }
                 }),
                 new OpenLayers.Rule({
@@ -151,7 +151,20 @@ var route_style = new OpenLayers.Style(
                     }),
                     // if a feature matches the above filter, use this symbolizer
                     symbolizer: {
-                        strokeColor: "#0000ff",
+                        strokeColor: "#48fbdc",
+                        strokeOpacity: 1
+                    }
+                }),
+                new OpenLayers.Rule({
+                    // a rule contains an optional filter
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style", // the "foo" feature attribute
+                        value: "route_purple"
+                    }),
+                    // if a feature matches the above filter, use this symbolizer
+                    symbolizer: {
+                        strokeColor: "#7408a1",
                         strokeOpacity: 1
                     }
                 }),
@@ -203,11 +216,9 @@ var zone_style = new OpenLayers.Style(
         // all other symbolizers in rules will extend this one
         {
             strokeWidth: 2,
-            pointRadius: 3,
             pointerEvents: "visiblePainted",
-            cursor: "pointer",
             strokeColor: "red",
-            strokeOpacity: 0.4,
+            strokeOpacity: 0.9,
             fillColor:  "#ffffff",
             fillOpacity: 0
         },
@@ -217,12 +228,12 @@ var zone_style = new OpenLayers.Style(
                     // a rule contains an optional filter
                     filter: new OpenLayers.Filter.Comparison({
                         type: OpenLayers.Filter.Comparison.EQUAL_TO,
-                        property: "name", // the "foo" feature attribute
-                        value: "keha"
+                        property: "Name", // the "foo" feature attribute
+                        value: "keskusta"
                     }),
                     // if a feature matches the above filter, use this symbolizer
                     symbolizer: {
-                        strokeColor: "#ffd700"
+                        strokeColor: "#a405ae"
                     }
                 }),
                 new OpenLayers.Rule({

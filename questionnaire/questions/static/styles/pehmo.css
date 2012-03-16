@@ -100,6 +100,10 @@ width: 173px;
 background-image: url("../img/hyvinkaa_logo.png");
 width: 173px;
 }
+.kouvola_fi #logo, .kouvola_en #logo {
+background-image: url("../img/kouvola_logo.png");
+width: 173px;
+}
 
 div#fcg_logo {
 background-image: url("../img/FCG-logo.png");
@@ -668,12 +672,16 @@ width: 670px;
 /*height: 428px;*/
 height: 452px;
 bottom: 7px;
-background-image: url("../img/hyvinkaa_front.jpg");
+/*background-image: url("../img/hyvinkaa_front.jpg");*/
 background-repeat: no-repeat;
 background-color: transparent;
 z-index: 1;
 }
 
+.kouvola_fi .firstpagepic, .kouvola_en .firstpagepic {
+    background-image: url("../img/kouvola_front.jpg");
+    background-position: 100% 10px;
+}
 .firstpagecontent {
 position: relative;
 z-index: 99;
@@ -3185,7 +3193,7 @@ button.finish {
 }
 .olControlOverviewMapElement {
     background: #BBBBBB !important;
-    background: rgba(0, 0, 0, 0.3) !important;
+    background: rgba(100, 100, 100, 0.8) !important;
     border-radius: 1em !important;
     padding: 10px 10px 10px 10px !important;
 }
@@ -3238,6 +3246,9 @@ button.small .ui-icon {
     height: 18px;
     width: 12px;
 }
+.lightorange-icon {
+    background-image: url("https://www.pehmogis.fi/gntimages/needle?color=f8bd0a&scale=0.55") !important;
+}
 .green-icon {
     background-image: url("../img/placemarks/small_green.png") !important;
 }
@@ -3254,13 +3265,19 @@ button.small .ui-icon {
     background-image: url("../img/placemarks/small_brown.png") !important;
 }
 .purple-icon {
-    background-image: url("/gntimages/needle?color=7408a1&scale=0.5") !important;
+    background-image: url("https://www.pehmogis.fi/gntimages/needle?color=7408a1&scale=0.55") !important;
 }
 .green_route-icon {
     background-image: url("../img/placemarks/small_route_green.png") !important;
 }
 .blue_route-icon {
     background-image: url("../img/placemarks/small_route_blue.png") !important;
+}
+.cyan_route-icon {
+    background-image: url("https://www.pehmogis.fi/gntimages/route?color=48fbdc&scale=1") !important;
+}
+.purple_route-icon {
+    background-image: url("https://www.pehmogis.fi/gntimages/route?color=7408a1&scale=1") !important;
 }
 .yellow_area-icon {
     background-image: url("../img/placemarks/small_area_yellow.png") !important;
@@ -3296,7 +3313,11 @@ div.olLayerGooglePoweredBy
 }
 
 .olControlAttribution {
-    bottom: 60px;
+    bottom: 60px !important;
     left: 5px;
     line-height: 11px;
-} 
+}
+
+.spacer {
+    margin-bottom:2px;
+}
