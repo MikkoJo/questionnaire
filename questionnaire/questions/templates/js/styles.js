@@ -87,6 +87,32 @@ var point_style = new OpenLayers.Style(
                     filter: new OpenLayers.Filter.Comparison({
                         type: OpenLayers.Filter.Comparison.EQUAL_TO,
                         property: "style",
+                        value: "point_positive"
+                    }),
+                    symbolizer: {
+                        graphicWidth: 31,
+                        graphicHeight: 42,
+                        graphicYOffset: -36, // shift graphic up 28 pixels
+                        externalGraphic: "{{ STATIC_URL }}img/placemarks/point_positive.png"
+                    }
+                }),
+                new OpenLayers.Rule({
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style",
+                        value: "point_negative"
+                    }),
+                    symbolizer: {
+                        graphicWidth: 31,
+                        graphicHeight: 42,
+                        graphicYOffset: -36, // shift graphic up 28 pixels
+                        externalGraphic: "{{ STATIC_URL }}img/placemarks/point_negative.png"
+                    }
+                }),
+                new OpenLayers.Rule({
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style",
                         value: "point_purple"
                     }),
                     symbolizer: {
