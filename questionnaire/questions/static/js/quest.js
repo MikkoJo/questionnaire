@@ -3082,10 +3082,10 @@ function init() {
                             {"expires": -1});
 
     map = new OpenLayers.Map('map', {projection: new OpenLayers.Projection("EPSG:3857"),
-//                                     maxExtent: new OpenLayers.Bounds(-37532.28,
-//                                                                       8312664.808,
-//                                                                       6194837.250,
-//                                                                       10758649.712),
+                                     maxExtent: new OpenLayers.Bounds(-37532.28,
+                                                                       8312664.808,
+                                                                       6194837.250,
+                                                                       10758649.712),
 //                                     maxResolution: 4891,
                                      paddingForPopups: new OpenLayers.Bounds(330,70,15,15),
                                      controls: []});
@@ -3695,6 +3695,27 @@ function checkemail(email) {
     //var rege = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     var rege = new RegExp("^" + dojox.validate.regexp.emailAddress + "$", i);
     return rege.test(email);
+}
+
+// Not the correct way to do this
+function emailcheck() {
+    console.log("emailcheck");
+    var email = dijit.byId("email").get("value");
+    if(!checkemail(email)) {
+    if(dojo.byId('email').value === "") {
+            if(djConfig.locale === "fi") {
+                alert("muista antaa sähköpostiosoite");
+            } else if(djConfig.locale === "sv") {
+            alert("kom ihåg att ge en email address");
+            }
+    } else {
+            if(djConfig.locale === "fi") {
+                alert("Tarkista sähköpostiosoite");
+            } else if(djConfig.locale === "sv") {
+                alert("Email addressen är inte giltig");
+            }
+    }
+    }
 }
 
 
