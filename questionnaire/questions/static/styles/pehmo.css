@@ -105,6 +105,10 @@ width: 173px;
 background-image: url("../img/kouvola_logo.png");
 width: 173px;
 }
+.tuusula_fi #logo, .tuusula_en #logo {
+background-image: url("../img/tuusula_logo.png");
+width: 173px;
+}
 
 div#fcg_logo {
 background-image: url("../img/FCG-logo.png");
@@ -3250,6 +3254,8 @@ button.like .ui-button-text {
 }
 button.like.ui-button {
     margin-right: 0px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
 }
 button.dislike {
     background: transparent url("../img/buttons/home_uusi_plus_sprite_8.png") scroll -624px 0 no-repeat;
@@ -3266,6 +3272,10 @@ button.dislike .ui-button-text {
     font-family: Arial, sans-serif;
     padding: 1px 2.3em 1px 0.1em;
     line-height: 15px;
+}
+button.dislike.ui-button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
 }
 button.small.drawbutton {
     width: 220px;
@@ -3318,6 +3328,10 @@ button.small .ui-icon {
 }
 .yellow_area-icon {
     background-image: url("../img/placemarks/small_area_yellow.png") !important;
+}
+.cyan_area-icon {
+    background-image: url("https://www.pehmogis.fi/gntimages/area?color=48fbdc&scale=1") !important;
+    width: 22px !important;
 }
 #mapitaCopy {
     bottom: 60px;

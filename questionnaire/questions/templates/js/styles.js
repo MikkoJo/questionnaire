@@ -232,6 +232,21 @@ var area_style = new OpenLayers.Style(
                     }
                 }),
                 new OpenLayers.Rule({
+                    // a rule contains an optional filter
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style", // the "foo" feature attribute
+                        value: "area_cyan"
+                    }),
+                    // if a feature matches the above filter, use this symbolizer
+                    symbolizer: {
+                        strokeColor: "#48fbdc",
+                        strokeOpacity: 1,
+                        fillColor:  "#48fbdc",
+                        fillOpacity: 0.3
+                    }
+                }),
+                new OpenLayers.Rule({
                     elseFilter: true
                 })
            ]

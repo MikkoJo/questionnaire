@@ -3141,8 +3141,15 @@ function init(basemap, /* string*/ mapType /* string*/) {
     var aliasproj = new OpenLayers.Projection("EPSG:3857");
     mapRoad.projection = mapSatellite.projection = aliasproj;
     map.addLayers([mapRoad, mapSatellite, areaLayer, routeLayer, pointLayer, zoneLayer]);
-    map.setCenter(new OpenLayers.LonLat(2766225.683368, 8540628.690266), 15);
+    if(questionnaire.start_extent !== undefined) {
+        map.setCenter(new OpenLayers.LonLat(questionnaire.start_extent.x,
+                                            questionnaire.start_extent.y),
+                                            questionnaire.start_extent.zoomLevel);
 
+    }
+    else { // This is Hyvinkää, better than nothing
+        map.setCenter(new OpenLayers.LonLat(2766225.683368, 8540628.690266), 15);
+    }
     var pointcontrol = new OpenLayers.Control.DrawFeature(pointLayer,
                                 OpenLayers.Handler.Point,
                                 {'id': 'pointcontrol',
