@@ -21,5 +21,6 @@ _svn
 svn-commit*.tmp
 egg_cache
 *.wsgi
+*.wsgi~
 settings_local.py
 
