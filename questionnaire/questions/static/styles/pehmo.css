@@ -687,6 +687,10 @@ z-index: 1;
     background-image: url("../img/kouvola_front.jpg");
     background-position: 100% 10px;
 }
+.tuusula_fi .firstpagepic, .tuusula_en .firstpagepic {
+    background-image: url("../img/tuusula_front.jpg");
+    background-position: 100% 15px;
+}
 .firstpagecontent {
 position: relative;
 z-index: 99;

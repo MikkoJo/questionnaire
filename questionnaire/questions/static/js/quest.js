@@ -1666,12 +1666,14 @@ function create_widgets(node_id) {
                                              dojobutton_element);
     }
     // Add extra events to non dojo input elements
-    for (k = 0; k < questionnaire.extra_input_connect.length; k++) {
-        var elem = dojo.byId(questionnaire.extra_input_connect[k].id);
-        if(elem !== null) {
-            dojo.connect(elem,
-                questionnaire.extra_input_connect[k].event,
-                questionnaire.extra_input_connect[k].func);
+    if(questionnaire.extra_input_connect !== undefined) {
+        for (k = 0; k < questionnaire.extra_input_connect.length; k++) {
+            var elem = dojo.byId(questionnaire.extra_input_connect[k].id);
+            if(elem !== null) {
+                dojo.connect(elem,
+                    questionnaire.extra_input_connect[k].event,
+                    questionnaire.extra_input_connect[k].func);
+            }
         }
     }
 
