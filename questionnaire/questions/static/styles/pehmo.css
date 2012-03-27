@@ -21,13 +21,14 @@ padding-top: 3px;
 color: #86c954;
 }
 h2 {
-font-size:16px;
+font-size:15px;
 padding-top: 3px;
 color: #86c954;
 }
 h3 {
-font-size:16px;
+font-size:13px;
 background: transparent;
+color: #86c954;
 }
 
 th {
@@ -102,6 +103,10 @@ width: 173px;
 }
 .kouvola_fi #logo, .kouvola_en #logo {
 background-image: url("../img/kouvola_logo.png");
+width: 173px;
+}
+.tuusula_fi #logo, .tuusula_en #logo {
+background-image: url("../img/tuusula_logo.png");
 width: 173px;
 }
 
@@ -681,6 +686,10 @@ z-index: 1;
 .kouvola_fi .firstpagepic, .kouvola_en .firstpagepic {
     background-image: url("../img/kouvola_front.jpg");
     background-position: 100% 10px;
+}
+.tuusula_fi .firstpagepic, .tuusula_en .firstpagepic {
+    background-image: url("../img/tuusula_front.jpg");
+    background-position: 100% 15px;
 }
 .firstpagecontent {
 position: relative;
@@ -3230,6 +3239,48 @@ button.pearl {
 button.pearl.ui-state-active {
     background-position: 0px -51px;
 }
+
+button.like {
+    background: transparent url("../img/buttons/home_uusi_plus_sprite_8.png") scroll -520px 0 no-repeat;
+    border: medium none;
+    width: 104px;
+    height: 29px;
+}
+button.like.ui-state-active {
+    background-position: -520px -29px;
+}
+button.like .ui-button-text {
+    font-size: 11px;
+    color: #29910A;
+    font-family: Arial, sans-serif;
+    padding: 1px 0.1em 1px 2.1em;
+    line-height: 15px;
+}
+button.like.ui-button {
+    margin-right: 0px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+button.dislike {
+    background: transparent url("../img/buttons/home_uusi_plus_sprite_8.png") scroll -624px 0 no-repeat;
+    border: medium none;
+    width: 104px;
+    height: 29px;
+}
+button.dislike.ui-state-active {
+    background-position: -624px -29px;
+}
+button.dislike .ui-button-text {
+    font-size: 11px;
+    color: #B93015;
+    font-family: Arial, sans-serif;
+    padding: 1px 2.3em 1px 0.1em;
+    line-height: 15px;
+}
+button.dislike.ui-button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
 button.small.drawbutton {
     width: 220px;
 }
@@ -3281,6 +3332,10 @@ button.small .ui-icon {
 }
 .yellow_area-icon {
     background-image: url("../img/placemarks/small_area_yellow.png") !important;
+}
+.cyan_area-icon {
+    background-image: url("https://www.pehmogis.fi/gntimages/area?color=48fbdc&scale=1") !important;
+    width: 22px !important;
 }
 #mapitaCopy {
     bottom: 60px;

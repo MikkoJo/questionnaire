@@ -87,6 +87,32 @@ var point_style = new OpenLayers.Style(
                     filter: new OpenLayers.Filter.Comparison({
                         type: OpenLayers.Filter.Comparison.EQUAL_TO,
                         property: "style",
+                        value: "point_positive"
+                    }),
+                    symbolizer: {
+                        graphicWidth: 31,
+                        graphicHeight: 42,
+                        graphicYOffset: -36, // shift graphic up 28 pixels
+                        externalGraphic: "{{ STATIC_URL }}img/placemarks/point_positive.png"
+                    }
+                }),
+                new OpenLayers.Rule({
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style",
+                        value: "point_negative"
+                    }),
+                    symbolizer: {
+                        graphicWidth: 31,
+                        graphicHeight: 42,
+                        graphicYOffset: -36, // shift graphic up 28 pixels
+                        externalGraphic: "{{ STATIC_URL }}img/placemarks/point_negative.png"
+                    }
+                }),
+                new OpenLayers.Rule({
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style",
                         value: "point_purple"
                     }),
                     symbolizer: {
@@ -202,6 +228,21 @@ var area_style = new OpenLayers.Style(
                         strokeColor: "#ffd700",
                         strokeOpacity: 1,
                         fillColor:  "#ffd700",
+                        fillOpacity: 0.3
+                    }
+                }),
+                new OpenLayers.Rule({
+                    // a rule contains an optional filter
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style", // the "foo" feature attribute
+                        value: "area_cyan"
+                    }),
+                    // if a feature matches the above filter, use this symbolizer
+                    symbolizer: {
+                        strokeColor: "#48fbdc",
+                        strokeOpacity: 1,
+                        fillColor:  "#48fbdc",
                         fillOpacity: 0.3
                     }
                 }),
