@@ -12,7 +12,7 @@ LANGUAGES = (('fi', 'finnish'),)
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis', #gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'hyvinkaa',                      # Or path to database file if using sqlite3.
+        'NAME': 'tuusula',                      # Or path to database file if using sqlite3.
         'USER':  getattr(settings_local, 'DATABASE_USER', ''), # Not used with sqlite3.
         'PASSWORD': getattr(settings_local, 'DATABASE_PW', ''), # Not used with sqlite3.
         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
