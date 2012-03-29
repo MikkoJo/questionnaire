@@ -50,7 +50,7 @@ VALUES = {
                   _(u'Kivitalo on lähempänä mieltymyksiäni.')),
                  ('history', _(u'Alueen historia ja tausta kiehtoo minua.'),
                   _(u'Alueen historia ei ole itselleni merkityksellinen asia.')),
-                 ('local_food', _(u'Olen kiinnostunut lähiruoasta.'),
+                 ('local_food', _(u'Olen kiinnostunut lähiruoasta ja mahdollisuudesta viljelypalstaan.'),
                   _(u'Ruuan lähituotanto ei ole itselleni tärkeää.')),
                  ('wind_energy', _(u'Pidän tuuli-, aurinko- ja/tai maa-/kalliolämmön lähituotantoa tärkeänä.'),
                   _(u'En ole erityisen kiinnostunut energiantuottomuodoista.')),
