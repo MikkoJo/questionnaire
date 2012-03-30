@@ -37,7 +37,7 @@ VALUES = {
                  ('diy', _(u'Olen ”tee se itse” –tyyppi.'),
                   _(u'Olen ”avaimet käteen” -tyyppi.')),
                  ('homefree', _(u'Arvostan vapaa-ajan viettoa kotona.'),
-                  _(u'Arvostan vapaa-ajanviettoa kodin ulkopuolella.')),
+                  _(u'Arvostan vapaa-ajan viettoa kodin ulkopuolella.')),
                  ('social', _(u'Arkinen apu ja seurustelu naapureiden kanssa ovat minulle tärkeitä.'),
                   _(u'Hyvän päivän tuttuus naapureiden kanssa riittää minulle.')),
                  ('forest_park', _(u'Metsät ja luonnontilaiset virkistysalueet ovat parhaita virkistymiseen.'),

@@ -3107,7 +3107,7 @@ function init(basemap, /* string*/ mapType /* string*/) {
     if(basemap === 'google') {
         mapRoad = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
         mapSatellite = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
-                                                                numZoomLevels: 22});
+                                                                numZoomLevels: 20});
     }
     else if (basemap === 'bing') {
         mapRoad = new OpenLayers.Layer.Bing({name: "Main",
