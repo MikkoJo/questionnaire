@@ -689,7 +689,8 @@ z-index: 1;
 }
 .tuusula_fi .firstpagepic, .tuusula_en .firstpagepic {
     background-image: url("../img/tuusula_front.jpg");
-    background-position: 100% 15px;
+    background-position: 100% 0px;
+    height: 460px;
 }
 .firstpagecontent {
 position: relative;
