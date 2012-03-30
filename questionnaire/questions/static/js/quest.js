@@ -1666,14 +1666,16 @@ function create_widgets(node_id) {
                                              dojobutton_element);
     }
     // Add extra events to non dojo input elements
-    for (k = 0; k < questionnaire.extra_input_connect.length; k++) {
-        var elem = dojo.byId(questionnaire.extra_input_connect[k].id);
-        if(elem !== null) {
-            dojo.connect(elem,
-                questionnaire.extra_input_connect[k].event,
-                questionnaire.extra_input_connect[k].func);
+    if(questionnaire.extra_input_connect !== undefined) {
+        for (k = 0; k < questionnaire.extra_input_connect.length; k++) {
+            var elem = dojo.byId(questionnaire.extra_input_connect[k].id);
+            if(elem !== null) {
+                dojo.connect(elem,
+                    questionnaire.extra_input_connect[k].event,
+                    questionnaire.extra_input_connect[k].func);
+            }
         }
-    }        
+    }
 
     return f;
 }
@@ -3045,14 +3047,25 @@ function endQuestionary() {
 var imageServiceLayer;
 var ovlayer;
 var servicesLayer;
-var gMapDef, gMapSat;
+var mapRoad, mapSatellite;
 var pointLayer,
     routeLayer,
     areaLayer;
 
 //init creates the map
 // TODO: Make basemap configurable (Google, Bing, etc.)
-function init() {
+// basemap parameter can have values google or bing, default google
+// mapType parameter can have values satellite or road, default road
+function init(basemap, /* string*/ mapType /* string*/) {
+
+    // Check map provider
+    if (basemap !== 'google' && basemap !== 'bing') {
+        basemap = 'google';
+    }
+    // Check map style
+    if (mapType !== 'road' && mapType !== 'satellite') {
+        mapType = 'road';
+    }
     console.log("init");
     //give the user impression that the program is doing something
     document.body.style.cursor = "wait";
@@ -3091,18 +3104,21 @@ function init() {
                                      controls: []});
 
 
-
-//    gMapDef = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
-//    gMapSat = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
-//                                                            numZoomLevels: 22});
-    gMapDef = new OpenLayers.Layer.Bing({name: "Main",
-                                         type: "Road",
-                                         key: "AjB69asvfCy_FaIvDNBzCFc2eJdF7m7_bA7-M-xpJKctrxjmYQjqYX5DRCH0sd3J",
-                                         culture: "fi"});
-    gMapSat = new OpenLayers.Layer.Bing({name: "Satellite",
-                                         type: "AerialWithLabels",
-                                         key: "AjB69asvfCy_FaIvDNBzCFc2eJdF7m7_bA7-M-xpJKctrxjmYQjqYX5DRCH0sd3J",
-                                         culture: "fi"});
+    if(basemap === 'google') {
+        mapRoad = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
+        mapSatellite = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
+                                                                numZoomLevels: 22});
+    }
+    else if (basemap === 'bing') {
+        mapRoad = new OpenLayers.Layer.Bing({name: "Main",
+                                             type: "Road",
+                                             key: "AjB69asvfCy_FaIvDNBzCFc2eJdF7m7_bA7-M-xpJKctrxjmYQjqYX5DRCH0sd3J",
+                                             culture: "fi"});
+        mapSatellite = new OpenLayers.Layer.Bing({name: "Satellite",
+                                             type: "AerialWithLabels",
+                                             key: "AjB69asvfCy_FaIvDNBzCFc2eJdF7m7_bA7-M-xpJKctrxjmYQjqYX5DRCH0sd3J",
+                                             culture: "fi"});
+    }
 
     pointLayer = new OpenLayers.Layer.Vector("Point Layer", {
                                 styleMap: new OpenLayers.StyleMap(point_style)
@@ -3125,10 +3141,17 @@ function init() {
                                  new OpenLayers.Control.PanZoomBar({id: 'navigation'})]);
 
     var aliasproj = new OpenLayers.Projection("EPSG:3857");
-    gMapDef.projection = gMapSat.projection = aliasproj;
-    map.addLayers([gMapDef, gMapSat, areaLayer, routeLayer, pointLayer, zoneLayer]);
-    map.setCenter(new OpenLayers.LonLat(2766225.683368, 8540628.690266), 15);
+    mapRoad.projection = mapSatellite.projection = aliasproj;
+    map.addLayers([mapRoad, mapSatellite, areaLayer, routeLayer, pointLayer, zoneLayer]);
+    if(questionnaire.start_extent !== undefined) {
+        map.setCenter(new OpenLayers.LonLat(questionnaire.start_extent.x,
+                                            questionnaire.start_extent.y),
+                                            questionnaire.start_extent.zoomLevel);
 
+    }
+    else { // This is Hyvinkää, better than nothing
+        map.setCenter(new OpenLayers.LonLat(2766225.683368, 8540628.690266), 15);
+    }
     var pointcontrol = new OpenLayers.Control.DrawFeature(pointLayer,
                                 OpenLayers.Handler.Point,
                                 {'id': 'pointcontrol',
@@ -3163,8 +3186,10 @@ function init() {
     select_feature_control.activate();
 
     // Add zone borders
-    var geojson_format = new OpenLayers.Format.GeoJSON();
-    zoneLayer.addFeatures(geojson_format.read(questionnaire.zone_featurecollection));
+    if(questionnaire.zone_featurecollection !== undefined) {
+        var geojson_format = new OpenLayers.Format.GeoJSON();
+        zoneLayer.addFeatures(geojson_format.read(questionnaire.zone_featurecollection));
+    }
 
     // Enable Pan onmouseOut
     if (!dojo.isIE) {
@@ -3205,11 +3230,13 @@ function init() {
 
     //give the user impression that the program is doing something
     document.body.style.cursor = "default";
-    //Defaults to satellite map
-    //satellite(true);
+    //Defaults to road map
+    if(mapType === 'satellite') {
+        satellite(true);
+    }
     // Ugly way to zoom to kouvola keha
-    map.zoomToExtent(zoneLayer.getFeaturesByAttribute("Name", "keha")[0].geometry.getBounds(), true);
-    //gMapDef.redraw();
+    //map.zoomToExtent(zoneLayer.getFeaturesByAttribute("Name", "keha")[0].geometry.getBounds(), true);
+    //mapRoad.redraw();
 
 
 }
@@ -3221,18 +3248,18 @@ function satellite(bool) {
             //dojo.byId("ilmakuvaNakyma").src = "./img/ilmakuva_nappi_aktiivinen.png";
             dojo.byId("karttaNakyma").className = "karttanakyma";
             dojo.byId("ilmakuvaNakyma").className = "aktiivinenkartta";
-            gMapDef.map.setBaseLayer(gMapSat);
-            //gMapDef.setVisibility(false);
-            //gMapSat.setVisibility(true);
+            mapRoad.map.setBaseLayer(mapSatellite);
+            //mapRoad.setVisibility(false);
+            //mapSatellite.setVisibility(true);
         } else {
             //dojo.byId("karttaNakyma").src = "./img/kartta_nappi_aktiivinen.png";
             //dojo.byId("ilmakuvaNakyma").src = "./img/ilmakuva_nappi.png";
             dojo.byId("karttaNakyma").className = "aktiivinenkartta";
             dojo.byId("ilmakuvaNakyma").className = "karttanakyma";
-            gMapDef.map.setBaseLayer(gMapDef);
-//            gMapDef.setVisibility(true);
-//            gMapSat.setVisibility(false);
-//            gMapDef.
+            mapRoad.map.setBaseLayer(mapRoad);
+//            mapRoad.setVisibility(true);
+//            mapSatellite.setVisibility(false);
+//            mapRoad.
         }
 }
 
