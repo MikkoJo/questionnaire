@@ -2716,7 +2716,7 @@ Bigger progressbar
 div#progressBar {
     height: 55px;
     top:5px;
-    
+
 }
 
 .larger {
@@ -3284,6 +3284,9 @@ button.dislike.ui-button {
 }
 button.small.drawbutton {
     width: 220px;
+}
+button.width100.drawbutton {
+    width: 100% !important;
 }
 button.small .ui-button-text{
     font-size: 13px;
