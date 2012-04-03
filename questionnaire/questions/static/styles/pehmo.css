@@ -404,6 +404,7 @@ width: 680px;
 margin-left: -315px;
 z-index: 60;
 height: auto;
+overflow: hidden;
 }
 
 /*kiitos sivu*/
