@@ -1,0 +1,38 @@
+<!DOCTYPE html >
+{% load i18n %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE|slice:":2" }}" lang="{{ LANGUAGE_CODE|slice:":2" }}">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" >
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />-->
+        <title>{{ site_name }}</title>
+        <!--<title>{% trans 'PehmoGIS - Elinympäristö'%}</title>-->
+        <link rel="icon" type="image/gif" href="https://www.pehmogis.fi/favicon.gif" />
+        <style type="text/css">
+        .quest_over {
+            text-align: center;
+            top: 30px;
+        }
+        </style>
+
+
+     </head>
+    <body class="tundra hyvinkaa_{{ LANGUAGE_CODE|slice:":2" }}" onunload="/*submitForm();endQuestionary();*/">
+        <div class="quest_over">
+            <p>
+            {% trans 'Kiitos mielenkiinnosta Hyvinkään ratapihan PehmoGIS -kyselyä kohtaan!' %}
+            </p>
+            <p>
+            {% trans 'Kysely on päättynyt 27.2.2012.' %}
+            </p>
+            <p style="font-size: large">
+                {% trans 'Kiitos kaikille vastannelle!' %}
+            </p>
+            <p>
+                <a href="http://www.hyvinkaa.fi/Asuinymparisto_rakentaminen/Hangonratapiha-uudistuu/">{% trans 'Hangonratapiha uudistuu -sivusto' %}</a>
+            </p>
+
+        </div>
+    </body>
+</html>

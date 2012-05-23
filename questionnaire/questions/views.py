@@ -53,7 +53,7 @@ def main(request, file_name='index', file_type="html"):
 
     site_name = Site.objects.get(id=settings.SITE_ID).name
     values = ()
-    
+
     if hasattr(request, 'session'):
         try:
             #print(request.session['started'])
@@ -69,6 +69,11 @@ def main(request, file_name='index', file_type="html"):
     mtype = "text/html"
     if(file_type == "js"):
         mtype = "application/javascript"
+
+    # Check if questionnaire is ended
+    if settings.QUESTIONNAIRE_ENDED:
+        file_name = "quest_over"
+        file_type = "html"
 
     return render_to_response("%s/%s/%s.%s" % (site_name, file_type, file_name, file_type),
                               {'site_name': site_name},
@@ -150,24 +155,24 @@ def common(request, file_name, file_type="js"):
                                                                 }))
 
 def feedback(request):
-    
+
     """
 This function handles the feedback form
 """
     if (request.method == 'GET'):
         form = FeedbackForm()
-            
+
         return render_to_response('html/feedback.html',
                                 {'form': form,
                                  'DEBUG': DEBUG},
                                 context_instance=RequestContext(request))
-            
+
     elif (request.method == 'POST'):
         # This is an ajax post
         form = FeedbackForm(json.loads(request.POST.keys()[0]))
-        
+
         if form.is_valid():
-            
+
             cleaned_data = form.cleaned_data
             cleaned_data['content'] = "%s %s" % (cleaned_data['content'],
                                                  request.META.get('HTTP_USER_AGENT',
@@ -175,16 +180,16 @@ This function handles the feedback form
             if request.user.is_authenticated():
                 cleaned_data['content'] = "%s %s" % (cleaned_data['content'],
                                                      request.user.email)
-            
+
             feedback_value = Feedback(content = cleaned_data['content'])
             feedback_value.save()
-            
+
             return render_to_response('html/thank_feedback.html',
                                       {'DEBUG': DEBUG},
                                       context_instance=RequestContext(request))
         else:
-            return htt
-        
+            return HttpResponse
+
 def contact(request):
 
     if not request.user.is_authenticated():
@@ -204,7 +209,7 @@ def contact(request):
 
         name = values.get('name')
         email = values.get('email')
-        phone = values.get('phonenumber')
+        phone = values.get('phonenumber', "")
         sendresults = values.get('sendresults')
 
         contact_values = Contact(name = name,

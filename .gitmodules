@@ -1,0 +1,6 @@
+[submodule "questionnaire/questions/templates/kouvola"]
+	path = questionnaire/questions/templates/kouvola
+	url = git@github.com:Mapita/Kouvola.git
+[submodule "questionnaire/questions/mapita"]
+	path = questionnaire/questions/mapita
+	url = git@github.com:Mapita/questionnaire-content.git

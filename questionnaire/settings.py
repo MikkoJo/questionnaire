@@ -48,6 +48,9 @@ LANGUAGE_CODE = 'en-US'
 
 SITE_ID = getattr(settings_local, "SITE_ID", 7)
 
+QUESTIONNAIRE_ENDED = False
+
+
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -58,13 +61,13 @@ USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'static'),
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media'),
 MEDIA_ROOT = MEDIA_ROOT[0]
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = "/static/"
+MEDIA_URL = "/media/"
 
 CACHES = getattr(settings_local, "CACHES", {
     'default': {
@@ -100,11 +103,11 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'questionnaire.urls'
 
-TEMPLATE_DIRS = (
+TEMPLATE_DIRS = getattr(settings_local, "TEMPLATE_DIRS",())
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-)
+#)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -114,7 +117,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'django.contrib.gis',
-#    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',
 
     # softgis-api applications
     #'api.softgis_client',
@@ -130,6 +133,7 @@ INSTALLED_APPS = (
     #'user_profile',
     'geonition_client',
     'email_rest',
+    'data_processing',
 
     #questionnaires application
     'questions'
@@ -139,20 +143,29 @@ USE_MONGODB = getattr(settings_local, "USE_MONGODB", True)
 
 # Spatial reference system identity (srid) of the database
 # 3067 EUREF_FIN_TM35FIN (ETRS89 / ETRS-TM35FIN)
+# 3857 Web mercator, same as 900913, 3857 is the official EPSG code
 SPATIAL_REFERENCE_SYSTEM_ID = 3857
 
 STATIC_ROOT = getattr(settings_local, "STATIC_ROOT", '')
 STATIC_URL = getattr(settings_local, "STATIC_URL", '/static/')
 STATICFILES_DIRS = getattr(settings_local, "STATICFILES_DIRS", ('',))
 
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
 #email smtp configuration
-EMAIL_HOST = getattr(settings_local, 'EMAIL_HOST', 'smtp.gmail.com')
-EMAIL_HOST_USER = getattr(settings_local, 'EMAIL_HOST_USER', 'do_not_reply@mapita.fi')
-EMAIL_HOST_PASSWORD = getattr(settings_local, 'EMAIL_HOST_PASSWORD', 'va.reply1')
+EMAIL_HOST = getattr(settings_local, 'EMAIL_HOST', '')
+EMAIL_HOST_USER = getattr(settings_local, 'EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = getattr(settings_local, 'EMAIL_HOST_PASSWORD', '')
 EMAIL_PORT = getattr(settings_local, 'EMAIL_PORT', 587)
 EMAIL_USE_TLS = getattr(settings_local, 'EMAIL_USE_TLS', True)
-EMAIL_FROM = getattr(settings_local, 'EMAIL_FROM', 'do_not_reply@mapita.fi')
-DEFAULT_FROM_EMAIL = getattr(settings_local, 'DEFAULT_FROM_EMAIL', 'do_not_reply@mapita.fi')
+EMAIL_FROM = getattr(settings_local, 'EMAIL_FROM', '')
+DEFAULT_FROM_EMAIL = getattr(settings_local, 'DEFAULT_FROM_EMAIL', '')
 EMAIL_CONFIRMATION_DAYS = getattr(settings_local, 'EMAIL_CONFIRMATION_DAYS', 2)
 #EMAIL_BACKEND = getattr(settings_local, "EMAIL_BACKEND", 'django.core.mail.backends.smtp.EmailBackend')
 
@@ -173,5 +186,6 @@ JAVASCRIPT_CLIENT_TEMPLATES = [#'softgis_profile.esri.js',
                                'softgis_email.jquery.js',
                                #'softgis_feature.esri.js',
                                'geonition_geojson.jquery.js',
-                               'opensocial_people.jquery.js'
+                               'opensocial_people.jquery.js',
+                               'data_processing.jquery.js'
                                ]
