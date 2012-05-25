@@ -134,9 +134,15 @@ INSTALLED_APPS = (
     'geonition_client',
     'email_rest',
     'data_processing',
+    'maps',
 
     #questionnaires application
-    'questions'
+    'questions',
+
+    # Uncomment the next line to enable the admin:
+    'django.contrib.admin',
+    # Uncomment the next line to enable admin documentation:
+    'django.contrib.admindocs',
 )
 #is the mongodb in use or not, gives more possibilities for querying the json
 USE_MONGODB = getattr(settings_local, "USE_MONGODB", True)

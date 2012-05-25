@@ -4,7 +4,7 @@ from django.contrib import admin
 
 
 #admin
-#admin.autodiscover()
+admin.autodiscover()
 
 urlpatterns = patterns('',
     #softgis-api urls
@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     (r'^gemail/', include('email_rest.urls')),
     (r'^gopen_people/', include('opensocial_people.urls')),
     (r'^data_processing/', include('data_processing.urls')),
+    (r'^geonition_maps/', include('maps.urls')),
 
     #admin
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),

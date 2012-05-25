@@ -8,27 +8,11 @@
         }
     },
     {
-        "pk": 8, 
+        "pk": 12, 
         "model": "sites.site", 
         "fields": {
-            "domain": "http://hyvinkaa.pehmogis.fi", 
-            "name": "hyvinkaa"
-        }
-    },
-    {
-        "pk": 9, 
-        "model": "sites.site", 
-        "fields": {
-            "domain": "http://kouvola.pehmogis.fi", 
-            "name": "kouvola"
-        }
-    },
-    {
-        "pk": 10, 
-        "model": "sites.site", 
-        "fields": {
-            "domain": "http://tuusula.pehmogis.fi", 
-            "name": "tuusula"
+            "domain": "http://vaaka.pehmogis.fi", 
+            "name": "vaaka"
         }
     }
 ]

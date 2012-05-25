@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0"
+  xmlns="http://www.opengis.net/wms"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:esri_wms="http://www.esri.com/wms"
+  xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer?version=1.3.0&amp;service=WMS&amp;request=GetSchemaExtension">
+  <Service>
+    <Name><![CDATA[WMS]]></Name>
+    <Title><![CDATA[Vaaka_POI]]></Title>
+    <Abstract>WMS</Abstract>
+    <KeywordList><Keyword><![CDATA[]]></Keyword></KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson><![CDATA[Mikko Johansson]]></ContactPerson>
+        <ContactOrganization><![CDATA[Aalto University / YTK]]></ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition><![CDATA[]]></ContactPosition>
+      <ContactAddress>
+        <AddressType><![CDATA[]]></AddressType>
+        <Address><![CDATA[]]></Address>
+        <City><![CDATA[]]></City>
+        <StateOrProvince><![CDATA[]]></StateOrProvince>
+        <PostCode><![CDATA[]]></PostCode>
+        <Country><![CDATA[]]></Country>
+      </ContactAddress>
+      <ContactVoiceTelephone><![CDATA[]]></ContactVoiceTelephone>
+      <ContactFacsimileTelephone><![CDATA[]]></ContactFacsimileTelephone>
+      <ContactElectronicMailAddress><![CDATA[]]></ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees><![CDATA[]]></Fees>
+    <AccessConstraints><![CDATA[]]></AccessConstraints>
+    <MaxWidth>2048</MaxWidth>
+    <MaxHeight>2048</MaxHeight>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer"/></Get></HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png8</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/gif</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer"/></Get></HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.esri.wms_raw_xml</Format>
+        <Format>application/vnd.esri.wms_featureinfo_xml</Format>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <Format>text/html</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer"/></Get></HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <esri_wms:GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer"/></Get></HTTP>
+        </DCPType>
+      </esri_wms:GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+      <Format>text/xml</Format>
+      <Format>XML</Format>
+    </Exception>
+    <Layer>
+      <Title><![CDATA[Layers]]></Title>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>27.400384</westBoundLongitude><eastBoundLongitude>28.932693</eastBoundLongitude><southBoundLatitude>64.548563</southBoundLatitude><northBoundLatitude>65.235956</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="27.400384" miny="64.548563" maxx="28.932693" maxy="65.235956"/>
+<BoundingBox CRS="EPSG:4326" minx="64.548563" miny="27.400384" maxx="65.235956" maxy="28.932693"/>
+<BoundingBox CRS="EPSG:3067" minx="519190.615867" miny="7159486.528953" maxx="590364.003952" maxy="7234814.312076"/>
+      <Layer queryable="1">
+        <Name>0</Name>
+        <Title><![CDATA[Tutkimusalue]]></Title>
+        <Abstract><![CDATA[Tutkimusalue]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>27.554177</westBoundLongitude><eastBoundLongitude>28.686065</eastBoundLongitude><southBoundLatitude>64.614819</southBoundLatitude><northBoundLatitude>65.181761</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="27.554177" miny="64.614819" maxx="28.686065" maxy="65.181761"/>
+<BoundingBox CRS="EPSG:4326" minx="64.614819" miny="27.554177" maxx="65.181761" maxy="28.686065"/>
+<BoundingBox CRS="EPSG:3067" minx="526500.585715" miny="7166556.467651" maxx="578986.150659" maxy="7228830.468510"/>
+        <Style>
+          <Name>default</Name>
+          <Title>0</Title>
+          <LegendURL width="32" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=0" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>1</Name>
+        <Title><![CDATA[LsAlueValtio_simp]]></Title>
+        <Abstract><![CDATA[LsAlueValtio_simp]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>27.836901</westBoundLongitude><eastBoundLongitude>28.207525</eastBoundLongitude><southBoundLatitude>64.648340</southBoundLatitude><northBoundLatitude>65.168055</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="27.836901" miny="64.648340" maxx="28.207525" maxy="65.168055"/>
+<BoundingBox CRS="EPSG:4326" minx="64.648340" miny="27.836901" maxx="65.168055" maxy="28.207525"/>
+<BoundingBox CRS="EPSG:3067" minx="539979.127000" miny="7169792.355900" maxx="556587.346100" maxy="7227454.320600"/>
+        <Style>
+          <Name>default</Name>
+          <Title>1</Title>
+          <LegendURL width="32" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=1" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>2</Name>
+        <Title><![CDATA[Retkeilyreitit_ka_luontopolut]]></Title>
+        <Abstract><![CDATA[Retkeilyreitit_ka_luontopolut]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>27.522863</westBoundLongitude><eastBoundLongitude>28.928380</eastBoundLongitude><southBoundLatitude>64.594321</southBoundLatitude><northBoundLatitude>65.176327</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="27.522863" miny="64.594321" maxx="28.928380" maxy="65.176327"/>
+<BoundingBox CRS="EPSG:4326" minx="64.594321" miny="27.522863" maxx="65.176327" maxy="28.928380"/>
+<BoundingBox CRS="EPSG:3067" minx="525019.341315" miny="7164588.642795" maxx="590364.003952" maxy="7228211.901016"/>
+        <Style>
+          <Name>default</Name>
+          <Title>2</Title>
+          <LegendURL width="32" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>3</Name>
+        <Title><![CDATA[Tonkohuikonen_ja_Köngäskierros]]></Title>
+        <Abstract><![CDATA[Tonkohuikonen_ja_Köngäskierros]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>27.664668</westBoundLongitude><eastBoundLongitude>28.309050</eastBoundLongitude><southBoundLatitude>64.637353</southBoundLatitude><northBoundLatitude>65.175746</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="27.664668" miny="64.637353" maxx="28.309050" maxy="65.175746"/>
+<BoundingBox CRS="EPSG:4326" minx="64.637353" miny="27.664668" maxx="65.175746" maxy="28.309050"/>
+<BoundingBox CRS="EPSG:3067" minx="531762.600342" miny="7168659.891749" maxx="561330.753095" maxy="7228211.901016"/>
+        <Style>
+          <Name>default</Name>
+          <Title>3</Title>
+          <LegendURL width="32" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=3" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>4</Name>
+        <Title><![CDATA[Ladut]]></Title>
+        <Abstract><![CDATA[Ladut]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>27.638990</westBoundLongitude><eastBoundLongitude>28.932693</eastBoundLongitude><southBoundLatitude>64.615101</southBoundLatitude><northBoundLatitude>65.235097</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="27.638990" miny="64.615101" maxx="28.932693" maxy="65.235097"/>
+<BoundingBox CRS="EPSG:4326" minx="64.615101" miny="27.638990" maxx="65.235097" maxy="28.932693"/>
+<BoundingBox CRS="EPSG:3067" minx="530553.087609" miny="7166905.714888" maxx="590364.003952" maxy="7234814.312076"/>
+        <Style>
+          <Name>default</Name>
+          <Title>4</Title>
+          <LegendURL width="32" height="16">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=4" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>5</Name>
+        <Title><![CDATA[Matkailukeskukset]]></Title>
+        <Abstract><![CDATA[Matkailukeskukset]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>27.955849</westBoundLongitude><eastBoundLongitude>28.248743</eastBoundLongitude><southBoundLatitude>64.674096</southBoundLatitude><northBoundLatitude>64.742985</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="27.955849" miny="64.674096" maxx="28.248743" maxy="64.742985"/>
+<BoundingBox CRS="EPSG:4326" minx="64.674096" miny="27.955849" maxx="64.742985" maxy="28.248743"/>
+<BoundingBox CRS="EPSG:3067" minx="545618.092042" miny="7172718.244048" maxx="559453.499918" maxy="7180156.293566"/>
+        <Style>
+          <Name>default</Name>
+          <Title>5</Title>
+          <LegendURL width="44" height="22">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=5" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>6</Name>
+        <Title><![CDATA[Majoitus]]></Title>
+        <Abstract><![CDATA[Majoitus]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>27.523971</westBoundLongitude><eastBoundLongitude>28.790671</eastBoundLongitude><southBoundLatitude>64.665336</southBoundLatitude><northBoundLatitude>65.047403</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="27.523971" miny="64.665336" maxx="28.790671" maxy="65.047403"/>
+<BoundingBox CRS="EPSG:4326" minx="64.665336" miny="27.523971" maxx="65.047403" maxy="28.790671"/>
+<BoundingBox CRS="EPSG:3067" minx="525008.345519" miny="7172332.396435" maxx="584314.448143" maxy="7213842.656209"/>
+        <Style>
+          <Name>default</Name>
+          <Title>6</Title>
+          <LegendURL width="44" height="86">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=6" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>7</Name>
+        <Title><![CDATA[Hepoköngäs]]></Title>
+        <Abstract><![CDATA[Hepoköngäs]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>27.877194</westBoundLongitude><eastBoundLongitude>27.877194</eastBoundLongitude><southBoundLatitude>64.822443</southBoundLatitude><northBoundLatitude>64.822443</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="27.877194" miny="64.822443" maxx="27.877194" maxy="64.822443"/>
+<BoundingBox CRS="EPSG:4326" minx="64.822443" miny="27.877194" maxx="64.822443" maxy="27.877194"/>
+<BoundingBox CRS="EPSG:3067" minx="541638.873350" miny="7188954.928744" maxx="541638.873350" maxy="7188954.928744"/>
+        <Style>
+          <Name>default</Name>
+          <Title>7</Title>
+          <LegendURL width="44" height="22">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=7" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>8</Name>
+        <Title><![CDATA[Kodat_laavut_nuotiopaikat_päivätuvat]]></Title>
+        <Abstract><![CDATA[Kodat_laavut_nuotiopaikat_päivätuvat]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>27.400384</westBoundLongitude><eastBoundLongitude>28.825950</eastBoundLongitude><southBoundLatitude>64.549801</southBoundLatitude><northBoundLatitude>65.166798</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="27.400384" miny="64.549801" maxx="28.825950" maxy="65.166798"/>
+<BoundingBox CRS="EPSG:4326" minx="64.549801" miny="27.400384" maxx="65.166798" maxy="28.825950"/>
+<BoundingBox CRS="EPSG:3067" minx="519190.615867" miny="7159486.528953" maxx="585593.024115" maxy="7227106.350852"/>
+        <Style>
+          <Name>default</Name>
+          <Title>8</Title>
+          <LegendURL width="34" height="17">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://pehmogis.tkk.fi/arcgis/services/Vaaka_POI/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=8" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>
