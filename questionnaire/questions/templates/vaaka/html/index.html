@@ -48,7 +48,7 @@
             -->
         </script>
      </head>
-    <body class="tundra tuusula_{{ LANGUAGE_CODE|slice:":2" }}" onunload="/*submitForm();endQuestionary();*/">
+    <body class="tundra vaaka_{{ LANGUAGE_CODE|slice:":2" }}" onunload="/*submitForm();endQuestionary();*/">
         <script type="text/javascript">
             <!--
                 document.body.style.cursor = "wait";
@@ -75,9 +75,9 @@
                     <tr>
                         <td class="barLeft">&nbsp;&nbsp;&nbsp;</td>
                         <td class="section barUnvisited background">{% trans 'Taustatiedot' %}</td>
-                        <td class="section barUnvisited rykment_gen">{% trans 'Rykmentinpuisto' %}</td>
-                        <td class="section barUnvisited improvements">{% trans 'Kehittämisehdotukset' %}</td>
-                        <td class="section barUnvisited visions">{% trans 'Oma visioni' %}</td>
+                        <td class="section barUnvisited activities">{% trans 'Toiminnot' %}</td>
+                        <td class="section barUnvisited improvements">{% trans 'Alueen kehittäminen' %}</td>
+                        <td class="section barUnvisited feedback">{% trans 'Palaute' %}</td>
                         <td class="barRight">&nbsp;&nbsp;&nbsp;</td>
                     </tr>
                 </table>
@@ -181,6 +181,7 @@
             <!--
             /* Check  parameters from quest.js */
             dojo.addOnLoad(function(){init('geonition_maps', 'single');});
+//            dojo.addOnLoad(function(){init('bing', 'road');});
             -->
         </script>
 <!-- infowindows with id's put here so that translations work -->
@@ -198,6 +199,209 @@
     <p>{% trans "Kerro lisää:" %}</p>
     <form name="popupform" action="#" >
         <textarea name="comment" cols="24" rows="5" ></textarea><br />
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+    </form>
+</div>
+<div id="activities" class="popup" style="visibility: hidden;">
+    <h1>${header}</h1>
+    <p>{% trans "Kohteen tyyppi:" %}</p>
+    <form name="popupform" action="#" >
+        <table>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_1" name="activity" value="hunting"/>
+                </td>
+                <td>
+                    <label for="ir_1">{% trans 'Metsästys/kalastus' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_2" name="activity" value="forestry"/>
+                </td>
+                <td>
+                    <label for="ir_2">{% trans 'Metsänhoito' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_3" name="activity" value="natural_product"/>
+                </td>
+                <td>
+                    <label for="ir_3">{% trans 'Luonnontuotteiden keräily (esim. marjastus, sienestys)' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_4" name="activity" value="nature_observation"/>
+                </td>
+                <td>
+                    <label for="ir_4">{% trans 'Luonnon tarkkailu' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_5" name="activity" value="hiking"/>
+                </td>
+                <td>
+                    <label for="ir_5">{% trans 'Liikkuminen ja retkeily' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_6" name="activity" value="motorized_move"/>
+                </td>
+                <td>
+                    <label for="ir_6">{% trans 'Motorisoitu liikkuminen (mönkijä, moottorikelkka)' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_7" name="activity" value="work_related"/>
+                </td>
+                <td>
+                    <label for="ir_7">{% trans 'Työhön liittyvät tehtävät' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_8" name="activity" value="other_acti"/>
+                </td>
+                <td>
+                    <label for="ir_8">{% trans 'Muu' %}</label>
+                </td>
+            </tr>
+            <tr id="other_actiRow" class="tyhja">
+                <td>&nbsp;</td>
+                <td>
+                    <label for="other_activity">{% trans 'mikä?' %}</label>
+                    <input type="text" id="other_activity" name="other_activity" disabled="true"/>
+                </td>
+            </tr>
+            <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td colspan="2">
+                    {% trans 'Kuinka usein tulet tähän paikkaan?' %}
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_9" name="how_often" value="weekly"/>
+                </td>
+                <td>
+                    <label for="ir_9">{% trans 'Viikottain' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_10" name="how_often" value="1_2_month"/>
+                </td>
+                <td>
+                    <label for="ir_10">{% trans '1-2 kertaa kuukaudessa' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_11" name="how_often" value="less_monthly"/>
+                </td>
+                <td>
+                    <label for="ir_11">{% trans 'harvemmin kuin kerran kuukaudessa' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_12" name="how_often" value="yearly_or_less"/>
+                </td>
+                <td>
+                    <label for="ir_12">{% trans '1 vuodessa tai  harvemmin ' %}</label>
+                </td>
+            </tr>
+            <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td colspan="2">
+                    {% trans 'Uhkaako tätä käyttöä joku seuraavista?' %}
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_13" name="threats" value="environmental_protection"/>
+                </td>
+                <td>
+                    <label for="ir_13">{% trans 'luonnonsuojelu' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_14" name="threats" value="tourism"/>
+                </td>
+                <td>
+                    <label for="ir_14">{% trans 'matkailu' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_15" name="threats" value="forestry"/>
+                </td>
+                <td>
+                    <label for="ir_15">{% trans 'metsätalous' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_16" name="threats" value="mining"/>
+                </td>
+                <td>
+                    <label for="ir_16">{% trans 'kaivostoiminta' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_17" name="threats" value="other_threat"/>
+                </td>
+                <td>
+                    <label for="ir_17">{% trans 'joku muu' %}</label>
+                </td>
+            </tr>
+            <tr id="other_threat_row" class="tyhja">
+                <td>&nbsp;</td>
+                <td>
+                    <label for="other_threat_text">{% trans 'mikä?' %}</label>
+                    <input type="text" id="other_threat_text" name="oThreatTxt" disabled="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_18" name="threats" value="no_threat"/>
+                </td>
+                <td>
+                    <label for="ir_18">{% trans 'ei uhkaa' %}</label>
+                </td>
+            </tr>
+            <tr>
+                <td class='infoCheck'>
+                    <input type="radio" id="ir_19" name="threats" value="DK"/>
+                </td>
+                <td>
+                    <label for="ir_19">{% trans 'en osaa sanoa' %}</label>
+                </td>
+            </tr>
+            <tr class="spacer"><td colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td colspan="2">
+                    {% trans 'Kerro lisää tästä paikasta' %}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea name="comment" cols="24" rows="5" ></textarea><br />
+                </td>
+            </tr>
+        </table>
         <button type="button" class="save_feature">
             {% trans "Tallenna kohde" %}
         </button>

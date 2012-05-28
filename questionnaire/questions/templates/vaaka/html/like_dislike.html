@@ -1,0 +1,46 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <h1>{% trans 'Miellyttävät ja epämiellyttävät paikat' %}</h1>
+    <p>
+        {% blocktrans %}
+            Merkitse kartalle mielestäsi miellyttäviä ja epämiellyttäviä kohteita.
+            Käytä karttaa samaan tapaan kuin aikaisemmin.
+        {% endblocktrans %}
+    </p>
+    <table>
+        <tr id="miniHelp" onclick="toggleHelp();">
+            <td id="expandButton" class="closedhelp"/>
+            <td>{% trans 'Etsitkö ohjetta...' %}</td>
+        </tr>
+    </table>
+    <ul class="instructionlinks" style="display: none;">
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kali" onclick="window.open('{% url main_html file_name='instructions' %}#kali'); return false;">{% trans 'miten kartalla liikutaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'kuinka merkitä kohde kartalle' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'miten korjataan kohde, joka meni väärään paikkaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}" onclick="window.open('{% url main_html file_name='instructions' %}'); return false;">{% trans 'Näytä kaikki ohjeet' %}</a>
+        </li>
+    </ul>
+    <hr />
+    <form id='likeDislikeForm' name='likeDislikeForm'>
+        <table class="elinYmp">
+            <tr>
+               <td class="elinYmpTD">
+                    <button type="button" class="like drawbutton point" id="like_p" name="like_info">{% trans "Tästä pidän" %}</button>
+               </td>
+               <td class="elinYmpTD">
+                    <button type="button" class="dislike drawbutton point" id="dislike_p" name="dislike_info">{% trans "Tästä en pidä" %}</button>
+               </td>
+               <td class="padding">&nbsp;</td>
+            </tr>
+            <tr>
+        </table>
+    </form>
+{% endblock formarea %}

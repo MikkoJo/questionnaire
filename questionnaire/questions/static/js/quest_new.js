@@ -3050,21 +3050,20 @@ var servicesLayer;
 var mapRoad, mapSatellite;
 var pointLayer,
     routeLayer,
-    areaLayer,
-    map_created = false;
+    areaLayer;
 
 //init creates the map
-// TODO: Make basemap configurable (Google, Bing, geonition_maps, etc.)
-// basemap parameter can have values google, bing, or geonition_maps default google
-// mapType parameter can have values satellite, road, or single default road
-function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
+// TODO: Make basemap configurable (Google, Bing, etc.)
+// basemap parameter can have values google or bing, default google
+// mapType parameter can have values satellite or road, default road
+function init(basemap, /* string*/ mapType /* string*/) {
 
     // Check map provider
-    if (basemap !== 'google' && basemap !== 'bing' && basemap !== 'geonition_maps') {
+    if (basemap !== 'google' && basemap !== 'bing') {
         basemap = 'google';
     }
     // Check map style
-    if (mapType !== 'road' && mapType !== 'satellite' && mapType !== 'single') {
+    if (mapType !== 'road' && mapType !== 'satellite') {
         mapType = 'road';
     }
     console.log("init");
@@ -3080,6 +3079,7 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
             var dSelect = dojo.create('select', null, dMenu);
             // for kuluttaja
             questionnaire.values.background = {};
+            //questionnaire.values.background.resarea = 'soukka';
             dojo.forEach(questionnaire.pages, function(page) {
                 dojo.create('option', {"onClick": "createPage('" + page.name + "');", "innerHTML": page.name}, dSelect);
             });
@@ -3094,9 +3094,7 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
                             "pagearray": "pages"},
                             {"expires": -1});
 
-    if(basemap !== 'geonition_maps') {
-        map = new OpenLayers.Map('map', {
-                                     projection: new OpenLayers.Projection("EPSG:3857"),
+    map = new OpenLayers.Map('map', {projection: new OpenLayers.Projection("EPSG:3857"),
                                      maxExtent: new OpenLayers.Bounds(-37532.28,
                                                                        8312664.808,
                                                                        6194837.250,
@@ -3104,15 +3102,8 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
 //                                     maxResolution: 4891,
                                      paddingForPopups: new OpenLayers.Bounds(330,70,15,15),
                                      controls: []});
-    }
-    else if (!map_created) {
-        map_created = true;
-        create_map('map', function(){init(basemap, mapType, layer);});
-        return
-    }
-    else if (roadlayer !== undefined && basemap === 'geonition_maps') {
-        mapRoad = roadlayer;
-    }
+
+
     if(basemap === 'google') {
         mapRoad = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
         mapSatellite = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
@@ -3128,11 +3119,7 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
                                              key: "AjB69asvfCy_FaIvDNBzCFc2eJdF7m7_bA7-M-xpJKctrxjmYQjqYX5DRCH0sd3J",
                                              culture: "fi"});
     }
-    
-    if (mapType === 'single') {
-        //Dummy satellite layer
-        mapSatellite = new OpenLayers.Layer.Vector('Satellite');
-    }
+
     pointLayer = new OpenLayers.Layer.Vector("Point Layer", {
                                 styleMap: new OpenLayers.StyleMap(point_style)
                         });
@@ -3146,19 +3133,14 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
     zoneLayer = new OpenLayers.Layer.Vector("Zone Layer", {
                                 styleMap: new OpenLayers.StyleMap(zone_style)
                         });
-    
+
     map.addControls([new OpenLayers.Control.OverviewMap({'div': dojo.byId("ovcont"),
                                                          'size': new OpenLayers.Size(190,190)}),
                                  new OpenLayers.Control.Attribution(),
                                  new OpenLayers.Control.Navigation({}),
                                  new OpenLayers.Control.PanZoomBar({id: 'navigation'})]);
-    if(basemap === 'geonition_maps') {
-        var aliasproj = new OpenLayers.Projection("EPSG:3067");
-    }
-    else {
-        var aliasproj = new OpenLayers.Projection("EPSG:3857");        
-    }
-    //var aliasproj = new OpenLayers.Projection("EPSG:3857");
+
+    var aliasproj = new OpenLayers.Projection("EPSG:3857");
     mapRoad.projection = mapSatellite.projection = aliasproj;
     map.addLayers([mapRoad, mapSatellite, areaLayer, routeLayer, pointLayer, zoneLayer]);
     if(questionnaire.start_extent !== undefined) {

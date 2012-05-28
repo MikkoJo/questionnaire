@@ -1,0 +1,86 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <h1>{% trans 'Suhde alueeseen' %}</h1>
+    <p>
+        <b>
+            {% blocktrans %}
+                (Tähän ohje miten näytetään/piilotetaan karttatasoja)
+            {% endblocktrans %}
+        </b>
+    </p>
+    <hr />
+    <form id="relationsForm" name="relationsForm" >
+        <table>
+            <tr>
+                <td colspan="3">
+                    {% trans 'Kuinka hyvin tunnet kartalla olevaa aluetta?' %}
+                </td>
+            </tr>
+            <tr>
+                <td class="smallvalue value">
+                    <b>{% trans 'En lainkaan' %}</b>
+                </td>
+                <td class="bigSlider">
+                    <input type="range" name="knowledge_of_area" />
+                </td>
+                <td class="bigvalue value">
+                    <b>{% trans 'erittäin hyvin' %}</b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="checkbox" name="knowledge_DK" />
+                    {% trans 'en osaa sanoa' %}
+                </td>
+            </tr>
+            </table>
+            <table>
+            <tr>
+                <td><label for="relations_area">{% trans 'Suhteesi kartalla olevaan alueeseen' %}:</label></td>
+            </tr>
+            <tr>
+                <td>
+                    <select id="relations_area" name="relations_area" style="width: 100%;">
+                        <option value="NULL" selected="selected"></option>
+                        <option value="home_in_area">{% trans 'kotini sijaitsee kartan rajaamalla alueella' %}</option>
+                        <option value="home_in_near_area">{% trans 'kotini sijaitsee kartan lähialueella' %}</option>
+                        <option value="holiday_home_in_area">{% trans 'loma-asuntoni sijaitsee kartan rajaamalla alueella' %}</option>
+                        <option value="holiday_home_in_near_area">{% trans 'loma-asuntoni sijaitsee lähialueella' %}</option>
+                        <option value="free_time_traveller">{% trans 'vapaa-ajan matkailija' %}</option>
+                        <option value="work_in_area">{% trans 'työni liittyy kartan rajaamaan alueeseen' %}</option>
+                        <option value="first_time">{% trans 'olen alueella ensimmäistä kertaa' %}</option>
+                        <option value="otherRelation">{% trans 'muu' %} </option>
+                    </select>
+                </td>
+            </tr>
+            <tr id="otherRelations_areaRow" class="tyhja">
+                <td>
+                    <label for="otherRelation">{% trans 'mikä?' %}</label>
+                    <input type="text" id="otherRelation" name="otherRelation" disabled="disabled"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="work_area">{% trans 'Suhteesi kartalla olevaan alueeseen' %}:</label></td>
+            </tr>
+            <tr>
+                <td>
+                    <select id="work_area" name="work_area">
+                        <option value="NULL" selected="selected"></option>
+                        <option value="tourism">{% trans 'matkailuelinkeino' %}</option>
+                        <option value="agriculture_or_forestry">{% trans 'maa- tai metsätalous' %}</option>
+                        <option value="environmental_care">{% trans 'ympäristön suunnittelu tai hoito' %}</option>
+                        <option value="otherWork">{% trans 'muu' %} </option>
+                    </select>
+                </td>
+            </tr>
+            <tr id="otherWork_areaRow" class="tyhja">
+                <td>
+                    <label for="otherWork_area">{% trans 'mikä?' %}</label>
+                    <input type="text" id="otherWork_area" name="otherWork_area" disabled="disabled"/>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+{% endblock formarea %}

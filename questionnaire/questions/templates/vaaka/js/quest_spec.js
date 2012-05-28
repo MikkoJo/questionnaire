@@ -29,18 +29,23 @@ questionnaire.initial_extent = {
         }
 };
 
+questionnaire.start_extent = {
+        "x": 557281.35636271,
+        "y": 7198351.1782802,
+        "zoomLevel": 0
+}
 
 questionnaire.sections = [{
-"section": "pearl"
+"section": "background"
 },
 {
-"section": "ideas"
+"section": "activities"
 },
 {
-"section": "weights"
+"section": "improvements"
 },
 {
-"section": "visions"
+"section": "feedback"
 }
 ];
 
@@ -477,22 +482,29 @@ questionnaire.pages =
 "content": "{% url main_html file_name='welcome' %}" //the file where the content can be found
 },
 {
-"name": "pearl",
-"section": "pearl", //tells the application which section this page belongs to
-"type":"small",
-"content": "{% url main_html file_name='pearl' %}"
+"name": "background",
+"section": "background", //tells the application which section this page belongs to
+"type":"big",
+"content": "{% url main_html file_name='background' %}"
 },
 {
-"name": "ideas",
-"section": "ideas",
+"name": "relationship",
+"section": "activities",
 "type": "small",
-"content": "{% url main_html file_name='ideas' %}"
+"content": "{% url main_html file_name='relationship' %}"
 },
 {
-"name": "weights",
-"section": "weights",
-"type": "big",
-"content": "{% url random_cont file_name='weights' file_type='html' %}"
+"name": "activities",
+"section": "activities",
+"type": "small",
+"content": "{% url main_html file_name='activities' %}"
+},
+{
+"name": "like_dislike",
+"section": "activities",
+"type": "small",
+"content": "{% url main_html file_name='like_dislike' %}"
+//"content": "{% url random_cont file_name='weights' file_type='html' %}"
 },
 {
 "name": "visions",
@@ -552,6 +564,93 @@ var tooltiphelp = {
         }
 };
 */
+questionnaire.extra_input_connect = [
+    {   "id":"education",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'otherEdu') {
+                dojo.removeClass('otherEducationRow', 'tyhja');
+                dojo.byId('otherEducation').disabled = false;
+            }
+            else {
+                dojo.addClass('otherEducationRow', 'tyhja');
+                dojo.byId('otherEducation').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"occupation",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'otherOcc') {
+                dojo.removeClass('otherOccupationRow', 'tyhja');
+                dojo.byId('otherOccupation').disabled = false;
+            }
+            else {
+                dojo.addClass('otherOccupationRow', 'tyhja');
+                dojo.byId('otherOccupation').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"relations_area",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'otherRelation') {
+                dojo.removeClass('otherRelations_areaRow', 'tyhja');
+                dojo.byId('otherRelation').disabled = false;
+            }
+            else {
+                dojo.addClass('otherRelations_areaRow', 'tyhja');
+                dojo.byId('otherRelation').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"work_area",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'otherWork') {
+                dojo.removeClass('otherWork_areaRow', 'tyhja');
+                dojo.byId('otherWork_area').disabled = false;
+            }
+            else {
+                dojo.addClass('otherWork_areaRow', 'tyhja');
+                dojo.byId('otherWork_area').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"ir_8",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'other_threat') {
+                dojo.removeClass('other_threat_row', 'tyhja');
+                dojo.byId('other_threat_text').disabled = false;
+            }
+            else {
+                dojo.addClass('other_threat_row', 'tyhja');
+                dojo.byId('other_threat_text').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"ir_17",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'otherWork') {
+                dojo.removeClass('otherWork_areaRow', 'tyhja');
+                dojo.byId('otherWork_area').disabled = false;
+            }
+            else {
+                dojo.addClass('otherWork_areaRow', 'tyhja');
+                dojo.byId('otherWork_area').disabled = true;
+            }
+        }
+
+   }
+];
+
 questionnaire.special_widgets = {
     "family": {
         "onChange": function(val) {
@@ -669,6 +768,16 @@ questionnaire.special_widgets = {
 };
 
 questionnaire.feature_defaults = {
+    "like_p": {
+        "style": "point_positive",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary",
+        "header": "{% trans 'Miellyttävä paikka' %}"
+    },
+    "dislike_p": {
+        "style": "point_negative",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary",
+        "header": "{% trans 'Epämiellyttävä paikka' %}"
+    },
     "pearl_p": {
         "max": 1,
         "style": "point_lightorange"
@@ -719,6 +828,18 @@ questionnaire.feature_defaults = {
         "style": "point_brown",
         "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
         "icons": {"secondary": "brown-icon"},
+        "header": "{% trans 'Muu paikka' %}"
+    },
+    "acti_point": {
+        "style": "point_yellow",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "yellow-icon"},
+        "header": "{% trans 'Kohennettava paikka' %}"
+    },
+    "acti_poly": {
+        "style": "area_yellow",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "yellow_area-icon"},
         "header": "{% trans 'Muu paikka' %}"
     }
 

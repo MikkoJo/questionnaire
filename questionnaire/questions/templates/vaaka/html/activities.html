@@ -1,0 +1,46 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <h1>{% trans 'Alueeseen liittyvät toiminnot' %}</h1>
+    <p>
+        <b>
+            {% trans 'Merkitse kartalle omien toimintojesi kannalta tärkeimmät kohteet. Voit merkitä yksittäisen pisteen tai rajata laajemman alueen.' %}
+        </b>
+    </p>
+    <table>
+        <tr id="miniHelp" onclick="toggleHelp();">
+            <td id="expandButton" class="closedhelp"/>
+            <td>{% trans 'Etsitkö ohjetta...' %}</td>
+        </tr>
+    </table>
+    <ul class="instructionlinks" style="display: none;">
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kali" onclick="window.open('{% url main_html file_name='instructions' %}#kali'); return false;">{% trans 'miten kartalla liikutaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'kuinka merkitä kohde kartalle' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'miten korjataan kohde, joka meni väärään paikkaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}" onclick="window.open('{% url main_html file_name='instructions' %}'); return false;">{% trans 'Näytä kaikki ohjeet' %}</a>
+        </li>
+    </ul>
+    <hr />
+    <form id="activitiesForm" name="activitiesForm">
+        <table class="buttons">
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="acti_point" name="activities">{% trans 'piste' %}</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton area" id="acti_poly" name="activities">{% trans 'alue' %}</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+{% endblock formarea %}
