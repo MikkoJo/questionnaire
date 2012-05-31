@@ -3411,3 +3411,12 @@ div.olLayerGooglePoweredBy
 span.eos {
     vertical-align: text-top;
 }
+
+#feedbackForm label {
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+#feedbackForm table {
+    width: 100%;
+}

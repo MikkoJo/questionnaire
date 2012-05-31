@@ -3,7 +3,7 @@
 {% block formarea %}
 <h1>{% trans 'Anna palautetta kyselystä' %}</h1>
 <form name="feedbackForm" id="feedbackForm" >
-    <table>
+    <table class="highlite">
         <tr>
             <td>
                 <label for="map_cognitive">
@@ -20,9 +20,9 @@
                 <input type="radio" name="map_cognitive" value="4" />
                 <input type="radio" name="map_cognitive" value="5" />
             </td>
-            <td class="radiobuttons">Täysin samaa mieltä</td>
+            <td class="radiobuttons">{% trans "Täysin samaa mieltä" %}</td>
         </tr>
-        <tr>
+        <tr class="highlite" >
             <td>
                 <label for="unclear_help">
                     {% trans "ohjeet olivat epäselviä"%}
@@ -38,7 +38,7 @@
                 <input type="radio" name="unclear_help" value="4" />
                 <input type="radio" name="unclear_help" value="5" />
             </td>
-            <td class="radiobuttons">Täysin samaa mieltä</td>
+            <td class="radiobuttons">{% trans "Täysin samaa mieltä" %}</td>
         </tr>
         <tr>
             <td>
@@ -54,9 +54,9 @@
                 <input type="radio" name="easy_method" value="4" />
                 <input type="radio" name="easy_method" value="5" />
             </td>
-            <td class="radiobuttons">Täysin samaa mieltä</td>
+            <td class="radiobuttons">{% trans "Täysin samaa mieltä" %}</td>
         </tr>
-        <tr>
+        <tr class="highlite" >
             <td>
                 <label for="easy_map">{% trans "karttatyökalu oli helppokäyttöinen" %}</label>
             </td>
@@ -70,7 +70,7 @@
                 <input type="radio" name="easy_map" value="4" />
                 <input type="radio" name="easy_map" value="5" />
             </td>
-            <td class="radiobuttons">Täysin samaa mieltä</td>
+            <td class="radiobuttons">{% trans "Täysin samaa mieltä" %}</td>
         </tr>
         <tr>
             <td>
@@ -86,9 +86,9 @@
                 <input type="radio" name="too_long" value="4" />
                 <input type="radio" name="too_long" value="5" />
             </td>
-            <td class="radiobuttons">Täysin samaa mieltä</td>
+            <td class="radiobuttons">{% trans "Täysin samaa mieltä" %}</td>
         </tr>
-        <tr>
+        <tr class="highlite" >
             <td>
                 <label for="important_issue">{% trans "asia on tärkeä" %}</label>
             </td>
@@ -102,7 +102,7 @@
                 <input type="radio" name="important_issue" value="4" />
                 <input type="radio" name="important_issue" value="5" />
             </td>
-            <td class="radiobuttons">Täysin samaa mieltä</td>
+            <td class="radiobuttons">{% trans "Täysin samaa mieltä" %}</td>
         </tr>
         <tr>
             <td>
@@ -118,9 +118,16 @@
                 <input type="radio" name="has_an_effect" value="4" />
                 <input type="radio" name="has_an_effect" value="5" />
             </td>
-            <td class="radiobuttons">Täysin samaa mieltä</td>
+            <td class="radiobuttons">{% trans "Täysin samaa mieltä" %}</td>
         </tr>
     </table>
-    
+    <p>
+        <b>
+            {% trans 'Jos haluat, voit vielä tähän kommentoida kyselyä tai kertoa jotain, joka jäi sanomatta' %}.
+        </b>
+    </p>
+    <p>
+        <textarea id="feedbacktext" rows="7" cols="70" name="feedbacktext"></textarea>
+    </p>
 </form>
 {% endblock formarea %}
