@@ -1294,11 +1294,11 @@ width: 0px !important;
     position: relative;
 }
 
-.shortTextBox .dijitTextBox {
+.shortTextBox /*.dijitTextBox */{
     width: 4em;
 }
 
-.shorterTextBox .dijitTextBox {
+.shorterTextBox /*.dijitTextBox */{
     width: 12em;
 }
 .infowindow .shortTextBox .dijitTextBox {
@@ -3321,6 +3321,9 @@ button.small .ui-icon {
 .brown-icon {
     background-image: url("../img/placemarks/small_brown.png") !important;
 }
+.cottage-icon {
+    background-image: url("../img/placemarks/small_brown.png") !important;
+}
 .purple-icon {
     background-image: url("https://www.pehmogis.fi/gntimages/needle?color=7408a1&scale=0.55") !important;
 }
@@ -3336,6 +3339,12 @@ button.small .ui-icon {
 .purple_route-icon {
     background-image: url("https://www.pehmogis.fi/gntimages/route?color=7408a1&scale=1") !important;
 }
+.orange_route-icon {
+    background-image: url("https://www.pehmogis.fi/gntimages/route?color=ffa100&scale=1") !important;
+}
+.yellow_route-icon {
+    background-image: url("https://www.pehmogis.fi/gntimages/route?color=fff600&scale=1") !important;
+}
 .yellow_area-icon {
     background-image: url("../img/placemarks/small_area_yellow.png") !important;
 }
@@ -3343,6 +3352,19 @@ button.small .ui-icon {
     background-image: url("https://www.pehmogis.fi/gntimages/area?color=48fbdc&scale=1") !important;
     width: 22px !important;
 }
+.blue_area-icon {
+    background-image: url("https://www.pehmogis.fi/gntimages/area?color=0000ff&scale=1") !important;
+    width: 22px !important;
+}
+.green_area-icon {
+    background-image: url("https://www.pehmogis.fi/gntimages/area?color=00ff00&scale=1") !important;
+    width: 22px !important;
+}
+.red_area-icon {
+    background-image: url("https://www.pehmogis.fi/gntimages/area?color=ff0000&scale=1") !important;
+    width: 22px !important;
+}
+
 #mapitaCopy {
     bottom: 60px;
     color: black;
@@ -3374,11 +3396,18 @@ div.olLayerGooglePoweredBy
 }
 
 .olControlAttribution {
-    bottom: 60px !important;
+    bottom: 65px !important;
     left: 5px;
-    line-height: 11px;
+    /*line-height: 11px;*/
 }
-
+/* Hide default panZoomControl*/
+.olControlPanZoom {
+    display: none;
+}
 .spacer {
     margin-bottom:2px;
+}
+
+span.eos {
+    vertical-align: text-top;
 }

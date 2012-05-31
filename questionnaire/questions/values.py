@@ -79,4 +79,32 @@ VALUES = {
              (_(u'Ympäristön ulkoinen ilme'),
                     'appearanceSum')
              ],
+        'extra_info_temp_html':
+            {
+        'like_info':
+            [('beat_landscape', _(u'kaunis maisema')),
+            ('safe', _(u'turvallisuus (ei eksymisen tai petojen uhkaa)')),
+            ('passable_env', _(u'helppokulkuinen ympäristö')),
+            ('peaceful', _(u'rauhallinen ja hiljainen ympäristö')),
+            ('easy_access', _(u'helposti saavutettava')),
+            ('economy_profit', _(u'taloudellinen hyöty tai muu konkreettinen hyöty (mm. luonnontuotteet)')),
+            ('versatile', _(u'monipuolinen ja kiinnostava kasvi- ja eläinlajisto ')),
+            ('culture_history', _(u'kulttuurihistoria')),
+            ('training', _(u'kuntoilumahdollisuudet'))
+            ],
+        'dislike_info':
+            [('unpleasant_landscape', _(u'epämiellyttävä maisema')),
+            ('scary', _(u'pelottava ympäristövaikeakulkuinen ympäristö')),
+            ('noisy_env', _(u'rauhaton ja meluisa ympäristö')),
+            ('difficult_access', _(u'vaikeasti saavutettava')),
+            ('economy_harm', _(u'taloudellinen tai muu konkreettinen haitta')),
+            ('unpleasant_memories', _(u'epämiellyttävät muistot ja kokemukset')),
+            ('spoiled_natural_state', _(u'luonnontila pilattu, miten?'))
+            ]},
+        'improvements_gen': [
+            ('imp_tourism', _(u'Matkailu')),
+            ('imp_nature_preserve', _(u'Luonnonsuojelu')),
+            ('imp_forestry', _(u'Metsätalous')),
+            ('imp_mining', _(u'Kaivosteollisuus')),
+            ]
   }

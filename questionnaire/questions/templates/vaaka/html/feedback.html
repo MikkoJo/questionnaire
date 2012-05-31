@@ -1,0 +1,126 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+<h1>{% trans 'Anna palautetta kyselystä' %}</h1>
+<form name="feedbackForm" id="feedbackForm" >
+    <table>
+        <tr>
+            <td>
+                <label for="map_cognitive">
+                    {% trans "kartan hahmottaminen oli vaikeaa" %}
+                </label>
+            </td>
+            <td class="radiobuttons">
+                {% trans "Täysin eri mieltä" %}
+            </td>
+            <td id="map_cognitive" class="radiobuttons">
+                <input type="radio" name="map_cognitive" value="1" />
+                <input type="radio" name="map_cognitive" value="2" />
+                <input type="radio" name="map_cognitive" value="3" />
+                <input type="radio" name="map_cognitive" value="4" />
+                <input type="radio" name="map_cognitive" value="5" />
+            </td>
+            <td class="radiobuttons">Täysin samaa mieltä</td>
+        </tr>
+        <tr>
+            <td>
+                <label for="unclear_help">
+                    {% trans "ohjeet olivat epäselviä"%}
+                </label>
+            </td>
+            <td class="radiobuttons">
+                {% trans "Täysin eri mieltä" %}
+            </td>
+            <td id="unclear_help" class="radiobuttons">
+                <input type="radio" name="unclear_help" value="1" />
+                <input type="radio" name="unclear_help" value="2" />
+                <input type="radio" name="unclear_help" value="3" />
+                <input type="radio" name="unclear_help" value="4" />
+                <input type="radio" name="unclear_help" value="5" />
+            </td>
+            <td class="radiobuttons">Täysin samaa mieltä</td>
+        </tr>
+        <tr>
+            <td>
+                <label for="easy_method">{% trans "menetelmä oli helppo" %}</label>
+            </td>
+            <td class="radiobuttons">
+                {% trans "Täysin eri mieltä" %}
+            </td>
+            <td id="easy_method" class="radiobuttons">
+                <input type="radio" name="easy_method" value="1" />
+                <input type="radio" name="easy_method" value="2" />
+                <input type="radio" name="easy_method" value="3" />
+                <input type="radio" name="easy_method" value="4" />
+                <input type="radio" name="easy_method" value="5" />
+            </td>
+            <td class="radiobuttons">Täysin samaa mieltä</td>
+        </tr>
+        <tr>
+            <td>
+                <label for="easy_map">{% trans "karttatyökalu oli helppokäyttöinen" %}</label>
+            </td>
+            <td class="radiobuttons">
+                {% trans "Täysin eri mieltä" %}
+            </td>
+            <td id="easy_map" class="radiobuttons">
+                <input type="radio" name="easy_map" value="1" />
+                <input type="radio" name="easy_map" value="2" />
+                <input type="radio" name="easy_map" value="3" />
+                <input type="radio" name="easy_map" value="4" />
+                <input type="radio" name="easy_map" value="5" />
+            </td>
+            <td class="radiobuttons">Täysin samaa mieltä</td>
+        </tr>
+        <tr>
+            <td>
+                <label for="too_long">{% trans "kysely oli liian pitkä" %}</label>
+            </td>
+            <td class="radiobuttons">
+                {% trans "Täysin eri mieltä" %}
+            </td>
+            <td id="too_long" class="radiobuttons">
+                <input type="radio" name="too_long" value="1" />
+                <input type="radio" name="too_long" value="2" />
+                <input type="radio" name="too_long" value="3" />
+                <input type="radio" name="too_long" value="4" />
+                <input type="radio" name="too_long" value="5" />
+            </td>
+            <td class="radiobuttons">Täysin samaa mieltä</td>
+        </tr>
+        <tr>
+            <td>
+                <label for="important_issue">{% trans "asia on tärkeä" %}</label>
+            </td>
+            <td class="radiobuttons">
+                {% trans "Täysin eri mieltä" %}
+            </td>
+            <td id="important_issue" class="radiobuttons">
+                <input type="radio" name="important_issue" value="1" />
+                <input type="radio" name="important_issue" value="2" />
+                <input type="radio" name="important_issue" value="3" />
+                <input type="radio" name="important_issue" value="4" />
+                <input type="radio" name="important_issue" value="5" />
+            </td>
+            <td class="radiobuttons">Täysin samaa mieltä</td>
+        </tr>
+        <tr>
+            <td>
+                <label for="has_an_effect">{% trans "tällä tavalla voin vaikuttaa" %}</label>
+            </td>
+            <td class="radiobuttons">
+                {% trans "Täysin eri mieltä" %}
+            </td>
+            <td id="has_an_effect" class="radiobuttons">
+                <input type="radio" name="has_an_effect" value="1" />
+                <input type="radio" name="has_an_effect" value="2" />
+                <input type="radio" name="has_an_effect" value="3" />
+                <input type="radio" name="has_an_effect" value="4" />
+                <input type="radio" name="has_an_effect" value="5" />
+            </td>
+            <td class="radiobuttons">Täysin samaa mieltä</td>
+        </tr>
+    </table>
+    
+</form>
+{% endblock formarea %}

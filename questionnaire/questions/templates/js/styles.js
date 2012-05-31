@@ -120,6 +120,16 @@ var point_style = new OpenLayers.Style(
                     }
                 }),
                 new OpenLayers.Rule({
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style",
+                        value: "point_cottage"
+                    }),
+                    symbolizer: {
+                        externalGraphic: "https://www.pehmogis.fi/gntimages/needle?color=7408a1"
+                    }
+                }),
+                new OpenLayers.Rule({
                     elseFilter: true
                 })
            ]
@@ -195,6 +205,32 @@ var route_style = new OpenLayers.Style(
                     }
                 }),
                 new OpenLayers.Rule({
+                    // a rule contains an optional filter
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style", // the "foo" feature attribute
+                        value: "route_yellow"
+                    }),
+                    // if a feature matches the above filter, use this symbolizer
+                    symbolizer: {
+                        strokeColor: "#fff600",
+                        strokeOpacity: 1
+                    }
+                }),
+                new OpenLayers.Rule({
+                    // a rule contains an optional filter
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style", // the "foo" feature attribute
+                        value: "route_orange"
+                    }),
+                    // if a feature matches the above filter, use this symbolizer
+                    symbolizer: {
+                        strokeColor: "#ffa100",
+                        strokeOpacity: 1
+                    }
+                }),
+                new OpenLayers.Rule({
                     elseFilter: true
                 })
            ]
@@ -243,6 +279,51 @@ var area_style = new OpenLayers.Style(
                         strokeColor: "#48fbdc",
                         strokeOpacity: 1,
                         fillColor:  "#48fbdc",
+                        fillOpacity: 0.3
+                    }
+                }),
+                new OpenLayers.Rule({
+                    // a rule contains an optional filter
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style", // the "foo" feature attribute
+                        value: "area_blue"
+                    }),
+                    // if a feature matches the above filter, use this symbolizer
+                    symbolizer: {
+                        strokeColor: "#0000ff",
+                        strokeOpacity: 1,
+                        fillColor:  "#0000ff",
+                        fillOpacity: 0.3
+                    }
+                }),
+                new OpenLayers.Rule({
+                    // a rule contains an optional filter
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style", // the "foo" feature attribute
+                        value: "area_green"
+                    }),
+                    // if a feature matches the above filter, use this symbolizer
+                    symbolizer: {
+                        strokeColor: "#00ff00",
+                        strokeOpacity: 1,
+                        fillColor:  "#00ff00",
+                        fillOpacity: 0.3
+                    }
+                }),
+                new OpenLayers.Rule({
+                    // a rule contains an optional filter
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style", // the "foo" feature attribute
+                        value: "area_red"
+                    }),
+                    // if a feature matches the above filter, use this symbolizer
+                    symbolizer: {
+                        strokeColor: "#ff0000",
+                        strokeOpacity: 1,
+                        fillColor:  "#ff0000",
                         fillOpacity: 0.3
                     }
                 }),

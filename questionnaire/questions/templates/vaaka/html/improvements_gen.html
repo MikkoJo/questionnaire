@@ -1,0 +1,35 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <form id="developmentForm" name="developmentForm">
+        <h1>{% trans 'Alueen kehittäminen' %}</h1>
+        <p>
+            {% blocktrans %}
+            Miten mielestäsi alueen käyttöä pitäisi kehittää.
+            Arvioi alla mainittuja toimintoja asteikolla lisätään - vähennetään
+            {% endblocktrans %}
+        </p>
+        <table>
+            {% for name, text in values %}
+            <tr>
+                <td colspan="4"><b>{{ text }}</b></td>
+            </tr>
+            <tr style="white-space: nowrap;">
+                <td class="smallvalue">
+                {% trans 'nykytila hyvä' %}
+                </td>
+                <td class="bigSlider">
+                    <input type="range" name="{{ name }}" />
+                </td>
+                <td class="bigvalue">
+                {% trans 'vähennetään' %}
+                </td>
+                <td>
+                    <input type="checkbox" name="{{ name }}_DK" />
+                    <span class="eos bigvalue" >{% trans 'en osaa sanoa' %}</span>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+{% endblock formarea %}

@@ -1,0 +1,67 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <h1>{% trans 'Kehittämisehdotukset' %}</h1>
+    <p>{% trans 'Käytä karttaa samaan tapaan kuin aikaisemmin.' %}</p>
+    <table>
+        <tr id="miniHelp" onclick="toggleHelp();">
+            <td id="expandButton" class="closedhelp"/>
+            <td>{% trans 'Etsitkö ohjetta...' %}</td>
+        </tr>
+    </table>
+    <ul class="instructionlinks" style="display: none;">
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kali" onclick="window.open('{% url main_html file_name='instructions' %}#kali'); return false;">{% trans 'miten kartalla liikutaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'kuinka merkitä kohde kartalle' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'miten korjataan kohde, joka meni väärään paikkaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}" onclick="window.open('{% url main_html file_name='instructions' %}'); return false;">{% trans 'Näytä kaikki ohjeet' %}</a>
+        </li>
+    </ul>
+    <hr />
+    <form id="improvementsForm" name="improvementsForm">
+        <table class="buttons">
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton area" id="no_tourism" name="tellmore">{% trans 'ei matkailua tänne' %}</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton route" id="new_hiking_route" name="tellmore">{% trans 'uusi retkeily- tai hiihtoreitti' %}</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton route" id="new_snowmobile_route" name="tellmore">{% trans 'uusi moottorikelkka- tai mönkijäreitti' %}</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="new_tourist_attraction" name="tellmore">{% trans 'uusi matkailurakentaminen' %}</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton area" id="no_forestry" name="tellmore">{% trans 'ei metsätaloutta tänne' %}</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton area" id="no_nature_reserve" name="tellmore">{% trans 'ei suojelua tänne' %}</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton area" id="new_nature_reserve" name="tellmore">{% trans 'uusi suojelualue' %}</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+{% endblock formarea %}

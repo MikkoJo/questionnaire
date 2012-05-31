@@ -19,6 +19,8 @@ var OVERVIEWMAP_URL = "https://server.arcgisonline.com/ArcGIS/rest/services/Worl
 
 var AREAS_FEATURE_LAYER_URL = "";
 
+questionnaire.infotemplates_url = "{% url random_cont file_name='extra_info_temp_html' file_type='html' %}";
+
 questionnaire.initial_extent = {
         "xmax": 2780607.609391832,
         "xmin": 2768578.3320654687,
@@ -507,10 +509,22 @@ questionnaire.pages =
 //"content": "{% url random_cont file_name='weights' file_type='html' %}"
 },
 {
-"name": "visions",
-"section": "visions",
+"name": "improvements_gen",
+"section": "improvements",
 "type": "big",
-"content": "{% url main_html file_name='visions' %}"
+"content": "{% url random_cont file_name='improvements_gen' file_type='html' %}"
+},
+{
+"name": "improvements",
+"section": "improvements",
+"type": "small",
+"content": "{% url main_html file_name='improvements' %}"
+},
+{
+"name": "feedback",
+"section": "feedback",
+"type": "big",
+"content": "{% url main_html file_name='feedback' %}"
 },
 {
 "name": "thankyou",
@@ -621,7 +635,8 @@ questionnaire.extra_input_connect = [
         }
 
     },
-    {   "id":"ir_8",
+    {   "id":"ir_17",
+        "name": "threats",
         "event": "onchange",
         "func": function(evt) {
             if(evt.currentTarget.value === 'other_threat') {
@@ -635,16 +650,53 @@ questionnaire.extra_input_connect = [
         }
 
     },
-    {   "id":"ir_17",
+    {   "id":"ir_8",
+        "name": "activity",
         "event": "onchange",
         "func": function(evt) {
-            if(evt.currentTarget.value === 'otherWork') {
-                dojo.removeClass('otherWork_areaRow', 'tyhja');
-                dojo.byId('otherWork_area').disabled = false;
+            if(evt.currentTarget.value === 'other_acti') {
+                dojo.removeClass('other_actiRow', 'tyhja');
+                dojo.byId('other_activity').disabled = false;
             }
             else {
-                dojo.addClass('otherWork_areaRow', 'tyhja');
-                dojo.byId('otherWork_area').disabled = true;
+                dojo.addClass('other_actiRow', 'tyhja');
+                dojo.byId('other_activity').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"like_info_id",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'other' && evt.currentTarget.checked === true) {
+                dojo.byId('like_info_other_text').disabled = false;
+            }
+            else {
+                dojo.byId('like_info_other_text').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"spoiled_natural_state_r",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'spoiled_natural_state' && evt.currentTarget.checked === true) {
+                dojo.byId('dislike_info_text').disabled = false;
+            }
+            else {
+                dojo.byId('dislike_info_text').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"dislike_info_id",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'other' && evt.currentTarget.checked === true) {
+                dojo.byId('dislike_info_other_text').disabled = false;
+            }
+            else {
+                dojo.byId('dislike_info_other_text').disabled = true;
             }
         }
 
@@ -841,6 +893,48 @@ questionnaire.feature_defaults = {
         "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
         "icons": {"secondary": "yellow_area-icon"},
         "header": "{% trans 'Muu paikka' %}"
-    }
+    },
+    "no_tourism": {
+        "style": "area_blue",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "blue_area-icon"},
+        "header": "{% trans 'Ei matkailua' %}"
+    },
+    "new_hiking_route": {
+        "style": "route_orange",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "orange_route-icon"},
+        "header": "{% trans 'Uusi retkeily- tai hiihtoreitti' %}"
+    },
+    "new_snowmobile_route": {
+        "style": "route_yellow",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "yellow_route-icon"},
+        "header": "{% trans 'Uusi moottorikelkka- tai mönkijäreitti' %}"
+    },
+    "new_tourist_attraction": {
+        "style": "point_cottage",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "cottage-icon"},
+        "header": "{% trans 'Uusi matkailurakentaminen' %}"
+    },
+    "no_forestry": {
+        "style": "area_green",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "green_area-icon"},
+        "header": "{% trans 'Ei metsätaloutta' %}"
+    },
+    "no_nature_reserve": {
+        "style": "area_red",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "red_area-icon"},
+        "header": "{% trans 'Ei suojelua' %}"
+    },
+    "new_nature_reserve": {
+        "style": "area_cyan",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "cyan_area-icon"},
+        "header": "{% trans 'Uusi suojelualue' %}"
+    },
 
 }

@@ -150,21 +150,22 @@ function loadTemplates(fileName) {
                 url: fileName,
                 sync: false,
                 timeout: 60000, // Time in milliseconds
-                handleAs: "json",
+                handleAs: "text",
                 preventCache: djConfig.isDebug,
 
                 // The LOAD function will be called on a successful response.
                 load: function(response, ioArgs){
                     var testi = response.templates;
-                    var tName;
-                    for (tName in testi) {
+                    $('body').append(response);
+//                    var tName;
+//                    for (tName in testi) {
 //                      console.log(tName);
-                        if (testi.hasOwnProperty(tName)) {
-                            if (tName !== undefined) {
-                                questionnaire.infoTemplates[tName] = testi[tName];
-                            }
-                        }
-                    }
+//                        if (testi.hasOwnProperty(tName)) {
+//                            if (tName !== undefined) {
+//                                questionnaire.infoTemplates[tName] = testi[tName];
+//                            }
+//                        }
+//                    }
                     //console.log(dojo.toJson(testi));
                     return response;
                 },
@@ -1670,9 +1671,18 @@ function create_widgets(node_id) {
         for (k = 0; k < questionnaire.extra_input_connect.length; k++) {
             var elem = dojo.byId(questionnaire.extra_input_connect[k].id);
             if(elem !== null) {
-                dojo.connect(elem,
-                    questionnaire.extra_input_connect[k].event,
-                    questionnaire.extra_input_connect[k].func);
+                // Check for name, needed for radiobuttons
+                if(questionnaire.extra_input_connect[k].name !== undefined) {
+                    $('input[name=' + questionnaire.extra_input_connect[k].name + ']').change(
+                        questionnaire.extra_input_connect[k].func
+                    );
+                    
+                }
+                else {
+                    dojo.connect(elem,
+                        questionnaire.extra_input_connect[k].event,
+                        questionnaire.extra_input_connect[k].func);
+                }
             }
         }
     }
@@ -3132,6 +3142,7 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
     if (mapType === 'single') {
         //Dummy satellite layer
         mapSatellite = new OpenLayers.Layer.Vector('Satellite');
+        $('#layerToggle').hide();
     }
     pointLayer = new OpenLayers.Layer.Vector("Point Layer", {
                                 styleMap: new OpenLayers.StyleMap(point_style)
@@ -3146,14 +3157,22 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
     zoneLayer = new OpenLayers.Layer.Vector("Zone Layer", {
                                 styleMap: new OpenLayers.StyleMap(zone_style)
                         });
-    
-    map.addControls([new OpenLayers.Control.OverviewMap({'div': dojo.byId("ovcont"),
-                                                         'size': new OpenLayers.Size(190,190)}),
+    ovMapOptions = {'div': dojo.byId("ovcont"),
+                    'size': new OpenLayers.Size(190,190)};
+                    
+    if (mapOptions !== undefined) {
+        OpenLayers.Util.extend(ovMapOptions, {'mapOptions': mapOptions});
+        
+    }
+    map.addControls([new OpenLayers.Control.OverviewMap(ovMapOptions),
                                  new OpenLayers.Control.Attribution(),
                                  new OpenLayers.Control.Navigation({}),
                                  new OpenLayers.Control.PanZoomBar({id: 'navigation'})]);
     if(basemap === 'geonition_maps') {
         var aliasproj = new OpenLayers.Projection("EPSG:3067");
+        map.paddingForPopups = new OpenLayers.Bounds(330,70,15,15);
+        mapRoad.attribution = mapRoad.options.layerInfo.copyrightText;
+        
     }
     else {
         var aliasproj = new OpenLayers.Projection("EPSG:3857");        
