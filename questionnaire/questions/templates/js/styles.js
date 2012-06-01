@@ -116,7 +116,7 @@ var point_style = new OpenLayers.Style(
                         value: "point_purple"
                     }),
                     symbolizer: {
-                        externalGraphic: "https://www.pehmogis.fi/gntimages/needle?color=7408a1"
+                        externalGraphic: "https://softgis.org.aalto.fi/images/needle?color=7408a1"
                     }
                 }),
                 new OpenLayers.Rule({
@@ -126,7 +126,7 @@ var point_style = new OpenLayers.Style(
                         value: "point_cottage"
                     }),
                     symbolizer: {
-                        externalGraphic: "https://www.pehmogis.fi/gntimages/needle?color=7408a1"
+                        externalGraphic: "{{ STATIC_URL }}img/placemarks/pointbrown.png"
                     }
                 }),
                 new OpenLayers.Rule({

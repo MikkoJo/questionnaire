@@ -3304,7 +3304,7 @@ button.small .ui-icon {
     width: 12px;
 }
 .lightorange-icon {
-    background-image: url("https://www.pehmogis.fi/gntimages/needle?color=f8bd0a&scale=0.55") !important;
+    background-image: url("https://softgis.org.aalto.fi/images/needle?color=f8bd0a&scale=0.55") !important;
 }
 .green-icon {
     background-image: url("../img/placemarks/small_green.png") !important;
@@ -3325,7 +3325,7 @@ button.small .ui-icon {
     background-image: url("../img/placemarks/small_brown.png") !important;
 }
 .purple-icon {
-    background-image: url("https://www.pehmogis.fi/gntimages/needle?color=7408a1&scale=0.55") !important;
+    background-image: url("https://softgis.org.aalto.fi/images/needle?color=7408a1&scale=0.55") !important;
 }
 .green_route-icon {
     background-image: url("../img/placemarks/small_route_green.png") !important;
@@ -3334,34 +3334,35 @@ button.small .ui-icon {
     background-image: url("../img/placemarks/small_route_blue.png") !important;
 }
 .cyan_route-icon {
-    background-image: url("https://www.pehmogis.fi/gntimages/route?color=48fbdc&scale=1") !important;
+    background-image: url("https://softgis.org.aalto.fi/images/route?color=48fbdc&scale=1") !important;
 }
 .purple_route-icon {
-    background-image: url("https://www.pehmogis.fi/gntimages/route?color=7408a1&scale=1") !important;
+    background-image: url("https://softgis.org.aalto.fi/images/route?color=7408a1&scale=1") !important;
 }
 .orange_route-icon {
-    background-image: url("https://www.pehmogis.fi/gntimages/route?color=ffa100&scale=1") !important;
+    background-image: url("https://softgis.org.aalto.fi/images/route?color=ffa100&scale=1") !important;
 }
 .yellow_route-icon {
-    background-image: url("https://www.pehmogis.fi/gntimages/route?color=fff600&scale=1") !important;
+    background-image: url("https://softgis.org.aalto.fi/images/route?color=fff600&scale=1") !important;
 }
 .yellow_area-icon {
-    background-image: url("../img/placemarks/small_area_yellow.png") !important;
+    background-image: url("https://softgis.org.aalto.fi/images/area?color=fff600&scale=1") !important;
+    width: 22px !important;
 }
 .cyan_area-icon {
-    background-image: url("https://www.pehmogis.fi/gntimages/area?color=48fbdc&scale=1") !important;
+    background-image: url("https://softgis.org.aalto.fi/images/area?color=48fbdc&scale=1") !important;
     width: 22px !important;
 }
 .blue_area-icon {
-    background-image: url("https://www.pehmogis.fi/gntimages/area?color=0000ff&scale=1") !important;
+    background-image: url("https://softgis.org.aalto.fi/images/area?color=0000ff&scale=1") !important;
     width: 22px !important;
 }
 .green_area-icon {
-    background-image: url("https://www.pehmogis.fi/gntimages/area?color=00ff00&scale=1") !important;
+    background-image: url("https://softgis.org.aalto.fi/images/area?color=00ff00&scale=1") !important;
     width: 22px !important;
 }
 .red_area-icon {
-    background-image: url("https://www.pehmogis.fi/gntimages/area?color=ff0000&scale=1") !important;
+    background-image: url("https://softgis.org.aalto.fi/images/area?color=ff0000&scale=1") !important;
     width: 22px !important;
 }
 
