@@ -79,7 +79,7 @@ CACHES = getattr(settings_local, "CACHES", {
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+#ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '#2%p1zs2%2lngirk3m(vf_o@-@l!g)ln*sb0#pqcouwvlac06f'
@@ -150,11 +150,11 @@ USE_MONGODB = getattr(settings_local, "USE_MONGODB", True)
 # Spatial reference system identity (srid) of the database
 # 3067 EUREF_FIN_TM35FIN (ETRS89 / ETRS-TM35FIN)
 # 3857 Web mercator, same as 900913, 3857 is the official EPSG code
-SPATIAL_REFERENCE_SYSTEM_ID = 3857
+SPATIAL_REFERENCE_SYSTEM_ID = getattr(settings_local, "SPATIAL_REFERENCE_SYSTEM_ID", 3857)
 
 STATIC_ROOT = getattr(settings_local, "STATIC_ROOT", '')
 STATIC_URL = getattr(settings_local, "STATIC_URL", '/static/')
-STATICFILES_DIRS = getattr(settings_local, "STATICFILES_DIRS", ('',))
+STATICFILES_DIRS = getattr(settings_local, "STATICFILES_DIRS", [])
 
 # List of finder classes that know how to find static files in
 # various locations.
