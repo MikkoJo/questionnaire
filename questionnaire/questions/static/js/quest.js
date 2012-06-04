@@ -156,7 +156,10 @@ function loadTemplates(fileName) {
                 // The LOAD function will be called on a successful response.
                 load: function(response, ioArgs){
                     var testi = response.templates;
-                    $('body').append(response);
+                    $(response).each(function() {
+                        popup_contents[this.id] = $(this).html();
+                    });
+//                    $('body').append(response);
 //                    var tName;
 //                    for (tName in testi) {
 //                      console.log(tName);
@@ -193,7 +196,9 @@ function add_popup_to_feature(evt) {
 
     //get the right content for the popup
     if( infowindow_name !== undefined ) {
-        popupcontent = $('#' + infowindow_name).html();
+//        popupcontent = $('#' + infowindow_name).html();
+//        popupcontent = $(popup_contents[infowindow_name]).html();
+        popupcontent = popup_contents[infowindow_name];
     }
     if(popupcontent === null) {
         popupcontent = default_infocontent;
@@ -437,7 +442,7 @@ function create_feature_callback(response_data) {
 function create_ol_feature_callback(response_data) {
 
     if(djConfig.isDebug) {
-        console.log("save_graphic_callback: " + dojo.toJson(response_data));
+        console.log("create_ol_feature_callback: " + dojo.toJson(response_data));
     }
     // If update return. At this moment we do not change geometries, only properties
     if(response_data.search) {
@@ -2897,7 +2902,9 @@ function feature_added(evt) {
 
     //get the right content for the popup
     if( infowindow_name !== undefined ) {
-        popupcontent = $('#' + infowindow_name).html();
+//        popupcontent = $('#' + infowindow_name).html();
+//        popupcontent = $(popup_contents[infowindow_name]).html();
+        popupcontent = popup_contents[infowindow_name];
     }
     if(popupcontent === null) {
         popupcontent = default_infocontent;
@@ -3057,10 +3064,11 @@ function endQuestionary() {
 var imageServiceLayer;
 var ovlayer;
 var servicesLayer;
-var mapRoad, mapSatellite;
+var mapRoad, mapSatellite, wmsLayer;
 var pointLayer,
     routeLayer,
     areaLayer,
+    popup_contents = [];
     map_created = false;
 
 //init creates the map
@@ -3259,6 +3267,12 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
 
     //pool for imagebuttons
     //pool = new ButtonPool();
+    
+    //Get popup contents from index, need to be removed from DOM to avoid duplicate element ids
+    $('.popup').each(function() {
+            popup_contents[this.id] = $(this).html();
+            $(this).remove();
+    });
 
     //set an event for zoom to count a new maxheight(TODO)
 
