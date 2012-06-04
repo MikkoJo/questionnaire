@@ -20,6 +20,7 @@ var OVERVIEWMAP_URL = "https://server.arcgisonline.com/ArcGIS/rest/services/Worl
 var AREAS_FEATURE_LAYER_URL = "";
 
 questionnaire.infotemplates_url = "{% url random_cont file_name='extra_info_temp_html' file_type='html' %}";
+questionnaire.WMScapabilities_url ="{{ STATIC_URL }}vaaka_poi_wms_getcapabilities2.xml";
 
 questionnaire.initial_extent = {
         "xmax": 2780607.609391832,

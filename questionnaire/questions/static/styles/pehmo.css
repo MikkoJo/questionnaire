@@ -3421,3 +3421,33 @@ span.eos {
 #feedbackForm table {
     width: 100%;
 }
+
+.WMSSwitcher_container {
+    background-color: #EEEEEE;
+    border-color: #BBBBBB;
+    border-radius: 10px 10px 10px 10px;
+    border-style: solid;
+    border-width: 2px;
+    position: absolute;
+    text-align: left;
+    top: 62px;
+    left: 40%;
+    padding: 5px;
+    z-index: 1004;
+}
+
+.minmax {
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    top: 2px;
+    right: 2px;
+}
+
+.minmax.max {
+    background-image: url("../img/minus.png");
+}
+
+.minmax.min {
+    background-image: url("../img/plus.png");
+}

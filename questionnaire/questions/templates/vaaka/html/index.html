@@ -101,6 +101,10 @@
                 </p>
             </div>
         </div>
+        <div class="WMSSwitcher_container">
+            <span>{%trans 'Karttatasot' %}</span>
+            <div class="minmax min"></div>
+        </div>
         <div id="bigContent"><!--{% include 'html/wait.html' %}--></div>
         <div id="smallContent"></div>
         <div id="subsurround"></div>
@@ -170,6 +174,7 @@
         <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.ui.drawbutton.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/quest.js"></script>
         <script type="text/javascript" src="{% url main_js file_name='quest_extra' %}"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/WMSLayerSwitcher.js"></script>
 
         <!-- old files -->
 <!--         <script type="text/javascript" src="{% url common file_name='overview' file_type='js' %}"></script> -->
