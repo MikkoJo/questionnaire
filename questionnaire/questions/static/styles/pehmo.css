@@ -3457,6 +3457,7 @@ span.eos {
     top: 0px;
     right: 2px;
     color: #666666;
+    cursor: pointer;
 }
 .minimize {
     position: absolute;
@@ -3465,6 +3466,7 @@ span.eos {
     top: 0px;
     right: 2px;
     color: #666666;
+    cursor: pointer;
 }
 /*
 .WMSSwitcher_container .maximize {

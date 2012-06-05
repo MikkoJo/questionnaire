@@ -38,7 +38,7 @@ function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
     for(var i = 0; i < wms_layers.length; i++) {
         // create input element
         var inputElem = document.createElement("input");
-        inputElem.id = "WMSLayerSwicther_input_" + wms_layers[i].name;
+        inputElem.id = "WMSLayerSwitcher_input_" + wms_layers[i].name;
         inputElem.name = wms_layers[i].name;
         inputElem.type = "checkbox";
         inputElem.value = wms_layers[i].name;
@@ -46,9 +46,9 @@ function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
         inputElem.defaultChecked = true;
         inputElem.className = "WMSSwitcher_input";
         
-        var labelElem = document.createElement("label");
-        labelElem["for"] =  inputElem.id;
-        labelElem.innerHTML = wms_layers[i].title;
+        var labelElem = $(document.createElement("label"));
+        labelElem.attr("for", inputElem.id);
+        labelElem.html(wms_layers[i].title);
 //        labelElem.style.verticalAlign = "baseline";
         
         var br = document.createElement("br");
@@ -62,7 +62,7 @@ function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
     //minmax_div.className = 'minmax max';
     //new_div.appendChild(minmax_div);
     //$('body').append(new_div);
-    $('.WMSSwitcher_input').click(function(evt) {
+    $('.WMSSwitcher_input').change(function(evt) {
                 var new_layer_string = "";
                 $('.WMSSwitcher_input:checked').each(function(index) {
                   new_layer_string = new_layer_string + this.name + ",";
