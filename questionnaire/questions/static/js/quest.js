@@ -1675,7 +1675,7 @@ function create_widgets(node_id) {
     if(questionnaire.extra_input_connect !== undefined) {
         for (k = 0; k < questionnaire.extra_input_connect.length; k++) {
             var elem = dojo.byId(questionnaire.extra_input_connect[k].id);
-            if(elem !== null) {
+            if(elem !== null && elem !== undefined) {
                 // Check for name, needed for radiobuttons
                 if(questionnaire.extra_input_connect[k].name !== undefined) {
                     $('input[name=' + questionnaire.extra_input_connect[k].name + ']').change(
@@ -3276,7 +3276,8 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
 
     //set an event for zoom to count a new maxheight(TODO)
 
-    initHook();
+//    initHook();
+    $('body').trigger('initHook');
     createPage(getPageName(nr, pagearray), pagearray);
 
     //give the user impression that the program is doing something

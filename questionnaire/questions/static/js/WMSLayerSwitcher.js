@@ -1,3 +1,7 @@
+$('body').on('initHook', function(){
+    create_WMS();
+}
+);
 var capabilities;
 function WMSGetCapabilities() {
     var wmsreader = new OpenLayers.Format.WMSCapabilities({version: '1.3.0'});
