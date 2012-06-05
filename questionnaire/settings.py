@@ -8,8 +8,8 @@ DEBUG = getattr(settings_local, 'DEBUG', False)
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Mikko Johansson', 'mikko.johansson@mapita.fi'),
-    ('Kristoffer Snabb', 'kristoffer.snabb@mapita.fi'),
+    ('Mikko Johansson', 'mikko.johansson@aalto.fi'),
+    ('Kristoffer Snabb', 'kristoffer.snabb@aalto.fi'),
 )
 
 MANAGERS = ADMINS
@@ -41,7 +41,7 @@ TIME_ZONE = 'Europe/Helsinki'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-US'
+LANGUAGE_CODE = 'fi-FI'
 
 # SITE_ID   Questionnaire
 # 7         Example
