@@ -109,6 +109,10 @@ width: 173px;
 background-image: url("../img/tuusula_logo.png");
 width: 173px;
 }
+.vaaka_fi #logo, .vaaka_en #logo {
+background-image: url("../img/vaaka_logo.png");
+width: 173px;
+}
 
 div#fcg_logo {
 background-image: url("../img/FCG-logo.png");
@@ -693,6 +697,11 @@ z-index: 1;
     background-image: url("../img/tuusula_front.jpg");
     background-position: 100% 0px;
     height: 490px;
+}
+.vaaka_fi .firstpagepic, .vaaka_en .firstpagepic {
+    background-image: url("../img/vaaka_front.png");
+    background-position: 100% 0px;
+    height: 532px;
 }
 .firstpagecontent {
 position: relative;
