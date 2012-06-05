@@ -3425,29 +3425,56 @@ span.eos {
 .WMSSwitcher_container {
     background-color: #EEEEEE;
     border-color: #BBBBBB;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
     border-style: solid;
-    border-width: 2px;
+    border-width: 0px 2px 2px;
     position: absolute;
     text-align: left;
-    top: 62px;
+    top: 61px;
     left: 40%;
-    padding: 5px;
-    z-index: 1004;
+    padding-left: 5px;
+    z-index: 53;
+    width: 13.5em;
 }
 
-.minmax {
+.WMSSwitcher_container span {
+    font-size: 12px;
+}
+
+.WMSLayers_container {
+    padding-bottom: 5px;
+}
+
+.WMSLayers_container label {
+    font-size: 11px;
+    padding-bottom: 5px;
+}
+
+.maximize {
     position: absolute;
     height: 14px;
     width: 14px;
-    top: 2px;
+    top: 0px;
     right: 2px;
+    color: #666666;
+}
+.minimize {
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    top: 0px;
+    right: 2px;
+    color: #666666;
+}
+/*
+.WMSSwitcher_container .maximize {
+    background-image: url("../img/plus.png");
 }
 
-.minmax.max {
+.WMSSwitcher_container .minimize {
     background-image: url("../img/minus.png");
 }
-
-.minmax.min {
-    background-image: url("../img/plus.png");
+*/
+.empty {
+    display: none;
 }

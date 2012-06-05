@@ -28,7 +28,7 @@ function WMSLayerAdd(wmscapabilities) {
 }
 
 function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
-    var new_div = $(".WMSSwitcher_container");
+    var new_div = $(".WMSLayers_container");
         wms_layers = wmscapabilities.capability.layers;
     
     for(var i = 0; i < wms_layers.length; i++) {
@@ -45,7 +45,7 @@ function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
         var labelElem = document.createElement("label");
         labelElem["for"] =  inputElem.id;
         labelElem.innerHTML = wms_layers[i].title;
-        labelElem.style.verticalAlign = "baseline";
+//        labelElem.style.verticalAlign = "baseline";
         
         var br = document.createElement("br");
         new_div.append(inputElem);
@@ -65,8 +65,18 @@ function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
                   WMS_layer.mergeNewParams({layers: new_layer_string});
                 });
     });
-    $('.minmax').click(function(evt) {
-        $(evt.currentTarget).toggleClass('min max');
+    $('.maximize').click(function(evt) {
+//        $('.WMSLayers_container').toggleClass('empty');
+        $('.WMSLayers_container').slideToggle('slow');
+        $(evt.currentTarget).toggleClass('empty');
+        $('.minimize').toggleClass('empty');
+        
+    })
+    $('.minimize').click(function(evt) {
+//        $('.WMSLayers_container').toggleClass('empty');
+        $('.WMSLayers_container').slideToggle('slow');
+        $(evt.currentTarget).toggleClass('empty');
+        $('.maximize').toggleClass('empty');
     })
 }
 
