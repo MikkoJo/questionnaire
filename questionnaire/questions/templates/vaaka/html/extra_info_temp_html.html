@@ -2,6 +2,7 @@
 {% for t_name, val in values.items %}
     <div id="{{ t_name }}" class="popup" style="visibility: hidden;">
         <h1>${header}</h1>
+        <p>${intro}</p>
         <form name="popupform" action="#" >
         <table>
         {% for questid, quest_text in val %}

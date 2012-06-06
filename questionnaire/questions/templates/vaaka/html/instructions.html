@@ -136,28 +136,6 @@
 
 {% block evaluation %}
 
-<tr>
-    <td>
-    <h2>
-    <a name="evalua">{% trans 'Asuinalueiden arviointi' %}</a>
-    </h2>
-    </td>
-    <td/>
-</tr>
-<tr>
-    <td>
-    <p>
-        {% blocktrans %}
-        Uudet asuinalueet ja täydennysrakentamiskohteet on merkitty kartalle sinisin monikulmioin
-        ja varustettu talo-merkinnällä. Klikkaamalla aluetta saat näkyviin lisätietoikkunan,
-        jossa on perustietoja alueista, sekä painikkeen "Arvioi aluetta". Painiketta klikkaamalla
-        aukeaa ponnahdusikkuna kysymyksineen. Vasemman reunan "Näytä kaikki"-painikkeesta
-        kartta zoomautuu niin, että kaikki arvioitavat alueet näkyvät näytöllä yhtä aikaa.
-        {% endblocktrans %}
-    </p>
-    </td>
-    <td/>
-</tr>
 {% endblock evaluation %}
 
 {% block researchers %}
@@ -173,18 +151,41 @@
     <td>
     <p>
         {% blocktrans %}
-        Tutkimus on 
+            Tutkimus on osa Sosioekologisia työkaluja Vaara-Kainuun matkailualueiden
+            suunnitteluun, VAAKA –hanketta . Hankkeen päätoteuttajana toimii Metsäntutkimuslaitos
+            (Metla). Yhteistyötahoja ovat Metsähallitus ja Aalto-Yliopisto sekä paikalliset toimijat.
+            Hanke rahoitetaan pääosin Euroopan aluekehitysrahastosta (EAKR) Kainuun elinkeino-,
+            liikenne- ja ympäristökeskuksen myöntämällä rahoituksella. Muita rahoittajia ovat Metla,
+            Metsähallitus, Aalto-yliopisto, Kainuun Etu Oy, Puolanka-Paljakka matkailuyhdistys ry,
+            Ukkohalla oy, Puolangan kunta. 
         {% endblocktrans %}
     </p>
     <p >
         {% blocktrans %}
-        
+            VAAKA –hankkeessa kehitetään matkailualueiden suunnittelun tueksi uusi paikkatietoon
+            perustuva toimintamalli, joka lisää maankäytön sosiaalista hyväksyttävyyttä, ekologista
+            kestävyyttä ja matkailun vetovoimaisuutta Kainuussa. Hankkeen pilottialueet,
+            Paljakka ja Ukkohalla, ovat suojelualueiden lähistöllä sijaitsevia matkailukeskuksia,
+            joissa matkailuelinkeinon kasvu edellyttää kaavamuutosta tai ainakin alueen käytön
+            pitkäaikaista linjausta. Haasteellista on mm. eri elinkeinojen tai erilaisten
+            matkailumuotojen yhteensovittaminen tai eriyttäminen alueiden suunnittelussa ja kehittämisessä. 
         {% endblocktrans %}
     </p>
     <p>
         {% blocktrans %}
-        
+            Hanke alkoi 10.10.2011 ja se päättyy 31.12.2013. 
         {% endblocktrans %}
+    </p>
+    <p>
+        {% blocktrans %}
+            Lisätietoja:<br />
+            <br />
+            Projektikoordinaattori Katja Kangas (Metla)<br />
+            Marketta Kyttä (Aalto Yliopisto) <br />
+            Hankkeen tapahtumia voi seurata <a href="http://www.metla.fi/hanke/7476/index.htm">www-sivuiltamme</a>
+            ja <a href="http://fi-fi.facebook.com/pages/VAAKA-hanke/259452194117673">Facebookista</a>.
+        {% endblocktrans %}
+
     </p>
     </td>
     <td/>
@@ -192,6 +193,7 @@
 {% endblock researchers %}
 
 {% block prizes %}
+{% comment %}
 <tr>
     <td>
     <h2>
@@ -206,6 +208,7 @@
    </p>
     </td>
 </tr>
+{% endcomment %}
 {% endblock prizes %}
 
 

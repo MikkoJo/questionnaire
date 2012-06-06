@@ -37,6 +37,7 @@ questionnaire.start_extent = {
         "y": 7198351.1782802,
         "zoomLevel": 0
 }
+questionnaire.initial_wms_layers = "0,1,3,5";
 
 questionnaire.sections = [{
 "section": "background"
@@ -824,12 +825,14 @@ questionnaire.feature_defaults = {
     "like_p": {
         "style": "point_positive",
         "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary",
-        "header": "{% trans 'Miellyttävä paikka' %}"
+        "header": "{% trans 'Miellyttävä paikka' %}",
+        "intro": "{% trans 'miksi paikka on miellyttävä?' %}"
     },
     "dislike_p": {
         "style": "point_negative",
         "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary",
-        "header": "{% trans 'Epämiellyttävä paikka' %}"
+        "header": "{% trans 'Epämiellyttävä paikka' %}",
+        "intro": "{% trans 'miksi paikka on epämiellyttävä?' %}"
     },
     "pearl_p": {
         "max": 1,
@@ -887,13 +890,13 @@ questionnaire.feature_defaults = {
         "style": "point_yellow",
         "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
         "icons": {"secondary": "yellow-icon"},
-        "header": "{% trans 'Kohennettava paikka' %}"
+        "header": "{% trans 'Mitä teet kohteessa?' %}"
     },
     "acti_poly": {
         "style": "area_yellow",
         "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
         "icons": {"secondary": "yellow_area-icon"},
-        "header": "{% trans 'Muu paikka' %}"
+        "header": "{% trans 'Mitä teet kohteessa?' %}"
     },
     "no_tourism": {
         "style": "area_blue",

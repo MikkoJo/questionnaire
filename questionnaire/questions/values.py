@@ -94,7 +94,7 @@ VALUES = {
             ],
         'dislike_info':
             [('unpleasant_landscape', _(u'epämiellyttävä maisema')),
-            ('scary', _(u'pelottava ympäristövaikeakulkuinen ympäristö')),
+            ('scary', _(u'pelottava ja/tai vaikeakulkuinen ympäristö')),
             ('noisy_env', _(u'rauhaton ja meluisa ympäristö')),
             ('difficult_access', _(u'vaikeasti saavutettava')),
             ('economy_harm', _(u'taloudellinen tai muu konkreettinen haitta')),

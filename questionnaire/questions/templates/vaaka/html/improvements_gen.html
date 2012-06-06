@@ -16,7 +16,7 @@
             </tr>
             <tr style="white-space: nowrap;">
                 <td class="smallvalue">
-                {% trans 'nykytila hyvä' %}
+                {% trans 'lisätään' %}
                 </td>
                 <td class="bigSlider">
                     <input type="range" name="{{ name }}" />
@@ -27,6 +27,20 @@
                 <td>
                     <input type="checkbox" name="{{ name }}_DK" />
                     <span class="eos bigvalue" >{% trans 'en osaa sanoa' %}</span>
+                </td>
+            </tr>
+            <tr style="white-space: nowrap;">
+                <td class="smallvalue">
+                &nbsp;
+                </td>
+                <td class="smallvalue" style="text-align: center;">
+                {% trans 'nykytila hyvä' %}
+                </td>
+                <td class="bigvalue">
+                &nbsp;
+                </td>
+                <td>
+                    &nbsp;
                 </td>
             </tr>
             {% endfor %}

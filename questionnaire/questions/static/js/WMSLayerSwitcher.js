@@ -20,9 +20,15 @@ function WMSLayerAdd(wmscapabilities) {
     var wms_layers,i;
     
     wms_layers = "";
-    for(i = 0;i < wmscapabilities.capability.layers.length; i++) {
-        wms_layers = wms_layers + wmscapabilities.capability.layers[i].name;
-        wms_layers = wms_layers + ","; 
+    if (questionnaire.initial_wms_layers !== undefined ) {
+        wms_layers = questionnaire.initial_wms_layers;
+    }
+    else {
+        for(i = 0;i < wmscapabilities.capability.layers.length; i++) {
+            wms_layers = wms_layers + wmscapabilities.capability.layers[i].name;
+            wms_layers = wms_layers + ","; 
+        }
+        questionnaire.initial_wms_layers = "";
     }
     wmsLayer = new OpenLayers.Layer.WMS(wmscapabilities.service.title, 
     wmscapabilities.service.href,
@@ -32,8 +38,9 @@ function WMSLayerAdd(wmscapabilities) {
 }
 
 function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
-    var new_div = $(".WMSLayers_container");
-        wms_layers = wmscapabilities.capability.layers;
+    var new_div = $(".WMSLayers_container"),
+        wms_layers = wmscapabilities.capability.layers,
+        check;
     
     for(var i = 0; i < wms_layers.length; i++) {
         // create input element
@@ -42,8 +49,14 @@ function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
         inputElem.name = wms_layers[i].name;
         inputElem.type = "checkbox";
         inputElem.value = wms_layers[i].name;
-        inputElem.checked = true;
-        inputElem.defaultChecked = true;
+        if(questionnaire.initial_wms_layers.search(inputElem.value) !== -1) {
+            check = true;
+        }
+        else {
+            check = false;
+        }
+        inputElem.checked = check;
+        inputElem.defaultChecked = check;
         inputElem.className = "WMSSwitcher_input";
         
         var labelElem = $(document.createElement("label"));

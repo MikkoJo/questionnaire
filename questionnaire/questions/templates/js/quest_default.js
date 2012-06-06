@@ -29,6 +29,7 @@ var questionnaire = {
 "displayGraphicsOnPan": true,  // Map option to display graphics during pan
 "contactForm_url": "{% url contact %}", // Url to submit the contact form
 "feedback_url": "{% url feedback %}", // Url to submit general feedback
+"initial_wms_layers": "", // Initial layers shown in wms
 "config": {"useGMap": false, "newNavigation": false}, // Configurable options
 "feature_defaults": {} // Default attributes for all features
 };
