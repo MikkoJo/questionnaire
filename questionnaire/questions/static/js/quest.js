@@ -134,6 +134,19 @@ function overviewMapHide(){
     divi.style.visibility = "hidden";
 }
 
+//This function disables drawing if zoom level is too low
+function checkZoom(zoomLevel) {
+    if (map.zoom <= zoomLevel) {
+        $("#smallContent").find("button[type='button'].drawbutton").each(function() {
+            $(this).drawButton("disable");
+        });
+    }
+    else {
+        $("#smallContent").find("button[type='button'].drawbutton").each(function() {
+            $(this).drawButton("enable");
+        });
+    }
+}
 
 // Load infotemplates from diffrent file
 function loadTemplates(fileName) {
@@ -3173,6 +3186,7 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
         
     }
     map.addControls([new OpenLayers.Control.OverviewMap(ovMapOptions),
+                                 new OpenLayers.Control.ScaleLine({bottomUnits: "", bottomOutUnits: ""}),
                                  new OpenLayers.Control.Attribution(),
                                  new OpenLayers.Control.Navigation({}),
                                  new OpenLayers.Control.PanZoomBar({id: 'navigation'})]);

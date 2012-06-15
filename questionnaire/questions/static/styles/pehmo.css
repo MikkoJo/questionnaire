@@ -560,8 +560,8 @@ cursor: pointer;
 div#ovcont {
     position: absolute;
     /* now outside map div substracted 60px(header height) from top*/
-    top: 64px;
-    right: 110px;
+    top: 84px;
+    right: 60px;
     width: 130px;
     height: 15px;
     background-image: url("../img/ovmaptausta.png");
@@ -3210,7 +3210,7 @@ button.finish {
 .olControlPanZoomBar {
     left: auto !important;
     right: 48px !important;
-    top: 4px !important;
+    top: 20px !important;
 }
 .olControlOverviewMapElement {
     background: #BBBBBB !important;
@@ -3414,6 +3414,12 @@ div.olLayerGooglePoweredBy
 .olControlPanZoom {
     display: none;
 }
+
+.olControlScaleLine {
+    bottom: 65px !important;
+    right: 10px !important;
+}
+
 .spacer {
     margin-bottom:2px;
 }
@@ -3434,13 +3440,14 @@ span.eos {
 .WMSSwitcher_container {
     background-color: #EEEEEE;
     border-color: #BBBBBB;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 10px;
     border-style: solid;
-    border-width: 0px 2px 2px;
+    border-width: 2px;
     position: absolute;
     text-align: left;
-    top: 61px;
-    left: 40%;
+    top: 84px;
+/*    left: 40%;*/
+    right: 274px;
     padding-left: 5px;
     z-index: 53;
     width: 13.5em;
@@ -3462,20 +3469,22 @@ span.eos {
 .maximize {
     position: absolute;
     height: 14px;
-    width: 14px;
+    width: 24px;
     top: 0px;
     right: 2px;
     color: #666666;
     cursor: pointer;
+    text-align: right;
 }
 .minimize {
     position: absolute;
     height: 14px;
-    width: 14px;
+    width: 24px;
     top: 0px;
     right: 2px;
     color: #666666;
     cursor: pointer;
+    text-align: right;
 }
 /*
 .WMSSwitcher_container .maximize {
