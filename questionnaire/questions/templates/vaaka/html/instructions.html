@@ -32,10 +32,13 @@
 </h3>
 <ul>
     <li>
-        <a href="#kotamupime">{% trans 'kodin tai muun pisteen merkitseminen' %}</a>
+        <a href="#kotamupime">{% trans 'pisteen merkitseminen' %}</a>
     </li>
     <li>
         <a href="#repika">{% trans 'reitin piirtäminen kartalle' %}</a>
+    </li>
+    <li>
+        <a href="#alpika">{% trans 'alueen rajaaminen kartalle' %}</a>
     </li>
     <li>
         <a href="#kosimutapo">{% trans 'kohteen siirtäminen, muuttaminen tai poistaminen' %}</a>
@@ -80,7 +83,7 @@
             {% blocktrans %}
             Kyselyssä merkitään kartalle pisteitä, alueita tai viivoja (reittejä). Toimintopainikkeen kuvake
             kertoo, minkälainen kohde on tarkoitus paikantaa.
-            Esimerkiksi koti merkitään kartalle pisteenä, kulkureitit piirretään viivoina ja naapurusto alueena.
+            Esimerkiksi koti merkitään kartalle pisteenä, kulkureitit piirretään viivoina ja harrastusalueet rajataan alueina.
             {% endblocktrans %}
         </p>
         <p class="observe">
@@ -102,25 +105,22 @@
 <tr>
     <td>
     <h2>
-    <a name="kotamupime">{% trans 'Pisteen merkitseminen kartalle' %}</a>
+    <a name="kotamupime">{% trans 'Pistemäisen kohteen merkitseminen kartalle' %}</a>
     </h2>
     </td>
     <td/>
 </tr>
     <tr>
-        <td><!--
+        <td>
         <p class="">
-            {% blocktrans %}
-            Koti merkitään kartalle pisteenä. Muita pistemäisiä kohteita ovat esimerkiksi työ- tai
-            opiskelupaikka ja asiointipaikka.
-            {% endblocktrans %}
-        </p>-->
+            {% trans 'Pistemäisiä kohteita ovat esimerkiksi koti, kesämökki ja asiointipaikka.' %}
+        </p>
         <p class="">
-            <strong>{% trans 'Esimerkki pisteen merkitsemisestä kartalle.' %}</strong>
+            <strong>{% trans 'Esimerkki pisteen merkitsemisestä kartalle:' %}</strong>
         </p>
         <ol>
             <li>
-                {% trans 'Etsi aluksi kartalta haluamasi sijainti.' %}
+                {% trans 'Etsi aluksi kartalta kohteen sijainti.' %}
             </li>
             <li>
                 <strong>{% trans 'Valitse piste-työkalu' %}</strong> {% trans 'klikkaamalla sitä hiirellä.' %}
@@ -132,11 +132,18 @@
             <img src="{{ STATIC_URL }}img/help/point_button_active.png" alt="point_button" width="220" height="19" />
             </li>
             <li>
-                <strong>{% trans 'Klikkaa karttaa paikan kohdalla.' %}</strong> {% trans 'Piste sijoitetaan osoittamaasi kohtaan.' %}
+                <strong>{% trans 'Klikkaa karttaa valitsemallasi kohdalla.' %}</strong> {% trans 'Piste sijoitetaan osoittamaasi kohtaan.' %}
             </li>
             <li>
                 {% blocktrans %}
-                <strong>Vahvista pisteen sijainti</strong> avautuvassa ikkunassa klikkaamalla painiketta
+                    Näyttöön avautuu kyselyikkuna. Vastaa kyselyyn valitsemalla yksi vaihtoehto kunkin
+                    kysymyksen alla esitetyistä vaihtoehdoista. Kyselyikkunan oikealla laidalla on
+                    vierityspalkki, jota siirtämällä pääset ikkunassa alaspäin. Voit kertoa
+                    lisätietoja kohteesta kirjoittamalla kyselyikkunan sisällä olevaan ruutuun:
+                    Kerro lisää tästä paikasta.
+                {% endblocktrans %}
+                {% blocktrans %}
+                <strong>Vahvista vastauksesi </strong> klikkaamalla painiketta
                 "tallenna kohde".
                 Mikäli piste meni väärään paikkaan, voit poistaa sen klikkaamalla "poista kohde".
                 {% endblocktrans %}
@@ -155,7 +162,7 @@
 <tr>
     <td>
     <h2>
-    <a name="kytojatu">{% trans 'Kyselyn toteuttaja ja tutkijat' %}</a>
+    <a name="kytojatu">{% trans '' %}</a>
     </h2>
     </td>
     <td/>
@@ -251,10 +258,10 @@
         {% blocktrans %}
         Tutkimusaineiston tietoja käsitellään ryhmittäin, ei yksilötasolla. Tuloksia ryhmitellään esim.
         sukupuolen, ikäryhmän ja asuinpaikan perustella ja niissä
-        käsitellään ryhmien antamia keskimääräisiä vastauksia, kuten keskimääräistä matkaa tärkeisiin
-        paikkoihin tai kulkutapoja töihin.
+        käsitellään ryhmien antamia keskimääräisiä vastauksia, 
+        esim. kalastuksen kohdistumista rajatulle alueelle. 
         Julkaistavista tuloksista on mahdotonta jäljittää yksittäisten ihmisten tai yksittäisessä
-        rakennuksessa asuvien ihmisten vastauksia.
+        kohteissa liikkuvien ihmisten vastauksia.
         {% endblocktrans %}
     </p>
     </td>

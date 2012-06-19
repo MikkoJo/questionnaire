@@ -39,6 +39,8 @@ questionnaire.start_extent = {
 }
 questionnaire.initial_wms_layers = "0,1,3,5";
 
+questionnaire.minMarkZoomLevel = 2;
+
 questionnaire.sections = [{
 "section": "background"
 },

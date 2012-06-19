@@ -101,12 +101,6 @@
                 </p>
             </div>
         </div>
-        <div class="WMSSwitcher_container">
-            <span>{%trans 'Karttatasot' %}</span>
-            <div class="maximize">&#9660;</div>
-            <div class="WMSLayers_container empty"></div>
-            <div class="minimize empty">&#9650;</div>
-        </div>
         <div id="bigContent"><!--{% include 'html/wait.html' %}--></div>
         <div id="smallContent"></div>
         <div id="subsurround"></div>
@@ -131,6 +125,12 @@
             <div id="panLeft" class="myPanDiv"></div>
             <div id="panDown" class="myPanDiv"></div>
             <div id="panRight" class="myPanDiv"></div>
+            <div class="WMSSwitcher_container">
+                <span>{%trans 'Karttatasot' %}</span>
+                <div class="maximize">&#9660;</div>
+                <div class="WMSLayers_container empty"></div>
+                <div class="minimize empty">&#9650;</div>
+            </div>
             <div id="layerToggle">
             <!--    <div id="pan_arrows">
                     <div id="pan_up" class="fixedPan panUp" onclick="map.panUp();"></div>

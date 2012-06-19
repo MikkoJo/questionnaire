@@ -6,7 +6,8 @@ SITE_ID = 12
 
 LANGUAGE_CODE = 'fi-fi'
 
-LANGUAGES = (('fi', 'finnish'),)
+LANGUAGES = (('fi', 'finnish'),
+             ('en', 'english'),)
 
 #MEDIA_ROOT = '/home/mikko/.virtualenvs/geon_new/lib/python2.7/site-packages/gntimages-0.1-py2.7.egg/gntimages'
 DATABASES = {

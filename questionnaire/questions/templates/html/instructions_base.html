@@ -353,7 +353,7 @@
                     <p class="">
                         {% blocktrans %}
                         Näkymän oikeasta ylänurkasta löytyy navigointikartta eli pienoiskokoinen kartta, josta näkyy
-                        näkymän sijainti suhteessa koko alueeseen.
+                        näkymän sijainti suhteessa koko tutkimusalueeseen edellisellä suurennustasolla.
                         Navigointikartan avulla voi myös liikkua kartalla.
                         {% endblocktrans %}
                     </p>
@@ -412,7 +412,7 @@
                         {% blocktrans %}
                         Kyselyssä merkitään kartalle pisteitä, alueita tai viivoja (reittejä). Toimintopainikkeen kuvake
                         kertoo, minkälainen kohde on tarkoitus paikantaa.
-                        Esimerkiksi koti merkitään kartalle pisteenä, kulkureitit piirretään viivoina ja naapurusto alueena.
+                        Esimerkiksi koti merkitään kartalle pisteenä, kulkureitit piirretään viivoina ja harrastusalueet rajataan alueina.
                         {% endblocktrans %}
                     </p>
                     <p class="observe">
@@ -529,7 +529,18 @@
                             <strong>{% trans 'Lopeta piirto hiiren kaksoisklikkauksella.' %}</strong>
                         </li>
                         <li>
-                            {% trans 'Kerro reitistä haluamasi asiat ja tallenna reitti.' %}
+                            {% blocktrans %}
+                                Näyttöön avautuu kyselyikkuna. Vastaa kyselyyn valitsemalla yksi vaihtoehto kunkin
+                                kysymyksen alla esitetyistä vaihtoehdoista. Kyselyikkunan oikealla laidalla on
+                                vierityspalkki, jota siirtämällä pääset ikkunassa alaspäin. Voit kertoa
+                                lisätietoja kohteesta kirjoittamalla kyselyikkunan sisällä olevaan ruutuun:
+                                Kerro lisää tästä paikasta.
+                            {% endblocktrans %}
+                            {% blocktrans %}
+                            <strong>Vahvista vastauksesi </strong> klikkaamalla painiketta
+                            "tallenna kohde".
+                            Mikäli reittisi meni väärään paikkaan, voit poistaa sen klikkaamalla "poista kohde".
+                            {% endblocktrans %}
                         </li>
                     </ol>
                     <p class="observe">
@@ -554,7 +565,7 @@
                 <tr>
                     <td>
                     <h2>
-                    <a name="alpika">{% trans 'Alueen piirtäminen kartalle' %}</a>
+                    <a name="alpika">{% trans 'Alueen rajaaminen kartalle' %}</a>
                     </h2>
                     </td>
                     <td/>
@@ -563,14 +574,14 @@
                     <td>
                     <p class="">
                         {% blocktrans %}
-                        Alue merkitään kartalle piirtämällä sen reunaviiva hiirellä klikkailemalla. Aloita piirto
+                        Alue merkitään kartalle rajaamalla sen reunaviiva hiirellä klikkailemalla. Aloita rajaus
                         klikkaamalla karttaa jossain alueen kulmapisteessä.
-                        Jatka piirtämistä klikkailemalla kartalle reunaviiva piste pisteeltä. Kun alue on valmis,
-                        lopeta piirto hiiren kaksoisklikkauksella.
+                        Jatka rajaamista klikkailemalla kartalle reunaviiva piste pisteeltä. Kun alue on valmis,
+                        lopeta rajaus hiiren kaksoisklikkauksella.
                         {% endblocktrans %}
                     </p>
                     <p class="">
-                        <strong>{% trans 'Esimerkki alueen piirtämisestä.' %}</strong>
+                        <strong>{% trans 'Esimerkki alueen rajaamisesta.' %}</strong>
                     </p>
                     <ol>
                         <li>
@@ -582,12 +593,26 @@
                         </li>
                         <li>
                             {% blocktrans %}
-                            Aloita alueen piirto klikkaamalla karttaa jossain alueen kulmapisteessä.
-                            Jatka alueen piirtämistä klikkailemalla karttaa reunaviivaa seuraillen piste pisteeltä.
+                            Aloita alueen rajaus klikkaamalla karttaa jossain alueen kulmapisteessä.
+                            Jatka alueen rajaamista klikkailemalla karttaa reunaviivaa seuraillen piste pisteeltä.
                             {% endblocktrans %}
                         </li>
                         <li>
-                            <strong>{% trans 'Lopeta piirto hiiren kaksoisklikkauksella.' %}</strong>
+                            <strong>{% trans 'Lopeta rajaus hiiren kaksoisklikkauksella.' %}</strong>
+                        </li>
+                        <li>
+                            {% blocktrans %}
+                                Näyttöön avautuu kyselyikkuna. Vastaa kyselyyn valitsemalla yksi vaihtoehto kunkin
+                                kysymyksen alla esitetyistä vaihtoehdoista. Kyselyikkunan oikealla laidalla on
+                                vierityspalkki, jota siirtämällä pääset ikkunassa alaspäin. Voit kertoa
+                                lisätietoja kohteesta kirjoittamalla kyselyikkunan sisällä olevaan ruutuun:
+                                Kerro lisää tästä paikasta.
+                            {% endblocktrans %}
+                            {% blocktrans %}
+                            <strong>Vahvista vastauksesi </strong> klikkaamalla painiketta
+                            "tallenna kohde".
+                            Mikäli aluerajaus meni väärään paikkaan, voit poistaa sen klikkaamalla "poista kohde".
+                            {% endblocktrans %}
                         </li>
                     </ol>
                     <p class="observe">

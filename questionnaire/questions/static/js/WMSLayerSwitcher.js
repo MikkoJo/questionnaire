@@ -95,6 +95,9 @@ function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
         $(evt.currentTarget).toggleClass('empty');
         $('.maximize').toggleClass('empty');
     })
+    
+    // Lazy way to move WMSSwitcher_container to map.layerContainerDiv
+    $(map.layerContainerDiv).append($(".WMSSwitcher_container").detach());
 }
 
 function create_WMS() {

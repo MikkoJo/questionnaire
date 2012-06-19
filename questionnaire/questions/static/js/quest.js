@@ -136,7 +136,7 @@ function overviewMapHide(){
 
 //This function disables drawing if zoom level is too low
 function checkZoom(zoomLevel) {
-    if (map.zoom <= zoomLevel) {
+    if (map.zoom < zoomLevel) {
         $("#smallContent").find("button[type='button'].drawbutton").each(function() {
             $(this).drawButton("disable");
         });
@@ -2022,7 +2022,7 @@ function parse(page, domnode, pagearray) {
     form = create_widgets(domnode.id);
 
     var pages, i, newpagearray;
-
+    checkZoom(questionnaire.minMarkZoomLevel);
     //create the widgets
     if(page.formObjects !== undefined) {
     //form = createWidgets(page.formObjects);
@@ -3249,6 +3249,12 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
         var geojson_format = new OpenLayers.Format.GeoJSON();
         zoneLayer.addFeatures(geojson_format.read(questionnaire.zone_featurecollection));
     }
+    
+    
+    // Register map events
+    map.events.on({"zoomend": function(f) {
+                                checkZoom(questionnaire.minMarkZoomLevel);
+                              }});
 
     // Enable Pan onmouseOut
     if (!dojo.isIE) {

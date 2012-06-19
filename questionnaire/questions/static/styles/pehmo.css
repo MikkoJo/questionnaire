@@ -3418,6 +3418,7 @@ div.olLayerGooglePoweredBy
 .olControlScaleLine {
     bottom: 65px !important;
     right: 10px !important;
+    left: auto !important;
 }
 
 .spacer {
@@ -3443,13 +3444,13 @@ span.eos {
     border-radius: 10px;
     border-style: solid;
     border-width: 2px;
-    position: absolute;
+    position: fixed;
     text-align: left;
     top: 84px;
 /*    left: 40%;*/
     right: 274px;
     padding-left: 5px;
-    z-index: 53;
+    z-index: 750;
     width: 13.5em;
 }
 
@@ -3469,7 +3470,7 @@ span.eos {
 .maximize {
     position: absolute;
     height: 14px;
-    width: 24px;
+    width: 13.5em;
     top: 0px;
     right: 2px;
     color: #666666;
@@ -3479,7 +3480,7 @@ span.eos {
 .minimize {
     position: absolute;
     height: 14px;
-    width: 24px;
+    width: 13.5em;
     top: 0px;
     right: 2px;
     color: #666666;
