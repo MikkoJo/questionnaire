@@ -1,15 +1,17 @@
 {% load i18n %}
 <div class="mainTextArea">
     <div class="firstpagepic">
+        <div class="pic_copy"><span>kuva:Erkki Oksanen/Metla</span></div>
         <!--#-->
     </div>
     <h2 class="firstpagecontent">{% trans 'Vaara-Kainuun matkailualueiden kehittäminen' %}</h2>
     <p class="firstpagecontent">
         {% blocktrans %}
-            Tämä kysely selvittää mielipiteesi koskien Vaara-Kainuun matkailualueiden kehittämistä.
-            Euroopan aluekehitysrahaston rahoittamassa  VAAKA –hankkeessa kehitetään uusi paikkatietoon
-            perustuva toimintamalli, jonka avulla voidaan sovittaa yhteen matkailun, metsätalouden ja
-            luonnonsuojelun tarpeita. Hankkeen pilottialueina toimivat <b>Paljakan</b> ja <b>Ukkohallan</b>
+            Kyselyn tarkoituksena on selvittää paikallisten ihmisten ja matkailijoiden mielipiteitä
+            Vaara-Kainuun matkailualueiden kehittämisestä. Euroopan aluekehitysrahaston rahoittamassa
+            VAAKA –hankkeessa kehitetään uusi paikkatietoon perustuva toimintamalli, jonka avulla
+            voidaan sovittaa yhteen matkailun, metsätalouden ja luonnonsuojelun tarpeita.
+            Hankkeen pilottialueina toimivat <b>Paljakan</b> ja <b>Ukkohallan</b>
             matkailukeskukset lähialueineen. Vastaamalla voit kertoa mielipiteesi alueen arvokkaista
             kohteista ja alueen käyttöön liittyvistä tarpeistasi.  
         {% endblocktrans %}
@@ -20,8 +22,8 @@
             Kyselyyn vastaaminen vie aikaa noin 20 minuuttia. Toivomme, että vastaat jokaiseen
             kysymykseen. Sivusto etenee vaiheittain ja sinulla on mahdollisuus korjata edellisellä
             sivulla antamiasi tietoja. Antamasi tiedot tallentuvat automaattisesti. Henkilöllisyytesi
-            ei paljastu missään vaiheessa kyselyä eikä tuloksia tulla tarkastelemaan yksittäisten
-            vastausten pohjalta.  Jos tarvitset apua vastaamisessa tai haluat tietää miksi kysymme
+            ei paljastu missään vaiheessa kyselyä, eikä tuloksia tulla tarkastelemaan yksittäisten
+            vastausten pohjalta. Jos tarvitset apua vastaamisessa tai haluat tietää miksi kysymme
             tiettyjä asioita, niin klikkaa hiirellä
         {% endblocktrans %}
             <img src="{{ STATIC_URL }}img/blank.gif" class="welcomeHelp" alt="ohje" height="14" width="14" onclick="window.open('{{ help_url }}'); return false;"/>{% trans '-merkkiä.' %}
@@ -52,9 +54,11 @@
     {% blocktrans %}
         Tutkimus on osa Sosioekologisia työkaluja Vaara-Kainuun matkailualueiden
         suunnitteluun, VAAKA –hanketta. Kysymyksiä?
-        Yhteystiedot: 
-        FT Katja Kangas, FT Marketta Kyttä  
-    {% endblocktrans %}
-        <a href="{% url main_html file_name='instructions' %}#kytojatu" onclick="window.open(this.href); return false;">{% trans 'Lisätietoa tutkimuksesta' %}</a>.
-
+        Yhteystiedot:<br />
+        FT Katja Kangas, <a href="mailto://katja.kangas@metla.fi">katja.kangas@metla.fi</a>,
+        FT Marketta Kyttä, <a href="mailto://marketta.kytta@aalto.fi">marketta.kytta@aalto.fi</a>,<br />
+        tekniset ongelmat: Mikko Johansson, <a href="mailto://mikko.johansson@aalto.fi">mikko.johansson@aalto.fi</a><br />
+    {% endblocktrans %}    
+    <a href="{% url main_html file_name='instructions' %}#kytojatu" onclick="window.open(this.href); return false;">{% trans 'Lisätietoa tutkimuksesta' %}</a>.
+    <div class="logos"><div id="flag"></div><div id="leverage"></div><div id="vaaka_logo"></div></div>
 </div>

@@ -16,7 +16,7 @@
         <table>
             <tr>
                 <td colspan="3">
-                    {% trans 'Kuinka hyvin tunnet kartalla olevaa aluetta?' %}
+                    {% trans 'Kuinka hyvin tunnet kartalle rajatun alueen?' %}
                 </td>
             </tr>
             <tr>
@@ -39,20 +39,20 @@
             </table>
             <table>
             <tr>
-                <td><label for="relations_area">{% trans 'Suhteesi kartalla olevaan alueeseen' %}:</label></td>
+                <td><label for="relations_area">{% trans 'Suhteesi kartalle rajattuun alueeseen' %}:</label></td>
             </tr>
             <tr>
                 <td>
                     <select id="relations_area" name="relations_area" style="width: 100%;">
                         <option value="NULL" selected="selected"></option>
-                        <option value="home_in_area">{% trans 'kotini sijaitsee kartan rajaamalla alueella' %}</option>
-                        <option value="home_in_near_area">{% trans 'kotini sijaitsee kartan lähialueella' %}</option>
-                        <option value="holiday_home_in_area">{% trans 'loma-asuntoni sijaitsee kartan rajaamalla alueella' %}</option>
-                        <option value="holiday_home_in_near_area">{% trans 'loma-asuntoni sijaitsee lähialueella' %}</option>
-                        <option value="free_time_traveller">{% trans 'vapaa-ajan matkailija' %}</option>
-                        <option value="work_in_area">{% trans 'työni liittyy kartan rajaamaan alueeseen' %}</option>
-                        <option value="first_time">{% trans 'olen alueella ensimmäistä kertaa' %}</option>
-                        <option value="otherRelation">{% trans 'muu' %} </option>
+                        <option value="home_in_area">{% trans 'Kotini sijaitsee kartalle rajatulla alueella' %}</option>
+                        <option value="home_in_near_area">{% trans 'Kotini sijaitsee kartalle rajatun alueen lähellä' %}</option>
+                        <option value="holiday_home_in_area">{% trans 'Loma-asuntoni sijaitsee kartalle rajatulla alueella' %}</option>
+                        <option value="holiday_home_in_near_area">{% trans 'Loma-asuntoni sijaitsee kartalle rajatun alueen lähellä' %}</option>
+                        <option value="free_time_traveller">{% trans 'Vapaa-ajan matkailija' %}</option>
+                        <option value="work_in_area">{% trans 'Työni liittyy kartalle rajattuun alueeseen' %}</option>
+                        <option value="first_time">{% trans 'Olen alueella ensimmäistä kertaa' %}</option>
+                        <option value="otherRelation">{% trans 'Muu' %} </option>
                     </select>
                 </td>
             </tr>
@@ -63,16 +63,16 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="work_area">{% trans 'Jos työsi liittyy kartan rajaamaan alueeseen, niin miten?' %}:</label></td>
+                <td><label for="work_area">{% trans 'Jos työsi liittyy kartalle rajattuun alueeseen, niin miten?' %}:</label></td>
             </tr>
             <tr>
                 <td>
                     <select id="work_area" name="work_area">
                         <option value="NULL" selected="selected"></option>
-                        <option value="tourism">{% trans 'matkailuelinkeino' %}</option>
-                        <option value="agriculture_or_forestry">{% trans 'maa- tai metsätalous' %}</option>
-                        <option value="environmental_care">{% trans 'ympäristön suunnittelu tai hoito' %}</option>
-                        <option value="otherWork">{% trans 'muu' %} </option>
+                        <option value="tourism">{% trans 'Matkailuelinkeino' %}</option>
+                        <option value="agriculture_or_forestry">{% trans 'Maa- tai metsätalous' %}</option>
+                        <option value="environmental_care">{% trans 'Ympäristön suunnittelu tai hoito' %}</option>
+                        <option value="otherWork">{% trans 'Muu' %} </option>
                     </select>
                 </td>
             </tr>

@@ -3499,3 +3499,37 @@ span.eos {
 .empty {
     display: none;
 }
+
+div.pic_copy {
+    bottom: 0;
+    color: white;
+    position: absolute;
+    right: 5px;
+}
+
+div.logos {
+    height: 80px;
+    margin: 0;
+    padding: 0;   
+}
+.vaaka_fi div#flag {
+    background: transparent url("../img/eu_lippu_80.jpg") no-repeat scroll;
+    height: 80px;
+    width: 164px;
+    display: inline-block;
+    margin-right: 20px;
+}
+.vaaka_fi div#leverage {
+    background: transparent url("../img/vipuvoimaaEU_80.jpg") no-repeat scroll;
+    height: 80px;
+    width: 208px;
+    display: inline-block;
+    margin-right: 20px;
+}
+.vaaka_fi div#vaaka_logo {
+    background: transparent url("../img/vaaka-logo-144px.jpg") no-repeat scroll;
+    height: 24px;
+    width: 144px;
+    display: inline-block;
+    margin-right: 20px;
+}
