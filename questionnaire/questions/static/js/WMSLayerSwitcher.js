@@ -72,6 +72,9 @@ function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
         new_div.append(labelElem);
         new_div.append(br);
     }
+    var copyText = document.createElement("span");
+    copyText.innerHTML = "Copyright: Kainuun ulkoilukartta / Kainuun maakunta-kuntayhtymä";
+    new_div.append(copyText);
     
     //new_div.className = "WMSSwitcher_container";
     //var minmax_div = document.createElement('div');
