@@ -533,9 +533,11 @@ questionnaire.pages =
 {
 "name": "thankyou",
 "type": "big",
-"next": function () {window.location=('{% url common file_name='mymap' file_type='html' %}');},
-"extraButtons": function() {gnt.auth.logout(); createsubwindow('endQuestionnaire');},
+//"next": function () {window.location=('{% url common file_name='mymap' file_type='html' %}');},
+"extraButtons": function() {submitContact('contactForm');gnt.auth.logout(); createsubwindow('endQuestionnaire');},
 "preventDefault": {"next": true, "prev": false},
+"next": function() {submitContact('contactForm');},
+"previous": function() {submitContact('contactForm');},
 "content": "{% url main_html file_name='thankyou' %}"
 }
 ];
@@ -611,16 +613,16 @@ questionnaire.extra_input_connect = [
         }
 
     },
-    {   "id":"relations_area",
+    {   "id":"otherRelation",
         "event": "onchange",
         "func": function(evt) {
-            if(evt.currentTarget.value === 'otherRelation') {
+            if(evt.currentTarget.value === 'otherRelation' && evt.currentTarget.checked === true) {
                 dojo.removeClass('otherRelations_areaRow', 'tyhja');
-                dojo.byId('otherRelation').disabled = false;
+                dojo.byId('otherRelation_text').disabled = false;
             }
             else {
                 dojo.addClass('otherRelations_areaRow', 'tyhja');
-                dojo.byId('otherRelation').disabled = true;
+                dojo.byId('otherRelation_text').disabled = true;
             }
         }
 

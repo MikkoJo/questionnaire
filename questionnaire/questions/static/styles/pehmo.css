@@ -3519,6 +3519,13 @@ div.logos {
     display: inline-block;
     margin-right: 20px;
 }
+.vaaka_en div#flag {
+    background: transparent url("../img/alue_ENG_80.jpg") no-repeat scroll;
+    height: 80px;
+    width: 214px;
+    display: inline-block;
+    margin-right: 20px;
+}
 .vaaka_fi div#leverage {
     background: transparent url("../img/vipuvoimaaEU_80.jpg") no-repeat scroll;
     height: 80px;
@@ -3526,10 +3533,43 @@ div.logos {
     display: inline-block;
     margin-right: 20px;
 }
-.vaaka_fi div#vaaka_logo {
+.vaaka_en div#leverage {
+    background: transparent url("../img/leverageEU_80.jpg") no-repeat scroll;
+    height: 80px;
+    width: 208px;
+    display: inline-block;
+    margin-right: 20px;
+}
+.vaaka_fi div#vaaka_logo, .vaaka_en div#vaaka_logo {
     background: transparent url("../img/vaaka-logo-144px.jpg") no-repeat scroll;
     height: 24px;
     width: 144px;
+    display: inline-block;
+    margin-right: 20px;
+}
+div.lottery_logos {
+    height: 73px;
+    margin: 0;
+    padding: 0;   
+}
+div#gasthalla {
+    background: transparent url("../img/gasthalla.jpg") no-repeat scroll;
+    height: 67px;
+    width: 158px;
+    display: inline-block;
+    margin-right: 20px;
+}
+div#paljakka {
+    background: transparent url("../img/paljakka.jpg") no-repeat scroll;
+    height: 73px;
+    width: 151px;
+    display: inline-block;
+    margin-right: 20px;
+}
+div#ukkohalla {
+    background: transparent url("../img/ukkohalla.jpg") no-repeat scroll;
+    height: 69px;
+    width: 145px;
     display: inline-block;
     margin-right: 20px;
 }

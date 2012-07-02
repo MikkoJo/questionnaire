@@ -87,7 +87,7 @@
                     {% for lang in LANGUAGES %}
                         {% ifnotequal LANGUAGE_CODE|slice:":2" lang.0 %}
                         <a href="{% url set_language %}?lang={{ lang.0 }}&amp;next={% url main %}">
-                            {% trans "in" %} {{ lang.1 }}
+                            {{ lang.1 }}
                         </a>
                         {% endifnotequal %}
                     {% endfor %}
@@ -216,12 +216,11 @@
 </div>
 <div id="activities" class="popup" style="visibility: hidden;">
     <h1>${header}</h1>
-    <p>{% trans "Kohteen tyyppi:" %}</p>
     <form name="popupform" action="#" >
         <table>
             <tr>
                 <td class='infoCheck'>
-                    <input type="radio" id="ir_1" name="activity" value="hunting"/>
+                    <input type="checkbox" id="ir_1" name="activity" value="hunting"/>
                 </td>
                 <td>
                     <label for="ir_1">{% trans 'Metsästys/kalastus' %}</label>
@@ -229,7 +228,7 @@
             </tr>
             <tr>
                 <td class='infoCheck'>
-                    <input type="radio" id="ir_2" name="activity" value="forestry"/>
+                    <input type="checkbox" id="ir_2" name="activity" value="forestry"/>
                 </td>
                 <td>
                     <label for="ir_2">{% trans 'Metsänhoito' %}</label>
@@ -237,7 +236,7 @@
             </tr>
             <tr>
                 <td class='infoCheck'>
-                    <input type="radio" id="ir_3" name="activity" value="natural_product"/>
+                    <input type="checkbox" id="ir_3" name="activity" value="natural_product"/>
                 </td>
                 <td>
                     <label for="ir_3">{% trans 'Luonnontuotteiden keräily (esim. marjastus, sienestys)' %}</label>
@@ -245,7 +244,7 @@
             </tr>
             <tr>
                 <td class='infoCheck'>
-                    <input type="radio" id="ir_4" name="activity" value="nature_observation"/>
+                    <input type="checkbox" id="ir_4" name="activity" value="nature_observation"/>
                 </td>
                 <td>
                     <label for="ir_4">{% trans 'Luonnon tarkkailu' %}</label>
@@ -253,7 +252,7 @@
             </tr>
             <tr>
                 <td class='infoCheck'>
-                    <input type="radio" id="ir_5" name="activity" value="hiking"/>
+                    <input type="checkbox" id="ir_5" name="activity" value="hiking"/>
                 </td>
                 <td>
                     <label for="ir_5">{% trans 'Liikkuminen ja retkeily' %}</label>
@@ -261,7 +260,7 @@
             </tr>
             <tr>
                 <td class='infoCheck'>
-                    <input type="radio" id="ir_6" name="activity" value="motorized_move"/>
+                    <input type="checkbox" id="ir_6" name="activity" value="motorized_move"/>
                 </td>
                 <td>
                     <label for="ir_6">{% trans 'Motorisoitu liikkuminen (mönkijä, moottorikelkka)' %}</label>
@@ -269,7 +268,7 @@
             </tr>
             <tr>
                 <td class='infoCheck'>
-                    <input type="radio" id="ir_7" name="activity" value="work_related"/>
+                    <input type="checkbox" id="ir_7" name="activity" value="work_related"/>
                 </td>
                 <td>
                     <label for="ir_7">{% trans 'Työhön liittyvät tehtävät' %}</label>
@@ -277,7 +276,7 @@
             </tr>
             <tr>
                 <td class='infoCheck'>
-                    <input type="radio" id="ir_8" name="activity" value="other_acti"/>
+                    <input type="checkbox" id="ir_8" name="activity" value="other_acti"/>
                 </td>
                 <td>
                     <label for="ir_8">{% trans 'Muu' %}</label>

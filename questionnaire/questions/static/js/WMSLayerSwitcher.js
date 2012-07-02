@@ -20,19 +20,22 @@ function WMSLayerAdd(wmscapabilities) {
     var wms_layers,i;
     
     wms_layers = "";
-    if (questionnaire.initial_wms_layers !== undefined ) {
+    if (questionnaire.initial_wms_layers !== "" ) {
         wms_layers = questionnaire.initial_wms_layers;
     }
     else {
         for(i = 0;i < wmscapabilities.capability.layers.length; i++) {
             wms_layers = wms_layers + wmscapabilities.capability.layers[i].name;
-            wms_layers = wms_layers + ","; 
+            if(i < wmscapabilities.capability.layers.length -1) {
+                wms_layers = wms_layers + ","; 
+            }
         }
-        questionnaire.initial_wms_layers = "";
+        questionnaire.initial_wms_layers = wms_layers;
     }
     wmsLayer = new OpenLayers.Layer.WMS(wmscapabilities.service.title, 
-    wmscapabilities.service.href,
-    {layers: wms_layers, transparent: true, format: "image/png32"});
+//    wmscapabilities.service.href,
+    wmscapabilities.capability.request.getmap.href,
+    {layers: wms_layers, transparent: true, format: "image/png"});
     
     map.addLayer(wmsLayer);
 }
@@ -69,9 +72,6 @@ function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
         new_div.append(labelElem);
         new_div.append(br);
     }
-    var copyText = document.createElement("span");
-    copyText.innerHTML = "Copyright: Kainuun ulkoilukartta / Kainuun maakunta-kuntayhtymä";
-    new_div.append(copyText);
     
     //new_div.className = "WMSSwitcher_container";
     //var minmax_div = document.createElement('div');
@@ -80,10 +80,16 @@ function WMSLayerSwitcher(wmscapabilities, WMS_layer) {
     //$('body').append(new_div);
     $('.WMSSwitcher_input').change(function(evt) {
                 var new_layer_string = "";
+                var len = $('.WMSSwitcher_input:checked').length;
                 $('.WMSSwitcher_input:checked').each(function(index) {
-                  new_layer_string = new_layer_string + this.name + ",";
-                  WMS_layer.mergeNewParams({layers: new_layer_string});
+                  new_layer_string = new_layer_string + this.name;
+                  if(index < len -1) {
+                      new_layer_string = new_layer_string + ",";
+                  }
+                  //WMS_layer.mergeNewParams({layers: new_layer_string});
                 });
+                WMS_layer.mergeNewParams({layers: new_layer_string});
+
     });
     $('.maximize').click(function(evt) {
 //        $('.WMSLayers_container').toggleClass('empty');

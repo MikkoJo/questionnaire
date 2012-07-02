@@ -24,6 +24,39 @@
      </p>
      {% endif %}
     {% endcomment %}
+<form id="contactForm" name="contactForm" class="no_submit">
+    <p>
+        {% trans 'Kaikki vastanneet voivat osallistua arvotaan täyttämällä yhteystietonsa!' %}
+    </p>
+    <p>
+        <b>{% trans 'Arvonta suoritetaan 20.3.2013.' %} </b>
+    </p>
+    <p>
+        {% trans 'Palkintoina on lahjakortteja Hotelli Paljakkaan (1 kpl), Hotelli Gasthallaan (2 kpl) sekä Ukkohallan kylpylä-saunamaailmaan (1 kpl).' %}
+    </p>
+    <table class="infotable">
+        <tr>
+            <td>{% trans 'Nimi' %}:</td>
+            <td>
+            <input type="text" name="name" id="name" />
+            </td>
+        </tr>
+        <tr>
+            <td>{% trans 'Puhelinnumero' %}:</td>
+            <td>
+            <input type="text" name="phonenumber" id="phonenumber" />
+            </td>
+        </tr>
+        <tr>
+            <td>{% trans 'Sähköpostiosoite' %}:</td>
+            <td>
+            <input type="email" name="email" id="email" />
+            </td>
+        </tr>
+    </table>
+    <div class="lottery_logos"><div id="gasthalla"></div><div id="paljakka"></div><div id="ukkohalla"></div></div>
+
+</form>
 {% endblock formarea %}
 {% block buttonarea %}
     <div class="previous">

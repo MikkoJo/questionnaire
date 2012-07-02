@@ -39,27 +39,32 @@
             </table>
             <table>
             <tr>
-                <td><label for="relations_area">{% trans 'Suhteesi kartalle rajattuun alueeseen' %}:</label></td>
+                <td><b>{% trans 'Suhteesi kartalle rajattuun alueeseen' %}:</b></td>
             </tr>
             <tr>
                 <td>
-                    <select id="relations_area" name="relations_area" style="width: 100%;">
-                        <option value="NULL" selected="selected"></option>
-                        <option value="home_in_area">{% trans 'Kotini sijaitsee kartalle rajatulla alueella' %}</option>
-                        <option value="home_in_near_area">{% trans 'Kotini sijaitsee kartalle rajatun alueen lähellä' %}</option>
-                        <option value="holiday_home_in_area">{% trans 'Loma-asuntoni sijaitsee kartalle rajatulla alueella' %}</option>
-                        <option value="holiday_home_in_near_area">{% trans 'Loma-asuntoni sijaitsee kartalle rajatun alueen lähellä' %}</option>
-                        <option value="free_time_traveller">{% trans 'Vapaa-ajan matkailija' %}</option>
-                        <option value="work_in_area">{% trans 'Työni liittyy kartalle rajattuun alueeseen' %}</option>
-                        <option value="first_time">{% trans 'Olen alueella ensimmäistä kertaa' %}</option>
-                        <option value="otherRelation">{% trans 'Muu' %} </option>
-                    </select>
+                    <input type="checkbox" name="relations_area" value="home_in_area" id="home_in_area"/>
+                    <label for="home_in_area">{% trans 'Kotini sijaitsee kartalle rajatulla alueella' %}</label><br />
+                    <input type="checkbox" name="relations_area" value="home_in_near_area" id="home_in_near_area"/>
+                    <label for="home_in_near_area">{% trans 'Kotini sijaitsee kartalle rajatun alueen lähellä' %}</label><br />
+                    <input type="checkbox" name="relations_area" value="holiday_home_in_area" id="holiday_home_in_area"/>
+                    <label for="">{% trans 'Loma-asuntoni sijaitsee kartalle rajatulla alueella' %}</label><br />
+                    <input type="checkbox" name="relations_area" value="holiday_home_in_near_area" id="holiday_home_in_near_area"/>
+                    <label for="holiday_home_in_area">{% trans 'Loma-asuntoni sijaitsee kartalle rajatun alueen lähellä' %}</label><br />
+                    <input type="checkbox" name="relations_area" value="free_time_traveller" id="free_time_traveller"/>
+                    <label for="free_time_traveller">{% trans 'Vapaa-ajan matkailija' %}</label><br />
+                    <input type="checkbox" name="relations_area" value="work_in_area" id="work_in_area"/>
+                    <label for="work_in_area">{% trans 'Työni liittyy kartalle rajattuun alueeseen' %}</label><br />
+                    <input type="checkbox" name="relations_area" value="first_time" id="first_time"/>
+                    <label for="first_time">{% trans 'Olen alueella ensimmäistä kertaa' %}</label><br />
+                    <input type="checkbox" name="relations_area" value="otherRelation" id="otherRelation"/>
+                    <label for="otherRelation">{% trans 'Muu' %} </label>
                 </td>
             </tr>
             <tr id="otherRelations_areaRow" class="tyhja">
                 <td>
-                    <label for="otherRelation">{% trans 'mikä?' %}</label>
-                    <input type="text" id="otherRelation" name="otherRelation" disabled="disabled"/>
+                    <label for="otherRelation_text">{% trans 'mikä?' %}</label>
+                    <input type="text" id="otherRelation_text" name="otherRelation_text" disabled="true"/>
                 </td>
             </tr>
             <tr>
