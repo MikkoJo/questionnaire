@@ -642,10 +642,10 @@ questionnaire.extra_input_connect = [
 
     },
     {   "id":"ir_17",
-        "name": "threats",
+        //"name": "threats",
         "event": "onchange",
         "func": function(evt) {
-            if(evt.currentTarget.value === 'other_threat') {
+            if(evt.currentTarget.value === 'other_threat' && evt.currentTarget.checked === true) {
                 dojo.removeClass('other_threat_row', 'tyhja');
                 dojo.byId('other_threat_text').disabled = false;
             }
@@ -657,10 +657,10 @@ questionnaire.extra_input_connect = [
 
     },
     {   "id":"ir_8",
-        "name": "activity",
+//        "name": "activity",
         "event": "onchange",
         "func": function(evt) {
-            if(evt.currentTarget.value === 'other_acti') {
+            if(evt.currentTarget.value === 'other_acti' && evt.currentTarget.checked === true) {
                 dojo.removeClass('other_actiRow', 'tyhja');
                 dojo.byId('other_activity').disabled = false;
             }
