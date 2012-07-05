@@ -2686,6 +2686,10 @@ position: relative;
 left: 250px;
 }
 
+.vaaka_en .buttonArea .close {
+    background-image: url("../img/buttons/emptyBlue230x35.png");
+    width: 230px;
+}
 .buttonArea .close span {
 font-family: Helvetica;
 position: relative;
@@ -3510,7 +3514,7 @@ div.pic_copy {
 div.logos {
     height: 80px;
     margin: 0;
-    padding: 0;   
+    padding: 0;
 }
 .vaaka_fi div#flag {
     background: transparent url("../img/eu_lippu_80.jpg") no-repeat scroll;
@@ -3550,7 +3554,7 @@ div.logos {
 div.lottery_logos {
     height: 73px;
     margin: 0;
-    padding: 0;   
+    padding: 0;
 }
 div#gasthalla {
     background: transparent url("../img/gasthalla.jpg") no-repeat scroll;

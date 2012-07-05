@@ -7,9 +7,9 @@ msgstr ""
 "Project-Id-Version: Kuninkaankolmio/Tampere\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-04 14:27+0300\n"
-"PO-Revision-Date: 2012-07-04 14:31+0300\n"
+"PO-Revision-Date: 2012-07-05 12:04+0300\n"
 "Last-Translator: Mikko Johansson <mikko.johansson@aalto.fi>\n"
-"Language-Team: SoftGIS team\n"
+"Language-Team: SoftGIS\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2193,17 +2193,16 @@ msgstr ""
 
 #: questions/templates/html/feedback.html:3
 #: questions/templates/html/thank_feedback.html:3
-#, fuzzy
 msgid "Palautetta"
 msgstr "Feedback"
 
 #: questions/templates/html/feedback.html:6
 msgid "Voit kirjoittaa palautetta palvelusta alla olevaan kenttään."
-msgstr ""
+msgstr "You can write feedback for the service in the text area below."
 
 #: questions/templates/html/feedback.html:17
 msgid "Lähetä"
-msgstr ""
+msgstr "Send"
 
 #: questions/templates/html/instructions_base.html:7
 msgid "PehmoGIS ohjeet"
@@ -2448,7 +2447,6 @@ msgid "Navigointikartan käyttö"
 msgstr "Using the Navigation Map "
 
 #: questions/templates/html/instructions_base.html:354
-#, fuzzy
 msgid ""
 "\n"
 "                        Näkymän oikeasta ylänurkasta löytyy navigointikartta "
@@ -2459,12 +2457,11 @@ msgid ""
 "                        "
 msgstr ""
 "\n"
-"In the top-right corner of the display you can find the navigation map which "
-"shows how your map is situated in relation to the entire city. You can also "
-"use the navigation map to move around on the map. "
+"n the top-right corner of the display you can find the navigation map which "
+"shows how your map is situated in relation to the entire study area. You can "
+"also use the navigation map to move around on the map."
 
 #: questions/templates/html/instructions_base.html:361
-#, fuzzy
 msgid ""
 "\n"
 "                        Näin liikut kartalla navigointikartan avulla: tartu "
@@ -2473,9 +2470,9 @@ msgid ""
 "                        "
 msgstr ""
 "\n"
-"To move the map by using the navigation map, do as follows: Click on the "
-"blue rectangle of the navigation map, hold the button down and drag the "
-"rectangle to the desired direction with your mouse. "
+"To move the map by using the navigation map, do as follows: Click on the red "
+"rectangle of the navigation map, hold the button down and drag the "
+"rectangle to the desired direction with your mouse."
 
 #: questions/templates/html/instructions_base.html:375
 msgid "Kartalle merkittyjen kohteiden piilottaminen"
@@ -2533,7 +2530,7 @@ msgstr ""
 #: questions/templates/html/instructions_base.html:425
 #: questions/templates/vaaka/html/instructions.html:96
 msgid "Kuva yllä: Esimerkit piste-, viiva- ja aluetyökaluista."
-msgstr ""
+msgstr "Figure abowe: examples of  point, line and area tools."
 
 #: questions/templates/html/instructions_base.html:428
 msgid ""
@@ -2593,9 +2590,8 @@ msgstr ""
 "route is finished, end drawing by double-clicking the mouse. "
 
 #: questions/templates/html/instructions_base.html:511
-#, fuzzy
 msgid "Esimerkki reitin piirtämisestä."
-msgstr "An example of drawing a route: Marking an important route "
+msgstr "An example of drawing a route."
 
 #: questions/templates/html/instructions_base.html:515
 #: questions/templates/html/instructions_base.html:588
@@ -2608,9 +2604,8 @@ msgid "Valitse"
 msgstr "Select"
 
 #: questions/templates/html/instructions_base.html:519
-#, fuzzy
 msgid "reitti -työkalu"
-msgstr "the Important Route -tool. "
+msgstr "route -tool. "
 
 #: questions/templates/html/instructions_base.html:522
 msgid ""
@@ -2648,9 +2643,12 @@ msgid ""
 "                                Kerro lisää tästä paikasta.\n"
 "                            "
 msgstr ""
+"\n"
+"Answer the questions in the opening window.  You can move downwards by "
+"moving the scroll bar on the right side of the window. You can tell more "
+"about the place by writing into the box: Tell more about the places."
 
 #: questions/templates/html/instructions_base.html:539
-#, fuzzy
 msgid ""
 "\n"
 "                            <strong>Vahvista vastauksesi </strong> "
@@ -2661,15 +2659,12 @@ msgid ""
 "                            "
 msgstr ""
 "\n"
-"<strong>Confirm the location of your home</strong> in the opening window by "
-"clicking on the button \"Yes, save this object.\" If your home was marked on "
-"a wrong place, you can delete it by clicking on the \"No, remove this object."
-"\" You can also move the location of your home afterwards; in case you "
-"notice that it is marked in a wrong place (see"
+"<strong>Confirm your answer</strong> in the opening window by clicking on "
+"the button \"Save location\". If your place was marked on a wrong place, you "
+"can delete it by clicking on the \"Delete location\"."
 
 #: questions/templates/html/instructions_base.html:547
 #: questions/templates/html/instructions_base.html:619
-#, fuzzy
 msgid ""
 "\n"
 "                        Huom! Jos reittisi jatkuu näkymän ulkopuolelle, voit "
@@ -2680,20 +2675,18 @@ msgid ""
 msgstr ""
 "\n"
 "Nota bene! If your route continues outside the visible map you can pan the "
-"map by moving your mouse over the map edge (in Firefox browsers) or by "
-"clicking on the arrows (e.g. Internet Explorer). "
+"map by moving your mouse while pressing the left mousebutton or by clicking "
+"on the arrows. "
 
 #: questions/templates/html/instructions_base.html:554
 msgid "Reitin piirtäminen kartalla vaihe vaiheelta:"
 msgstr "Drawing a route on the map (step by step): "
 
 #: questions/templates/html/instructions_base.html:568
-#, fuzzy
 msgid "Alueen rajaaminen kartalle"
-msgstr "drawing a route on the map"
+msgstr "Drawing an area on the map"
 
 #: questions/templates/html/instructions_base.html:576
-#, fuzzy
 msgid ""
 "\n"
 "                        Alue merkitään kartalle rajaamalla sen reunaviiva "
@@ -2705,21 +2698,19 @@ msgid ""
 "                        "
 msgstr ""
 "\n"
-"The route (or line) is drawn on the map by clicking on several points which "
-"form the route. You can start drawing the route from either end. Once the "
-"route is finished, end drawing by double-clicking the mouse. "
+"The area is drawn on the map by clicking on several points which form the "
+"area. You can start drawing the area from either end. Once the area is "
+"finished, end drawing by double-clicking the mouse."
 
 #: questions/templates/html/instructions_base.html:584
 msgid "Esimerkki alueen rajaamisesta."
-msgstr ""
+msgstr "An example of drawing an area."
 
 #: questions/templates/html/instructions_base.html:592
-#, fuzzy
 msgid "alue -työkalu"
-msgstr "Select the Home -tool"
+msgstr "area -tool"
 
 #: questions/templates/html/instructions_base.html:595
-#, fuzzy
 msgid ""
 "\n"
 "                            Aloita alueen rajaus klikkaamalla karttaa "
@@ -2729,19 +2720,15 @@ msgid ""
 "                            "
 msgstr ""
 "\n"
-"Start drawing the route by locating either end of the route on the map and "
+"Start drawing the area by locating one corner of your area on the map and "
 "clicking on it. Continue drawing by clicking several points on the map, "
-"these point will form your route. "
+"these point will form your area."
 
 #: questions/templates/html/instructions_base.html:601
-#, fuzzy
 msgid "Lopeta rajaus hiiren kaksoisklikkauksella."
-msgstr ""
-"When you get to the other end of the route, quit drawing by double-clicking "
-"with your mouse. "
+msgstr "Quit drawing by double-clicking with your mouse."
 
 #: questions/templates/html/instructions_base.html:611
-#, fuzzy
 msgid ""
 "\n"
 "                            <strong>Vahvista vastauksesi </strong> "
@@ -2752,11 +2739,9 @@ msgid ""
 "                            "
 msgstr ""
 "\n"
-"<strong>Confirm the location of your home</strong> in the opening window by "
-"clicking on the button \"Yes, save this object.\" If your home was marked on "
-"a wrong place, you can delete it by clicking on the \"No, remove this object."
-"\" You can also move the location of your home afterwards; in case you "
-"notice that it is marked in a wrong place (see"
+"<strong>Confirm your answer</strong> in the opening window by clicking on "
+"the button \"Save location\" If your place was marked on a wrong place, you "
+"can delete it by clicking on the \"Delete location\""
 
 #: questions/templates/html/instructions_base.html:626
 msgid "Alueen piirtäminen kartalla vaihe vaiheelta:"
@@ -2767,7 +2752,6 @@ msgid "Kohteen siirtäminen, muuttaminen tai poistaminen"
 msgstr "Moving, editing or deleting a location"
 
 #: questions/templates/html/instructions_base.html:648
-#, fuzzy
 msgid ""
 "\n"
 "                        Voit muuttaa kartalle merkitsemiäsi kohteita "
@@ -2779,10 +2763,9 @@ msgid ""
 "                        "
 msgstr ""
 "\n"
-"You can edit the places you’ve marked on the map by selecting them by "
-"clicking. You can move the place to another location or edit the information "
-"you’ve given about it (for example the description you have written). All "
-"the locations, except for your home, can also be deleted. "
+"You can edit your locations by choosing a destination from the map and "
+"klicking it. You can change the contents (for example the desciption you "
+"wrote) or you can delete locations."
 
 #: questions/templates/html/instructions_base.html:656
 msgid "Esimerkki kohteen muuttamisesta: Kodin siirtäminen oikeaan paikkaan"
@@ -3234,9 +3217,8 @@ msgid "Useammalla välineellä"
 msgstr ""
 
 #: questions/templates/js/quest_default.js:99
-#, fuzzy
 msgid "Kerro lisää paikasta"
-msgstr "More information about the place"
+msgstr "Tell more about the place"
 
 #: questions/templates/js/quest_default.js:100
 msgid "jalkaisin"
@@ -3394,9 +3376,8 @@ msgid "Kiitos vastauksistasi"
 msgstr "Thank you for your answers"
 
 #: questions/templates/vaaka/html/extra_info_temp_html.html:32
-#, fuzzy
 msgid "Kerro lisää paikkaan liittyvistä kokemuksista"
-msgstr "More information about the place"
+msgstr "Tell more about the experiences"
 
 #: questions/templates/vaaka/html/feedback.html:4
 msgid "Anna palautetta kyselystä"
@@ -3626,17 +3607,14 @@ msgid "Kerro lisää tästä paikasta"
 msgstr "Tell more about the places"
 
 #: questions/templates/vaaka/html/instructions.html:35
-#, fuzzy
 msgid "pisteen merkitseminen"
-msgstr "marking your home or other locations on the map "
+msgstr "marking a point on the map"
 
 #: questions/templates/vaaka/html/instructions.html:41
-#, fuzzy
 msgid "alueen rajaaminen kartalle"
-msgstr "drawing a route on the map"
+msgstr "drawing an area on the map"
 
 #: questions/templates/vaaka/html/instructions.html:60
-#, fuzzy
 msgid ""
 "\n"
 "        Siirry seuraavaan kysymykseen\n"
@@ -3647,13 +3625,12 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Proceed to next question by clicking the <strong>Continue</strong>-button. "
-"You can go back to earlier pages and edit your answers by clicking on the "
-"<strong>Previous</strong>-button or by using the navigation bar on the top "
+"Proceed to the next question by clicking the <strong>Next</strong>-button. "
+"You can move backwards in a questionnaire to correct you previous answers "
+"with a <strong>Back/strong>-button or by using the navigation bar on the top "
 "of the page. "
 
 #: questions/templates/vaaka/html/instructions.html:83
-#, fuzzy
 msgid ""
 "\n"
 "            Kyselyssä merkitään kartalle pisteitä, alueita tai viivoja "
@@ -3664,49 +3641,43 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"You can mark points or lines (routes) on the map. The button used to mark "
-"the places tells you what kind of items can be marked. For example your home "
-"is marked as a point and routes are drawn as lines."
+"You can mark points, areas and lines (routes). Figure in the function button "
+"describes the object is meant to be located. The button used to mark the "
+"places tells you what kind of items can be marked. For example ski resort "
+"would be marked as a point and routes drawn as lines. "
 
 #: questions/templates/vaaka/html/instructions.html:108
-#, fuzzy
 msgid "Pistemäisen kohteen merkitseminen kartalle"
-msgstr "Marking items on the map"
+msgstr "Marking a point location on the map"
 
 #: questions/templates/vaaka/html/instructions.html:116
 msgid ""
 "Pistemäisiä kohteita ovat esimerkiksi koti, kesämökki ja asiointipaikka."
-msgstr ""
+msgstr "Examples if point-type items are: home and summer cottage."
 
 #: questions/templates/vaaka/html/instructions.html:119
-#, fuzzy
 msgid "Esimerkki pisteen merkitsemisestä kartalle:"
-msgstr "An example of marking a location on the map: Pinpointing your home "
+msgstr "An example of marking a point location on the map:"
 
 #: questions/templates/vaaka/html/instructions.html:123
-#, fuzzy
 msgid "Etsi aluksi kartalta kohteen sijainti."
-msgstr " First find the location of your home on the map. "
+msgstr "First find the location of your place (e.g. home) on the map. "
 
 #: questions/templates/vaaka/html/instructions.html:126
-#, fuzzy
 msgid "Valitse piste-työkalu"
-msgstr "Select the Home -tool"
+msgstr "Select the Point -tool by clicking it with the mouse."
 
 #: questions/templates/vaaka/html/instructions.html:130
-#, fuzzy
 msgid "Klikatessasi piste-työkalu aktivoituu ja sen ulkoasu muuttuu:"
-msgstr "Once the Home -tool is activated its appearance will change:"
+msgstr "Once the Point -tool is activated its appearance will change: "
 
 #: questions/templates/vaaka/html/instructions.html:135
-#, fuzzy
 msgid "Klikkaa karttaa valitsemallasi kohdalla."
-msgstr "Click on the map to mark your home."
+msgstr "Click the location of your place on the map. "
 
 #: questions/templates/vaaka/html/instructions.html:135
-#, fuzzy
 msgid "Piste sijoitetaan osoittamaasi kohtaan."
-msgstr " Your home will be pinpointed to the location you clicked on."
+msgstr "Your place will be pinpointed to the location you clicked on."
 
 #: questions/templates/vaaka/html/instructions.html:138
 msgid ""
@@ -3722,9 +3693,12 @@ msgid ""
 "                    Kerro lisää tästä paikasta.\n"
 "                "
 msgstr ""
+"\n"
+"Answer the questions in the opening window.  You can move downwards by "
+"moving the scroll bar on the right side of the window. You can tell more "
+"about the place by writing into the box: Tell more about the places."
 
 #: questions/templates/vaaka/html/instructions.html:145
-#, fuzzy
 msgid ""
 "\n"
 "                <strong>Vahvista vastauksesi </strong> klikkaamalla "
@@ -3735,11 +3709,9 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"<strong>Confirm the location of your home</strong> in the opening window by "
-"clicking on the button \"Yes, save this object.\" If your home was marked on "
-"a wrong place, you can delete it by clicking on the \"No, remove this object."
-"\" You can also move the location of your home afterwards; in case you "
-"notice that it is marked in a wrong place (see"
+"<strong>Confirm your answer</strong> in the opening window by clicking on "
+"the button \"Save location\". If your place was marked on a wrong place, you "
+"can delete it by clicking on the \"Delete location\"."
 
 #: questions/templates/vaaka/html/instructions.html:176
 msgid ""
@@ -3835,7 +3807,6 @@ msgstr ""
 "        "
 
 #: questions/templates/vaaka/html/instructions.html:261
-#, fuzzy
 msgid ""
 "\n"
 "        Tutkimusaineiston tietoja käsitellään ryhmittäin, ei yksilötasolla. "
@@ -3849,11 +3820,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Research data will be analysed in groups, not on an individual level. The "
-"results are grouped by e.g. gender, age and neighbourhood, and they deal "
-"with the average response given by the groups, for example the average "
-"distance to important places or travel modes to work. It is impossible to "
-"track individuals or their answers from any results that will be published. "
+"The data obtained in the project will be evaluated by grouping answers by "
+"e.g. gender, age group or place of residence, not by person. Individual "
+"responses will not be published, thus, making it is impossible to determine "
+"the identity of an individual."
 
 #: questions/templates/vaaka/html/like_dislike.html:4
 msgid "Miellyttävät ja epämiellyttävät paikat"
