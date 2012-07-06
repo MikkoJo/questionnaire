@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kuninkaankolmio/Tampere\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-04 14:27+0300\n"
-"PO-Revision-Date: 2012-07-05 12:04+0300\n"
+"POT-Creation-Date: 2012-07-06 10:41+0300\n"
+"PO-Revision-Date: 2012-07-06 10:43+0300\n"
 "Last-Translator: Mikko Johansson <mikko.johansson@aalto.fi>\n"
-"Language-Team: SoftGIS\n"
+"Language-Team: SoftGIS team\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2471,8 +2471,8 @@ msgid ""
 msgstr ""
 "\n"
 "To move the map by using the navigation map, do as follows: Click on the red "
-"rectangle of the navigation map, hold the button down and drag the "
-"rectangle to the desired direction with your mouse."
+"rectangle of the navigation map, hold the button down and drag the rectangle "
+"to the desired direction with your mouse."
 
 #: questions/templates/html/instructions_base.html:375
 msgid "Kartalle merkittyjen kohteiden piilottaminen"
@@ -3571,7 +3571,7 @@ msgid "harvemmin kuin kerran kuukaudessa"
 msgstr "Less than once a month"
 
 #: questions/templates/vaaka/html/index.html:328
-msgid "1 vuodessa tai  harvemmin "
+msgid "kerran vuodessa tai harvemmin"
 msgstr "Once a year or less frequently"
 
 #: questions/templates/vaaka/html/index.html:334
@@ -3820,8 +3820,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"The data obtained in the project will be evaluated by grouping answers by "
-"e.g. gender, age group or place of residence, not by person. Individual "
+"The data obtained in the project will be evaluated by grouping answers by e."
+"g. gender, age group or place of residence, not by person. Individual "
 "responses will not be published, thus, making it is impossible to determine "
 "the identity of an individual."
 
@@ -4122,39 +4122,39 @@ msgstr "No nature protection"
 msgid "Uusi suojelualue"
 msgstr "New nature protection area"
 
-#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:91
+#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:92
 msgid "Tutkimusalue"
 msgstr "Study area"
 
-#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:111
+#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:112
 msgid "Luonnonsuojelualueet"
 msgstr "Nature protection areas"
 
-#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:131
+#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:132
 msgid "Retkeilyreitit ja luontopolut"
 msgstr "Hiking routes and nature trails"
 
-#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:151
+#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:152
 msgid "Tonkohuikonen ja Köngäskierros"
 msgstr "Tonkohuikonen and Köngäskierros trails"
 
-#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:171
+#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:172
 msgid "Ladut"
 msgstr "Skiing routes"
 
-#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:191
+#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:192
 msgid "Matkailukeskukset"
 msgstr "Holiday resorts"
 
-#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:211
+#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:212
 msgid "Majoitus"
 msgstr "Accommodation"
 
-#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:231
+#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:232
 msgid "Hepoköngäs"
 msgstr "Hepoköngäs waterfall"
 
-#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:251
+#: questions/templates/xml/vaaka_poi_wms_getcapabilities2.xml:252
 msgid "Kodat, laavut, nuotiopaikat ja päivätuvat"
 msgstr "Lean-to shelters,campfire places and open huts"
 
