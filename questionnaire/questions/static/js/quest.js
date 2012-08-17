@@ -3181,7 +3181,7 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
     ovMapOptions = {'div': dojo.byId("ovcont"),
                     'size': new OpenLayers.Size(190,190)};
                     
-    if (mapOptions !== undefined) {
+    if (window.mapOptions !== undefined) {
         OpenLayers.Util.extend(ovMapOptions, {'mapOptions': mapOptions});
         
     }
