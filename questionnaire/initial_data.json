@@ -1,26 +1,52 @@
 [
     {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "msjohans", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2012-08-17T14:20:59.071", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$qiHvvOq33uoN$9iSGfc7Z7aiSDTlOcvHwCqNCy3msoYl5aVC8FammeoM=", 
+            "email": "mikko.johansson@aalto.fi", 
+            "date_joined": "2012-08-17T14:20:59.071"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "example.com", 
+            "name": "example.com"
+        }
+    }, 
+    {
         "pk": 7, 
         "model": "sites.site", 
         "fields": {
             "domain": "http://example.com", 
             "name": "example"
         }
-    },
-    {
-        "pk": 12, 
-        "model": "sites.site", 
-        "fields": {
-            "domain": "http://vaaka.pehmogis.fi", 
-            "name": "vaaka"
-        }
-    },
+    }, 
     {
         "pk": 13, 
         "model": "sites.site", 
         "fields": {
             "domain": "http://mobility.softgis.fi", 
             "name": "mobility"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "http://vaaka.pehmogis.fi", 
+            "name": "vaaka"
         }
     }
 ]

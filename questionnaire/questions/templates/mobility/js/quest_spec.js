@@ -33,9 +33,9 @@ questionnaire.initial_extent = {
 };
 
 questionnaire.start_extent = {
-        "x": 557281.35636271,
-        "y": 7198351.1782802,
-        "zoomLevel": 0
+        "x": -13029018.234294,
+        "y": 3858358.7907961,
+        "zoomLevel": 11
 }
 questionnaire.initial_wms_layers = "0,1,3,5";
 

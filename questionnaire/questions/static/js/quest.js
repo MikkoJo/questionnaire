@@ -3134,6 +3134,7 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
                                                                        10758649.712),
 //                                     maxResolution: 4891,
                                      paddingForPopups: new OpenLayers.Bounds(330,70,15,15),
+                                     //maxResolution: 9783.939619140625,
                                      controls: []});
     }
     else if (!map_created) {

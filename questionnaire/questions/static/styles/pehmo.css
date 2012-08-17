@@ -3404,11 +3404,12 @@ td.bigSlider {
 }
 
 /* FIX BUG with OpenLayers that shows popup with map data copyright */
+/* Fixed in OpenLayers 2.12
 div.olLayerGooglePoweredBy
 {
   display: none !important;
 }
-
+*/
 .olControlAttribution {
     bottom: 65px !important;
     left: 5px;

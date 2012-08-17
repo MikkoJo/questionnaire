@@ -6,6 +6,8 @@ SITE_ID = 13
 
 LANGUAGE_CODE = 'fi-fi'
 
+SPATIAL_REFERENCE_SYSTEM_ID = 3857
+
 LANGUAGES = (('fi', 'suomeksi'),
              ('en', 'in english'),)
 
