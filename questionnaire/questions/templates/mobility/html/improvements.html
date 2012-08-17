@@ -1,0 +1,46 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <h1>{% trans 'Kehittämisehdotukset' %}</h1>
+    <p>
+        <b>
+            {% blocktrans %}
+                Voit merkitä kartalle kohennettavia tai poistettavia kohteita sekä ehdottaa uusia
+                rakennuksia, kevyen liikenteen reittejä tai joukkoliikenneyhteyksiä. Valitse ensin
+                ehdotuksen aihe ja merkitse ehdotus kartalle. Voit merkitä kolme jokaista aihetta.
+            {% endblocktrans %}
+        </b>
+    </p>
+    <table>
+        <tr id="miniHelp" onclick="toggleHelp();">
+            <td id="expandButton" class="closedhelp"/>
+            <td>{% trans 'Etsitkö ohjetta...' %}</td>
+        </tr>
+    </table>
+    <ul class="instructionlinks" style="display: none;">
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kali" onclick="window.open('{% url main_html file_name='instructions' %}#kali'); return false;">{% trans 'miten kartalla liikutaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'kuinka merkitä kohde kartalle' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'miten korjataan kohde, joka meni väärään paikkaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}" onclick="window.open('instructions.html'); return false;">{% trans 'Näytä kaikki ohjeet' %}</a>
+        </li>
+    </ul>
+    <hr />
+    <div id="removegraphicsbutton" onclick="togglegraphicsbutton()">
+        <span id="hidebutton">{% trans 'Piilota omat kohteet' %}</span>
+        <span class="tyhja" id="showbutton">{% trans 'Näytä omat kohteet' %}</span>
+    </div>
+	<form id="improvementsForm">
+		<div id="improve_point_area"></div>
+		<div id="remove_object"></div>
+		<div id="new_building"></div>
+		<div id="new_improve_route"></div>
+        <div id="new_transport_route"></div>
+	</form>
+{% endblock formarea %}

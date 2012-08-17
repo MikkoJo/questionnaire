@@ -14,5 +14,13 @@
             "domain": "http://vaaka.pehmogis.fi", 
             "name": "vaaka"
         }
+    },
+    {
+        "pk": 13, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "http://mobility.softgis.fi", 
+            "name": "mobility"
+        }
     }
 ]

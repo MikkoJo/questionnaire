@@ -1,0 +1,57 @@
+{% extends 'move_env_info.html' %}
+{% load i18n %}
+{% block what_kind_place %}
+{% spaceless %}
+    <tr>
+        <td>
+            <b>{% trans 'Mikä paikka on kyseessä' %}?</b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='type' id='me1_1' />
+            <label for='me1_1'>${type1}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_2' />
+            <label for='me1_2'>${type2}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_3' />
+            <label for='me1_3'>${type3}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_4' />
+            <label for='me1_4'>${type4}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_5' />
+            <label for='me1_5'>${type5}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_6' />
+            <label for='me1_6'>${type6}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_7' />
+            <label for='me1_7'>${type7}</label>
+            <span id='otherSpan' class='tyhja'>
+                <label for='otherfree'>, {% trans 'mikä' %}?</label>
+                <input type='text' name='otherfree' id='otherfree' />
+            </span>
+        </td>
+    </tr>
+{% endspaceless %}
+{% endblock what_kind_place %}
