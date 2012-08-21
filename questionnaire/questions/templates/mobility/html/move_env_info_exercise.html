@@ -1,4 +1,4 @@
-{% extends 'move_env_info.html' %}
+{% extends 'mobility/html/move_env_info.html' %}
 {% load i18n %}
 {% block what_kind_place %}
 {% spaceless %}
@@ -9,31 +9,36 @@
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='type' id='me1_1' />
-            <label for='me1_1'>${type1}</label>
+            <input type='checkbox' name='whattype' id='me1_1' value='outdoor' />
+            <label for='me1_1'>{% trans 'ulkoilupaikka' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_2' />
-            <label for='me1_2'>${type2}</label>
+            <input type='checkbox' name='whattype' id='me1_2' value='exercise' />
+            <label for='me1_2'>{% trans 'liikuntapaikka' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_3' />
-            <label for='me1_3'>${type3}</label>
+            <input type='checkbox' name='whattype' id='me1_3' value='playground' />
+            <label for='me1_3'>{% trans 'leikkipuisto' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_4' />
-            <label for='me1_4'>${type4}</label>
+            <input type='checkbox' name='whattype' id='me_other' value='other' />
+            <label for='me_other'>{% trans 'muu' %}</label>
             <span id='otherSpan' class='tyhja'>
-                <label for='otherexer'>, {% trans 'mikä' %}?</label>
-                <input type='text' name='otherexer' id='otherexer' />
+                <label for='other_text'>, {% trans 'mikä' %}?</label>
+                <input type='text' name='otherexer' id='other_text' disabled='disabled' />
             </span>
         </td>
     </tr>
 {% endspaceless %}
 {% endblock what_kind_place %}
+{% block free_text %}
+{% spaceless %}
+    <td><b>{% trans 'Miksi liikut ja ulkoilet juuri täällä?' %}</b></td>
+{% endspaceless %}
+{% endblock free_text %}

@@ -38,11 +38,7 @@
         </li>
     </ul>
     <hr />
-    <div id="removegraphicsbutton" onclick="togglegraphicsbutton()">
-        <span id="hidebutton">{% trans 'Piilota omat kohteet' %}</span>
-        <span class="tyhja" id="showbutton">{% trans 'Näytä omat kohteet' %}</span>
-    </div>
-    <form id="importantRoutesForm">
-    	<div id="importantroute"></div>
-	</form>
+    <form id="importantRoutesForm" name="importantRoutesForm">
+        <button type="button" class="drawbutton route two-line importantroute" id="importantroute" name="importantroute">{% trans 'tärkeä jalankulku- tai pyöräilyreitti' %}</button>
+    </form>
 {% endblock formarea %}

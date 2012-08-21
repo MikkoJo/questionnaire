@@ -45,7 +45,10 @@ questionnaire.sections = [{
 "section": "background"
 },
 {
-"section": "activities"
+"section": "envmovement"
+},
+{
+"section": "envevaluation"
 },
 {
 "section": "improvements"
@@ -494,50 +497,61 @@ questionnaire.pages =
 "content": "{% url main_html file_name='background' %}"
 },
 {
-"name": "relationship",
-"section": "activities",
-"type": "small",
-"content": "{% url main_html file_name='relationship' %}"
-},
-{
-"name": "activities",
-"section": "activities",
-"type": "small",
-"content": "{% url main_html file_name='activities' %}"
-},
-{
-"name": "like_dislike",
-"section": "activities",
-"type": "small",
-"content": "{% url main_html file_name='like_dislike' %}"
-//"content": "{% url random_cont file_name='weights' file_type='html' %}"
-},
-{
-"name": "improvements_gen",
-"section": "improvements",
+"name": "thingsappreciate",
+"section": "background",
 "type": "big",
-"content": "{% url random_cont file_name='improvements_gen' file_type='html' %}"
+"content": "{% url random_cont file_name='thingsappreciate' file_type='html' %}"
 },
 {
-"name": "improvements",
+"name": "home",
+"section": "background",
+"type": "small",
+"content": "{% url main_html file_name='home' %}"
+},
+{
+"name": "move_environment",
+"section": "envmovement",
+"type": "small",
+"content": "{% url main_html file_name='move_environment' %}"
+},
+{
+"name": "importantRoutes",
+"section": "envmovement",
+"type": "small",
+"content": "{% url main_html file_name='important_routes' %}"
+},
+{
+"name":  "environment",
+"section": "envevaluation",
+"type": "small",
+"content": "{% url random_cont file_name='environment' file_type='html' %}"
+},
+{
+"name": "environmentSummary",
+"section": "envevaluation",
+"type": "big",
+"content": "{% url random_cont file_name='environmentsummary' file_type='html' %}",
+},
+{
+"name":  "improvements",
 "section": "improvements",
 "type": "small",
 "content": "{% url main_html file_name='improvements' %}"
 },
 {
-"name": "feedback",
+"name": "owncomments",
 "section": "feedback",
 "type": "big",
-"content": "{% url main_html file_name='feedback' %}"
+"content": "{% url main_html file_name='owncomments' %}",
+"next": function() {submitContact('contactForm');},
+"previous": function() {submitContact('contactForm');}
 },
 {
 "name": "thankyou",
 "type": "big",
 //"next": function () {window.location=('{% url common file_name='mymap' file_type='html' %}');},
-"extraButtons": function() {submitContact('contactForm');gnt.auth.logout(); createsubwindow('endQuestionnaire');},
+"extraButtons": function() {gnt.auth.logout(); createsubwindow('endQuestionnaire');},
 "preventDefault": {"next": true, "prev": false},
-"next": function() {submitContact('contactForm');},
-"previous": function() {submitContact('contactForm');},
 "content": "{% url main_html file_name='thankyou' %}"
 }
 ];
@@ -842,11 +856,52 @@ questionnaire.feature_defaults = {
         "max": 1,
         "style": "point_lightorange"
     },
-    "res_build": {
+    "home": {
+        "max": 1,
         "style": "point_green",
+/*        "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary",
+        "icons": {"secondary": "green-icon"},*/
+        "header": "{% trans 'Koti' %}"
+    },
+    "work": {
+        "style": "point_cyan",
         "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
-        "icons": {"secondary": "green-icon"},
-        "header": "{% trans 'Asuinrakennus' %}"
+        "icons": {"secondary": "cyan-icon"},
+        "header": "{% trans 'Työ, opiskelu, päivähoito' %}"
+    },
+    "shop": {
+        "style": "point_cyan",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "cyan-icon"},
+        "header": "{% trans 'Ostospaikka' %}"
+    },
+    "business": {
+        "style": "point_cyan",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "cyan-icon"},
+        "header": "{% trans 'Asiointipaikka' %}"
+    },
+    "exercise": {
+        "style": "point_cyan",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "cyan-icon"},
+        "header": "{% trans 'Liikunta ja ulkoilu' %}"
+    },
+    "freetime": {
+        "style": "point_cyan",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "cyan-icon"},
+        "header": "{% trans 'Vapaa-aika' %}"
+    },
+    "otherplace": {
+        "style": "point_cyan",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
+        "icons": {"secondary": "cyan-icon"},
+        "header": "{% trans 'Muu paikka' %}"
+    },
+    "importantroute": {
+        "style": "route_purple",
+        "header": "{% trans 'Tärkeä kävely- tai pyöräreitti' %}"
     },
     "ser_build": {
         "style": "point_blue",
@@ -884,7 +939,7 @@ questionnaire.feature_defaults = {
         "icons": {"secondary": "yellow-icon"},
         "header": "{% trans 'Kohennettava paikka' %}"
     },
-    "otherplace": {
+    "otherplace_2": {
         "style": "point_brown",
         "classes": "ui-button ui-widget ui-state-default ui-corner-all small ui-button-text-icon-secondary",
         "icons": {"secondary": "brown-icon"},

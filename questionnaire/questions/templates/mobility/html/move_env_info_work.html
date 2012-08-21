@@ -1,4 +1,4 @@
-{% extends 'move_env_info.html' %}
+{% extends 'mobility/html/move_env_info.html' %}
 {% load i18n %}
 {% block what_kind_place %}
 {% spaceless %}
@@ -9,41 +9,41 @@
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='type' id='me1_1' />
-            <label for='me1_1'>${type1}</label>
+            <input type='checkbox' name='whattype' id='me1_1' value='workplace' />
+            <label for='me1_1'>{% trans 'oma työpaikka' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_2' />
-            <label for='me1_2'>${type2}</label>
+            <input type='checkbox' name='whattype' id='me1_2' value='daycare' />
+            <label for='me1_2'>{% trans 'perheenjäsenen työpaikka' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_3' />
-            <label for='me1_3'>${type3}</label>
+            <input type='checkbox' name='whattype' id='me1_3' value='school' />
+            <label for='me1_3'>{% trans 'lapsen päivähoitopaikka tai koulu' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_4' />
-            <label for='me1_4'>${type4}</label>
+            <input type='checkbox' name='whattype' id='me1_4' value='studyplace' />
+            <label for='me1_4'>{% trans 'koulu tai opiskelupaikka' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_5' />
-            <label for='me1_5'>${type5}</label>
+            <input type='checkbox' name='whattype' id='me1_5' value='businessplace' />
+            <label for='me1_5'>{% trans 'työhön liittyvä asiointipaikka' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_6' />
-            <label for='me1_6'>${type6}</label>
+            <input type='checkbox' name='whattype' id='me_other' value='other' />
+            <label for='me_other'>{% trans 'muu' %}</label>
             <span id='otherSpan' class='tyhja'>
-                <label for='otherwork'>, {% trans 'mikä' %}?</label>
-                <input type='text' name='otherwork' id='otherwork' />
+                <label for='other_text'>, {% trans 'mikä' %}?</label>
+                <input type='text' name='otherwork' id='other_text' disabled='disabled' />
             </span>
         </td>
     </tr>

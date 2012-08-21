@@ -196,5 +196,75 @@
             -->
         </script>
 <!-- infowindows with id's put here so that translations work -->
+<div id="home" class="popup" style="visibility: hidden;">
+    <h1>${header}</h1>
+        {% include 'mobility/html/home_info.html' %}
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+</div>
+<div id="work" class="popup" style="visibility: hidden;">
+    <h1>${header}</h1>
+        {% include 'mobility/html/move_env_info_work.html' %}
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+</div>
+<div id="shop" class="popup" style="visibility: hidden;">
+    <h1>${header}</h1>
+        {% include 'mobility/html/move_env_info_shop.html' %}
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+</div>
+<div id="business" class="popup" style="visibility: hidden;">
+    <h1>${header}</h1>
+        {% include 'mobility/html/move_env_info_business.html' %}
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+</div>
+<div id="exercise" class="popup" style="visibility: hidden;">
+    <h1>${header}</h1>
+        {% include 'mobility/html/move_env_info_exercise.html' %}
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+</div>
+<div id="freetime" class="popup" style="visibility: hidden;">
+    <h1>${header}</h1>
+        {% include 'mobility/html/move_env_info_freetime.html' %}
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+</div>
+<div id="otherplace" class="popup" style="visibility: hidden;">
+    <h1>${header}</h1>
+        {% include 'mobility/html/move_env_info_otherplace.html' %}
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+</div>
     </body>
 </html>

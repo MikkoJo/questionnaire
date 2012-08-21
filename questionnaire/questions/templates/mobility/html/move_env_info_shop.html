@@ -1,43 +1,48 @@
-{% extends 'move_env_info.html' %}
+{% extends 'mobility/html/move_env_info.html' %}
 {% load i18n %}
 {% block what_kind_place %}
 {% spaceless %}
     <tr>
-        <td><b>{% endspaceless %}{% trans 'Minkätyyppinen tämä ${typetext} on?' %}{% spaceless %}</b></td>
+        <td><b>{% endspaceless %}{% trans 'Minkätyyppinen tämä ostospaikka on?' %}{% spaceless %}</b></td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='type' id='me1_1' />
-            <label for='me1_1'>${type1}</label>
+            <input type='checkbox' name='whattype' id='me1_1' value='grocery' />
+            <label for='me1_1'>{% trans 'lähikauppa' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_2' />
-            <label for='me1_2'>${type2}</label>
+            <input type='checkbox' name='whattype' id='me1_2' value='supermarket' />
+            <label for='me1_2'>{% trans 'super- tai hypermarket' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_3' />
-            <label for='me1_3'>${type3}</label>
+            <input type='checkbox' name='whattype' id='me1_3' value='shoppingcentre' />
+            <label for='me1_3'>{% trans 'kauppakeskus tai tavaratalo' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_4' />
-            <label for='me1_4'>${type4}</label>
+            <input type='checkbox' name='whattype' id='me1_4' value='specialshop' />
+            <label for='me1_4'>{% trans 'erikoiskauppa' %}</label>
         </td>
     </tr>
     <tr>
         <td>
-            <input type='checkbox' name='whattype' id='me1_5' />
-            <label for='me1_5'>${type5}</label>
+            <input type='checkbox' name='whattype' id='me_other' value='other' />
+            <label for='me_other'>{% trans 'muu' %}</label>
             <span id='otherSpan' class='tyhja'>
-                <label for='othershop'>, {% trans 'mikä' %}?</label>
-                <input type='text' name='othershop' id='othershop' />
+                <label for='other_text'>, {% trans 'mikä' %}?</label>
+                <input type='text' name='othershop' id='other_text' disabled='disabled' />
             </span>
         </td>
     </tr>
 {% endspaceless %}
 {% endblock what_kind_place %}
+{% block free_text %}
+{% spaceless %}
+    <td><b>{% trans 'Miksi käyt ostoksilla juuri täällä?' %}</b></td>
+{% endspaceless %}
+{% endblock free_text %}

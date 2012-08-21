@@ -1,7 +1,7 @@
 {% extends 'bigContent.html' %}
 {% load i18n %}
 {% block formarea %}
-    <form id="appreciateForm">
+    <form id="appreciateForm" name="appreciateForm">
         <h1>{% trans 'Minkälaisia asioita juuri sinä arvostat asukkaana?' %}</h1>
         <table>
             {% for id, left, right in values %}
@@ -10,8 +10,7 @@
                 {{ left }}
                 </td>
                 <td class="narrowSlider">
-                    <div id="{{ id }}" class="pehmoSlider"></div>
-                    <div id="{{ id }}Rule"></div>
+                    <input type="range" name="{{ name }}" />
                 </td>
                 <td class="bigvalue">
                 {{ right }}

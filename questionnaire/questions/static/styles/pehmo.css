@@ -2543,10 +2543,6 @@ background-position: 0px -20px;
 div.smallroute .disabled {
 background-image: url("../img/buttons/disabledroute.png");
 background-position: 0px 0px;
-}/*small route button*/
-div.smallroute {
-width: 50px;
-height: 20px;
 }
 /* small route blue */
 div.smallrouteblue {
@@ -3256,6 +3252,29 @@ button.pearl.ui-state-active {
     background-position: 0px -51px;
 }
 
+button.home {
+    background-color: transparent;
+    background-image: url("../img/buttons/home.png");
+    background-position: 0 2px;
+    border: medium none;
+    height: 53px;
+    width: 260px;
+}
+button.home.ui-state-active {
+    background-position: 0px -51px;
+}
+button.importantroute {
+    background-color: transparent;
+    background-image: url("../img/buttons/important_route.png");
+    background-position: 0 2px;
+    border: medium none;
+    height: 53px;
+    width: 260px;
+}
+button.importantroute.ui-state-active {
+    background-position: 0px -51px;
+}
+
 button.like {
     background: transparent url("../img/buttons/home_uusi_plus_sprite_8.png") scroll -520px 0 no-repeat;
     border: medium none;
@@ -3315,6 +3334,10 @@ button.small.ui-state-active {
 button.small .ui-icon {
     height: 18px;
     width: 12px;
+}
+
+button.two-line.drawbutton .ui-button-text {
+    padding: 1px 3.1em;
 }
 .lightorange-icon {
     background-image: url("https://softgis.org.aalto.fi/images/needle?color=f8bd0a&scale=0.55") !important;
