@@ -3149,6 +3149,7 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
         mapRoad = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
         mapSatellite = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
                                                                 numZoomLevels: 20});
+        map.panDuration = 10; // Pan animation is very slow with default Duration(50)
     }
     else if (basemap === 'bing') {
         mapRoad = new OpenLayers.Layer.Bing({name: "Main",
