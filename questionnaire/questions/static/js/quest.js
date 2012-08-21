@@ -2670,15 +2670,15 @@ on where to show a popup for each feature.
 */
 function get_popup_lonlat(geometry) {
     var lonlat;
-    if( geometry.id.contains( "Point" ) ) {
+    if( geometry.id.indexOf( "Point" ) !== -1) {
         lonlat = new OpenLayers.LonLat(
                         geometry.x,
                         geometry.y);
-    } else if ( geometry.id.contains( "LineString" ) ) {
+    } else if ( geometry.id.indexOf( "LineString" ) !== -1) {
         lonlat = geometry
             .components[geometry.components.length - 1]
             .bounds.getCenterLonLat();
-    } else if ( geometry.id.contains( "Polygon" ) ) {
+    } else if ( geometry.id.indexOf( "Polygon" ) !== -1) {
         lonlat = geometry.bounds.getCenterLonLat();
     }
     return lonlat;
