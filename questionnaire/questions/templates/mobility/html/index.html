@@ -266,5 +266,15 @@
             {% trans "Poista kohde" %}
         </button>
 </div>
+<div id="importantroute" class="popup" style="visibility: hidden;">
+    <h1>${header}</h1>
+        {% include 'mobility/html/routes_info.html' %}
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+</div>
     </body>
 </html>

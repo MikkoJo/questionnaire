@@ -3402,6 +3402,9 @@ button.two-line.drawbutton .ui-button-text {
     width: 22px !important;
 }
 
+button.save_feature, button.remove_feature {
+    margin: 5px 5px 0;
+}
 #mapitaCopy {
     bottom: 60px;
     color: black;

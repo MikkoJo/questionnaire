@@ -59,6 +59,20 @@ VALUES = {
                  ('lifestyle', _(u'Haluan asua samassa elämäntilanteessa tai samaa elämäntapaa edustavien kanssa.'),
                   _(u'Arvostan monipuolista asukasrakennetta.')),
                  ],
+        'environment':
+            [(_(u'Ympäristön tunnelma'),
+                    'atmospherePlus',
+                    'atmosphereMinus'),
+             (_(u'Ympäristön toimintamahdollisuudet'),
+                    'functionalPlus',
+                    'functionalMinus'),
+             (_(u'Sosiaalinen ilmapiiri'),
+                    'socialPlus',
+                    'socialMinus'),
+             (_(u'Ympäristön ulkoinen ilme'),
+                    'appearancePlus',
+                    'appearanceMinus')
+             ],
         'environmentsummary':
             [(_(u'Ympäristön tunnelma'),
                     'atmosphereSum'),
