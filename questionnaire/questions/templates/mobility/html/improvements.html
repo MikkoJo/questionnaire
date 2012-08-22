@@ -32,15 +32,11 @@
         </li>
     </ul>
     <hr />
-    <div id="removegraphicsbutton" onclick="togglegraphicsbutton()">
-        <span id="hidebutton">{% trans 'Piilota omat kohteet' %}</span>
-        <span class="tyhja" id="showbutton">{% trans 'Näytä omat kohteet' %}</span>
-    </div>
-	<form id="improvementsForm">
-		<div id="improve_point_area"></div>
-		<div id="remove_object"></div>
-		<div id="new_building"></div>
-		<div id="new_improve_route"></div>
-        <div id="new_transport_route"></div>
-	</form>
+    <form id="improvementsForm" name="improvementsForm">
+        <button type="button" class="drawbutton point big improve_point_area" id="improve_point_area" name="improvement">{% trans 'tulisi kohentaa' %}</button>
+        <button type="button" class="drawbutton point big remove_object" id="remove_object" name="improvement">{% trans 'tulisi poistaa' %}</button>
+        <button type="button" class="drawbutton point big new_building" id="new_building" name="improvement">{% trans 'uusi rakennus' %}</button>
+        <button type="button" class="drawbutton route big two-line new_improve_route" id="new_improve_route" name="improvement">{% trans 'uusi jalankulku- tai pyöräreitti' %}</button>
+        <button type="button" class="drawbutton route big two-line new_transport_route" id="new_transport_route_mob" name="improvement">{% trans 'uusi joukkoliikenneyhteys' %}</button>
+    </form>
 {% endblock formarea %}

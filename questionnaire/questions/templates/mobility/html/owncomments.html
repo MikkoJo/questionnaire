@@ -1,7 +1,7 @@
 {% extends 'bigContent.html' %}
 {% load i18n %}
 {% block formarea %}
-<form id="owncommentsForm">
+<form id="owncommentsForm" name="owncommentsForm">
     <h1>{% trans 'Omia kommentteja' %}</h1>
     <p>
         {% trans 'Jos haluat, voit vielä tähän kommentoida kyselyä tai kertoa jotain, joka jäi sanomatta' %}.
@@ -11,6 +11,7 @@
         </textarea>
     </p>
 </form>
+{% comment %}
 <form id="contactForm">
     <h2>{% trans 'Arvonta' %}</h2>
     <p>
@@ -40,6 +41,7 @@
             <input type="text" name="phonenumber" id="phonenumber" />
             </td>
         </tr>
+{% endcomment %}
 {% comment %}
         <tr>
             <td>{% trans 'Katuosoite' %}:</td>
@@ -60,6 +62,7 @@
             </td>
         </tr>
 {% endcomment %}
+{% comment %}
         <tr>
             <td colspan="2">
                 <input type="checkbox" name="sendresults" value="furtherstudy" id="furtherstudy" onclick="emailcheck()" />
@@ -87,4 +90,5 @@
         </tr>
     </table>
 </form>
+{% endcomment %}
 {% endblock formarea %}

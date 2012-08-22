@@ -1,33 +1,32 @@
 {% extends 'bigContent.html' %}
 {% load i18n %}
 {% block formarea %}
-	<form id="environmentSummaryForm">
-		<fieldset>
-		    <h1>{% trans 'Arvioi elinympäristösi laatua kokonaisuudessaan em. neljän eri asian suhteen' %}.</h1>
+    <form id="environmentSummaryForm" name="environmentSummaryForm">
+        <fieldset>
+            <h1>{% trans 'Arvioi arkisen elinympäristösi laatua kokonaisuudessaan neljän eri asian suhteen' %}.</h1>
 
             {% for text, val in values %}
                 <p>
-                    {{ text }}
+                    <b>{{ text }}:</b>
                 </p>
                 <table>
-    				<tr>
-    					<td class="smallvalue value">
-    						<b>{% trans 'Erittäin huono' %}</b>
-    					</td>
-    					<td class="bigSlider">
-                            <div id="{{ val }}" class="pehmoSlider"></div>
-                            <div id="{{ val }}Rule"></div>
+                    <tr>
+                        <td class="smallvalue value">
+                            <b>{% trans 'Erittäin huono' %}</b>
                         </td>
-    					<td class="bigvalue value">
-    						<b>{% trans 'Erittäin hyvä' %}</b>
-    					</td>
-    				</tr>
-    			</table>
-			{% endfor %}
-			<h2>{% trans 'Jos haluat, voit vielä kommentoida elinympäristösi laatua omin sanoin' %}.</h2>
-			<p class="centeredText">
-				<textarea id="envSummaryFree" rows="5" cols="70"></textarea>
-			</p>
-		</fieldset>
-	</form>
+                        <td class="bigSlider">
+                            <input type="range" name="{{ val }}" />
+                        </td>
+                        <td class="bigvalue value">
+                            <b>{% trans 'Erittäin hyvä' %}</b>
+                        </td>
+                    </tr>
+                </table>
+            {% endfor %}
+            <h2>{% trans 'Jos haluat, voit vielä kommentoida elinympäristösi laatua omin sanoin' %}.</h2>
+            <p class="centeredText">
+                <textarea id="envSummaryFree" rows="5" cols="70" name="envSummaryFree" ></textarea>
+            </p>
+        </fieldset>
+    </form>
 {% endblock formarea %}

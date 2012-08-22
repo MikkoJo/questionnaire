@@ -1,7 +1,7 @@
 {% extends 'bigContent.html' %}
 {% load i18n %}
 {% block formarea %}
-	<h1>{% trans 'Elinympäristön arviointi' %}</h1>
+    <h1>{% trans 'Elinympäristön arviointi' %}</h1>
     <p>
         <b>
             {% blocktrans %}
@@ -38,33 +38,25 @@
             <a href="{% url main_html file_name='instructions' %}" onclick="window.open('instructions.html'); return false;">{% trans 'Näytä kaikki ohjeet' %}</a>
         </li>
     </ul>
-	<hr />
-    <div id="removegraphicsbutton" onclick="togglegraphicsbutton()">
-        <span id="hidebutton">{% trans 'Piilota omat kohteet' %}</span>
-        <span class="tyhja" id="showbutton">{% trans 'Näytä omat kohteet' %}</span>
-    </div>
-	<form id="ownevaluationForm">
-		<fieldset>
+    <hr />
+    <form id="ownevaluationForm" name="ownevaluationForm">
+        <fieldset>
             <table class="elinYmp">
                 {% for text, plus, minus in values %}
                     <tr>
-            			<td colspan="3">{{ text }}</td>
-    				</tr>
-    				<tr>
-					   <td class="padding">&nbsp;</td>
-					   <td class="elinYmpTD">
-					       <div id="{{ plus }}">
-					           <span>plus</span>
-				           </div>
-				       </td>
-					   <td class="elinYmpTD">
-					       <div id="{{ minus }}">
-					           <span>minus</span>
-				           </div>
-			           </td>
-				    </tr>
-			    {% endfor %}
+                        <td colspan="3">{{ text }}</td>
+                    </tr>
+                    <tr>
+                       <td class="padding">&nbsp;</td>
+                       <td class="elinYmpTD">
+                            <button type="button" class="like drawbutton point" id="{{ plus }}" name="{{ plus }}">{% trans "Myönteinen" %}</button>
+                       </td>
+                       <td class="elinYmpTD">
+                            <button type="button" class="dislike drawbutton point" id="{{ minus }}" name="{{ minus }}">{% trans "Kielteinen" %}</button>
+                       </td>
+                    </tr>
+                {% endfor %}
             </table>
         </fieldset>
-	</form>
+    </form>
 {% endblock formarea %}

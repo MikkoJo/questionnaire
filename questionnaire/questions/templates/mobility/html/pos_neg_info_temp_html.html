@@ -1,0 +1,34 @@
+{% load i18n %}
+{% for t_name, val in values.items %}
+    <div id="{{ t_name }}" class="popup" style="visibility: hidden;">
+        <h1>${header}</h1>
+        <form name="popupform" action="#" >
+        <table>
+        {% for questid, quest_text in val %}
+            <tr>
+                <td class='infoCheck'>
+                    <input type="checkbox" id="{{ questid }}_r" name="{{ t_name }}" value="{{ questid }}"/>
+                </td>
+                <td>
+                    <label for="{{ questid }}_r">{{ quest_text }}</label>
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td class='infoCheck'>
+                <input type="checkbox" id="{{ t_name }}_id" name="{{ t_name }}" value="other"/>
+            <td>
+                <label for="{{ t_name }}_id">{% trans 'muu, mikä' %}</label>
+                <input class="shorterTextBox" type="text" id="{{ t_name }}_other_text" name="{{ t_name }}_other_text" disabled="true"/>
+            </td>
+        </tr>
+        </table>
+        <button type="button" class="save_feature">
+            {% trans "Tallenna kohde" %}
+        </button>
+        <button type="button" class="remove_feature">
+            {% trans "Poista kohde" %}
+        </button>
+    </form>
+</div>
+{% endfor %}

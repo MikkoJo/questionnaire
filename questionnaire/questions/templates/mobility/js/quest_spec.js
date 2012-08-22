@@ -19,7 +19,7 @@ var OVERVIEWMAP_URL = "https://server.arcgisonline.com/ArcGIS/rest/services/Worl
 
 var AREAS_FEATURE_LAYER_URL = "";
 
-questionnaire.infotemplates_url = "{% url random_cont file_name='extra_info_temp_html' file_type='html' %}";
+questionnaire.infotemplates_url = "{% url random_cont file_name='pos_neg_info_temp_html' file_type='html' %}";
 questionnaire.WMScapabilities_url ="{% url common file_name='vaaka_poi_wms_getcapabilities2' file_type='xml' %}";
 
 questionnaire.initial_extent = {
@@ -542,9 +542,9 @@ questionnaire.pages =
 "name": "owncomments",
 "section": "feedback",
 "type": "big",
-"content": "{% url main_html file_name='owncomments' %}",
-"next": function() {submitContact('contactForm');},
-"previous": function() {submitContact('contactForm');}
+"content": "{% url main_html file_name='owncomments' %}"
+/*"next": function() {submitContact('contactForm');},
+"previous": function() {submitContact('contactForm');}*/
 },
 {
 "name": "thankyou",
@@ -840,17 +840,45 @@ questionnaire.special_widgets = {
 };
 
 questionnaire.feature_defaults = {
-    "like_p": {
+    "appearancePlus": {
         "style": "point_positive",
         "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary",
-        "header": "{% trans 'Miellyttävä paikka' %}",
-        "intro": "{% trans 'miksi paikka on miellyttävä?' %}"
+        "header": "{% trans 'Kerro paikan ulkoisesta ilmeestä tarkemmin! Tässä paikassa...' %}"
     },
-    "dislike_p": {
+    "appearanceMinus": {
         "style": "point_negative",
         "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary",
-        "header": "{% trans 'Epämiellyttävä paikka' %}",
-        "intro": "{% trans 'miksi paikka on epämiellyttävä?' %}"
+        "header": "{% trans 'Kerro paikan ulkoisesta ilmeestä tarkemmin! Tässä paikassa...' %}"
+    },
+    "socialPlus": {
+        "style": "point_positive",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary",
+        "header": "{% trans 'Kerro sosiaalisesta ilmapiiristä tarkemmin! Tässä paikassa...' %}"
+    },
+    "socialMinus": {
+        "style": "point_negative",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary",
+        "header": "{% trans 'Kerro sosiaalisesta ilmapiiristä tarkemmin! Tässä paikassa...' %}"
+    },
+    "atmospherePlus": {
+        "style": "point_positive",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary",
+        "header": "{% trans 'Kerro paikan tunnelmasta tarkemmin! Tämä paikka on...' %}"
+    },
+    "atmosphereMinus": {
+        "style": "point_negative",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary",
+        "header": "{% trans 'Kerro paikan tunnelmasta tarkemmin! Tämä paikka on...' %}"
+    },
+    "functionalPlus": {
+        "style": "point_positive",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary",
+        "header": "{% trans 'Kerro paikan toimintamahdollisuuksista tarkemmin! Tässä paikassa...' %}"
+    },
+    "functionalMinus": {
+        "style": "point_negative",
+        "classes": "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary",
+        "header": "{% trans 'Kerro paikan toimintamahdollisuuksista tarkemmin! Tässä paikassa...' %}"
     },
     "pearl_p": {
         "max": 1,
@@ -902,6 +930,36 @@ questionnaire.feature_defaults = {
     "importantroute": {
         "style": "route_purple",
         "header": "{% trans 'Tärkeä kävely- tai pyöräreitti' %}"
+    },
+    "improve_point_area": {
+        "max": 3,
+        "style": "point_lightgreen",
+        "tellmore": "{% trans 'Miten tätä paikkaa pitäisi kohentaa?' %}",
+        "header": "{% trans 'Kohentamisehdotuksesi' %}"
+    },
+    "remove_object": {
+        "max": 3,
+        "style": "point_red",
+        "tellmore": "{% trans 'Mitä poistaisit tästä paikasta?' %}",
+        "header": "{% trans 'Poistamisehdotuksesi' %}"
+    },
+    "new_building": {
+        "max": 3,
+        "style": "point_purple",
+        "tellmore": "{% trans 'Mitä uutta tähän mielestäsi pitäisi rakentaa?' %}",
+        "header": "{% trans 'Rakentamisehdotuksesi' %}"
+    },
+    "new_improve_route": {
+        "max": 3,
+        "style": "route_blue",
+        "tellmore": "{% trans 'Millaista reittiä toivot tähän paikkaan?' %}",
+        "header": "{% trans 'Reittiehdotuksesi' %}"
+    },
+    "new_transport_route_mob": {
+        "max": 3,
+        "style": "route_green",
+        "tellmore": "{% trans 'Millaista joukkoliikennelinjaa toivoisit tänne?' %}",
+        "header": "{% trans 'Ehdotuksesi uudeksi joukkoliikenneyhteydeksi' %}"
     },
     "ser_build": {
         "style": "point_blue",

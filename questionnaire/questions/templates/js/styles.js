@@ -47,6 +47,26 @@ var point_style = new OpenLayers.Style(
                     filter: new OpenLayers.Filter.Comparison({
                         type: OpenLayers.Filter.Comparison.EQUAL_TO,
                         property: "style",
+                        value: "point_lightgreen"
+                    }),
+                    symbolizer: {
+                        externalGraphic: "{{ STATIC_URL }}img/placemarks/pointlightergreen.png"
+                    }
+                }),
+                new OpenLayers.Rule({
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style",
+                        value: "point_red"
+                    }),
+                    symbolizer: {
+                        externalGraphic: "{{ STATIC_URL }}img/placemarks/pointred.png"
+                    }
+                }),
+                new OpenLayers.Rule({
+                    filter: new OpenLayers.Filter.Comparison({
+                        type: OpenLayers.Filter.Comparison.EQUAL_TO,
+                        property: "style",
                         value: "point_blue"
                     }),
                     symbolizer: {

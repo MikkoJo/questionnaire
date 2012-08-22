@@ -3274,6 +3274,31 @@ button.importantroute {
 button.importantroute.ui-state-active {
     background-position: 0px -51px;
 }
+button.big {
+    background-color: transparent;
+    background-position: 0 2px;
+    border: medium none;
+    height: 53px;
+    width: 260px;
+}
+button.big.ui-state-active {
+    background-position: 0px -51px;
+}
+button.improve_point_area {
+    background-image: url("../img/buttons/improvepoint.png");
+}
+button.remove_object {
+    background-image: url("../img/buttons/remove_object.png");
+}
+button.new_building {
+    background-image: url("../img/buttons/newbuilding.png");
+}
+button.new_improve_route {
+    background-image: url("../img/buttons/newwalkingroute.png");
+}
+button.new_transport_route {
+    background-image: url("../img/buttons/public_transport.png");
+}
 
 button.like {
     background: transparent url("../img/buttons/home_uusi_plus_sprite_8.png") scroll -520px 0 no-repeat;
@@ -3429,6 +3454,9 @@ td.bigSlider {
     width: 70%;
 }
 
+#environmentSummaryForm td.bigSlider {
+    width: 100%;
+}
 /* FIX BUG with OpenLayers that shows popup with map data copyright */
 /* Fixed in OpenLayers 2.12
 div.olLayerGooglePoweredBy
@@ -3604,3 +3632,16 @@ div#ukkohalla {
     display: inline-block;
     margin-right: 20px;
 }
+
+
+.mobility_en .buttonArea .close {
+    background-image: url("../img/buttons/emptyBlue117x42.png");
+    width: 117px;
+    height: 42px;
+}
+
+.mobility_en .buttonArea .close span {
+    font-size: 14px;
+    top: 0px;
+}
+
