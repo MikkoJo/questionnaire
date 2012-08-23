@@ -613,6 +613,29 @@ questionnaire.extra_input_connect = [
         }
 
     },
+    {   "id": "family",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'otherFam') {
+                dojo.removeClass('otherFamilyRow', 'tyhja');
+                dojo.byId('otherFamily').disabled = false;
+            }
+            else {
+                dojo.addClass('otherFamilyRow', 'tyhja');
+                dojo.byId('otherFamily').disabled = true;
+            }
+            if(evt.currentTarget.value === 'couplewithchildren' || 
+               evt.currentTarget.value === 'parentwithchildren') {
+                dojo.removeClass('birthyearsRow', 'tyhja');
+                dojo.byId('birthyears').disabled = false;
+            }
+            else {
+                dojo.addClass('birthyearsRow', 'tyhja');
+                dojo.byId('birthyears').disabled = true;
+            }
+        }
+
+    },
     {   "id":"occupation",
         "event": "onchange",
         "func": function(evt) {
@@ -623,6 +646,49 @@ questionnaire.extra_input_connect = [
             else {
                 dojo.addClass('otherOccupationRow', 'tyhja');
                 dojo.byId('otherOccupation').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"me_other",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'other' && evt.currentTarget.checked === true) {
+                dojo.removeClass('otherSpan', 'tyhja');
+                dojo.byId('other_text').disabled = false;
+            }
+            else {
+                dojo.addClass('otherSpan', 'tyhja');
+                dojo.byId('other_text').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"me3_5",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'other' && evt.currentTarget.checked === true) {
+                dojo.removeClass('otherHowSpan', 'tyhja');
+                dojo.byId('visitOther').disabled = false;
+            }
+            else {
+                dojo.addClass('otherHowSpan', 'tyhja');
+                dojo.byId('visitOther').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"other",
+        "name": "mtransport",
+        "event": "onchange",
+        "func": function(evt) {
+            if(evt.currentTarget.value === 'other' && evt.currentTarget.checked === true) {
+                dojo.removeClass('otherSpan', 'tyhja');
+                dojo.byId('other_text').disabled = false;
+            }
+            else {
+                dojo.addClass('otherSpan', 'tyhja');
+                dojo.byId('other_text').disabled = true;
             }
         }
 

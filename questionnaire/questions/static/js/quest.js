@@ -3128,13 +3128,16 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
     if(basemap !== 'geonition_maps') {
         map = new OpenLayers.Map('map', {
                                      projection: new OpenLayers.Projection("EPSG:3857"),
-                                     maxExtent: new OpenLayers.Bounds(-37532.28,
+                                     /*maxExtent: new OpenLayers.Bounds(-37532.28,
                                                                        8312664.808,
                                                                        6194837.250,
-                                                                       10758649.712),
+                                                                       10758649.712),*/
 //                                     maxResolution: 4891,
                                      paddingForPopups: new OpenLayers.Bounds(330,70,15,15),
-                                     //maxResolution: 9783.939619140625,
+                                     //numZoomLevels: 20,
+//                                     maxResolution: 156543.03390625,
+//                                     maxResolution: 19567.87923828125,
+                                     //minResolution: 4.777314267158508,
                                      controls: []});
     }
     else if (!map_created) {
@@ -3146,9 +3149,13 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
         mapRoad = roadlayer;
     }
     if(basemap === 'google') {
-        mapRoad = new OpenLayers.Layer.Google("Main", {numZoomLevels: 20});
+        mapRoad = new OpenLayers.Layer.Google("Main", { 
+//                                    numZoomLevels: 16,
+                                    minZoomLevel: 3
+                                    //maxZoomLevel: 20
+                                    });
         mapSatellite = new OpenLayers.Layer.Google("Satellite", {type: google.maps.MapTypeId.HYBRID,
-                                                                numZoomLevels: 20});
+                                                                minZoomLevel: 3});
         map.panDuration = 10; // Pan animation is very slow with default Duration(50)
     }
     else if (basemap === 'bing') {
@@ -3187,11 +3194,6 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
         OpenLayers.Util.extend(ovMapOptions, {'mapOptions': mapOptions});
         
     }
-    map.addControls([new OpenLayers.Control.OverviewMap(ovMapOptions),
-                                 new OpenLayers.Control.ScaleLine({bottomUnits: "", bottomOutUnits: ""}),
-                                 new OpenLayers.Control.Attribution(),
-                                 new OpenLayers.Control.Navigation({}),
-                                 new OpenLayers.Control.PanZoomBar({id: 'navigation'})]);
     if(basemap === 'geonition_maps') {
         var aliasproj = new OpenLayers.Projection("EPSG:3067");
         map.paddingForPopups = new OpenLayers.Bounds(330,70,15,15);
@@ -3204,6 +3206,11 @@ function init(basemap, /* string*/ mapType, /* string*/ roadlayer) {
     //var aliasproj = new OpenLayers.Projection("EPSG:3857");
     mapRoad.projection = mapSatellite.projection = aliasproj;
     map.addLayers([mapRoad, mapSatellite, areaLayer, routeLayer, pointLayer, zoneLayer]);
+    map.addControls([new OpenLayers.Control.OverviewMap(ovMapOptions),
+                                 new OpenLayers.Control.ScaleLine({bottomUnits: "", bottomOutUnits: ""}),
+                                 new OpenLayers.Control.Attribution(),
+                                 new OpenLayers.Control.Navigation({}),
+                                 new OpenLayers.Control.PanZoomBar({id: 'navigation'})]);
     if(questionnaire.start_extent !== undefined) {
         map.setCenter(new OpenLayers.LonLat(questionnaire.start_extent.x,
                                             questionnaire.start_extent.y),
