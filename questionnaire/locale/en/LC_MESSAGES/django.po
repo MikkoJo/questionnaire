@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kuninkaankolmio/Tampere\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-22 14:56+0300\n"
-"PO-Revision-Date: 2012-08-22 14:57+0300\n"
+"POT-Creation-Date: 2012-08-23 14:00+0300\n"
+"PO-Revision-Date: 2012-08-23 14:06+0300\n"
 "Last-Translator: Mikko Johansson <mikko.johansson@aalto.fi>\n"
 "Language-Team: SoftGIS team\n"
 "Language: en\n"
@@ -561,7 +561,7 @@ msgstr "Next"
 
 #: questions/templates/example/html/background.html:5
 #: questions/templates/html/progressbar.html:7
-#: questions/templates/mobility/html/background.html:6
+#: questions/templates/mobility/html/background.html:5
 #: questions/templates/mobility/html/index.html:77
 #: questions/templates/vaaka/html/background.html:5
 #: questions/templates/vaaka/html/index.html:77
@@ -569,51 +569,51 @@ msgid "Taustatiedot"
 msgstr "Background information"
 
 #: questions/templates/example/html/background.html:9
-#: questions/templates/mobility/html/background.html:10
+#: questions/templates/mobility/html/background.html:9
 #: questions/templates/vaaka/html/background.html:15
 msgid "Ikä:"
 msgstr "Age:"
 
 #: questions/templates/example/html/background.html:16
-#: questions/templates/mobility/html/background.html:17
+#: questions/templates/mobility/html/background.html:16
 #: questions/templates/vaaka/html/background.html:22
 msgid "Sukupuoli:"
 msgstr "Gender:"
 
 #: questions/templates/example/html/background.html:19
-#: questions/templates/mobility/html/background.html:20
+#: questions/templates/mobility/html/background.html:19
 #: questions/templates/vaaka/html/background.html:25
 msgid "Mies"
 msgstr "Male"
 
 #: questions/templates/example/html/background.html:21
-#: questions/templates/mobility/html/background.html:22
+#: questions/templates/mobility/html/background.html:21
 #: questions/templates/vaaka/html/background.html:27
 msgid "Nainen"
 msgstr "Female"
 
 #: questions/templates/example/html/background.html:25
-#: questions/templates/mobility/html/background.html:26
+#: questions/templates/mobility/html/background.html:25
 msgid "Kotitaloustyyppi:"
 msgstr "Type of household:"
 
 #: questions/templates/example/html/background.html:29
-#: questions/templates/mobility/html/background.html:30
+#: questions/templates/mobility/html/background.html:29
 msgid "yksin asuva"
 msgstr "Single person"
 
 #: questions/templates/example/html/background.html:30
-#: questions/templates/mobility/html/background.html:31
+#: questions/templates/mobility/html/background.html:30
 msgid "pariskunta"
 msgstr "Couple"
 
 #: questions/templates/example/html/background.html:31
-#: questions/templates/mobility/html/background.html:32
+#: questions/templates/mobility/html/background.html:31
 msgid "yhden vanhemman lapsiperhe"
 msgstr "Single parent with child/children"
 
 #: questions/templates/example/html/background.html:32
-#: questions/templates/mobility/html/background.html:33
+#: questions/templates/mobility/html/background.html:32
 msgid "kahden vanhemman lapsiperhe"
 msgstr "Couple with child/children"
 
@@ -629,7 +629,7 @@ msgstr "Couple with child/children"
 #: questions/templates/example/js/quest_spec_old.js:2248
 #: questions/templates/example/js/quest_spec_old.js:2267
 #: questions/templates/example/js/quest_spec_old.js:2289
-#: questions/templates/mobility/html/background.html:34
+#: questions/templates/mobility/html/background.html:33
 #: questions/templates/mobility/html/move_env_info_business.html:31
 #: questions/templates/mobility/html/move_env_info_exercise.html:31
 #: questions/templates/mobility/html/move_env_info_freetime.html:49
@@ -653,8 +653,8 @@ msgstr "Other"
 #: questions/templates/example/html/background.html:40
 #: questions/templates/example/html/background.html:69
 #: questions/templates/example/html/kkolmio_info.html:82
-#: questions/templates/mobility/html/background.html:41
-#: questions/templates/mobility/html/background.html:70
+#: questions/templates/mobility/html/background.html:40
+#: questions/templates/mobility/html/background.html:69
 #: questions/templates/vaaka/html/background.html:70
 #: questions/templates/vaaka/html/background.html:92
 #: questions/templates/vaaka/html/index.html:289
@@ -665,153 +665,153 @@ msgid "mikä?"
 msgstr "what?"
 
 #: questions/templates/example/html/background.html:46
-#: questions/templates/mobility/html/background.html:47
+#: questions/templates/mobility/html/background.html:46
 msgid "Mitkä ovat taloudessanne asuvien lasten syntymävuodet?"
 msgstr ""
 "Of the children living in your household: Which are their years of birth?"
 
 #: questions/templates/example/html/background.html:53
-#: questions/templates/mobility/html/background.html:54
+#: questions/templates/mobility/html/background.html:53
 #: questions/templates/vaaka/html/background.html:75
 msgid "Oletko tällä hetkellä päätoimisesti"
 msgstr "Main occupation at the moment "
 
 #: questions/templates/example/html/background.html:57
-#: questions/templates/mobility/html/background.html:58
+#: questions/templates/mobility/html/background.html:57
 #: questions/templates/vaaka/html/background.html:79
 msgid "ansiotyössä"
 msgstr "Employed"
 
 #: questions/templates/example/html/background.html:58
-#: questions/templates/mobility/html/background.html:59
+#: questions/templates/mobility/html/background.html:58
 #: questions/templates/vaaka/html/background.html:80
 msgid "työtön"
 msgstr "Unemployed"
 
 #: questions/templates/example/html/background.html:59
-#: questions/templates/mobility/html/background.html:60
+#: questions/templates/mobility/html/background.html:59
 #: questions/templates/vaaka/html/background.html:81
 msgid "opiskelija tai koululainen"
 msgstr "Student/Pupil"
 
 #: questions/templates/example/html/background.html:60
-#: questions/templates/mobility/html/background.html:61
+#: questions/templates/mobility/html/background.html:60
 #: questions/templates/vaaka/html/background.html:83
 msgid "eläkkeellä"
 msgstr "Retired"
 
 #: questions/templates/example/html/background.html:61
-#: questions/templates/mobility/html/background.html:62
+#: questions/templates/mobility/html/background.html:61
 msgid "kotiäiti tai -isä tai vanhempainvapaalla"
 msgstr "Stay-at-home parent/Maternity or paternity leave"
 
 #: questions/templates/example/html/background.html:62
-#: questions/templates/mobility/html/background.html:63
+#: questions/templates/mobility/html/background.html:62
 msgid "muu tilanne"
 msgstr "Other"
 
 #: questions/templates/example/html/background.html:75
-#: questions/templates/mobility/html/background.html:76
+#: questions/templates/mobility/html/background.html:75
 msgid "Montako autoa kotitaloudessasi on?"
 msgstr "How many cars are in use of your household?"
 
 #: questions/templates/example/html/background.html:82
-#: questions/templates/mobility/html/background.html:83
+#: questions/templates/mobility/html/background.html:82
 msgid "Onko sinulla henkilöauton ajamiseen oikeuttavaa ajokorttia?"
 msgstr "Do you have a driver’s licence permitting you to drive a car?    "
 
 #: questions/templates/example/html/background.html:85
 #: questions/templates/example/html/background.html:137
-#: questions/templates/mobility/html/background.html:86
+#: questions/templates/mobility/html/background.html:85
 #: questions/templates/vaaka/html/background.html:102
 msgid "kyllä"
 msgstr "Yes"
 
 #: questions/templates/example/html/background.html:87
 #: questions/templates/example/html/background.html:139
-#: questions/templates/mobility/html/background.html:88
+#: questions/templates/mobility/html/background.html:87
 msgid "ei"
 msgstr "No"
 
 #: questions/templates/example/html/background.html:91
-#: questions/templates/mobility/html/background.html:92
+#: questions/templates/mobility/html/background.html:91
 msgid "Mikä on asumismuotosi?"
 msgstr "Residential type?"
 
 #: questions/templates/example/html/background.html:94
-#: questions/templates/mobility/html/background.html:95
+#: questions/templates/mobility/html/background.html:94
 msgid "omistusasunto"
 msgstr "Owner-occupied flat"
 
 #: questions/templates/example/html/background.html:97
-#: questions/templates/mobility/html/background.html:98
+#: questions/templates/mobility/html/background.html:97
 msgid "vuokra-asunto"
 msgstr "Rented flat"
 
 #: questions/templates/example/html/background.html:100
-#: questions/templates/mobility/html/background.html:101
+#: questions/templates/mobility/html/background.html:100
 msgid "asumisoikeusasunto"
 msgstr "Right of residence apartment"
 
 #: questions/templates/example/html/background.html:105
-#: questions/templates/mobility/html/background.html:106
+#: questions/templates/mobility/html/background.html:105
 msgid "Minkä kunnan alueella asut?"
 msgstr "Where do you live?"
 
 #: questions/templates/example/html/background.html:110
-#: questions/templates/mobility/html/background.html:111
+#: questions/templates/mobility/html/background.html:110
 msgid "Helsinki"
 msgstr ""
 
 #: questions/templates/example/html/background.html:111
-#: questions/templates/mobility/html/background.html:112
+#: questions/templates/mobility/html/background.html:111
 msgid "Espoo"
 msgstr ""
 
 #: questions/templates/example/html/background.html:112
-#: questions/templates/mobility/html/background.html:113
+#: questions/templates/mobility/html/background.html:112
 msgid "Vantaa"
 msgstr ""
 
 #: questions/templates/example/html/background.html:118
-#: questions/templates/mobility/html/background.html:119
+#: questions/templates/mobility/html/background.html:118
 msgid ""
 "Minkätyyppisessä ympäristössä lapsuuden merkittävin kasvuympäristösi "
 "sijaitsi?"
 msgstr "What type of environment did you mainly grew up in?"
 
 #: questions/templates/example/html/background.html:123
-#: questions/templates/mobility/html/background.html:124
+#: questions/templates/mobility/html/background.html:123
 msgid "kaupungin ydinkeskustassa tai sen läheisyydessä"
 msgstr "City centre or its proximity"
 
 #: questions/templates/example/html/background.html:124
-#: questions/templates/mobility/html/background.html:125
+#: questions/templates/mobility/html/background.html:124
 msgid "pientalovaltaisessa esikaupungissa"
 msgstr "Suburb with a majority of detached houses"
 
 #: questions/templates/example/html/background.html:125
-#: questions/templates/mobility/html/background.html:126
+#: questions/templates/mobility/html/background.html:125
 msgid "kerrostalovaltaisessa esikaupungissa"
 msgstr "Suburb with a majority of blocks of flats"
 
 #: questions/templates/example/html/background.html:126
-#: questions/templates/mobility/html/background.html:127
+#: questions/templates/mobility/html/background.html:126
 msgid "maaseututaajamassa"
 msgstr "Rural community"
 
 #: questions/templates/example/html/background.html:127
-#: questions/templates/mobility/html/background.html:128
+#: questions/templates/mobility/html/background.html:127
 msgid "kylässä maaseudulla"
 msgstr "Village on the countryside"
 
 #: questions/templates/example/html/background.html:128
-#: questions/templates/mobility/html/background.html:129
+#: questions/templates/mobility/html/background.html:128
 msgid "haja-asutusalueella"
 msgstr "Sparsely populated area"
 
 #: questions/templates/example/html/background.html:129
-#: questions/templates/mobility/html/background.html:130
+#: questions/templates/mobility/html/background.html:129
 msgid "ulkomailla"
 msgstr "Abroad"
 
@@ -1044,7 +1044,7 @@ msgstr "Is there anything you would like to add"
 #: questions/templates/example/html/home.html:4
 #: questions/templates/mobility/html/home.html:4
 #: questions/templates/mobility/html/home.html:49
-#: questions/templates/mobility/js/quest_spec.js:892
+#: questions/templates/mobility/js/quest_spec.js:958
 msgid "Koti"
 msgstr "Home"
 
@@ -1427,6 +1427,7 @@ msgstr ""
 "of the page. "
 
 #: questions/templates/example/html/instructions.html:49
+#: questions/templates/mobility/html/instructions.html:49
 #: questions/templates/vaaka/html/instructions.html:68
 msgid ""
 "\n"
@@ -1440,6 +1441,7 @@ msgstr ""
 "your responses, you can exit the survey by closing the browser. "
 
 #: questions/templates/example/html/instructions.html:64
+#: questions/templates/mobility/html/instructions.html:68
 msgid ""
 "\n"
 "            Kyselyssä merkitään kartalle pisteitä tai viivoja (reittejä). "
@@ -1455,6 +1457,7 @@ msgstr ""
 "is marked as a point and routes are drawn as lines."
 
 #: questions/templates/example/html/instructions.html:75
+#: questions/templates/mobility/html/instructions.html:79
 msgid "Kuva yllä: Esimerkit piste- ja viivatyökaluista."
 msgstr "Image above: Examples of the point and line tools."
 
@@ -1492,6 +1495,7 @@ msgstr "Select the Home -tool"
 
 #: questions/templates/example/html/instructions.html:105
 #: questions/templates/html/instructions_base.html:467
+#: questions/templates/mobility/html/instructions.html:106
 #: questions/templates/vaaka/html/instructions.html:126
 msgid "klikkaamalla sitä hiirellä."
 msgstr "by clicking it with the mouse."
@@ -1565,6 +1569,7 @@ msgstr ""
 
 #: questions/templates/example/html/instructions.html:167
 #: questions/templates/html/instructions_base.html:810
+#: questions/templates/mobility/html/instructions.html:144
 msgid "Kyselyn toteuttaja ja tutkijat"
 msgstr "The realiser and researchers of the questionnaire "
 
@@ -1585,11 +1590,13 @@ msgstr ""
 
 #: questions/templates/example/html/instructions.html:198
 #: questions/templates/html/instructions_base.html:833
+#: questions/templates/mobility/html/instructions.html:187
 msgid "Arvonnan palkinnot"
 msgstr "Prizes of the prize draw"
 
 #: questions/templates/example/html/instructions.html:216
 #: questions/templates/html/instructions_base.html:860
+#: questions/templates/mobility/html/instructions.html:214
 #: questions/templates/vaaka/html/instructions.html:242
 msgid "Tietosuoja"
 msgstr "Privacy protection"
@@ -1602,6 +1609,7 @@ msgid ""
 msgstr ""
 
 #: questions/templates/example/html/instructions.html:228
+#: questions/templates/mobility/html/instructions.html:230
 #: questions/templates/vaaka/html/instructions.html:254
 msgid ""
 "\n"
@@ -1620,6 +1628,7 @@ msgstr ""
 "the Data Protection Ombudsman. "
 
 #: questions/templates/example/html/instructions.html:235
+#: questions/templates/mobility/html/instructions.html:237
 msgid ""
 "\n"
 "        Tutkimusaineiston tietoja käsitellään ryhmittäin, ei yksilötasolla. "
@@ -1642,14 +1651,14 @@ msgstr ""
 
 #: questions/templates/example/html/instructions.html:253
 #: questions/templates/html/instructions_base.html:904
-#: questions/templates/mobility/html/instructions.html:226
+#: questions/templates/mobility/html/instructions.html:255
 #: questions/templates/vaaka/html/instructions.html:279
 msgid "Rekisteriseloste"
 msgstr "Description of the research registry"
 
 #: questions/templates/example/html/instructions.html:262
 #: questions/templates/html/instructions_base.html:912
-#: questions/templates/mobility/html/instructions.html:235
+#: questions/templates/mobility/html/instructions.html:264
 #: questions/templates/vaaka/html/instructions.html:288
 msgid "Tutkimuksen rekisteriseloste"
 msgstr "Description of the research registry (in Finnish)"
@@ -1890,7 +1899,7 @@ msgstr "Use the map as advised earlier."
 #: questions/templates/example/js/quest_spec_old.js:2203
 #: questions/templates/mobility/html/move_environment.html:36
 #: questions/templates/mobility/js/quest_spec.js:321
-#: questions/templates/mobility/js/quest_spec.js:898
+#: questions/templates/mobility/js/quest_spec.js:964
 #: questions/templates/vaaka/js/quest_spec.js:318
 msgid "Työ, opiskelu, päivähoito"
 msgstr "Work, studying, day-care"
@@ -1925,7 +1934,7 @@ msgstr "Work-related place"
 #: questions/templates/example/js/quest_spec_old.js:2223
 #: questions/templates/mobility/html/move_environment.html:48
 #: questions/templates/mobility/js/quest_spec.js:341
-#: questions/templates/mobility/js/quest_spec.js:904
+#: questions/templates/mobility/js/quest_spec.js:970
 #: questions/templates/vaaka/js/quest_spec.js:338
 msgid "Ostospaikka"
 msgstr "Shopping place"
@@ -1980,7 +1989,7 @@ msgstr "Other service, e.g. hair salon or barber"
 #: questions/templates/example/js/quest_spec_old.js:2262
 #: questions/templates/mobility/html/move_environment.html:70
 #: questions/templates/mobility/js/quest_spec.js:380
-#: questions/templates/mobility/js/quest_spec.js:916
+#: questions/templates/mobility/js/quest_spec.js:982
 #: questions/templates/vaaka/js/quest_spec.js:377
 msgid "Liikunta ja ulkoilu"
 msgstr "Sports and outdoor activities"
@@ -2005,7 +2014,7 @@ msgstr "Playground"
 #: questions/templates/example/js/quest_spec_old.js:2281
 #: questions/templates/mobility/html/move_environment.html:80
 #: questions/templates/mobility/js/quest_spec.js:399
-#: questions/templates/mobility/js/quest_spec.js:922
+#: questions/templates/mobility/js/quest_spec.js:988
 #: questions/templates/vaaka/js/quest_spec.js:396
 msgid "Vapaa-aika"
 msgstr "Leisure time"
@@ -2050,8 +2059,8 @@ msgstr "Other leisure time location"
 #: questions/templates/example/js/quest_spec_old.js:2303
 #: questions/templates/mobility/html/move_environment.html:94
 #: questions/templates/mobility/js/quest_spec.js:421
-#: questions/templates/mobility/js/quest_spec.js:928
-#: questions/templates/mobility/js/quest_spec.js:1004
+#: questions/templates/mobility/js/quest_spec.js:994
+#: questions/templates/mobility/js/quest_spec.js:1070
 #: questions/templates/vaaka/js/quest_spec.js:418
 #: questions/templates/vaaka/js/quest_spec.js:891
 msgid "Muu paikka"
@@ -2538,7 +2547,7 @@ msgstr ""
 #: questions/templates/example/js/quest_spec.js:350
 #: questions/templates/example/js/quest_spec_old.js:2243
 #: questions/templates/mobility/js/quest_spec.js:361
-#: questions/templates/mobility/js/quest_spec.js:910
+#: questions/templates/mobility/js/quest_spec.js:976
 #: questions/templates/vaaka/js/quest_spec.js:358
 msgid "Asiointipaikka"
 msgstr "Running errands"
@@ -2744,7 +2753,7 @@ msgstr "New walking or cycling route"
 #: questions/templates/example/js/quest_spec.js:447
 #: questions/templates/example/js/quest_spec_old.js:2775
 #: questions/templates/mobility/js/quest_spec.js:458
-#: questions/templates/mobility/js/quest_spec.js:956
+#: questions/templates/mobility/js/quest_spec.js:1022
 #: questions/templates/vaaka/js/quest_spec.js:455
 msgid "Reittiehdotuksesi"
 msgstr "Your route suggestion"
@@ -2752,7 +2761,7 @@ msgstr "Your route suggestion"
 #: questions/templates/example/js/quest_spec.js:448
 #: questions/templates/example/js/quest_spec_old.js:2776
 #: questions/templates/mobility/js/quest_spec.js:459
-#: questions/templates/mobility/js/quest_spec.js:955
+#: questions/templates/mobility/js/quest_spec.js:1021
 #: questions/templates/vaaka/js/quest_spec.js:456
 msgid "Millaista reittiä toivot tähän paikkaan?"
 msgstr "What kind of a route you would wish to be implemented?"
@@ -2768,7 +2777,7 @@ msgstr "New public transport connection"
 #: questions/templates/example/js/quest_spec.js:465
 #: questions/templates/example/js/quest_spec_old.js:2793
 #: questions/templates/mobility/js/quest_spec.js:476
-#: questions/templates/mobility/js/quest_spec.js:962
+#: questions/templates/mobility/js/quest_spec.js:1028
 #: questions/templates/vaaka/js/quest_spec.js:473
 msgid "Ehdotuksesi uudeksi joukkoliikenneyhteydeksi"
 msgstr "Your suggestion for a new public transport connection"
@@ -2776,14 +2785,14 @@ msgstr "Your suggestion for a new public transport connection"
 #: questions/templates/example/js/quest_spec.js:466
 #: questions/templates/example/js/quest_spec_old.js:2794
 #: questions/templates/mobility/js/quest_spec.js:477
-#: questions/templates/mobility/js/quest_spec.js:961
+#: questions/templates/mobility/js/quest_spec.js:1027
 #: questions/templates/vaaka/js/quest_spec.js:474
 msgid "Millaista joukkoliikennelinjaa toivoisit tänne?"
 msgstr "What kind of a public transport connection would you suggest?"
 
 #: questions/templates/example/js/quest_spec.js:690
 #: questions/templates/example/js/quest_spec_old.js:4590
-#: questions/templates/mobility/js/quest_spec.js:822
+#: questions/templates/mobility/js/quest_spec.js:888
 #: questions/templates/vaaka/js/quest_spec.js:808
 msgid "confirm exit"
 msgstr ""
@@ -3697,9 +3706,8 @@ msgid "Reitin piirto"
 msgstr "Drawing a route on the map"
 
 #: questions/templates/html/thank_feedback.html:6
-#, fuzzy
 msgid "Kiitos palautteesta"
-msgstr "Thank you for your answers"
+msgstr "Thank you for your feedback"
 
 #: questions/templates/html/thank_you.html:4
 msgid "Thank you very much for your help!"
@@ -3904,7 +3912,7 @@ msgstr ""
 msgid "Wrong password"
 msgstr ""
 
-#: questions/templates/mobility/html/background.html:79
+#: questions/templates/mobility/html/background.html:78
 msgid "kpl"
 msgstr " "
 
@@ -3963,24 +3971,203 @@ msgstr "New walking or cycling route"
 msgid "PehmoGIS - "
 msgstr "SoftGIS - "
 
-#: questions/templates/mobility/html/instructions.html:172
+#: questions/templates/mobility/html/instructions.html:41
+#: questions/templates/vaaka/html/instructions.html:60
 msgid ""
-"Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaineiden kesken "
+"\n"
+"        Siirry seuraavaan kysymykseen\n"
+"        <strong>Seuraava</strong>-painikkeella. Voit siirtyä takaisinpäin\n"
+"        kyselyssä korjaamaan jo antamiasi vastauksia\n"
+"        <strong>Edellinen</strong>-painikkeella tai yläpalkin "
+"navigaatiopalkin kautta.\n"
+"        "
+msgstr ""
+"\n"
+"Proceed to the next question by clicking the <strong>Next</strong>-button. "
+"You can move backwards in a questionnaire to correct you previous answers "
+"with a <strong>Back</strong>-button or by using the navigation bar on the "
+"top of the page. "
+
+#: questions/templates/mobility/html/instructions.html:88
+#: questions/templates/vaaka/html/instructions.html:108
+msgid "Pistemäisen kohteen merkitseminen kartalle"
+msgstr "Marking a point location on the map"
+
+#: questions/templates/mobility/html/instructions.html:96
+#: questions/templates/vaaka/html/instructions.html:116
+msgid ""
+"Pistemäisiä kohteita ovat esimerkiksi koti, kesämökki ja asiointipaikka."
+msgstr "Examples if point-type items are: home and summer cottage."
+
+#: questions/templates/mobility/html/instructions.html:99
+#: questions/templates/vaaka/html/instructions.html:119
+msgid "Esimerkki pisteen merkitsemisestä kartalle:"
+msgstr "An example of marking a point location on the map:"
+
+#: questions/templates/mobility/html/instructions.html:103
+#: questions/templates/vaaka/html/instructions.html:123
+msgid "Etsi aluksi kartalta kohteen sijainti."
+msgstr "First find the location of your place (e.g. home) on the map. "
+
+#: questions/templates/mobility/html/instructions.html:106
+#: questions/templates/vaaka/html/instructions.html:126
+msgid "Valitse piste-työkalu"
+msgstr "Select the Point -tool by clicking it with the mouse."
+
+#: questions/templates/mobility/html/instructions.html:110
+#: questions/templates/vaaka/html/instructions.html:130
+msgid "Klikatessasi piste-työkalu aktivoituu ja sen ulkoasu muuttuu:"
+msgstr "Once the Point -tool is activated its appearance will change: "
+
+#: questions/templates/mobility/html/instructions.html:115
+#: questions/templates/vaaka/html/instructions.html:135
+msgid "Klikkaa karttaa valitsemallasi kohdalla."
+msgstr "Click the location of your place on the map. "
+
+#: questions/templates/mobility/html/instructions.html:115
+#: questions/templates/vaaka/html/instructions.html:135
+msgid "Piste sijoitetaan osoittamaasi kohtaan."
+msgstr "Your place will be pinpointed to the location you clicked on."
+
+#: questions/templates/mobility/html/instructions.html:118
+#: questions/templates/vaaka/html/instructions.html:138
+msgid ""
+"\n"
+"                    Näyttöön avautuu kyselyikkuna. Vastaa kyselyyn "
+"valitsemalla yksi vaihtoehto kunkin\n"
+"                    kysymyksen alla esitetyistä vaihtoehdoista. "
+"Kyselyikkunan oikealla laidalla on\n"
+"                    vierityspalkki, jota siirtämällä pääset ikkunassa "
+"alaspäin. Voit kertoa\n"
+"                    lisätietoja kohteesta kirjoittamalla kyselyikkunan "
+"sisällä olevaan ruutuun:\n"
+"                    Kerro lisää tästä paikasta.\n"
+"                "
+msgstr ""
+"\n"
+"Answer the questions in the opening window.  You can move downwards by "
+"moving the scroll bar on the right side of the window. You can tell more "
+"about the place by writing into the box: Tell more about the places."
+
+#: questions/templates/mobility/html/instructions.html:125
+#: questions/templates/vaaka/html/instructions.html:145
+msgid ""
+"\n"
+"                <strong>Vahvista vastauksesi </strong> klikkaamalla "
+"painiketta\n"
+"                \"tallenna kohde\".\n"
+"                Mikäli piste meni väärään paikkaan, voit poistaa sen "
+"klikkaamalla \"poista kohde\".\n"
+"                "
+msgstr ""
+"\n"
+"<strong>Confirm your answer</strong> in the opening window by clicking on "
+"the button \"Save location\". If your place was marked on a wrong place, you "
+"can delete it by clicking on the \"Delete location\"."
+
+#: questions/templates/mobility/html/instructions.html:152
+msgid ""
+"\n"
+"        Tutkimus on osa Urbaani Arki -tutkimushanketta. Aalto-yliopiston "
+"Yhdyskuntasuunnittelun\n"
+"        tutkimus- ja koulutuskeskuksen ja Tampereen teknillisen yliopiston "
+"yhteistyökumppanina tutkimuksessa\n"
+"        on mm. Tampereen kaupunki. Tutkijoina toimivat\n"
+"        <a href=\"mailto:marketta.kytta@aalto.fi\">FT Marketta Kyttä</a>,\n"
+"        <a href=\"mailto:kaisa.schmidt-thome@aalto.fi\">FL Kaisa Schmidt-"
+"Thomé</a> ja\n"
+"        <a href=\"mailto:hanna.kalenoja@tut.fi\">TkL Hanna Kalenoja</a>.\n"
+"        "
+msgstr ""
+"\n"
+"The research is part of the Everyday Urbanity research project. It is being "
+"conducted by the Centre for Urban and Regional Studies of Aalto University "
+"and Tampere University of Technology in cooperation with city of Tampere. "
+"The researchers are <a href=\"mailto:marketta.kytta@aalto.fi\">Ph.D. "
+"Marketta Kyttä</a>, <a href=\"mailto:kaisa.schmidt-thome@aalto.fi\">Ph.L "
+"Kaisa Schmidt-Thomé</a> and <a href=\"mailto:hanna.kalenoja@tut.fi\">Ph.L "
+"Hanna Kalenoja</a>."
+
+#: questions/templates/mobility/html/instructions.html:162
+msgid ""
+"\n"
+"        Urbaani Arki -hankkeessa tutkitaan asukkaiden arkiliikkumista ja "
+"arjen palvelujen käyttöä\n"
+"        paikkalähtöisesti tunnistaen samalla elinympäristön käytön suhteen "
+"erilaisia asukasprofiileja.\n"
+"        Arjen sujumisen kannalta on tärkeää, missä asukkaalle keskeiset "
+"arkiverkon paikat sijaitsevat ja\n"
+"        miten niiden välillä liikutaan.\n"
+"        "
+msgstr ""
+"\n"
+"The Everyday Urbanity project examines the trips the inhabitants make and "
+"the services they use on a daily basis in the urban area based on location "
+"information. The project aims also to identify different kinds of inhabitant "
+"profiles regarding how they use the living environment. Where the essential "
+"places of the everyday network of inhabitant are situated and how one move "
+"between these locations are important factors concerning convenient everyday "
+"life."
+
+#: questions/templates/mobility/html/instructions.html:170
+msgid ""
+"\n"
+"        Aalto-yliopiston Yhdyskuntasuunnittelun tutkimus- ja "
+"koulutuskeskuksen ja Tampereen teknillisen yliopiston\n"
+"        tiedonhallinnan ja logistiikan laitoksen yhteishankkeessa tutkitaan "
+"eri asukasryhmiä yhteensä kahdeksan kaupungin\n"
+"        alueella. Hanketta rahoittavat Tekes ja kaupungit, sekä "
+"yrityskumppaneina Ruokakesko, FCG Planeko, Citycon,\n"
+"        Fifth Element ja ESRI Finland. Valtionhallintoa hankkeessa edustavat "
+"Ympäristöministeriö ja Kaupunkipolitiikan\n"
+"        yhteistyöryhmä (Työ- ja elinkeinoministeriö).\n"
+"        "
+msgstr ""
+"\n"
+"In this joint venture of Centre for Urban and Regional Studies of Aalto "
+"University and Department of Business Information Management and Logistics "
+"of Tampere University of Technology, different groups of inhabitants in "
+"eight cities are examined. The project is funded by TEKES and the cities in "
+"cooperation with Ruokakesko, FCG Planeko, Citycon, Fifth Element and ESRI "
+"Finland. State Administration is represented by the Ministry of the "
+"Environment and the Urban Policy Committee of the Ministry of Employment and "
+"the Economy.       "
+
+#: questions/templates/mobility/html/instructions.html:195
+msgid ""
+"Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaneiden kesken "
 "arvotaan"
 msgstr ""
 "The following prizes will be raffled between all the participants of the "
 "questionnaire."
 
-#: questions/templates/mobility/html/instructions.html:175
+#: questions/templates/mobility/html/instructions.html:198
 msgid "viisi 40 euron lahjakorttia Tampereen joukkoliikenteeseen"
 msgstr "Five gift vouchers worth 40 euros to Tampere public transport and"
 
-#: questions/templates/mobility/html/instructions.html:178
+#: questions/templates/mobility/html/instructions.html:201
 msgid "viisi paria elokuvalippuja (vapaavalintaiseen Finnkinon elokuvaan)"
 msgstr ""
 "Five pairs of movie tickets (to a movie of your own choice in Finnkino)"
 
-#: questions/templates/mobility/html/instructions.html:236
+#: questions/templates/mobility/html/instructions.html:222
+msgid ""
+"\n"
+"        Tampereen pehmoGIS-kysely toimii Aalto-Yliopiston suojatulla "
+"palvelimella, ja kyselystä\n"
+"        koostuvaan tietokantaan on pääsy vain\n"
+"        tutkimushankkeessa työskentelevillä henkilöillä. Sovellus ei ole "
+"yhteydessä Tampereen kaupungin\n"
+"        tietojärjestelmiin.\n"
+"        "
+msgstr ""
+"\n"
+"The softGIS questionnaire of Tampere is situated on a secure server at Aalto "
+"University. The collected database is accessible only to researchers "
+"working for the project. The application is not connected to the information "
+"systems of the city of Tampere. "
+
+#: questions/templates/mobility/html/instructions.html:265
 msgid "pdf-tiedosto"
 msgstr "pdf file"
 
@@ -4062,125 +4249,125 @@ msgstr ""
 "Marketta Kyttä, PhD from Aalto University and Hanna Kalenoja, Research "
 "Manager from Tampere University of Technology are in charge of the research. "
 
-#: questions/templates/mobility/js/quest_spec.js:846
-#: questions/templates/mobility/js/quest_spec.js:851
+#: questions/templates/mobility/js/quest_spec.js:912
+#: questions/templates/mobility/js/quest_spec.js:917
 msgid "Kerro paikan ulkoisesta ilmeestä tarkemmin! Tässä paikassa..."
 msgstr ""
 
-#: questions/templates/mobility/js/quest_spec.js:856
-#: questions/templates/mobility/js/quest_spec.js:861
+#: questions/templates/mobility/js/quest_spec.js:922
+#: questions/templates/mobility/js/quest_spec.js:927
 msgid "Kerro sosiaalisesta ilmapiiristä tarkemmin! Tässä paikassa..."
 msgstr ""
 
-#: questions/templates/mobility/js/quest_spec.js:866
-#: questions/templates/mobility/js/quest_spec.js:871
+#: questions/templates/mobility/js/quest_spec.js:932
+#: questions/templates/mobility/js/quest_spec.js:937
 msgid "Kerro paikan tunnelmasta tarkemmin! Tämä paikka on..."
 msgstr ""
 
-#: questions/templates/mobility/js/quest_spec.js:876
-#: questions/templates/mobility/js/quest_spec.js:881
+#: questions/templates/mobility/js/quest_spec.js:942
+#: questions/templates/mobility/js/quest_spec.js:947
 msgid "Kerro paikan toimintamahdollisuuksista tarkemmin! Tässä paikassa..."
 msgstr ""
 
-#: questions/templates/mobility/js/quest_spec.js:932
+#: questions/templates/mobility/js/quest_spec.js:998
 msgid "Tärkeä kävely- tai pyöräreitti"
 msgstr "An important walking or cycling route"
 
-#: questions/templates/mobility/js/quest_spec.js:937
+#: questions/templates/mobility/js/quest_spec.js:1003
 msgid "Miten tätä paikkaa pitäisi kohentaa?"
 msgstr "Why should this place be improved?"
 
-#: questions/templates/mobility/js/quest_spec.js:938
+#: questions/templates/mobility/js/quest_spec.js:1004
 msgid "Kohentamisehdotuksesi"
 msgstr "Your suggestion for improvement"
 
-#: questions/templates/mobility/js/quest_spec.js:943
+#: questions/templates/mobility/js/quest_spec.js:1009
 msgid "Mitä poistaisit tästä paikasta?"
 msgstr "What would you remove from this place?"
 
-#: questions/templates/mobility/js/quest_spec.js:944
+#: questions/templates/mobility/js/quest_spec.js:1010
 msgid "Poistamisehdotuksesi"
 msgstr "Your suggestion for removal"
 
-#: questions/templates/mobility/js/quest_spec.js:949
+#: questions/templates/mobility/js/quest_spec.js:1015
 msgid "Mitä uutta tähän mielestäsi pitäisi rakentaa?"
 msgstr "What new should be built in this location?"
 
-#: questions/templates/mobility/js/quest_spec.js:950
+#: questions/templates/mobility/js/quest_spec.js:1016
 msgid "Rakentamisehdotuksesi"
 msgstr "Your building suggestion"
 
-#: questions/templates/mobility/js/quest_spec.js:968
+#: questions/templates/mobility/js/quest_spec.js:1034
 #: questions/templates/vaaka/js/quest_spec.js:855
 msgid "Palvelurakennus"
 msgstr ""
 
-#: questions/templates/mobility/js/quest_spec.js:974
+#: questions/templates/mobility/js/quest_spec.js:1040
 #: questions/templates/vaaka/js/quest_spec.js:861
 #, fuzzy
 msgid "Kävely- tai pyöräilyreitti"
 msgstr "My most important walking and cycling routes"
 
-#: questions/templates/mobility/js/quest_spec.js:980
+#: questions/templates/mobility/js/quest_spec.js:1046
 #: questions/templates/vaaka/js/quest_spec.js:867
 msgid "Bussireitti"
 msgstr ""
 
-#: questions/templates/mobility/js/quest_spec.js:986
+#: questions/templates/mobility/js/quest_spec.js:1052
 #: questions/templates/vaaka/js/quest_spec.js:873
 #, fuzzy
 msgid "Virkistysalue"
 msgstr "Leisure areas and parks"
 
-#: questions/templates/mobility/js/quest_spec.js:992
+#: questions/templates/mobility/js/quest_spec.js:1058
 #: questions/templates/vaaka/js/quest_spec.js:879
 #, fuzzy
 msgid "Säilytettävä paikka"
 msgstr "More information about the place"
 
-#: questions/templates/mobility/js/quest_spec.js:998
+#: questions/templates/mobility/js/quest_spec.js:1064
 #: questions/templates/vaaka/js/quest_spec.js:885
 msgid "Kohennettava paikka"
 msgstr ""
 
-#: questions/templates/mobility/js/quest_spec.js:1010
-#: questions/templates/mobility/js/quest_spec.js:1016
+#: questions/templates/mobility/js/quest_spec.js:1076
+#: questions/templates/mobility/js/quest_spec.js:1082
 #: questions/templates/vaaka/js/quest_spec.js:897
 #: questions/templates/vaaka/js/quest_spec.js:903
 msgid "Mitä teet kohteessa?"
 msgstr "What do you do in this place or area?"
 
-#: questions/templates/mobility/js/quest_spec.js:1022
+#: questions/templates/mobility/js/quest_spec.js:1088
 #: questions/templates/vaaka/js/quest_spec.js:909
 msgid "Ei matkailua"
 msgstr "No tourism"
 
-#: questions/templates/mobility/js/quest_spec.js:1028
+#: questions/templates/mobility/js/quest_spec.js:1094
 #: questions/templates/vaaka/js/quest_spec.js:915
 msgid "Uusi retkeily- tai hiihtoreitti"
 msgstr "New hiking or skiing route"
 
-#: questions/templates/mobility/js/quest_spec.js:1034
+#: questions/templates/mobility/js/quest_spec.js:1100
 #: questions/templates/vaaka/js/quest_spec.js:921
 msgid "Uusi moottorikelkka- tai mönkijäreitti"
 msgstr "New snow mobile or all-terrain vehicle route"
 
-#: questions/templates/mobility/js/quest_spec.js:1040
+#: questions/templates/mobility/js/quest_spec.js:1106
 #: questions/templates/vaaka/js/quest_spec.js:927
 msgid "Uusi matkailurakentaminen"
 msgstr "New tourism infrastructure"
 
-#: questions/templates/mobility/js/quest_spec.js:1046
+#: questions/templates/mobility/js/quest_spec.js:1112
 #: questions/templates/vaaka/js/quest_spec.js:933
 msgid "Ei metsätaloutta"
 msgstr "No forestry"
 
-#: questions/templates/mobility/js/quest_spec.js:1052
+#: questions/templates/mobility/js/quest_spec.js:1118
 #: questions/templates/vaaka/js/quest_spec.js:939
 msgid "Ei suojelua"
 msgstr "No nature protection"
 
-#: questions/templates/mobility/js/quest_spec.js:1058
+#: questions/templates/mobility/js/quest_spec.js:1124
 #: questions/templates/vaaka/js/quest_spec.js:945
 msgid "Uusi suojelualue"
 msgstr "New nature protection area"
@@ -4523,22 +4710,6 @@ msgstr "marking a point on the map"
 msgid "alueen rajaaminen kartalle"
 msgstr "drawing an area on the map"
 
-#: questions/templates/vaaka/html/instructions.html:60
-msgid ""
-"\n"
-"        Siirry seuraavaan kysymykseen\n"
-"        <strong>Seuraava</strong>-painikkeella. Voit siirtyä takaisinpäin\n"
-"        kyselyssä korjaamaan jo antamiasi vastauksia\n"
-"        <strong>Edellinen</strong>-painikkeella tai yläpalkin "
-"navigaatiopalkin kautta.\n"
-"        "
-msgstr ""
-"\n"
-"Proceed to the next question by clicking the <strong>Next</strong>-button. "
-"You can move backwards in a questionnaire to correct you previous answers "
-"with a <strong>Back/strong>-button or by using the navigation bar on the top "
-"of the page. "
-
 #: questions/templates/vaaka/html/instructions.html:83
 msgid ""
 "\n"
@@ -4554,73 +4725,6 @@ msgstr ""
 "describes the object is meant to be located. The button used to mark the "
 "places tells you what kind of items can be marked. For example ski resort "
 "would be marked as a point and routes drawn as lines. "
-
-#: questions/templates/vaaka/html/instructions.html:108
-msgid "Pistemäisen kohteen merkitseminen kartalle"
-msgstr "Marking a point location on the map"
-
-#: questions/templates/vaaka/html/instructions.html:116
-msgid ""
-"Pistemäisiä kohteita ovat esimerkiksi koti, kesämökki ja asiointipaikka."
-msgstr "Examples if point-type items are: home and summer cottage."
-
-#: questions/templates/vaaka/html/instructions.html:119
-msgid "Esimerkki pisteen merkitsemisestä kartalle:"
-msgstr "An example of marking a point location on the map:"
-
-#: questions/templates/vaaka/html/instructions.html:123
-msgid "Etsi aluksi kartalta kohteen sijainti."
-msgstr "First find the location of your place (e.g. home) on the map. "
-
-#: questions/templates/vaaka/html/instructions.html:126
-msgid "Valitse piste-työkalu"
-msgstr "Select the Point -tool by clicking it with the mouse."
-
-#: questions/templates/vaaka/html/instructions.html:130
-msgid "Klikatessasi piste-työkalu aktivoituu ja sen ulkoasu muuttuu:"
-msgstr "Once the Point -tool is activated its appearance will change: "
-
-#: questions/templates/vaaka/html/instructions.html:135
-msgid "Klikkaa karttaa valitsemallasi kohdalla."
-msgstr "Click the location of your place on the map. "
-
-#: questions/templates/vaaka/html/instructions.html:135
-msgid "Piste sijoitetaan osoittamaasi kohtaan."
-msgstr "Your place will be pinpointed to the location you clicked on."
-
-#: questions/templates/vaaka/html/instructions.html:138
-msgid ""
-"\n"
-"                    Näyttöön avautuu kyselyikkuna. Vastaa kyselyyn "
-"valitsemalla yksi vaihtoehto kunkin\n"
-"                    kysymyksen alla esitetyistä vaihtoehdoista. "
-"Kyselyikkunan oikealla laidalla on\n"
-"                    vierityspalkki, jota siirtämällä pääset ikkunassa "
-"alaspäin. Voit kertoa\n"
-"                    lisätietoja kohteesta kirjoittamalla kyselyikkunan "
-"sisällä olevaan ruutuun:\n"
-"                    Kerro lisää tästä paikasta.\n"
-"                "
-msgstr ""
-"\n"
-"Answer the questions in the opening window.  You can move downwards by "
-"moving the scroll bar on the right side of the window. You can tell more "
-"about the place by writing into the box: Tell more about the places."
-
-#: questions/templates/vaaka/html/instructions.html:145
-msgid ""
-"\n"
-"                <strong>Vahvista vastauksesi </strong> klikkaamalla "
-"painiketta\n"
-"                \"tallenna kohde\".\n"
-"                Mikäli piste meni väärään paikkaan, voit poistaa sen "
-"klikkaamalla \"poista kohde\".\n"
-"                "
-msgstr ""
-"\n"
-"<strong>Confirm your answer</strong> in the opening window by clicking on "
-"the button \"Save location\". If your place was marked on a wrong place, you "
-"can delete it by clicking on the \"Delete location\"."
 
 #: questions/templates/vaaka/html/instructions.html:176
 msgid ""
@@ -4972,6 +5076,13 @@ msgid "Asuinrakennus"
 msgstr ""
 
 #~ msgid ""
+#~ "Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaineiden "
+#~ "kesken arvotaan"
+#~ msgstr ""
+#~ "The following prizes will be raffled between all the participants of the "
+#~ "questionnaire."
+
+#~ msgid ""
 #~ "\n"
 #~ "            Kyselyyn vastaaminen vie aikaa noin 20 minuuttia. Toivomme, "
 #~ "että vastaat jokaiseen kysymykseen. \n"
@@ -5280,98 +5391,9 @@ msgstr ""
 #~ msgstr "Answer the questions in the opening window and save the route. "
 
 #~ msgid ""
-#~ "\n"
-#~ "        Tutkimus on osa Urbaani Arki -tutkimushanketta. Aalto-yliopiston "
-#~ "Yhdyskuntasuunnittelun\n"
-#~ "        tutkimus- ja koulutuskeskuksen ja Tampereen teknillisen "
-#~ "yliopiston yhteistyökumppanina tutkimuksessa\n"
-#~ "        on mm. Tampereen kaupunki. Tutkijoina toimivat\n"
-#~ "        <a href=\"mailto:marketta.kytta@aalto.fi\">FT Marketta Kyttä</"
-#~ "a>,\n"
-#~ "        <a href=\"mailto:kaisa.schmidt-thome@aalto.fi\">FL Kaisa Schmidt-"
-#~ "Thomé</a> ja\n"
-#~ "        <a href=\"mailto:hanna.kalenoja@tut.fi\">TkL Hanna Kalenoja</a>.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "The research is part of the Everyday Urbanity research project. It is "
-#~ "being conducted by the Centre for Urban and Regional Studies of Aalto "
-#~ "University and Tampere University of Technology in cooperation with city "
-#~ "of Tampere. The researchers are <a href=\"mailto:marketta.kytta@aalto.fi"
-#~ "\">Ph.D. Marketta Kyttä</a>, <a href=\"mailto:kaisa.schmidt-thome@aalto.fi"
-#~ "\">Ph.L Kaisa Schmidt-Thomé</a> and <a href=\"mailto:hanna.kalenoja@tut.fi"
-#~ "\">Ph.L Hanna Kalenoja</a>."
-
-#~ msgid ""
-#~ "\n"
-#~ "        Urbaani Arki -hankkeessa tutkitaan asukkaiden arkiliikkumista ja "
-#~ "arjen palvelujen käyttöä\n"
-#~ "        paikkalähtöisesti tunnistaen samalla elinympäristön käytön "
-#~ "suhteen erilaisia asukasprofiileja.\n"
-#~ "        Arjen sujumisen kannalta on tärkeää, missä asukkaalle keskeiset "
-#~ "arkiverkon paikat sijaitsevat ja\n"
-#~ "        miten niiden välillä liikutaan.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "The Everyday Urbanity project examines the trips the inhabitants make and "
-#~ "the services they use on a daily basis in the urban area based on "
-#~ "location information. The project aims also to identify different kinds "
-#~ "of inhabitant profiles regarding how they use the living environment. "
-#~ "Where the essential places of the everyday network of inhabitant are "
-#~ "situated and how one move between these locations are important factors "
-#~ "concerning convenient everyday life."
-
-#~ msgid ""
-#~ "\n"
-#~ "        Aalto-yliopiston Yhdyskuntasuunnittelun tutkimus- ja "
-#~ "koulutuskeskuksen ja Tampereen teknillisen yliopiston\n"
-#~ "        tiedonhallinnan ja logistiikan laitoksen yhteishankkeessa "
-#~ "tutkitaan eri asukasryhmiä yhteensä kahdeksan kaupungin\n"
-#~ "        alueella. Hanketta rahoittavat Tekes ja kaupungit, sekä "
-#~ "yrityskumppaneina Ruokakesko, FCG Planeko, Citycon,\n"
-#~ "        Fifth Element ja ESRI Finland. Valtionhallintoa hankkeessa "
-#~ "edustavat Ympäristöministeriö ja Kaupunkipolitiikan\n"
-#~ "        yhteistyöryhmä (Työ- ja elinkeinoministeriö).\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "In this joint venture of Centre for Urban and Regional Studies of Aalto "
-#~ "University and Department of Business Information Management and "
-#~ "Logistics of Tampere University of Technology, different groups of "
-#~ "inhabitants in eight cities are examined. The project is funded by TEKES "
-#~ "and the cities in cooperation with Ruokakesko, FCG Planeko, Citycon, "
-#~ "Fifth Element and ESRI Finland. State Administration is represented by "
-#~ "the Ministry of the Environment and the Urban Policy Committee of the "
-#~ "Ministry of Employment and the Economy.       "
-
-#~ msgid ""
-#~ "Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaneiden kesken "
-#~ "arvotaan"
-#~ msgstr ""
-#~ "The following prizes will be raffled between all the participants of the "
-#~ "questionnaire."
-
-#~ msgid ""
 #~ "kymmenen 40 euron arvoista sarjalippua Kino Myyri –elokuvateatteriin "
 #~ "(Myyrmäessä)."
 #~ msgstr "Ten gift vouchers worth 40 euros to Kino Myyri "
-
-#~ msgid ""
-#~ "\n"
-#~ "        Kuninkaankolmion pehmoGIS-kysely toimii Aalto-Yliopiston "
-#~ "suojatulla palvelimella, ja kyselystä\n"
-#~ "        koostuvaan tietokantaan on pääsy vain\n"
-#~ "        tutkimushankkeessa työskentelevillä henkilöillä. Sovellus ei ole "
-#~ "yhteydessä Tampereen kaupungin\n"
-#~ "        tietojärjestelmiin.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "The softGIS questionnaire of Kuninkaankolmio is situated on a secure "
-#~ "server at Aalto University. The collected database is accessible only to "
-#~ "researchers working for the project. The application is not connected to "
-#~ "the information systems of the city of Tampere. "
 
 #~ msgid ""
 #~ "\n"

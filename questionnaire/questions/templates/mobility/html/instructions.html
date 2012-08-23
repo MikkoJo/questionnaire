@@ -1,4 +1,4 @@
-{% extends 'instructions_base.html' %}
+{% extends 'html/instructions_base.html' %}
 {% load i18n %}
 {% block answering_links %}
 <h3 style="margin-bottom: -20px;">
@@ -38,35 +38,45 @@
 <tr>
     <td>
     <p class="">
+        {% blocktrans %}
         Siirry seuraavaan kysymykseen
-        <strong>Jatka</strong>-painikkeella. Voit siirtyä takaisinpäin
+        <strong>Seuraava</strong>-painikkeella. Voit siirtyä takaisinpäin
         kyselyssä korjaamaan jo antamiasi vastauksia
         <strong>Edellinen</strong>-painikkeella tai yläpalkin navigaatiopalkin kautta.
+        {% endblocktrans %}
     </p>
     <p class="">
+        {% blocktrans %}
         Kun pääset kyselyn loppuun, etkä enää halua muuttaa vastauksiasi, voit poistua kyselystä
         sulkemalla selaimen.
+        {% endblocktrans %}
     </p>
     </td>
     <td>
-    <img src="{{ MEDIA_URL }}img/help/eteneminen.gif" alt="jatka- ja edellinen-painikkeet" width="212" height="80" />
+    <img src="{{ STATIC_URL }}img/help/prev_next.png" alt="jatka- ja edellinen-painikkeet" width="207" height="60" />
     </td>
 </tr>
 {% endblock answering %}
+
+{% block hide_marks %}
+{% endblock hide_marks %}
+
 {% block locating %}
     <tr>
         <td colspan="2">
         <p class="">
+            {% blocktrans %}
             Kyselyssä merkitään kartalle pisteitä tai viivoja (reittejä). Toimintopainikkeen kuvake
             kertoo, minkälainen kohde on tarkoitus paikantaa.
             Esimerkiksi koti merkitään kartalle pisteenä ja kulkureitit piirretään viivoina.
+            {% endblocktrans %}
         </p>
         <p class="observe">
-            <img src="{{ MEDIA_URL }}img/help/koti_tyokalu.png" alt="Koti" width="265" height="53" />
+            <img src="{{ STATIC_URL }}img/help/koti_tyokalu.png" alt="Koti" width="265" height="53" />
             <br />
-            <img src="{{ MEDIA_URL }}img/help/tarkeaReitti_tyokalu.png" alt="Reitti" width="265" height="53" />
+            <img src="{{ STATIC_URL }}img/help/tarkeaReitti_tyokalu.png" alt="Reitti" width="265" height="53" />
             <br />
-            Kuva yllä: Esimerkit piste- ja viivatyökaluista.
+            {% trans 'Kuva yllä: Esimerkit piste- ja viivatyökaluista.' %}
         </p>
         </td>
     </tr>
@@ -75,7 +85,7 @@
 <tr>
     <td>
     <h2>
-    <a name="kotamupime">Kodin tai muun pisteen merkitseminen kartalle</a>
+    <a name="kotamupime">{% trans 'Pistemäisen kohteen merkitseminen kartalle' %}</a>
     </h2>
     </td>
     <td/>
@@ -83,34 +93,40 @@
     <tr>
         <td>
         <p class="">
-            Koti merkitään kartalle pisteenä. Muita pistemäisiä kohteita ovat esimerkiksi työ- tai
-            opiskelupaikka ja asiointipaikka.
+            {% trans 'Pistemäisiä kohteita ovat esimerkiksi koti, kesämökki ja asiointipaikka.' %}
         </p>
         <p class="">
-            <strong>Esimerkki pisteen merkitsemisestä kartalle: Kodin merkitseminen</strong>
+            <strong>{% trans 'Esimerkki pisteen merkitsemisestä kartalle:' %}</strong>
         </p>
         <ol>
             <li>
-                Etsi aluksi kartalta kotisi sijainti.
+                {% trans 'Etsi aluksi kartalta kohteen sijainti.' %}
             </li>
             <li>
-                <strong>Valitse Koti-työkalu</strong> klikkaamalla sitä hiirellä.
+                <strong>{% trans 'Valitse piste-työkalu' %}</strong> {% trans 'klikkaamalla sitä hiirellä.' %}
                 <br />
-                <img src="{{ MEDIA_URL }}img/help/koti_tyokalu.png" alt="Koti" width="265" height="53" />
+                <img src="{{ STATIC_URL }}img/help/koti_tyokalu.png" alt="Koti" width="265" height="53" />
                 <br />
-                Klikatessasi Koti-työkalu aktivoituu ja sen ulkoasu muuttuu:
+                {% trans 'Klikatessasi piste-työkalu aktivoituu ja sen ulkoasu muuttuu:' %}
                 <br />
-                <img src="{{ MEDIA_URL }}img/help/koti_tyokalu_aktivoitu.png" alt="Koti valittuna" width="265" height="53" />
+                <img src="{{ STATIC_URL }}img/help/koti_tyokalu_aktivoitu.png" alt="Koti valittuna" width="265" height="53" />
             </li>
             <li>
-                <strong>Klikkaa karttaa kodin kohdalla.</strong> Koti sijoitetaan osoittamaasi kohtaan.
+                <strong>{% trans 'Klikkaa karttaa valitsemallasi kohdalla.' %}</strong> {% trans 'Piste sijoitetaan osoittamaasi kohtaan.' %}
             </li>
             <li>
-                <strong>Vahvista kodin sijainti</strong> avautuvassa ikkunassa klikkaamalla painiketta
-                "Kyllä, tallenna kohde".
-                Mikäli koti meni väärään paikkaan, voit poistaa sen klikkaamalla "Ei, poista kohde".
-                Voit myös siirtää kotia jälkeenpäin, jos huomaat sen olevan väärässä paikassa (kts.
-                <a href="#kosimutapo">kohteen siirto-ohje</a>).
+                {% blocktrans %}
+                    Näyttöön avautuu kyselyikkuna. Vastaa kyselyyn valitsemalla yksi vaihtoehto kunkin
+                    kysymyksen alla esitetyistä vaihtoehdoista. Kyselyikkunan oikealla laidalla on
+                    vierityspalkki, jota siirtämällä pääset ikkunassa alaspäin. Voit kertoa
+                    lisätietoja kohteesta kirjoittamalla kyselyikkunan sisällä olevaan ruutuun:
+                    Kerro lisää tästä paikasta.
+                {% endblocktrans %}
+                {% blocktrans %}
+                <strong>Vahvista vastauksesi </strong> klikkaamalla painiketta
+                "tallenna kohde".
+                Mikäli piste meni väärään paikkaan, voit poistaa sen klikkaamalla "poista kohde".
+                {% endblocktrans %}
             </li>
         </ol>
         </td>
@@ -124,7 +140,7 @@
 <tr>
     <td>
     <h2>
-    <a name="kytojatu">Kyselyn toteuttaja ja tutkijat</a>
+    <a name="kytojatu">{% trans 'Kyselyn toteuttaja ja tutkijat' %}</a>
     </h2>
     </td>
     <td/>
@@ -132,25 +148,31 @@
 <tr>
     <td>
     <p>
+        {% blocktrans %}
         Tutkimus on osa Urbaani Arki -tutkimushanketta. Aalto-yliopiston Yhdyskuntasuunnittelun
         tutkimus- ja koulutuskeskuksen ja Tampereen teknillisen yliopiston yhteistyökumppanina tutkimuksessa
         on mm. Tampereen kaupunki. Tutkijoina toimivat
-        <a href="mailto:marketta.kytta@aalto.fi">FT Marketta Kyttä</a>, 
+        <a href="mailto:marketta.kytta@aalto.fi">FT Marketta Kyttä</a>,
         <a href="mailto:kaisa.schmidt-thome@aalto.fi">FL Kaisa Schmidt-Thomé</a> ja
         <a href="mailto:hanna.kalenoja@tut.fi">TkL Hanna Kalenoja</a>.
+        {% endblocktrans %}
     </p>
     <p >
+        {% blocktrans %}
         Urbaani Arki -hankkeessa tutkitaan asukkaiden arkiliikkumista ja arjen palvelujen käyttöä
         paikkalähtöisesti tunnistaen samalla elinympäristön käytön suhteen erilaisia asukasprofiileja.
-        Arjen sujumisen kannalta on tärkeää, missä asukkaalle keskeiset arkiverkon paikat sijaitsevat ja 
-        miten niiden välillä liikutaan.  
+        Arjen sujumisen kannalta on tärkeää, missä asukkaalle keskeiset arkiverkon paikat sijaitsevat ja
+        miten niiden välillä liikutaan.
+        {% endblocktrans %}
     </p>
     <p>
+        {% blocktrans %}
         Aalto-yliopiston Yhdyskuntasuunnittelun tutkimus- ja koulutuskeskuksen ja Tampereen teknillisen yliopiston
         tiedonhallinnan ja logistiikan laitoksen yhteishankkeessa tutkitaan eri asukasryhmiä yhteensä kahdeksan kaupungin
         alueella. Hanketta rahoittavat Tekes ja kaupungit, sekä yrityskumppaneina Ruokakesko, FCG Planeko, Citycon,
         Fifth Element ja ESRI Finland. Valtionhallintoa hankkeessa edustavat Ympäristöministeriö ja Kaupunkipolitiikan
         yhteistyöryhmä (Työ- ja elinkeinoministeriö).
+        {% endblocktrans %}
     </p>
     </td>
     <td/>
@@ -161,7 +183,7 @@
 <tr>
     <td>
     <h2>
-    <a name="palkinnot">Arvonnan palkinnot</a>
+    <a name="palkinnot">{% trans 'Arvonnan palkinnot' %}</a>
     </h2>
     </td>
     <td/>
@@ -169,7 +191,7 @@
 <tr>
     <td>
     <p class="">
-        {% trans 'Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaineiden kesken arvotaan' %}:
+        {% trans 'Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaneiden kesken arvotaan' %}:
         <ul>
             <li>
                 {% trans 'viisi 40 euron lahjakorttia Tampereen joukkoliikenteeseen' %}
@@ -188,7 +210,7 @@
 <tr>
     <td>
     <h2>
-    <a name="ti">Tietosuoja</a>
+    <a name="ti">{% trans 'Tietosuoja' %}</a>
     </h2>
     </td>
     <td/>
@@ -196,23 +218,29 @@
 <tr>
     <td>
     <p class="">
+        {% blocktrans %}
         Tampereen pehmoGIS-kysely toimii Aalto-Yliopiston suojatulla palvelimella, ja kyselystä
         koostuvaan tietokantaan on pääsy vain
         tutkimushankkeessa työskentelevillä henkilöillä. Sovellus ei ole yhteydessä Tampereen kaupungin
         tietojärjestelmiin.
+        {% endblocktrans %}
     </p>
     <p class="">
+        {% blocktrans %}
         Tutkimuksessa ei käsitellä henkilötietolain piiriin kuuluvia tietoja (kuten osoitteita, nimiä
         tai henkilötunnuksia). Tutkimuksesta on kuitenkin laadittu
         Tietosuojavaltuutetun ohjeiden mukainen tieteellisen tutkimuksen rekisteriseloste.
+        {% endblocktrans %}
     </p>
     <p class="">
+        {% blocktrans %}
         Tutkimusaineiston tietoja käsitellään ryhmittäin, ei yksilötasolla. Tuloksia ryhmitellään esim.
         sukupuolen, ikäryhmän ja asuinpaikan perustella ja niissä
         käsitellään ryhmien antamia keskimääräisiä vastauksia, kuten keskimääräistä matkaa tärkeisiin
         paikkoihin tai kulkutapoja töihin.
         Julkaistavista tuloksista on mahdotonta jäljittää yksittäisten ihmisten tai yksittäisessä
         rakennuksessa asuvien ihmisten vastauksia.
+        {% endblocktrans %}
     </p>
     </td>
     <td/>
@@ -233,7 +261,7 @@
     <td>
     <p class="">
         {% trans 'Tutkimuksen rekisteriseloste' %}
-        <a href="{{ MEDIA_URL }}Rekisteriseloste_UrbaaniArki_Tre.pdf">({% trans 'pdf-tiedosto' %}).</a>
+        <a href="{{ STATIC_URL }}Rekisteriseloste_UrbaaniArki_Tre.pdf">({% trans 'pdf-tiedosto' %}).</a>
     </p>
     </td>
 </tr>
