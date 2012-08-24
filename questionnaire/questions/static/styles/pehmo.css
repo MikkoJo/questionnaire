@@ -2768,6 +2768,10 @@ background: transparent url("../img/progressbar/naviBgUndone50.gif") repeat-x sc
 td.barRight{
 background: transparent url("../img/progressbar/naviBgUndoneRight50.gif") no-repeat scroll top right;
 }
+
+.mobility .progressBar {
+    width: 650px;
+}
 /*
 div.firstpagepic {
 background-image: url("../img/kirkkojarvi_etusivu_med.jpg");
