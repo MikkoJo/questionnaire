@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Kuninkaankolmio/Tampere\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-23 14:00+0300\n"
-"PO-Revision-Date: 2012-08-23 14:06+0300\n"
+"PO-Revision-Date: 2012-08-24 10:09+0300\n"
 "Last-Translator: Mikko Johansson <mikko.johansson@aalto.fi>\n"
 "Language-Team: SoftGIS team\n"
 "Language: en\n"
@@ -4252,22 +4252,24 @@ msgstr ""
 #: questions/templates/mobility/js/quest_spec.js:912
 #: questions/templates/mobility/js/quest_spec.js:917
 msgid "Kerro paikan ulkoisesta ilmeestä tarkemmin! Tässä paikassa..."
-msgstr ""
+msgstr "Tell more about the appearance of this location! In this location..."
 
 #: questions/templates/mobility/js/quest_spec.js:922
 #: questions/templates/mobility/js/quest_spec.js:927
 msgid "Kerro sosiaalisesta ilmapiiristä tarkemmin! Tässä paikassa..."
-msgstr ""
+msgstr "Tell more about the social life in this location! In this location..."
 
 #: questions/templates/mobility/js/quest_spec.js:932
 #: questions/templates/mobility/js/quest_spec.js:937
 msgid "Kerro paikan tunnelmasta tarkemmin! Tämä paikka on..."
-msgstr ""
+msgstr "Tell more about the ambience of this location! This location is..."
 
 #: questions/templates/mobility/js/quest_spec.js:942
 #: questions/templates/mobility/js/quest_spec.js:947
 msgid "Kerro paikan toimintamahdollisuuksista tarkemmin! Tässä paikassa..."
 msgstr ""
+"Tell more about the functional possibilities of this location! In this "
+"location..."
 
 #: questions/templates/mobility/js/quest_spec.js:998
 msgid "Tärkeä kävely- tai pyöräreitti"
