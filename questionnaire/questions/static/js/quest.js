@@ -102,7 +102,10 @@ function clone(obj){
 
 //Helper function to simulate onchange on input elements
 function fireonchange(element) {
+// JQuerified
+    $(element).trigger('change');
 
+/*
     if (document.createEvent) { // Firefox etc.
         var evt = document.createEvent("HTMLEvents");
         evt.initEvent("change", true, true);
@@ -111,7 +114,7 @@ function fireonchange(element) {
     else {// IE
         element.fireEvent("onchange");
     }
-
+*/
 }
 
 /* Overview map container functionality */
