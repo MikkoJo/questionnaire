@@ -3765,7 +3765,7 @@ function submitFeedback(formid, callback_function) {
 
     contactForm.destroyRecursive(true);
 
-    if(!questionnaire.values.testUser) {
+//    if(!questionnaire.values.testUser) {
     dojo.xhrPost({
             // The following URL must match that used to submit values.
         "url": questionnaire.feedback_url,
@@ -3792,7 +3792,7 @@ function submitFeedback(formid, callback_function) {
             return response;
         }
     });
-    }
+//    }
 
 }
 

@@ -41,7 +41,7 @@ class Feedback(models.Model):
         app_name= Site.objects.get(id=settings.SITE_ID).name
         send_mail('Feedback for the softGIS application (' + app_name + ')',
                 self.content,
-                'do_not_reply@mapita.fi',
+                settings.EMAIL_FROM,
                 [admin[1] for admin in settings.ADMINS],
                 fail_silently=True)
             
