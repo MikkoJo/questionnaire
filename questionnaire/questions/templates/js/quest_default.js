@@ -30,7 +30,7 @@ var questionnaire = {
 "contactForm_url": "{% url contact %}", // Url to submit the contact form
 "feedback_url": "{% url feedback %}", // Url to submit general feedback
 "initial_wms_layers": "", // Initial layers shown in wms
-"minMarkZoomLevel": 0, // minimum zoom level to allow marking places
+"minMarkZoomLevel": "", // minimum zoom level to allow marking places
 "config": {"useGMap": false, "newNavigation": false}, // Configurable options
 "feature_defaults": {} // Default attributes for all features
 };

@@ -136,6 +136,11 @@ function overviewMapHide(){
 
 //This function disables drawing if zoom level is too low
 function checkZoom(zoomLevel) {
+    // Quick FIX: This feature is propably only used in Vaaka questionnaire, so this works for now
+    if(zoomLevel === "") {
+        return;
+    }
+    
     if (map.zoom < zoomLevel) {
         $("#smallContent").find("button[type='button'].drawbutton").each(function() {
             $(this).drawButton("disable");
