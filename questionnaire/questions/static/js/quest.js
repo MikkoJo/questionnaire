@@ -163,6 +163,7 @@ function loadTemplates(fileName) {
         fileName = questionnaire.infotemplates_url;
     }
     if(fileName === "") {
+        gnt.opensocial_people.get_person("@me", get_person_callback);
         return;
     }
 
@@ -180,6 +181,8 @@ function loadTemplates(fileName) {
                     $(response).each(function() {
                         popup_contents[this.id] = $(this).html();
                     });
+                    gnt.opensocial_people.get_person("@me", get_person_callback);
+
 //                    $('body').append(response);
 //                    var tName;
 //                    for (tName in testi) {
@@ -327,9 +330,10 @@ function create_session_callback(response) {
     //get_profiles("?latest=true", get_profiles_callback);
     //get_profiles("?time__now=true", get_profiles_callback);
     //
-    gnt.opensocial_people.get_person("@me", get_person_callback);
-    // Session is created so we can load rest of the infotemplates
     loadTemplates();
+//    gnt.opensocial_people.get_person("@me", get_person_callback);
+    // Session is created so we can load rest of the infotemplates
+    //loadTemplates();
 
 }
 function save_graphic_callback(response_data) {
