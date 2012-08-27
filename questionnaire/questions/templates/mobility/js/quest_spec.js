@@ -664,6 +664,15 @@ questionnaire.extra_input_connect = [
         }
 
     },
+    {   "id":"me_other",
+        "event": "onclick",
+        "func": function(evt) {
+            if (jQuery.browser.msie) {
+                $("#me_other").click(function(){$(this).blur().focus();});
+            }
+        }
+
+    },
     {   "id":"me3_5",
         "event": "onchange",
         "func": function(evt) {
@@ -674,6 +683,15 @@ questionnaire.extra_input_connect = [
             else {
                 dojo.addClass('otherHowSpan', 'tyhja');
                 dojo.byId('visitOther').disabled = true;
+            }
+        }
+
+    },
+    {   "id":"me3_5",
+        "event": "onclick",
+        "func": function(evt) {
+            if (jQuery.browser.msie) {
+                $("#me3_5").click(function(){$(this).blur().focus();});
             }
         }
 
