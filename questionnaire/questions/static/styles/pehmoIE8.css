@@ -3,3 +3,7 @@ padding-bottom: 0px;
 position: relative;
 top: -5px;
 }
+
+.olFramedCloudPopupContent {
+    background-color: #FFFFFF;
+}
