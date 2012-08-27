@@ -530,7 +530,7 @@ questionnaire.pages =
 "name": "environmentSummary",
 "section": "envevaluation",
 "type": "big",
-"content": "{% url random_cont file_name='environmentsummary' file_type='html' %}",
+"content": "{% url random_cont file_name='environmentsummary' file_type='html' %}"
 },
 {
 "name":  "improvements",
