@@ -1705,9 +1705,16 @@ function create_widgets(node_id) {
                     
                 }
                 else {
-                    dojo.connect(elem,
-                        questionnaire.extra_input_connect[k].event,
-                        questionnaire.extra_input_connect[k].func);
+                    if(questionnaire.extra_input_connect[k].event === 'onchange') {
+                        var evt = 'change';
+                    }
+                    else {
+                        var evt = questionnaire.extra_input_connect[k].event;
+                    }
+                    $(elem).bind(evt, questionnaire.extra_input_connect[k].func);
+//                    dojo.connect(elem,
+//                        questionnaire.extra_input_connect[k].event,
+//                        questionnaire.extra_input_connect[k].func);
                 }
             }
         }

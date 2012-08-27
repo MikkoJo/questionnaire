@@ -18,3 +18,7 @@ top: -3px;
 html {
     overflow: hidden;
 }
+
+button.two-line.drawbutton .ui-button-text {
+    height: 70%;
+}
