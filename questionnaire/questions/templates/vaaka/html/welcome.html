@@ -6,6 +6,9 @@
     </div>
     <h2 class="firstpagecontent">{% trans 'Vaara-Kainuun matkailualueiden kehittäminen' %}</h2>
     <p class="firstpagecontent">
+      <span style='color: red;'>Kysely on päättynyt 31.3.2013<br />
+                                Questionnaire has ended on 31st March 2013.<br />
+      </span>
         {% blocktrans %}
             Kyselyn tarkoituksena on selvittää paikallisten ihmisten ja matkailijoiden mielipiteitä
             Vaara-Kainuun matkailualueiden kehittämisestä. Euroopan aluekehitysrahaston rahoittamassa
@@ -35,11 +38,13 @@
         Osallistu kyselyyn:
     </p>
 -->
+{% comment %}
     <div class="next buttonstart firstpagecontent">
         <p class="buttontext firstpagecontent">
             {% trans 'Aloita' %}
         </p>
     </div>
+{% endcomment %}
     <p class="centeredtext firstpagecontent firstpagebutton">
         {% trans 'Jos haluat tutustua kyselyyn osallistumatta tutkimukseen' %},<br />
         <a class="testUserLink firstpagebutton" onclick="startAsTestUser();">{% trans 'paina tästä' %}</a>
