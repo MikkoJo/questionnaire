@@ -1,0 +1,51 @@
+{% extends 'sandiego/html/move_env_info.html' %}
+{% load i18n %}
+{% block what_kind_place %}
+{% spaceless %}
+    <tr>
+        <td>
+            <b>{% trans 'Mikä paikka on kyseessä' %}?</b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_1' value='workplace' />
+            <label for='me1_1'>{% trans 'oma työpaikka' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_2' value='daycare' />
+            <label for='me1_2'>{% trans 'perheenjäsenen työpaikka' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_3' value='school' />
+            <label for='me1_3'>{% trans 'lapsen päivähoitopaikka tai koulu' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_4' value='studyplace' />
+            <label for='me1_4'>{% trans 'koulu tai opiskelupaikka' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_5' value='businessplace' />
+            <label for='me1_5'>{% trans 'työhön liittyvä asiointipaikka' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me_other' value='other' />
+            <label for='me_other'>{% trans 'muu' %}</label>
+            <span id='otherSpan' class='tyhja'>
+                <label for='other_text'>, {% trans 'mikä' %}?</label>
+                <input type='text' name='otherwork' id='other_text' disabled='disabled' />
+            </span>
+        </td>
+    </tr>
+{% endspaceless %}
+{% endblock what_kind_place %}

@@ -1,0 +1,62 @@
+{% extends 'sandiego/html/move_env_info.html' %}
+{% load i18n %}
+{% block what_kind_place %}
+{% spaceless %}
+    <tr>
+        <td>
+            <b>{% trans 'Mikä paikka on kyseessä' %}?</b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_1' value='visit' />
+            <label for='me1_1'>{% trans 'vierailupaikka' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_2' value='restaurant' />
+            <label for='me1_2'>{% trans 'ravintola, kahvila' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_3' value='library' />
+            <label for='me1_3'>{% trans 'kirjasto' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_4' value='church' />
+            <label for='me1_4'>{% trans 'kirkko, seurakuntatoiminta' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_5' value='cottage' />
+            <label for='me1_5'>{% trans 'kesämökki, vapaa-ajan asunto' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_6' value='study' />
+            <label for='me1_6'>{% trans 'työväenopisto tms.' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me_other' value='other' />
+            <label for='me_other'>{% trans 'muu' %}</label>
+            <span id='otherSpan' class='tyhja'>
+                <label for='other_text'>, {% trans 'mikä' %}?</label>
+                <input type='text' name='otherfree' id='other_text' disabled='disabled' />
+            </span>
+        </td>
+    </tr>
+{% endspaceless %}
+{% endblock what_kind_place %}
+{% block free_text %}
+{% spaceless %}
+    <td><b>{% trans 'Miksi vietät vapaa-aikaa juuri täällä?' %}</b></td>
+{% endspaceless %}
+{% endblock free_text %}

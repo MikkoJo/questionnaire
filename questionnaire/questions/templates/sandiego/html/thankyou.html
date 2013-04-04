@@ -1,0 +1,23 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <h2>
+       {% trans 'Suuret kiitokset vaivannäöstäsi' %}!
+    </h2>
+    <p>
+       {% trans 'Kaikki vastauksesi on tallennettu' %}. 
+       {% trans 'Voit halutessasi palata katsomaan tai muokkaamaan vastauksiasi yläpalkin tai edellinen -painikkeen kautta' %}.
+    </p>
+    <p>
+        {% trans 'Voit poistua kyselystä painamalla "Poistu kyselystä" -nappia.' %}
+        {% trans 'Tämän jälkeen et voi enää enää palata muuttamaan tai katsomaan vastauksiasi' %} 
+    </p>
+{% endblock formarea %}  
+{% block buttonarea %}
+    <div class="previous">
+        <span class="buttontext">{% trans 'Edellinen' %}</span>
+    </div>
+    <div class="extrabutton close">
+        <span class="buttontext">{% trans 'Poistu kyselystä' %}</span>
+    </div>
+{% endblock buttonarea %}

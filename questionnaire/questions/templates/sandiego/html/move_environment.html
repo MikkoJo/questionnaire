@@ -1,0 +1,100 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <h1>{% trans 'Liikkuminen elinympäristössä' %}</h1>
+    <p>
+        <b>
+            {% trans 'Merkitse kartalle sellaiset paikat, joissa käyt usein' %}
+        </b>
+    </p>
+    <p>{% trans 'Käytä karttaa samaan tapaan kuin aikaisemmin.' %}</p>
+    <table>
+        <tr id="miniHelp" onclick="toggleHelp();">
+            <td id="expandButton" class="closedhelp"/>
+            <td>{% trans 'Etsitkö ohjetta...' %}</td>
+        </tr>
+    </table>
+    <ul class="instructionlinks" style="display: none;">
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kali" onclick="window.open('{% url main_html file_name='instructions' %}#kali'); return false;">{% trans 'miten kartalla liikutaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'kuinka merkitä kohde kartalle' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'miten korjataan kohde, joka meni väärään paikkaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}" onclick="window.open('instructions.html'); return false;">{% trans 'Näytä kaikki ohjeet' %}</a>
+        </li>
+    </ul>
+    <hr />
+    <form id="moveEnvForm" name="moveEnvForm">
+        <table class="buttons">
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="work" name="work">{% trans 'Työ, opiskelu, päivähoito' %}</button>
+                    <ul>
+                        <li>{% trans 'Työpaikka' %}</li>
+                        <li>{% trans 'Lapsen päivähoitopaikka' %}</li>
+                        <li>{% trans 'Koulu' %}</li>
+                        <li>{% trans 'Opiskelupaikka' %}</li>
+                        <li>{% trans 'Työhön liittyvä asiointipaikka' %}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="shop" name="shop">{% trans 'Ostospaikka' %}</button>
+                    <ul>
+                        <li>{% trans 'Lähikauppa' %}</li>
+                        <li>{% trans 'Super- tai hypermarket' %}</li>
+                        <li>{% trans 'Kauppakeskus tai tavaratalo' %}</li>
+                        <li>{% trans 'Erikoiskauppa' %}</li>
+                        <li>{% trans 'Tori' %}</li>
+                        <li>{% trans 'kirpputori/market' %}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="business" name="business">{% trans 'Asiointi' %}</button>
+                    <ul>
+                        <li>{% trans 'Pankki, posti tai virasto' %}</li>
+                        <li>{% trans 'Terveyspalvelut' %}</li>
+                        <li>{% trans 'Muu palvelu, esim. kampaaja tai parturi' %}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="exercise" name="exercise">{% trans 'Liikunta ja ulkoilu' %}</button>
+                    <ul>
+                        <li>{% trans 'Ulkoilupaikka' %}</li>
+                        <li>{% trans 'Liikuntapaikka' %}</li>
+                        <li>{% trans 'Leikkipuisto' %}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="freetime" name="freetime">{% trans 'Vapaa-aika' %}</button>
+                    <ul>
+                        <li>{% trans 'Vierailupaikka (ystävät, sukulaiset)' %}</li>
+                        <li>{% trans 'Ravintola, kahvila' %}</li>
+                        <li>{% trans 'Kirjasto' %}</li>
+                        <li>{% trans 'Kirkko, seurakuntatoiminta' %}</li>
+                        <li>{% trans 'Kesämökki, vapaa-ajan asunto' %}</li>
+                        <li>{% trans 'Työväenopisto tms.' %}</li>
+                        <li>{% trans 'Muu vapaa-ajan paikka' %}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="moveEnvTd" colspan="2">
+                    <button type="button" class="drawbutton point" id="otherplace" name="otherplace">{% trans 'Muu paikka' %}</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock formarea %}

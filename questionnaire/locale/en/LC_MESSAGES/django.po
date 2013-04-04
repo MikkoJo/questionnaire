@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Mikko Johansson <mikko.johansson@aalto.fi>, 2011, 2012.
+# Mikko Johansson <mikko.johansson@aalto.fi>, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: Kuninkaankolmio/Tampere\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-23 14:00+0300\n"
-"PO-Revision-Date: 2012-08-24 10:09+0300\n"
+"POT-Creation-Date: 2013-04-04 14:07+0300\n"
+"PO-Revision-Date: 2013-04-04 15:37+0300\n"
 "Last-Translator: Mikko Johansson <mikko.johansson@aalto.fi>\n"
 "Language-Team: SoftGIS team\n"
 "Language: en\n"
@@ -16,7 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.7.0\n"
-"X-Poedit-Language: English\n"
 
 #: questions/values.py:9 questions/values.py:31
 msgid "Arvostan asuinalueen rauhallisuutta."
@@ -36,7 +35,7 @@ msgstr "I appreciate and favour the services of my residential area."
 
 #: questions/values.py:13 questions/values.py:35
 msgid "Arvostan sujuvia yhteyksiä autolla."
-msgstr "I appreciate good travel connections by car."
+msgstr "I appreciate good connections by car."
 
 #: questions/values.py:14 questions/values.py:36
 msgid "Arvostan liikkumista julkisilla, kävellen tai pyörällä."
@@ -60,11 +59,11 @@ msgstr "I appreciate spending my free time away from home."
 
 #: questions/values.py:19 questions/values.py:41
 msgid "Arkinen apu ja seurustelu naapureiden kanssa ovat minulle tärkeitä."
-msgstr "The everyday help and socializing with neighbours are important to me."
+msgstr "The everyday help and socializing with neighbors are important to me."
 
 #: questions/values.py:20 questions/values.py:42
 msgid "Hyvän päivän tuttuus naapureiden kanssa riittää minulle."
-msgstr "It’s enough for me to only greet the neighbours when passing by."
+msgstr "It’s enough for me to only greet the neighbors when passing by."
 
 #: questions/values.py:21
 msgid "Haluan hyvät yhteydet laajoille luonto- ja virkistysalueille."
@@ -72,7 +71,7 @@ msgstr "I want to have good connections to vast nature and recreational areas."
 
 #: questions/values.py:22
 msgid "Lähipuisto riittää luonnoksi minulle."
-msgstr "The neighbourhood park is enough nature for me."
+msgstr "The neighborhood park is enough nature for me."
 
 #: questions/values.py:23
 msgid "Haluan asua ja elää mahdollisimman ekologisesti."
@@ -270,7 +269,7 @@ msgstr "Spoiled environment, how?"
 
 #: questions/values.py:121
 msgid "rakentamisen väljyys on sopiva"
-msgstr "the spaciousness between buildings is appropriate"
+msgstr "the spacing between buildings is appropriate"
 
 #: questions/values.py:122
 msgid "ympäristö on kaunis"
@@ -302,7 +301,7 @@ msgstr "one can feel the history"
 
 #: questions/values.py:131
 msgid "rakentaminen on liian väljää"
-msgstr "the buildings are situated too loosely"
+msgstr "the buildings are too far apart"
 
 #: questions/values.py:132
 msgid "ympäristö on ruma"
@@ -318,7 +317,7 @@ msgstr "the environment is untidy"
 
 #: questions/values.py:135
 msgid "paikan ilmeeseen vaikuttaminen on mahdotonta"
-msgstr "it is impossible to have an influence on how the place looks"
+msgstr "it is not possible to influence how the place looks like"
 
 #: questions/values.py:136
 msgid "asumisen hinta-laatusuhde on huono"
@@ -342,7 +341,7 @@ msgstr "the people important to me are close"
 
 #: questions/values.py:143
 msgid "naapurit elävät yhdessä sopuisasti"
-msgstr "neighbours live harmoniously together"
+msgstr "neighbors live harmoniously together"
 
 #: questions/values.py:144
 msgid "sosiaalinen elämä on vilkasta"
@@ -350,7 +349,7 @@ msgstr "the social life is rich"
 
 #: questions/values.py:145
 msgid "asukkaiden kirjo on sopiva"
-msgstr "the diversity of inhabitants is good"
+msgstr "the mix of inhabitants is good"
 
 #: questions/values.py:146
 msgid "alueen maine on hyvä"
@@ -374,7 +373,7 @@ msgstr "the people important to me are far"
 
 #: questions/values.py:153
 msgid "naapurit riitelevät keskenään"
-msgstr "neighbours argue with each other"
+msgstr "neighbors argue with each other"
 
 #: questions/values.py:154
 msgid "sosiaalinen elämä on liian hiljaista"
@@ -402,7 +401,7 @@ msgstr "welcoming"
 
 #: questions/values.py:162
 msgid "tunnelmaltaan elävä"
-msgstr "vivid"
+msgstr "vivid / active"
 
 #: questions/values.py:163
 msgid "rentouttava"
@@ -462,11 +461,11 @@ msgstr "child-unfriendly"
 
 #: questions/values.py:181
 msgid "harrastus- ja tekemismahdollisuudet ovat hyvät"
-msgstr "there are many possibilities for hobbies and activities"
+msgstr "there are many opportunities for hobbies and activities"
 
 #: questions/values.py:182
 msgid "kävellen tai pyöräillen liikkuminen on sujuvaa"
-msgstr "it is easy to travel on foot or by bike"
+msgstr "it is easy to move around on foot or by bike"
 
 #: questions/values.py:183
 msgid "joukkoliikenne palvelee hyvin"
@@ -545,8 +544,10 @@ msgstr "Mining industry"
 #: questions/templates/example/html/bigContent.html:9
 #: questions/templates/example/html/thankyou.html:27
 #: questions/templates/html/bigContent.html:9
-#: questions/templates/mobility/html/bigContent.html:9
-#: questions/templates/mobility/html/thankyou.html:27
+#: questions/templates/mobility_/html/bigContent.html:9
+#: questions/templates/mobility_/html/thankyou.html:18
+#: questions/templates/sandiego/html/bigContent.html:9
+#: questions/templates/sandiego/html/thankyou.html:18
 #: questions/templates/vaaka/html/thankyou.html:65
 msgid "Edellinen"
 msgstr "Back"
@@ -555,65 +556,76 @@ msgstr "Back"
 #: questions/templates/example/bigContent.html:12
 #: questions/templates/example/html/bigContent.html:12
 #: questions/templates/html/bigContent.html:12
-#: questions/templates/mobility/html/bigContent.html:12
+#: questions/templates/mobility_/html/bigContent.html:12
+#: questions/templates/sandiego/html/bigContent.html:12
 msgid "Seuraava"
 msgstr "Next"
 
 #: questions/templates/example/html/background.html:5
 #: questions/templates/html/progressbar.html:7
-#: questions/templates/mobility/html/background.html:5
-#: questions/templates/mobility/html/index.html:77
+#: questions/templates/mobility_/html/background.html:5
+#: questions/templates/mobility_/html/index.html:77
+#: questions/templates/sandiego/html/background.html:5
 #: questions/templates/vaaka/html/background.html:5
 #: questions/templates/vaaka/html/index.html:77
 msgid "Taustatiedot"
 msgstr "Background information"
 
 #: questions/templates/example/html/background.html:9
-#: questions/templates/mobility/html/background.html:9
+#: questions/templates/mobility_/html/background.html:9
+#: questions/templates/sandiego/html/background.html:9
 #: questions/templates/vaaka/html/background.html:15
 msgid "Ikä:"
 msgstr "Age:"
 
 #: questions/templates/example/html/background.html:16
-#: questions/templates/mobility/html/background.html:16
+#: questions/templates/mobility_/html/background.html:16
+#: questions/templates/sandiego/html/background.html:16
 #: questions/templates/vaaka/html/background.html:22
 msgid "Sukupuoli:"
 msgstr "Gender:"
 
 #: questions/templates/example/html/background.html:19
-#: questions/templates/mobility/html/background.html:19
+#: questions/templates/mobility_/html/background.html:19
+#: questions/templates/sandiego/html/background.html:19
 #: questions/templates/vaaka/html/background.html:25
 msgid "Mies"
 msgstr "Male"
 
 #: questions/templates/example/html/background.html:21
-#: questions/templates/mobility/html/background.html:21
+#: questions/templates/mobility_/html/background.html:21
+#: questions/templates/sandiego/html/background.html:21
 #: questions/templates/vaaka/html/background.html:27
 msgid "Nainen"
 msgstr "Female"
 
 #: questions/templates/example/html/background.html:25
-#: questions/templates/mobility/html/background.html:25
+#: questions/templates/mobility_/html/background.html:25
+#: questions/templates/sandiego/html/background.html:25
 msgid "Kotitaloustyyppi:"
 msgstr "Type of household:"
 
 #: questions/templates/example/html/background.html:29
-#: questions/templates/mobility/html/background.html:29
+#: questions/templates/mobility_/html/background.html:29
+#: questions/templates/sandiego/html/background.html:29
 msgid "yksin asuva"
 msgstr "Single person"
 
 #: questions/templates/example/html/background.html:30
-#: questions/templates/mobility/html/background.html:30
+#: questions/templates/mobility_/html/background.html:30
+#: questions/templates/sandiego/html/background.html:30
 msgid "pariskunta"
 msgstr "Couple"
 
 #: questions/templates/example/html/background.html:31
-#: questions/templates/mobility/html/background.html:31
+#: questions/templates/mobility_/html/background.html:31
+#: questions/templates/sandiego/html/background.html:31
 msgid "yhden vanhemman lapsiperhe"
 msgstr "Single parent with child/children"
 
 #: questions/templates/example/html/background.html:32
-#: questions/templates/mobility/html/background.html:32
+#: questions/templates/mobility_/html/background.html:32
+#: questions/templates/sandiego/html/background.html:32
 msgid "kahden vanhemman lapsiperhe"
 msgstr "Couple with child/children"
 
@@ -629,17 +641,28 @@ msgstr "Couple with child/children"
 #: questions/templates/example/js/quest_spec_old.js:2248
 #: questions/templates/example/js/quest_spec_old.js:2267
 #: questions/templates/example/js/quest_spec_old.js:2289
-#: questions/templates/mobility/html/background.html:33
-#: questions/templates/mobility/html/move_env_info_business.html:31
-#: questions/templates/mobility/html/move_env_info_exercise.html:31
-#: questions/templates/mobility/html/move_env_info_freetime.html:49
-#: questions/templates/mobility/html/move_env_info_shop.html:35
-#: questions/templates/mobility/html/move_env_info_work.html:43
-#: questions/templates/mobility/js/quest_spec.js:328
-#: questions/templates/mobility/js/quest_spec.js:347
-#: questions/templates/mobility/js/quest_spec.js:366
-#: questions/templates/mobility/js/quest_spec.js:385
-#: questions/templates/mobility/js/quest_spec.js:407
+#: questions/templates/mobility_/html/background.html:33
+#: questions/templates/mobility_/html/move_env_info_business.html:31
+#: questions/templates/mobility_/html/move_env_info_exercise.html:31
+#: questions/templates/mobility_/html/move_env_info_freetime.html:49
+#: questions/templates/mobility_/html/move_env_info_shop.html:35
+#: questions/templates/mobility_/html/move_env_info_work.html:43
+#: questions/templates/mobility_/js/quest_spec.js:328
+#: questions/templates/mobility_/js/quest_spec.js:347
+#: questions/templates/mobility_/js/quest_spec.js:366
+#: questions/templates/mobility_/js/quest_spec.js:385
+#: questions/templates/mobility_/js/quest_spec.js:407
+#: questions/templates/sandiego/html/background.html:33
+#: questions/templates/sandiego/html/move_env_info_business.html:31
+#: questions/templates/sandiego/html/move_env_info_exercise.html:31
+#: questions/templates/sandiego/html/move_env_info_freetime.html:49
+#: questions/templates/sandiego/html/move_env_info_shop.html:47
+#: questions/templates/sandiego/html/move_env_info_work.html:43
+#: questions/templates/sandiego/js/quest_spec.js:328
+#: questions/templates/sandiego/js/quest_spec.js:347
+#: questions/templates/sandiego/js/quest_spec.js:366
+#: questions/templates/sandiego/js/quest_spec.js:385
+#: questions/templates/sandiego/js/quest_spec.js:407
 #: questions/templates/vaaka/html/background.html:63
 #: questions/templates/vaaka/html/background.html:85
 #: questions/templates/vaaka/js/quest_spec.js:325
@@ -653,8 +676,10 @@ msgstr "Other"
 #: questions/templates/example/html/background.html:40
 #: questions/templates/example/html/background.html:69
 #: questions/templates/example/html/kkolmio_info.html:82
-#: questions/templates/mobility/html/background.html:40
-#: questions/templates/mobility/html/background.html:69
+#: questions/templates/mobility_/html/background.html:40
+#: questions/templates/mobility_/html/background.html:69
+#: questions/templates/sandiego/html/background.html:40
+#: questions/templates/sandiego/html/background.html:69
 #: questions/templates/vaaka/html/background.html:70
 #: questions/templates/vaaka/html/background.html:92
 #: questions/templates/vaaka/html/index.html:289
@@ -665,153 +690,164 @@ msgid "mikä?"
 msgstr "what?"
 
 #: questions/templates/example/html/background.html:46
-#: questions/templates/mobility/html/background.html:46
+#: questions/templates/mobility_/html/background.html:46
+#: questions/templates/sandiego/html/background.html:46
 msgid "Mitkä ovat taloudessanne asuvien lasten syntymävuodet?"
 msgstr ""
 "Of the children living in your household: Which are their years of birth?"
 
 #: questions/templates/example/html/background.html:53
-#: questions/templates/mobility/html/background.html:53
+#: questions/templates/mobility_/html/background.html:53
+#: questions/templates/sandiego/html/background.html:53
 #: questions/templates/vaaka/html/background.html:75
 msgid "Oletko tällä hetkellä päätoimisesti"
 msgstr "Main occupation at the moment "
 
 #: questions/templates/example/html/background.html:57
-#: questions/templates/mobility/html/background.html:57
+#: questions/templates/mobility_/html/background.html:57
+#: questions/templates/sandiego/html/background.html:57
 #: questions/templates/vaaka/html/background.html:79
 msgid "ansiotyössä"
 msgstr "Employed"
 
 #: questions/templates/example/html/background.html:58
-#: questions/templates/mobility/html/background.html:58
+#: questions/templates/mobility_/html/background.html:58
+#: questions/templates/sandiego/html/background.html:58
 #: questions/templates/vaaka/html/background.html:80
 msgid "työtön"
 msgstr "Unemployed"
 
 #: questions/templates/example/html/background.html:59
-#: questions/templates/mobility/html/background.html:59
+#: questions/templates/mobility_/html/background.html:59
+#: questions/templates/sandiego/html/background.html:59
 #: questions/templates/vaaka/html/background.html:81
 msgid "opiskelija tai koululainen"
 msgstr "Student/Pupil"
 
 #: questions/templates/example/html/background.html:60
-#: questions/templates/mobility/html/background.html:60
+#: questions/templates/mobility_/html/background.html:60
+#: questions/templates/sandiego/html/background.html:60
 #: questions/templates/vaaka/html/background.html:83
 msgid "eläkkeellä"
 msgstr "Retired"
 
 #: questions/templates/example/html/background.html:61
-#: questions/templates/mobility/html/background.html:61
+#: questions/templates/mobility_/html/background.html:61
+#: questions/templates/sandiego/html/background.html:61
 msgid "kotiäiti tai -isä tai vanhempainvapaalla"
 msgstr "Stay-at-home parent/Maternity or paternity leave"
 
 #: questions/templates/example/html/background.html:62
-#: questions/templates/mobility/html/background.html:62
+#: questions/templates/mobility_/html/background.html:62
+#: questions/templates/sandiego/html/background.html:62
 msgid "muu tilanne"
 msgstr "Other"
 
 #: questions/templates/example/html/background.html:75
-#: questions/templates/mobility/html/background.html:75
+#: questions/templates/mobility_/html/background.html:75
 msgid "Montako autoa kotitaloudessasi on?"
 msgstr "How many cars are in use of your household?"
 
 #: questions/templates/example/html/background.html:82
-#: questions/templates/mobility/html/background.html:82
+#: questions/templates/mobility_/html/background.html:82
+#: questions/templates/sandiego/html/background.html:82
 msgid "Onko sinulla henkilöauton ajamiseen oikeuttavaa ajokorttia?"
 msgstr "Do you have a driver’s licence permitting you to drive a car?    "
 
 #: questions/templates/example/html/background.html:85
 #: questions/templates/example/html/background.html:137
-#: questions/templates/mobility/html/background.html:85
+#: questions/templates/mobility_/html/background.html:85
+#: questions/templates/sandiego/html/background.html:85
 #: questions/templates/vaaka/html/background.html:102
 msgid "kyllä"
 msgstr "Yes"
 
 #: questions/templates/example/html/background.html:87
 #: questions/templates/example/html/background.html:139
-#: questions/templates/mobility/html/background.html:87
+#: questions/templates/mobility_/html/background.html:87
+#: questions/templates/sandiego/html/background.html:87
 msgid "ei"
 msgstr "No"
 
 #: questions/templates/example/html/background.html:91
-#: questions/templates/mobility/html/background.html:91
+#: questions/templates/mobility_/html/background.html:91
 msgid "Mikä on asumismuotosi?"
 msgstr "Residential type?"
 
 #: questions/templates/example/html/background.html:94
-#: questions/templates/mobility/html/background.html:94
+#: questions/templates/mobility_/html/background.html:94
 msgid "omistusasunto"
 msgstr "Owner-occupied flat"
 
 #: questions/templates/example/html/background.html:97
-#: questions/templates/mobility/html/background.html:97
+#: questions/templates/mobility_/html/background.html:97
 msgid "vuokra-asunto"
 msgstr "Rented flat"
 
 #: questions/templates/example/html/background.html:100
-#: questions/templates/mobility/html/background.html:100
+#: questions/templates/mobility_/html/background.html:100
 msgid "asumisoikeusasunto"
 msgstr "Right of residence apartment"
 
 #: questions/templates/example/html/background.html:105
-#: questions/templates/mobility/html/background.html:105
+#: questions/templates/mobility_/html/background.html:105
 msgid "Minkä kunnan alueella asut?"
 msgstr "Where do you live?"
 
 #: questions/templates/example/html/background.html:110
-#: questions/templates/mobility/html/background.html:110
+#: questions/templates/mobility_/html/background.html:110
 msgid "Helsinki"
 msgstr ""
 
 #: questions/templates/example/html/background.html:111
-#: questions/templates/mobility/html/background.html:111
+#: questions/templates/mobility_/html/background.html:111
 msgid "Espoo"
 msgstr ""
 
 #: questions/templates/example/html/background.html:112
-#: questions/templates/mobility/html/background.html:112
+#: questions/templates/mobility_/html/background.html:112
 msgid "Vantaa"
 msgstr ""
 
 #: questions/templates/example/html/background.html:118
-#: questions/templates/mobility/html/background.html:118
+#: questions/templates/mobility_/html/background.html:118
 msgid ""
 "Minkätyyppisessä ympäristössä lapsuuden merkittävin kasvuympäristösi "
 "sijaitsi?"
 msgstr "What type of environment did you mainly grew up in?"
 
 #: questions/templates/example/html/background.html:123
-#: questions/templates/mobility/html/background.html:123
+#: questions/templates/mobility_/html/background.html:123
 msgid "kaupungin ydinkeskustassa tai sen läheisyydessä"
 msgstr "City centre or its proximity"
 
 #: questions/templates/example/html/background.html:124
-#: questions/templates/mobility/html/background.html:124
+#: questions/templates/mobility_/html/background.html:124
 msgid "pientalovaltaisessa esikaupungissa"
 msgstr "Suburb with a majority of detached houses"
 
 #: questions/templates/example/html/background.html:125
-#: questions/templates/mobility/html/background.html:125
+#: questions/templates/mobility_/html/background.html:125
 msgid "kerrostalovaltaisessa esikaupungissa"
 msgstr "Suburb with a majority of blocks of flats"
 
 #: questions/templates/example/html/background.html:126
-#: questions/templates/mobility/html/background.html:126
+#: questions/templates/mobility_/html/background.html:126
 msgid "maaseututaajamassa"
 msgstr "Rural community"
 
 #: questions/templates/example/html/background.html:127
-#: questions/templates/mobility/html/background.html:127
+#: questions/templates/mobility_/html/background.html:127
 msgid "kylässä maaseudulla"
 msgstr "Village on the countryside"
 
 #: questions/templates/example/html/background.html:128
-#: questions/templates/mobility/html/background.html:128
+#: questions/templates/mobility_/html/background.html:128
 msgid "haja-asutusalueella"
 msgstr "Sparsely populated area"
 
 #: questions/templates/example/html/background.html:129
-#: questions/templates/mobility/html/background.html:129
+#: questions/templates/mobility_/html/background.html:129
 msgid "ulkomailla"
 msgstr "Abroad"
 
@@ -823,12 +859,14 @@ msgstr ""
 "area in the near future?"
 
 #: questions/templates/example/html/end_questionnaire.html:3
-#: questions/templates/mobility/html/end_questionnaire.html:3
+#: questions/templates/mobility_/html/end_questionnaire.html:3
+#: questions/templates/sandiego/html/end_questionnaire.html:3
 msgid "Kiitos vastauksestasi"
 msgstr "Thank you for your answers"
 
 #: questions/templates/example/html/end_questionnaire.html:5
-#: questions/templates/mobility/html/end_questionnaire.html:5
+#: questions/templates/mobility_/html/end_questionnaire.html:5
+#: questions/templates/sandiego/html/end_questionnaire.html:5
 #: questions/templates/vaaka/html/end_questionnaire.html:5
 msgid "Kysely on loppunut, voit jatkaa surffailua tai sulkea selainikkunan"
 msgstr ""
@@ -836,7 +874,10 @@ msgstr ""
 "window."
 
 #: questions/templates/example/html/env_info.html:21
-#: questions/templates/mobility/html/env_info.html:21
+#: questions/templates/mobility_/html/env_info.html:21
+#: questions/templates/mobility_/html/pos_neg_info_temp_html.html:21
+#: questions/templates/sandiego/html/env_info.html:21
+#: questions/templates/sandiego/html/pos_neg_info_temp_html.html:21
 msgid "muu asia"
 msgstr "Other"
 
@@ -846,24 +887,34 @@ msgstr "Other"
 #: questions/templates/example/html/move_env_info_freetime.html:51
 #: questions/templates/example/html/move_env_info_shop.html:37
 #: questions/templates/example/html/move_env_info_work.html:45
-#: questions/templates/mobility/html/env_info.html:21
-#: questions/templates/mobility/html/move_env_info_business.html:33
-#: questions/templates/mobility/html/move_env_info_exercise.html:33
-#: questions/templates/mobility/html/move_env_info_freetime.html:51
-#: questions/templates/mobility/html/move_env_info_shop.html:37
-#: questions/templates/mobility/html/move_env_info_work.html:45
+#: questions/templates/mobility_/html/env_info.html:21
+#: questions/templates/mobility_/html/move_env_info_business.html:33
+#: questions/templates/mobility_/html/move_env_info_exercise.html:33
+#: questions/templates/mobility_/html/move_env_info_freetime.html:51
+#: questions/templates/mobility_/html/move_env_info_shop.html:37
+#: questions/templates/mobility_/html/move_env_info_work.html:45
+#: questions/templates/mobility_/html/pos_neg_info_temp_html.html:21
+#: questions/templates/sandiego/html/env_info.html:21
+#: questions/templates/sandiego/html/move_env_info_business.html:33
+#: questions/templates/sandiego/html/move_env_info_exercise.html:33
+#: questions/templates/sandiego/html/move_env_info_freetime.html:51
+#: questions/templates/sandiego/html/move_env_info_shop.html:49
+#: questions/templates/sandiego/html/move_env_info_work.html:45
+#: questions/templates/sandiego/html/pos_neg_info_temp_html.html:21
 msgid "mikä"
 msgstr "what"
 
 #: questions/templates/example/html/environment.html:4
 #: questions/templates/html/progressbar.html:10
-#: questions/templates/mobility/html/environment.html:4
-#: questions/templates/mobility/html/index.html:79
+#: questions/templates/mobility_/html/environment.html:4
+#: questions/templates/mobility_/html/index.html:79
+#: questions/templates/sandiego/html/environment.html:4
 msgid "Elinympäristön arviointi"
 msgstr "Evaluating the living environment"
 
 #: questions/templates/example/html/environment.html:7
-#: questions/templates/mobility/html/environment.html:7
+#: questions/templates/mobility_/html/environment.html:7
+#: questions/templates/sandiego/html/environment.html:7
 msgid ""
 "\n"
 "                Arvioi elinympäristöäsi neljältä eri kannalta. Merkitse "
@@ -879,24 +930,30 @@ msgstr ""
 #: questions/templates/example/html/environment.html:13
 #: questions/templates/example/html/home.html:20
 #: questions/templates/example/html/important_routes.html:13
-#: questions/templates/mobility/html/environment.html:13
-#: questions/templates/mobility/html/home.html:20
-#: questions/templates/mobility/html/important_routes.html:13
+#: questions/templates/mobility_/html/environment.html:13
+#: questions/templates/mobility_/html/home.html:20
+#: questions/templates/mobility_/html/important_routes.html:13
+#: questions/templates/sandiego/html/environment.html:13
+#: questions/templates/sandiego/html/home.html:20
+#: questions/templates/sandiego/html/important_routes.html:13
 msgid "Tee näin:"
 msgstr "Do as follows:"
 
 #: questions/templates/example/html/environment.html:15
-#: questions/templates/mobility/html/environment.html:15
+#: questions/templates/mobility_/html/environment.html:15
+#: questions/templates/sandiego/html/environment.html:15
 msgid "Valitse haluamasi myönteinen tai kielteinen työkalu"
 msgstr "Choose the positive or negative tool below"
 
 #: questions/templates/example/html/environment.html:16
-#: questions/templates/mobility/html/environment.html:16
+#: questions/templates/mobility_/html/environment.html:16
+#: questions/templates/sandiego/html/environment.html:16
 msgid "Merkitse paikka kartalle"
 msgstr "Mark the location you have in mind on the map"
 
 #: questions/templates/example/html/environment.html:17
-#: questions/templates/mobility/html/environment.html:17
+#: questions/templates/mobility_/html/environment.html:17
+#: questions/templates/sandiego/html/environment.html:17
 msgid "Valitse avautuvasta ikkunasta haluamasi ominaisuudet"
 msgstr ""
 "Choose the attributes you connect to the location from the pop-up window"
@@ -905,17 +962,28 @@ msgstr ""
 #: questions/templates/hyvinkaa/html/index.html:194
 #: questions/templates/hyvinkaa/html/index.html:209
 #: questions/templates/js/quest_default.js:97
-#: questions/templates/mobility/html/environment.html:18
-#: questions/templates/mobility/html/index.html:205
-#: questions/templates/mobility/html/index.html:215
-#: questions/templates/mobility/html/index.html:225
-#: questions/templates/mobility/html/index.html:235
-#: questions/templates/mobility/html/index.html:245
-#: questions/templates/mobility/html/index.html:255
-#: questions/templates/mobility/html/index.html:265
-#: questions/templates/mobility/html/index.html:275
-#: questions/templates/mobility/html/index.html:287
-#: questions/templates/mobility/html/pos_neg_info_temp_html.html:27
+#: questions/templates/mobility_/html/environment.html:18
+#: questions/templates/mobility_/html/index.html:205
+#: questions/templates/mobility_/html/index.html:215
+#: questions/templates/mobility_/html/index.html:225
+#: questions/templates/mobility_/html/index.html:235
+#: questions/templates/mobility_/html/index.html:245
+#: questions/templates/mobility_/html/index.html:255
+#: questions/templates/mobility_/html/index.html:265
+#: questions/templates/mobility_/html/index.html:275
+#: questions/templates/mobility_/html/index.html:287
+#: questions/templates/mobility_/html/pos_neg_info_temp_html.html:27
+#: questions/templates/sandiego/html/environment.html:18
+#: questions/templates/sandiego/html/index.html:205
+#: questions/templates/sandiego/html/index.html:215
+#: questions/templates/sandiego/html/index.html:225
+#: questions/templates/sandiego/html/index.html:235
+#: questions/templates/sandiego/html/index.html:245
+#: questions/templates/sandiego/html/index.html:255
+#: questions/templates/sandiego/html/index.html:265
+#: questions/templates/sandiego/html/index.html:275
+#: questions/templates/sandiego/html/index.html:287
+#: questions/templates/sandiego/html/pos_neg_info_temp_html.html:27
 #: questions/templates/vaaka/html/extra_info_temp_html.html:42
 #: questions/templates/vaaka/html/index.html:199
 #: questions/templates/vaaka/html/index.html:211
@@ -928,11 +996,16 @@ msgstr "Save location"
 #: questions/templates/example/html/important_routes.html:23
 #: questions/templates/example/html/improvements.html:16
 #: questions/templates/example/html/move_environment.html:14
-#: questions/templates/mobility/html/environment.html:24
-#: questions/templates/mobility/html/home.html:30
-#: questions/templates/mobility/html/important_routes.html:23
-#: questions/templates/mobility/html/improvements.html:17
-#: questions/templates/mobility/html/move_environment.html:14
+#: questions/templates/mobility_/html/environment.html:24
+#: questions/templates/mobility_/html/home.html:30
+#: questions/templates/mobility_/html/important_routes.html:23
+#: questions/templates/mobility_/html/improvements.html:17
+#: questions/templates/mobility_/html/move_environment.html:14
+#: questions/templates/sandiego/html/environment.html:24
+#: questions/templates/sandiego/html/home.html:30
+#: questions/templates/sandiego/html/important_routes.html:23
+#: questions/templates/sandiego/html/improvements.html:17
+#: questions/templates/sandiego/html/move_environment.html:14
 #: questions/templates/vaaka/html/activities.html:18
 #: questions/templates/vaaka/html/improvements.html:9
 #: questions/templates/vaaka/html/like_dislike.html:14
@@ -944,11 +1017,16 @@ msgstr "Help"
 #: questions/templates/example/html/important_routes.html:28
 #: questions/templates/example/html/improvements.html:21
 #: questions/templates/example/html/move_environment.html:19
-#: questions/templates/mobility/html/environment.html:29
-#: questions/templates/mobility/html/home.html:35
-#: questions/templates/mobility/html/important_routes.html:28
-#: questions/templates/mobility/html/improvements.html:22
-#: questions/templates/mobility/html/move_environment.html:19
+#: questions/templates/mobility_/html/environment.html:29
+#: questions/templates/mobility_/html/home.html:35
+#: questions/templates/mobility_/html/important_routes.html:28
+#: questions/templates/mobility_/html/improvements.html:22
+#: questions/templates/mobility_/html/move_environment.html:19
+#: questions/templates/sandiego/html/environment.html:29
+#: questions/templates/sandiego/html/home.html:35
+#: questions/templates/sandiego/html/important_routes.html:28
+#: questions/templates/sandiego/html/improvements.html:22
+#: questions/templates/sandiego/html/move_environment.html:19
 #: questions/templates/vaaka/html/activities.html:23
 #: questions/templates/vaaka/html/improvements.html:14
 #: questions/templates/vaaka/html/like_dislike.html:19
@@ -960,11 +1038,16 @@ msgstr "How to move the map? "
 #: questions/templates/example/html/important_routes.html:31
 #: questions/templates/example/html/improvements.html:24
 #: questions/templates/example/html/move_environment.html:22
-#: questions/templates/mobility/html/environment.html:32
-#: questions/templates/mobility/html/home.html:38
-#: questions/templates/mobility/html/important_routes.html:31
-#: questions/templates/mobility/html/improvements.html:25
-#: questions/templates/mobility/html/move_environment.html:22
+#: questions/templates/mobility_/html/environment.html:32
+#: questions/templates/mobility_/html/home.html:38
+#: questions/templates/mobility_/html/important_routes.html:31
+#: questions/templates/mobility_/html/improvements.html:25
+#: questions/templates/mobility_/html/move_environment.html:22
+#: questions/templates/sandiego/html/environment.html:32
+#: questions/templates/sandiego/html/home.html:38
+#: questions/templates/sandiego/html/important_routes.html:31
+#: questions/templates/sandiego/html/improvements.html:25
+#: questions/templates/sandiego/html/move_environment.html:22
 #: questions/templates/vaaka/html/activities.html:26
 #: questions/templates/vaaka/html/improvements.html:17
 #: questions/templates/vaaka/html/like_dislike.html:22
@@ -976,11 +1059,16 @@ msgstr "How to place a target on a map"
 #: questions/templates/example/html/important_routes.html:34
 #: questions/templates/example/html/improvements.html:27
 #: questions/templates/example/html/move_environment.html:25
-#: questions/templates/mobility/html/environment.html:35
-#: questions/templates/mobility/html/home.html:41
-#: questions/templates/mobility/html/important_routes.html:34
-#: questions/templates/mobility/html/improvements.html:28
-#: questions/templates/mobility/html/move_environment.html:25
+#: questions/templates/mobility_/html/environment.html:35
+#: questions/templates/mobility_/html/home.html:41
+#: questions/templates/mobility_/html/important_routes.html:34
+#: questions/templates/mobility_/html/improvements.html:28
+#: questions/templates/mobility_/html/move_environment.html:25
+#: questions/templates/sandiego/html/environment.html:35
+#: questions/templates/sandiego/html/home.html:41
+#: questions/templates/sandiego/html/important_routes.html:34
+#: questions/templates/sandiego/html/improvements.html:28
+#: questions/templates/sandiego/html/move_environment.html:25
 #: questions/templates/vaaka/html/activities.html:29
 #: questions/templates/vaaka/html/improvements.html:20
 #: questions/templates/vaaka/html/like_dislike.html:25
@@ -992,11 +1080,16 @@ msgstr "How to remove a falsely placed target? "
 #: questions/templates/example/html/important_routes.html:37
 #: questions/templates/example/html/improvements.html:30
 #: questions/templates/example/html/move_environment.html:28
-#: questions/templates/mobility/html/environment.html:38
-#: questions/templates/mobility/html/home.html:44
-#: questions/templates/mobility/html/important_routes.html:37
-#: questions/templates/mobility/html/improvements.html:31
-#: questions/templates/mobility/html/move_environment.html:28
+#: questions/templates/mobility_/html/environment.html:38
+#: questions/templates/mobility_/html/home.html:44
+#: questions/templates/mobility_/html/important_routes.html:37
+#: questions/templates/mobility_/html/improvements.html:31
+#: questions/templates/mobility_/html/move_environment.html:28
+#: questions/templates/sandiego/html/environment.html:38
+#: questions/templates/sandiego/html/home.html:44
+#: questions/templates/sandiego/html/important_routes.html:37
+#: questions/templates/sandiego/html/improvements.html:31
+#: questions/templates/sandiego/html/move_environment.html:28
 #: questions/templates/vaaka/html/activities.html:32
 #: questions/templates/vaaka/html/improvements.html:23
 #: questions/templates/vaaka/html/like_dislike.html:28
@@ -1018,7 +1111,8 @@ msgid "Näytä omat kohteet"
 msgstr "Show my locations"
 
 #: questions/templates/example/html/environmentsummary.html:6
-#: questions/templates/mobility/html/environmentsummary.html:6
+#: questions/templates/mobility_/html/environmentsummary.html:6
+#: questions/templates/sandiego/html/environmentsummary.html:6
 msgid ""
 "Arvioi arkisen elinympäristösi laatua kokonaisuudessaan neljän eri asian "
 "suhteen"
@@ -1027,29 +1121,36 @@ msgstr ""
 "different perspectives."
 
 #: questions/templates/example/html/environmentsummary.html:15
-#: questions/templates/mobility/html/environmentsummary.html:15
+#: questions/templates/mobility_/html/environmentsummary.html:15
+#: questions/templates/sandiego/html/environmentsummary.html:15
 msgid "Erittäin huono"
 msgstr "Very bad"
 
 #: questions/templates/example/html/environmentsummary.html:21
-#: questions/templates/mobility/html/environmentsummary.html:21
+#: questions/templates/mobility_/html/environmentsummary.html:21
+#: questions/templates/sandiego/html/environmentsummary.html:21
 msgid "Erittäin hyvä"
 msgstr "Very good"
 
 #: questions/templates/example/html/environmentsummary.html:26
-#: questions/templates/mobility/html/environmentsummary.html:26
+#: questions/templates/mobility_/html/environmentsummary.html:26
+#: questions/templates/sandiego/html/environmentsummary.html:26
 msgid "Jos haluat, voit vielä kommentoida elinympäristösi laatua omin sanoin"
 msgstr "Is there anything you would like to add"
 
 #: questions/templates/example/html/home.html:4
-#: questions/templates/mobility/html/home.html:4
-#: questions/templates/mobility/html/home.html:49
-#: questions/templates/mobility/js/quest_spec.js:958
+#: questions/templates/mobility_/html/home.html:4
+#: questions/templates/mobility_/html/home.html:49
+#: questions/templates/mobility_/js/quest_spec.js:976
+#: questions/templates/sandiego/html/home.html:4
+#: questions/templates/sandiego/html/home.html:49
+#: questions/templates/sandiego/js/quest_spec.js:976
 msgid "Koti"
 msgstr "Home"
 
 #: questions/templates/example/html/home.html:7
-#: questions/templates/mobility/html/home.html:7
+#: questions/templates/mobility_/html/home.html:7
+#: questions/templates/sandiego/html/home.html:7
 msgid ""
 "\n"
 "                Merkitse kartalle kotitalosi sijainti. Voit merkitä kartalle "
@@ -1063,7 +1164,8 @@ msgstr ""
 "more than one, pick the one that you find the most important."
 
 #: questions/templates/example/html/home.html:14
-#: questions/templates/mobility/html/home.html:14
+#: questions/templates/mobility_/html/home.html:14
+#: questions/templates/sandiego/html/home.html:14
 msgid ""
 "\n"
 "            HUOM! Kotitalon paikannustieto on tärkeä tutkiessamme "
@@ -1080,7 +1182,8 @@ msgstr ""
 "free to map it to the nearest street corner. "
 
 #: questions/templates/example/html/home.html:22
-#: questions/templates/mobility/html/home.html:22
+#: questions/templates/mobility_/html/home.html:22
+#: questions/templates/sandiego/html/home.html:22
 msgid "Etsi kotitalosi kartalta."
 msgstr "Find your home on the map."
 
@@ -1088,180 +1191,218 @@ msgstr "Find your home on the map."
 #: questions/templates/example/html/important_routes.html:15
 #: questions/templates/example/html/index.html:49
 #: questions/templates/hyvinkaa/html/index.html:63
-#: questions/templates/mobility/html/home.html:22
-#: questions/templates/mobility/html/important_routes.html:15
-#: questions/templates/mobility/html/index.html:63
+#: questions/templates/mobility_/html/home.html:22
+#: questions/templates/mobility_/html/important_routes.html:15
+#: questions/templates/mobility_/html/index.html:63
+#: questions/templates/sandiego/html/home.html:22
+#: questions/templates/sandiego/html/important_routes.html:15
+#: questions/templates/sandiego/html/index.html:63
 #: questions/templates/vaaka/html/index.html:63
 msgid "Ohje"
 msgstr "Instruction"
 
 #: questions/templates/example/html/home.html:23
-#: questions/templates/mobility/html/home.html:23
+#: questions/templates/mobility_/html/home.html:23
+#: questions/templates/sandiego/html/home.html:23
 msgid "Valitse alla oleva Kotitalo-työkalu."
 msgstr "Choose the Home-tool below."
 
 #: questions/templates/example/html/home.html:24
-#: questions/templates/mobility/html/home.html:24
+#: questions/templates/mobility_/html/home.html:24
+#: questions/templates/sandiego/html/home.html:24
 msgid "Klikkaa karttaa kotisi kohdalla."
 msgstr "Click on the map to mark your home."
 
 #: questions/templates/example/html/home.html:25
-#: questions/templates/mobility/html/home.html:25
+#: questions/templates/mobility_/html/home.html:25
+#: questions/templates/sandiego/html/home.html:25
 msgid "Tallenna kodin paikka \"Tallenna kohde\" -painikkeella"
 msgstr "Save the position by clicking on the save-button. "
 
 #: questions/templates/example/html/home_info.html:10
-#: questions/templates/mobility/html/home_info.html:7
+#: questions/templates/mobility_/html/home_info.html:7
+#: questions/templates/sandiego/html/home_info.html:7
 msgid "Kuinka kauan olet asunut nykyisessä asuinpaikassasi?"
 msgstr "How long have you lived in your current home?"
 
 #: questions/templates/example/html/home_info.html:15
-#: questions/templates/mobility/html/home_info.html:12
+#: questions/templates/mobility_/html/home_info.html:12
+#: questions/templates/sandiego/html/home_info.html:12
 msgid "alle vuoden"
 msgstr "Less than a year"
 
 #: questions/templates/example/html/home_info.html:19
-#: questions/templates/mobility/html/home_info.html:16
+#: questions/templates/mobility_/html/home_info.html:16
+#: questions/templates/sandiego/html/home_info.html:16
 msgid "5–10 vuotta"
 msgstr "5-10 years"
 
 #: questions/templates/example/html/home_info.html:25
-#: questions/templates/mobility/html/home_info.html:22
+#: questions/templates/mobility_/html/home_info.html:22
+#: questions/templates/sandiego/html/home_info.html:22
 msgid "1–3 vuotta"
 msgstr "1-3 years"
 
 #: questions/templates/example/html/home_info.html:29
-#: questions/templates/mobility/html/home_info.html:26
+#: questions/templates/mobility_/html/home_info.html:26
+#: questions/templates/sandiego/html/home_info.html:26
 msgid "yli 10 vuotta"
 msgstr "over 10 years"
 
 #: questions/templates/example/html/home_info.html:35
-#: questions/templates/mobility/html/home_info.html:32
+#: questions/templates/mobility_/html/home_info.html:32
+#: questions/templates/sandiego/html/home_info.html:32
 msgid "3-5 vuotta"
 msgstr "3-5 years"
 
 #: questions/templates/example/html/home_info.html:40
-#: questions/templates/mobility/html/home_info.html:37
+#: questions/templates/mobility_/html/home_info.html:37
+#: questions/templates/sandiego/html/home_info.html:37
 msgid "Kuinka hyvä asuinalueellasi on liikkua..."
-msgstr "How is it to move in your neighbourhood…"
+msgstr "How is it to move around in your neighborhood…"
 
 #: questions/templates/example/html/home_info.html:44
-#: questions/templates/mobility/html/home_info.html:41
+#: questions/templates/mobility_/html/home_info.html:41
+#: questions/templates/sandiego/html/home_info.html:41
 msgid "erittäin hyvä"
 msgstr "Very good"
 
 #: questions/templates/example/html/home_info.html:45
-#: questions/templates/mobility/html/home_info.html:42
+#: questions/templates/mobility_/html/home_info.html:42
+#: questions/templates/sandiego/html/home_info.html:42
 msgid "melko hyvä"
 msgstr "Quite good"
 
 #: questions/templates/example/html/home_info.html:46
-#: questions/templates/mobility/html/home_info.html:43
+#: questions/templates/mobility_/html/home_info.html:43
+#: questions/templates/sandiego/html/home_info.html:43
 msgid "melko huono"
 msgstr "Quite bad"
 
 #: questions/templates/example/html/home_info.html:47
-#: questions/templates/mobility/html/home_info.html:44
+#: questions/templates/mobility_/html/home_info.html:44
+#: questions/templates/sandiego/html/home_info.html:44
 msgid "erittäin huono"
 msgstr "Very bad"
 
 #: questions/templates/example/html/home_info.html:48
 #: questions/templates/example/html/home_info.html:132
-#: questions/templates/mobility/html/home_info.html:45
-#: questions/templates/mobility/html/home_info.html:129
+#: questions/templates/mobility_/html/home_info.html:45
+#: questions/templates/mobility_/html/home_info.html:129
+#: questions/templates/sandiego/html/home_info.html:45
+#: questions/templates/sandiego/html/home_info.html:129
 msgid "en osaa"
 msgstr "I can’t"
 
 #: questions/templates/example/html/home_info.html:48
 #: questions/templates/example/html/home_info.html:132
-#: questions/templates/mobility/html/home_info.html:45
-#: questions/templates/mobility/html/home_info.html:129
+#: questions/templates/mobility_/html/home_info.html:45
+#: questions/templates/mobility_/html/home_info.html:129
+#: questions/templates/sandiego/html/home_info.html:45
+#: questions/templates/sandiego/html/home_info.html:129
 msgid "sanoa"
 msgstr "tell"
 
 #: questions/templates/example/html/home_info.html:51
 #: questions/templates/example/html/move_env_info.html:47
-#: questions/templates/mobility/html/home_info.html:48
-#: questions/templates/mobility/html/move_env_info.html:47
+#: questions/templates/mobility_/html/home_info.html:48
+#: questions/templates/mobility_/html/move_env_info.html:47
+#: questions/templates/sandiego/html/home_info.html:48
+#: questions/templates/sandiego/html/move_env_info.html:47
 msgid "kävellen"
 msgstr "By foot"
 
 #: questions/templates/example/html/home_info.html:69
-#: questions/templates/mobility/html/home_info.html:66
+#: questions/templates/mobility_/html/home_info.html:66
+#: questions/templates/sandiego/html/home_info.html:66
 msgid "pyörällä"
 msgstr "By bicycle"
 
 #: questions/templates/example/html/home_info.html:87
-#: questions/templates/mobility/html/home_info.html:84
+#: questions/templates/mobility_/html/home_info.html:84
+#: questions/templates/sandiego/html/home_info.html:84
 msgid "joukkoliikenteellä"
 msgstr "By public transport"
 
 #: questions/templates/example/html/home_info.html:105
 #: questions/templates/example/html/move_env_info.html:59
-#: questions/templates/mobility/html/home_info.html:102
-#: questions/templates/mobility/html/move_env_info.html:59
+#: questions/templates/mobility_/html/home_info.html:102
+#: questions/templates/mobility_/html/move_env_info.html:59
+#: questions/templates/sandiego/html/home_info.html:102
+#: questions/templates/sandiego/html/move_env_info.html:59
 msgid "henkilöautolla"
 msgstr "By car"
 
 #: questions/templates/example/html/home_info.html:124
-#: questions/templates/mobility/html/home_info.html:121
+#: questions/templates/mobility_/html/home_info.html:121
+#: questions/templates/sandiego/html/home_info.html:121
 msgid "Kuinka hyvät ovat asuinalueesi palvelut"
-msgstr "How are the services in your neighbourhood"
+msgstr "How are the services in your neighborhood"
 
 #: questions/templates/example/html/home_info.html:128
-#: questions/templates/mobility/html/home_info.html:125
+#: questions/templates/mobility_/html/home_info.html:125
+#: questions/templates/sandiego/html/home_info.html:125
 msgid "erittäin hyvät"
 msgstr "Very good"
 
 #: questions/templates/example/html/home_info.html:129
-#: questions/templates/mobility/html/home_info.html:126
+#: questions/templates/mobility_/html/home_info.html:126
+#: questions/templates/sandiego/html/home_info.html:126
 msgid "melko hyvät"
 msgstr "Quite good"
 
 #: questions/templates/example/html/home_info.html:130
-#: questions/templates/mobility/html/home_info.html:127
+#: questions/templates/mobility_/html/home_info.html:127
+#: questions/templates/sandiego/html/home_info.html:127
 msgid "melko huonot"
 msgstr "Quite bad"
 
 #: questions/templates/example/html/home_info.html:131
-#: questions/templates/mobility/html/home_info.html:128
+#: questions/templates/mobility_/html/home_info.html:128
+#: questions/templates/sandiego/html/home_info.html:128
 msgid "erittäin huonot"
 msgstr "Very bad"
 
 #: questions/templates/example/html/home_info.html:135
-#: questions/templates/mobility/html/home_info.html:132
+#: questions/templates/mobility_/html/home_info.html:132
+#: questions/templates/sandiego/html/home_info.html:132
 msgid "kauppapalvelut"
 msgstr "Shopping"
 
 #: questions/templates/example/html/home_info.html:153
-#: questions/templates/mobility/html/home_info.html:150
+#: questions/templates/mobility_/html/home_info.html:150
+#: questions/templates/sandiego/html/home_info.html:168
 msgid "posti- ja pankkipalvelut"
 msgstr "Post office and bank services"
 
 #: questions/templates/example/html/home_info.html:171
-#: questions/templates/mobility/html/home_info.html:168
+#: questions/templates/mobility_/html/home_info.html:168
+#: questions/templates/sandiego/html/home_info.html:186
 msgid "koulut ja päivähoitopaikat"
 msgstr "Schools and day-care"
 
 #: questions/templates/example/html/home_info.html:189
-#: questions/templates/mobility/html/home_info.html:186
+#: questions/templates/mobility_/html/home_info.html:186
+#: questions/templates/sandiego/html/home_info.html:204
 msgid "virkistysalueet ja puistot"
 msgstr "Leisure areas and parks"
 
 #: questions/templates/example/html/home_info.html:207
-#: questions/templates/mobility/html/home_info.html:204
-#: questions/templates/mobility/html/pos_neg_info_temp_html.html:21
+#: questions/templates/mobility_/html/home_info.html:204
+#: questions/templates/sandiego/html/home_info.html:222
 #: questions/templates/vaaka/html/extra_info_temp_html.html:25
 msgid "muu, mikä"
 msgstr "Other, which one"
 
 #: questions/templates/example/html/important_routes.html:4
-#: questions/templates/mobility/html/important_routes.html:4
+#: questions/templates/mobility_/html/important_routes.html:4
+#: questions/templates/sandiego/html/important_routes.html:4
 msgid "Tärkeät kävely- ja pyöräilyreittini"
 msgstr "My most important walking and cycling routes"
 
 #: questions/templates/example/html/important_routes.html:7
-#: questions/templates/mobility/html/important_routes.html:7
+#: questions/templates/mobility_/html/important_routes.html:7
+#: questions/templates/sandiego/html/important_routes.html:7
 msgid ""
 "\n"
 "                Merkitse kartalle usein käyttämiäsi miellyttäviä ja "
@@ -1274,28 +1415,33 @@ msgstr ""
 "find either pleasant or unpleasant. You can mark as many routes as you like."
 
 #: questions/templates/example/html/important_routes.html:15
-#: questions/templates/mobility/html/important_routes.html:15
+#: questions/templates/mobility_/html/important_routes.html:15
+#: questions/templates/sandiego/html/important_routes.html:15
 msgid "Etsi kartalta reitti, jonka haluat merkitä"
 msgstr "Search the map for the route you want to mark"
 
 #: questions/templates/example/html/important_routes.html:16
-#: questions/templates/mobility/html/important_routes.html:16
+#: questions/templates/mobility_/html/important_routes.html:16
+#: questions/templates/sandiego/html/important_routes.html:16
 msgid "Valitse alla oleva reitti -työkalu"
 msgstr "Choose the Route-tool below"
 
 #: questions/templates/example/html/important_routes.html:17
-#: questions/templates/mobility/html/important_routes.html:17
+#: questions/templates/mobility_/html/important_routes.html:17
+#: questions/templates/sandiego/html/important_routes.html:17
 msgid "Merkitse reitti hiirellä klikkailemalla"
 msgstr "Mark the route on the map by clicking the mouse"
 
 #: questions/templates/example/html/important_routes.html:17
-#: questions/templates/mobility/html/important_routes.html:17
+#: questions/templates/mobility_/html/important_routes.html:17
+#: questions/templates/sandiego/html/important_routes.html:17
 msgid "Lopeta piirto tuplaklikkaamalla hiirellä"
 msgstr "When you wish to stop drawing the route, double-click"
 
 #: questions/templates/example/html/important_routes.html:18
 #: questions/templates/js/quest_default.js:90
-#: questions/templates/mobility/html/important_routes.html:18
+#: questions/templates/mobility_/html/important_routes.html:18
+#: questions/templates/sandiego/html/important_routes.html:18
 msgid "Tallenna reitti"
 msgstr "Save route"
 
@@ -1320,42 +1466,48 @@ msgstr ""
 #: questions/templates/example/html/index.html:10
 #: questions/templates/hyvinkaa/html/index.html:10
 #: questions/templates/hyvinkaa/html/quest_over.html:10
-#: questions/templates/mobility/html/index.html:10
+#: questions/templates/mobility_/html/index.html:10
+#: questions/templates/sandiego/html/index.html:10
 #: questions/templates/vaaka/html/index.html:10
 msgid "PehmoGIS - Elinympäristö"
 msgstr ""
 
 #: questions/templates/example/html/index.html:53
 #: questions/templates/hyvinkaa/html/index.html:67
-#: questions/templates/mobility/html/index.html:67
+#: questions/templates/mobility_/html/index.html:67
+#: questions/templates/sandiego/html/index.html:67
 #: questions/templates/vaaka/html/index.html:67
 msgid "Keskeytä"
 msgstr ""
 
 #: questions/templates/example/html/index.html:95
 #: questions/templates/hyvinkaa/html/index.html:117
-#: questions/templates/mobility/html/index.html:118
+#: questions/templates/mobility_/html/index.html:118
+#: questions/templates/sandiego/html/index.html:118
 #: questions/templates/vaaka/html/index.html:117
 msgid "Piilota navigaatiokartta"
 msgstr "Hide the mini map"
 
 #: questions/templates/example/html/index.html:96
 #: questions/templates/hyvinkaa/html/index.html:118
-#: questions/templates/mobility/html/index.html:119
+#: questions/templates/mobility_/html/index.html:119
+#: questions/templates/sandiego/html/index.html:119
 #: questions/templates/vaaka/html/index.html:118
 msgid "Näytä navigaatiokartta"
 msgstr "Show the mini map"
 
 #: questions/templates/example/html/index.html:125
 #: questions/templates/hyvinkaa/html/index.html:147
-#: questions/templates/mobility/html/index.html:157
+#: questions/templates/mobility_/html/index.html:157
+#: questions/templates/sandiego/html/index.html:157
 #: questions/templates/vaaka/html/index.html:153
 msgid "Kartta"
 msgstr "Map"
 
 #: questions/templates/example/html/index.html:128
 #: questions/templates/hyvinkaa/html/index.html:150
-#: questions/templates/mobility/html/index.html:160
+#: questions/templates/mobility_/html/index.html:160
+#: questions/templates/sandiego/html/index.html:160
 #: questions/templates/vaaka/html/index.html:156
 msgid "Ilmakuva"
 msgstr "Satellite"
@@ -1363,14 +1515,16 @@ msgstr "Satellite"
 #: questions/templates/example/html/instructions.html:5
 #: questions/templates/html/instructions_base.html:96
 #: questions/templates/html/instructions_base.html:186
-#: questions/templates/mobility/html/instructions.html:5
+#: questions/templates/mobility_/html/instructions.html:5
+#: questions/templates/sandiego/html/instructions.html:5
 #: questions/templates/vaaka/html/instructions.html:5
 msgid "Kyselyyn vastaaminen"
 msgstr "Answering the questionnaire"
 
 #: questions/templates/example/html/instructions.html:9
 #: questions/templates/html/instructions_base.html:100
-#: questions/templates/mobility/html/instructions.html:9
+#: questions/templates/mobility_/html/instructions.html:9
+#: questions/templates/sandiego/html/instructions.html:9
 #: questions/templates/vaaka/html/instructions.html:9
 msgid "eteneminen"
 msgstr "moving along the questionnaire"
@@ -1378,34 +1532,39 @@ msgstr "moving along the questionnaire"
 #: questions/templates/example/html/instructions.html:15
 #: questions/templates/html/instructions_base.html:128
 #: questions/templates/html/instructions_base.html:405
-#: questions/templates/mobility/html/instructions.html:15
+#: questions/templates/mobility_/html/instructions.html:15
+#: questions/templates/sandiego/html/instructions.html:15
 #: questions/templates/vaaka/html/instructions.html:31
 msgid "Kohteiden merkitseminen kartalle"
 msgstr "Marking items on the map"
 
 #: questions/templates/example/html/instructions.html:19
 #: questions/templates/html/instructions_base.html:132
-#: questions/templates/mobility/html/instructions.html:19
+#: questions/templates/mobility_/html/instructions.html:19
+#: questions/templates/sandiego/html/instructions.html:19
 msgid "kodin tai muun pisteen merkitseminen"
 msgstr "marking your home or other locations on the map "
 
 #: questions/templates/example/html/instructions.html:22
 #: questions/templates/html/instructions_base.html:135
-#: questions/templates/mobility/html/instructions.html:22
+#: questions/templates/mobility_/html/instructions.html:22
+#: questions/templates/sandiego/html/instructions.html:22
 #: questions/templates/vaaka/html/instructions.html:38
 msgid "reitin piirtäminen kartalle"
 msgstr "drawing a route on the map"
 
 #: questions/templates/example/html/instructions.html:25
 #: questions/templates/html/instructions_base.html:141
-#: questions/templates/mobility/html/instructions.html:25
+#: questions/templates/mobility_/html/instructions.html:25
+#: questions/templates/sandiego/html/instructions.html:25
 #: questions/templates/vaaka/html/instructions.html:44
 msgid "kohteen siirtäminen, muuttaminen tai poistaminen"
 msgstr "moving, editing or deleting a location"
 
 #: questions/templates/example/html/instructions.html:33
 #: questions/templates/html/instructions_base.html:207
-#: questions/templates/mobility/html/instructions.html:33
+#: questions/templates/mobility_/html/instructions.html:33
+#: questions/templates/sandiego/html/instructions.html:33
 #: questions/templates/vaaka/html/instructions.html:52
 msgid "Kyselyssä eteneminen"
 msgstr "Moving along the questionnaire "
@@ -1427,7 +1586,8 @@ msgstr ""
 "of the page. "
 
 #: questions/templates/example/html/instructions.html:49
-#: questions/templates/mobility/html/instructions.html:49
+#: questions/templates/mobility_/html/instructions.html:49
+#: questions/templates/sandiego/html/instructions.html:49
 #: questions/templates/vaaka/html/instructions.html:68
 msgid ""
 "\n"
@@ -1441,7 +1601,8 @@ msgstr ""
 "your responses, you can exit the survey by closing the browser. "
 
 #: questions/templates/example/html/instructions.html:64
-#: questions/templates/mobility/html/instructions.html:68
+#: questions/templates/mobility_/html/instructions.html:68
+#: questions/templates/sandiego/html/instructions.html:68
 msgid ""
 "\n"
 "            Kyselyssä merkitään kartalle pisteitä tai viivoja (reittejä). "
@@ -1457,7 +1618,8 @@ msgstr ""
 "is marked as a point and routes are drawn as lines."
 
 #: questions/templates/example/html/instructions.html:75
-#: questions/templates/mobility/html/instructions.html:79
+#: questions/templates/mobility_/html/instructions.html:79
+#: questions/templates/sandiego/html/instructions.html:79
 msgid "Kuva yllä: Esimerkit piste- ja viivatyökaluista."
 msgstr "Image above: Examples of the point and line tools."
 
@@ -1495,7 +1657,8 @@ msgstr "Select the Home -tool"
 
 #: questions/templates/example/html/instructions.html:105
 #: questions/templates/html/instructions_base.html:467
-#: questions/templates/mobility/html/instructions.html:106
+#: questions/templates/mobility_/html/instructions.html:106
+#: questions/templates/sandiego/html/instructions.html:106
 #: questions/templates/vaaka/html/instructions.html:126
 msgid "klikkaamalla sitä hiirellä."
 msgstr "by clicking it with the mouse."
@@ -1568,8 +1731,9 @@ msgstr ""
 "all marked areas at once.   "
 
 #: questions/templates/example/html/instructions.html:167
-#: questions/templates/html/instructions_base.html:810
-#: questions/templates/mobility/html/instructions.html:144
+#: questions/templates/html/instructions_base.html:812
+#: questions/templates/mobility_/html/instructions.html:143
+#: questions/templates/sandiego/html/instructions.html:143
 msgid "Kyselyn toteuttaja ja tutkijat"
 msgstr "The realiser and researchers of the questionnaire "
 
@@ -1589,14 +1753,16 @@ msgid ""
 msgstr ""
 
 #: questions/templates/example/html/instructions.html:198
-#: questions/templates/html/instructions_base.html:833
-#: questions/templates/mobility/html/instructions.html:187
+#: questions/templates/html/instructions_base.html:835
+#: questions/templates/mobility_/html/instructions.html:186
+#: questions/templates/sandiego/html/instructions.html:184
 msgid "Arvonnan palkinnot"
 msgstr "Prizes of the prize draw"
 
 #: questions/templates/example/html/instructions.html:216
-#: questions/templates/html/instructions_base.html:860
-#: questions/templates/mobility/html/instructions.html:214
+#: questions/templates/html/instructions_base.html:862
+#: questions/templates/mobility_/html/instructions.html:213
+#: questions/templates/sandiego/html/instructions.html:203
 #: questions/templates/vaaka/html/instructions.html:242
 msgid "Tietosuoja"
 msgstr "Privacy protection"
@@ -1609,7 +1775,7 @@ msgid ""
 msgstr ""
 
 #: questions/templates/example/html/instructions.html:228
-#: questions/templates/mobility/html/instructions.html:230
+#: questions/templates/mobility_/html/instructions.html:229
 #: questions/templates/vaaka/html/instructions.html:254
 msgid ""
 "\n"
@@ -1628,7 +1794,7 @@ msgstr ""
 "the Data Protection Ombudsman. "
 
 #: questions/templates/example/html/instructions.html:235
-#: questions/templates/mobility/html/instructions.html:237
+#: questions/templates/mobility_/html/instructions.html:236
 msgid ""
 "\n"
 "        Tutkimusaineiston tietoja käsitellään ryhmittäin, ei yksilötasolla. "
@@ -1650,21 +1816,21 @@ msgstr ""
 "track individuals or their answers from any results that will be published. "
 
 #: questions/templates/example/html/instructions.html:253
-#: questions/templates/html/instructions_base.html:904
-#: questions/templates/mobility/html/instructions.html:255
+#: questions/templates/html/instructions_base.html:906
+#: questions/templates/mobility_/html/instructions.html:254
 #: questions/templates/vaaka/html/instructions.html:279
 msgid "Rekisteriseloste"
 msgstr "Description of the research registry"
 
 #: questions/templates/example/html/instructions.html:262
-#: questions/templates/html/instructions_base.html:912
-#: questions/templates/mobility/html/instructions.html:264
+#: questions/templates/html/instructions_base.html:914
+#: questions/templates/mobility_/html/instructions.html:263
 #: questions/templates/vaaka/html/instructions.html:288
 msgid "Tutkimuksen rekisteriseloste"
 msgstr "Description of the research registry (in Finnish)"
 
 #: questions/templates/example/html/instructions.html:263
-#: questions/templates/html/instructions_base.html:913
+#: questions/templates/html/instructions_base.html:915
 #: questions/templates/vaaka/html/instructions.html:289
 msgid "(pdf-tiedosto)."
 msgstr "(pdf file)."
@@ -1766,93 +1932,111 @@ msgid "Poista arvio"
 msgstr "Delete evaluation"
 
 #: questions/templates/example/html/move_env_info.html:9
-#: questions/templates/mobility/html/move_env_info.html:9
+#: questions/templates/mobility_/html/move_env_info.html:9
+#: questions/templates/sandiego/html/move_env_info.html:9
 msgid "Kuinka usein käyt tässä paikassa?"
 msgstr "How often do you visit this place?"
 
 #: questions/templates/example/html/move_env_info.html:14
-#: questions/templates/mobility/html/move_env_info.html:14
+#: questions/templates/mobility_/html/move_env_info.html:14
+#: questions/templates/sandiego/html/move_env_info.html:14
 msgid "päivittäin tai lähes päivittäin"
 msgstr "Daily or almost daily"
 
 #: questions/templates/example/html/move_env_info.html:20
-#: questions/templates/mobility/html/move_env_info.html:20
+#: questions/templates/mobility_/html/move_env_info.html:20
+#: questions/templates/sandiego/html/move_env_info.html:20
 msgid "useita kertoja viikossa"
 msgstr "Several times a week"
 
 #: questions/templates/example/html/move_env_info.html:26
-#: questions/templates/mobility/html/move_env_info.html:26
+#: questions/templates/mobility_/html/move_env_info.html:26
+#: questions/templates/sandiego/html/move_env_info.html:26
 msgid "useita kertoja kuussa"
 msgstr "Several times a month"
 
 #: questions/templates/example/html/move_env_info.html:32
-#: questions/templates/mobility/html/move_env_info.html:32
+#: questions/templates/mobility_/html/move_env_info.html:32
+#: questions/templates/sandiego/html/move_env_info.html:32
 msgid "kerran kuussa"
 msgstr "Once a month"
 
 #: questions/templates/example/html/move_env_info.html:38
-#: questions/templates/mobility/html/move_env_info.html:38
+#: questions/templates/mobility_/html/move_env_info.html:38
+#: questions/templates/sandiego/html/move_env_info.html:38
 msgid "harvemmin kuin kerran kuussa"
 msgstr "Less than once a month"
 
 #: questions/templates/example/html/move_env_info.html:42
-#: questions/templates/mobility/html/move_env_info.html:42
+#: questions/templates/mobility_/html/move_env_info.html:42
+#: questions/templates/sandiego/html/move_env_info.html:42
 msgid "Millä kulkutavalla yleensä käyt tässä paikassa?"
 msgstr "How do you usually travel to this place?"
 
 #: questions/templates/example/html/move_env_info.html:53
-#: questions/templates/mobility/html/move_env_info.html:53
+#: questions/templates/mobility_/html/move_env_info.html:53
+#: questions/templates/sandiego/html/move_env_info.html:53
 msgid "polkupyörällä"
 msgstr "By bike"
 
 #: questions/templates/example/html/move_env_info.html:65
-#: questions/templates/mobility/html/move_env_info.html:65
+#: questions/templates/mobility_/html/move_env_info.html:65
+#: questions/templates/sandiego/html/move_env_info.html:65
 msgid "linja-autolla"
-msgstr "By bus"
+msgstr "By bus/trolley"
 
 #: questions/templates/example/html/move_env_info.html:71
-#: questions/templates/mobility/html/move_env_info.html:71
+#: questions/templates/mobility_/html/move_env_info.html:71
+#: questions/templates/sandiego/html/move_env_info.html:71
 msgid "muulla"
 msgstr "Other"
 
 #: questions/templates/example/html/move_env_info.html:73
-#: questions/templates/mobility/html/move_env_info.html:73
+#: questions/templates/mobility_/html/move_env_info.html:73
+#: questions/templates/sandiego/html/move_env_info.html:73
 msgid "millä"
 msgstr "what"
 
 #: questions/templates/example/html/move_env_info.html:79
-#: questions/templates/mobility/html/move_env_info.html:79
+#: questions/templates/mobility_/html/move_env_info.html:79
+#: questions/templates/sandiego/html/move_env_info.html:79
 msgid "Käytkö tässä paikassa yleensä arkisin vai viikonloppuisin?"
 msgstr "Do you usually visit this place on weekdays or during the weekend?"
 
 #: questions/templates/example/html/move_env_info.html:84
-#: questions/templates/mobility/html/move_env_info.html:84
+#: questions/templates/mobility_/html/move_env_info.html:84
+#: questions/templates/sandiego/html/move_env_info.html:84
 msgid "arkisin"
 msgstr "On weekdays"
 
 #: questions/templates/example/html/move_env_info.html:90
-#: questions/templates/mobility/html/move_env_info.html:90
+#: questions/templates/mobility_/html/move_env_info.html:90
+#: questions/templates/sandiego/html/move_env_info.html:90
 msgid "viikonloppuisin"
 msgstr "During the weekend"
 
 #: questions/templates/example/html/move_env_info.html:96
-#: questions/templates/mobility/html/move_env_info.html:96
+#: questions/templates/mobility_/html/move_env_info.html:96
+#: questions/templates/sandiego/html/move_env_info.html:96
 msgid "sekä arkisin että viikonloppuisin"
 msgstr "Both on weekdays and during the weekend"
 
 #: questions/templates/example/html/move_env_info.html:100
-#: questions/templates/mobility/html/move_env_info.html:100
+#: questions/templates/mobility_/html/move_env_info.html:100
+#: questions/templates/sandiego/html/move_env_info.html:100
 msgid "Liittyvätkö matkasi tähän paikkaan muiden kyyditsemiseen"
 msgstr ""
 "Have your trips something to do with dropping someone off to this place"
 
 #: questions/templates/example/html/move_env_info.html:105
-#: questions/templates/mobility/html/move_env_info.html:105
+#: questions/templates/mobility_/html/move_env_info.html:105
+#: questions/templates/sandiego/html/move_env_info.html:105
 msgid "teen tähän paikkaan yleensä omia matkojani"
 msgstr "I usually visit this place myself"
 
 #: questions/templates/example/html/move_env_info.html:111
-#: questions/templates/mobility/html/move_env_info.html:111
+#: questions/templates/mobility_/html/move_env_info.html:111
+#: questions/templates/sandiego/html/move_env_info.html:111
 msgid "matkani tähän paikkaan liittyy yleensä toisen henkilön kyyditsemiseen"
 msgstr "I am usually dropping someone else off"
 
@@ -1867,9 +2051,12 @@ msgstr "is this?"
 #: questions/templates/example/html/move_env_info_exercise.html:7
 #: questions/templates/example/html/move_env_info_freetime.html:7
 #: questions/templates/example/html/move_env_info_work.html:7
-#: questions/templates/mobility/html/move_env_info_exercise.html:7
-#: questions/templates/mobility/html/move_env_info_freetime.html:7
-#: questions/templates/mobility/html/move_env_info_work.html:7
+#: questions/templates/mobility_/html/move_env_info_exercise.html:7
+#: questions/templates/mobility_/html/move_env_info_freetime.html:7
+#: questions/templates/mobility_/html/move_env_info_work.html:7
+#: questions/templates/sandiego/html/move_env_info_exercise.html:7
+#: questions/templates/sandiego/html/move_env_info_freetime.html:7
+#: questions/templates/sandiego/html/move_env_info_work.html:7
 msgid "Mikä paikka on kyseessä"
 msgstr "What is the place in question"
 
@@ -1879,188 +2066,231 @@ msgstr "What kind of a ${typetext} is this?"
 
 #: questions/templates/example/html/move_environment.html:4
 #: questions/templates/html/progressbar.html:8
-#: questions/templates/mobility/html/index.html:78
-#: questions/templates/mobility/html/move_environment.html:4
+#: questions/templates/mobility_/html/index.html:78
+#: questions/templates/mobility_/html/move_environment.html:4
+#: questions/templates/sandiego/html/move_environment.html:4
 msgid "Liikkuminen elinympäristössä"
 msgstr "Travelling in the living environment"
 
 #: questions/templates/example/html/move_environment.html:7
-#: questions/templates/mobility/html/move_environment.html:7
+#: questions/templates/mobility_/html/move_environment.html:7
+#: questions/templates/sandiego/html/move_environment.html:7
 msgid "Merkitse kartalle sellaiset paikat, joissa käyt usein"
 msgstr "Please mark on the map the places you visit often"
 
 #: questions/templates/example/html/move_environment.html:10
-#: questions/templates/mobility/html/move_environment.html:10
+#: questions/templates/mobility_/html/move_environment.html:10
+#: questions/templates/sandiego/html/move_environment.html:10
 msgid "Käytä karttaa samaan tapaan kuin aikaisemmin."
 msgstr "Use the map as advised earlier."
 
 #: questions/templates/example/html/move_environment.html:40
 #: questions/templates/example/js/quest_spec.js:310
 #: questions/templates/example/js/quest_spec_old.js:2203
-#: questions/templates/mobility/html/move_environment.html:36
-#: questions/templates/mobility/js/quest_spec.js:321
-#: questions/templates/mobility/js/quest_spec.js:964
+#: questions/templates/mobility_/html/move_environment.html:36
+#: questions/templates/mobility_/js/quest_spec.js:321
+#: questions/templates/mobility_/js/quest_spec.js:982
+#: questions/templates/sandiego/html/move_environment.html:36
+#: questions/templates/sandiego/js/quest_spec.js:321
+#: questions/templates/sandiego/js/quest_spec.js:982
 #: questions/templates/vaaka/js/quest_spec.js:318
 msgid "Työ, opiskelu, päivähoito"
 msgstr "Work, studying, day-care"
 
 #: questions/templates/example/html/move_environment.html:42
-#: questions/templates/mobility/html/move_environment.html:38
+#: questions/templates/mobility_/html/move_environment.html:38
+#: questions/templates/sandiego/html/move_environment.html:38
 msgid "Työpaikka"
 msgstr "Workplace"
 
 #: questions/templates/example/html/move_environment.html:43
-#: questions/templates/mobility/html/move_environment.html:39
+#: questions/templates/mobility_/html/move_environment.html:39
+#: questions/templates/sandiego/html/move_environment.html:39
 msgid "Lapsen päivähoitopaikka"
 msgstr "Day-care "
 
 #: questions/templates/example/html/move_environment.html:44
-#: questions/templates/mobility/html/move_environment.html:40
+#: questions/templates/mobility_/html/move_environment.html:40
+#: questions/templates/sandiego/html/move_environment.html:40
 msgid "Koulu"
 msgstr "School"
 
 #: questions/templates/example/html/move_environment.html:45
-#: questions/templates/mobility/html/move_environment.html:41
+#: questions/templates/mobility_/html/move_environment.html:41
+#: questions/templates/sandiego/html/move_environment.html:41
 msgid "Opiskelupaikka"
 msgstr "Study place"
 
 #: questions/templates/example/html/move_environment.html:46
-#: questions/templates/mobility/html/move_environment.html:42
+#: questions/templates/mobility_/html/move_environment.html:42
+#: questions/templates/sandiego/html/move_environment.html:42
 msgid "Työhön liittyvä asiointipaikka"
 msgstr "Work-related place"
 
 #: questions/templates/example/html/move_environment.html:55
 #: questions/templates/example/js/quest_spec.js:330
 #: questions/templates/example/js/quest_spec_old.js:2223
-#: questions/templates/mobility/html/move_environment.html:48
-#: questions/templates/mobility/js/quest_spec.js:341
-#: questions/templates/mobility/js/quest_spec.js:970
+#: questions/templates/mobility_/html/move_environment.html:48
+#: questions/templates/mobility_/js/quest_spec.js:341
+#: questions/templates/mobility_/js/quest_spec.js:988
+#: questions/templates/sandiego/html/move_environment.html:48
+#: questions/templates/sandiego/js/quest_spec.js:341
+#: questions/templates/sandiego/js/quest_spec.js:988
 #: questions/templates/vaaka/js/quest_spec.js:338
 msgid "Ostospaikka"
 msgstr "Shopping place"
 
 #: questions/templates/example/html/move_environment.html:57
-#: questions/templates/mobility/html/move_environment.html:50
+#: questions/templates/mobility_/html/move_environment.html:50
+#: questions/templates/sandiego/html/move_environment.html:50
 msgid "Lähikauppa"
-msgstr "Neighbourhood grocery store"
+msgstr "Neighborhood grocery store"
 
 #: questions/templates/example/html/move_environment.html:58
-#: questions/templates/mobility/html/move_environment.html:51
+#: questions/templates/mobility_/html/move_environment.html:51
+#: questions/templates/sandiego/html/move_environment.html:51
 msgid "Super- tai hypermarket"
 msgstr "Supermarket"
 
 #: questions/templates/example/html/move_environment.html:59
-#: questions/templates/mobility/html/move_environment.html:52
+#: questions/templates/mobility_/html/move_environment.html:52
+#: questions/templates/sandiego/html/move_environment.html:52
 msgid "Kauppakeskus tai tavaratalo"
-msgstr "Shopping centre or department store"
+msgstr "Mall, shopping center or department store"
 
 #: questions/templates/example/html/move_environment.html:60
-#: questions/templates/mobility/html/move_environment.html:53
+#: questions/templates/mobility_/html/move_environment.html:53
+#: questions/templates/sandiego/html/move_environment.html:53
 msgid "Erikoiskauppa"
 msgstr "Specialized shop"
 
 #: questions/templates/example/html/move_environment.html:61
-#: questions/templates/mobility/html/move_environment.html:54
+#: questions/templates/mobility_/html/move_environment.html:54
+#: questions/templates/sandiego/html/move_environment.html:54
 msgid "Tori"
-msgstr "Market place"
+msgstr "Farmers'Market"
 
 #: questions/templates/example/html/move_environment.html:71
-#: questions/templates/mobility/html/move_environment.html:60
+#: questions/templates/mobility_/html/move_environment.html:60
+#: questions/templates/sandiego/html/move_environment.html:61
 msgid "Asiointi"
 msgstr "Running errands"
 
 #: questions/templates/example/html/move_environment.html:73
-#: questions/templates/mobility/html/move_environment.html:62
+#: questions/templates/mobility_/html/move_environment.html:62
+#: questions/templates/sandiego/html/move_environment.html:63
 msgid "Pankki, posti tai virasto"
 msgstr "Bank, post office or bureau"
 
 #: questions/templates/example/html/move_environment.html:74
-#: questions/templates/mobility/html/move_environment.html:63
+#: questions/templates/mobility_/html/move_environment.html:63
+#: questions/templates/sandiego/html/move_environment.html:64
 msgid "Terveyspalvelut"
 msgstr "Health services"
 
 #: questions/templates/example/html/move_environment.html:75
-#: questions/templates/mobility/html/move_environment.html:64
+#: questions/templates/mobility_/html/move_environment.html:64
+#: questions/templates/sandiego/html/move_environment.html:65
 msgid "Muu palvelu, esim. kampaaja tai parturi"
 msgstr "Other service, e.g. hair salon or barber"
 
 #: questions/templates/example/html/move_environment.html:85
 #: questions/templates/example/js/quest_spec.js:369
 #: questions/templates/example/js/quest_spec_old.js:2262
-#: questions/templates/mobility/html/move_environment.html:70
-#: questions/templates/mobility/js/quest_spec.js:380
-#: questions/templates/mobility/js/quest_spec.js:982
+#: questions/templates/mobility_/html/move_environment.html:70
+#: questions/templates/mobility_/js/quest_spec.js:380
+#: questions/templates/mobility_/js/quest_spec.js:1000
+#: questions/templates/sandiego/html/move_environment.html:71
+#: questions/templates/sandiego/js/quest_spec.js:380
+#: questions/templates/sandiego/js/quest_spec.js:1000
 #: questions/templates/vaaka/js/quest_spec.js:377
 msgid "Liikunta ja ulkoilu"
 msgstr "Sports and outdoor activities"
 
 #: questions/templates/example/html/move_environment.html:87
-#: questions/templates/mobility/html/move_environment.html:72
+#: questions/templates/mobility_/html/move_environment.html:72
+#: questions/templates/sandiego/html/move_environment.html:73
 msgid "Ulkoilupaikka"
 msgstr "Recreational outdoor location"
 
 #: questions/templates/example/html/move_environment.html:88
-#: questions/templates/mobility/html/move_environment.html:73
+#: questions/templates/mobility_/html/move_environment.html:73
+#: questions/templates/sandiego/html/move_environment.html:74
 msgid "Liikuntapaikka"
-msgstr "Sports location"
+msgstr "Designated sports location"
 
 #: questions/templates/example/html/move_environment.html:89
-#: questions/templates/mobility/html/move_environment.html:74
+#: questions/templates/mobility_/html/move_environment.html:74
+#: questions/templates/sandiego/html/move_environment.html:75
 msgid "Leikkipuisto"
 msgstr "Playground"
 
 #: questions/templates/example/html/move_environment.html:99
 #: questions/templates/example/js/quest_spec.js:388
 #: questions/templates/example/js/quest_spec_old.js:2281
-#: questions/templates/mobility/html/move_environment.html:80
-#: questions/templates/mobility/js/quest_spec.js:399
-#: questions/templates/mobility/js/quest_spec.js:988
+#: questions/templates/mobility_/html/move_environment.html:80
+#: questions/templates/mobility_/js/quest_spec.js:399
+#: questions/templates/mobility_/js/quest_spec.js:1006
+#: questions/templates/sandiego/html/move_environment.html:81
+#: questions/templates/sandiego/js/quest_spec.js:399
+#: questions/templates/sandiego/js/quest_spec.js:1006
 #: questions/templates/vaaka/js/quest_spec.js:396
 msgid "Vapaa-aika"
 msgstr "Leisure time"
 
 #: questions/templates/example/html/move_environment.html:101
-#: questions/templates/mobility/html/move_environment.html:82
+#: questions/templates/mobility_/html/move_environment.html:82
+#: questions/templates/sandiego/html/move_environment.html:83
 msgid "Vierailupaikka (ystävät, sukulaiset)"
 msgstr "Visiting place (friends, relatives)"
 
 #: questions/templates/example/html/move_environment.html:102
-#: questions/templates/mobility/html/move_environment.html:83
+#: questions/templates/mobility_/html/move_environment.html:83
+#: questions/templates/sandiego/html/move_environment.html:84
 msgid "Ravintola, kahvila"
-msgstr "Restaurant, café"
+msgstr "Restaurant, bar, café"
 
 #: questions/templates/example/html/move_environment.html:103
-#: questions/templates/mobility/html/move_environment.html:84
+#: questions/templates/mobility_/html/move_environment.html:84
+#: questions/templates/sandiego/html/move_environment.html:85
 msgid "Kirjasto"
 msgstr "Library"
 
 #: questions/templates/example/html/move_environment.html:104
-#: questions/templates/mobility/html/move_environment.html:85
+#: questions/templates/mobility_/html/move_environment.html:85
+#: questions/templates/sandiego/html/move_environment.html:86
 msgid "Kirkko, seurakuntatoiminta"
 msgstr "Church, parish activities"
 
 #: questions/templates/example/html/move_environment.html:105
-#: questions/templates/mobility/html/move_environment.html:86
+#: questions/templates/mobility_/html/move_environment.html:86
+#: questions/templates/sandiego/html/move_environment.html:87
 msgid "Kesämökki, vapaa-ajan asunto"
 msgstr "Summer house, holiday house"
 
 #: questions/templates/example/html/move_environment.html:106
-#: questions/templates/mobility/html/move_environment.html:87
+#: questions/templates/mobility_/html/move_environment.html:87
+#: questions/templates/sandiego/html/move_environment.html:88
 msgid "Työväenopisto tms."
-msgstr "Adult education centre etc"
+msgstr "Adult education center etc."
 
 #: questions/templates/example/html/move_environment.html:107
-#: questions/templates/mobility/html/move_environment.html:88
+#: questions/templates/mobility_/html/move_environment.html:88
+#: questions/templates/sandiego/html/move_environment.html:89
 msgid "Muu vapaa-ajan paikka"
 msgstr "Other leisure time location"
 
 #: questions/templates/example/html/move_environment.html:116
 #: questions/templates/example/js/quest_spec.js:410
 #: questions/templates/example/js/quest_spec_old.js:2303
-#: questions/templates/mobility/html/move_environment.html:94
-#: questions/templates/mobility/js/quest_spec.js:421
-#: questions/templates/mobility/js/quest_spec.js:994
-#: questions/templates/mobility/js/quest_spec.js:1070
+#: questions/templates/mobility_/html/move_environment.html:94
+#: questions/templates/mobility_/js/quest_spec.js:421
+#: questions/templates/mobility_/js/quest_spec.js:1012
+#: questions/templates/mobility_/js/quest_spec.js:1088
+#: questions/templates/sandiego/html/move_environment.html:95
+#: questions/templates/sandiego/js/quest_spec.js:421
+#: questions/templates/sandiego/js/quest_spec.js:1012
+#: questions/templates/sandiego/js/quest_spec.js:1088
 #: questions/templates/vaaka/js/quest_spec.js:418
 #: questions/templates/vaaka/js/quest_spec.js:891
 msgid "Muu paikka"
@@ -2109,12 +2339,14 @@ msgid "näytä kaikki"
 msgstr "Show all"
 
 #: questions/templates/example/html/owncomments.html:5
-#: questions/templates/mobility/html/owncomments.html:5
+#: questions/templates/mobility_/html/owncomments.html:5
+#: questions/templates/sandiego/html/owncomments.html:5
 msgid "Omia kommentteja"
 msgstr "Give us your own comments"
 
 #: questions/templates/example/html/owncomments.html:7
-#: questions/templates/mobility/html/owncomments.html:7
+#: questions/templates/mobility_/html/owncomments.html:7
+#: questions/templates/sandiego/html/owncomments.html:7
 #: questions/templates/vaaka/html/feedback.html:126
 msgid ""
 "Jos haluat, voit vielä tähän kommentoida kyselyä tai kertoa jotain, joka jäi "
@@ -2124,10 +2356,9 @@ msgstr ""
 "something else that was left unsaid"
 
 #: questions/templates/example/html/owncomments.html:14
+#: questions/templates/sandiego/html/owncomments.html:15
 msgid "Arvonta"
-msgstr ""
-"If you want you can still give comments on the questionnaire or tell us "
-"something else that was left unsaid."
+msgstr "Lottery"
 
 #: questions/templates/example/html/owncomments.html:16
 msgid ""
@@ -2148,88 +2379,103 @@ msgstr ""
 "saved to the same data file with your answers."
 
 #: questions/templates/example/html/owncomments.html:25
+#: questions/templates/sandiego/html/owncomments.html:26
 #: questions/templates/vaaka/html/thankyou.html:41
 msgid "Nimi"
 msgstr "Name"
 
 #: questions/templates/example/html/owncomments.html:31
+#: questions/templates/sandiego/html/owncomments.html:32
 #: questions/templates/vaaka/html/thankyou.html:53
 msgid "Sähköpostiosoite"
 msgstr "Email"
 
 #: questions/templates/example/html/owncomments.html:37
+#: questions/templates/sandiego/html/owncomments.html:38
 #: questions/templates/vaaka/html/thankyou.html:47
 msgid "Puhelinnumero"
 msgstr "Phone"
 
 #: questions/templates/example/html/routes_info.html:38
 #: questions/templates/html/routes_info.html:38
-#: questions/templates/mobility/html/routes_info.html:38
+#: questions/templates/mobility_/html/routes_info.html:38
+#: questions/templates/sandiego/html/routes_info.html:38
 msgid "miten"
 msgstr "how"
 
 #: questions/templates/example/html/routes_info.html:44
 #: questions/templates/html/routes_info.html:44
-#: questions/templates/mobility/html/routes_info.html:44
+#: questions/templates/mobility_/html/routes_info.html:44
+#: questions/templates/sandiego/html/routes_info.html:44
 msgid "Millainen reitti mielestäsi on"
 msgstr "How is the route like"
 
 #: questions/templates/example/html/routes_info.html:49
 #: questions/templates/html/routes_info.html:49
-#: questions/templates/mobility/html/routes_info.html:49
+#: questions/templates/mobility_/html/routes_info.html:49
+#: questions/templates/sandiego/html/routes_info.html:49
 msgid "turvallinen"
 msgstr "Safe"
 
 #: questions/templates/example/html/routes_info.html:55
 #: questions/templates/html/routes_info.html:55
-#: questions/templates/mobility/html/routes_info.html:55
+#: questions/templates/mobility_/html/routes_info.html:55
+#: questions/templates/sandiego/html/routes_info.html:55
 msgid "turvaton"
 msgstr "Dangerous"
 
 #: questions/templates/example/html/routes_info.html:61
 #: questions/templates/html/routes_info.html:61
-#: questions/templates/mobility/html/routes_info.html:61
+#: questions/templates/mobility_/html/routes_info.html:61
+#: questions/templates/sandiego/html/routes_info.html:61
 msgid "nopea"
 msgstr "Fast"
 
 #: questions/templates/example/html/routes_info.html:67
 #: questions/templates/html/routes_info.html:67
-#: questions/templates/mobility/html/routes_info.html:67
+#: questions/templates/mobility_/html/routes_info.html:67
+#: questions/templates/sandiego/html/routes_info.html:67
 msgid "hyvin hoidettu"
 msgstr "Well maintained"
 
 #: questions/templates/example/html/routes_info.html:73
 #: questions/templates/html/routes_info.html:73
-#: questions/templates/mobility/html/routes_info.html:73
+#: questions/templates/mobility_/html/routes_info.html:73
+#: questions/templates/sandiego/html/routes_info.html:73
 msgid "huonosti hoidettu"
 msgstr "Poorly maintained"
 
 #: questions/templates/example/html/routes_info.html:79
 #: questions/templates/html/routes_info.html:79
-#: questions/templates/mobility/html/routes_info.html:79
+#: questions/templates/mobility_/html/routes_info.html:79
+#: questions/templates/sandiego/html/routes_info.html:79
 msgid "tunnelmallinen"
 msgstr "Nice atmosphere"
 
 #: questions/templates/example/html/routes_info.html:85
 #: questions/templates/html/routes_info.html:85
-#: questions/templates/mobility/html/routes_info.html:85
+#: questions/templates/mobility_/html/routes_info.html:85
+#: questions/templates/sandiego/html/routes_info.html:85
 msgid "ankea"
 msgstr "Depressing"
 
 #: questions/templates/example/html/thankyou.html:5
-#: questions/templates/mobility/html/thankyou.html:5
+#: questions/templates/mobility_/html/thankyou.html:5
+#: questions/templates/sandiego/html/thankyou.html:5
 #: questions/templates/vaaka/html/thankyou.html:5
 msgid "Suuret kiitokset vaivannäöstäsi"
 msgstr "Thank you for your time"
 
 #: questions/templates/example/html/thankyou.html:8
-#: questions/templates/mobility/html/thankyou.html:8
+#: questions/templates/mobility_/html/thankyou.html:8
+#: questions/templates/sandiego/html/thankyou.html:8
 #: questions/templates/vaaka/html/thankyou.html:8
 msgid "Kaikki vastauksesi on tallennettu"
 msgstr "All your answers have been stored"
 
 #: questions/templates/example/html/thankyou.html:9
-#: questions/templates/mobility/html/thankyou.html:9
+#: questions/templates/mobility_/html/thankyou.html:9
+#: questions/templates/sandiego/html/thankyou.html:9
 #: questions/templates/vaaka/html/thankyou.html:9
 msgid ""
 "Voit halutessasi palata katsomaan tai muokkaamaan vastauksiasi yläpalkin tai "
@@ -2239,7 +2485,8 @@ msgstr ""
 "bar on the top of the page or by pressing the Back button"
 
 #: questions/templates/example/html/thankyou.html:12
-#: questions/templates/mobility/html/thankyou.html:12
+#: questions/templates/mobility_/html/thankyou.html:12
+#: questions/templates/sandiego/html/thankyou.html:12
 #: questions/templates/vaaka/html/thankyou.html:12
 msgid "Voit poistua kyselystä painamalla \"Poistu kyselystä\" -nappia."
 msgstr ""
@@ -2247,24 +2494,22 @@ msgstr ""
 "button. "
 
 #: questions/templates/example/html/thankyou.html:13
-#: questions/templates/mobility/html/thankyou.html:13
+#: questions/templates/mobility_/html/thankyou.html:13
+#: questions/templates/sandiego/html/thankyou.html:13
 #: questions/templates/vaaka/html/thankyou.html:13
 msgid ""
 "Tämän jälkeen et voi enää enää palata muuttamaan tai katsomaan vastauksiasi"
 msgstr "After this you can’t no longer go back and view or change your answers"
 
 #: questions/templates/example/html/thankyou.html:17
-#: questions/templates/mobility/html/thankyou.html:17
 msgid "Miltä minun karttani näyttää"
 msgstr "How does my map look like"
 
 #: questions/templates/example/html/thankyou.html:20
-#: questions/templates/mobility/html/thankyou.html:20
 msgid "Jatka vielä eteenpäin, ja katso, miltä näyttää Sinun Karttasi"
 msgstr "Continue still further to see all your places on the map"
 
 #: questions/templates/example/html/thankyou.html:21
-#: questions/templates/mobility/html/thankyou.html:21
 msgid ""
 "Seuraavassa näkymässä on näkyvillä kaikki tekemäsi paikannukset ja voit "
 "halutessasi tulostaa oman karttasi"
@@ -2273,18 +2518,19 @@ msgstr ""
 "map, if you wish"
 
 #: questions/templates/example/html/thankyou.html:30
-#: questions/templates/mobility/html/thankyou.html:30
+#: questions/templates/mobility_/html/thankyou.html:21
+#: questions/templates/sandiego/html/thankyou.html:21
 #: questions/templates/vaaka/html/thankyou.html:68
 msgid "Poistu kyselystä"
 msgstr "Leave the questionnaire"
 
 #: questions/templates/example/html/thankyou.html:35
-#: questions/templates/mobility/html/thankyou.html:35
 msgid "Oma kartta"
 msgstr "My map"
 
 #: questions/templates/example/html/thingsappreciate.html:5
-#: questions/templates/mobility/html/thingsappreciate.html:5
+#: questions/templates/mobility_/html/thingsappreciate.html:5
+#: questions/templates/sandiego/html/thingsappreciate.html:5
 msgid "Minkälaisia asioita juuri sinä arvostat asukkaana?"
 msgstr "What kind of things do you value as an inhabitant?"
 
@@ -2351,27 +2597,32 @@ msgstr ""
 "answering or want to know about privacy protection you can click on "
 
 #: questions/templates/example/html/welcome.html:32
-#: questions/templates/mobility/html/welcome.html:24
+#: questions/templates/mobility_/html/welcome.html:24
+#: questions/templates/sandiego/html/welcome.html:25
 #: questions/templates/vaaka/html/welcome.html:29
 msgid "-merkkiä."
 msgstr "."
 
 #: questions/templates/example/html/welcome.html:43
-#: questions/templates/mobility/html/welcome.html:35
+#: questions/templates/mobility_/html/welcome.html:35
+#: questions/templates/sandiego/html/welcome.html:36
 #: questions/templates/vaaka/html/welcome.html:40
 msgid "Aloita"
 msgstr "Start"
 
 #: questions/templates/example/html/welcome.html:47
-#: questions/templates/mobility/html/welcome.html:39
+#: questions/templates/mobility_/html/welcome.html:39
+#: questions/templates/sandiego/html/welcome.html:40
 #: questions/templates/vaaka/html/welcome.html:44
 msgid "Jos haluat tutustua kyselyyn osallistumatta tutkimukseen"
 msgstr "Take a look at the questionnaire without participating:"
 
 #: questions/templates/example/html/welcome.html:48
 #: questions/templates/example/html/welcome.html:53
-#: questions/templates/mobility/html/welcome.html:40
-#: questions/templates/mobility/html/welcome.html:45
+#: questions/templates/mobility_/html/welcome.html:40
+#: questions/templates/mobility_/html/welcome.html:45
+#: questions/templates/sandiego/html/welcome.html:41
+#: questions/templates/sandiego/html/welcome.html:46
 #: questions/templates/vaaka/html/welcome.html:45
 #: questions/templates/vaaka/html/welcome.html:50
 msgid "paina tästä"
@@ -2384,7 +2635,8 @@ msgid ""
 msgstr ""
 
 #: questions/templates/example/html/welcome.html:59
-#: questions/templates/mobility/html/welcome.html:55
+#: questions/templates/mobility_/html/welcome.html:55
+#: questions/templates/sandiego/html/welcome.html:63
 #: questions/templates/vaaka/html/welcome.html:62
 msgid "Lisätietoa tutkimuksesta"
 msgstr "Find out more about the softGIS research. "
@@ -2393,8 +2645,10 @@ msgstr "Find out more about the softGIS research. "
 #: questions/templates/example/js/quest_spec.js:266
 #: questions/templates/example/js/quest_spec_old.js:2148
 #: questions/templates/example/js/quest_spec_old.js:2159
-#: questions/templates/mobility/js/quest_spec.js:266
-#: questions/templates/mobility/js/quest_spec.js:277
+#: questions/templates/mobility_/js/quest_spec.js:266
+#: questions/templates/mobility_/js/quest_spec.js:277
+#: questions/templates/sandiego/js/quest_spec.js:266
+#: questions/templates/sandiego/js/quest_spec.js:277
 #: questions/templates/vaaka/js/quest_spec.js:263
 #: questions/templates/vaaka/js/quest_spec.js:274
 msgid "Home"
@@ -2404,8 +2658,10 @@ msgstr ""
 #: questions/templates/example/js/quest_spec.js:281
 #: questions/templates/example/js/quest_spec_old.js:2163
 #: questions/templates/example/js/quest_spec_old.js:2174
-#: questions/templates/mobility/js/quest_spec.js:281
-#: questions/templates/mobility/js/quest_spec.js:292
+#: questions/templates/mobility_/js/quest_spec.js:281
+#: questions/templates/mobility_/js/quest_spec.js:292
+#: questions/templates/sandiego/js/quest_spec.js:281
+#: questions/templates/sandiego/js/quest_spec.js:292
 #: questions/templates/vaaka/js/quest_spec.js:278
 #: questions/templates/vaaka/js/quest_spec.js:289
 msgid "Uusi asuinpaikka"
@@ -2413,7 +2669,8 @@ msgstr "New residence"
 
 #: questions/templates/example/js/quest_spec.js:282
 #: questions/templates/example/js/quest_spec_old.js:2175
-#: questions/templates/mobility/js/quest_spec.js:293
+#: questions/templates/mobility_/js/quest_spec.js:293
+#: questions/templates/sandiego/js/quest_spec.js:293
 #: questions/templates/vaaka/js/quest_spec.js:290
 msgid "Miksi muuttaisit juuri tänne?"
 msgstr "Why would you like to move to this area particularly?"
@@ -2422,8 +2679,10 @@ msgstr "Why would you like to move to this area particularly?"
 #: questions/templates/example/js/quest_spec.js:297
 #: questions/templates/example/js/quest_spec_old.js:2179
 #: questions/templates/example/js/quest_spec_old.js:2190
-#: questions/templates/mobility/js/quest_spec.js:297
-#: questions/templates/mobility/js/quest_spec.js:308
+#: questions/templates/mobility_/js/quest_spec.js:297
+#: questions/templates/mobility_/js/quest_spec.js:308
+#: questions/templates/sandiego/js/quest_spec.js:297
+#: questions/templates/sandiego/js/quest_spec.js:308
 #: questions/templates/vaaka/js/quest_spec.js:294
 #: questions/templates/vaaka/js/quest_spec.js:305
 #, fuzzy
@@ -2432,54 +2691,66 @@ msgstr "Where do you live in Tampere?"
 
 #: questions/templates/example/js/quest_spec.js:298
 #: questions/templates/example/js/quest_spec_old.js:2191
-#: questions/templates/mobility/js/quest_spec.js:309
+#: questions/templates/mobility_/js/quest_spec.js:309
+#: questions/templates/sandiego/js/quest_spec.js:309
 #: questions/templates/vaaka/js/quest_spec.js:306
 msgid "Miksi muuttaiset juuri tänne?"
 msgstr "Why would you like to move to this area particularly?"
 
 #: questions/templates/example/js/quest_spec.js:311
 #: questions/templates/example/js/quest_spec_old.js:2204
-#: questions/templates/mobility/js/quest_spec.js:322
+#: questions/templates/mobility_/js/quest_spec.js:322
+#: questions/templates/sandiego/js/quest_spec.js:322
 #: questions/templates/vaaka/js/quest_spec.js:319
 msgid "työ-, opiskelu-, päivähoitopaikka"
 msgstr "Work, studying, day-care"
 
 #: questions/templates/example/js/quest_spec.js:312
 #: questions/templates/example/js/quest_spec_old.js:2205
-#: questions/templates/mobility/html/move_env_info_work.html:13
-#: questions/templates/mobility/js/quest_spec.js:323
+#: questions/templates/mobility_/html/move_env_info_work.html:13
+#: questions/templates/mobility_/js/quest_spec.js:323
+#: questions/templates/sandiego/html/move_env_info_work.html:13
+#: questions/templates/sandiego/js/quest_spec.js:323
 #: questions/templates/vaaka/js/quest_spec.js:320
 msgid "oma työpaikka"
 msgstr "My own work place"
 
 #: questions/templates/example/js/quest_spec.js:313
 #: questions/templates/example/js/quest_spec_old.js:2206
-#: questions/templates/mobility/html/move_env_info_work.html:19
-#: questions/templates/mobility/js/quest_spec.js:324
+#: questions/templates/mobility_/html/move_env_info_work.html:19
+#: questions/templates/mobility_/js/quest_spec.js:324
+#: questions/templates/sandiego/html/move_env_info_work.html:19
+#: questions/templates/sandiego/js/quest_spec.js:324
 #: questions/templates/vaaka/js/quest_spec.js:321
 msgid "perheenjäsenen työpaikka"
 msgstr "Work place of my family member"
 
 #: questions/templates/example/js/quest_spec.js:314
 #: questions/templates/example/js/quest_spec_old.js:2207
-#: questions/templates/mobility/html/move_env_info_work.html:25
-#: questions/templates/mobility/js/quest_spec.js:325
+#: questions/templates/mobility_/html/move_env_info_work.html:25
+#: questions/templates/mobility_/js/quest_spec.js:325
+#: questions/templates/sandiego/html/move_env_info_work.html:25
+#: questions/templates/sandiego/js/quest_spec.js:325
 #: questions/templates/vaaka/js/quest_spec.js:322
 msgid "lapsen päivähoitopaikka tai koulu"
 msgstr "A child’s day-care or school"
 
 #: questions/templates/example/js/quest_spec.js:315
 #: questions/templates/example/js/quest_spec_old.js:2208
-#: questions/templates/mobility/html/move_env_info_work.html:31
-#: questions/templates/mobility/js/quest_spec.js:326
+#: questions/templates/mobility_/html/move_env_info_work.html:31
+#: questions/templates/mobility_/js/quest_spec.js:326
+#: questions/templates/sandiego/html/move_env_info_work.html:31
+#: questions/templates/sandiego/js/quest_spec.js:326
 #: questions/templates/vaaka/js/quest_spec.js:323
 msgid "koulu tai opiskelupaikka"
 msgstr "School or study place"
 
 #: questions/templates/example/js/quest_spec.js:316
 #: questions/templates/example/js/quest_spec_old.js:2209
-#: questions/templates/mobility/html/move_env_info_work.html:37
-#: questions/templates/mobility/js/quest_spec.js:327
+#: questions/templates/mobility_/html/move_env_info_work.html:37
+#: questions/templates/mobility_/js/quest_spec.js:327
+#: questions/templates/sandiego/html/move_env_info_work.html:37
+#: questions/templates/sandiego/js/quest_spec.js:327
 #: questions/templates/vaaka/js/quest_spec.js:324
 msgid "työhön liittyvä asiointipaikka"
 msgstr "Work-related place"
@@ -2488,9 +2759,12 @@ msgstr "Work-related place"
 #: questions/templates/example/js/quest_spec.js:413
 #: questions/templates/example/js/quest_spec_old.js:2211
 #: questions/templates/example/js/quest_spec_old.js:2306
-#: questions/templates/mobility/html/move_env_info.html:117
-#: questions/templates/mobility/js/quest_spec.js:329
-#: questions/templates/mobility/js/quest_spec.js:424
+#: questions/templates/mobility_/html/move_env_info.html:117
+#: questions/templates/mobility_/js/quest_spec.js:329
+#: questions/templates/mobility_/js/quest_spec.js:424
+#: questions/templates/sandiego/html/move_env_info.html:117
+#: questions/templates/sandiego/js/quest_spec.js:329
+#: questions/templates/sandiego/js/quest_spec.js:424
 #: questions/templates/vaaka/js/quest_spec.js:326
 #: questions/templates/vaaka/js/quest_spec.js:421
 msgid "Lisätietoja tästä paikasta"
@@ -2498,47 +2772,58 @@ msgstr "More information about the place"
 
 #: questions/templates/example/js/quest_spec.js:331
 #: questions/templates/example/js/quest_spec_old.js:2224
-#: questions/templates/mobility/js/quest_spec.js:342
+#: questions/templates/mobility_/js/quest_spec.js:342
+#: questions/templates/sandiego/js/quest_spec.js:342
 #: questions/templates/vaaka/js/quest_spec.js:339
 msgid "ostospaikka"
 msgstr "shopping place"
 
 #: questions/templates/example/js/quest_spec.js:332
 #: questions/templates/example/js/quest_spec_old.js:2225
-#: questions/templates/mobility/html/move_env_info_shop.html:11
-#: questions/templates/mobility/js/quest_spec.js:343
+#: questions/templates/mobility_/html/move_env_info_shop.html:11
+#: questions/templates/mobility_/js/quest_spec.js:343
+#: questions/templates/sandiego/html/move_env_info_shop.html:11
+#: questions/templates/sandiego/js/quest_spec.js:343
 #: questions/templates/vaaka/js/quest_spec.js:340
 msgid "lähikauppa"
-msgstr "Neighbourhood grocery store"
+msgstr "Neighborhood grocery store"
 
 #: questions/templates/example/js/quest_spec.js:333
 #: questions/templates/example/js/quest_spec_old.js:2226
-#: questions/templates/mobility/html/move_env_info_shop.html:17
-#: questions/templates/mobility/js/quest_spec.js:344
+#: questions/templates/mobility_/html/move_env_info_shop.html:17
+#: questions/templates/mobility_/js/quest_spec.js:344
+#: questions/templates/sandiego/html/move_env_info_shop.html:17
+#: questions/templates/sandiego/js/quest_spec.js:344
 #: questions/templates/vaaka/js/quest_spec.js:341
 msgid "super- tai hypermarket"
 msgstr "Supermarket"
 
 #: questions/templates/example/js/quest_spec.js:334
 #: questions/templates/example/js/quest_spec_old.js:2227
-#: questions/templates/mobility/html/move_env_info_shop.html:23
-#: questions/templates/mobility/js/quest_spec.js:345
+#: questions/templates/mobility_/html/move_env_info_shop.html:23
+#: questions/templates/mobility_/js/quest_spec.js:345
+#: questions/templates/sandiego/html/move_env_info_shop.html:23
+#: questions/templates/sandiego/js/quest_spec.js:345
 #: questions/templates/vaaka/js/quest_spec.js:342
 msgid "kauppakeskus tai tavaratalo"
-msgstr "Shopping centre or department store"
+msgstr "Mall, shopping center or department store"
 
 #: questions/templates/example/js/quest_spec.js:335
 #: questions/templates/example/js/quest_spec_old.js:2228
-#: questions/templates/mobility/html/move_env_info_shop.html:29
-#: questions/templates/mobility/js/quest_spec.js:346
+#: questions/templates/mobility_/html/move_env_info_shop.html:29
+#: questions/templates/mobility_/js/quest_spec.js:346
+#: questions/templates/sandiego/html/move_env_info_shop.html:29
+#: questions/templates/sandiego/js/quest_spec.js:346
 #: questions/templates/vaaka/js/quest_spec.js:343
 msgid "erikoiskauppa"
 msgstr "Specialized shop"
 
 #: questions/templates/example/js/quest_spec.js:337
 #: questions/templates/example/js/quest_spec_old.js:2230
-#: questions/templates/mobility/html/move_env_info_shop.html:46
-#: questions/templates/mobility/js/quest_spec.js:348
+#: questions/templates/mobility_/html/move_env_info_shop.html:46
+#: questions/templates/mobility_/js/quest_spec.js:348
+#: questions/templates/sandiego/html/move_env_info_shop.html:58
+#: questions/templates/sandiego/js/quest_spec.js:348
 #: questions/templates/vaaka/js/quest_spec.js:345
 msgid "Miksi käyt ostoksilla juuri täällä?"
 msgstr ""
@@ -2546,47 +2831,58 @@ msgstr ""
 
 #: questions/templates/example/js/quest_spec.js:350
 #: questions/templates/example/js/quest_spec_old.js:2243
-#: questions/templates/mobility/js/quest_spec.js:361
-#: questions/templates/mobility/js/quest_spec.js:976
+#: questions/templates/mobility_/js/quest_spec.js:361
+#: questions/templates/mobility_/js/quest_spec.js:994
+#: questions/templates/sandiego/js/quest_spec.js:361
+#: questions/templates/sandiego/js/quest_spec.js:994
 #: questions/templates/vaaka/js/quest_spec.js:358
 msgid "Asiointipaikka"
 msgstr "Running errands"
 
 #: questions/templates/example/js/quest_spec.js:351
 #: questions/templates/example/js/quest_spec_old.js:2244
-#: questions/templates/mobility/js/quest_spec.js:362
+#: questions/templates/mobility_/js/quest_spec.js:362
+#: questions/templates/sandiego/js/quest_spec.js:362
 #: questions/templates/vaaka/js/quest_spec.js:359
 msgid "asiointipaikka"
 msgstr "running errands"
 
 #: questions/templates/example/js/quest_spec.js:352
 #: questions/templates/example/js/quest_spec_old.js:2245
-#: questions/templates/mobility/html/move_env_info_business.html:13
-#: questions/templates/mobility/js/quest_spec.js:363
+#: questions/templates/mobility_/html/move_env_info_business.html:13
+#: questions/templates/mobility_/js/quest_spec.js:363
+#: questions/templates/sandiego/html/move_env_info_business.html:13
+#: questions/templates/sandiego/js/quest_spec.js:363
 #: questions/templates/vaaka/js/quest_spec.js:360
 msgid "pankki, posti tai virasto"
 msgstr "Bank, post office or bureau"
 
 #: questions/templates/example/js/quest_spec.js:353
 #: questions/templates/example/js/quest_spec_old.js:2246
-#: questions/templates/mobility/html/move_env_info_business.html:19
-#: questions/templates/mobility/js/quest_spec.js:364
+#: questions/templates/mobility_/html/move_env_info_business.html:19
+#: questions/templates/mobility_/js/quest_spec.js:364
+#: questions/templates/sandiego/html/move_env_info_business.html:19
+#: questions/templates/sandiego/js/quest_spec.js:364
 #: questions/templates/vaaka/js/quest_spec.js:361
 msgid "terveyspalvelut"
 msgstr "Health services"
 
 #: questions/templates/example/js/quest_spec.js:354
 #: questions/templates/example/js/quest_spec_old.js:2247
-#: questions/templates/mobility/html/move_env_info_business.html:25
-#: questions/templates/mobility/js/quest_spec.js:365
+#: questions/templates/mobility_/html/move_env_info_business.html:25
+#: questions/templates/mobility_/js/quest_spec.js:365
+#: questions/templates/sandiego/html/move_env_info_business.html:25
+#: questions/templates/sandiego/js/quest_spec.js:365
 #: questions/templates/vaaka/js/quest_spec.js:362
 msgid "muu palvelu, esim. kampaaja tai parturi"
 msgstr "Other service, e.g. hair salon or barber"
 
 #: questions/templates/example/js/quest_spec.js:356
 #: questions/templates/example/js/quest_spec_old.js:2249
-#: questions/templates/mobility/html/move_env_info_business.html:42
-#: questions/templates/mobility/js/quest_spec.js:367
+#: questions/templates/mobility_/html/move_env_info_business.html:42
+#: questions/templates/mobility_/js/quest_spec.js:367
+#: questions/templates/sandiego/html/move_env_info_business.html:42
+#: questions/templates/sandiego/js/quest_spec.js:367
 #: questions/templates/vaaka/js/quest_spec.js:364
 msgid "Miksi asioit juuri täällä?"
 msgstr ""
@@ -2594,39 +2890,48 @@ msgstr ""
 
 #: questions/templates/example/js/quest_spec.js:370
 #: questions/templates/example/js/quest_spec_old.js:2263
-#: questions/templates/mobility/js/quest_spec.js:381
+#: questions/templates/mobility_/js/quest_spec.js:381
+#: questions/templates/sandiego/js/quest_spec.js:381
 #: questions/templates/vaaka/js/quest_spec.js:378
 msgid "liikunta- tai ulkoilupaikka"
 msgstr "Sports and outdoor activities"
 
 #: questions/templates/example/js/quest_spec.js:371
 #: questions/templates/example/js/quest_spec_old.js:2264
-#: questions/templates/mobility/html/move_env_info_exercise.html:13
-#: questions/templates/mobility/js/quest_spec.js:382
+#: questions/templates/mobility_/html/move_env_info_exercise.html:13
+#: questions/templates/mobility_/js/quest_spec.js:382
+#: questions/templates/sandiego/html/move_env_info_exercise.html:13
+#: questions/templates/sandiego/js/quest_spec.js:382
 #: questions/templates/vaaka/js/quest_spec.js:379
 msgid "ulkoilupaikka"
-msgstr "Recreational outdoor location"
+msgstr "Recreational outdoor location (e.g. beach or park)"
 
 #: questions/templates/example/js/quest_spec.js:372
 #: questions/templates/example/js/quest_spec_old.js:2265
-#: questions/templates/mobility/html/move_env_info_exercise.html:19
-#: questions/templates/mobility/js/quest_spec.js:383
+#: questions/templates/mobility_/html/move_env_info_exercise.html:19
+#: questions/templates/mobility_/js/quest_spec.js:383
+#: questions/templates/sandiego/html/move_env_info_exercise.html:19
+#: questions/templates/sandiego/js/quest_spec.js:383
 #: questions/templates/vaaka/js/quest_spec.js:380
 msgid "liikuntapaikka"
-msgstr "Sports location"
+msgstr "Designated sports location (e.g. sports field, recreation center)  "
 
 #: questions/templates/example/js/quest_spec.js:373
 #: questions/templates/example/js/quest_spec_old.js:2266
-#: questions/templates/mobility/html/move_env_info_exercise.html:25
-#: questions/templates/mobility/js/quest_spec.js:384
+#: questions/templates/mobility_/html/move_env_info_exercise.html:25
+#: questions/templates/mobility_/js/quest_spec.js:384
+#: questions/templates/sandiego/html/move_env_info_exercise.html:25
+#: questions/templates/sandiego/js/quest_spec.js:384
 #: questions/templates/vaaka/js/quest_spec.js:381
 msgid "leikkipuisto"
 msgstr "Playground"
 
 #: questions/templates/example/js/quest_spec.js:375
 #: questions/templates/example/js/quest_spec_old.js:2268
-#: questions/templates/mobility/html/move_env_info_exercise.html:42
-#: questions/templates/mobility/js/quest_spec.js:386
+#: questions/templates/mobility_/html/move_env_info_exercise.html:42
+#: questions/templates/mobility_/js/quest_spec.js:386
+#: questions/templates/sandiego/html/move_env_info_exercise.html:42
+#: questions/templates/sandiego/js/quest_spec.js:386
 #: questions/templates/vaaka/js/quest_spec.js:383
 msgid "Miksi liikut ja ulkoilet juuri täällä?"
 msgstr ""
@@ -2635,63 +2940,78 @@ msgstr ""
 
 #: questions/templates/example/js/quest_spec.js:389
 #: questions/templates/example/js/quest_spec_old.js:2282
-#: questions/templates/mobility/js/quest_spec.js:400
+#: questions/templates/mobility_/js/quest_spec.js:400
+#: questions/templates/sandiego/js/quest_spec.js:400
 #: questions/templates/vaaka/js/quest_spec.js:397
 msgid "vapaa-ajanpaikka"
 msgstr "Leisure time"
 
 #: questions/templates/example/js/quest_spec.js:390
 #: questions/templates/example/js/quest_spec_old.js:2283
-#: questions/templates/mobility/html/move_env_info_freetime.html:13
-#: questions/templates/mobility/js/quest_spec.js:401
+#: questions/templates/mobility_/html/move_env_info_freetime.html:13
+#: questions/templates/mobility_/js/quest_spec.js:401
+#: questions/templates/sandiego/html/move_env_info_freetime.html:13
+#: questions/templates/sandiego/js/quest_spec.js:401
 #: questions/templates/vaaka/js/quest_spec.js:398
 msgid "vierailupaikka"
 msgstr "Visiting place (friends, relatives)"
 
 #: questions/templates/example/js/quest_spec.js:391
 #: questions/templates/example/js/quest_spec_old.js:2284
-#: questions/templates/mobility/html/move_env_info_freetime.html:19
-#: questions/templates/mobility/js/quest_spec.js:402
+#: questions/templates/mobility_/html/move_env_info_freetime.html:19
+#: questions/templates/mobility_/js/quest_spec.js:402
+#: questions/templates/sandiego/html/move_env_info_freetime.html:19
+#: questions/templates/sandiego/js/quest_spec.js:402
 #: questions/templates/vaaka/js/quest_spec.js:399
 msgid "ravintola, kahvila"
-msgstr "Restaurant, café"
+msgstr "Restaurant, bar, café"
 
 #: questions/templates/example/js/quest_spec.js:392
 #: questions/templates/example/js/quest_spec_old.js:2285
-#: questions/templates/mobility/html/move_env_info_freetime.html:25
-#: questions/templates/mobility/js/quest_spec.js:403
+#: questions/templates/mobility_/html/move_env_info_freetime.html:25
+#: questions/templates/mobility_/js/quest_spec.js:403
+#: questions/templates/sandiego/html/move_env_info_freetime.html:25
+#: questions/templates/sandiego/js/quest_spec.js:403
 #: questions/templates/vaaka/js/quest_spec.js:400
 msgid "kirjasto"
 msgstr "Library"
 
 #: questions/templates/example/js/quest_spec.js:393
 #: questions/templates/example/js/quest_spec_old.js:2286
-#: questions/templates/mobility/html/move_env_info_freetime.html:31
-#: questions/templates/mobility/js/quest_spec.js:404
+#: questions/templates/mobility_/html/move_env_info_freetime.html:31
+#: questions/templates/mobility_/js/quest_spec.js:404
+#: questions/templates/sandiego/html/move_env_info_freetime.html:31
+#: questions/templates/sandiego/js/quest_spec.js:404
 #: questions/templates/vaaka/js/quest_spec.js:401
 msgid "kirkko, seurakuntatoiminta"
 msgstr "Church, parish activities"
 
 #: questions/templates/example/js/quest_spec.js:394
 #: questions/templates/example/js/quest_spec_old.js:2287
-#: questions/templates/mobility/html/move_env_info_freetime.html:37
-#: questions/templates/mobility/js/quest_spec.js:405
+#: questions/templates/mobility_/html/move_env_info_freetime.html:37
+#: questions/templates/mobility_/js/quest_spec.js:405
+#: questions/templates/sandiego/html/move_env_info_freetime.html:37
+#: questions/templates/sandiego/js/quest_spec.js:405
 #: questions/templates/vaaka/js/quest_spec.js:402
 msgid "kesämökki, vapaa-ajan asunto"
 msgstr "Summer house, holiday house"
 
 #: questions/templates/example/js/quest_spec.js:395
 #: questions/templates/example/js/quest_spec_old.js:2288
-#: questions/templates/mobility/html/move_env_info_freetime.html:43
-#: questions/templates/mobility/js/quest_spec.js:406
+#: questions/templates/mobility_/html/move_env_info_freetime.html:43
+#: questions/templates/mobility_/js/quest_spec.js:406
+#: questions/templates/sandiego/html/move_env_info_freetime.html:43
+#: questions/templates/sandiego/js/quest_spec.js:406
 #: questions/templates/vaaka/js/quest_spec.js:403
 msgid "työväenopisto tms."
-msgstr "Adult education centre etc."
+msgstr "Adult education center etc."
 
 #: questions/templates/example/js/quest_spec.js:397
 #: questions/templates/example/js/quest_spec_old.js:2290
-#: questions/templates/mobility/html/move_env_info_freetime.html:60
-#: questions/templates/mobility/js/quest_spec.js:408
+#: questions/templates/mobility_/html/move_env_info_freetime.html:60
+#: questions/templates/mobility_/js/quest_spec.js:408
+#: questions/templates/sandiego/html/move_env_info_freetime.html:60
+#: questions/templates/sandiego/js/quest_spec.js:408
 #: questions/templates/vaaka/js/quest_spec.js:405
 msgid "Miksi vietät vapaa-aikaa juuri täällä?"
 msgstr ""
@@ -2700,105 +3020,127 @@ msgstr ""
 
 #: questions/templates/example/js/quest_spec.js:411
 #: questions/templates/example/js/quest_spec_old.js:2304
-#: questions/templates/mobility/js/quest_spec.js:422
+#: questions/templates/mobility_/js/quest_spec.js:422
+#: questions/templates/sandiego/js/quest_spec.js:422
 #: questions/templates/vaaka/js/quest_spec.js:419
 msgid "muu paikka"
 msgstr "Other location"
 
 #: questions/templates/example/js/quest_spec.js:412
 #: questions/templates/example/js/quest_spec_old.js:2305
-#: questions/templates/mobility/html/move_env_info_otherplace.html:7
-#: questions/templates/mobility/js/quest_spec.js:423
+#: questions/templates/mobility_/html/move_env_info_otherplace.html:7
+#: questions/templates/mobility_/js/quest_spec.js:423
+#: questions/templates/sandiego/html/move_env_info_otherplace.html:7
+#: questions/templates/sandiego/js/quest_spec.js:423
 #: questions/templates/vaaka/js/quest_spec.js:420
 msgid "Minkätyyppinen paikka on kyseessä?"
 msgstr "What kind of a place is this?"
 
 #: questions/templates/example/js/quest_spec.js:419
 #: questions/templates/example/js/quest_spec_old.js:2404
-#: questions/templates/mobility/js/quest_spec.js:430
+#: questions/templates/mobility_/js/quest_spec.js:430
+#: questions/templates/sandiego/js/quest_spec.js:430
 #: questions/templates/vaaka/js/quest_spec.js:427
 msgid "tärkeä jalankulku- tai <br />pyöräilyreitti"
 msgstr "An important walking <br />or cycling route."
 
 #: questions/templates/example/js/quest_spec.js:427
 #: questions/templates/example/js/quest_spec_old.js:2412
-#: questions/templates/mobility/html/routes_info.html:7
-#: questions/templates/mobility/js/quest_spec.js:438
+#: questions/templates/mobility_/html/routes_info.html:7
+#: questions/templates/mobility_/js/quest_spec.js:438
+#: questions/templates/sandiego/html/routes_info.html:7
+#: questions/templates/sandiego/js/quest_spec.js:438
 #: questions/templates/vaaka/js/quest_spec.js:435
 msgid "Miten yleensä liikut tällä reitillä?"
 msgstr "How do you travel this route?"
 
 #: questions/templates/example/js/quest_spec.js:430
 #: questions/templates/example/js/quest_spec_old.js:2415
-#: questions/templates/mobility/js/quest_spec.js:441
+#: questions/templates/mobility_/js/quest_spec.js:441
+#: questions/templates/sandiego/js/quest_spec.js:441
 #: questions/templates/vaaka/js/quest_spec.js:438
 msgid "Tärkeä kävely- tai<br /> pyöräreitti"
 msgstr "An important walking <br />or cycling route."
 
 #: questions/templates/example/js/quest_spec.js:431
 #: questions/templates/example/js/quest_spec_old.js:2416
-#: questions/templates/mobility/html/routes_info.html:89
-#: questions/templates/mobility/js/quest_spec.js:442
+#: questions/templates/mobility_/html/routes_info.html:89
+#: questions/templates/mobility_/js/quest_spec.js:442
+#: questions/templates/sandiego/html/routes_info.html:89
+#: questions/templates/sandiego/js/quest_spec.js:442
 #: questions/templates/vaaka/js/quest_spec.js:439
 msgid "Lisätietoja reitistä:"
 msgstr "More information about the route:"
 
 #: questions/templates/example/js/quest_spec.js:436
 #: questions/templates/example/js/quest_spec_old.js:2764
-#: questions/templates/mobility/js/quest_spec.js:447
+#: questions/templates/mobility_/js/quest_spec.js:447
+#: questions/templates/sandiego/js/quest_spec.js:447
 #: questions/templates/vaaka/js/quest_spec.js:444
 msgid "uusi kevyen liikenteen reitti"
 msgstr "New walking or cycling route"
 
 #: questions/templates/example/js/quest_spec.js:447
 #: questions/templates/example/js/quest_spec_old.js:2775
-#: questions/templates/mobility/js/quest_spec.js:458
-#: questions/templates/mobility/js/quest_spec.js:1022
+#: questions/templates/mobility_/js/quest_spec.js:458
+#: questions/templates/mobility_/js/quest_spec.js:1040
+#: questions/templates/sandiego/js/quest_spec.js:458
+#: questions/templates/sandiego/js/quest_spec.js:1040
 #: questions/templates/vaaka/js/quest_spec.js:455
 msgid "Reittiehdotuksesi"
 msgstr "Your route suggestion"
 
 #: questions/templates/example/js/quest_spec.js:448
 #: questions/templates/example/js/quest_spec_old.js:2776
-#: questions/templates/mobility/js/quest_spec.js:459
-#: questions/templates/mobility/js/quest_spec.js:1021
+#: questions/templates/mobility_/js/quest_spec.js:459
+#: questions/templates/mobility_/js/quest_spec.js:1039
+#: questions/templates/sandiego/js/quest_spec.js:459
+#: questions/templates/sandiego/js/quest_spec.js:1039
 #: questions/templates/vaaka/js/quest_spec.js:456
 msgid "Millaista reittiä toivot tähän paikkaan?"
 msgstr "What kind of a route you would wish to be implemented?"
 
 #: questions/templates/example/js/quest_spec.js:453
 #: questions/templates/example/js/quest_spec_old.js:2781
-#: questions/templates/mobility/html/improvements.html:40
-#: questions/templates/mobility/js/quest_spec.js:464
+#: questions/templates/mobility_/html/improvements.html:40
+#: questions/templates/mobility_/js/quest_spec.js:464
+#: questions/templates/sandiego/html/improvements.html:40
+#: questions/templates/sandiego/js/quest_spec.js:464
 #: questions/templates/vaaka/js/quest_spec.js:461
 msgid "uusi joukkoliikenneyhteys"
 msgstr "New public transport connection"
 
 #: questions/templates/example/js/quest_spec.js:465
 #: questions/templates/example/js/quest_spec_old.js:2793
-#: questions/templates/mobility/js/quest_spec.js:476
-#: questions/templates/mobility/js/quest_spec.js:1028
+#: questions/templates/mobility_/js/quest_spec.js:476
+#: questions/templates/mobility_/js/quest_spec.js:1046
+#: questions/templates/sandiego/js/quest_spec.js:476
+#: questions/templates/sandiego/js/quest_spec.js:1046
 #: questions/templates/vaaka/js/quest_spec.js:473
 msgid "Ehdotuksesi uudeksi joukkoliikenneyhteydeksi"
 msgstr "Your suggestion for a new public transport connection"
 
 #: questions/templates/example/js/quest_spec.js:466
 #: questions/templates/example/js/quest_spec_old.js:2794
-#: questions/templates/mobility/js/quest_spec.js:477
-#: questions/templates/mobility/js/quest_spec.js:1027
+#: questions/templates/mobility_/js/quest_spec.js:477
+#: questions/templates/mobility_/js/quest_spec.js:1045
+#: questions/templates/sandiego/js/quest_spec.js:477
+#: questions/templates/sandiego/js/quest_spec.js:1045
 #: questions/templates/vaaka/js/quest_spec.js:474
 msgid "Millaista joukkoliikennelinjaa toivoisit tänne?"
 msgstr "What kind of a public transport connection would you suggest?"
 
 #: questions/templates/example/js/quest_spec.js:690
 #: questions/templates/example/js/quest_spec_old.js:4590
-#: questions/templates/mobility/js/quest_spec.js:888
+#: questions/templates/mobility_/js/quest_spec.js:906
+#: questions/templates/sandiego/js/quest_spec.js:906
 #: questions/templates/vaaka/js/quest_spec.js:808
 msgid "confirm exit"
 msgstr ""
 
 #: questions/templates/example/js/quest_spec_old.js:4344
-#: questions/templates/mobility/js/pehmogis_json.js:4616
+#: questions/templates/mobility_/js/pehmogis_json.js:4616
+#: questions/templates/sandiego/js/pehmogis_json.js:4616
 msgid "Virheellinen sähköpostiosoite"
 msgstr "Invalid email address"
 
@@ -2832,7 +3174,8 @@ msgid "Lähetä"
 msgstr "Send"
 
 #: questions/templates/html/instructions_base.html:7
-#: questions/templates/mobility/html/instructions_base.html:7
+#: questions/templates/mobility_/html/instructions_base.html:7
+#: questions/templates/sandiego/html/instructions_base.html:7
 msgid "PehmoGIS ohjeet"
 msgstr "SoftGis Help"
 
@@ -2881,7 +3224,7 @@ msgid "selaimet ja asetukset"
 msgstr "browsers and settings"
 
 #: questions/templates/html/instructions_base.html:155
-#: questions/templates/html/instructions_base.html:803
+#: questions/templates/html/instructions_base.html:805
 msgid "Tietoa PehmoGIS-tutkimuksesta"
 msgstr "About the softGis research"
 
@@ -3039,7 +3382,8 @@ msgid ""
 msgstr ""
 "\n"
 "There are two ways to zoom in or out on the map. The map can be zoomed in "
-"and out with the Zoom bar or by scrolling your mouse. "
+"and out with <strong>the Zoom bar</strong> or <strong>by scrolling your "
+"mouse</strong>. "
 
 #: questions/templates/html/instructions_base.html:325
 msgid ""
@@ -3446,16 +3790,16 @@ msgstr "Browsers and settings "
 #: questions/templates/html/instructions_base.html:708
 msgid ""
 "\n"
-"                        Kysely toimii parhaiten Firefox 3 -selaimella. Muita "
+"                        Kysely toimii parhaiten Firefox -selaimilla. Muita "
 "selaimia, joilla kysely on testattu ja\n"
-"                        todettu toimivan hyvin ovat IE7, Google Chrome, "
-"Opera ja Firefox 2.\n"
+"                        todettu toimivan hyvin ovat IE8 tai uudempi, Google "
+"Chrome, Opera.\n"
 "                        "
 msgstr ""
 "\n"
-"The questionnaire works best with Firefox 3 browser. Other browsers tested "
-"and proven to work well with the questionnaire are IE7, Google Chrome, Opera "
-"and Firefox 2 "
+"The questionnaire works best with Firefox browsers. Other browsers tested "
+"and proven to work well with the questionnaire are IE8 or newer, Google "
+"Chrome and Opera. "
 
 #: questions/templates/html/instructions_base.html:714
 msgid "JavaScript ja evästeet on sallittava"
@@ -3481,132 +3825,15 @@ msgstr ""
 "information of the pages you are browsing. Cookies cannot be used to launch "
 "programs and they do not transmit viruses into your computer."
 
-#: questions/templates/html/instructions_base.html:726
-msgid "Näin muutat selaimen asetukset"
-msgstr "How to change your browser settings "
-
-#: questions/templates/html/instructions_base.html:729
-msgid ""
-"\n"
-"                        Tässä ohjeita yleisimpien www-selainten asetusten "
-"muuttamisesta siten, että PehmoGIS-kysely\n"
-"                        toimii.\n"
-"                        "
-msgstr ""
-"\n"
-"Here are some guidelines on how to change the settings of the most common "
-"web browsers to allow the softGIS application to work. "
-
-#: questions/templates/html/instructions_base.html:735
-msgid "Firefox 2.0 ja 3.0 ja uudemmat:"
-msgstr "Firefox 2.0 and 3.0 and newer:"
-
-#: questions/templates/html/instructions_base.html:739
-msgid ""
-"\n"
-"                            Valitse valikosta Työkalut &gt; Asetukset. "
-"Valitse Asetukset-ikkunassa Sisältö kohta ja\n"
-"                            valitse kohta \"Salli JavaScript\"\n"
-"                            (Firefox 3.0: \"Salli JavaScript -komentosarjat"
-"\").\n"
-"                            "
-msgstr ""
-"\n"
-"Select Tools menu &gt; Settings. In the Settings window, click on Content, "
-"and select \"Enable JavaScript\" (Firefox 3.0, \"Enable JavaScript scripts"
-"\"). "
-
-#: questions/templates/html/instructions_base.html:746
-msgid ""
-"\n"
-"                            Valitse sitten Asetukset ikkunassa Tietosuoja-"
-"sivu. Evästeet-otsikon alta valitse kohta\n"
-"                            \"Sivustot voivat asettaa evästeitä\".\n"
-"                            Hyväksy muutokset painamalla OK.\n"
-"                            "
-msgstr ""
-"\n"
-"Select then the Privacy page in the Settings window. In the Cookies section, "
-"select the \"Allow sites to set cookies\". Accept the changes by clicking "
-"OK. "
-
-#: questions/templates/html/instructions_base.html:754
-msgid "Internet Explorer 6.x:"
-msgstr "Internet Explorer 6.x:"
-
-#: questions/templates/html/instructions_base.html:758
-#: questions/templates/html/instructions_base.html:773
-msgid ""
-"Valitse valikosta Työkalut (Tools) &gt; Internet-asetukset (Internet "
-"Options)."
-msgstr "1. Select Tools menu &gt; Internet Options. "
-
-#: questions/templates/html/instructions_base.html:761
-msgid ""
-"\n"
-"                            Valitse Asetus-ikkunasta Tietosuoja (Security) -"
-"välilehti. Aseta tietosuojatasoksi\n"
-"                            (Security Level) Normaali\n"
-"                            (Medium tai Medium-low) liukuvalitsinta "
-"siirtämällä.\n"
-"                            "
-msgstr ""
-"\n"
-"Select the Security tab of the Setup window. Set the Security Level to "
-"Medium or Medium-low. "
-
-#: questions/templates/html/instructions_base.html:769
-msgid "Internet Explorer 7.0 ja uudemmat:"
-msgstr "Internet Explorer 7.0 and newer:"
-
-#: questions/templates/html/instructions_base.html:776
-msgid ""
-"\n"
-"                            Valitse Internet asetukset -ikkunassa Suojaus "
-"(Security) -välilehti. Aseta Vyöhykkeen\n"
-"                            suojaustaso kohtaan Keskitaso tai Keskivahva.\n"
-"                            Voit käyttää myös Mukautettua tasoa (Custom "
-"Level). Varmista silloin, että ainakin\n"
-"                            seuraavat kohdat ovat valittuina\n"
-"                            \"Scripting/Active Scripting/Enable\".\n"
-"                            "
-msgstr ""
-"\n"
-"Select the Security tab of the Internet Options window. Set the Security "
-"level for this zone to Medium or Medium Secure. You can also use the Custom "
-"Level. In that case make sure that at least the following items are selected "
-"\"Scripting / Active Scripting / Enable\". "
-
-#: questions/templates/html/instructions_base.html:786
-msgid "Opera:"
-msgstr "Opera:"
-
-#: questions/templates/html/instructions_base.html:790
-msgid "Valitse valikkoriviltä Tiedosto ja Asetukset..."
-msgstr "Select File &gt; Settings on the menu bar. "
-
-#: questions/templates/html/instructions_base.html:793
-msgid ""
-"Valitse uuden ikkunan vasemmasta laidasta kohta Verkko ja sieltä alakohta "
-"Yksityisyys."
-msgstr ""
-"In the left part of the opening window, select Network and then Privacy. "
-
-#: questions/templates/html/instructions_base.html:796
-msgid ""
-"Valitse Evästeet - kohdasta Ota evästeet käyttöön. Hyväksy asetukset "
-"valitsemalla OK."
-msgstr "Allow cookies to be used. Accept the settings by clicking OK. "
-
-#: questions/templates/html/instructions_base.html:818
-#: questions/templates/html/instructions_base.html:822
-#: questions/templates/html/instructions_base.html:868
+#: questions/templates/html/instructions_base.html:820
+#: questions/templates/html/instructions_base.html:824
+#: questions/templates/html/instructions_base.html:870
 msgid ""
 "\n"
 "                        "
 msgstr ""
 
-#: questions/templates/html/instructions_base.html:841
+#: questions/templates/html/instructions_base.html:843
 msgid ""
 "Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaneiden kesken "
 "arvotaan:"
@@ -3614,7 +3841,7 @@ msgstr ""
 "The following prizes will be raffled between all the participants of the "
 "questionnaire:"
 
-#: questions/templates/html/instructions_base.html:872
+#: questions/templates/html/instructions_base.html:874
 msgid ""
 "\n"
 "                        Tutkimuksessa ei käsitellä henkilötietolain piiriin "
@@ -3626,7 +3853,7 @@ msgid ""
 "                        "
 msgstr ""
 
-#: questions/templates/html/instructions_base.html:879
+#: questions/templates/html/instructions_base.html:881
 msgid ""
 "\n"
 "                        Tutkimusaineiston tietoja käsitellään ryhmittäin, ei "
@@ -3642,7 +3869,7 @@ msgid ""
 "                        "
 msgstr ""
 
-#: questions/templates/html/instructions_base.html:889
+#: questions/templates/html/instructions_base.html:891
 msgid ""
 "\n"
 "                        Kysymykset hyvinvoinnista tai sosioekonomisesta "
@@ -3672,7 +3899,7 @@ msgid "Poistu"
 msgstr "Exit"
 
 #: questions/templates/html/progressbar.html:11
-#: questions/templates/mobility/html/index.html:81
+#: questions/templates/mobility_/html/index.html:81
 #: questions/templates/vaaka/html/index.html:80
 msgid "Palaute"
 msgstr "Feedback"
@@ -3726,7 +3953,8 @@ msgid "Loading the questionnaire"
 msgstr ""
 
 #: questions/templates/hyvinkaa/html/index.html:71
-#: questions/templates/mobility/html/index.html:71
+#: questions/templates/mobility_/html/index.html:71
+#: questions/templates/sandiego/html/index.html:71
 #: questions/templates/vaaka/html/index.html:71
 msgid "Anna palautetta"
 msgstr "Give feedback"
@@ -3763,16 +3991,26 @@ msgstr "Tell more:"
 #: questions/templates/hyvinkaa/html/index.html:197
 #: questions/templates/hyvinkaa/html/index.html:212
 #: questions/templates/js/quest_default.js:93
-#: questions/templates/mobility/html/index.html:208
-#: questions/templates/mobility/html/index.html:218
-#: questions/templates/mobility/html/index.html:228
-#: questions/templates/mobility/html/index.html:238
-#: questions/templates/mobility/html/index.html:248
-#: questions/templates/mobility/html/index.html:258
-#: questions/templates/mobility/html/index.html:268
-#: questions/templates/mobility/html/index.html:278
-#: questions/templates/mobility/html/index.html:290
-#: questions/templates/mobility/html/pos_neg_info_temp_html.html:30
+#: questions/templates/mobility_/html/index.html:208
+#: questions/templates/mobility_/html/index.html:218
+#: questions/templates/mobility_/html/index.html:228
+#: questions/templates/mobility_/html/index.html:238
+#: questions/templates/mobility_/html/index.html:248
+#: questions/templates/mobility_/html/index.html:258
+#: questions/templates/mobility_/html/index.html:268
+#: questions/templates/mobility_/html/index.html:278
+#: questions/templates/mobility_/html/index.html:290
+#: questions/templates/mobility_/html/pos_neg_info_temp_html.html:30
+#: questions/templates/sandiego/html/index.html:208
+#: questions/templates/sandiego/html/index.html:218
+#: questions/templates/sandiego/html/index.html:228
+#: questions/templates/sandiego/html/index.html:238
+#: questions/templates/sandiego/html/index.html:248
+#: questions/templates/sandiego/html/index.html:258
+#: questions/templates/sandiego/html/index.html:268
+#: questions/templates/sandiego/html/index.html:278
+#: questions/templates/sandiego/html/index.html:290
+#: questions/templates/sandiego/html/pos_neg_info_temp_html.html:30
 #: questions/templates/vaaka/html/extra_info_temp_html.html:45
 #: questions/templates/vaaka/html/index.html:202
 #: questions/templates/vaaka/html/index.html:214
@@ -3860,12 +4098,14 @@ msgid "Kerro lisää paikasta"
 msgstr "Tell more about the place"
 
 #: questions/templates/js/quest_default.js:100
-#: questions/templates/mobility/html/routes_info.html:12
+#: questions/templates/mobility_/html/routes_info.html:12
+#: questions/templates/sandiego/html/routes_info.html:12
 msgid "jalkaisin"
 msgstr "By foot"
 
 #: questions/templates/js/quest_default.js:101
-#: questions/templates/mobility/html/routes_info.html:18
+#: questions/templates/mobility_/html/routes_info.html:18
+#: questions/templates/sandiego/html/routes_info.html:18
 msgid "pyöräillen"
 msgstr "By bicycle"
 
@@ -3878,17 +4118,20 @@ msgid "Autolla"
 msgstr "By car"
 
 #: questions/templates/js/quest_default.js:104
-#: questions/templates/mobility/html/routes_info.html:24
+#: questions/templates/mobility_/html/routes_info.html:24
+#: questions/templates/sandiego/html/routes_info.html:24
 msgid "juosten tai hölkäten"
 msgstr "Running or jogging"
 
 #: questions/templates/js/quest_default.js:105
-#: questions/templates/mobility/html/routes_info.html:30
+#: questions/templates/mobility_/html/routes_info.html:30
+#: questions/templates/sandiego/html/routes_info.html:30
 msgid "rullaluistimilla"
 msgstr "Roller-skating"
 
 #: questions/templates/js/quest_default.js:106
-#: questions/templates/mobility/html/routes_info.html:36
+#: questions/templates/mobility_/html/routes_info.html:36
+#: questions/templates/sandiego/html/routes_info.html:36
 msgid "muuten"
 msgstr "Other"
 
@@ -3912,29 +4155,35 @@ msgstr ""
 msgid "Wrong password"
 msgstr ""
 
-#: questions/templates/mobility/html/background.html:78
+#: questions/templates/mobility_/html/background.html:78
+#: questions/templates/sandiego/html/background.html:78
 msgid "kpl"
 msgstr " "
 
-#: questions/templates/mobility/html/environment.html:52
+#: questions/templates/mobility_/html/environment.html:52
+#: questions/templates/sandiego/html/environment.html:52
 msgid "Myönteinen"
 msgstr "Positive"
 
-#: questions/templates/mobility/html/environment.html:55
+#: questions/templates/mobility_/html/environment.html:55
+#: questions/templates/sandiego/html/environment.html:55
 msgid "Kielteinen"
 msgstr "Negative"
 
-#: questions/templates/mobility/html/important_routes.html:42
+#: questions/templates/mobility_/html/important_routes.html:42
+#: questions/templates/sandiego/html/important_routes.html:42
 msgid "tärkeä jalankulku- tai pyöräilyreitti"
 msgstr "An important walking or cycling route"
 
-#: questions/templates/mobility/html/improvements.html:4
-#: questions/templates/mobility/html/index.html:80
+#: questions/templates/mobility_/html/improvements.html:4
+#: questions/templates/mobility_/html/index.html:80
+#: questions/templates/sandiego/html/improvements.html:4
 #: questions/templates/vaaka/html/improvements.html:4
 msgid "Kehittämisehdotukset"
-msgstr "Development proposals"
+msgstr "Improvement proposals"
 
-#: questions/templates/mobility/html/improvements.html:7
+#: questions/templates/mobility_/html/improvements.html:7
+#: questions/templates/sandiego/html/improvements.html:7
 msgid ""
 "\n"
 "                Voit merkitä kartalle kohennettavia tai poistettavia "
@@ -3950,28 +4199,34 @@ msgstr ""
 "map. You can also suggest new buildings, walking and cycling routes or "
 "public transport connections. You can mark three of each object."
 
-#: questions/templates/mobility/html/improvements.html:36
+#: questions/templates/mobility_/html/improvements.html:36
+#: questions/templates/sandiego/html/improvements.html:36
 msgid "tulisi kohentaa"
 msgstr "To be improved"
 
-#: questions/templates/mobility/html/improvements.html:37
+#: questions/templates/mobility_/html/improvements.html:37
+#: questions/templates/sandiego/html/improvements.html:37
 msgid "tulisi poistaa"
 msgstr "To be removed"
 
-#: questions/templates/mobility/html/improvements.html:38
+#: questions/templates/mobility_/html/improvements.html:38
+#: questions/templates/sandiego/html/improvements.html:38
 msgid "uusi rakennus"
 msgstr "New building"
 
-#: questions/templates/mobility/html/improvements.html:39
+#: questions/templates/mobility_/html/improvements.html:39
+#: questions/templates/sandiego/html/improvements.html:39
 msgid "uusi jalankulku- tai pyöräreitti"
 msgstr "New walking or cycling route"
 
-#: questions/templates/mobility/html/index.html:9
+#: questions/templates/mobility_/html/index.html:9
+#: questions/templates/sandiego/html/index.html:9
 #: questions/templates/vaaka/html/index.html:9
 msgid "PehmoGIS - "
 msgstr "SoftGIS - "
 
-#: questions/templates/mobility/html/instructions.html:41
+#: questions/templates/mobility_/html/instructions.html:41
+#: questions/templates/sandiego/html/instructions.html:41
 #: questions/templates/vaaka/html/instructions.html:60
 msgid ""
 "\n"
@@ -3988,48 +4243,57 @@ msgstr ""
 "with a <strong>Back</strong>-button or by using the navigation bar on the "
 "top of the page. "
 
-#: questions/templates/mobility/html/instructions.html:88
+#: questions/templates/mobility_/html/instructions.html:88
+#: questions/templates/sandiego/html/instructions.html:88
 #: questions/templates/vaaka/html/instructions.html:108
 msgid "Pistemäisen kohteen merkitseminen kartalle"
 msgstr "Marking a point location on the map"
 
-#: questions/templates/mobility/html/instructions.html:96
+#: questions/templates/mobility_/html/instructions.html:96
+#: questions/templates/sandiego/html/instructions.html:96
 #: questions/templates/vaaka/html/instructions.html:116
 msgid ""
 "Pistemäisiä kohteita ovat esimerkiksi koti, kesämökki ja asiointipaikka."
 msgstr "Examples if point-type items are: home and summer cottage."
 
-#: questions/templates/mobility/html/instructions.html:99
+#: questions/templates/mobility_/html/instructions.html:99
+#: questions/templates/sandiego/html/instructions.html:99
 #: questions/templates/vaaka/html/instructions.html:119
 msgid "Esimerkki pisteen merkitsemisestä kartalle:"
 msgstr "An example of marking a point location on the map:"
 
-#: questions/templates/mobility/html/instructions.html:103
+#: questions/templates/mobility_/html/instructions.html:103
+#: questions/templates/sandiego/html/instructions.html:103
 #: questions/templates/vaaka/html/instructions.html:123
 msgid "Etsi aluksi kartalta kohteen sijainti."
 msgstr "First find the location of your place (e.g. home) on the map. "
 
-#: questions/templates/mobility/html/instructions.html:106
+#: questions/templates/mobility_/html/instructions.html:106
+#: questions/templates/sandiego/html/instructions.html:106
 #: questions/templates/vaaka/html/instructions.html:126
 msgid "Valitse piste-työkalu"
 msgstr "Select the Point -tool by clicking it with the mouse."
 
-#: questions/templates/mobility/html/instructions.html:110
+#: questions/templates/mobility_/html/instructions.html:110
+#: questions/templates/sandiego/html/instructions.html:110
 #: questions/templates/vaaka/html/instructions.html:130
 msgid "Klikatessasi piste-työkalu aktivoituu ja sen ulkoasu muuttuu:"
 msgstr "Once the Point -tool is activated its appearance will change: "
 
-#: questions/templates/mobility/html/instructions.html:115
+#: questions/templates/mobility_/html/instructions.html:115
+#: questions/templates/sandiego/html/instructions.html:115
 #: questions/templates/vaaka/html/instructions.html:135
 msgid "Klikkaa karttaa valitsemallasi kohdalla."
 msgstr "Click the location of your place on the map. "
 
-#: questions/templates/mobility/html/instructions.html:115
+#: questions/templates/mobility_/html/instructions.html:115
+#: questions/templates/sandiego/html/instructions.html:115
 #: questions/templates/vaaka/html/instructions.html:135
 msgid "Piste sijoitetaan osoittamaasi kohtaan."
 msgstr "Your place will be pinpointed to the location you clicked on."
 
-#: questions/templates/mobility/html/instructions.html:118
+#: questions/templates/mobility_/html/instructions.html:118
+#: questions/templates/sandiego/html/instructions.html:118
 #: questions/templates/vaaka/html/instructions.html:138
 msgid ""
 "\n"
@@ -4049,7 +4313,8 @@ msgstr ""
 "moving the scroll bar on the right side of the window. You can tell more "
 "about the place by writing into the box: Tell more about the places."
 
-#: questions/templates/mobility/html/instructions.html:125
+#: questions/templates/mobility_/html/instructions.html:125
+#: questions/templates/sandiego/html/instructions.html:125
 #: questions/templates/vaaka/html/instructions.html:145
 msgid ""
 "\n"
@@ -4065,7 +4330,7 @@ msgstr ""
 "the button \"Save location\". If your place was marked on a wrong place, you "
 "can delete it by clicking on the \"Delete location\"."
 
-#: questions/templates/mobility/html/instructions.html:152
+#: questions/templates/mobility_/html/instructions.html:151
 msgid ""
 "\n"
 "        Tutkimus on osa Urbaani Arki -tutkimushanketta. Aalto-yliopiston "
@@ -4088,7 +4353,7 @@ msgstr ""
 "Kaisa Schmidt-Thomé</a> and <a href=\"mailto:hanna.kalenoja@tut.fi\">Ph.L "
 "Hanna Kalenoja</a>."
 
-#: questions/templates/mobility/html/instructions.html:162
+#: questions/templates/mobility_/html/instructions.html:161
 msgid ""
 "\n"
 "        Urbaani Arki -hankkeessa tutkitaan asukkaiden arkiliikkumista ja "
@@ -4109,7 +4374,7 @@ msgstr ""
 "between these locations are important factors concerning convenient everyday "
 "life."
 
-#: questions/templates/mobility/html/instructions.html:170
+#: questions/templates/mobility_/html/instructions.html:169
 msgid ""
 "\n"
 "        Aalto-yliopiston Yhdyskuntasuunnittelun tutkimus- ja "
@@ -4133,7 +4398,7 @@ msgstr ""
 "Environment and the Urban Policy Committee of the Ministry of Employment and "
 "the Economy.       "
 
-#: questions/templates/mobility/html/instructions.html:195
+#: questions/templates/mobility_/html/instructions.html:194
 msgid ""
 "Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaneiden kesken "
 "arvotaan"
@@ -4141,16 +4406,16 @@ msgstr ""
 "The following prizes will be raffled between all the participants of the "
 "questionnaire."
 
-#: questions/templates/mobility/html/instructions.html:198
+#: questions/templates/mobility_/html/instructions.html:197
 msgid "viisi 40 euron lahjakorttia Tampereen joukkoliikenteeseen"
 msgstr "Five gift vouchers worth 40 euros to Tampere public transport and"
 
-#: questions/templates/mobility/html/instructions.html:201
+#: questions/templates/mobility_/html/instructions.html:200
 msgid "viisi paria elokuvalippuja (vapaavalintaiseen Finnkinon elokuvaan)"
 msgstr ""
 "Five pairs of movie tickets (to a movie of your own choice in Finnkino)"
 
-#: questions/templates/mobility/html/instructions.html:222
+#: questions/templates/mobility_/html/instructions.html:221
 msgid ""
 "\n"
 "        Tampereen pehmoGIS-kysely toimii Aalto-Yliopiston suojatulla "
@@ -4163,27 +4428,29 @@ msgid ""
 msgstr ""
 "\n"
 "The softGIS questionnaire of Tampere is situated on a secure server at Aalto "
-"University. The collected database is accessible only to researchers "
-"working for the project. The application is not connected to the information "
-"systems of the city of Tampere. "
+"University. The collected database is accessible only to researchers working "
+"for the project. The application is not connected to the information systems "
+"of the city of Tampere. "
 
-#: questions/templates/mobility/html/instructions.html:265
+#: questions/templates/mobility_/html/instructions.html:264
 msgid "pdf-tiedosto"
 msgstr "pdf file"
 
-#: questions/templates/mobility/html/move_env_info_business.html:6
+#: questions/templates/mobility_/html/move_env_info_business.html:6
+#: questions/templates/sandiego/html/move_env_info_business.html:6
 msgid "Minkätyyppinen tämä asiointipaikka on"
 msgstr "What kind of a running errands is this?"
 
-#: questions/templates/mobility/html/move_env_info_shop.html:6
+#: questions/templates/mobility_/html/move_env_info_shop.html:6
+#: questions/templates/sandiego/html/move_env_info_shop.html:6
 msgid "Minkätyyppinen tämä ostospaikka on?"
 msgstr "What kind of a shopping place is this?"
 
-#: questions/templates/mobility/html/welcome.html:6
+#: questions/templates/mobility_/html/welcome.html:6
 msgid "Mitä asioita arvostat omassa elinympäristössäsi"
 msgstr "What kind of things do you value in your living environment"
 
-#: questions/templates/mobility/html/welcome.html:8
+#: questions/templates/mobility_/html/welcome.html:8
 msgid ""
 "\n"
 "            Tämä elinympäristöä koskeva karttapohjainen kysely liittyy "
@@ -4209,7 +4476,8 @@ msgstr ""
 "the town planners about the needs for development and issues you feel are "
 "important in your living environment. "
 
-#: questions/templates/mobility/html/welcome.html:18
+#: questions/templates/mobility_/html/welcome.html:18
+#: questions/templates/sandiego/html/welcome.html:19
 msgid ""
 "\n"
 "            Kyselyyn vastaaminen vie aikaa noin 20 minuuttia. Toivomme, että "
@@ -4228,7 +4496,7 @@ msgstr ""
 "answers. Your answers are saved automatically. If you need help with "
 "answering or want to know about privacy protection you can click on "
 
-#: questions/templates/mobility/html/welcome.html:49
+#: questions/templates/mobility_/html/welcome.html:49
 msgid ""
 "\n"
 "        Kysely on toteutettu yhteistyössä Aalto-yliopiston ja Tampereen "
@@ -4249,130 +4517,413 @@ msgstr ""
 "Marketta Kyttä, PhD from Aalto University and Hanna Kalenoja, Research "
 "Manager from Tampere University of Technology are in charge of the research. "
 
-#: questions/templates/mobility/js/quest_spec.js:912
-#: questions/templates/mobility/js/quest_spec.js:917
+#: questions/templates/mobility_/js/quest_spec.js:930
+#: questions/templates/mobility_/js/quest_spec.js:935
+#: questions/templates/sandiego/js/quest_spec.js:930
+#: questions/templates/sandiego/js/quest_spec.js:935
 msgid "Kerro paikan ulkoisesta ilmeestä tarkemmin! Tässä paikassa..."
 msgstr "Tell more about the appearance of this location! In this location..."
 
-#: questions/templates/mobility/js/quest_spec.js:922
-#: questions/templates/mobility/js/quest_spec.js:927
+#: questions/templates/mobility_/js/quest_spec.js:940
+#: questions/templates/mobility_/js/quest_spec.js:945
+#: questions/templates/sandiego/js/quest_spec.js:940
+#: questions/templates/sandiego/js/quest_spec.js:945
 msgid "Kerro sosiaalisesta ilmapiiristä tarkemmin! Tässä paikassa..."
 msgstr "Tell more about the social life in this location! In this location..."
 
-#: questions/templates/mobility/js/quest_spec.js:932
-#: questions/templates/mobility/js/quest_spec.js:937
+#: questions/templates/mobility_/js/quest_spec.js:950
+#: questions/templates/mobility_/js/quest_spec.js:955
+#: questions/templates/sandiego/js/quest_spec.js:950
+#: questions/templates/sandiego/js/quest_spec.js:955
 msgid "Kerro paikan tunnelmasta tarkemmin! Tämä paikka on..."
 msgstr "Tell more about the ambience of this location! This location is..."
 
-#: questions/templates/mobility/js/quest_spec.js:942
-#: questions/templates/mobility/js/quest_spec.js:947
+#: questions/templates/mobility_/js/quest_spec.js:960
+#: questions/templates/mobility_/js/quest_spec.js:965
+#: questions/templates/sandiego/js/quest_spec.js:960
+#: questions/templates/sandiego/js/quest_spec.js:965
 msgid "Kerro paikan toimintamahdollisuuksista tarkemmin! Tässä paikassa..."
 msgstr ""
 "Tell more about the functional possibilities of this location! In this "
 "location..."
 
-#: questions/templates/mobility/js/quest_spec.js:998
+#: questions/templates/mobility_/js/quest_spec.js:1016
+#: questions/templates/sandiego/js/quest_spec.js:1016
 msgid "Tärkeä kävely- tai pyöräreitti"
 msgstr "An important walking or cycling route"
 
-#: questions/templates/mobility/js/quest_spec.js:1003
+#: questions/templates/mobility_/js/quest_spec.js:1021
+#: questions/templates/sandiego/js/quest_spec.js:1021
 msgid "Miten tätä paikkaa pitäisi kohentaa?"
 msgstr "Why should this place be improved?"
 
-#: questions/templates/mobility/js/quest_spec.js:1004
+#: questions/templates/mobility_/js/quest_spec.js:1022
+#: questions/templates/sandiego/js/quest_spec.js:1022
 msgid "Kohentamisehdotuksesi"
 msgstr "Your suggestion for improvement"
 
-#: questions/templates/mobility/js/quest_spec.js:1009
+#: questions/templates/mobility_/js/quest_spec.js:1027
+#: questions/templates/sandiego/js/quest_spec.js:1027
 msgid "Mitä poistaisit tästä paikasta?"
 msgstr "What would you remove from this place?"
 
-#: questions/templates/mobility/js/quest_spec.js:1010
+#: questions/templates/mobility_/js/quest_spec.js:1028
+#: questions/templates/sandiego/js/quest_spec.js:1028
 msgid "Poistamisehdotuksesi"
 msgstr "Your suggestion for removal"
 
-#: questions/templates/mobility/js/quest_spec.js:1015
+#: questions/templates/mobility_/js/quest_spec.js:1033
+#: questions/templates/sandiego/js/quest_spec.js:1033
 msgid "Mitä uutta tähän mielestäsi pitäisi rakentaa?"
 msgstr "What new should be built in this location?"
 
-#: questions/templates/mobility/js/quest_spec.js:1016
+#: questions/templates/mobility_/js/quest_spec.js:1034
+#: questions/templates/sandiego/js/quest_spec.js:1034
 msgid "Rakentamisehdotuksesi"
 msgstr "Your building suggestion"
 
-#: questions/templates/mobility/js/quest_spec.js:1034
+#: questions/templates/mobility_/js/quest_spec.js:1052
+#: questions/templates/sandiego/js/quest_spec.js:1052
 #: questions/templates/vaaka/js/quest_spec.js:855
 msgid "Palvelurakennus"
 msgstr ""
 
-#: questions/templates/mobility/js/quest_spec.js:1040
+#: questions/templates/mobility_/js/quest_spec.js:1058
+#: questions/templates/sandiego/js/quest_spec.js:1058
 #: questions/templates/vaaka/js/quest_spec.js:861
 #, fuzzy
 msgid "Kävely- tai pyöräilyreitti"
 msgstr "My most important walking and cycling routes"
 
-#: questions/templates/mobility/js/quest_spec.js:1046
+#: questions/templates/mobility_/js/quest_spec.js:1064
+#: questions/templates/sandiego/js/quest_spec.js:1064
 #: questions/templates/vaaka/js/quest_spec.js:867
 msgid "Bussireitti"
 msgstr ""
 
-#: questions/templates/mobility/js/quest_spec.js:1052
+#: questions/templates/mobility_/js/quest_spec.js:1070
+#: questions/templates/sandiego/js/quest_spec.js:1070
 #: questions/templates/vaaka/js/quest_spec.js:873
 #, fuzzy
 msgid "Virkistysalue"
 msgstr "Leisure areas and parks"
 
-#: questions/templates/mobility/js/quest_spec.js:1058
+#: questions/templates/mobility_/js/quest_spec.js:1076
+#: questions/templates/sandiego/js/quest_spec.js:1076
 #: questions/templates/vaaka/js/quest_spec.js:879
 #, fuzzy
 msgid "Säilytettävä paikka"
 msgstr "More information about the place"
 
-#: questions/templates/mobility/js/quest_spec.js:1064
+#: questions/templates/mobility_/js/quest_spec.js:1082
+#: questions/templates/sandiego/js/quest_spec.js:1082
 #: questions/templates/vaaka/js/quest_spec.js:885
 msgid "Kohennettava paikka"
 msgstr ""
 
-#: questions/templates/mobility/js/quest_spec.js:1076
-#: questions/templates/mobility/js/quest_spec.js:1082
+#: questions/templates/mobility_/js/quest_spec.js:1094
+#: questions/templates/mobility_/js/quest_spec.js:1100
+#: questions/templates/sandiego/js/quest_spec.js:1094
+#: questions/templates/sandiego/js/quest_spec.js:1100
 #: questions/templates/vaaka/js/quest_spec.js:897
 #: questions/templates/vaaka/js/quest_spec.js:903
 msgid "Mitä teet kohteessa?"
 msgstr "What do you do in this place or area?"
 
-#: questions/templates/mobility/js/quest_spec.js:1088
+#: questions/templates/mobility_/js/quest_spec.js:1106
+#: questions/templates/sandiego/js/quest_spec.js:1106
 #: questions/templates/vaaka/js/quest_spec.js:909
 msgid "Ei matkailua"
 msgstr "No tourism"
 
-#: questions/templates/mobility/js/quest_spec.js:1094
+#: questions/templates/mobility_/js/quest_spec.js:1112
+#: questions/templates/sandiego/js/quest_spec.js:1112
 #: questions/templates/vaaka/js/quest_spec.js:915
 msgid "Uusi retkeily- tai hiihtoreitti"
 msgstr "New hiking or skiing route"
 
-#: questions/templates/mobility/js/quest_spec.js:1100
+#: questions/templates/mobility_/js/quest_spec.js:1118
+#: questions/templates/sandiego/js/quest_spec.js:1118
 #: questions/templates/vaaka/js/quest_spec.js:921
 msgid "Uusi moottorikelkka- tai mönkijäreitti"
 msgstr "New snow mobile or all-terrain vehicle route"
 
-#: questions/templates/mobility/js/quest_spec.js:1106
+#: questions/templates/mobility_/js/quest_spec.js:1124
+#: questions/templates/sandiego/js/quest_spec.js:1124
 #: questions/templates/vaaka/js/quest_spec.js:927
 msgid "Uusi matkailurakentaminen"
 msgstr "New tourism infrastructure"
 
-#: questions/templates/mobility/js/quest_spec.js:1112
+#: questions/templates/mobility_/js/quest_spec.js:1130
+#: questions/templates/sandiego/js/quest_spec.js:1130
 #: questions/templates/vaaka/js/quest_spec.js:933
 msgid "Ei metsätaloutta"
 msgstr "No forestry"
 
-#: questions/templates/mobility/js/quest_spec.js:1118
+#: questions/templates/mobility_/js/quest_spec.js:1136
+#: questions/templates/sandiego/js/quest_spec.js:1136
 #: questions/templates/vaaka/js/quest_spec.js:939
 msgid "Ei suojelua"
 msgstr "No nature protection"
 
-#: questions/templates/mobility/js/quest_spec.js:1124
+#: questions/templates/mobility_/js/quest_spec.js:1142
+#: questions/templates/sandiego/js/quest_spec.js:1142
 #: questions/templates/vaaka/js/quest_spec.js:945
 msgid "Uusi suojelualue"
 msgstr "New nature protection area"
+
+#: questions/templates/sandiego/html/background.html:75
+#, fuzzy
+msgid "How many cars are there in your household?"
+msgstr " "
+
+#: questions/templates/sandiego/html/background.html:91
+msgid "Residence in PB at the moment?"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:95
+msgid "Permanent, owner-occupied"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:96
+msgid "Part-time, owner-occupied"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:97
+msgid "Permanent, rented"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:98
+msgid "Part-time, rented"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:99
+msgid "Short-time / vacation rental"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:100
+msgid "Short-time, hotel/hostel/friend’s place"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:101
+msgid "Non-resident"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:107
+msgid "Where did you mainly grow up??"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:112
+msgid "In/Close to Pacific Beach"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:113
+msgid "In San Diego"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:114
+msgid "In California"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:115
+msgid "In the US"
+msgstr ""
+
+#: questions/templates/sandiego/html/background.html:116
+msgid "Abroad"
+msgstr ""
+
+#: questions/templates/sandiego/html/home_info.html:150
+msgid "ruokailu"
+msgstr "Dining"
+
+#: questions/templates/sandiego/html/index.html:77
+msgid "Background information"
+msgstr ""
+
+#: questions/templates/sandiego/html/index.html:78
+msgid "Moving around"
+msgstr ""
+
+#: questions/templates/sandiego/html/index.html:79
+msgid "Evaluation of the living environment"
+msgstr ""
+
+#: questions/templates/sandiego/html/index.html:80
+msgid "Proposing improvements"
+msgstr ""
+
+#: questions/templates/sandiego/html/index.html:81
+msgid "Feedback"
+msgstr ""
+
+#: questions/templates/sandiego/html/instructions.html:151
+msgid ""
+"\n"
+"        The survey is carried out as a cooperation of Aalto University "
+"(Helsinki, Finland) and\n"
+"        the BeautifulPB-initiative. Aalto University has been developing the "
+"softGIS-method since 2005\n"
+"        in cooperation with Finnish cities interested in participatory urban "
+"planning. Recently it\n"
+"        carried out a project with Japan and Australia, and this survey is "
+"the first time that the\n"
+"        softGIS is tested in the US. The results of the survey will be "
+"utilized by the BeautifulPB\n"
+"        and other interested parties to better understand how PB residents "
+"use the area and how they\n"
+"        would like to see it developing in the future. The results may also "
+"be used by the Finnish\n"
+"        research team to analyse the perceived environmental quality and "
+"everyday mobility issues.\n"
+"        Marketta Kyttä and Kaisa Schmidt-Thomé (kaisa.schmidt-thome(at)aalto."
+"fi) from Aalto University\n"
+"        are in charge of the research. The contact persons of the Beautiful "
+"PB for the survey are\n"
+"        Kristen Victor /kristen(at)sustainabilitymatters.us) and Sara Berns "
+"(sara(at)pacificbeach.org).\n"
+"        "
+msgstr ""
+
+#: questions/templates/sandiego/html/instructions.html:166
+msgid ""
+"\n"
+"        The offer of Aalto University to test the softGIS in Pacific Beach "
+"is linked to a European\n"
+"        Union research exchange programme and its project called CLUDs. "
+"Within the CLUDs it has been\n"
+"        possible to invite several researchers from Finland, UK and Italy to "
+"be visiting scholars\n"
+"        at the San Diego State University, School of Public Affairs. "
+"However, introducing the\n"
+"        questionnaire in Pacific Beach is not an official part of the CLUDs "
+"but rather a joint\n"
+"        effort of Aalto University and the BeautifulPB. \n"
+"        "
+msgstr ""
+
+#: questions/templates/sandiego/html/instructions.html:192
+msgid ""
+"Ten pairs of movie tickets will be raffled between all the participants of "
+"the questionnaire."
+msgstr ""
+
+#: questions/templates/sandiego/html/instructions.html:211
+msgid ""
+"\n"
+"        The softGIS questionnaire is situated on a secure server at Aalto "
+"University.\n"
+"        The collected database is accessible only to researchers, but they "
+"may pass the\n"
+"        final database to the BeautifulPB initiative after removing the data "
+"on home\n"
+"        locations. The researchers will not visualise or otherwise present "
+"data in a manner\n"
+"        that could enable connecting a response with a certain household. \n"
+"        "
+msgstr ""
+
+#: questions/templates/sandiego/html/instructions.html:220
+msgid ""
+"\n"
+"        Research data will be analysed in groups, not on an individual "
+"level. The results\n"
+"        are grouped by e.g. gender, age and neighbourhood, and they deal "
+"with the average\n"
+"        response given by the groups, for example the average distance to "
+"important places\n"
+"        or travel modes to work. It is impossible to track individuals or "
+"their answers from\n"
+"        any results that will be published. \n"
+"        "
+msgstr ""
+
+#: questions/templates/sandiego/html/move_env_info_shop.html:35
+msgid "tori"
+msgstr "Farmers’ Market"
+
+#: questions/templates/sandiego/html/move_env_info_shop.html:41
+#: questions/templates/sandiego/html/move_environment.html:55
+msgid "kirpputori/market"
+msgstr "Swap Meet/Market Place"
+
+#: questions/templates/sandiego/html/owncomments.html:17
+msgid ""
+"\n"
+"            There will be a prize drawn between participants where gift "
+"vouchers for movie tickets are\n"
+"            raffled. If you want to participate in the prize drawing, please "
+"leave your contact information.\n"
+"            To make sure that the contact information cannot be connected "
+"with the answers, the contact\n"
+"            information will not be saved to the same data file with your "
+"answers.\n"
+"        "
+msgstr ""
+
+#: questions/templates/sandiego/html/owncomments.html:67
+msgid "Olen kiinnostunut osallistumaan mahdolliseen jatkotutkimukseen"
+msgstr ""
+"I am interested in participating in further studies should there be some."
+
+#: questions/templates/sandiego/html/owncomments.html:68
+msgid "Minulle voi lähettää siihen kutsun sähköpostilla"
+msgstr "You can send me an invitation by email"
+
+#: questions/templates/sandiego/html/owncomments.html:76
+msgid "Haluan sähköpostiini tietoa tutkimuksen tuloksista niiden valmistuttua"
+msgstr ""
+"I would like to be emailed about the results of the research after they are "
+"finished"
+
+#: questions/templates/sandiego/html/welcome.html:6
+msgid "What kind of things do you value in Pacific Beach?"
+msgstr ""
+
+#: questions/templates/sandiego/html/welcome.html:8
+msgid ""
+"\n"
+"            This softGIS questionnaire collects data about the residents’ "
+"relationship with Pacific\n"
+"            Beach. It also collects suggestions on how the area should be "
+"developed in the future.\n"
+"            The results will be used as a basis for discussion among all "
+"those who are interested in\n"
+"            improving the quality of life in PB.  By responding to this "
+"questionnaire you can inform\n"
+"            the BeautifulPB-initiative and its partners about the issues "
+"that you feel are important\n"
+"            in your neighbourhood and other parts of PB. \n"
+"        "
+msgstr ""
+
+#: questions/templates/sandiego/html/welcome.html:50
+msgid ""
+"\n"
+"        The survey is carried out as a cooperation of Aalto University "
+"(Helsinki, Finland) and the\n"
+"        BeautifulPB-initiative. Aalto University has been developing the "
+"softGIS-method since 2005\n"
+"        in cooperation with Finnish cities interested in participatory urban "
+"planning. Recently it\n"
+"        carried out a project with Japan and Australia, and this survey is "
+"the first time that the\n"
+"        softGIS is tested in the US. The results of the survey will be "
+"utilized by the BeautifulPB\n"
+"        and other interested parties to better understand how PB residents "
+"use the area and how they\n"
+"        would like to see it developing in the future. The results may also "
+"be used by the Finnish\n"
+"        research team to analyse the perceived environmental quality and "
+"everyday mobility issues.\n"
+"        Marketta Kyttä and Kaisa Schmidt-Thomé (kaisa.schmidt-thome(at)aalto."
+"fi) from Aalto University are\n"
+"        in charge of the research. The contact persons of the Beautiful PB "
+"for the survey are Kristen\n"
+"        Victor (kristen(at)sustainabilitymatters.us) and Sara Berns (sara(at)"
+"pacificbeach.org).\n"
+"    "
+msgstr ""
 
 #: questions/templates/vaaka/html/activities.html:4
 msgid "Alueeseen liittyvät toiminnot"
@@ -5077,6 +5628,109 @@ msgstr "Why is this place unpleasant?"
 msgid "Asuinrakennus"
 msgstr ""
 
+#~ msgid "Näin muutat selaimen asetukset"
+#~ msgstr "How to change your browser settings "
+
+#~ msgid ""
+#~ "\n"
+#~ "                        Tässä ohjeita yleisimpien www-selainten asetusten "
+#~ "muuttamisesta siten, että PehmoGIS-kysely\n"
+#~ "                        toimii.\n"
+#~ "                        "
+#~ msgstr ""
+#~ "\n"
+#~ "Here are some guidelines on how to change the settings of the most common "
+#~ "web browsers to allow the softGIS application to work. "
+
+#~ msgid "Firefox 2.0 ja 3.0 ja uudemmat:"
+#~ msgstr "Firefox 2.0 and 3.0 and newer:"
+
+#~ msgid ""
+#~ "\n"
+#~ "                            Valitse valikosta Työkalut &gt; Asetukset. "
+#~ "Valitse Asetukset-ikkunassa Sisältö kohta ja\n"
+#~ "                            valitse kohta \"Salli JavaScript\"\n"
+#~ "                            (Firefox 3.0: \"Salli JavaScript -"
+#~ "komentosarjat\").\n"
+#~ "                            "
+#~ msgstr ""
+#~ "\n"
+#~ "Select Tools menu &gt; Settings. In the Settings window, click on "
+#~ "Content, and select \"Enable JavaScript\" (Firefox 3.0, \"Enable "
+#~ "JavaScript scripts\"). "
+
+#~ msgid ""
+#~ "\n"
+#~ "                            Valitse sitten Asetukset ikkunassa Tietosuoja-"
+#~ "sivu. Evästeet-otsikon alta valitse kohta\n"
+#~ "                            \"Sivustot voivat asettaa evästeitä\".\n"
+#~ "                            Hyväksy muutokset painamalla OK.\n"
+#~ "                            "
+#~ msgstr ""
+#~ "\n"
+#~ "Select then the Privacy page in the Settings window. In the Cookies "
+#~ "section, select the \"Allow sites to set cookies\". Accept the changes by "
+#~ "clicking OK. "
+
+#~ msgid "Internet Explorer 6.x:"
+#~ msgstr "Internet Explorer 6.x:"
+
+#~ msgid ""
+#~ "Valitse valikosta Työkalut (Tools) &gt; Internet-asetukset (Internet "
+#~ "Options)."
+#~ msgstr "1. Select Tools menu &gt; Internet Options. "
+
+#~ msgid ""
+#~ "\n"
+#~ "                            Valitse Asetus-ikkunasta Tietosuoja "
+#~ "(Security) -välilehti. Aseta tietosuojatasoksi\n"
+#~ "                            (Security Level) Normaali\n"
+#~ "                            (Medium tai Medium-low) liukuvalitsinta "
+#~ "siirtämällä.\n"
+#~ "                            "
+#~ msgstr ""
+#~ "\n"
+#~ "Select the Security tab of the Setup window. Set the Security Level to "
+#~ "Medium or Medium-low. "
+
+#~ msgid "Internet Explorer 7.0 ja uudemmat:"
+#~ msgstr "Internet Explorer 7.0 and newer:"
+
+#~ msgid ""
+#~ "\n"
+#~ "                            Valitse Internet asetukset -ikkunassa Suojaus "
+#~ "(Security) -välilehti. Aseta Vyöhykkeen\n"
+#~ "                            suojaustaso kohtaan Keskitaso tai "
+#~ "Keskivahva.\n"
+#~ "                            Voit käyttää myös Mukautettua tasoa (Custom "
+#~ "Level). Varmista silloin, että ainakin\n"
+#~ "                            seuraavat kohdat ovat valittuina\n"
+#~ "                            \"Scripting/Active Scripting/Enable\".\n"
+#~ "                            "
+#~ msgstr ""
+#~ "\n"
+#~ "Select the Security tab of the Internet Options window. Set the Security "
+#~ "level for this zone to Medium or Medium Secure. You can also use the "
+#~ "Custom Level. In that case make sure that at least the following items "
+#~ "are selected \"Scripting / Active Scripting / Enable\". "
+
+#~ msgid "Opera:"
+#~ msgstr "Opera:"
+
+#~ msgid "Valitse valikkoriviltä Tiedosto ja Asetukset..."
+#~ msgstr "Select File &gt; Settings on the menu bar. "
+
+#~ msgid ""
+#~ "Valitse uuden ikkunan vasemmasta laidasta kohta Verkko ja sieltä alakohta "
+#~ "Yksityisyys."
+#~ msgstr ""
+#~ "In the left part of the opening window, select Network and then Privacy. "
+
+#~ msgid ""
+#~ "Valitse Evästeet - kohdasta Ota evästeet käyttöön. Hyväksy asetukset "
+#~ "valitsemalla OK."
+#~ msgstr "Allow cookies to be used. Accept the settings by clicking OK. "
+
 #~ msgid ""
 #~ "Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaineiden "
 #~ "kesken arvotaan"
@@ -5249,9 +5903,6 @@ msgstr ""
 #~ "answers, the contact information will not be saved to the same data file "
 #~ "with your answers."
 
-#~ msgid "Minulle voi lähettää siihen kutsun sähköpostilla"
-#~ msgstr "You can send me an invitation by email"
-
 #~ msgid ""
 #~ "Minuun saa ottaa yhteyttä sähköpostilla mahdollisen henkilökohtaisen "
 #~ "tutkimushaastattelun sopimiseksi"
@@ -5259,23 +5910,7 @@ msgstr ""
 #~ "You can contact me by email regarding a possible personal research "
 #~ "interview"
 
-#~ msgid ""
-#~ "Haluan sähköpostiini tietoa tutkimuksen tuloksista niiden valmistuttua"
-#~ msgstr ""
-#~ "I would like to be emailed about the results of the research after they "
-#~ "are finished"
-
-#, fuzzy
-#~ msgid ""
-#~ "Olen kiinnostunut osallistumaan asuinalueeni suunnitteluun myös jatkossa"
-#~ msgstr ""
-#~ "I am interested in participating in further studies should there be some."
-
 #~ msgid "Jap RHS placeholder for During a normal week: on how many days..."
-#~ msgstr " "
-
-#, fuzzy
-#~ msgid "How many brothers or sisters do you have?"
 #~ msgstr " "
 
 #~ msgid "Jap RHS placeholder for How many brothers or sisters do you have?"

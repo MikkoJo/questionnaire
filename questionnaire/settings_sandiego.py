@@ -2,14 +2,13 @@ from settings import *
 
 # Site id of the example application
 
-SITE_ID = 13
+SITE_ID = 15
 
 LANGUAGE_CODE = 'en'
 
 SPATIAL_REFERENCE_SYSTEM_ID = 3857
 
-LANGUAGES = (#('fi', 'suomeksi'),
-             ('en', 'in english'),)
+LANGUAGES = (('en', 'in english'),)
 
 #MEDIA_ROOT = '/home/mikko/.virtualenvs/geon_new/lib/python2.7/site-packages/gntimages-0.1-py2.7.egg/gntimages'
 DATABASES = {

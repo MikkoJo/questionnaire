@@ -1,0 +1,44 @@
+{% extends 'sandiego/html/move_env_info.html' %}
+{% load i18n %}
+{% block what_kind_place %}
+{% spaceless %}
+    <tr>
+        <td><b>{% trans 'Minkätyyppinen tämä asiointipaikka on' %}</b>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_1' value='bank' />
+            <label for='me1_1'>{% trans 'pankki, posti tai virasto' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_2' value='health' />
+            <label for='me1_2'>{% trans 'terveyspalvelut' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_3' value='hairddres_etc' />
+            <label for='me1_3'>{% trans 'muu palvelu, esim. kampaaja tai parturi' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me_other' value='other' />
+            <label for='me_other'>{% trans 'muu' %}</label>
+            <span id='otherSpan' class='tyhja'>
+                <label for='other_text'>, {% trans 'mikä' %}?</label>
+                <input type='text' name='otherbusin' id='other_text' disabled='disabled' />
+            </span>
+        </td>
+    </tr>
+{% endspaceless %}
+{% endblock what_kind_place %}
+{% block free_text %}
+{% spaceless %}
+    <td><b>{% trans 'Miksi asioit juuri täällä?' %}</b></td>
+{% endspaceless %}
+{% endblock free_text %}

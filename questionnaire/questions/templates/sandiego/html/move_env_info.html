@@ -1,0 +1,129 @@
+{% load i18n %}
+{% block form %}
+{% spaceless %}
+<form name="popupform" action="#" >
+<table class='infotable'>
+    {% block what_kind_place %}
+    {% endblock what_kind_place %}
+    <tr>
+        <td><b>{% trans 'Kuinka usein käyt tässä paikassa?' %}</b></td>
+    </tr>
+    <tr>
+        <td>
+            <input type='radio' name='howoften' id='me2_1' value='daily' />
+            <label for='me2_1'>{% trans 'päivittäin tai lähes päivittäin' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='radio' name='howoften' id='me2_2' value='weekly' />
+            <label for='me2_2'>{% trans 'useita kertoja viikossa' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='radio' name='howoften' id='me2_3' value='monthly' />
+            <label for='me2_3'>{% trans 'useita kertoja kuussa' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='radio' name='howoften' id='me2_4' value='once_month' />
+            <label for='me2_4'>{% trans 'kerran kuussa' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='radio' name='howoften' id='me2_5' value='not_so_often' />
+            <label for='me2_5'>{% trans 'harvemmin kuin kerran kuussa' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td><b>{% trans 'Millä kulkutavalla yleensä käyt tässä paikassa?' %}</b></td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='howvisit' id='me3_1' value='walk' />
+            <label for='me3_1'>{% trans 'kävellen' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='howvisit' id='me3_2' value='bike' />
+            <label for='me3_2'>{% trans 'polkupyörällä' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='howvisit' id='me3_3' value='car' />
+            <label for='me3_3'>{% trans 'henkilöautolla' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='howvisit' id='me3_4' value='bus' />
+            <label for='me3_4'>{% trans 'linja-autolla' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='howvisit' id='me3_5' value='other' />
+            <label for='me3_5'>{% trans 'muulla' %}</label>
+            <span id='otherHowSpan' class='tyhja'>
+                <label for='visitOther'>, {% trans 'millä' %}?</label>
+                <input type='text' name='visitOther' id='visitOther' />
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td><b>{% trans 'Käytkö tässä paikassa yleensä arkisin vai viikonloppuisin?' %}</b></td>
+    </tr>
+    <tr>
+        <td>
+            <input type='radio' name='whenvisit' id='me4_1' value='weekdays' />
+            <label for='me4_1'>{% trans 'arkisin' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='radio' name='whenvisit' id='me4_2' value='weekends' />
+            <label for='me4_2'>{% trans 'viikonloppuisin' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='radio' name='whenvisit' id='me4_3' value='weekdays_and_weekends' />
+            <label for='me4_3'>{% trans 'sekä arkisin että viikonloppuisin' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td><b>{% trans 'Liittyvätkö matkasi tähän paikkaan muiden kyyditsemiseen' %}?</b></td>
+    </tr>
+    <tr>
+        <td>
+            <input type='radio' name='ridehow' id='me5_1' value='self' />
+            <label for='me5_1'>{% trans 'teen tähän paikkaan yleensä omia matkojani' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='radio' name='ridehow' id='me5_2' value='otherperson' />
+            <label for='me5_2'>{% trans 'matkani tähän paikkaan liittyy yleensä toisen henkilön kyyditsemiseen' %}</label>
+        </td>
+    </tr>
+    <tr>
+        {% block free_text %}
+        {% spaceless %}
+            <td><b>{% trans 'Lisätietoja tästä paikasta' %}</b></td>
+        {% endspaceless %}
+        {% endblock free_text %}
+    </tr>
+    <tr>
+        <td>
+            <textarea name='comments' id='comments' rows='2' cols='25'></textarea>
+        </td>
+    </tr>
+</table>
+</form>
+{% endspaceless %}
+{% endblock form %}
