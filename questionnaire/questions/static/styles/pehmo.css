@@ -711,6 +711,11 @@ z-index: 1;
     background-position: 100% 0px;
     height: 532px;
 }
+.sandiego .firstpagepic {
+    background-image: url("../img/sandiego_front.jpg");
+    background-position: 100% 0px;
+    height: 532px;
+}
 .firstpagecontent {
 position: relative;
 z-index: 99;
