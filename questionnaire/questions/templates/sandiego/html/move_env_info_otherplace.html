@@ -1,0 +1,16 @@
+{% extends 'mobility/html/move_env_info.html' %}
+{% load i18n %}
+{% block what_kind_place %}
+{% spaceless %}
+    <tr>
+        <td>
+            <label for='otherpl'>{% trans 'Minkätyyppinen paikka on kyseessä?' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='text' name='otherpl' id='otherpl' />
+        </td>
+    </tr>
+{% endspaceless %}
+{% endblock what_kind_place %}

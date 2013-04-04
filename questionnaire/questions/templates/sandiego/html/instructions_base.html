@@ -1,0 +1,819 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+{% load i18n %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <title>{% trans 'PehmoGIS ohjeet' %}</title>
+        <style type="text/css">
+
+            <!--
+            body {
+            /*overflow: hidden;*/
+            font-family:"Trebuchet MS", Arial, sans-serif;
+            padding: 0px;
+            margin:0px;
+            }
+
+            h1 {
+            color:#86c954;
+            font-size:120%;
+            /*text-transform: capitalize;*/
+            }
+
+            h2 {
+            padding-top:10px;
+            color: #3B8CC5;
+            font-size: 100%;
+            /*text-transform: capitalize;*/
+            }
+
+            h3 {
+            font-size: 80%;
+            }
+
+            p {
+            font-size: 80%;
+            }
+
+            li {
+            font-size: 80%;
+            }
+
+            td {
+            vertical-align: top;
+            }
+
+            .links {
+            position: fixed;
+            padding: 10px;
+            padding-top:10px;
+            left: 0px;
+            height: 100%;
+            width: 200px;
+            border-right: 1px dashed black;
+            }
+
+            .content {
+            position: absolute;
+            padding: 0px;
+            margin:0px;
+            padding-top:10px;
+            padding-bottom:0px;
+            left: 230px;
+            /*height: 100%;*/
+            overflow: auto;
+            max-width: 1100px;
+            }
+
+            .observe {
+            margin-left: 40px;
+            color: gray;
+            font-weight: bold;
+            }
+
+            .animationtext {
+            /*text-align: center;*/
+            }
+            .links li {
+            list-style-type: square;
+            margin-left: -15px;
+            }
+            -->
+</style>
+        <!--[if lt IE 7]>
+        <style type="text/css">
+        .links {
+        position: absolute;
+        }
+        </style>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="links">
+        {% block answering_links %}
+            <h3 style="margin-bottom: -20px;">
+            <strong>Kyselyyn vastaaminen</strong>
+            </h3>
+            <ul>
+                <li>
+                    <a href="#et">eteneminen</a>
+                </li>
+                <li>
+                    <a href="#ke">keskeyttäminen</a>
+                </li>
+            </ul>
+        {% endblock answering_links %}
+            <h3 style="margin-bottom: -20px;">
+            <strong>Kartan käyttö</strong>
+            </h3>
+            <ul>
+                <li>
+                    <a href="#kali">kartalla liikkuminen</a>
+                </li>
+                <li>
+                    <a href="#kalajalo">kartan lähennys ja loitonnus</a>
+                </li>
+                <li>
+                    <a href="#naka">navigointikartan käyttö</a>
+                </li>
+                <li>
+                    <a href="#kamekopi">kartalle merkittyjen kohteiden piilottaminen</a>
+                </li>
+            </ul>
+            {% block drawing_links %}
+            <h3 style="margin-bottom: -20px;">
+            <strong>Kohteiden merkitseminen kartalle</strong>
+            </h3>
+            <ul>
+                <li>
+                    <a href="#kotamupime">kodin tai muun pisteen merkitseminen</a>
+                </li>
+                <li>
+                    <a href="#repika">reitin piirtäminen kartalle</a>
+                </li>
+                <li>
+                    <a href="#alpika">alueen piirtäminen kartalle</a>
+                </li>
+                <li>
+                    <a href="#kosimutapo">kohteen siirtäminen, muuttaminen tai poistaminen</a>
+                </li>
+            </ul>
+            {% endblock drawing_links %}
+            <h3 style="margin-bottom: -20px;">
+            <strong>Apua ongelmatilanteisiin</strong>
+            </h3>
+            <ul>
+                <li>
+                    <a href="#seas">selaimet ja asetukset</a>
+                </li>
+            </ul>
+            {% block info_for_research %}
+            <h3 style="margin-bottom: -20px;">
+            <strong>Tietoa PehmoGIS-tutkimuksesta</strong>
+            </h3>
+            <ul>
+                <li>
+                    <a href="#kytojatu">kyselyn toteuttaja ja tutkijat</a>
+                </li>
+                <li>
+                    <a href="#palkinnot">Palkinnot</a>
+                </li>
+                <li>
+                    <a href="#ti">tietosuoja</a>
+                </li>
+                <li>
+                    <a href="#re">rekisteriseloste</a>
+                </li>
+            </ul>
+            {% endblock info_for_research %}
+        </div>
+        <div class="content">
+            <table>
+                <tr>
+                    <th colspan="2">
+                    <h1>PehmoGIS-ohjeet</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <h1>Kyselyyn vastaaminen</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <p class="">
+                        Kyselyyn vastaaminen vie aikaa 20 minuutista ylöspäin riippuen vastaustyylistäsi. Toivomme sinun
+                        vastaavan
+                        <strong>kaikkiin kysymyksiin</strong>
+                        ja karttasivuilla
+                        <strong>erityisesti tärkeänä pitämiisi asioihin</strong>.	Kysely etenee
+                        vaiheittain, ja antamasi tiedot tallentuvat sitä mukaa, kun etenet kyselyssä.
+                    </p>
+                    </td>
+                </tr>
+                {% block answering %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="et">Kyselyssä eteneminen</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Siirry seuraavaan kysymykseen
+                        <strong>Jatka</strong>-painikkeella. Voit siirtyä takaisinpäin
+                        kyselyssä korjaamaan jo antamiasi vastauksia
+                        <strong>Edellinen</strong>-painikkeella tai yläpalkin navigaatiopalkin kautta.
+                    </p>
+                    <p class="">
+                        Kun pääset kyselyn loppuun, etkä enää halua muuttaa vastauksiasi, voit poistua kyselystä
+                        sulkemalla selaimen. Jos et ehdi vastata kaikkiin kysymyksiin
+                        yhdellä kertaa, voit keskeyttää kyselyyn vastaamisen ja palata myöhemmin täydentämään
+                        vastauksiasi (kts. ohje
+                        <a href="#ke">kyselyn keskeyttämisestä</a>).
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ MEDIA_URL }}img/help/eteneminen.gif" alt="jatka- ja edellinen-painikkeet" width="212" height="80" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="ke">Kyselyn keskeyttäminen</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Voit jatkaa kyselyä myöhemmin keskeyttämällä vastaamisen Keskeytä-painikkeesta, joka löytyy
+                        näkymän oikeasta yläreunasta (kts. kuva oikealla).
+                    </p>
+                    <p class="">
+                        Keskeyttäessäsi kyselyn sinun tulee antaa toimiva sähköpostiosoite. Saat ohjeet ja linkin
+                        antamaasi sähköpostiosoitteeseen. Linkki on henkilökohtainen ja
+                        sitä kautta voit muuttaa omia vastauksiasi tai jatkaa kyselyn täyttämistä.
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ MEDIA_URL }}img/help/keskeyta.jpg" alt="Keskeytä-painike" width="220" height="80" />
+                    </td>
+                </tr>
+                {% endblock answering %}
+                <tr>
+                    <td colspan="2">
+                    <h1>Kartan käyttö</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kali">Kartalla liikkuminen</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Kartalla liikutaan nuolipainikkeiden (kuva oikealla) avulla. Tee näin: klikkaa haluamaasi
+                        suuntaan osoittavaa nuolta hiirellä. Kartta liikkuu yhden
+                        pykälän valitsemaasi suuntaan.
+                    </p>
+                    <p class="">
+                        Voit liikkua kartalla myös
+                        <a href="#naka">navigointikartan</a> avulla tai siirtämällä karttaa
+                        hiirellä raahaamalla.
+                    </p>
+                    <p class="">
+                        Tee näin raahataksesi karttaa hiirellä: klikkaa hiiren painike alas missä tahansa kohtaa kartan
+                        päällä. Pidä painike pohjassa ja siirrä hiirtä haluamaasi
+                        suuntaan. Kartta liikkuu hiiren mukana.
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ MEDIA_URL }}img/help/nuolipainikkeet.jpg" alt="Nuolipainikkeet" width="90" height="270" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kalajalo">Kartan lähennys ja loitonnus</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Kartan lähentämiseen ja loitontamiseen (zoomaamiseen) on kaksi tapaa. Karttaa voi lähentää ja
+                        loitontaa
+                        <strong>zoomauspalkin </strong>tai
+                        <strong>hiiren vierityspainikkeen avulla</strong>.
+                    </p>
+                    <p class="">
+                        Zoomauspalkin avulla karttaa voi lähentää klikkaamalla plus-painiketta (+) ja loitontaa
+                        klikkaamalla miinus-painiketta.
+                        Näkymää voi säätää myös suoraan raahaamalla palkin osoitinta ylöspäin tai alaspäin.
+                    </p>
+                    <p class="">
+                        Jos hiiressäsi on niin sanottu vierityspainike (tai "rulla") voit zoomata myös sen
+                        avulla. Kartta zoomaa lähemmäksi,
+                        kun vierität rullaa eteenpäin ja taaksepäin, kun vierität rullaa taaksepäin.
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ MEDIA_URL }}img/help/zoomauspalkki.jpg" alt="Lähennys ja loitonnus" width="90" height="270" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="naka">Navigointikartan käyttö</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Näkymän oikeasta ylänurkasta löytyy navigointikartta eli pienoiskokoinen kartta, josta näkyy
+                        näkymän sijainti suhteessa koko kaupunkiin.
+                        Navigointikartan avulla voi myös liikkua kartalla.
+                    </p>
+                    <p class="">
+                        Näin liikut kartalla navigointikartan avulla: tartu hiirellä kartalla näkyvään siniseen neliöön
+                        ja raahaa sitä hiirellä haluamaasi suuntaan.
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ MEDIA_URL }}img/help/navikartta.jpg" alt="Navigointikartta" width="220" height="220" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kamekopi">Kartalle merkittyjen kohteiden piilottaminen</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Kartalle päällekkäin merkityt kohteet peittävät helposti pohjakartan. Voit halutessasi
+                        piilottaa kartalle merkitsemäsi kohteet
+                        <strong>Piilota omat
+                        merkinnät</strong> -painikkeen avulla. Painike löytyy toimintopainikkeen yläpuolelta, kuten
+                        viereisessä kuvassa on esitetty.
+                    </p>
+                    <p class="">
+                        Kun olet piilottanut omat merkintäsi kartalta, painikkeessa lukee "Näytä omat merkinnät".
+                        Saat siis merkintäsi uudelleen näkyviin klikkaamalla painiketta uudemman kerran.
+                    </p>
+                    </td>
+                    <td>
+                    <img src="{{ MEDIA_URL }}img/help/piilota_omat.jpg" alt="Omien kohteiden piilottaminen" width="215" height="140" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <h1>Kohteiden merkitseminen kartalle</h1>
+                    </td>
+                </tr>
+                {% block locating %}
+                <tr>
+                    <td colspan="2">
+                    <p class="">
+                        Kyselyssä merkitään kartalle pisteitä, alueita tai viivoja (reittejä). Toimintopainikkeen kuvake
+                        kertoo, minkälainen kohde on tarkoitus paikantaa.
+                        Esimerkiksi koti merkitään kartalle pisteenä, kulkureitit piirretään viivoina ja naapurusto alueena.
+                    </p>
+                    <p class="observe">
+                        <img src="{{ MEDIA_URL }}img/help/koti_tyokalu.png" alt="Koti" width="265" height="53" />
+                        <br />
+                        <img src="{{ MEDIA_URL }}img/help/tarkeaReitti_tyokalu.png" alt="Reitti" width="265" height="53" />
+                        <br />
+                        <img src="{{ MEDIA_URL }}img/help/omaAlue_tyokalu.png" alt="Naapurusto" width="265" height="53" />
+                        <br />
+                        Kuva yllä: Esimerkit piste-, viiva- ja aluetyökaluista.
+                    </p>
+                    <p class="">
+                        Elinympäristön arviointi -osiossa voit merkitä kartalle sekä pisteitä että alueita. Valitse piste-
+                        tai aluetyökalu sen mukaan, minkälainen kohteesi on.
+                    </p>
+                    <p class="observe">
+                        <img src="{{ MEDIA_URL }}img/help/fyysinen_piste.png" alt="Piste" width="50" height="20" />
+                        <img src="{{ MEDIA_URL }}img/help/fyysinen_alue.png" alt="Alue" width="50" height="20" />
+                        <br />
+                        Kuva yllä: Elinympäristön arviointi -osiossa sinun tulee valita joko piste- tai aluetyökalu.
+                    </p>
+                    </td>
+                </tr>
+                {% endblock locating %}
+                {% block point_drawing %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kotamupime">Kodin tai muun pisteen merkitseminen kartalle</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Koti merkitään kartalle pisteenä. Muita pistemäisiä kohteita ovat esimerkiksi työ- tai
+                        opiskelupaikka, peruspalvelut ja onnen paikka.
+                    </p>
+                    <p class="">
+                        <strong>Esimerkki pisteen merkitsemisestä kartalle: Kodin merkitseminen</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            Etsi aluksi kartalta kotisi sijainti.
+                        </li>
+                        <li>
+                            <strong>Valitse Koti-työkalu</strong> klikkaamalla sitä hiirellä.
+                            <br />
+                            <img src="{{ MEDIA_URL }}img/help/koti_tyokalu.png" alt="Koti" width="265" height="53" />
+                            <br />
+                            Klikatessasi Koti-työkalu aktivoituu ja sen ulkoasu muuttuu:
+                            <br />
+                            <img src="{{ MEDIA_URL }}img/help/koti_tyokalu_aktivoitu.png" alt="Koti valittuna" width="265" height="53" />
+                        </li>
+                        <li>
+                            <strong>Klikkaa karttaa kodin kohdalla.</strong> Koti sijoitetaan osoittamaasi kohtaan.
+                        </li>
+                        <li>
+                            <strong>Vahvista kodin sijainti</strong> avautuvassa ikkunassa klikkaamalla painiketta
+                            "Kyllä, tallenna kohde".
+                            Mikäli koti meni väärään paikkaan, voit poistaa sen klikkaamalla "Ei, poista kohde".
+                            Voit myös siirtää kotia jälkeenpäin, jos huomaat sen olevan väärässä paikassa (kts.
+                            <a href="#kosimutapo">kohteen siirto-ohje</a>).
+                        </li>
+                    </ol>
+                    </td>
+                    <td/>
+                </tr>
+                {% endblock point_drawing %}
+                {% block route_drawing %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="repika">Reitin piirtäminen kartalle</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Reitti (tai viiva) piirretään kartalle hiirellä klikkailemalla. Aloita piirto reitin
+                        jommastakummasta päästä.
+                        Kun reitti on valmis, lopeta piirto hiiren kaksoisklikkauksella.
+                    </p>
+                    <p class="">
+                        <strong>Esimerkki reitin piirtämisestä: Tärkeän kulkureitin merkitseminen</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            Etsi haluamasi paikka kartalta.
+                        </li>
+                        <li>
+                            Valitse
+                            <strong>Tärkeä reitti -työkalu</strong>.
+                        </li>
+                        <li>
+                            Aloita reitin piirto
+                            <strong>klikkaamalla karttaa reitin alkupään kohdalla</strong>. Jatka
+                            reitin piirtämistä klikkailemalla karttaa reittiä seuraillen.
+                        </li>
+                        <li>
+                            <strong>Lopeta piirto hiiren kaksoisklikkauksella.</strong>
+                        </li>
+                        <li>
+                            Kerro reitistä haluamasi asiat ja tallenna reitti.
+                        </li>
+                    </ol>
+                    <p class="observe">
+                        Huom! Jos reittisi jatkuu näkymän ulkopuolelle, voit siirtää karttaa viemällä hiirtä kartan
+                        reunan yli (Firefox-selain) tai
+                        kartan siirtonuolia klikkailemalla (mm. Internet Explorer).
+                    </p>
+                    <p class="animationtext">
+                        Reitin piirtäminen kartalla vaihe vaiheelta:
+                    </p>
+                    <p class="style2">
+                        <img src="{{ MEDIA_URL }}img/help/reitin_piirto_animaatio.gif" alt="Reitin piirto" width="496" height="400" />
+                    </p>
+                    </td>
+                    <td/>
+                </tr>
+                {% endblock route_drawing %}
+                {% block area_drawing %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="alpika">Alueen piirtäminen kartalle</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Alue merkitään kartalle piirtämällä sen reunaviiva hiirellä klikkailemalla. Aloita piirto
+                        klikkaamalla karttaa jossain alueen kulmapisteessä.
+                        Jatka piirtämistä klikkailemalla kartalle reunaviiva piste pisteeltä. Kun alue on valmis,
+                        lopeta piirto hiiren kaksoisklikkauksella.
+                    </p>
+                    <p class="">
+                        <strong>Esimerkki alueen piirtämisestä: Oma alueen merkitseminen</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            Etsi haluamasi paikka kartalta.
+                        </li>
+                        <li>
+                            Valitse
+                            <strong>Oma alue -työkalu</strong>.
+                        </li>
+                        <li>
+                            Aloita alueen piirto klikkaamalla karttaa jossain alueen kulmapisteessä.
+                            Jatka alueen piirtämistä klikkailemalla karttaa reunaviivaa seuraillen piste pisteeltä.
+                        </li>
+                        <li>
+                            <strong>Lopeta piirto hiiren kaksoisklikkauksella.</strong>
+                        </li>
+                    </ol>
+                    <p class="observe">
+                        Huom! Jos alueesi jatkuu näkymän ulkopuolelle, voit siirtää karttaa viemällä hiirtä kartan
+                        reunan yli (Firefox-selain)
+                        tai kartan siirtonuolia klikkailemalla (mm. Internet Explorer).
+                    </p>
+                    <p class="animationtext">
+                        Alueen piirtäminen kartalla vaihe vaiheelta:
+                    </p>
+                    <p class="style2">
+                        <img src="{{ MEDIA_URL }}img/help/alueen_piirto_animaatio.gif" alt="Alueen piirtäminen kartalle" width="496" height="400" />
+                    </p>
+                    </td>
+                    <td/>
+                </tr>
+                {% endblock area_drawing %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kosimutapo">Kohteen siirtäminen, muuttaminen tai poistaminen</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Voit muuttaa kartalle merkitsemiäsi kohteita valitsemalla kohteen kartalta klikkaamalla. Voit
+                        siirtää kohteen toiseen paikkaan tai muuttaa sen sisältöä
+                        (esimerkiksi kohteesta kirjoittamaasi kuvausta). Kotia lukuun ottamatta voit myös poistaa
+                        kaikkia merkitsemiäsi kohteita kartalta.
+                    </p>
+                    <p class="">
+                        <strong>Esimerkki kohteen muuttamisesta: Kodin siirtäminen oikeaan paikkaan</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            <strong>Valitse kartalle merkitsemäsi Koti-piste</strong> klikkaamalla kartalla näkyvää
+                            pistettä hiirellä. Näkymään avautuu ikkuna,
+                            jossa on kaksi painiketta: Muuta kohteen paikkaa ja Sulje ikkuna.
+                        </li>
+                        <li>
+                            Valitse
+                            <strong>Muuta kohteen paikkaa</strong>. Nyt voit merkitä kodin kartalle oikeaan
+                            paikkaan klikkaamalla karttaa.
+                        </li>
+                        <li>
+                            <strong>Tallenna</strong> Kodin uusi sijainti klikkamalla tallennuspainiketta. Vanha
+                            merkintä poistuu, kun tallennat kohteen.
+                        </li>
+                    </ol>
+                    </td>
+                    <td>
+                    <img src="{{ MEDIA_URL }}img/help/kohteen_siirto.jpg" alt="Siirtäminen" width="220" height="220" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <h1>Apua ongelmatilanteisiin</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="seas">Selaimet ja asetukset</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Kysely toimii parhaiten Firefox 3 -selaimella. Muita selaimia, joilla kysely on testattu ja
+                        todettu toimivan hyvin ovat IE7, Google Chrome, Opera ja Firefox 2.
+                    </p>
+                    <p class="">
+                        <strong>JavaScript ja evästeet on sallittava</strong>
+                    </p>
+                    <p class="">
+                        PehmoGIS-kysely käyttää JavaScript-kieltä, joten selaimesi tulee sallia sen suorittaminen.
+                        Samoin tulee sallia evästeiden käyttö.
+                        Evästeet ovat pieniä kiintolevylle tai muistiin tallettuvia tekstitiedostoja, joiden avulla
+                        voidaan tallettaa tietoa selaamistasi sivustoista.
+                        Evästeiden avulla ei voida käynnistää ohjelmia eikä välittää viruksia koneeseesi.
+                    </p>
+                    <p class="">
+                        <strong>Näin muutat selaimen asetukset</strong>
+                    </p>
+                    <p class="">
+                        Tässä ohjeita yleisimpien www-selainten asetusten muuttamisesta siten, että PehmoGIS-kysely
+                        toimii.
+                    </p>
+                    <p class="">
+                        <strong>Firefox 2.0 ja 3.0:</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            Valitse valikosta Työkalut &gt; Asetukset. Valitse Asetukset-ikkunassa Sisältö kohta ja
+                            valitse kohta "Salli JavaScript"
+                            (Firefox 3.0: "Salli JavaScript -komentosarjat").
+                        </li>
+                        <li>
+                            Valitse sitten Asetukset ikkunassa Tietosuoja-sivu. Evästeet-otsikon alta valitse kohta
+                            "Sivustot voivat asettaa evästeitä".
+                            Hyväksy muutokset painamalla OK.
+                        </li>
+                    </ol>
+                    <p class="">
+                        <strong>Internet Explorer 6.x:</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            Valitse valikosta Työkalut (Tools) &gt; Internet-asetukset (Internet Options).
+                        </li>
+                        <li>
+                            Valitse Asetus-ikkunasta Tietosuoja (Security) -välilehti. Aseta tietosuojatasoksi
+                            (Security Level) Normaali
+                            (Medium tai Medium-low) liukuvalitsinta siirtämällä.
+                        </li>
+                    </ol>
+                    <p class="">
+                        <strong>Internet Explorer 7.0:</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            Valitse valikosta Työkalut (Tools) &gt; Internet-asetukset (Internet Options).
+                        </li>
+                        <li>
+                            Valitse Internet asetukset -ikkunassa Suojaus (Security) -välilehti. Aseta Vyöhykkeen
+                            suojaustaso kohtaan Keskitaso tai Keskivahva.
+                            Voit käyttää myös Mukautettua tasoa (Custom Level). Varmista silloin, että ainakin
+                            seuraavat kohdat ovat valittuina
+                            "Scripting/Active Scripting/Enable".
+                        </li>
+                    </ol>
+                    <p class="">
+                        <strong>Opera:</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            Valitse valikkoriviltä Tiedosto ja Asetukset...
+                        </li>
+                        <li>
+                            Valitse uuden ikkunan vasemmasta laidasta kohta Verkko ja sieltä alakohta Yksityisyys.
+                        </li>
+                        <li>
+                            Valitse Evästeet - kohdasta Ota evästeet käyttöön. Hyväksy asetukset valitsemalla OK.
+                        </li>
+                    </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <h1>Tietoa PehmoGIS-tutkimuksesta</h1>
+                    </td>
+                </tr>
+                {% block researchers %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="kytojatu">Kyselyn toteuttaja ja tutkijat</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Tutkimus on osa Urbaani Onni -tutkimushanketta. Teknillisen korkeakoulun Yhdyskuntasuunnittelun
+                        tutkimus- ja koulutuskeskuksen yhteistyökumppanina
+                        tutkimuksessa on Helsingin kaupunki. Tutkijoina toimivat
+                        <a href="mailto:marketta.kytta@tkk.fi">FT Marketta Kyttä</a>, FM Maarit Kahila ja
+                        <a href="mailto:anna.broberg@tkk.fi">FM Anna Broberg.</a>
+                    </p>
+                    <p class="">
+                        Urbaani Onni -hankkeessa tutkitaan, millä ehdoilla ekologisesti kestävä urbaani yhdyskunta voi
+                        olla myös sosiaalisesti kestävä ja kokemukselliselta
+                        laadultaan korkea eli elämänlaatua, onnellisuutta ja hyvinvointia tukeva urbaani ympäristö.
+                        Urbaanin ympäristön kokemuksellista laatua tutkitaan
+                        paikkaan kiinnittyen ns. pehmoGIS-metodeilla ja yhdyskunnan rakenteellisia piirteitä
+                        morfologisilla analyyseilla. TKK:n Yhdyskuntasuunnittelun
+                        tutkimus- ja koulutuskeskuksen ja Tampereen teknillisen yliopiston EDGE-kaupunkitutkimusyksikön
+                        yhteishankkeessa tutkitaan eri asukasryhmiä
+                        kolmessa kaupungissa: Helsingissä, Espoossa ja Turussa. Hanketta rahoittavat Tekes ja
+                        kaupungit, sekä yrityskumppaneina Skanska, FCG Planeko,
+                        Vaisala ja TopOne. Valtionhallintoa hankkeessa edustavat Tiehallinto ja Ympäristöministeriö.
+                    </p>
+                    </td>
+                    <td/>
+                </tr>
+                {% endblock researchers %}
+                {% block prizes %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="palkinnot">Arvonnan palkinnot</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaineiden kesken arvotaan:
+                        <ul>
+                            <li>
+                                Teatterilippu Helsingin Kaupunginteatteriin
+                            </li>
+                            <li>
+                                Löytöretki Helsinkiin -kuvateos Helsingin poluilta ja puutarhoista
+                            </li>
+                            <li>
+                                Korkeasaaren pääsylippu (kaksi aikuista ja kolme 6-17 v. lasta)
+                            </li>
+                            <li>
+                                Perhelippu Gardenian trooppiseen puutarhaan viidelle vastaajalle
+                                (kaksi aikuista ja max. 5 lasta)
+                            </li>
+                        </ul>
+                    </p>
+                    </td>
+                </tr>
+                {% endblock prizes %}
+                {% block privacy_protection %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="ti">Tietosuoja</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Helsingin pehmoGIS-kysely toimii Teknillisen korkeakoulun suojatulla palvelimella, ja kyselystä
+                        koostuvaan tietokantaan on pääsy vain
+                        tutkimushankkeessa työskentelevillä henkilöillä. Sovellus ei ole yhteydessä Helsingin kaupungin
+                        tietojärjestelmiin.
+                    </p>
+                    <p class="">
+                        Tutkimuksessa ei käsitellä henkilötietolain piiriin kuuluvia tietoja (kuten osoitteita, nimiä
+                        tai henkilötunnuksia). Tutkimuksesta on kuitenkin laadittu
+                        Tietosuojavaltuutetun ohjeiden mukainen tieteellisen tutkimuksen rekisteriseloste.
+                    </p>
+                    <p class="">
+                        Tutkimusaineiston tietoja käsitellään ryhmittäin, ei yksilötasolla. Tuloksia ryhmitellään esim.
+                        sukupuolen, ikäryhmän ja asuinpaikan perustella ja niissä
+                        käsitellään ryhmien antamia keskimääräisiä vastauksia, kuten keskimääräistä matkaa tärkeisiin
+                        paikkoihin tai kulkutapoja töihin.
+                        Julkaistavista tuloksista on mahdotonta jäljittää yksittäisten ihmisten tai yksittäisessä
+                        rakennuksessa asuvien ihmisten vastauksia.
+                    </p>
+                    <p class="">
+                        Kysymykset hyvinvoinnista tai sosioekonomisesta asemasta eivät ole tutkimuksen aiheita
+                        sinällään, vaan niitä käsitellään ainoastaan kytkettynä tutkimuksen
+                        varsinaiseen teemaan, eli elinympäristön kokemuksiin, ja tietoihin yhdyskunnan rakenteellisista
+                        piirteistä.
+                    </p>
+                    </td>
+                    <td/>
+                </tr>
+                {% endblock privacy_protection %}
+                {% block registry %}
+                <tr>
+                    <td>
+                    <h2>
+                    <a name="re">Rekisteriseloste</a>
+                    </h2>
+                    </td>
+                    <td/>
+                </tr>
+                <tr>
+                    <td>
+                    <p class="">
+                        Tutkimuksen rekisteriseloste
+                        <a href="./rekisteriselosteUrbaaniOnni.pdf">(pdf-tiedosto).</a>
+                    </p>
+                    </td>
+                </tr>
+                {% endblock registry %}
+            </table>
+        </div>
+    </body>
+</html>

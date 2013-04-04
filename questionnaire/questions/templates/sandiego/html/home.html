@@ -1,0 +1,51 @@
+{% extends 'bigContent.html' %}
+{% load i18n %}
+{% block formarea %}
+    <h1>{% trans 'Koti' %}</h1>
+    <p>
+        <b>
+            {% blocktrans %}
+                Merkitse kartalle kotitalosi sijainti. Voit merkitä kartalle vain yhden kotitalon.
+                Jos sinulla on useampi koti, valitse se, jonka tunnet tärkeimmäksi.
+            {% endblocktrans %}
+        </b>
+    </p>
+    <p class="extra">
+        {% blocktrans %}
+            HUOM! Kotitalon paikannustieto on tärkeä tutkiessamme etäisyyksiä eri toimintojen välillä.
+            Yksilöä tai kodin paikannusta ei voi tunnistaa tuloksista. Mikäli et halua paikantaa kotitaloasi,
+            tee paikannus esim. lähimpään kadun kulmaan.
+        {% endblocktrans %}
+    </p>
+    <p>{% trans 'Tee näin:' %}</p>
+    <ol>
+        <li>{% trans 'Etsi kotitalosi kartalta.' %} <span class="spanLink" onclick="submitForm();createsubwindow('mapanimation');">{% trans 'Ohje' %}</span></li>
+        <li>{% trans 'Valitse alla oleva Kotitalo-työkalu.' %}</li>
+        <li>{% trans 'Klikkaa karttaa kotisi kohdalla.' %}</li>
+        <li>{% trans 'Tallenna kodin paikka "Tallenna kohde" -painikkeella' %}</li>
+    </ol>
+    <table>
+        <tr id="miniHelp" onclick="toggleHelp();">
+            <td id="expandButton" class="closedhelp"/>
+            <td>{% trans 'Etsitkö ohjetta...' %}</td>
+        </tr>
+    </table>
+    <ul class="instructionlinks" style="display: none;">
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kali" onclick="window.open('{% url main_html file_name='instructions' %}#kali'); return false;">{% trans 'miten kartalla liikutaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'kuinka merkitä kohde kartalle' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'miten korjataan kohde, joka meni väärään paikkaan?' %}</a>
+        </li>
+        <li>
+            <a href="{% url main_html file_name='instructions' %}" onclick="window.open('{% url main_html file_name='instructions' %}'); return false;">{% trans 'Näytä kaikki ohjeet' %}</a>
+        </li>
+    </ul>
+    <hr />
+    <form id="homeForm" name="homeForm" >
+        <button type="button" class="drawbutton point home" id="home" name="home">{% trans 'Koti' %}</button>
+    </form>
+{% endblock formarea %}
