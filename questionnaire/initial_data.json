@@ -42,6 +42,14 @@
         }
     }, 
     {
+        "pk": 15, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "http://sandiego.softgis.fi", 
+            "name": "sandiego"
+        }
+    }, 
+    {
         "pk": 12, 
         "model": "sites.site", 
         "fields": {

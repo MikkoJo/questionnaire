@@ -11,15 +11,14 @@
         </textarea>
     </p>
 </form>
-{% comment %}
 <form id="contactForm">
     <h2>{% trans 'Arvonta' %}</h2>
     <p>
         {% blocktrans %}
-            Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaneiden kesken arvotaan joukkoliikenteen
-            lippulahjakortteja ja elokuvalippuja. Jos haluat osallistua arvontaan,
-            jätä tähän yhteystietosi. Yhteystiedot eivät tallennu samaan kantaan muiden vastauksiesi kanssa,
-            joten niiden yhdistäminen vastauksiisi ei ole mahdollista.
+            There will be a prize drawn between participants where gift vouchers for movie tickets are
+            raffled. If you want to participate in the prize drawing, please leave your contact information.
+            To make sure that the contact information cannot be connected with the answers, the contact
+            information will not be saved to the same data file with your answers.
         {% endblocktrans %}
     </p>
     <table class="infotable">
@@ -41,7 +40,6 @@
             <input type="text" name="phonenumber" id="phonenumber" />
             </td>
         </tr>
-{% endcomment %}
 {% comment %}
         <tr>
             <td>{% trans 'Katuosoite' %}:</td>
@@ -62,21 +60,12 @@
             </td>
         </tr>
 {% endcomment %}
-{% comment %}
         <tr>
             <td colspan="2">
                 <input type="checkbox" name="sendresults" value="furtherstudy" id="furtherstudy" onclick="emailcheck()" />
                 <label for="furtherstudy">
                     {% trans 'Olen kiinnostunut osallistumaan mahdolliseen jatkotutkimukseen' %}.
                     {% trans 'Minulle voi lähettää siihen kutsun sähköpostilla' %}.
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input type="checkbox" name="sendresults" value="interview" id="interview" onclick="emailcheck()" />
-                <label for="interview">
-                    {% trans 'Minuun saa ottaa yhteyttä sähköpostilla mahdollisen henkilökohtaisen tutkimushaastattelun sopimiseksi' %}.
                 </label>
             </td>
         </tr>
@@ -90,5 +79,4 @@
         </tr>
     </table>
 </form>
-{% endcomment %}
 {% endblock formarea %}

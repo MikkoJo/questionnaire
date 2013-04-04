@@ -1,4 +1,4 @@
-{% extends 'mobility/html/move_env_info.html' %}
+{% extends 'sandiego/html/move_env_info.html' %}
 {% load i18n %}
 {% block what_kind_place %}
 {% spaceless %}
@@ -27,6 +27,18 @@
         <td>
             <input type='checkbox' name='whattype' id='me1_4' value='specialshop' />
             <label for='me1_4'>{% trans 'erikoiskauppa' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_5' value='farmes_market' />
+            <label for='me1_5'>{% trans 'tori' %}</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type='checkbox' name='whattype' id='me1_5' value='swapmeet_mplace' />
+            <label for='me1_6'>{% trans 'kirpputori/market' %}</label>
         </td>
     </tr>
     <tr>

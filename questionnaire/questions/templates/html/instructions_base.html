@@ -706,8 +706,8 @@
                     <td>
                     <p class="">
                         {% blocktrans %}
-                        Kysely toimii parhaiten Firefox 3 -selaimella. Muita selaimia, joilla kysely on testattu ja
-                        todettu toimivan hyvin ovat IE7, Google Chrome, Opera ja Firefox 2.
+                        Kysely toimii parhaiten Firefox -selaimilla. Muita selaimia, joilla kysely on testattu ja
+                        todettu toimivan hyvin ovat IE8 tai uudempi, Google Chrome, Opera.
                         {% endblocktrans %}
                     </p>
                     <p class="">
@@ -722,6 +722,7 @@
                         Evästeiden avulla ei voida käynnistää ohjelmia eikä välittää viruksia koneeseesi.
                         {% endblocktrans %}
                     </p>
+{% comment %}
                     <p class="">
                         <strong>{% trans 'Näin muutat selaimen asetukset' %}</strong>
                     </p>
@@ -798,6 +799,7 @@
                     </ol>
                     </td>
                 </tr>
+{% endcomment %}
                 <tr>
                     <td colspan="2">
                     <h1>{% trans 'Tietoa PehmoGIS-tutkimuksesta' %}</h1>

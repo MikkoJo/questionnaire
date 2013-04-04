@@ -3,14 +3,15 @@
     <div class="firstpagepic">
         <!--#-->
     </div>
-    <h2 class="firstpagecontent">{% trans 'Mitä asioita arvostat omassa elinympäristössäsi' %}?</h2>
+    <h2 class="firstpagecontent">{% trans 'What kind of things do you value in Pacific Beach?' %}?</h2>
     <p class="firstpagecontent">
         {% blocktrans %}
-            Tämä elinympäristöä koskeva karttapohjainen kysely liittyy Tampereen kaupungin yhdyskuntarakenteen
-            eheyttämiseen tähtäävään työhön (EHYT). Koska onnistunut täydennysrakentaminen edellyttää
-            ympäristön arvojen tunnistamista, Tampereen kaupunki kysyy asukkailta ja muilta toimijoilta
-            näkemyksiä ja kokemuksia kaupunkiympäristöstä. Osallistumalla kyselyyn voit kertoa suunnittelijoille
-            sinulle tärkeistä asioista ja kehittämiskohteista elinympäristössäsi. 
+            This softGIS questionnaire collects data about the residents’ relationship with Pacific
+            Beach. It also collects suggestions on how the area should be developed in the future.
+            The results will be used as a basis for discussion among all those who are interested in
+            improving the quality of life in PB.  By responding to this questionnaire you can inform
+            the BeautifulPB-initiative and its partners about the issues that you feel are important
+            in your neighbourhood and other parts of PB. 
         {% endblocktrans %}
     </p>
     <div class="mainpageBox firstpagecontent">
@@ -47,10 +48,17 @@
 </div>
 <div class="mainBottom firstpagecontent">
     {% blocktrans %}
-        Kysely on toteutettu yhteistyössä Aalto-yliopiston ja Tampereen teknillisen yliopiston 
-        kanssa Tekesin rahoittamassa Urbaani arki -hankkeessa. Kyselyn tuloksia hyödynnetään 
-        asuinympäristön laatua ja arkiliikkumista koskevassa tutkimuksessa. Tutkimusosiosta
-        vastaavat FT Marketta Kyttä Aalto-yliopistosta ja tutkimuspäällikkö Hanna Kalenoja TTY:sta.
+        The survey is carried out as a cooperation of Aalto University (Helsinki, Finland) and the
+        BeautifulPB-initiative. Aalto University has been developing the softGIS-method since 2005
+        in cooperation with Finnish cities interested in participatory urban planning. Recently it
+        carried out a project with Japan and Australia, and this survey is the first time that the
+        softGIS is tested in the US. The results of the survey will be utilized by the BeautifulPB
+        and other interested parties to better understand how PB residents use the area and how they
+        would like to see it developing in the future. The results may also be used by the Finnish
+        research team to analyse the perceived environmental quality and everyday mobility issues.
+        Marketta Kyttä and Kaisa Schmidt-Thomé (kaisa.schmidt-thome(at)aalto.fi) from Aalto University are
+        in charge of the research. The contact persons of the Beautiful PB for the survey are Kristen
+        Victor (kristen(at)sustainabilitymatters.us) and Sara Berns (sara(at)pacificbeach.org).
     {% endblocktrans %}
         <a href="{% url main_html file_name='instructions' %}#kytojatu" onclick="window.open(this.href); return false;">{% trans 'Lisätietoa tutkimuksesta' %}</a>.
     

@@ -72,7 +72,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="howmanycars">{% trans 'Montako autoa kotitaloudessasi on?' %}</label>
+                    <label for="howmanycars">{% trans 'How many cars are there in your household?' %}</label>
                 </td>
                 <td class="shortTextBox">
                     <input type="number" id="howmanycars" name="howmanycars" min="0" max="20" />{% trans 'kpl' %}
@@ -88,45 +88,32 @@
                 </td>
             </tr>
             <tr>
-                <td valign="top"><label for="">{% trans 'Mikä on asumismuotosi?' %}</label></td>
-                <td style="width:50%;" class="topAlign">
-                    <input type="radio" name="residenttype" id="own" value="own" />
-                    <label for="own">{% trans 'omistusasunto' %}</label>
-                    <br/>
-                    <input type="radio" name="residenttype" id="rent" value="rent" />
-                    <label for="rent">{% trans 'vuokra-asunto' %}</label>
-                    <br/>
-                    <input type="radio" name="residenttype" id="rightofresidence" value="rightofresidence" />
-                    <label for="rightofresidence">{% trans 'asumisoikeusasunto' %}</label>
-                </td>
-            </tr>
-            <tr>
+                <td valign="top"><label for="residencetype">{% trans 'Residence in PB at the moment?' %}</label></td>
                 <td>
-                    <label for="resarea">{% trans 'Minkä kunnan alueella asut?' %}</label>
-                </td>
-                <td>
-                    <select id="resarea" name="resarea">
+                    <select id="residencetype" name="residencetype">
                         <option value="NULL" selected="selected"></option>
-                        <option value="helsinki">{% trans 'Helsinki' %}</option>
-                        <option value="espoo">{% trans 'Espoo' %}</option>
-                        <option value="vantaa">{% trans 'Vantaa' %}</option>
+                        <option value="perm_owner">{% trans 'Permanent, owner-occupied' %}</option>
+                        <option value="part_owner">{% trans 'Part-time, owner-occupied' %}</option>
+                        <option value="perm_rent">{% trans 'Permanent, rented' %}</option>
+                        <option value="part_rent">{% trans 'Part-time, rented' %}</option>
+                        <option value="short_vac_rent">{% trans 'Short-time / vacation rental' %}</option>
+                        <option value="short_hote_friend">{% trans 'Short-time, hotel/hostel/friend’s place' %}</option>
+                        <option value="non_res">{% trans 'Non-resident' %}</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="childEnv">{% trans 'Minkätyyppisessä ympäristössä lapsuuden merkittävin kasvuympäristösi sijaitsi?' %}</label>
+                    <label for="childEnv">{% trans 'Where did you mainly grow up??' %}</label>
                 </td>
                 <td>
                     <select id="childEnv" name="childEnv">
                         <option value="NULL" selected="selected"></option>
-                        <option value="center">{% trans 'kaupungin ydinkeskustassa tai sen läheisyydessä' %}</option>
-                        <option value="suburb">{% trans 'pientalovaltaisessa esikaupungissa' %}</option>
-                        <option value="suburbBlocks">{% trans 'kerrostalovaltaisessa esikaupungissa' %}</option>
-                        <option value="town">{% trans 'maaseututaajamassa' %}</option>
-                        <option value="village">{% trans 'kylässä maaseudulla' %}</option>
-                        <option value="sparse">{% trans 'haja-asutusalueella' %}</option>
-                        <option value="overseas">{% trans 'ulkomailla' %}</option>
+                        <option value="PB">{% trans 'In/Close to Pacific Beach' %}</option>
+                        <option value="sandiego">{% trans 'In San Diego' %}</option>
+                        <option value="california">{% trans 'In California' %}</option>
+                        <option value="us">{% trans 'In the US' %}</option>
+                        <option value="abroad">{% trans 'Abroad' %}</option>
                     </select>
                 </td>
             </tr>

@@ -149,29 +149,27 @@
     <td>
     <p>
         {% blocktrans %}
-        Tutkimus on osa Urbaani Arki -tutkimushanketta. Aalto-yliopiston Yhdyskuntasuunnittelun
-        tutkimus- ja koulutuskeskuksen ja Tampereen teknillisen yliopiston yhteistyökumppanina tutkimuksessa
-        on mm. Tampereen kaupunki. Tutkijoina toimivat
-        <a href="mailto:marketta.kytta@aalto.fi">FT Marketta Kyttä</a>,
-        <a href="mailto:kaisa.schmidt-thome@aalto.fi">FL Kaisa Schmidt-Thomé</a> ja
-        <a href="mailto:hanna.kalenoja@tut.fi">TkL Hanna Kalenoja</a>.
+        The survey is carried out as a cooperation of Aalto University (Helsinki, Finland) and
+        the BeautifulPB-initiative. Aalto University has been developing the softGIS-method since 2005
+        in cooperation with Finnish cities interested in participatory urban planning. Recently it
+        carried out a project with Japan and Australia, and this survey is the first time that the
+        softGIS is tested in the US. The results of the survey will be utilized by the BeautifulPB
+        and other interested parties to better understand how PB residents use the area and how they
+        would like to see it developing in the future. The results may also be used by the Finnish
+        research team to analyse the perceived environmental quality and everyday mobility issues.
+        Marketta Kyttä and Kaisa Schmidt-Thomé (kaisa.schmidt-thome(at)aalto.fi) from Aalto University
+        are in charge of the research. The contact persons of the Beautiful PB for the survey are
+        Kristen Victor /kristen(at)sustainabilitymatters.us) and Sara Berns (sara(at)pacificbeach.org).
         {% endblocktrans %}
     </p>
     <p >
         {% blocktrans %}
-        Urbaani Arki -hankkeessa tutkitaan asukkaiden arkiliikkumista ja arjen palvelujen käyttöä
-        paikkalähtöisesti tunnistaen samalla elinympäristön käytön suhteen erilaisia asukasprofiileja.
-        Arjen sujumisen kannalta on tärkeää, missä asukkaalle keskeiset arkiverkon paikat sijaitsevat ja
-        miten niiden välillä liikutaan.
-        {% endblocktrans %}
-    </p>
-    <p>
-        {% blocktrans %}
-        Aalto-yliopiston Yhdyskuntasuunnittelun tutkimus- ja koulutuskeskuksen ja Tampereen teknillisen yliopiston
-        tiedonhallinnan ja logistiikan laitoksen yhteishankkeessa tutkitaan eri asukasryhmiä yhteensä kahdeksan kaupungin
-        alueella. Hanketta rahoittavat Tekes ja kaupungit, sekä yrityskumppaneina Ruokakesko, FCG Planeko, Citycon,
-        Fifth Element ja ESRI Finland. Valtionhallintoa hankkeessa edustavat Ympäristöministeriö ja Kaupunkipolitiikan
-        yhteistyöryhmä (Työ- ja elinkeinoministeriö).
+        The offer of Aalto University to test the softGIS in Pacific Beach is linked to a European
+        Union research exchange programme and its project called CLUDs. Within the CLUDs it has been
+        possible to invite several researchers from Finland, UK and Italy to be visiting scholars
+        at the San Diego State University, School of Public Affairs. However, introducing the
+        questionnaire in Pacific Beach is not an official part of the CLUDs but rather a joint
+        effort of Aalto University and the BeautifulPB. 
         {% endblocktrans %}
     </p>
     </td>
@@ -191,15 +189,7 @@
 <tr>
     <td>
     <p class="">
-        {% trans 'Kaikkien tutkimukseen osallistuneiden ja yhteystietonsa antaneiden kesken arvotaan' %}:
-        <ul>
-            <li>
-                {% trans 'viisi 40 euron lahjakorttia Tampereen joukkoliikenteeseen' %}
-            </li>
-            <li>
-                {% trans 'viisi paria elokuvalippuja (vapaavalintaiseen Finnkinon elokuvaan)' %}
-            </li>
-        </ul>
+        {% trans 'Ten pairs of movie tickets will be raffled between all the participants of the questionnaire.' %}:
     </p>
     </td>
 </tr>
@@ -219,27 +209,20 @@
     <td>
     <p class="">
         {% blocktrans %}
-        Tampereen pehmoGIS-kysely toimii Aalto-Yliopiston suojatulla palvelimella, ja kyselystä
-        koostuvaan tietokantaan on pääsy vain
-        tutkimushankkeessa työskentelevillä henkilöillä. Sovellus ei ole yhteydessä Tampereen kaupungin
-        tietojärjestelmiin.
+        The softGIS questionnaire is situated on a secure server at Aalto University.
+        The collected database is accessible only to researchers, but they may pass the
+        final database to the BeautifulPB initiative after removing the data on home
+        locations. The researchers will not visualise or otherwise present data in a manner
+        that could enable connecting a response with a certain household. 
         {% endblocktrans %}
     </p>
     <p class="">
         {% blocktrans %}
-        Tutkimuksessa ei käsitellä henkilötietolain piiriin kuuluvia tietoja (kuten osoitteita, nimiä
-        tai henkilötunnuksia). Tutkimuksesta on kuitenkin laadittu
-        Tietosuojavaltuutetun ohjeiden mukainen tieteellisen tutkimuksen rekisteriseloste.
-        {% endblocktrans %}
-    </p>
-    <p class="">
-        {% blocktrans %}
-        Tutkimusaineiston tietoja käsitellään ryhmittäin, ei yksilötasolla. Tuloksia ryhmitellään esim.
-        sukupuolen, ikäryhmän ja asuinpaikan perustella ja niissä
-        käsitellään ryhmien antamia keskimääräisiä vastauksia, kuten keskimääräistä matkaa tärkeisiin
-        paikkoihin tai kulkutapoja töihin.
-        Julkaistavista tuloksista on mahdotonta jäljittää yksittäisten ihmisten tai yksittäisessä
-        rakennuksessa asuvien ihmisten vastauksia.
+        Research data will be analysed in groups, not on an individual level. The results
+        are grouped by e.g. gender, age and neighbourhood, and they deal with the average
+        response given by the groups, for example the average distance to important places
+        or travel modes to work. It is impossible to track individuals or their answers from
+        any results that will be published. 
         {% endblocktrans %}
     </p>
     </td>
@@ -247,24 +230,7 @@
 </tr>
 {% endblock privacy_protection %}
 {% block registry %}
-<tr>
-    <td>
-        <h2>
-            <a name="re">
-                {% trans 'Rekisteriseloste' %}
-            </a>
-        </h2>
-        </td>
-    <td/>
-</tr>
-<tr>
-    <td>
-    <p class="">
-        {% trans 'Tutkimuksen rekisteriseloste' %}
-        <a href="{{ STATIC_URL }}Rekisteriseloste_UrbaaniArki_Tre.pdf">({% trans 'pdf-tiedosto' %}).</a>
-    </p>
-    </td>
-</tr>
+
 {% endblock registry %}
 
 
