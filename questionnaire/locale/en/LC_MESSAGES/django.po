@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Kuninkaankolmio/Tampere\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-04 14:07+0300\n"
-"PO-Revision-Date: 2013-04-04 15:37+0300\n"
+"PO-Revision-Date: 2013-04-09 11:00+0300\n"
 "Last-Translator: Mikko Johansson <mikko.johansson@aalto.fi>\n"
 "Language-Team: SoftGIS team\n"
 "Language: en\n"
@@ -469,7 +469,7 @@ msgstr "it is easy to move around on foot or by bike"
 
 #: questions/values.py:183
 msgid "joukkoliikenne palvelee hyvin"
-msgstr "the services are good"
+msgstr "the public transport is good"
 
 #: questions/values.py:184
 msgid "autolla liikkuminen on sujuvaa"
