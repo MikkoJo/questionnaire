@@ -28,7 +28,7 @@
             <a href="{% url main_html file_name='instructions' %}#kosimutapo" onclick="window.open('{% url main_html file_name='instructions' %}#kosimutapo'); return false;">{% trans 'miten korjataan kohde, joka meni väärään paikkaan?' %}</a>
         </li>
         <li>
-            <a href="{% url main_html file_name='instructions' %}" onclick="window.open('instructions.html'); return false;">{% trans 'Näytä kaikki ohjeet' %}</a>
+            <a href="{% url main_html file_name='instructions' %}" onclick="window.open('{% url main_html file_name='instructions' %}'); return false;">{% trans 'Näytä kaikki ohjeet' %}</a>
         </li>
     </ul>
     <hr />
