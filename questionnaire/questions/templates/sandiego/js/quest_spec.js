@@ -542,9 +542,9 @@ questionnaire.pages =
 "name": "owncomments",
 "section": "feedback",
 "type": "big",
-"content": "{% url main_html file_name='owncomments' %}"
-/*"next": function() {submitContact('contactForm');},
-"previous": function() {submitContact('contactForm');}*/
+"content": "{% url main_html file_name='owncomments' %}",
+"next": function() {submitContact('contactForm');},
+"previous": function() {submitContact('contactForm');}
 },
 {
 "name": "thankyou",
